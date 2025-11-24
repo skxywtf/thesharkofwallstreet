@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>The Shark of Wall Street | The World Trade Factory Story</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="The Shark of Wall Street – the true story of a regular person from India who built World Trade Factory to take on Wall Street's old playbook."
+  />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="The Shark of Wall Street" />
+  <meta
+    property="og:description"
+    content="From India to global markets. A regular person builds World Trade Factory and takes on the street with a different trajectory."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://thesharkofwallstreet.com" />
+
+  <style>
+    :root {
+      --bg: #020617;
+      --bg-alt: #020b1f;
+      --accent: #22d3ee;
+      --accent-soft: rgba(34, 211, 238, 0.15);
+      --accent-warm: #facc15;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border-subtle: rgba(148, 163, 184, 0.35);
+      --card-bg: rgba(15, 23, 42, 0.9);
+      --danger: #f97373;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Inter", "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #020617 0, #020617 40%, #000 100%);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(
+        to bottom,
+        rgba(2, 6, 23, 0.95),
+        rgba(2, 6, 23, 0.75),
+        transparent
+      );
+    }
+
+    .nav {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 1rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-size: 0.86rem;
+    }
+
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at 30% 0, #22d3ee 0, #0f172a 45%, #020617 100%);
+      box-shadow: 0 0 18px rgba(34, 211, 238, 0.25);
+      font-size: 1.1rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 0.15rem;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background: linear-gradient(to right, var(--accent), var(--accent-warm));
+      transition: width 0.2s ease-out;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .nav-cta a {
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      padding: 0.4rem 0.9rem;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      color: var(--muted);
+      background: radial-gradient(circle at top left, rgba(34, 211, 238, 0.1), transparent);
+    }
+
+    .nav-cta a.primary {
+      border-color: transparent;
+      background: linear-gradient(120deg, var(--accent), var(--accent-warm));
+      color: #020617;
+      font-weight: 600;
+      box-shadow: 0 0 22px rgba(34, 211, 238, 0.35);
+    }
+
+    .hero {
+      padding-top: 2.25rem;
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      header {
+        position: static;
+      }
+
+      .nav {
+        padding-inline: 1.1rem;
+      }
+
+      main {
+        padding-inline: 1.1rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.18rem 0.55rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin-bottom: 0.9rem;
+    }
+
+    .eyebrow-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 35% 0, #22d3ee, #0ea5e9);
+      box-shadow: 0 0 12px rgba(34, 211, 238, 0.8);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 4vw, 3.4rem);
+      line-height: 1.06;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 span.highlight {
+      background: linear-gradient(120deg, #e5e7eb, #facc15);
+      -webkit-background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 16px rgba(234, 179, 8, 0.35);
+    }
+
+    .hero-subline {
+      margin-top: 0.7rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+      max-width: 32rem;
+    }
+
+    .hero-subline strong {
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-top: 1.7rem;
+      align-items: center;
+    }
+
+    .btn {
+      padding: 0.7rem 1.5rem;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: 1px solid rgba(148, 163, 184, 0.9);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      background: radial-gradient(circle at top left, rgba(34, 211, 238, 0.12), #020617);
+      transition: transform 0.12s ease-out, box-shadow 0.12s ease-out,
+        border-color 0.12s ease-out, background 0.12s ease-out;
+    }
+
+    .btn span.icon {
+      font-size: 1.05rem;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      border-color: var(--accent);
+      box-shadow: 0 0 18px rgba(34, 211, 238, 0.28);
+    }
+
+    .btn.primary {
+      background: linear-gradient(130deg, var(--accent), var(--accent-warm));
+      border-color: transparent;
+      color: #020617;
+      box-shadow: 0 0 26px rgba(34, 211, 238, 0.45);
+    }
+
+    .hero-meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .hero-meta span {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .hero-card {
+      position: relative;
+      border-radius: 1.5rem;
+      padding: 1.6rem 1.5rem;
+      background: radial-gradient(circle at 0 0, rgba(34, 211, 238, 0.28), transparent 55%),
+        radial-gradient(circle at 100% 0, rgba(250, 204, 21, 0.2), transparent 60%),
+        var(--card-bg);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      box-shadow: 0 40px 80px rgba(15, 23, 42, 0.9);
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(
+        circle at 50% 0,
+        rgba(15, 23, 42, 0) 0,
+        rgba(15, 23, 42, 0.7) 40%,
+        rgba(15, 23, 42, 0.95) 100%
+      );
+      pointer-events: none;
+    }
+
+    .hero-card-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 1.2rem;
+      font-size: 0.72rem;
+    }
+
+    .pill {
+      padding: 0.25rem 0.65rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: rgba(15, 23, 42, 0.95);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
+
+    .pill.accent {
+      border-color: transparent;
+      background: linear-gradient(
+        120deg,
+        rgba(34, 211, 238, 0.12),
+        rgba(34, 211, 238, 0.02)
+      );
+      color: var(--accent);
+    }
+
+    .hero-quote {
+      font-size: 0.9rem;
+      color: #e5e7eb;
+      margin-bottom: 1.1rem;
+    }
+
+    .hero-quote em {
+      font-style: normal;
+      color: var(--accent-warm);
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.8rem;
+      margin-top: 0.9rem;
+      font-size: 0.78rem;
+    }
+
+    .stat {
+      padding: 0.8rem 0.8rem;
+      border-radius: 1rem;
+      border: 1px solid rgba(148, 163, 184, 0.38);
+      background: rgba(15, 23, 42, 0.93);
+    }
+
+    .stat-label {
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+      color: var(--muted);
+      font-size: 0.7rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .stat-value {
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .stat-value span {
+      color: var(--accent);
+    }
+
+    section {
+      margin-top: 3.4rem;
+    }
+
+    section h2 {
+      font-size: 1.45rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #e5e7eb;
+      margin-bottom: 0.9rem;
+    }
+
+    section h2 span {
+      background: linear-gradient(120deg, var(--accent), var(--accent-warm));
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    section p.lead {
+      color: var(--muted);
+      max-width: 40rem;
+      font-size: 0.92rem;
+    }
+
+    .split {
+      display: grid;
+      gap: 1.8rem;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.3fr);
+      margin-top: 1.6rem;
+    }
+
+    @media (max-width: 900px) {
+      .split {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .card {
+      border-radius: 1.3rem;
+      padding: 1.3rem 1.2rem;
+      background: var(--card-bg);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+    }
+
+    .card + .card {
+      margin-top: 0.9rem;
+    }
+
+    .card h3 {
+      font-size: 0.98rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 0.85rem;
+    }
+
+    .chip {
+      padding: 0.22rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      font-size: 0.75rem;
+      color: var(--muted);
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.6rem;
+    }
+
+    @media (max-width: 900px) {
+      .grid-3 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.4rem;
+    }
+
+    @media (max-width: 700px) {
+      .grid-2 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .tagline {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.4rem;
+    }
+
+    .timeline {
+      margin-top: 1.4rem;
+      border-radius: 1.25rem;
+      border: 1px dashed rgba(148, 163, 184, 0.6);
+      padding: 1.2rem 1.3rem;
+      background: linear-gradient(to right, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.7));
+      font-size: 0.88rem;
+    }
+
+    .timeline-step {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 0.7rem;
+      padding-block: 0.45rem;
+    }
+
+    .timeline-step span.bullet {
+      margin-top: 0.25rem;
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 40% 0, var(--accent), #0ea5e9);
+      box-shadow: 0 0 12px rgba(34, 211, 238, 0.9);
+    }
+
+    .timeline-step strong {
+      display: block;
+      font-size: 0.83rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #e5e7eb;
+      margin-bottom: 0.15rem;
+    }
+
+    .timeline-step p {
+      color: var(--muted);
+    }
+
+    .testimonials {
+      margin-top: 1.4rem;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 900px) {
+      .testimonials {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .quote-card {
+      border-radius: 1.25rem;
+      padding: 1rem 1rem;
+      background: var(--card-bg);
+      border: 1px solid rgba(148, 163, 184, 0.55);
+    }
+
+    .quote-card p {
+      color: var(--muted);
+    }
+
+    .quote-card-footer {
+      margin-top: 0.7rem;
+      font-size: 0.78rem;
+      color: #9ca3af;
+    }
+
+    .quote-card-footer span.role {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.72rem;
+      color: var(--accent);
+    }
+
+    .contact {
+      margin-top: 1.8rem;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 900px) {
+      .contact {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .contact-form {
+      border-radius: 1.3rem;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      padding: 1.3rem 1.2rem;
+      background: radial-gradient(circle at top left, rgba(34, 211, 238, 0.1), #020617);
+    }
+
+    .field {
+      margin-bottom: 0.8rem;
+    }
+
+    .field label {
+      display: block;
+      font-size: 0.8rem;
+      margin-bottom: 0.25rem;
+      color: var(--muted);
+    }
+
+    .field input,
+    .field textarea {
+      width: 100%;
+      border-radius: 0.9rem;
+      border: 1px solid rgba(148, 163, 184, 0.8);
+      padding: 0.55rem 0.65rem;
+      font-size: 0.85rem;
+      background: rgba(15, 23, 42, 0.96);
+      color: var(--text);
+      outline: none;
+    }
+
+    .field input:focus,
+    .field textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(34, 211, 238, 0.4);
+    }
+
+    .field textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .contact-info {
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .contact-info h3 {
+      font-size: 0.95rem;
+      color: #e5e7eb;
+      margin-bottom: 0.4rem;
+    }
+
+    .contact-info a.link {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px dotted rgba(34, 211, 238, 0.7);
+    }
+
+    footer {
+      border-top: 1px solid rgba(31, 41, 55, 0.9);
+      margin-top: 3rem;
+      padding-top: 1.3rem;
+      padding-bottom: 0.5rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    footer span.accent {
+      color: var(--accent);
+    }
+
+    footer .footer-links {
+      display: flex;
+      gap: 0.9rem;
+    }
+
+    footer .footer-links a {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.7rem;
+    }
+
+    .shark-underline {
+      display: inline-flex;
+      flex-direction: column;
+    }
+
+    .shark-underline::after {
+      content: "";
+      margin-top: 0.15rem;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(
+        to right,
+        var(--accent),
+        var(--accent-warm),
+        var(--danger)
+      );
+      opacity: 0.7;
+    }
+
+    .script-label {
+      display: inline-block;
+      margin-top: 0.4rem;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="nav">
+      <div class="logo">
+        <div class="logo-icon">🦈</div>
+        <div>
+          <div>The Shark</div>
+          <div style="font-size:0.72rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.16em;">
+            of Wall Street
+          </div>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="#about">Story</a>
+        <a href="#arc">Film / Book</a>
+        <a href="#worldtradefactory">World Trade Factory</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="nav-cta">
+        <a href="#contact">Talk to Sage</a>
+        <a
+          href="https://www.linkedin.com/in/skxywtf"
+          target="_blank"
+          rel="noreferrer"
+          class="primary"
+        >
+          LinkedIn
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div>
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          <span>Based on a true story · In progress</span>
+        </div>
+        <h1>
+          The <span class="highlight">Shark</span> of Wall Street
+        </h1>
+        <p class="hero-subline">
+          The journey of a <strong>regular person from India</strong> who refused to
+          accept Wall Street’s script — and started writing his own with
+          <strong>World Trade Factory</strong>, AI, and a very different view of how
+          the world really trades.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#arc" class="btn primary">
+            <span class="icon">🎬</span>
+            Explore the story arc
+          </a>
+          <a
+            href="mailto:hello@thesharkofwallstreet.com?subject=Shark%20of%20Wall%20Street%20Story"
+            class="btn"
+          >
+            <span class="icon">📚</span>
+            Book / film inquiries
+          </a>
+          <div class="hero-meta">
+            <span>Non-fiction. Markets. Grit. World trade.</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <div class="hero-card-inner">
+          <div class="badge-row">
+            <span class="pill accent">True Story</span>
+            <span class="pill accent">India → Wall Street</span>
+            <span class="pill">Macro · AI · Underdog</span>
+          </div>
+          <p class="hero-quote">
+            “If Wall Street is where the movie plays, world trade is where the
+            plot is written. I wasn’t born into any of it – I just refused to
+            look away.”
+          </p>
+          <p style="font-size:0.8rem; color:var(--muted); margin-top:0.5rem;">
+            This is the ongoing story of <strong>Sage</strong> – an outsider who grew up
+            oceans away from the Street, built World Trade Factory from scratch,
+            and started calling out a different trajectory for markets.
+          </p>
+
+          <div class="stat-grid">
+            <div class="stat">
+              <div class="stat-label">Origin</div>
+              <div class="stat-value">
+                <span>Middle-class</span> India
+              </div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">Battlefield</div>
+              <div class="stat-value">
+                Global <span>markets & macro</span>
+              </div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">Weapon</div>
+              <div class="stat-value">
+                <span>World Trade Factory</span> & AI
+              </div>
+            </div>
+          </div>
+          <div class="script-label">Working title – “The Shark of Wall Street”</div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- STORY / ORIGIN -->
+    <section id="about">
+      <h2><span>01</span> · From India to the Street</h2>
+      <p class="lead">
+        No Ivy League pedigree. No family fund. Just a person from India obsessed
+        with <strong>how money really moves</strong> — ships, trade lanes, interest
+        rates, and the quiet decisions that never make the headlines.
+      </p>
+
+      <div class="split" style="margin-top:1.8rem;">
+        <div>
+          <div class="card">
+            <h3>Regular Childhood, Irregular Curiosity</h3>
+            <p>
+              While most people watched stock prices, Sage was drawn to the
+              boring stuff: trade data, balance of payments, deficits,
+              containers at ports. The question was simple and relentless:
+              <strong>“Who actually controls the future?”</strong>
+            </p>
+            <p style="margin-top:0.6rem;">
+              The answer wasn’t just “Wall Street.” It was supply chains,
+              central banks, technology, and a world that was rewiring itself
+              faster than the old guard wanted to admit.
+            </p>
+            <div class="chip-row">
+              <span class="chip">India</span>
+              <span class="chip">Middle-class hustle</span>
+              <span class="chip">Self-taught markets</span>
+              <span class="chip">Zero safety net</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Landing in the Heart of the Machine</h3>
+            <p>
+              Years later, Sage finds himself deep in the financial world —
+              learning the rules, seeing the blind spots, and realizing just
+              how much of the system runs on <strong>assumptions and narratives</strong>
+              that no one ever questions out loud.
+            </p>
+            <p style="margin-top:0.5rem;">
+              That’s where the idea takes shape: instead of trying to join the
+              club, <strong>build something outside of it</strong> – something that reads
+              the world differently and calls the turns ahead of time.
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <div class="card">
+            <h3>The moment the shark shows up</h3>
+            <p>
+              The “Shark of Wall Street” isn’t about greed. It’s about
+              <strong>refusing to swim with the school</strong>. It’s the moment
+              an outsider stops taking notes and starts
+              <em>contesting the script</em> – calling out where markets are going,
+              not where the commentary says they are.
+            </p>
+            <p style="margin-top:0.7rem;">
+              This site is the hub for that story: the real-world journey, the
+              frameworks behind it, and the platform being built to take on
+              much bigger players with nothing but conviction, code, and
+              compounding insight.
+            </p>
+            <div class="chip-row">
+              <span class="chip">Outsider perspective</span>
+              <span class="chip">Contrarian forecasts</span>
+              <span class="chip">Markets as narrative</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FILM / BOOK ARC -->
+    <section id="arc">
+      <h2><span>02</span> · A Story Built for Screen & Page</h2>
+      <p class="lead">
+        The Shark of Wall Street is designed as both a
+        <strong>non-fiction book</strong> and a <strong>cinematic arc</strong> –
+        grounded in real trades, real macro turns, and the psychology of
+        building something from nothing.
+      </p>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3>Act I – The Outsider</h3>
+          <p>
+            India. A regular family. No inside connections. Just late nights,
+            charts, and a brain that can’t stop asking “why?” as the world
+            lurches from crisis to crisis.
+          </p>
+          <div class="tagline">
+            Tone: gritty, observational, unpolished ambition.
+          </div>
+        </div>
+        <div class="card">
+          <h3>Act II – Building World Trade Factory</h3>
+          <p>
+            Early drafts, broken dashboards, people not taking it seriously.
+            The slow grind of building an AI + macro engine while everyone else
+            is chasing the next hype.
+          </p>
+          <div class="tagline">
+            Tone: hacker energy, repeated failure, stubborn clarity.
+          </div>
+        </div>
+        <div class="card">
+          <h3>Act III – Taking on the Street</h3>
+          <p>
+            Calling turns before they become consensus. Clashing with the
+            traditional playbook. Trading a safe career path for a shot at
+            changing how serious people see the world.
+          </p>
+          <div class="tagline">
+            Tone: high stakes, decisions that actually cost something.
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-step">
+          <span class="bullet"></span>
+          <div>
+            <strong>Structure</strong>
+            <p>
+              The story can be told as a tight, high-velocity book (or limited
+              series) that moves between
+              <strong>personal narrative, macro events and live trades</strong> – not as
+              separate worlds, but as one continuous thread.
+            </p>
+          </div>
+        </div>
+        <div class="timeline-step">
+          <span class="bullet"></span>
+          <div>
+            <strong>Visual language</strong>
+            <p>
+              Ports, terminals, AI dashboards, quiet apartments lit by laptop
+              glow, and the contrast between shiny institutions and the
+              reality of building alone.
+            </p>
+          </div>
+        </div>
+        <div class="timeline-step">
+          <span class="bullet"></span>
+          <div>
+            <strong>Emotional core</strong>
+            <p>
+              A simple question: can a regular person, with no safety net,
+              really build something that forces the big players to pay
+              attention? What does it cost to try?
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORLD TRADE FACTORY -->
+    <section id="worldtradefactory">
+      <h2><span>03</span> · World Trade Factory: The Engine</h2>
+      <p class="lead">
+        Underneath the narrative is a real platform:
+        <strong>World Trade Factory</strong> – an AI-augmented, macro-intelligence
+        and investing ecosystem built to read the world differently and help
+        serious capital act on it.
+      </p>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3>Macro & Trade Intelligence</h3>
+          <p>
+            Global trade flows, FDI, credit conditions, policy shifts, and
+            real-economy indicators stitched into one living view of where the
+            world is actually heading.
+          </p>
+          <div class="tagline">
+            Less noise. More structure. Fewer surprises.
+          </div>
+        </div>
+        <div class="card">
+          <h3>AI & LLM Research Stack</h3>
+          <p>
+            AI models that digest filings, earnings calls, tariff updates and
+            macro reports – surfacing what’s changing, what’s breaking, and
+            what no one is pricing yet.
+          </p>
+          <div class="tagline">
+            Not replacing judgment – amplifying it.
+          </div>
+        </div>
+        <div class="card">
+          <h3>Built by an Outsider</h3>
+          <p>
+            No committee. No legacy stack. Just a founder designing an engine
+            he wishes existed when he started out: transparent, sharp, and
+            relentlessly global.
+          </p>
+          <div class="tagline">
+            From India to Phoenix to the world.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOCIAL PROOF / TONE -->
+    <section>
+      <h2><span>04</span> · How People Describe It</h2>
+      <p class="lead">
+        The reactions so far aren’t about hype – they’re about recognition.
+        People see a story they don’t usually get: <strong>no inherited edge,
+        no safety net, just compounding work</strong>.
+      </p>
+
+      <div class="testimonials">
+        <div class="quote-card">
+          <p>
+            “It feels like if Moneyball, a macro journal, and a coming-of-age
+            story were smashed together around one person’s obsession with
+            trade and markets.”
+          </p>
+          <div class="quote-card-footer">
+            Early reader<br />
+            <span class="role">Investor & builder</span>
+          </div>
+        </div>
+        <div class="quote-card">
+          <p>
+            “Most finance stories start inside the system. This one starts far
+            outside of it – and that’s exactly why it’s interesting.”
+          </p>
+          <div class="quote-card-footer">
+            Producer contact<br />
+            <span class="role">Film & series</span>
+          </div>
+        </div>
+        <div class="quote-card">
+          <p>
+            “It doesn’t glamorize anything. It shows the grind, the doubt, and
+            the small wins that eventually become something nobody can ignore.”
+          </p>
+          <div class="quote-card-footer">
+            Friend & collaborator<br />
+            <span class="role">Long-time observer</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2><span>05</span> · Book / Film & Collaboration</h2>
+      <p class="lead">
+        If you’re a <strong>publisher</strong>, <strong>producer</strong>,
+        <strong>investor</strong> or <strong>collaborator</strong> who sees the
+        potential in this story and the platform behind it, this is the line
+        to reach Sage directly.
+      </p>
+
+      <div class="contact">
+        <div class="contact-form">
+          <!-- Static form – wire it up to your backend or form service -->
+          <form>
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" name="name" placeholder="Your name" />
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="you@studio.com"
+              />
+            </div>
+            <div class="field">
+              <label for="role">Who are you?</label>
+              <input
+                id="role"
+                name="role"
+                placeholder="Publisher / Producer / Investor / Other"
+              />
+            </div>
+            <div class="field">
+              <label for="message">What are you thinking?</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Tell Sage if you’re thinking book, limited series, docu-style, or something else – and what kind of collaboration you have in mind."
+              ></textarea>
+            </div>
+            <button type="submit" class="btn primary" style="margin-top:0.4rem;">
+              <span class="icon">🦈</span>
+              Submit (static demo)
+            </button>
+            <p style="margin-top:0.6rem; font-size:0.78rem; color:var(--muted);">
+              This form is currently static. Connect it to your preferred form
+              backend (Vercel, Netlify, custom API, etc.) to make it live.
+            </p>
+          </form>
+        </div>
+
+        <div class="contact-info">
+          <h3>Direct Contact</h3>
+          <p>
+            Email:
+            <a
+              href="mailto:hello@thesharkofwallstreet.com"
+              class="link"
+            >
+              hello@thesharkofwallstreet.com
+            </a>
+          </p>
+          <p style="margin-top:0.35rem;">
+            LinkedIn:
+            <a
+              href="https://www.linkedin.com/in/skxywtf"
+              target="_blank"
+              rel="noreferrer"
+              class="link"
+            >
+              /in/skxywtf
+            </a>
+          </p>
+          <p style="margin-top:0.8rem;">
+            This story is being written in real time. If you reach out, make it
+            thoughtful – Sage will read it. If there’s real alignment, he’ll
+            respond.
+          </p>
+
+          <h3 style="margin-top:1.2rem;">For Investors & Operators</h3>
+          <p>
+            If you’re more interested in the <strong>World Trade Factory</strong>
+            platform than the book or film, mention “WTF” in your message and
+            include a line about your mandate or the kind of capital / business
+            decisions you’re making.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>
+        © <span id="year"></span> The Shark of Wall Street ·
+        <span class="accent">World Trade Factory</span>
+      </div>
+      <div class="footer-links">
+        <a href="#top">Back to top</a>
+        <a href="#arc">Story arc</a>
+        <a
+          href="https://www.linkedin.com/in/skxywtf"
+          target="_blank"
+          rel="noreferrer"
+        >
+          LinkedIn
+        </a>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
