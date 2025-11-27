@@ -6,9 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="The Shark of Wall Street – the true story of a regular person from India who built World Trade Factory to take on Wall Street's old playbook."
+    content="The Shark of Wall Street – the true story of a regular kid from India who built World Trade Factory to take on Wall Street's old playbook."
   />
 
+  <!-- Open Graph -->
   <meta property="og:title" content="The Shark of Wall Street" />
   <meta
     property="og:description"
@@ -19,16 +20,15 @@
 
   <style>
     :root {
-      /* CHANGED: Darker, flatter base colors */
-      --bg: #050505;
-      --bg-alt: #0a0a0a;
+      --bg: #020617;
+      --bg-alt: #020b1f;
       --accent: #22d3ee;
-      --accent-soft: rgba(34, 211, 238, 0.1);
+      --accent-soft: rgba(34, 211, 238, 0.15);
       --accent-warm: #facc15;
       --text: #e5e7eb;
-      --muted: #8899ac; /* Slightly cooler grey for tech feel */
-      --border-subtle: #1e293b;
-      --card-bg: #0b0f15; /* Solid dark card background */
+      --muted: #9ca3af;
+      --border-subtle: rgba(148, 163, 184, 0.35);
+      --card-bg: rgba(15, 23, 42, 0.9);
       --danger: #f97373;
     }
 
@@ -41,10 +41,7 @@
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
         "Inter", "Segoe UI", sans-serif;
-      /* CHANGED: Removed radial gradient. Added technical grid pattern */
-      background-color: var(--bg);
-      background-image: radial-gradient(rgba(50, 70, 90, 0.25) 1px, transparent 1px);
-      background-size: 30px 30px; /* The grid size */
+      background: radial-gradient(circle at top, #020617 0, #020617 40%, #000 100%);
       color: var(--text);
       min-height: 100vh;
       line-height: 1.6;
@@ -66,10 +63,13 @@
       position: sticky;
       top: 0;
       z-index: 40;
-      backdrop-filter: blur(12px);
-      /* CHANGED: Flatter header background */
-      background: rgba(5, 5, 5, 0.85);
-      border-bottom: 1px solid var(--border-subtle);
+      backdrop-filter: blur(18px);
+      background: linear-gradient(
+        to bottom,
+        rgba(2, 6, 23, 0.95),
+        rgba(2, 6, 23, 0.75),
+        transparent
+      );
     }
 
     .nav {
@@ -95,12 +95,13 @@
     .logo-icon {
       width: 32px;
       height: 32px;
-      border-radius: 4px; /* Squared off slightly for tech feel */
-      border: 1px solid #334155;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #0f172a;
+      background: radial-gradient(circle at 30% 0, #22d3ee 0, #0f172a 45%, #020617 100%);
+      box-shadow: 0 0 18px rgba(34, 211, 238, 0.25);
       font-size: 1.1rem;
     }
 
@@ -116,11 +117,6 @@
     .nav-links a {
       position: relative;
       padding-bottom: 0.15rem;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover {
-        color: var(--text);
     }
 
     .nav-links a::after {
@@ -130,7 +126,7 @@
       bottom: 0;
       width: 0;
       height: 1px;
-      background: var(--accent); /* Solid accent line */
+      background: linear-gradient(to right, var(--accent), var(--accent-warm));
       transition: width 0.2s ease-out;
     }
 
@@ -145,33 +141,22 @@
     }
 
     .nav-cta a {
-      border-radius: 4px; /* Tech square radius */
-      border: 1px solid var(--border-subtle);
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
       padding: 0.4rem 0.9rem;
       font-size: 0.78rem;
       text-transform: uppercase;
       letter-spacing: 0.13em;
       color: var(--muted);
-      background: #0a0a0a;
-      transition: all 0.2s;
-    }
-
-    .nav-cta a:hover {
-        border-color: var(--muted);
-        color: var(--text);
+      background: radial-gradient(circle at top left, rgba(34, 211, 238, 0.1), transparent);
     }
 
     .nav-cta a.primary {
-      border-color: var(--accent);
-      background: rgba(34, 211, 238, 0.1);
-      color: var(--accent);
+      border-color: transparent;
+      background: linear-gradient(120deg, var(--accent), var(--accent-warm));
+      color: #020617;
       font-weight: 600;
-      box-shadow: none; /* Removed glow */
-    }
-
-    .nav-cta a.primary:hover {
-        background: var(--accent);
-        color: #000;
+      box-shadow: 0 0 22px rgba(34, 211, 238, 0.35);
     }
 
     .hero {
@@ -209,9 +194,9 @@
       align-items: center;
       gap: 0.4rem;
       padding: 0.18rem 0.55rem;
-      border-radius: 4px;
-      background: #111;
-      border: 1px solid var(--border-subtle);
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.55);
       font-size: 0.72rem;
       text-transform: uppercase;
       letter-spacing: 0.16em;
@@ -220,10 +205,11 @@
     }
 
     .eyebrow-dot {
-      width: 6px;
-      height: 6px;
-      background: var(--accent);
-      /* No glow shadow */
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 35% 0, #22d3ee, #0ea5e9);
+      box-shadow: 0 0 12px rgba(34, 211, 238, 0.8);
     }
 
     .hero h1 {
@@ -234,11 +220,10 @@
     }
 
     .hero h1 span.highlight {
-      /* Kept text gradient as it is specific to the title, but made it sharper */
-      color: var(--accent-warm);
-      background: none;
-      -webkit-text-fill-color: initial;
-      text-shadow: none;
+      background: linear-gradient(120deg, #e5e7eb, #facc15);
+      -webkit-background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 16px rgba(234, 179, 8, 0.35);
     }
 
     .hero-subline {
@@ -249,7 +234,7 @@
     }
 
     .hero-subline strong {
-      color: #fff;
+      color: var(--accent);
       font-weight: 500;
     }
 
@@ -263,19 +248,19 @@
 
     .btn {
       padding: 0.7rem 1.5rem;
-      border-radius: 4px; /* Tech look */
+      border-radius: 999px;
       font-size: 0.88rem;
       font-weight: 500;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      border: 1px solid var(--border-subtle);
+      border: 1px solid rgba(148, 163, 184, 0.9);
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
       cursor: pointer;
-      background: #0f172a;
-      color: var(--text);
-      transition: all 0.2s ease-out;
+      background: radial-gradient(circle at top left, rgba(34, 211, 238, 0.12), #020617);
+      transition: transform 0.12s ease-out, box-shadow 0.12s ease-out,
+        border-color 0.12s ease-out, background 0.12s ease-out;
     }
 
     .btn span.icon {
@@ -283,22 +268,16 @@
     }
 
     .btn:hover {
-      border-color: var(--accent);
-      background: #1e293b;
       transform: translateY(-1px);
+      border-color: var(--accent);
+      box-shadow: 0 0 18px rgba(34, 211, 238, 0.28);
     }
 
     .btn.primary {
-      background: var(--text);
-      border-color: var(--text);
-      color: #000;
-      box-shadow: none;
-    }
-
-    .btn.primary:hover {
-        background: var(--accent);
-        border-color: var(--accent);
-        color: #000;
+      background: linear-gradient(130deg, var(--accent), var(--accent-warm));
+      border-color: transparent;
+      color: #020617;
+      box-shadow: 0 0 26px rgba(34, 211, 238, 0.45);
     }
 
     .hero-meta {
@@ -311,25 +290,29 @@
       letter-spacing: 0.16em;
     }
 
-    /* CHANGED: Hero Card is now sharp, dark, and technical */
     .hero-card {
       position: relative;
-      border-radius: 6px;
+      border-radius: 1.5rem;
       padding: 1.6rem 1.5rem;
-      background: #080c14; /* Deep flat dark */
-      border: 1px solid #334155; /* Sharp border */
-      box-shadow: 0 20px 40px rgba(0,0,0,0.5); /* Deep drop shadow only */
+      background: radial-gradient(circle at 0 0, rgba(34, 211, 238, 0.28), transparent 55%),
+        radial-gradient(circle at 100% 0, rgba(250, 204, 21, 0.2), transparent 60%),
+        var(--card-bg);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      box-shadow: 0 40px 80px rgba(15, 23, 42, 0.9);
       overflow: hidden;
     }
 
-    /* Subtle grid line inside card */
-    .hero-card::after {
-        content: "";
-        position: absolute;
-        top: 0; left: 0; width: 100%; height: 100%;
-        background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
-        background-size: 100% 20px;
-        pointer-events: none;
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(
+        circle at 50% 0,
+        rgba(15, 23, 42, 0) 0,
+        rgba(15, 23, 42, 0.7) 40%,
+        rgba(15, 23, 42, 0.95) 100%
+      );
+      pointer-events: none;
     }
 
     .hero-card-inner {
@@ -347,17 +330,21 @@
 
     .pill {
       padding: 0.25rem 0.65rem;
-      border-radius: 2px;
-      border: 1px solid #334155;
-      background: #0f172a;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: rgba(15, 23, 42, 0.95);
       text-transform: uppercase;
       letter-spacing: 0.12em;
       color: var(--muted);
     }
 
     .pill.accent {
-      border-color: var(--accent);
-      background: rgba(34, 211, 238, 0.05);
+      border-color: transparent;
+      background: linear-gradient(
+        120deg,
+        rgba(34, 211, 238, 0.12),
+        rgba(34, 211, 238, 0.02)
+      );
       color: var(--accent);
     }
 
@@ -365,7 +352,6 @@
       font-size: 0.9rem;
       color: #e5e7eb;
       margin-bottom: 1.1rem;
-      font-family: monospace; /* Typewriter feel */
     }
 
     .hero-quote em {
@@ -383,9 +369,9 @@
 
     .stat {
       padding: 0.8rem 0.8rem;
-      border-radius: 4px;
-      border: 1px solid #1e293b;
-      background: #020617;
+      border-radius: 1rem;
+      border: 1px solid rgba(148, 163, 184, 0.38);
+      background: rgba(15, 23, 42, 0.93);
     }
 
     .stat-label {
@@ -418,10 +404,9 @@
     }
 
     section h2 span {
-      /* Solid accent color for header numbers */
-      color: var(--accent);
-      background: none;
-      -webkit-text-fill-color: initial;
+      background: linear-gradient(120deg, var(--accent), var(--accent-warm));
+      -webkit-background-clip: text;
+      color: transparent;
     }
 
     section p.lead {
@@ -444,16 +429,10 @@
     }
 
     .card {
-      border-radius: 4px;
+      border-radius: 1.3rem;
       padding: 1.3rem 1.2rem;
       background: var(--card-bg);
-      border: 1px solid var(--border-subtle);
-      /* Subtle lift on hover */
-      transition: border-color 0.2s;
-    }
-
-    .card:hover {
-        border-color: #475569;
+      border: 1px solid rgba(148, 163, 184, 0.6);
     }
 
     .card + .card {
@@ -479,11 +458,11 @@
 
     .chip {
       padding: 0.22rem 0.7rem;
-      border-radius: 2px;
-      border: 1px solid #334155;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
       font-size: 0.75rem;
       color: var(--muted);
-      background: #0f172a;
+      background: rgba(15, 23, 42, 0.9);
     }
 
     .grid-3 {
@@ -516,17 +495,14 @@
       font-size: 0.85rem;
       color: var(--muted);
       margin-top: 0.4rem;
-      border-left: 2px solid var(--accent);
-      padding-left: 0.6rem;
     }
 
     .timeline {
       margin-top: 1.4rem;
-      border-radius: 6px;
-      border: 1px dashed var(--border-subtle);
+      border-radius: 1.25rem;
+      border: 1px dashed rgba(148, 163, 184, 0.6);
       padding: 1.2rem 1.3rem;
-      /* Solid background */
-      background: #080c14;
+      background: linear-gradient(to right, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.7));
       font-size: 0.88rem;
     }
 
@@ -541,10 +517,9 @@
       margin-top: 0.25rem;
       width: 10px;
       height: 10px;
-      /* Square bullet for tech feel */
-      border-radius: 0px;
-      background: var(--accent);
-      box-shadow: none;
+      border-radius: 999px;
+      background: radial-gradient(circle at 40% 0, var(--accent), #0ea5e9);
+      box-shadow: 0 0 12px rgba(34, 211, 238, 0.9);
     }
 
     .timeline-step strong {
@@ -575,15 +550,14 @@
     }
 
     .quote-card {
-      border-radius: 4px;
+      border-radius: 1.25rem;
       padding: 1rem 1rem;
       background: var(--card-bg);
-      border: 1px solid var(--border-subtle);
+      border: 1px solid rgba(148, 163, 184, 0.55);
     }
 
     .quote-card p {
       color: var(--muted);
-      font-style: italic;
     }
 
     .quote-card-footer {
@@ -597,7 +571,6 @@
       letter-spacing: 0.16em;
       font-size: 0.72rem;
       color: var(--accent);
-      font-style: normal;
     }
 
     .contact {
@@ -614,10 +587,10 @@
     }
 
     .contact-form {
-      border-radius: 6px;
-      border: 1px solid var(--border-subtle);
+      border-radius: 1.3rem;
+      border: 1px solid rgba(148, 163, 184, 0.6);
       padding: 1.3rem 1.2rem;
-      background: #080c14;
+      background: radial-gradient(circle at top left, rgba(34, 211, 238, 0.1), #020617);
     }
 
     .field {
@@ -634,11 +607,11 @@
     .field input,
     .field textarea {
       width: 100%;
-      border-radius: 4px;
-      border: 1px solid #334155;
+      border-radius: 0.9rem;
+      border: 1px solid rgba(148, 163, 184, 0.8);
       padding: 0.55rem 0.65rem;
       font-size: 0.85rem;
-      background: #020617;
+      background: rgba(15, 23, 42, 0.96);
       color: var(--text);
       outline: none;
     }
@@ -646,6 +619,7 @@
     .field input:focus,
     .field textarea:focus {
       border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(34, 211, 238, 0.4);
     }
 
     .field textarea {
@@ -667,15 +641,11 @@
     .contact-info a.link {
       color: var(--accent);
       text-decoration: none;
-      border-bottom: 1px solid rgba(34, 211, 238, 0.3);
-    }
-
-    .contact-info a.link:hover {
-        border-bottom-color: var(--accent);
+      border-bottom: 1px dotted rgba(34, 211, 238, 0.7);
     }
 
     footer {
-      border-top: 1px solid var(--border-subtle);
+      border-top: 1px solid rgba(31, 41, 55, 0.9);
       margin-top: 3rem;
       padding-top: 1.3rem;
       padding-bottom: 0.5rem;
@@ -689,7 +659,7 @@
     }
 
     footer span.accent {
-      color: var(--text);
+      color: var(--accent);
     }
 
     footer .footer-links {
@@ -703,6 +673,25 @@
       font-size: 0.7rem;
     }
 
+    .shark-underline {
+      display: inline-flex;
+      flex-direction: column;
+    }
+
+    .shark-underline::after {
+      content: "";
+      margin-top: 0.15rem;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(
+        to right,
+        var(--accent),
+        var(--accent-warm),
+        var(--danger)
+      );
+      opacity: 0.7;
+    }
+
     .script-label {
       display: inline-block;
       margin-top: 0.4rem;
@@ -710,8 +699,6 @@
       text-transform: uppercase;
       letter-spacing: 0.16em;
       color: var(--muted);
-      border: 1px solid #333;
-      padding: 2px 6px;
     }
   </style>
 </head>
@@ -731,12 +718,13 @@
         <a href="#about">Story</a>
         <a href="#arc">Film / Book</a>
         <a href="#worldtradefactory">World Trade Factory</a>
+        <a href="#andrew">Director</a>
         <a href="#contact">Contact</a>
       </div>
       <div class="nav-cta">
         <a href="#contact">Talk to Sage</a>
         <a
-          href="https://www.linkedin.com/in/sajeeshkakkat"
+          href="https://www.linkedin.com/in/skxywtf"
           target="_blank"
           rel="noreferrer"
           class="primary"
@@ -748,6 +736,7 @@
   </header>
 
   <main>
+    <!-- HERO -->
     <section class="hero" id="top">
       <div>
         <div class="eyebrow">
@@ -758,7 +747,7 @@
           The <span class="highlight">Shark</span> of Wall Street
         </h1>
         <p class="hero-subline">
-          The journey of a <strong>regular person from India</strong> who refused to
+          The journey of a <strong>regular kid from India</strong> who refused to
           accept Wall Street’s script — and started writing his own with
           <strong>World Trade Factory</strong>, AI, and a very different view of how
           the world really trades.
@@ -770,7 +759,7 @@
             Explore the story arc
           </a>
           <a
-            href="mailto:sage@worldtradefactory.com"
+            href="mailto:hello@thesharkofwallstreet.com?subject=Shark%20of%20Wall%20Street%20Story"
             class="btn"
           >
             <span class="icon">📚</span>
@@ -820,17 +809,16 @@
               </div>
             </div>
           </div>
-          <div style="margin-top: 0.8rem;">
-            <div class="script-label">Working title – “The Shark of Wall Street”</div>
-          </div>
+          <div class="script-label">Working title – “The Shark of Wall Street”</div>
         </div>
       </aside>
     </section>
 
+    <!-- STORY / ORIGIN -->
     <section id="about">
       <h2><span>01</span> · From India to the Street</h2>
       <p class="lead">
-        No Ivy League pedigree. No family fund. Just a person from India obsessed
+        No Ivy League pedigree. No family fund. Just a kid from India obsessed
         with <strong>how money really moves</strong> — ships, trade lanes, interest
         rates, and the quiet decisions that never make the headlines.
       </p>
@@ -900,6 +888,7 @@
       </div>
     </section>
 
+    <!-- FILM / BOOK ARC -->
     <section id="arc">
       <h2><span>02</span> · A Story Built for Screen & Page</h2>
       <p class="lead">
@@ -983,6 +972,7 @@
       </div>
     </section>
 
+    <!-- WORLD TRADE FACTORY -->
     <section id="worldtradefactory">
       <h2><span>03</span> · World Trade Factory: The Engine</h2>
       <p class="lead">
@@ -1029,6 +1019,7 @@
       </div>
     </section>
 
+    <!-- SOCIAL PROOF / TONE -->
     <section>
       <h2><span>04</span> · How People Describe It</h2>
       <p class="lead">
@@ -1072,8 +1063,107 @@
       </div>
     </section>
 
+    <!-- ANDREW JOHNSON -->
+    <section id="andrew">
+      <h2><span>05</span> · Screenplay & Direction – Andrew Johnson</h2>
+      <p class="lead">
+        To bring this story to the screen, <strong>Andrew Johnson</strong>
+        is attached to develop the screenplay and direct the cinematic adaptation of
+        <em>The Shark of Wall Street</em> – pairing Sage’s global macro journey with
+        Andrew’s eye for human stories and grounded, character-driven filmmaking.
+      </p>
+
+      <div class="split" style="margin-top:1.8rem;">
+        <div>
+          <div class="card">
+            <h3>Exploring humanity one frame at a time</h3>
+            <p>
+              Andrew is a working indie director, producer, and screenwriter whose
+              work is centered on <strong>humanity, struggle, and meaning</strong>.
+              His filmmaking journey began in the Pacific Northwest, writing and
+              directing short films, and continued through his time at
+              <strong>Michigan State University</strong>, where he recently graduated.
+            </p>
+            <p style="margin-top:0.6rem;">
+              There, he directed the senior capstone and his latest
+              <strong>award-winning film, “Orientation” (2025)</strong> – a project that
+              showcased his ability to balance grounded realism, character tension,
+              and emotional payoff.
+            </p>
+            <div class="chip-row">
+              <span class="chip">Indie director & screenwriter</span>
+              <span class="chip">Pacific Northwest → MSU</span>
+              <span class="chip">Award-winning film “Orientation”</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Current work: America’s backbone</h3>
+            <p>
+              Andrew is currently developing a <strong>docuseries on blue-collar
+              workers in America</strong>, following the lives of two vibrant
+              personalities in the moving and storage industry. The series
+              focuses on the deep, often unseen stories of the people who keep
+              the country running.
+            </p>
+            <p style="margin-top:0.5rem;">
+              That instinct — to explore real people, real stakes, and the quiet
+              weight of work — is exactly why he’s a fit for a story about a
+              regular person taking on global markets.
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <div class="card">
+            <h3>Why this story, why now</h3>
+            <p>
+              Andrew grew up loving films like <em>Jaws</em> and <em>Star Wars</em>,
+              with a lifelong goal to direct meaningful, original features that
+              leave a mark. He’s drawn to stories where ordinary people are
+              thrown into extraordinary systems — and have to fight for agency.
+            </p>
+            <p style="margin-top:0.5rem;">
+              <em>The Shark of Wall Street</em> gives him a canvas that blends
+              <strong>global macro stakes with intimate, personal evolution</strong>:
+              a kid from India, blue-collar realities, AI and trade, and the
+              emotional cost of refusing to follow the script.
+            </p>
+            <div class="chip-row">
+              <span class="chip">Character-driven drama</span>
+              <span class="chip">Systems vs individuals</span>
+              <span class="chip">Docu-style texture + narrative film</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Screenwriting range</h3>
+            <p>
+              Andrew’s script portfolio spans <strong>fantasy, drama, gritty
+              period action, sports drama, supernatural thriller, and coming-of-age
+              sci-fi</strong>, including projects such as:
+            </p>
+            <ul style="margin-top:0.5rem; padding-left:1.1rem; font-size:0.86rem; color:var(--muted);">
+              <li><strong>Land of Aura: Energy of the Past</strong> – Fantasy adventure</li>
+              <li><strong>Lone</strong> – Last man on earth drama</li>
+              <li><strong>Aborigine</strong> – Gritty tournament-to-the-death period piece</li>
+              <li><strong>Salted Wounds</strong> – Trauma & aspiration through a magician</li>
+              <li><strong>Heart of the Wolf</strong> – Coming-of-age sports drama</li>
+              <li><strong>Beyond the Garden</strong> – Supernatural thriller teleplay</li>
+            </ul>
+            <p style="margin-top:0.6rem;">
+              That range — from intimate drama to mythic stakes — is what he
+              brings to the adaptation of <em>The Shark of Wall Street</em>:
+              grounded yet cinematic, global yet deeply personal.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
     <section id="contact">
-      <h2><span>05</span> · Book / Film & Collaboration</h2>
+      <h2><span>06</span> · Book / Film & Collaboration</h2>
       <p class="lead">
         If you’re a <strong>publisher</strong>, <strong>producer</strong>,
         <strong>investor</strong> or <strong>collaborator</strong> who sees the
@@ -1081,27 +1171,70 @@
         to reach Sage directly.
       </p>
 
+      <div class="contact">
+        <div class="contact-form">
+          <!-- Static form – wire it up to your backend or form service -->
+          <form>
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" name="name" placeholder="Your name" />
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="you@studio.com"
+              />
+            </div>
+            <div class="field">
+              <label for="role">Who are you?</label>
+              <input
+                id="role"
+                name="role"
+                placeholder="Publisher / Producer / Investor / Other"
+              />
+            </div>
+            <div class="field">
+              <label for="message">What are you thinking?</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Tell Sage if you’re thinking book, limited series, docu-style, or something else – and what kind of collaboration you have in mind."
+              ></textarea>
+            </div>
+            <button type="submit" class="btn primary" style="margin-top:0.4rem;">
+              <span class="icon">🦈</span>
+              Submit (static demo)
+            </button>
+            <p style="margin-top:0.6rem; font-size:0.78rem; color:var(--muted);">
+              This form is currently static. Connect it to your preferred form
+              backend (Vercel, Netlify, custom API, etc.) to make it live.
+            </p>
+          </form>
+        </div>
 
         <div class="contact-info">
           <h3>Direct Contact</h3>
           <p>
             Email:
             <a
-              href="mailto:sage@worldtradefactory.com"
+              href="mailto:hello@thesharkofwallstreet.com"
               class="link"
             >
-              sage@worldtradefactory.com
+              hello@thesharkofwallstreet.com
             </a>
           </p>
           <p style="margin-top:0.35rem;">
             LinkedIn:
             <a
-              href="https://www.linkedin.com/in/sajeeshkakkat"
+              href="https://www.linkedin.com/in/skxywtf"
               target="_blank"
               rel="noreferrer"
               class="link"
             >
-              Sage
+              /in/skxywtf
             </a>
           </p>
           <p style="margin-top:0.8rem;">
