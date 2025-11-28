@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" 
-  <meta name="vercel-toolbar" content="false">
+  <meta charset="UTF-8" />
+  <meta name="vercel-toolbar" content="false" />
 
   <title>The Shark of Wall Street | World Trade Factory | Global Markets, Wealth & Trading Story</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -26,7 +26,6 @@
   />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://thesharkofwallstreet.com" />
-  <!-- You can swap this for a real cover image when ready -->
   <meta property="og:image" content="https://thesharkofwallstreet.com/og-image.jpg" />
   <meta property="og:site_name" content="The Shark of Wall Street" />
 
@@ -273,10 +272,9 @@
       display: grid;
       gap: 2rem;
       grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.2fr);
-        align-items: start; /* THIS is important */
-  row-gap: 2rem;
+      align-items: start;
+      row-gap: 2rem;
     }
-
 
     @media (max-width: 900px) {
       .hero {
@@ -341,6 +339,13 @@
       align-items: center;
     }
 
+    .hero-meta {
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+    }
+
     .btn {
       padding: 0.7rem 1.45rem;
       border-radius: 999px;
@@ -377,11 +382,28 @@
       box-shadow: 0 0 22px rgba(34, 211, 238, 0.4);
     }
 
-    .hero-meta {
-      font-size: 0.78rem;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
+    /* HERO POSTER */
+
+    .hero-poster {
+      margin-top: 1.8rem;
+      max-width: 360px;
+      border-radius: 1.2rem;
+      overflow: hidden;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      box-shadow: 0 22px 40px rgba(15, 23, 42, 0.9);
+      background: #020617;
+    }
+
+    .hero-poster img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    @media (max-width: 900px) {
+      .hero-poster {
+        max-width: 100%;
+      }
     }
 
     .hero-card {
@@ -786,12 +808,7 @@
           <span class="eyebrow-dot"></span>
           <span>Based on a true story · In development</span>
         </div>
-    <div class="hero-poster">
-  <img
-    src="sowt.jpg"
-    alt="The Shark of Wall Street teaser poster"
-  />
-</div>
+
         <h1>
           The <span class="highlight">Shark</span> of Wall Street
         </h1>
@@ -808,16 +825,21 @@
             <span class="icon">🎬</span>
             Film / book arc
           </a>
-          <a
-            href="#andrew"
-            class="btn"
-          >
+          <a href="#andrew" class="btn">
             <span class="icon">📝</span>
             Screenplay & direction
           </a>
           <div class="hero-meta">
             <span>Non-fiction · Macro · Wealth & markets</span>
           </div>
+        </div>
+
+        <!-- POSTER IMAGE -->
+        <div class="hero-poster">
+          <img
+            src="sowt.jpg"
+            alt="The Shark of Wall Street teaser poster"
+          />
         </div>
       </div>
 
@@ -1285,7 +1307,9 @@
     <footer>
       <div>
         © <span id="year"></span> The Shark of Wall Street ·
-        <span class="accent">        <a href="https://www.worldtradefactory.ai">World Trade Factory</a></span>
+        <span class="accent">
+          <a href="https://www.worldtradefactory.ai">World Trade Factory</a>
+        </span>
       </div>
       <div class="footer-links">
         <a href="#top">Back to top</a>
