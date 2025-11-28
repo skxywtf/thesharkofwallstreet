@@ -384,21 +384,19 @@
 
     /* HERO POSTER */
 
-    .hero-poster {
-      margin-top: 1.8rem;
-      max-width: 360px;
-      border-radius: 1.2rem;
-      overflow: hidden;
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      box-shadow: 0 22px 40px rgba(15, 23, 42, 0.9);
-      background: #020617;
-    }
+.hero-poster {
+  width: 100%;
+  margin: 1.2rem 0;
+  grid-column: 1 / -1; /* makes it span both columns */
+}
 
-    .hero-poster img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
+.hero-poster img {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  display: block;
+}
+
 
     @media (max-width: 900px) {
       .hero-poster {
