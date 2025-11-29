@@ -3,17 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="vercel-toolbar" content="false" />
+  <meta name="robots" content="index,follow" />
+  <!-- Optional: Search Console HTML verification (easier than DNS) -->
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PWSNJ6D6X9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PWSNJ6D6X9');
+</script>
 
   <title>The Shark of Wall Street | World Trade Factory | Global Markets, Wealth & Trading Story</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="The Shark of Wall Street – the true story of a regular person from India who built World Trade Factory, an AI-driven macro and investing platform, to take on Wall Street’s old playbook in global markets, wealth, stocks and trading."
+    content="The Shark of Wall Street – the true story of a markets-obsessed engineer from India who built World Trade Factory, an AI- and crypto-aware macro and investing platform, to take on Wall Street’s old playbook in global markets, wealth, stocks and trading."
   />
   <meta
     name="keywords"
-    content="The Shark of Wall Street, world trade factory, Sage Kakkat, Sajeesh Kakkat, global markets, wealth, finance, macro investing, stock market, trading, AI investing, economic research, global trade, underdog story, finance book, finance film"
+    content="The Shark of Wall Street, world trade factory, Sage Kakkat, Sajeesh Kakkat, global markets, wealth, finance, macro investing, stock market, trading, AI investing, crypto, bitcoin, digital assets, economic research, global trade, underdog story, finance book, finance film"
   />
+  <meta name="author" content="Sajeesh (Sage) Kakkat" />
 
   <!-- Canonical -->
   <link rel="canonical" href="https://thesharkofwallstreet.com" />
@@ -22,21 +34,31 @@
   <meta property="og:title" content="The Shark of Wall Street | A World Trade Factory Story" />
   <meta
     property="og:description"
-    content="From India to global markets. A regular person builds World Trade Factory and takes on the street with a different trajectory in wealth, finance, stocks and trading."
+    content="From India to global markets. A markets-obsessed engineer builds World Trade Factory and takes on the street with a different trajectory in wealth, AI, crypto, finance, stocks and trading."
   />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://thesharkofwallstreet.com" />
   <meta property="og:image" content="https://thesharkofwallstreet.com/og-image.jpg" />
   <meta property="og:site_name" content="The Shark of Wall Street" />
+  <meta property="og:locale" content="en_US" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="The Shark of Wall Street | World Trade Factory" />
   <meta
     name="twitter:description"
-    content="The true macro and markets story behind World Trade Factory – wealth, finance, stocks, trading and global trade."
+    content="The true macro and markets story behind World Trade Factory – wealth, AI, crypto, stocks, trading and global trade."
   />
   <meta name="twitter:image" content="https://thesharkofwallstreet.com/og-image.jpg" />
+
+  <!-- Google Analytics 4 (replace G-XXXXXXXXXX with your real ID) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -49,7 +71,7 @@
         "name": "Sajeesh (Sage) Kakkat",
         "alternateName": "Sage Kakkat",
         "jobTitle": "Founder & CEO, World Trade Factory",
-        "description": "Founder of World Trade Factory and subject of 'The Shark of Wall Street' – a non-fiction macro, wealth, finance, stocks and trading story from India to global markets.",
+        "description": "Markets-obsessed engineer and founder of World Trade Factory, subject of 'The Shark of Wall Street' – a non-fiction macro, wealth, AI, crypto, stocks and trading story from India to global markets.",
         "url": "https://thesharkofwallstreet.com",
         "sameAs": [
           "https://www.linkedin.com/in/sajeeshkakkat"
@@ -60,7 +82,7 @@
         "@id": "https://thesharkofwallstreet.com/#wtf",
         "name": "World Trade Factory",
         "url": "https://worldtradefactory.com",
-        "description": "World Trade Factory is an AI-augmented macro intelligence and investing platform focused on global trade, wealth, finance, stocks and trading."
+        "description": "World Trade Factory is an AI-augmented macro intelligence and investing platform focused on global trade, wealth, finance, stocks, crypto and trading."
       },
       {
         "@type": "CreativeWork",
@@ -77,6 +99,9 @@
           "trading",
           "macro investing",
           "AI investing",
+          "crypto",
+          "bitcoin",
+          "digital assets",
           "world trade"
         ],
         "inLanguage": "en",
@@ -131,6 +156,18 @@
       max-width: 1120px;
       margin: 0 auto;
       padding: 1.25rem 1.25rem 3rem;
+    }
+
+    /* Try to hide Vercel toolbar overlays (real off switch is in Vercel project settings) */
+    #vercel-toolbar,
+    [data-vercel-toolbar],
+    iframe[title="Vercel Toolbar"],
+    div[id^="vercel-toolbar"],
+    #vercel-badge {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
     }
 
     /* HEADER / NAV */
@@ -282,6 +319,20 @@
       }
     }
 
+    /* POSTER FULL WIDTH ABOVE HERO */
+
+    .hero-poster {
+      width: 100%;
+      margin: 1.5rem 0 0.5rem;
+    }
+
+    .hero-poster img {
+      width: 100%;
+      height: auto;
+      border-radius: 1rem;
+      display: block;
+    }
+
     .eyebrow {
       display: inline-flex;
       align-items: center;
@@ -380,28 +431,6 @@
       border-color: transparent;
       color: #020617;
       box-shadow: 0 0 22px rgba(34, 211, 238, 0.4);
-    }
-
-    /* HERO POSTER */
-
-.hero-poster {
-  width: 100%;
-  margin: 1.2rem 0;
-  grid-column: 1 / -1; /* makes it span both columns */
-}
-
-.hero-poster img {
-  width: 100%;
-  height: auto;
-  border-radius: 1rem;
-  display: block;
-}
-
-
-    @media (max-width: 900px) {
-      .hero-poster {
-        max-width: 100%;
-      }
     }
 
     .hero-card {
@@ -791,6 +820,7 @@
           target="_blank"
           rel="noreferrer"
           class="primary"
+          onclick="gtag('event','click', {event_category:'nav', event_label:'LinkedIn top'});"
         >
           LinkedIn
         </a>
@@ -799,13 +829,14 @@
   </header>
 
   <main>
-            <!-- POSTER IMAGE -->
-        <div class="hero-poster">
-          <img
-            src="Screenshot from 2025-11-28 13-52-52.png"
-            alt="The Shark of Wall Street teaser poster"
-          />
-        </div>
+    <!-- POSTER IMAGE -->
+    <div class="hero-poster">
+      <img
+        src="sowt.jpg"
+        alt="The Shark of Wall Street teaser poster"
+      />
+    </div>
+
     <!-- HERO -->
     <section class="hero" id="top">
       <div>
@@ -818,19 +849,27 @@
           The <span class="highlight">Shark</span> of Wall Street
         </h1>
         <p class="hero-subline">
-          The journey of an <strong>outsider from India</strong> who refused to
+          The journey of a <strong>markets-obsessed engineer from India</strong> who refused to
           accept Wall Street’s script — and began writing a different one with
-          <strong>World Trade Factory</strong>, AI, and a sharper view of how
+          <strong>World Trade Factory</strong>, AI, and a crypto-aware, global view of how
           the world really trades, invests, builds wealth and manages risk across
-          global markets, stocks and trading.
+          stocks, indices, digital assets and macro regimes.
         </p>
 
         <div class="hero-actions">
-          <a href="#arc" class="btn primary">
+          <a
+            href="#arc"
+            class="btn primary"
+            onclick="gtag('event','click', {event_category:'hero', event_label:'Film/book arc'});"
+          >
             <span class="icon">🎬</span>
             Film / book arc
           </a>
-          <a href="#andrew" class="btn">
+          <a
+            href="#andrew"
+            class="btn"
+            onclick="gtag('event','click', {event_category:'hero', event_label:'Screenplay & direction'});"
+          >
             <span class="icon">📝</span>
             Screenplay & direction
           </a>
@@ -838,8 +877,6 @@
             <span>Non-fiction · Macro · Wealth & markets</span>
           </div>
         </div>
-
-
       </div>
 
       <aside class="hero-card">
@@ -1058,8 +1095,8 @@
         Underneath the narrative is a real platform:
         <strong>World Trade Factory</strong> – an AI-augmented, macro-intelligence
         and investing ecosystem built to read the world differently and help
-        serious capital act on it across <strong>equities, indexes, sectors, commodities
-        and global trade-driven strategies</strong>.
+        serious capital act on it across <strong>equities, indexes, sectors, commodities,
+        crypto, digital assets and global trade-driven strategies</strong>.
       </p>
 
       <div class="grid-3">
@@ -1080,7 +1117,7 @@
           <p>
             AI models that digest filings, earnings calls, tariff updates and
             macro reports – surfacing what’s changing, what’s breaking, and
-            what no one is pricing yet across <strong>stocks, sectors, countries and asset classes</strong>.
+            what no one is pricing yet across <strong>stocks, sectors, countries, crypto and other asset classes</strong>.
           </p>
           <div class="tagline">
             Not replacing judgment – amplifying it.
@@ -1260,6 +1297,7 @@
             <a
               href="mailto:filmandrew1@gmail.com"
               class="link"
+              onclick="gtag('event','click', {event_category:'contact', event_label:'Email Andrew'});"
             >
               filmandrew1@gmail.com
             </a>
@@ -1300,7 +1338,8 @@
       long-term investing, macro investing, global macro, world trade, world trade factory,
       portfolio construction, risk management, AI investing, algorithmic insights, global
       equity markets, economic research, capital flows, underdog finance story, non-fiction
-      finance book, finance film, markets, Wall Street, global investors, institutional capital
+      finance book, finance film, markets, Wall Street, global investors, institutional capital,
+      bitcoin, crypto, digital assets, tokenization, Phoenix, New York, Wall Street shark
     </div>
 
     <footer>
@@ -1317,6 +1356,7 @@
           href="https://www.linkedin.com/in/sajeeshkakkat"
           target="_blank"
           rel="noreferrer"
+          onclick="gtag('event','click', {event_category:'footer', event_label:'LinkedIn footer'});"
         >
           LinkedIn
         </a>
