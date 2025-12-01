@@ -808,34 +808,43 @@
         <a href="#contact">Contact</a>
       </div>
       <div class="nav-cta">
-        <a
-          href="https://www.linkedin.com/in/sajeeshkakkat"
-          target="_blank"
-          rel="noreferrer"
-          class="primary"
-          onclick="gtag('event','click', {event_category:'nav', event_label:'LinkedIn top'});"
-        >
-          LinkedIn
-        </a>
+<a
+  href="https://www.linkedin.com/in/sajeeshkakkat"
+  target="_blank"
+  rel="noreferrer"
+  onclick="gtag('event','click', {event_category:'nav', event_label:'LinkedIn top'});"
+  style="
+    background: transparent;
+    color: #c2a347;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 6px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  "
+  onmouseover="this.style.background='rgba(194,163,71,0.1)'"
+  onmouseout="this.style.background='transparent'"
+>
+  LinkedIn
+</a>
+      <!-- 🔊 Audio Play Button (Golden Icon Only) -->
+      <button 
+        onclick="document.getElementById('theme-audio').play()" 
+        style="background: transparent; border: none; font-size: 20px; color: #c2a347; cursor: pointer; padding: 6px; border-radius: 50%; transition: background 0.3s ease;"
+        title="Play Theme Song"
+      >
+        🔊
+      </button>
       </div>
     </nav>
+      <!-- Hidden Audio Player -->
+  <audio id="theme-audio">
+    <source src="https://www.sharkatakk.com/shark.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
   </header>
-<!-- Play Button in Top Right Corner -->
-<!-- Play Button in Top Right Corner -->
-<div style="position: fixed; top: 20px; right: 20px; z-index: 9999;">
-  <button 
-    onclick="document.getElementById('theme-audio').play()" 
-    style="padding: 10px 18px; font-size: 16px; background: #c2a347; color: black; border: none; border-radius: 6px; cursor: pointer; box-shadow: 0 0 10px rgba(0,255,255,0.5);">
-    🔊 Play Theme
-  </button>
-</div>
-
-<!-- Audio Player (hidden) -->
-<audio id="theme-audio">
-  <source src="https://www.sharkatakk.com/shark.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
-
 
 
   <main>
