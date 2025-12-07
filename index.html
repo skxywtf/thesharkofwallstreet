@@ -2,1412 +2,406 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="vercel-toolbar" content="false" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="index,follow" />
 
-  <!-- Google tag (gtag.js) – keep IDs as you’re using them -->
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RTH99L39VB"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-RTH99L39VB');
-</script>
-
-
-
-  <title>The Shark of Wall Street | World Trade Factory | Global Markets, Wealth & Trading Story</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta
-    name="description"
-    content="The Shark of Wall Street – the true story of a markets-obsessed engineer whose life runs through Cairo, holy cities, love, rock ’n’ roll and global markets, ultimately building World Trade Factory, an AI- and crypto-aware macro and investing platform to take on Wall Street’s old playbook."
-  />
-  <meta
-    name="keywords"
-    content="The Shark of Wall Street, world trade factory, Sage Kakkat, Sajeesh Kakkat, global markets, wealth, finance, macro investing, stock market, trading, AI investing, crypto, bitcoin, digital assets, economic research, global trade, travel, rock and roll, underdog story, finance book, finance film"
-  />
-  <meta name="author" content="Sage" />
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://thesharkofwallstreet.com" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="The Shark of Wall Street | A World Trade Factory Story" />
-  <meta
-    property="og:description"
-    content="From Cairo and holy cities to rock bars, data centers and Wall Street. A markets-obsessed engineer builds World Trade Factory and takes on the Street with a different trajectory in wealth, AI, crypto, finance, stocks and trading."
-  />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://thesharkofwallstreet.com" />
-  <meta property="og:image" content="https://thesharkofwallstreet.com/og-image.jpg" />
-  <meta property="og:site_name" content="The Shark of Wall Street" />
-  <meta property="og:locale" content="en_US" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="The Shark of Wall Street | World Trade Factory" />
-  <meta
-    name="twitter:description"
-    content="The true macro and markets story behind World Trade Factory – wealth, AI, crypto, stocks, trading, travel, love, rock ’n’ roll and global trade."
-  />
-  <meta name="twitter:image" content="https://thesharkofwallstreet.com/og-image.jpg" />
-
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Person",
-        "@id": "https://thesharkofwallstreet.com/#sage",
-        "name": "Sajeesh (Sage) Kakkat",
-        "alternateName": "Sage Kakkat",
-        "jobTitle": "Founder & CEO, World Trade Factory",
-        "description": "Markets-obsessed engineer and founder of World Trade Factory, subject of 'The Shark of Wall Street' – a non-fiction macro, wealth, AI, crypto, stocks and trading story that runs through Cairo, holy cities, rock culture and global markets.",
-        "url": "https://thesharkofwallstreet.com",
-        "sameAs": [
-          "https://www.linkedin.com/in/sajeeshkakkat"
-        ]
-      },
-      {
-        "@type": "Organization",
-        "@id": "https://thesharkofwallstreet.com/#wtf",
-        "name": "World Trade Factory",
-        "url": "https://worldtradefactory.com",
-        "description": "World Trade Factory is an AI-augmented macro intelligence and investing platform focused on global trade, wealth, finance, stocks, crypto and trading."
-      },
-      {
-        "@type": "CreativeWork",
-        "@id": "https://thesharkofwallstreet.com/#sharkofwallstreet",
-        "name": "The Shark of Wall Street",
-        "alternateName": "The Shark of Wall Street – A World Trade Factory Story",
-        "author": { "@id": "https://thesharkofwallstreet.com/#sage" },
-        "creator": { "@id": "https://thesharkofwallstreet.com/#sage" },
-        "about": [
-          "global markets",
-          "wealth",
-          "finance",
-          "stock market",
-          "trading",
-          "macro investing",
-          "AI investing",
-          "crypto",
-          "bitcoin",
-          "digital assets",
-          "world trade",
-          "travel",
-          "rock and roll",
-          "love and relationships"
-        ],
-        "inLanguage": "en",
-        "isPartOf": {
-          "@type": "WebSite",
-          "@id": "https://thesharkofwallstreet.com"
-        }
-      }
-    ]
-  }
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RTH99L39VB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RTH99L39VB');
   </script>
 
+  <title>The Shark of Wall Street | True Story & IP Marketplace</title>
+
   <style>
+    /* --- CORE VARIABLES --- */
     :root {
-      --bg: #020617;
-      --bg-alt: #030819;
+      --bg-dark: #020617;
+      --bg-card: #0f172a;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
       --accent: #22d3ee;
-      --accent-soft: rgba(34, 211, 238, 0.16);
       --accent-warm: #facc15;
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-      --border-subtle: rgba(148, 163, 184, 0.35);
-      --card-bg: rgba(15, 23, 42, 0.96);
-      --card-soft: rgba(15, 23, 42, 0.9);
-      --danger: #f97373;
+      --danger: #ef4444;
+      --border: rgba(148, 163, 184, 0.15);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; outline: none; }
+    #vercel-toolbar, [data-vercel-toolbar] { display: none !important; }
 
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-        "Inter", "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at top, #020617 0, #020617 40%, #000 100%),
-        linear-gradient(to bottom, #020617, #000);
-      color: var(--text);
-      min-height: 100vh;
+      background-color: var(--bg-dark);
+      background-image: radial-gradient(circle at 50% 0%, #1e293b 0%, #020617 70%);
+      color: var(--text-main);
+      font-family: system-ui, -apple-system, sans-serif;
       line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { text-decoration: none; color: inherit; transition: color 0.2s; }
 
-    main {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 1.25rem 1.25rem 3rem;
-    }
+    /* --- LAYOUT --- */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+    .uppercase { text-transform: uppercase; letter-spacing: 0.08em; }
 
-    /* Try to hide Vercel toolbar overlays (real off switch is in Vercel project settings) */
-    #vercel-toolbar,
-    [data-vercel-toolbar],
-    iframe[title="Vercel Toolbar"],
-    div[id^="vercel-toolbar"],
-    #vercel-badge {
-      display: none !important;
-      visibility: hidden !important;
-      opacity: 0 !important;
-      pointer-events: none !important;
-    }
-
-    /* HEADER / NAV */
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 40;
-      backdrop-filter: blur(16px);
-      background: linear-gradient(
-        to bottom,
-        rgba(2, 6, 23, 0.96),
-        rgba(2, 6, 23, 0.82),
-        transparent
-      );
-      border-bottom: 1px solid rgba(15, 23, 42, 0.8);
-    }
-
-    .nav {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 0.75rem 1.25rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1.5rem;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-size: 0.8rem;
-    }
-
-    .logo-icon {
-      width: 32px;
-      height: 32px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.55);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: radial-gradient(circle at 30% 0, #22d3ee 0, #0f172a 45%, #020617 100%);
-      box-shadow: 0 0 12px rgba(34, 211, 238, 0.28);
-      font-size: 1.05rem;
-    }
-
-    .logo-sub {
-      font-size: 0.68rem;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 0.9rem;
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--muted);
-    }
-
-    .nav-links a {
-      position: relative;
-      padding-bottom: 0.15rem;
-      opacity: 0.86;
-    }
-
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0;
-      height: 1px;
-      background: linear-gradient(to right, var(--accent), var(--accent-warm));
-      transition: width 0.18s ease-out;
-      opacity: 0.9;
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    .nav-cta {
-      display: flex;
-      gap: 0.6rem;
-      align-items: center;
-    }
-
-    .nav-cta a {
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.55);
-      padding: 0.35rem 0.85rem;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--muted);
-      background: radial-gradient(circle at top left, rgba(34, 211, 238, 0.08), transparent);
-      opacity: 0.9;
-    }
-
-    .nav-cta a.primary {
-      border-color: transparent;
-      background: linear-gradient(125deg, var(--accent), var(--accent-warm));
-      color: #020617;
-      font-weight: 600;
-      box-shadow: 0 0 16px rgba(34, 211, 238, 0.35);
-    }
-
-    @media (max-width: 900px) {
-      header {
-        position: static;
-      }
-
-      .nav {
-        padding-inline: 1.1rem;
-      }
-
-      main {
-        padding-inline: 1.1rem;
-      }
-
-      .nav-links {
-        display: none;
-      }
-    }
-
-    /* HERO */
-
-    .hero {
-      padding-top: 2.3rem;
-      padding-bottom: 2.3rem;
-      display: grid;
-      gap: 2rem;
-      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.2fr);
-      align-items: start;
-      row-gap: 2rem;
-    }
-
-    @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    /* POSTER FULL WIDTH ABOVE HERO */
-
-    .hero-poster {
-      width: 100%;
-      margin: 1.5rem 0 0.5rem;
-    }
-
-    .hero-poster img {
-      width: 100%;
-      height: auto;
-      border-radius: 1rem;
-      display: block;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.22rem 0.6rem;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.95);
-      border: 1px solid rgba(148, 163, 184, 0.56);
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--muted);
-      margin-bottom: 0.9rem;
-    }
-
-    .eyebrow-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 35% 0, #22d3ee, #0ea5e9);
-      box-shadow: 0 0 10px rgba(34, 211, 238, 0.75);
-    }
-
-    .hero h1 {
-      font-size: clamp(2.3rem, 4vw, 3.1rem);
-      line-height: 1.08;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    .hero h1 span.highlight {
-      background: linear-gradient(120deg, #e5e7eb, #facc15);
-      -webkit-background-clip: text;
-      color: transparent;
-      text-shadow: 0 0 12px rgba(234, 179, 8, 0.28);
-    }
-
-    .hero-subline {
-      margin-top: 0.9rem;
-      font-size: 0.96rem;
-      color: var(--muted);
-      max-width: 40rem;
-    }
-
-    .hero-subline strong {
-      color: var(--accent);
-      font-weight: 500;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.85rem;
-      margin-top: 1.7rem;
-      align-items: center;
-    }
-
-    .hero-meta {
-      font-size: 0.78rem;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-    }
-
-    .btn {
-      padding: 0.7rem 1.45rem;
-      border-radius: 999px;
-      font-size: 0.82rem;
-      font-weight: 500;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      border: 1px solid rgba(148, 163, 184, 0.9);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      cursor: pointer;
-      background: radial-gradient(circle at top left, rgba(34, 211, 238, 0.12), #020617);
-      transition: transform 0.12s ease-out, box-shadow 0.12s ease-out,
-        border-color 0.12s ease-out, background 0.12s ease-out, opacity 0.12s;
-      opacity: 0.96;
-    }
-
-    .btn span.icon {
-      font-size: 1.05rem;
-    }
-
-    .btn:hover {
-      transform: translateY(-1px);
-      border-color: var(--accent);
-      box-shadow: 0 0 16px rgba(34, 211, 238, 0.28);
-      opacity: 1;
-    }
-
-    .btn.primary {
-      background: linear-gradient(130deg, var(--accent), var(--accent-warm));
-      border-color: transparent;
-      color: #020617;
-      box-shadow: 0 0 22px rgba(34, 211, 238, 0.4);
-    }
-
-    .hero-card {
-      position: relative;
-      border-radius: 1.4rem;
-      padding: 1.4rem 1.5rem;
-      background: radial-gradient(circle at 0 0, rgba(34, 211, 238, 0.15), transparent 55%),
-        var(--card-bg);
-      border: 1px solid rgba(148, 163, 184, 0.55);
-      box-shadow: 0 26px 50px rgba(15, 23, 42, 0.85);
-      overflow: hidden;
-    }
-
-    .hero-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(
-        circle at 50% 0,
-        rgba(15, 23, 42, 0) 0,
-        rgba(15, 23, 42, 0.85) 42%,
-        rgba(15, 23, 42, 1) 100%
-      );
-      pointer-events: none;
-      opacity: 0.9;
-    }
-
-    .hero-card-inner {
-      position: relative;
-      z-index: 1;
-    }
-
-    .badge-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
+    /* --- TYPOGRAPHY --- */
+    h1 {
+      font-size: clamp(2.5rem, 5vw, 3.8rem);
+      line-height: 1.1;
+      font-weight: 800;
       margin-bottom: 1rem;
-      font-size: 0.7rem;
+      color: #fff;
     }
-
-    .pill {
-      padding: 0.2rem 0.6rem;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.7);
-      background: rgba(15, 23, 42, 0.96);
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--muted);
-    }
-
-    .pill.accent {
-      border-color: transparent;
-      background: rgba(34, 211, 238, 0.08);
-      color: var(--accent);
-    }
-
-    .hero-quote {
-      font-size: 0.9rem;
-      color: #e5e7eb;
-      margin-bottom: 0.9rem;
-    }
-
-    .hero-quote em {
-      font-style: normal;
-      color: var(--accent-warm);
-    }
-
-    .stat-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 0.7rem;
-      margin-top: 0.7rem;
-      font-size: 0.76rem;
-    }
-
-    @media (max-width: 600px) {
-      .stat-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    .stat {
-      padding: 0.75rem 0.75rem;
-      border-radius: 0.9rem;
-      border: 1px solid rgba(148, 163, 184, 0.42);
-      background: var(--card-soft);
-    }
-
-    .stat-label {
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--muted);
-      font-size: 0.68rem;
-      margin-bottom: 0.25rem;
-    }
-
-    .stat-value {
-      font-size: 0.9rem;
-      font-weight: 600;
-    }
-
-    .stat-value span {
-      color: var(--accent);
-    }
-
-    .script-label {
-      display: inline-block;
-      margin-top: 0.7rem;
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--muted);
-      opacity: 0.9;
-    }
-
-    /* SECTIONS */
-
-    section {
-      margin-top: 3.2rem;
-      padding-top: 0.4rem;
-      border-top: 1px solid rgba(15, 23, 42, 0.85);
-    }
-
-    section:first-of-type {
-      border-top: none;
-    }
-
-    section h2 {
-      font-size: 1.4rem;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: #e5e7eb;
-      margin-bottom: 0.75rem;
-    }
-
-    section h2 span {
-      background: linear-gradient(120deg, var(--accent), var(--accent-warm));
+    h1 span {
+      background: linear-gradient(135deg, #fff 0%, var(--accent-warm) 100%);
       -webkit-background-clip: text;
       color: transparent;
     }
-
-    section p.lead {
-      color: var(--muted);
-      max-width: 40rem;
-      font-size: 0.92rem;
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      border-left: 4px solid var(--accent);
+      padding-left: 1rem;
+      color: #fff;
     }
+    p { color: var(--text-muted); margin-bottom: 1.2rem; font-size: 1rem; }
+    strong { color: #e2e8f0; font-weight: 600; }
 
-    .split {
-      display: grid;
-      gap: 1.6rem;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      margin-top: 1.5rem;
+    /* --- NAV --- */
+    nav {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(16px); background: rgba(2, 6, 23, 0.85);
+      border-bottom: 1px solid var(--border); padding: 1rem 0;
     }
+    .nav-inner { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-weight: 700; font-size: 0.9rem; display: flex; align-items: center; gap: 0.6rem; }
+    .logo-icon { font-size: 1.4rem; }
+    .nav-buttons { display: flex; gap: 0.8rem; }
 
-    @media (max-width: 900px) {
-      .split {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    .card {
-      border-radius: 1.1rem;
-      padding: 1.25rem 1.2rem;
-      background: var(--card-bg);
-      border: 1px solid rgba(148, 163, 184, 0.55);
-    }
-
-    .card + .card {
-      margin-top: 0.8rem;
-    }
-
-    .card h3 {
-      font-size: 0.96rem;
-      margin-bottom: 0.25rem;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
-
-    .card p {
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    .chip-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-top: 0.8rem;
-    }
-
-    .chip {
-      padding: 0.18rem 0.6rem;
+    .btn-nav {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 0.4rem 0.9rem;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      font-size: 0.72rem;
-      color: var(--muted);
-      background: rgba(15, 23, 42, 0.96);
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1rem;
-      margin-top: 1.5rem;
-    }
-
-    @media (max-width: 900px) {
-      .grid-3 {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    .tagline {
-      font-size: 0.82rem;
-      color: var(--muted);
-      margin-top: 0.45rem;
-    }
-
-    .timeline {
-      margin-top: 1.4rem;
-      border-radius: 1.1rem;
-      border: 1px dashed rgba(148, 163, 184, 0.6);
-      padding: 1.1rem 1.2rem;
-      background: linear-gradient(to right, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.9));
-      font-size: 0.88rem;
-    }
-
-    .timeline-step {
-      display: grid;
-      grid-template-columns: auto minmax(0, 1fr);
-      gap: 0.65rem;
-      padding-block: 0.4rem;
-    }
-
-    .timeline-step span.bullet {
-      margin-top: 0.25rem;
-      width: 9px;
-      height: 9px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 40% 0, var(--accent), #0ea5e9);
-      box-shadow: 0 0 10px rgba(34, 211, 238, 0.9);
-    }
-
-    .timeline-step strong {
-      display: block;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: #e5e7eb;
-      margin-bottom: 0.15rem;
-    }
-
-    .timeline-step p {
-      color: var(--muted);
-    }
-
-    .testimonials {
-      margin-top: 1.4rem;
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1rem;
-      font-size: 0.85rem;
-    }
-
-    @media (max-width: 900px) {
-      .testimonials {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    .quote-card {
-      border-radius: 1.1rem;
-      padding: 1rem 1rem;
-      background: var(--card-bg);
-      border: 1px solid rgba(148, 163, 184, 0.5);
-    }
-
-    .quote-card p {
-      color: var(--muted);
-    }
-
-    .quote-card-footer {
-      margin-top: 0.7rem;
-      font-size: 0.78rem;
-      color: #9ca3af;
-    }
-
-    .quote-card-footer span.role {
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      font-size: 0.72rem;
-      color: var(--accent);
-    }
-
-    /* CONTACT / ANDREW */
-
-    .contact {
-      margin-top: 1.7rem;
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-      gap: 1.6rem;
-    }
-
-    @media (max-width: 900px) {
-      .contact {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    .contact-info {
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    .contact-info h3 {
-      font-size: 0.95rem;
-      color: #e5e7eb;
-      margin-bottom: 0.4rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-    }
-
-    .contact-info a.link {
-      color: var(--accent);
-      text-decoration: none;
-      border-bottom: 1px dotted rgba(34, 211, 238, 0.7);
-    }
-
-    .meta-note {
-      font-size: 0.8rem;
-      color: var(--muted);
-      margin-top: 0.6rem;
-    }
-
-    /* FOOTER */
-
-    footer {
-      border-top: 1px solid rgba(15, 23, 42, 0.9);
-      margin-top: 3rem;
-      padding-top: 1.2rem;
-      padding-bottom: 0.7rem;
-      font-size: 0.78rem;
-      color: var(--muted);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    footer span.accent {
-      color: var(--accent);
-    }
-
-    footer .footer-links {
-      display: flex;
-      gap: 0.9rem;
-    }
-
-    footer .footer-links a {
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
       font-size: 0.7rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex; align-items: center; gap: 0.4rem;
+      transition: all 0.2s;
+    }
+    .btn-nav:hover { border-color: var(--accent); color: #fff; }
+
+    /* Active States */
+    .btn-nav.playing-rock { border-color: var(--danger); color: var(--danger); background: rgba(239, 68, 68, 0.1); }
+    .btn-nav.playing-theme { border-color: var(--accent-warm); color: var(--accent-warm); background: rgba(250, 204, 21, 0.1); }
+
+    /* --- HERO --- */
+    .hero { padding: 4rem 0; display: grid; grid-template-columns: 1.4fr 1fr; gap: 3rem; align-items: center; }
+    @media (max-width: 900px) { .hero { grid-template-columns: 1fr; } }
+
+    .tag-row { display: flex; gap: 0.6rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+    .tag {
+      font-size: 0.7rem; padding: 0.2rem 0.6rem;
+      border: 1px solid var(--border); border-radius: 4px;
+      color: var(--accent); background: rgba(34, 211, 238, 0.05);
+    }
+    .poster-wrapper {
+      position: relative; border-radius: 1rem; overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.1);
+    }
+    .poster-wrapper img { width: 100%; display: block; }
+
+    /* --- SECTIONS --- */
+    .section-dark { padding: 4rem 0; border-top: 1px solid var(--border); }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    @media (max-width: 800px) { .grid-3 { grid-template-columns: 1fr; } }
+
+    .story-card { background: var(--bg-card); padding: 1.5rem; border-radius: 0.8rem; border: 1px solid var(--border); }
+    .story-card h3 { font-size: 1rem; color: #fff; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em; }
+
+    /* --- ASK --- */
+    .split-ask { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; }
+    @media (max-width: 800px) { .split-ask { grid-template-columns: 1fr; } }
+
+    .ask-card {
+      background: linear-gradient(160deg, #0f172a 0%, #1e293b 100%);
+      padding: 2rem; border-radius: 1rem; border: 1px solid var(--border);
+    }
+    .ask-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+    .ask-title { font-size: 1.2rem; font-weight: 700; color: #fff; }
+    .comp-title {
+      font-family: serif; font-style: italic; color: var(--accent-warm);
+      font-size: 1.1rem; margin: 1rem 0; padding-left: 1rem; border-left: 2px solid var(--accent-warm);
+    }
+
+    /* --- CONTACT --- */
+    .contact-section {
+      text-align: center; padding: 4rem 0; border-top: 1px solid var(--border);
+      background: radial-gradient(circle at center, #1e293b 0%, #020617 70%);
+    }
+    .cta-btn {
+      display: inline-block; background: var(--accent); color: #020617; font-weight: 700;
+      padding: 1rem 2.5rem; border-radius: 999px; margin-top: 1.5rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 0 20px rgba(34, 211, 238, 0.4); }
+
+    /* --- GHOST PLAYER (Invisible but active) --- */
+    #ghost-player-wrapper {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      width: 1px;
+      height: 1px;
+      opacity: 0.01; /* Must not be 0 or display:none */
+      pointer-events: none;
+      z-index: 999;
     }
   </style>
 </head>
 <body>
-  <header>
-    <nav class="nav">
+
+  <nav>
+    <div class="container nav-inner">
       <div class="logo">
-        <div class="logo-icon">🦈</div>
-        <div>
-          <div>The Shark of Wall Street</div>
-          <div class="logo-sub">A world trade factory story</div>
-        </div>
+        <span class="logo-icon">🦈</span>
+        <span class="uppercase">The Shark of Wall Street</span>
       </div>
-      <div class="nav-links">
-        <a href="#about">Story</a>
-        <a href="#arc">Film / Book</a>
-        <a href="#worldtradefactory">World Trade Factory</a>
-        <a href="#andrew">Director</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <div class="nav-cta">
-<a
-  href="https://www.linkedin.com/in/sajeeshkakkat"
-  target="_blank"
-  rel="noreferrer"
-  onclick="gtag('event','click', {event_category:'nav', event_label:'LinkedIn top'});"
-  style="
-    background: transparent;
-    color: #c2a347;
-    border: none;
-    font-size: 12px;
-    cursor: pointer;
-    padding: 6px 10px;
-    border-radius: 4px;
-    text-decoration: none;
-    transition: background 0.3s ease;
-  "
-  onmouseover="this.style.background='rgba(194,163,71,0.1)'"
-  onmouseout="this.style.background='transparent'"
->
-  LinkedIn
-</a>
-      <!-- 🔊 Audio Play Button (Golden Icon Only) -->
-      <button 
-        onclick="document.getElementById('theme-audio').play()" 
-        style="background: transparent; border: none; font-size: 12px; color: #c2a347; cursor: pointer; padding: 6px; border-radius: 50%; transition: background 0.3s ease;"
-        title="Play Theme Song"
-      >
-        🔊 Play Theme
-      </button>
-      </div>
-    </nav>
-      <!-- Hidden Audio Player -->
-  <audio id="theme-audio">
-    <source src="https://www.sharkatakk.com/api/track" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
-  </header>
+
+      <div class="nav-buttons">
+        <a href="https://www.linkedin.com/in/sajeeshkakkat" target="_blank" class="btn-nav uppercase">LinkedIn</a>
 
 
-  <main>
-    <!-- POSTER IMAGE -->
-    <div class="hero-poster">
-      <img
-        src="sowt.png"
-        alt="The Shark of Wall Street teaser poster"
-      />
+
+        <button id="btn-theme" onclick="playTheme()" class="btn-nav uppercase">
+          🔊 <span id="txt-theme">Theme</span>
+        </button>
+      </div>
     </div>
+  </nav>
 
-    <!-- HERO -->
-    <section class="hero" id="top">
-      <div>
-        <div class="eyebrow">
-          <span class="eyebrow-dot"></span>
-          <span>Based on a true story · In development</span>
-        </div>
-
-        <h1>
-          The <span class="highlight">Shark</span> of Wall Street
-        </h1>
-        <p class="hero-subline">
-          The journey of a <strong>markets-obsessed engineer from India</strong> whose life has run
-          through <strong>Cairo classrooms, holy cities, engineering hostels, rock bars and trading floors</strong> –
-          folding love, movies and loud rock ’n’ roll into one escalating obsession:
-          decoding how power, money and risk actually move. Out of that chaos comes
-          <strong>World Trade Factory</strong>, AI, and a crypto-aware, global view of how the world trades,
-          invests, builds wealth and navigates shocks across stocks, indices, digital assets and macro regimes.
-        </p>
-
-        <div class="hero-actions">
-          <a
-            href="#arc"
-            class="btn primary"
-            onclick="gtag('event','click', {event_category:'hero', event_label:'Film/book arc'});"
-          >
-            <span class="icon">🎬</span>
-            Film / book arc
-          </a>
-          <a
-            href="#andrew"
-            class="btn"
-            onclick="gtag('event','click', {event_category:'hero', event_label:'Screenplay & direction'});"
-          >
-            <span class="icon">📝</span>
-            Screenplay & direction
-          </a>
-          <div class="hero-meta">
-            <span>Non-fiction · Macro · Wealth, love & markets</span>
-          </div>
-        </div>
+  <header class="container hero">
+    <div>
+      <div class="tag-row">
+        <span class="tag uppercase">True Story</span>
+        <span class="tag uppercase">Global Macro</span>
+        <span class="tag uppercase">Memoir</span>
       </div>
 
-      <aside class="hero-card">
-        <div class="hero-card-inner">
-          <div class="badge-row">
-            <span class="pill accent">True story</span>
-            <span class="pill">Cairo → holy cities → global markets</span>
-            <span class="pill">Macro · AI · Underdog</span>
-          </div>
-          <p class="hero-quote">
-            “If Wall Street is where the movie plays, world trade is where the
-            plot is written. I wasn’t born into any of it – I just refused to
-            look away.”
-          </p>
-          <p style="font-size:0.8rem; color:var(--muted); margin-top:0.45rem;">
-            This is the ongoing story of an outsider who grew up oceans away from the
-            Street, carried temples, pyramids, rock concerts, cinema screens and
-            messy nights in his head, built World Trade Factory from scratch, and
-            started calling out a different trajectory for markets, wealth creation,
-            investing and trading.
-          </p>
+      <h1>The <span style="color:var(--accent)">Shark</span> of<br>Wall Street</h1>
 
-          <div class="stat-grid">
-            <div class="stat">
-              <div class="stat-label">Origin</div>
-              <div class="stat-value">
-                <span>Cairo, Agra, Nasik, Allahabad, Gaya</span>
-              </div>
-            </div>
-            <div class="stat">
-              <div class="stat-label">Field</div>
-              <div class="stat-value">
-                Global <span>markets, finance & macro</span>
-              </div>
-            </div>
-            <div class="stat">
-              <div class="stat-label">Engine</div>
-              <div class="stat-value">
-                <span>World Trade Factory</span> · AI · Crypto
-              </div>
-            </div>
-          </div>
-          <div class="script-label">Working title · “The Shark of Wall Street”</div>
-        </div>
-      </aside>
-    </section>
-
-    <!-- STORY / ORIGIN -->
-    <section id="about">
-      <h2><span>01</span> · From Cairo, holy cities & rock bars to the Street</h2>
-      <p class="lead">
-        Kindergarten in <strong>Cairo</strong> under the shadow of the <strong>Pyramids and the Sphinx</strong>.
-        Childhood stretched across <strong>Agra, Nasik, Allahabad, Gaya</strong> – temples, holy rivers, crowded trains,
-        incense and chaos. Then <strong> engineering hostels</strong> full of drum kits, bootleg rock,
-        late-night movies, first real love, sex, experimentation, booze and arguments about the future.
-        Underneath it all: an obsessive, sharpening question about <strong>who actually moves the world’s money</strong>.
+      <p style="font-size:1.1rem; color:#e2e8f0; margin-bottom:1.5rem;">
+        The true story of a <strong>markets-obsessed engineer</strong> whose life runs through Cairo classrooms, holy cities, rock clubs, and trading floors.
       </p>
 
-      <div class="split" style="margin-top:1.7rem;">
-        <div>
-          <div class="card">
-            <h3>Irregular curiosity in holy and noisy places</h3>
-            <p>
-              While most people watched grades and gossip, Sage was tracking the boring lines:
-              shipping routes, deficits, currency moves, balance of payments, who owed whom.
-              Mornings could be temple bells or school bells; nights were often guitars, clubs, cinema
-              and conversations that went way past when they should have ended.
-            </p>
-            <p style="margin-top:0.6rem;">
-              The question wouldn’t let go:
-              <strong>“Who quietly sets the price of everyone’s future?”</strong>
-              The answer clearly wasn’t just “Wall Street.” It was central banks, ports, data centers,
-              energy flows, code, and a global system that rewards those who see it early.
-            </p>
-            <div class="chip-row">
-              <span class="chip">Cairo classrooms</span>
-              <span class="chip">Holy cities</span>
-              <span class="chip">Engineering hostels</span>
-              <span class="chip">Rock, love & bad decisions</span>
-            </div>
-          </div>
-
-          <div class="card">
-            <h3>From Bangalore to Vienna, New York, Austin</h3>
-            <p>
-              Work and life pull him through <strong>Bangalore, Vienna, New York, Austin</strong> –
-              days in tech and finance, nights split between spreadsheets, scripts, live music,
-              relationships that mattered and some that burned fast.
-            </p>
-            <p style="margin-top:0.5rem;">
-              Travel adds more layers: <strong>Argentina, Mexico, Russia, Germany, Spain, Portugal</strong>.
-              Markets stop being abstract charts and start becoming <strong>streets, ports, people, currency windows,
-              empty shops and full bars</strong>. Every city adds another data point to the same thesis:
-              the official story and the real story are rarely the same.
-            </p>
-            <div class="chip-row">
-              <span class="chip">Vienna trams</span>
-              <span class="chip">NYC subway & Wall Street</span>
-              <span class="chip">Austin freeways & backroads</span>
-              <span class="chip">Latin America & Europe</span>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <div class="card">
-            <h3>Love, excess & the shark waking up</h3>
-            <p>
-              The “Shark of Wall Street” isn’t a cartoon villain. It’s the version of you that
-              emerges when <strong>love, heartbreak, desire, addiction to risk, music, film and adrenaline</strong>
-              collide with a very sober understanding of how fragile life and money really are.
-            </p>
-            <p style="margin-top:0.7rem;">
-              The story doesn’t sanitize the rough edges — <strong>love and sex, booze and rock ’n’ roll,
-              late-night trading, compulsive replays of favourite films</strong> — but it doesn’t glamorize them either.
-              They’re the accelerants poured onto an already obsessive mind, pushing him toward a simple decision:
-              stop drifting inside other people’s systems and <strong>build a new one</strong>.
-            </p>
-            <div class="chip-row">
-              <span class="chip">Love & fallout</span>
-              <span class="chip">booze & recovery</span>
-              <span class="chip">Rock & cinema</span>
-              <span class="chip">Macro awakening</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FILM / BOOK ARC -->
-    <section id="arc">
-      <h2><span>02</span> · A Story Built for Screen, Page & Soundtrack</h2>
-      <p class="lead">
-        <strong>The Shark of Wall Street</strong> is built as a high-velocity
-        <strong>non-fiction book</strong> and a <strong>cinematic arc</strong> – cutting between
-        <strong>holy cities, rock clubs, relationships, booze, travel, and real trades</strong> in modern finance.
-        It’s not a slow burn; it’s a series of phases that keep colliding until something new has to be built.
+      <p>
+        Folding love, movies, and loud rock 'n' roll into one escalating obsession: decoding how power, money, and risk actually move. Out of that chaos comes <strong>World Trade Factory</strong>—an AI engine built to take on Wall Street's old playbook.
       </p>
 
-      <div class="grid-3">
-        <div class="card">
-          <h3>Act I · Cairo, holy cities, engineering chaos</h3>
-          <p>
-            Pyramids and prayer, Ganges ghats and school uniforms. Then engineering in Bangalore:
-            cramped rooms, loud speakers, friendships, love, near-misses, first brushes
-            with booze and reckless nights soundtracked by rock and movies.
-          </p>
-          <div class="tagline">
-            Tone: kinetic, sensory, funny and a little dangerous.
-          </div>
-        </div>
-        <div class="card">
-          <h3>Act II · Cities, careers & World Trade Factory</h3>
-          <p>
-            Bangalore, Vienna, New York, Austin. Jobs that look stable on LinkedIn,
-            but the real story is the Google Docs, night trades, notebooks and dashboards
-            called “World Trade Factory” before anyone else cares. Love and work both
-            demanding more than they give; something has to give.
-          </p>
-          <div class="tagline">
-            Tone: builder energy, emotional stakes, repeated failure and sharper conviction.
-          </div>
-        </div>
-        <div class="card">
-          <h3>Act III · Taking on the Street</h3>
-          <p>
-            The fun of chaos becomes the weight of consequence. Trades are bigger.
-            Calls go against consensus. Saying “no” to safe paths, “no” to comfortable
-            lies, and “yes” to a life where AI, crypto, macro and human messiness
-            all feed the same engine.
-          </p>
-          <div class="tagline">
-            Tone: high stakes, grown-up choices, no backup plan.
-          </div>
-        </div>
-      </div>
-
-      <div class="timeline">
-        <div class="timeline-step">
-          <span class="bullet"></span>
-          <div>
-            <strong>Structure</strong>
-            <p>
-              A tight, high-velocity narrative that jumps between
-              <strong>personal scenes (love, addiction, music, travel), macro events, and live trades</strong> –
-              showing how each city, relationship and bad night leaves a mark on the way risk is read and capital is deployed.
-            </p>
-          </div>
-        </div>
-        <div class="timeline-step">
-          <span class="bullet"></span>
-          <div>
-            <strong>Visual language</strong>
-            <p>
-              Pyramids and holy rivers. Engineering dorm corridors at 3 a.m.
-              Neon clubs in Bangalore and Vienna. New York subways, Austin freeways.
-              Trading screens, AI dashboards, arguments in small apartments,
-              silence in airports after losses, rooftop conversations after big calls.
-            </p>
-          </div>
-        </div>
-        <div class="timeline-step">
-          <span class="bullet"></span>
-          <div>
-            <strong>Emotional core</strong>
-            <p>
-              A simple question: can one person, with no safety net, no dynasty and no clean,
-              polished origin story, really bend the trajectory of how serious capital sees the world?
-              And what does it cost in <strong>love, health, sanity and time</strong> to even try?
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- WORLD TRADE FACTORY -->
-    <section id="worldtradefactory">
-      <h2><span>03</span> · World Trade Factory: The Engine</h2>
-      <p class="lead">
-        Underneath the narrative is a real platform:
-        <strong>World Trade Factory</strong> – an AI-augmented, macro-intelligence
-        and investing ecosystem built to read the world differently and help
-        serious capital act on it across <strong>equities, indexes, sectors, commodities,
-        crypto, digital assets and global trade-driven strategies</strong>.
-      </p>
-
-      <div class="grid-3">
-        <div class="card">
-          <h3>Macro & trade intelligence</h3>
-          <p>
-            Global trade flows, FDI, credit conditions, policy shifts, and
-            real-economy indicators stitched into one living view of where the
-            world is actually heading — and what that means for <strong>stock markets,
-            wealth allocation and portfolio construction</strong>.
-          </p>
-          <div class="tagline">
-            Less noise. More structure. Fewer surprises.
-          </div>
-        </div>
-        <div class="card">
-          <h3>AI & LLM research stack</h3>
-          <p>
-            AI models that digest filings, earnings calls, tariff updates and
-            macro reports – surfacing what’s changing, what’s breaking, and
-            what no one is pricing yet across <strong>stocks, sectors, countries, crypto and other asset classes</strong>.
-          </p>
-          <div class="tagline">
-            Not replacing judgment – amplifying it.
-          </div>
-        </div>
-        <div class="card">
-          <h3>Built by an outsider</h3>
-          <p>
-            No committee. No legacy stack. Just a founder designing an engine
-            he wishes existed when he started out: transparent, sharp, and
-            relentlessly global in how it reads <strong>wealth, finance, risk and opportunity</strong> –
-            informed by everything from holy sites and hostel nights to trading floors and film scripts.
-          </p>
-          <div class="tagline">
-            From Cairo and holy cities to Phoenix, New York and the world.
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SOCIAL PROOF / TONE -->
-    <section>
-      <h2><span>04</span> · How People Describe It</h2>
-      <p class="lead">
-        The reactions so far aren’t about hype – they’re about recognition.
-        People see a story they don’t usually get: <strong>no inherited edge,
-        no safety net, just compounding work in markets, relationships, art,
-        and the messy reality of trying to build something new</strong>.
-      </p>
-
-      <div class="testimonials">
-        <div class="quote-card">
-          <p>
-            “It feels like if Moneyball, a macro journal, a travel diary and a
-            coming-of-age rock film were smashed together around one person’s
-            obsession with trade and markets.”
-          </p>
-          <div class="quote-card-footer">
-            Early reader<br />
-            <span class="role">Investor & builder</span>
-          </div>
-        </div>
-        <div class="quote-card">
-          <p>
-            “Most finance stories start inside the system. This one starts far
-            outside of it – in Cairo, holy cities, engineering chaos and clubs –
-            and that’s exactly why it’s interesting.”
-          </p>
-          <div class="quote-card-footer">
-            Producer contact<br />
-            <span class="role">Film & series</span>
-          </div>
-        </div>
-        <div class="quote-card">
-          <p>
-            “It doesn’t glamorize anything. It shows the fun, the damage, the doubt,
-            the addiction to action, and the small, disciplined decisions that
-            eventually become something nobody can ignore.”
-          </p>
-          <div class="quote-card-footer">
-            Friend & collaborator<br />
-            <span class="role">Long-time observer</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ANDREW JOHNSON -->
-    <section id="andrew">
-      <h2><span>05</span> · Screenplay & Direction · Andrew Johnson</h2>
-      <p class="lead">
-        To bring this story to the screen, <strong>Andrew Johnson</strong>
-        is attached to develop the screenplay and direct the cinematic adaptation of
-        <em>The Shark of Wall Street</em> – pairing the world trade and macro story
-        with an eye for grounded, character-driven filmmaking that doesn’t flinch
-        from love, rock ’n’ roll and the cost of ambition.
-      </p>
-
-      <div class="split" style="margin-top:1.7rem;">
-        <div>
-          <div class="card">
-            <h3>Exploring humanity one frame at a time</h3>
-            <p>
-              Andrew is a working indie director, producer, and screenwriter whose
-              work is centered on <strong>humanity, struggle, and meaning</strong>.
-              His filmmaking journey began in the Pacific Northwest, writing and
-              directing short films, and continued through his time at
-              <strong>Michigan State University</strong>, where he recently graduated.
-            </p>
-            <p style="margin-top:0.6rem;">
-              There, he directed the senior capstone and his latest
-              <strong>award-winning film, “Orientation” (2025)</strong> – a project that
-              showcased his ability to balance grounded realism, character tension,
-              and emotional payoff.
-            </p>
-            <div class="chip-row">
-              <span class="chip">Indie director & screenwriter</span>
-              <span class="chip">Pacific Northwest → MSU</span>
-              <span class="chip">Award-winning “Orientation”</span>
-            </div>
-          </div>
-
-          <div class="card">
-            <h3>Current work: America’s backbone</h3>
-            <p>
-              Andrew is currently developing a <strong>docuseries on blue-collar
-              workers in America</strong>, following the lives of two vibrant
-              personalities in the moving and storage industry. The series
-              focuses on the deep, often unseen stories of the people who keep
-              the country running.
-            </p>
-            <p style="margin-top:0.5rem;">
-              That instinct — to explore real people, real stakes, and the quiet
-              weight of work — is a natural fit for a story about one person
-              taking on global markets with all the mess and beauty of a real life attached.
-            </p>
-          </div>
-        </div>
-
-        <div>
-          <div class="card">
-            <h3>Why this story, why now</h3>
-            <p>
-              Andrew grew up loving films like <em>Jaws</em> and <em>Star Wars</em>,
-              with a lifelong goal to direct meaningful, original features that
-              leave a mark. He’s drawn to stories where ordinary-seeming people are
-              thrown into extraordinary systems — and have to fight for agency.
-            </p>
-            <p style="margin-top:0.5rem;">
-              <em>The Shark of Wall Street</em> gives him a canvas that blends
-              <strong>global macro stakes with intimate, personal evolution</strong>:
-              Cairo classrooms, holy cities, engineering chaos, love and heartbreak,
-              booze and recovery, AI and trade, and the emotional cost of refusing
-              to follow the script.
-            </p>
-            <div class="chip-row">
-              <span class="chip">Character-driven drama</span>
-              <span class="chip">Systems vs individuals</span>
-              <span class="chip">Docu-texture + narrative film</span>
-            </div>
-          </div>
-
-          <div class="card">
-            <h3>Screenwriting range</h3>
-            <p>
-              Andrew’s script portfolio spans <strong>fantasy, drama, gritty
-              period action, sports drama, supernatural thriller, and coming-of-age
-              sci-fi</strong>, including projects such as:
-            </p>
-            <ul style="margin-top:0.5rem; padding-left:1.1rem; font-size:0.86rem; color:var(--muted);">
-              <li><strong>Land of Aura: Energy of the Past</strong> – Fantasy adventure</li>
-              <li><strong>Lone</strong> – Last man on earth drama</li>
-              <li><strong>Aborigine</strong> – Gritty tournament-to-the-death period piece</li>
-              <li><strong>Salted Wounds</strong> – Trauma & aspiration through a magician</li>
-              <li><strong>Heart of the Wolf</strong> – Coming-of-age sports drama</li>
-              <li><strong>Beyond the Garden</strong> – Supernatural thriller teleplay</li>
-            </ul>
-            <p style="margin-top:0.6rem;">
-              That range — from intimate drama to mythic stakes — is what he
-              brings to the adaptation of <em>The Shark of Wall Street</em>:
-              grounded yet cinematic, global yet deeply personal.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact">
-      <h2><span>06</span> · Book / Film & Collaboration</h2>
-      <p class="lead">
-        If you’re a <strong>publisher</strong>, <strong>producer</strong>,
-        <strong>investor</strong> or <strong>collaborator</strong> who sees the
-        potential in this story and the platform behind it, this is the line
-        to reach Andrew directly.
-      </p>
-
-      <div class="contact">
-        <div class="card">
-          <h3>Direct contact · Andrew Johnson</h3>
-          <p>
-            Email:
-            <a
-              href="mailto:filmandrew1@gmail.com"
-              class="link"
-              onclick="gtag('event','click', {event_category:'contact', event_label:'Email Andrew'});"
-            >
-              filmandrew1@gmail.com
-                      </a> / 
-                        <a
-              href="mailto:sage@worldtradefactory.com"
-              class="link"
-              onclick="gtag('event','click', {event_category:'contact', event_label:'Email Sage'});"
-            >
-              sage@worldtradefactory.com
-            </a>
-          </p>
-          <p style="margin-top:0.3rem;">
-            Phone: 425-440-1603(Andrew) / 480-280-2924(Sage)
-          </p>
-          <p style="margin-top:0.8rem;">
-            Andrew is actively looking to work with agents, producers, and
-            filmmakers on projects that have something real to say about how people live,
-            love, work, crash, recover and navigate systems much bigger than themselves.
-          </p>
-          <p class="meta-note">
-            This story is being written in real time. If you reach out, keep it thoughtful.
-          </p>
-        </div>
-
-        <div class="contact-info">
-          <h3>For investors & operators</h3>
-          <p>
-            If you’re more interested in the <strong>World Trade Factory</strong>
-            platform than the book or film, mention “World Trade Factory” in your message and
-            include a line about your mandate or the kind of capital / business
-            decisions you’re making — family office, fund, treasury, corporate strategy,
-            trading desk or personal wealth.
-          </p>
-          <p style="margin-top:0.7rem;">
-            Serious interest in the platform, macro intelligence, or potential
-            collaboration around data, investing strategy or trading research will be routed appropriately.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Hidden SEO support block -->
-    <div style="height:1px; overflow:hidden; font-size:0.01rem; line-height:0.01rem;">
-      wealth, global wealth, finance, financial markets, stock market, stocks, trading, traders,
-      long-term investing, macro investing, global macro, world trade, world trade factory,
-      portfolio construction, risk management, AI investing, algorithmic insights, global
-      equity markets, economic research, capital flows, underdog finance story, non-fiction
-      finance book, finance film, markets, Wall Street, global investors, institutional capital,
-      bitcoin, crypto, digital assets, tokenization, Phoenix, New York, Austin, Vienna, Cairo,
-      Agra, Nasik, Allahabad, Gaya, Argentina, Mexico, Russia, Germany, Spain, Portugal,
-      rock and roll, love, sex (non-graphic), booze (non-graphic), movies, travel, holy cities
-    </div>
-
-    <footer>
-      <div>
-        © <span id="year"></span> The Shark of Wall Street ·
-        <span class="accent">
-          <a href="https://www.worldtradefactory.ai">World Trade Factory</a>
-        </span>
-      </div>
-      <div class="footer-links">
-        <a href="#top">Back to top</a>
-        <a href="#arc">Story arc</a>
-        <a
-          href="https://www.linkedin.com/in/sajeeshkakkat"
-          target="_blank"
-          rel="noreferrer"
-          onclick="gtag('event','click', {event_category:'footer', event_label:'LinkedIn footer'});"
-        >
-          LinkedIn
+      <div style="margin-top:2rem;">
+        <a href="#market" class="cta-btn uppercase" style="font-size:0.8rem; padding:0.8rem 1.5rem;">
+          View Rights & Opportunities
         </a>
       </div>
-    </footer>
-  </main>
+    </div>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+    <div class="poster-wrapper">
+      <img src="sowt.png" alt="Shark of Wall Street Poster">
+    </div>
+  </header>
+
+  <section class="section-dark">
+    <div class="container">
+      <h2 class="uppercase">01 · The Narrative Arc</h2>
+      <p style="max-width:700px;">
+        A story that moves faster than a traditional finance bio. It cuts between ancient cities and modern algorithms.
+      </p>
+
+      <div class="grid-3" style="margin-top:2rem;">
+        <div class="story-card">
+          <div style="color:var(--accent); font-size:0.8rem; margin-bottom:0.5rem;" class="uppercase">Act I · The Origin</div>
+          <h3>Holy Cities & Rock Bars</h3>
+          <p>Kindergarten in <strong>Cairo</strong> under the Pyramids. Childhood stretched across <strong>Agra, Nasik, Allahabad, Gaya</strong>—temples, holy rivers, and crowded trains.</p>
+          <p>Then <strong>Engineering Hostels</strong>: rooms full of drum kits, bootleg rock tapes, late-night cinema, and the first messy brushes with love, booze, and risk.</p>
+        </div>
+
+        <div class="story-card">
+          <div style="color:var(--accent); font-size:0.8rem; margin-bottom:0.5rem;" class="uppercase">Act II · The Drift</div>
+          <h3>Cities & Systems</h3>
+          <p><strong>Bangalore, Vienna, New York, Austin.</strong> Working in tech by day, trading by night.</p>
+          <p>The "Shark" begins to wake up when personal chaos—heartbreak, addiction to adrenaline, and the isolation of immigration—collides with a realization: the global financial system is rigged, but it is not unbreakable.</p>
+        </div>
+
+        <div class="story-card">
+          <div style="color:var(--accent); font-size:0.8rem; margin-bottom:0.5rem;" class="uppercase">Act III · The Engine</div>
+          <h3>World Trade Factory</h3>
+          <p>No safety net. No legacy. Just a founder building a machine to read the world.</p>
+          <p>The creation of <strong>World Trade Factory</strong>—an AI-augmented macro platform that digests trade flows and crypto markets to see what Wall Street misses.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="market" class="section-dark" style="background: rgba(15,23,42,0.3);">
+    <div class="container">
+      <h2 class="uppercase">02 · Market Opportunities</h2>
+      <p>We are currently opening conversations with <strong>Publishers and Producers</strong> regarding IP rights.</p>
+
+      <div class="split-ask">
+        <div class="ask-card">
+          <div class="ask-header"><span class="ask-title">The Book</span><span style="font-size:1.5rem">📖</span></div>
+          <p><strong>Genre:</strong> Non-Fiction / Memoir / Business<br><strong>Status:</strong> Proposal Ready</p>
+          <div class="comp-title">"Shantaram" meets "The Big Short"</div>
+          <p style="font-size:0.9rem;">A visceral, sensory journey that de-sanitizes the "finance bro" narrative. It connects the dust of Indian temples directly to the algorithmic coldness of modern trading.</p>
+          <div style="margin-top:1.5rem; padding-top:1rem; border-top:1px solid rgba(255,255,255,0.1); font-size:0.8rem; color:var(--text-muted);">
+            <strong>Ideal For:</strong> Trade Publishers looking for the next distinctive voice in global finance and culture.
+          </div>
+        </div>
+
+        <div class="ask-card">
+          <div class="ask-header"><span class="ask-title">The Film / Series</span><span style="font-size:1.5rem">🎬</span></div>
+          <p><strong>Genre:</strong> Biopic / Drama<br><strong>Status:</strong> Rights Available</p>
+          <div class="comp-title">"Slumdog Millionaire" meets "Moneyball"</div>
+          <p style="font-size:0.9rem;">High-contrast visuals: The neon of rock clubs vs. the sterile screens of Wall Street. A character study of an outsider who builds a machine to beat the insiders.</p>
+          <div style="margin-top:1.5rem; padding-top:1rem; border-top:1px solid rgba(255,255,255,0.1); font-size:0.8rem; color:var(--text-muted);">
+            <strong>Ideal For:</strong> Producers seeking a global, character-driven story with high stakes and diverse locations.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-dark">
+    <div class="container">
+      <div style="background: var(--bg-card); padding:2rem; border-radius:1rem; border:1px solid var(--accent); display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:2rem;">
+        <div style="max-width:600px;">
+          <h3 style="color:#fff; margin-bottom:0.5rem;">The Engine is Real</h3>
+          <p style="margin-bottom:0;"><strong>World Trade Factory</strong> is the live AI-augmented platform behind the story. It digests global trade, crypto, and macro data.</p>
+        </div>
+        <a href="https://www.worldtradefactory.ai" target="_blank" style="color:var(--accent); font-weight:700; text-transform:uppercase; font-size:0.9rem; border-bottom:1px solid var(--accent);">
+          Visit Platform &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <div class="container">
+      <h2 class="uppercase" style="border:none; padding:0; margin-bottom:0.5rem;">Partnership & Inquiries</h2>
+      <p>Direct contact for Rights, Adaptation, and Platform Strategy.</p>
+      <a href="mailto:sage@worldtradefactory.com" class="cta-btn uppercase">Contact Sage</a>
+      <div style="margin-top:1rem; font-size:0.9rem; color:var(--text-muted);">sage@worldtradefactory.com</div>
+    </div>
+  </section>
+
+  <footer style="border-top: 1px solid var(--border); padding: 2rem 0; text-align: center; background: var(--bg-dark);">
+    <div class="container" style="color: var(--text-muted); font-size: 0.85rem;">
+      &copy; <span id="year"></span> World Trade Factory. All Rights Reserved.
+    </div>
+  </footer>
+
+ <script>
+     document.getElementById("year").textContent = new Date().getFullYear();
+
+     // --- AUDIO LOGIC ---
+     var player;
+     var isPlaylistPlaying = false;
+     // Theme Audio
+     var themeAudio = new Audio('https://www.sharkatakk.com/api/track');
+
+     // 1. Load YouTube IFrame API
+     var tag = document.createElement('script');
+     tag.src = "https://www.youtube.com/iframe_api";
+     var firstScriptTag = document.getElementsByTagName('script')[0];
+     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+     // 2. Setup Player
+     function onYouTubeIframeAPIReady() {
+       player = new YT.Player('youtube-hidden', {
+         height: '1',
+         width: '1',
+         playerVars: {
+           'listType': 'playlist',
+           'list': 'PLqUPIz-vz7NwzVbAWxhqNRm8h7b-ZHUkh',
+           'playsinline': 1,
+           'controls': 0,
+           'autoplay': 0
+         },
+         events: {
+           'onStateChange': onPlayerStateChange,
+           'onError': onPlayerError
+         }
+       });
+     }
+
+     // 3. Toggle Playlist
+     function togglePlaylist() {
+       var btn = document.getElementById('btn-soundtrack');
+       var txt = document.getElementById('txt-soundtrack');
+
+       // Stop theme if playing
+       themeAudio.pause();
+       document.getElementById('btn-theme').classList.remove('playing-theme');
+       document.getElementById('txt-theme').innerText = "Theme";
+
+       if (!player) return;
+
+       if (isPlaylistPlaying) {
+         player.pauseVideo();
+       } else {
+         player.playVideo();
+       }
+     }
+
+     // 4. Toggle Theme
+     function playTheme() {
+       var btn = document.getElementById('btn-theme');
+       var txt = document.getElementById('txt-theme');
+
+       // Stop YouTube if playing
+       if (player && typeof player.pauseVideo === 'function') {
+         player.pauseVideo();
+       }
+
+       if (themeAudio.paused) {
+         themeAudio.play();
+         btn.classList.add('playing-theme');
+         txt.innerText = "Stop";
+       } else {
+         themeAudio.pause();
+         btn.classList.remove('playing-theme');
+         txt.innerText = "Theme";
+       }
+     }
+
+     // 5. YouTube Events
+     function onPlayerStateChange(event) {
+       var btn = document.getElementById('btn-soundtrack');
+       var txt = document.getElementById('txt-soundtrack');
+
+       if (event.data == YT.PlayerState.PLAYING) {
+         isPlaylistPlaying = true;
+         btn.classList.add('playing-rock');
+         txt.innerText = "Stop Rock";
+       } else if (event.data == YT.PlayerState.PAUSED || event.data == YT.PlayerState.ENDED) {
+         isPlaylistPlaying = false;
+         btn.classList.remove('playing-rock');
+         txt.innerText = "Soundtrack";
+       }
+     }
+
+     function onPlayerError(event) {
+       console.log("YouTube Error Code:", event.data);
+       // Fallback visual if error occurs
+       var btn = document.getElementById('btn-soundtrack');
+       var txt = document.getElementById('txt-soundtrack');
+       btn.style.opacity = "0.5";
+       txt.innerText = "Unavailable";
+     }
+   </script>
+
+  <div id="youtube-hidden" style="position: absolute; top: -9999px; left: -9999px;"></div>
 </body>
 </html>
