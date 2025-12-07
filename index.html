@@ -121,6 +121,17 @@
     .story-card { background: var(--bg-card); padding: 1.5rem; border-radius: 0.8rem; border: 1px solid var(--border); }
     .story-card h3 { font-size: 1rem; color: #fff; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em; }
 
+    /* --- SPECIAL: SHARK MINDSET --- */
+    .mindset-box {
+        background: linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(2, 6, 23, 0.9));
+        border: 1px solid var(--border);
+        padding: 2rem;
+        border-radius: 1rem;
+        margin-top: 3rem;
+    }
+    .mindset-box h3 { color: var(--accent); margin-bottom: 0.5rem; }
+    .mindset-box p { font-size: 0.95rem; margin-bottom: 0; color: #cbd5e1; }
+
     /* --- ASK --- */
     .split-ask { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; }
     @media (max-width: 800px) { .split-ask { grid-template-columns: 1fr; } }
@@ -174,7 +185,6 @@
         <a href="https://www.linkedin.com/in/sajeeshkakkat" target="_blank" class="btn-nav uppercase">LinkedIn</a>
 
 
-
         <button id="btn-theme" onclick="playTheme()" class="btn-nav uppercase">
           🔊 <span id="txt-theme">Theme</span>
         </button>
@@ -193,12 +203,17 @@
       <h1>The <span style="color:var(--accent)">Shark</span> of<br>Wall Street</h1>
 
       <p style="font-size:1.1rem; color:#e2e8f0; margin-bottom:1.5rem;">
-        The true story of a <strong>markets-obsessed professional</strong> whose life runs through Cairo classrooms, holy cities, rock clubs, and trading floors.
+        From <strong>Cairo to Phoenix</strong>. A true story of a markets-obsessed mind forged in ancient cities and sharpened on trading floors.
       </p>
 
       <p>
-        Folding love, movies, and loud rock 'n' roll into one escalating obsession: decoding how power, money, and risk actually move. Out of that chaos comes <strong>World Trade Factory</strong>—an AI engine built to take on Wall Street's old playbook.
+        It begins with Kindergarten under the Pyramids and Engineering in Allahabad, and ends with an AI engine built to take on Wall Street.
       </p>
+
+      <div class="mindset-box">
+          <h3 class="uppercase" style="font-size:0.8rem; letter-spacing:0.1em;">The Nature of the Shark</h3>
+          <p>It isn't a nickname. It's a mental state. Like the animal, the trader's mind has no bones—only cartilage—allowing it to turn instantly when the current shifts. It senses blood in the water (risk) before others see it. And most importantly: <strong>it must keep moving to breathe.</strong></p>
+      </div>
 
       <div style="margin-top:2rem;">
         <a href="#market" class="cta-btn uppercase" style="font-size:0.8rem; padding:0.8rem 1.5rem;">
@@ -216,22 +231,22 @@
     <div class="container">
       <h2 class="uppercase">01 · The Narrative Arc</h2>
       <p style="max-width:700px;">
-        A story that moves faster than a traditional finance bio. It cuts between ancient cities and modern algorithms.
+        A story that moves faster than a traditional finance bio. It connects the dust of India to the neon of the American West.
       </p>
 
       <div class="grid-3" style="margin-top:2rem;">
         <div class="story-card">
-          <div style="color:var(--accent); font-size:0.8rem; margin-bottom:0.5rem;" class="uppercase">Act I · The Origin</div>
-          <h3>Holy Cities & Rock Bars</h3>
-          <p>Kindergarten in <strong>Cairo</strong> under the Pyramids. Childhood stretched across <strong>Agra, Nasik, Allahabad, Gaya</strong>—temples, holy rivers, and crowded trains.</p>
-          <p>Then <strong>Engineering Hostels</strong>: rooms full of drum kits, bootleg rock tapes, late-night cinema, and the first messy brushes with love, booze, and risk.</p>
+          <div style="color:var(--accent); font-size:0.8rem; margin-bottom:0.5rem;" class="uppercase">Act I · The Classrooms</div>
+          <h3>From Cairo to Allahabad</h3>
+          <p><strong>Cairo</strong> was just the Kindergarten. The classrooms were in <strong>Nasik, Agra, and Kannur</strong>.</p>
+          <p>But the real education happened in <strong>Allahabad</strong>. The Engineering Hostel—a chaotic mix of exams, bootleg <strong>Rock 'n Roll</strong> tapes, and the obsession of a movie aficionado.</p>
         </div>
 
         <div class="story-card">
           <div style="color:var(--accent); font-size:0.8rem; margin-bottom:0.5rem;" class="uppercase">Act II · The Drift</div>
-          <h3>Cities & Systems</h3>
-          <p><strong>Bangalore, Vienna, New York, Austin.</strong> Working in tech by day, trading by night.</p>
-          <p>The "Shark" begins to wake up when personal chaos—heartbreak, addiction to adrenaline, and the isolation of immigration—collides with a realization: the global financial system is rigged, but it is not unbreakable.</p>
+          <h3>The Global Circuit</h3>
+          <p>The path wasn't a straight line. It spanned <strong>Kolkata, Bangalore, Austin, Vienna, NYC, and Los Angeles.</strong></p>
+          <p>Finally, <strong>Phoenix, Arizona</strong> for the MBA. The "Shark" nature began to wake up—not in a classroom, but in the realization that the financial system is rigged, yet breakable.</p>
         </div>
 
         <div class="story-card">
@@ -254,7 +269,7 @@
           <div class="ask-header"><span class="ask-title">The Book</span><span style="font-size:1.5rem">📖</span></div>
           <p><strong>Genre:</strong> Non-Fiction / Memoir / Business<br><strong>Status:</strong> Proposal Ready</p>
           <div class="comp-title">"Shantaram" meets "The Big Short"</div>
-          <p style="font-size:0.9rem;">A visceral, sensory journey that de-sanitizes the "finance bro" narrative. It connects the dust of Indian temples directly to the algorithmic coldness of modern trading.</p>
+          <p style="font-size:0.9rem;">A visceral, sensory journey that de-sanitizes the "finance bro" narrative. It connects the spirituality of India directly to the algorithmic coldness of modern trading.</p>
           <div style="margin-top:1.5rem; padding-top:1rem; border-top:1px solid rgba(255,255,255,0.1); font-size:0.8rem; color:var(--text-muted);">
             <strong>Ideal For:</strong> Trade Publishers looking for the next distinctive voice in global finance and culture.
           </div>
@@ -264,7 +279,7 @@
           <div class="ask-header"><span class="ask-title">The Film / Series</span><span style="font-size:1.5rem">🎬</span></div>
           <p><strong>Genre:</strong> Biopic / Drama<br><strong>Status:</strong> Rights Available</p>
           <div class="comp-title">"Slumdog Millionaire" meets "Moneyball"</div>
-          <p style="font-size:0.9rem;">High-contrast visuals: The neon of rock clubs vs. the sterile screens of Wall Street. A character study of an outsider who builds a machine to beat the insiders.</p>
+          <p style="font-size:0.9rem;">High-contrast visuals: The hostels of Allahabad vs. the sterile screens of Wall Street. A character study of an outsider who builds a machine to beat the insiders.</p>
           <div style="margin-top:1.5rem; padding-top:1rem; border-top:1px solid rgba(255,255,255,0.1); font-size:0.8rem; color:var(--text-muted);">
             <strong>Ideal For:</strong> Producers seeking a global, character-driven story with high stakes and diverse locations.
           </div>
@@ -388,7 +403,7 @@
        } else if (event.data == YT.PlayerState.PAUSED || event.data == YT.PlayerState.ENDED) {
          isPlaylistPlaying = false;
          btn.classList.remove('playing-rock');
-         txt.innerText = "Soundtrack";
+         txt.innerText = "Engineering Mix";
        }
      }
 
