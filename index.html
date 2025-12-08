@@ -88,13 +88,51 @@
 </head>
 <body>
 <h1 style="text-align: center;"><span>Sage Kakkat Presents</span></h1>
-  <div class="audio-controls">
 
-    <button class="btn-audio uppercase" onclick="playScore()">🔊 Background Score</button>
+<div class="audio-controls">
+  <button class="btn-audio uppercase" onclick="playScore()">🔊 Background Score</button>
+  <button class="btn-audio uppercase" onclick="playTheme()">🔊 Title Track</button>
+</div>
 
-    <button class="btn-audio uppercase" onclick="playTheme()">🔊 Title Track </button>
+<style>
+  .audio-controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    flex-wrap: wrap; /* Allows wrapping on mobile */
+  }
 
-  </div>
+  .btn-audio {
+    padding: 0.75rem 1.25rem;
+    font-weight: bold;
+    font-size: 1rem;
+    background-color: #0ff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #000;
+  }
+
+  .btn-audio:hover {
+    background-color: #0cc;
+  }
+
+  /* Mobile responsiveness */
+  @media (max-width: 600px) {
+    .audio-controls {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .btn-audio {
+      width: 90%;
+      margin-bottom: 0.75rem;
+    }
+  }
+</style>
+
 
   <header class="container hero">
     <div class="grid-2">
