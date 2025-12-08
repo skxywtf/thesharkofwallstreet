@@ -95,7 +95,10 @@
 >
   LinkedIn
 </button>
-    <button class="btn-audio uppercase" onclick="playTheme()">🔊 Theme</button>
+    <button class="btn-audio uppercase" onclick="playScore()">🔊 Background Score</button>
+
+
+    <button class="btn-audio uppercase" onclick="playTheme()">🔊 Title Track </button>
 
   </div>
 
@@ -285,6 +288,23 @@
       else if (event.data == YT.PlayerState.PAUSED) { isPlaylistPlaying = false; }
     }
   </script>
+  <script>
+  // 1. We create the audio player strictly once so we can control it
+  // CHANGE 'shark_theme_final.mp3' TO YOUR EXACT FILE NAME BELOW
+  var themeAudio = new Audio('score.mp3');
+
+  function playScore() {
+    // 2. Check if it is already playing
+    if (!themeAudio.paused) {
+      // If playing, stop it and reset to 0
+      themeAudio.pause();
+      themeAudio.currentTime = 0;
+    } else {
+      // If stopped, play it
+      themeAudio.play();
+    }
+  }
+</script>
   <div id="youtube-hidden" style="position: absolute; top: -9999px; left: -9999px;"></div>
 
 </body>
