@@ -87,39 +87,42 @@
   </style>
 </head>
 <body>
-<h1 style="text-align: center;"><span>Sage Kakkat Presents</span></h1>
+<h1 style="text-align: center; font-size: 1.8rem; margin-bottom: 1rem;">
+  <span style="font-weight: 600;">Sage Kakkat Presents</span>
+</h1>
 
 <div class="audio-controls">
-  <button class="btn-audio uppercase" onclick="playScore()">🔊 Background Score</button>
-  <button class="btn-audio uppercase" onclick="playTheme()">🔊 Title Track</button>
+  <button class="btn-audio" onclick="playScore()">🔊 Background Score</button>
+  <button class="btn-audio" onclick="playTheme()">🔊 Title Track</button>
 </div>
 
 <style>
   .audio-controls {
     display: flex;
-    flex-direction: row;
     justify-content: center;
-    gap: 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
     margin-top: 1rem;
-    flex-wrap: wrap; /* Allows wrapping on mobile */
   }
 
   .btn-audio {
-    padding: 0.75rem 1.25rem;
-    font-weight: bold;
-    font-size: 1rem;
-    background-color: #0ff;
-    border: none;
-    border-radius: 5px;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border: 1px solid #444;
+    padding: 0.4rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 4px;
     cursor: pointer;
-    color: #000;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
   }
 
   .btn-audio:hover {
-    background-color: #0cc;
+    background-color: #2c2c2c;
+    border-color: #666;
+    color: #fff;
   }
 
-  /* Mobile responsiveness */
   @media (max-width: 600px) {
     .audio-controls {
       flex-direction: column;
@@ -127,8 +130,8 @@
     }
 
     .btn-audio {
-      width: 90%;
-      margin-bottom: 0.75rem;
+      width: 80%;
+      font-size: 0.85rem;
     }
   }
 </style>
