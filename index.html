@@ -87,35 +87,35 @@
   </style>
 </head>
 <body>
-<h1 style="text-align: center; font-size: 1.8rem; margin-bottom: 1rem; margin-top: 2rem;">
-  <span style="font-weight: 500;">Sage Kakkat Presents</span>
-</h1>
+<div style="text-align: center; padding: 2rem 1rem;">
+  <h1 style="font-size: 1.8rem; margin-bottom: 1.5rem;">
+    <span style="font-weight: 500;">Sage Kakkat Presents</span>
+  </h1>
 
-<div class="audio-controls">
-  <button class="btn-audio" onclick="playScore()">🔊 Background Score</button>
-  <button class="btn-audio" onclick="playTheme()">🔊 Title Track</button>
+  <div class="audio-controls">
+    <button class="btn-audio" onclick="playScore()">🔊 Background Score</button>
+    <button class="btn-audio" onclick="playTheme()">🔊 Title Track</button>
+  </div>
 </div>
 
 <style>
   .audio-controls {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
     gap: 0.75rem;
-    margin-top: 0; /* ensure no extra gap */
-    margin-bottom: 2rem;
+    flex-wrap: wrap;
   }
 
   .btn-audio {
     background-color: #1e1e1e;
     color: #e0e0e0;
     border: 1px solid #444;
-    padding: 0.5rem 1.25rem;
-    font-size: 0.75rem;
+    padding: 0.5rem 1.2rem;
+    font-size: 0.8rem;
     border-radius: 4px;
     cursor: pointer;
     text-transform: uppercase;
-    transition: all 0.2s ease;
+    transition: background-color 0.2s ease;
   }
 
   .btn-audio:hover {
@@ -132,10 +132,21 @@
 
     .btn-audio {
       width: 80%;
-      font-size: 0.75rem;
+      font-size: 0.8rem;
     }
   }
 </style>
+
+<script>
+  function playScore() {
+    alert('Play Background Score');
+  }
+
+  function playTheme() {
+    alert('Play Title Track');
+  }
+</script>
+
 
 
 
