@@ -93,7 +93,10 @@
   <div class="audio-controls">
     <button class="btn-audio" onclick="playScore()">🔊 Background Score</button>
     <button class="btn-audio" onclick="playTheme()">🔊 Title Track</button>
+    <button class="btn-audio" onclick="playTheme()">🔊 Bonus Track</button><br/>
+    <p>All tracks produced by Sage Kakkat</p>
   </div>
+  
 </div>
 
 <style>
@@ -142,6 +145,9 @@
 
   function playTheme() {
     alert('Play Title Track');
+  }
+    function playBonus() {
+    alert('Play Bonus Track');
   }
 </script>
 
@@ -296,7 +302,7 @@
 
   <footer style="padding: 2rem 0; text-align: center; font-size: 0.8rem; color: var(--text-muted);">
     <div class="container">
-      &copy; <span id="year"></span> World Trade Factory. All Rights Reserved.
+      &copy; <span id="year"></span> World Trade Factory. All Rights Reserved. Unauthorized use of this title, story, outline and words and text including the songs for film, video, or commercial use, is prohibited without express permission.
     </div>
   </footer>
 
@@ -350,6 +356,18 @@
     } else {
       // If stopped, play it
       scoreAudio.play();
+    }
+  }
+    var bonusAudio = new Audio('love.mp3');
+      function playBonus() {
+    // 2. Check if it is already playing
+    if (!bonusAudio.paused) {
+      // If playing, stop it and reset to 0
+      bonusAudio.pause();
+      bonusAudio.currentTime = 0;
+    } else {
+      // If stopped, play it
+      bonusAudio.play();
     }
   }
 </script>
