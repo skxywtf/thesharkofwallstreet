@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>The Shark of Wall Street | True Story & IP Marketplace</title>
-  
+
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RTH99L39VB"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -43,9 +43,9 @@
     .uppercase { text-transform: uppercase; letter-spacing: 0.08em; }
     .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
     .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
-    
-    @media (max-width: 900px) { 
-      .grid-2 { grid-template-columns: 1fr; } 
+
+    @media (max-width: 900px) {
+      .grid-2 { grid-template-columns: 1fr; }
       h1 { font-size: 2.5rem !important; }
     }
 
@@ -61,7 +61,7 @@
 
     /* --- COMPONENTS --- */
     .tag { font-size: 0.7rem; padding: 0.2rem 0.6rem; border: 1px solid var(--border); border-radius: 4px; color: var(--accent); background: rgba(34, 211, 238, 0.05); margin-right: 0.5rem; }
-    
+
     .btn {
       display: inline-block; background: var(--accent); color: #020617; font-weight: 700;
       padding: 0.8rem 2rem; border-radius: 999px; font-size: 0.85rem;
@@ -80,10 +80,71 @@
     /* --- SECTIONS --- */
     section { padding: 4rem 0; border-top: 1px solid var(--border); }
     .hero { padding: 6rem 0 4rem; border: none; }
-    
+
     .timeline-item { position: relative; padding-left: 2rem; border-left: 1px solid var(--border); padding-bottom: 2rem; }
     .timeline-item::before { content: ''; position: absolute; left: -5px; top: 0; width: 9px; height: 9px; background: var(--accent); border-radius: 50%; }
-    
+    .partners-section {
+  margin-top: 3rem;
+  padding: 2.5rem 0 1.5rem;
+  border-top: 1px solid rgba(15, 23, 42, 0.85);
+}
+
+/* Partners Section */
+.partners-section {
+  padding: 2rem 0 3rem;
+  text-align: center;
+}
+
+.partners-title {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+/* Grid */
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Cards */
+.partner-card {
+  background: #0e1220;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: transform .2s, box-shadow .2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.partner-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+/* Logos */
+.partner-card img {
+  width: 120px;          /* consistent size */
+  height: 120px;         /* force equal height */
+  object-fit: contain;   /* prevents stretching */
+  margin-bottom: 1rem;
+}
+
+/* Names */
+.partner-name {
+  color: #fff;
+  font-size: 0.95rem;
+  margin-top: .5rem;
+  text-align: center;
+}
+
+
   </style>
 </head>
 <body>
@@ -96,7 +157,7 @@
     <button class="btn-audio" onclick="playBonus()">🔊 Bonus Track</button>
 
   </div>
-  
+
 </div>
 
 <style>
@@ -163,7 +224,7 @@
           <span class="tag uppercase">Memoir</span>
           <span class="tag uppercase">Macro Finance</span>
         </div>
-        
+
         <h1>The <span style="color:var(--accent)">Shark</span> of Wall Street</h1>
         <h3 style="font-style: italic; color: #22d3ee;">Before you change the world, the world tries to change you.</h3>
         <p class="lead">
@@ -194,7 +255,7 @@
       </p>
 
       <div class="grid-3" style="margin-top: 2rem;">
-        
+
         <div class="card">
           <div style="color:var(--accent); font-size:0.8rem; margin-bottom:0.5rem;" class="uppercase">The Kindergarten</div>
           <h3>Cairo & The Pyramids</h3>
@@ -220,16 +281,16 @@
   <section>
     <div class="container">
       <div class="grid-2">
-        
+
         <div>
           <h2 class="uppercase">02 · The Nature of the Shark</h2>
           <p>The "Shark" isn't a nickname. It's a survival mechanism that woke up somewhere between <strong>Vienna and Phoenix</strong>.</p>
-          
+
           <div class="timeline-item">
             <strong>The Global Drift</strong>
             <p>Kolkata, Bangalore, Austin, Vienna, NYC, Los Angeles. Tech by day, markets by night. Love that mattered and love that burned fast.</p>
           </div>
-          
+
           <div class="timeline-item">
             <strong>Phoenix, Arizona</strong>
             <p>Where the theory met the reality and where global travels spanned Buenos Aires, Ushuaia, Rio, Sao Paolo, Moscow, Berlin, Barcelona, Madrid and Lisbon. The realization that the financial system is rigged, but not unbreakable.</p>
@@ -269,7 +330,7 @@
     <div class="container">
       <h2 class="uppercase">04 · IP & Opportunities</h2>
       <div class="grid-2">
-        
+
         <div class="card">
           <div style="display:flex; justify-content:space-between;">
             <span class="uppercase" style="color:var(--accent-warm);">The Book</span>
@@ -291,7 +352,7 @@
         </div>
 
       </div>
-      
+
       <div style="text-align: center; margin-top: 3rem;">
         <p>Partnership & Rights Inquiries</p>
         <a href="mailto:sage@worldtradefactory.com" class="btn uppercase">Email</a>
@@ -299,6 +360,48 @@
       </div>
     </div>
   </section>
+
+ <section class="partners-section" id="partners">
+  <div class="partners-inner">
+    <h2 class="partners-title">Partners & Collaborators</h2>
+
+    <div class="partners-grid">
+
+      <!-- InfinityXZ -->
+      <a href="https://infinityxz.ai" target="_blank" rel="noopener noreferrer" class="partner-card">
+        <img src="infinity.png" alt="InfinityXZ" />
+        <div class="partner-name">InfinityXZ AI</div>
+      </a>
+
+      <!-- SharK ATaKK-->
+      <a href="https://sharkatakk.com" target="_blank" rel="noopener noreferrer" class="partner-card">
+        <img src="shark.png" alt="SharK ATaKK" />
+        <div class="partner-name">SharK ATaKK Music</div>
+      </a>
+
+      <!-- Netflix -->
+      <a href="https://netflix.com" target="_blank" rel="noopener noreferrer" class="partner-card">
+        <img src="netflix.png" alt="Netflix" />
+        <div class="partner-name">Netflix - Potential</div>
+      </a>
+
+      <!-- Amazon Prime Video -->
+      <a href="https://www.primevideo.com/" target="_blank" rel="noopener noreferrer" class="partner-card">
+        <img src="prime.png" alt="Amazon Prime Video" />
+        <div class="partner-name">Prime Video - Potential</div>
+      </a>
+
+      <!-- 20th Century Fox -->
+      <a href="https://www.20thcenturystudios.com/" target="_blank" rel="noopener noreferrer" class="partner-card">
+        <img src="fox.png" alt="20th Century Studios" />
+        <div class="partner-name">20th Century Studios - Potential</div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
 
   <footer style="padding: 2rem 0; text-align: center; font-size: 0.8rem; color: var(--text-muted);">
     <div class="container">
