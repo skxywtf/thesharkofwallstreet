@@ -49,6 +49,15 @@
     }
 
     /* --- RESET & BASE --- */
+    /* --- HIDE VERCEL TOOLBAR --- */
+    #vercel-toolbar,
+    vercel-live-feedback,
+    [data-vercel-toolbar] {
+      display: none !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+      visibility: hidden !important;
+    }
     * { box-sizing: border-box; margin: 0; padding: 0; outline: none; }
 
     body {
