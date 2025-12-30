@@ -36,16 +36,16 @@
       padding: 4rem 1.5rem;
     }
 
-h1.chapter-title {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(3rem, 8vw, 5rem);
-  color: var(--danger);
-  text-transform: uppercase;
-  line-height: 0.9;
-  margin-bottom: 0.5rem;
-  text-shadow: 0 4px 30px rgba(239, 68, 68, 0.2);
-  text-align: center; /* This is the fix */
-}
+    h1.chapter-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3rem, 8vw, 5rem);
+      color: var(--danger);
+      text-transform: uppercase;
+      line-height: 0.9;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 4px 30px rgba(239, 68, 68, 0.2);
+      text-align: center;
+    }
 
     .chapter-meta {
       font-family: 'Cinzel', serif;
@@ -59,7 +59,7 @@ h1.chapter-title {
     }
 
     .story-text {
-      font-family: 'Merriweather', serif; /* Serif for better reading experience */
+      font-family: 'Merriweather', serif;
       font-size: 1.15rem;
       line-height: 1.9;
       color: #e2e8f0;
@@ -84,7 +84,7 @@ h1.chapter-title {
       font-family: 'Bebas Neue', sans-serif;
     }
 
-    /* --- AUDIO HEADER (Reused) --- */
+    /* --- AUDIO HEADER --- */
     .fixed-audio-header {
       position: fixed; top: 0; left: 0; width: 100%; height: var(--header-height);
       background: rgba(2, 6, 23, 0.95); backdrop-filter: blur(12px);
@@ -126,7 +126,7 @@ h1.chapter-title {
 <body>
   <header class="fixed-audio-header">
     <div class="audio-scroll-container">
-      <button class="btn-audio" id="btn-swim" onclick="playAudio('score', 'swim.mp3')">🔊 Background Score</button>
+      <button class="btn-audio" id="btn-swim" onclick="playAudio('swim.mp3')">🔊 Swimming with the Sharks</button>
     </div>
   </header>
 <div class="reader-container">
@@ -283,7 +283,7 @@ h1.chapter-title {
 
       <p>He threw another. I blocked it, and the impact rattled my teeth.</p>
       <div style="margin: 4rem 0; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.1);">
-	    <img src="fight.png" alt="India vs Grunt Fight" style="width: 100%; display: block;">
+    <img src="fight.png" alt="India vs Grunt Fight" style="width: 100%; display: block;">
 </div>
 
       <p>The crowd was baying now. "Kill him! Smash him!"</p>
@@ -321,16 +321,24 @@ h1.chapter-title {
   </div>
 
   <script>
-    // Audio Player Logic (Same as your main site)
     var currentAudio = null;
-    function playAudio(source) {
-       if (currentAudio && !currentAudio.paused) {
+    
+    // UPDATED SCRIPT: Now simpler and more robust, matching Chapter 2
+    function playAudio(filename) {
+      if (currentAudio && !currentAudio.paused) {
         currentAudio.pause();
         currentAudio = null;
         return;
       }
-      currentAudio = new Audio(source);
-      currentAudio.play().catch(e => console.log(e));
+      
+      // Ensure "swim.mp3" is in the same folder as this HTML file
+      currentAudio = new Audio(filename);
+      currentAudio.volume = 0.6; 
+      
+      currentAudio.play().catch(function(e) {
+        console.error("Playback failed:", e);
+        alert("Audio file not found. Check if '" + filename + "' is in your folder.");
+      });
     }
   </script>
 </body>
