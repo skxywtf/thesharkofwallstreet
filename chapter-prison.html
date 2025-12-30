@@ -78,7 +78,13 @@
     // 4. Remove highlight when song finishes
     currentAudio.onended = function() {
       document.getElementById(currentButtonId).classList.remove('playing');
-      currentAudio = null;
+      currentAudio = null;/* Add this inside your <style> tags */
+.btn-audio.playing {
+  background-color: #22d3ee; /* Cyan */
+  color: #020617; /* Dark Text */
+  border-color: #22d3ee;
+  box-shadow: 0 0 15px rgba(34, 211, 238, 0.4);
+}
       currentButtonId = null;
     };
   }
@@ -171,7 +177,7 @@
 </head>
 <body>
   <header class="fixed-audio-header">
-<button class="btn-audio" id="btn-pulse" onclick="playAudio('pulse', 'pulse.mp3')">
+<button class="btn-audio" id="btn-swim" onclick="playAudio('swimm', 'swim.mp3')">
   🔊 Swimming with the Sharks
 </button>
   </header>
@@ -409,4 +415,5 @@
 </body>
 
 </html>
+
 
