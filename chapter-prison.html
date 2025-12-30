@@ -3,77 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>The Crash | The Shark of Wall Street</title>
+  <title>The Fight | The Shark of Wall Street</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Teko:wght@600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
 
   <style>
-    /* --- VARIABLES (Matched to Home Page) --- */
+    /* --- INHERITED VARIABLES --- */
     :root {
       --bg-dark: #020617;
-      --bg-card: #0f172a;
       --text-main: #f8fafc;
       --text-muted: #94a3b8;
-      --accent: #22d3ee; 
-      --accent-warm: #facc15;
+      --accent: #22d3ee;
       --danger: #ef4444;
-      --border: rgba(148, 163, 184, 0.15);
       --header-height: 70px;
     }
 
-    /* --- RESET & BASE --- */
-    * { box-sizing: border-box; margin: 0; padding: 0; outline: none; }
-
     body {
       background-color: var(--bg-dark);
-      background-image: radial-gradient(circle at 50% 0%, #1e293b 0%, #020617 70%);
       color: var(--text-main);
       font-family: system-ui, -apple-system, sans-serif;
-      line-height: 1.6;
-      overflow-x: hidden;
+      margin: 0;
       padding-top: var(--header-height);
     }
 
-    a { text-decoration: none; color: inherit; transition: all 0.2s; }
-
-    /* --- FIXED AUDIO HEADER (Matched to Home Page) --- */
-    .fixed-audio-header {
-      position: fixed; top: 0; left: 0; width: 100%; height: var(--header-height);
-      background: rgba(2, 6, 23, 0.9); backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border); z-index: 1000;
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-    }
-
-    .audio-scroll-container {
-      width: 100%; max-width: 1100px; display: flex; gap: 0.8rem;
-      padding: 0 1.5rem; overflow-x: auto; scrollbar-width: none;
-      justify-content: center;
-    }
-    .audio-scroll-container::-webkit-scrollbar { display: none; }
-
-    .btn-audio {
-      background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border);
-      color: #e0e0e0; padding: 0.4rem 1rem; border-radius: 999px;
-      font-size: 0.75rem; font-weight: 600; cursor: pointer;
-      white-space: nowrap; transition: all 0.2s ease; display: flex;
-      align-items: center; gap: 0.4rem;
-    }
-
-    .btn-audio:hover {
-      background-color: rgba(34, 211, 238, 0.1); border-color: var(--accent); color: #fff;
-    }
-
-    .btn-audio.playing {
-      background-color: var(--accent); color: #020617; border-color: var(--accent);
-      box-shadow: 0 0 15px rgba(34, 211, 238, 0.4);
-    }
-
-    /* --- READER SPECIFIC STYLES --- */
+    /* --- READER STYLES --- */
     .reader-container {
       max-width: 700px;
       margin: 0 auto;
@@ -82,7 +38,7 @@
 
     h1.chapter-title {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(3rem, 8vw, 6rem);
+      font-size: clamp(3rem, 8vw, 5rem);
       color: var(--danger);
       text-transform: uppercase;
       line-height: 0.9;
@@ -109,181 +65,282 @@
       color: #e2e8f0;
     }
 
-    .story-text p { margin-bottom: 2rem; }
+    .story-text p {
+      margin-bottom: 2rem;
+    }
 
     .story-text .dialogue {
       color: #fff;
       font-weight: 400;
-      border-left: 2px solid var(--danger);
-      padding-left: 1rem;
-      font-style: italic;
     }
 
     .drop-cap::first-letter {
-      float: left; font-size: 4rem; line-height: 0.8; font-weight: bold;
-      padding-right: 12px; color: var(--danger); font-family: 'Bebas Neue', sans-serif;
+      float: left;
+      font-size: 4rem;
+      line-height: 0.8;
+      font-weight: bold;
+      padding-right: 12px;
+      color: var(--danger);
+      font-family: 'Bebas Neue', sans-serif;
     }
 
-    /* --- NAVIGATION BUTTONS --- */
+    /* --- AUDIO HEADER --- */
+    .fixed-audio-header {
+      position: fixed; top: 0; left: 0; width: 100%; height: var(--header-height);
+      background: rgba(2, 6, 23, 0.95); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.1); z-index: 1000;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .btn-audio {
+      background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255,255,255,0.1);
+      color: #e0e0e0; padding: 0.4rem 1rem; border-radius: 999px;
+      cursor: pointer; font-size: 0.75rem; margin: 0 0.5rem;
+    }
+    .btn-audio:hover { border-color: var(--danger); color: #fff; }
+
+    /* --- FOOTER NAV --- */
     .nav-footer {
-      margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border);
-      display: flex; justify-content: space-between;
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
     }
-    
-    .btn-nav {
-      display: inline-block; text-decoration: none; color: var(--text-muted);
-      border: 1px solid rgba(255,255,255,0.2); padding: 0.8rem 2rem;
-      border-radius: 999px; transition: all 0.2s; text-transform: uppercase;
-      font-size: 0.8rem; letter-spacing: 2px;
+    .btn-back {
+      display: inline-block;
+      text-decoration: none;
+      color: var(--text-muted);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 0.8rem 2rem;
+      border-radius: 4px;
+      transition: all 0.2s;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
     }
-    .btn-nav:hover {
-      background: #fff; color: #000; border-color: #fff;
+    .btn-back:hover {
+      background: #fff;
+      color: #000;
     }
   </style>
 </head>
 <body>
-
   <header class="fixed-audio-header">
     <div class="audio-scroll-container">
-      <button class="btn-audio" id="btn-pulse" onclick="playAudio('pulse', 'pulse.mp3')">🔊 High Frequency Pulse</button>
-      <button class="btn-audio" id="btn-theme" onclick="playAudio('theme', 'https://www.sharkatakk.com/api/track')">🔊 The Shark of Wall Street</button>
+      <button class="btn-audio" id="btn-swim" onclick="playAudio('swim.mp3')">🔊 Swimming with the Sharks</button>
     </div>
   </header>
-
-  <div class="reader-container">
-    
-    <div style="font-family: 'Bebas Neue'; text-align: center; margin-bottom: 1rem; color: var(--text-muted); letter-spacing: 3px; font-size: 2rem;" class="uppercase">
+<div class="reader-container">
+    <div style="font-family: 'Bebas Neue'; text-align: center; margin-bottom: 1rem; color: var(--text-muted); letter-spacing: 3px; font-size: 3rem;" class="uppercase">
       The Shark of Wall Street
     </div>
 
-    <h1 class="chapter-title">The Crash</h1>
-    
-    <div class="chapter-meta">
-        <span>Chapter Two</span>
-        <span>Unit D - Laundry Sector</span>
-    </div>
-
-    <div style="margin-bottom: 3rem; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.1);">
-      <img src="impact.png" alt="The Impact" style="width: 100%; display: block;">
-    </div>
+    <h1 class="chapter-title">The Fight</h1>
+<div style="margin-bottom: 3rem; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.1);">
+  <img src="lay.png" alt="India vs Grunt Fight" style="width: 100%; display: block;">
+</div>
 
     <article class="story-text">
-      <p class="drop-cap">Bone met cartilage. It wasn't the cinematic crack of a movie fight. It was a wet, muffled thud, like a sledgehammer hitting a bag of wet sand. My forearm connected with Grunt’s throat just as his body weight shifted forward. It was simple mechanics. He was a freight train; I was a derailed track.</p>
 
-      <p>Grunt’s eyes went wide. The pupils, pinpricks of rage a second ago, suddenly dilated in panic. The oxygen cut off instantly.</p>
+      <p class="drop-cap">The concrete walls of Unit D didn’t just hold the heat; they magnified it, baking the three hundred men stacked inside like meat in a pressure cooker. It was the kind of heat that made the air thick and hard to swallow, tasting of bleach, black mold, and the sour, fermented sweat of men who had nowhere to run. I lay on the top bunk, staring at a water stain on the ceiling that looked like a map of a country that didn't exist. My legs were cramping, a dull ache that wouldn't go away, but I didn't move. In here, movement attracted attention, and attention was the most dangerous currency you could hold.</p>
 
-      <p>He gagged—a horrible, guttural sound that strangled in his throat. His hands flew to his neck, abandoning the attack, abandoning defense, abandoning everything but the desperate need for air.</p>
+      <p>Below me, the springs groaned. Doom was awake. He was always awake. I wasn’t sure the man actually slept; he just entered a state of low-power observation, like a reptile waiting on a rock.</p>
 
-      <p>But the physics weren't done with him yet.</p>
+      <p class="dialogue">"You're breathing too loud, India,"</p>
 
-      <p>He tried to backpedal, to get away from the source of the pain, but the floor was still slick with soap and condensation. His heavy combat boots, which had given him so much traction when he was charging, now became skates. His heel caught a puddle.</p>
+      <p>Doom rasped. His voice sounded like gravel being crushed under a boot. "You sound like a radiator about to blow."</p>
 
-      <p><em>Fulcrum. Leverage. Gravity.</em></p>
+      <p class="dialogue">"It's the heat,"</p>
 
-      <p>Three hundred pounds of muscle went horizontal. He hit the concrete floor with a force that shook the dryers. His head bounced once—a hollow <em>thwack</em> against the cement—and then he lay still, wheezing, clutching his throat, his legs twitching involuntarily.</p>
+      <p>I whispered, keeping my eyes on the stain.</p>
 
-      <p>The laundry room went dead silent. Even the machines seemed to hold their breath.</p>
+      <p class="dialogue">"It ain't the heat,"</p>
 
-      <p>I stood over him, my chest heaving, my forearm throbbing where I’d made contact. The adrenaline was screaming in my blood, a high-pitched whine that drowned out the world. I looked at my hands. They were shaking again, but not from fear this time. From the surge.</p>
+      <p>Doom said, flipping a page of his book. The sound was sharp in the heavy silence of the cell. "It’s the waiting. The waiting is what eats you. The fight happens in ten minutes or ten years, it don't matter. You're already fighting it in your head, burning up energy you’re gonna need."</p>
 
-      <p class="dialogue">"Enough,"</p>
+      <p>I rolled over and looked over the edge. Doom was lying on his back, holding a tattered paperback with a cover so worn the title was gone. He was an ancient thing, carved out of the prison itself. His skin was the color of old mahogany, tough and scarred, and his eyes were black pits that absorbed the light. He’d been in here since before the internet, before cell phones, before the world outside had sped up and left this place behind. He called me India because on my first day, when the intake guard asked where I was from, I’d mumbled something about not belonging here, and Doom had said, <em>'You look like you're lost in a foreign country, kid. You look like India.'</em> The name stuck. Names always stuck in here. They were the only things you truly owned.</p>
+<div style="margin: 4rem 0; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.1);">
+  <img src="doom.png" alt="India vs Grunt Fight" style="width: 100%; display: block;">
+</div>
+      <p class="dialogue">"He was watching me in the yard again,"</p>
 
-      <p>Doom’s voice cut through the haze. He was at my side instantly, his hand gripping my shoulder. "Don't kick him. Don't look at the crowd. Walk away."</p>
+      <p>I said, the words tasting like ash.</p>
 
-      <p>"He's not moving," I whispered. The reality of what I’d done was crashing in. I wasn’t a fighter. I was a quant. I dealt in risk analysis, not blunt force trauma.</p>
+      <p>Doom finally lowered the book. "Grunt watches everything. He’s a shark in a goldfish bowl. He’s gotta keep moving, keep scaring people, or he remembers he’s just another number in a cage."</p>
 
-      <p class="dialogue">"He'll move when the air comes back,"</p>
+      <p><strong>Grunt.</strong> The name was a joke that wasn't funny. He was a creature of pure intimidation, a towering slab of muscle that stood six-foot-five and blocked out the sun. He wasn't just big; he was dense, packed with the kind of violence that felt inevitable. His head was shaved clean, shining under the yard lights, and his skin was a tapestry of prison ink—jagged tribal bands, skulls, weeping angels, and words written in script too fancy for the violence they promised. He had a silver ring through his septum like a bull, and when he breathed, you could hear the air whistling through it.</p>
 
-      <p>Doom said, steering me toward the exit. "You broke his wind, not his neck. Now move. Before the shock wears off and his boys remember they outnumber us twenty to two."</p>
+      <p>He ran the D Block. Not officially—the guards ran the block—but Grunt ran the fear. And for the last three weeks, he had decided I was his next project.</p>
 
-      <div style="margin: 4rem 0; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.1);">
-        <img src="aftermath.png" alt="Walking Away" style="width: 100%; display: block;">
-      </div>
+      <p>It hadn't been a sudden thing. It was a slow suffocation. It started in the chow hall. I was carrying my tray, plastic warped from a thousand washes, looking for a patch of empty table. Grunt had been sitting with his crew, the Aryan Brotherhood guys who used silence as a weapon. As I passed, Grunt’s leg shot out. Not a trip. A barrier. A toll gate.</p>
 
-      <p>We walked through the circle. The wall of men parted. They didn't jeer. They didn't cheer. They just stared. I saw confusion in their faces. They had come to see a slaughter, and they had seen a math problem solved in real-time. The Aryan crew looked at Grunt, gasping on the floor like a fish out of water, and then they looked at me. The predator had become the prey.</p>
+      <p>I had stopped, the lukewarm water they called soup sloshing onto my thumb. Grunt looked up, his eyes dead and flat, like a shark’s eyes rolling back. He didn't say a word. He just smiled, revealing a row of teeth that were rotting at the gums and one shiny silver cap that caught the fluorescent light. He tapped the table in front of him. He wanted my cornbread.</p>
 
-      <p>Miller, the guard, was leaning against the doorframe, chewing on a toothpick. He looked at Grunt, then at me. He didn't blow his whistle. He didn't call for backup.</p>
+      <p>I gave it to him. I put it on the table, head down, and walked away. I thought I was paying a tax. I thought I was buying safety.</p>
 
-      <p>"Slip and fall?" Miller asked, his eyes bored.</p>
+      <p class="dialogue">"You fed the beast,"</p>
 
-      <p>"Floor's wet, boss," Doom said, not breaking stride. "OSHA violation waiting to happen."</p>
+      <p>Doom had told me that night. "You don't feed the beast, India. Now he thinks you’re the vending machine."</p>
 
-      <p>Miller grunted and stepped aside.</p>
+      <p>Doom was right. He was always right. After the cornbread, it was the yard. Grunt would shadow me, walking three paces behind, close enough that I could smell the stale tobacco and unwashed skin, but far enough that the tower guards wouldn't call it menacing. He would whisper things. Graphic things. Things about what he was going to do to me when the lights went out, or when we found a blind spot.</p>
+
+      <p>Now, the blind spot had been found.</p>
+
+      <p class="dialogue">"Laundry,"</p>
+
+      <p>I said to Doom, swinging my legs down from the bunk. My bare feet hit the cold concrete. "Behind the dryers. After count."</p>
+
+      <p>Doom sat up. He closed his book gently, treating it with more respect than he treated any living person in this place. "Laundry is good. It's loud. Steam covers the blood. Slippery floor though. Watch your step."</p>
+
+      <p>"That's your advice? Watch my step?"</p>
+
+      <p>Doom stood up. He wasn't a tall man, but he carried a weight that made him feel heavy. He walked over to me and grabbed my chin, his fingers like steel pincers. He forced my head up, making me look into those deep, dark eyes.</p>
+
+      <p>"Listen to me," Doom hissed. "You're an engineer, right? That’s what you told me. You like numbers. You like systems."</p>
+
+      <p>"Yeah," I said, my voice shaky.</p>
+
+      <p>"Then stop looking at Grunt like a monster. Monsters are fairy tales. Monsters are scary because they don't make sense. Grunt makes sense. He’s just physics, India. He’s mass times acceleration. That’s all." Doom let go of my face and tapped his own temple. "He’s got rocks in his fists, but he’s got slop in his head. He’s angry. Anger makes you stupid. It makes you blind. He wants to crush you. He wants to hurt you. That’s his plan. What’s yours?"</p>
+
+      <p>"Survival," I said.</p>
+
+      <p>"Wrong," Doom snapped. "Survival is what you do when you run away. You can't run in the laundry room. There’s three walls and a line of men who want to see you bleed. You ain't surviving tonight. You’re solving a problem. The problem is a three-hundred-pound man who leans too heavy on his front foot."</p>
 
       <hr style="border: 0; height: 1px; background: rgba(255,255,255,0.1); margin: 3rem 0;">
 
-      <p>Back in the cell, the crash came. My legs turned to water, and I sat heavily on the bottom bunk. The smell of the laundry room—that chemical lemon and fear—was still stuck in my nose.</p>
+      <p>We spent the next hour in silence, the kind of silence that screams. I paced the cell, three steps forward, three steps back. Doom polished his boots. He had a way of making the mundane look like a ritual. Every swipe of the rag was precise. He was teaching me, even when he wasn't talking. <em>Focus on the small thing. Control what you can touch.</em></p>
+<div style="margin: 4rem 0; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.1);">
+  <img src="boots.png" alt="India vs Grunt Fight" style="width: 100%; display: block;">
+</div>
+      <p>When the buzzer sounded for the evening rec period, my stomach dropped to the floor. The metal doors of the cells slid open with a synchronized <em>clank-whoosh</em> that echoed down the tiers like a gunshot.</p>
 
-      <p>Doom sat on the edge of his bunk, looking at me with that same unreadable expression. He didn't offer praise. He didn't smile.</p>
+      <p>"Time to go to work," Doom said. He didn't look at me. He just walked out onto the gantry.</p>
 
-      <p class="dialogue">"You bought time,"</p>
+      <p>The walk to the laundry sector felt like a march to the gallows. The prison was alive tonight. The energy was different. Word had spread. In a place where nothing ever happens, violence is the only entertainment. I could feel eyes on me from the upper tiers. Men leaning over the railings, whispering. Betting. I wondered what the odds were. I wondered if anyone was betting on me, or if they were just betting on how long I’d last.</p>
 
-      <p>he said softly, picking up his book again. "But the interest rate in here is high. Grunt won't come at you straight again. He'll come sideways. He'll come when you're sleeping, or when you're on the toilet, or when you're thinking about home."</p>
+      <p>"Don't look at them," Doom said, his voice low, walking right beside me. "They're just noise. Static on the radio. Tune it out."</p>
 
-      <p>"So what do I do?" I asked, wiping the sweat from my forehead.</p>
+      <p>We passed through the checkpoints. The guards looked bored. One of them, a heavy-set man named Miller who usually checked passes, just waved us through. He knew. They all knew. As long as nobody died and nobody tried to go over the wall, they let the pressure valve release. It kept the riot counts down.</p>
 
-      <p>Doom opened his book to the dog-eared page. He didn't look up.</p>
+      <p>The laundry room was at the end of the D Block corridor. As we got closer, the air got hotter, wetter. The smell of industrial detergent was suffocating, a chemical lemon scent that tried to cover up the stench of a thousand dirty jumpsuits. The noise was deafening—the rhythmic <em>thump-thump-thump</em> of the massive dryers, the hiss of steam presses, the clatter of carts.</p>
 
-      <p>"You keep solving the physics, India. You keep solving the physics."</p>
+      <p>We rounded the corner past the folding tables, into the back alcove where the old generators hummed.</p>
+
+      <p>They were already there.</p>
+
+      <p>It was a wall of bodies. Thirty, maybe forty men. The Aryan crew. The Latin Kings. The neutrals who just wanted to see a train wreck. They had formed a tight circle, leaving a patch of concrete in the middle about ten feet wide. It was slick with condensation.</p>
+
+      <p>When I stepped through the gap in the crowd, the noise dropped. Not the machines—they kept thumping—but the men. The talking stopped. They looked at me with that hungry, dead-eyed stare.</p>
+
+      <p>And there he was.</p>
+
+      <p>Grunt was stripping off his shirt. His back was a landscape of muscle and scarring. He turned slowly, theatrically. He wanted this to be a show. He wanted them to see the monster. He rolled his neck, the vertebrae popping loud enough to hear over the dryers. He flexed his hands, opening and closing them. They were the size of hams.</p>
+
+      <p>He looked at me and grinned. It was the same grin from the chow hall, but bigger now. Hungrier.</p>
+
+      <p class="dialogue">"School's out, little man,"</p>
+
+      <p>he boomed. His voice bounced off the metal walls. "Time for your final exam."</p>
+
+      <p>I stood there, feeling small. I was wearing my standard issue blues, and they felt too big for me. I felt like a child wearing his father's clothes. My hands were trembling. I shoved them into my pockets to hide it, but then I remembered Doom’s advice. <em>Don't hide. Stand.</em></p>
+
+      <p>I took my hands out. I made fists.</p>
+
+      <p>Doom stepped up behind me. He didn't touch me, but I could feel his heat. "Breathe," he whispered. "He’s gonna come out fast. He wants to end it in the first ten seconds. He wants the highlight reel. Let him spend his money. You keep yours in the bank."</p>
+
+      <p>Grunt stepped into the circle. The crowd tightened. The air felt electric, charged with the static of imminent violence.</p>
+
+      <p>"Come on then!" Grunt roared, slapping his chest. The sound was like a wet whip crack. "Don't be shy, India! Come get your lesson!"</p>
+
+      <p>He didn't wait. He didn't circle. He launched.</p>
+
+      <p>It was terrifying. seeing a man that size move that fast. He covered the distance in two strides, the concrete floor shaking under his boots. He looked like a collapsing building falling toward me. His right arm was cocked back, a wrecking ball ready to swing.</p>
+
+      <p>The fear spiked—a hot, white needle in my brain. My instinct screamed at me to curl up, to cover my head, to turn away.</p>
+
+      <p>But somewhere under the fear, a gear turned. A switch flipped.</p>
+
+      <p><em>Mass times acceleration.</em></p>
+
+      <p>He was coming too fast. He was leaning too far forward.</p>
+
+      <p>I watched his feet. His right boot stomped down, heavy, committing all his weight.</p>
+
+      <p>I didn't think. I just obeyed the physics. I dropped my level, bending my knees, and stepped sharp to the left.</p>
+
+      <p>Grunt’s fist punched the air where my head had been a microsecond ago. The wind of it slapped my ear. He was moving so fast he couldn't stop. He stumbled past me, his momentum carrying him toward the crowd.</p>
+
+      <p>The men shouted, shoving him back into the circle.</p>
+
+      <p>Grunt spun around. The grin was gone. Confusion replaced it for a second, then pure, unadulterated rage. He wasn't used to missing. He wasn't used to the rabbit moving.</p>
+
+      <p>"You slippery little rat," he spat, wiping spittle from his chin.</p>
+
+      <p>He reset. He raised his hands this time, tucking his chin. He was learning. That was bad. A smart monster is worse than a wild one.</p>
+
+      <p>"Watch the left," Doom’s voice cut through the noise.</p>
+
+      <p>Grunt stalked forward. He threw a jab—quick, testing. It grazed my shoulder. It felt like being hit with a hammer. My arm went numb. If that was just a tap, a real hit would break bones.</p>
+
+      <p>He threw another. I blocked it, and the impact rattled my teeth.</p>
+      <div style="margin: 4rem 0; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.1);">
+    <img src="fight.png" alt="India vs Grunt Fight" style="width: 100%; display: block;">
+</div>
+
+      <p>The crowd was baying now. "Kill him! Smash him!"</p>
+
+      <p>Grunt cornered me against the generator cage. The metal mesh dug into my back. There was nowhere to go. The heat from the machine was burning through my skin. Grunt saw the trap. He smiled again. He planted his feet, winding up for a body shot that would rupture organs.</p>
+
+      <p>I looked at his eyes. They were wide, fixated on my ribs. He wasn't looking at my face. He was looking at the target.</p>
+
+      <p><em>Tunnel vision.</em></p>
+
+      <p>He pulled back. His ribs opened up. He raised his elbow too high.</p>
+
+      <p>I stopped shaking. The world slowed down. The thumping of the dryers synced with my heart. <em>Thump. Thump. Thump.</em></p>
+
+      <p>I saw the line. I saw the opening. It was small, a window closing fast, but it was there.</p>
+
+      <p>Grunt swung.</p>
+
+      <p>I didn't block. I stepped <em>into</em> him. Into the danger. Into the fire.</p>
+
+      <p>I drove my forearm up, aiming not for his face, but for the space under his chin, right where the beard ended and the throat began.</p>
+
+      <p>The collision was imminent. The air between us compressed. I gritted my teeth, braced my legs, and threw everything I had into the counter-move.</p>
 
     </article>
-
-    <div style="text-align: center; margin: 5rem 0 3rem; user-select: none;">
-      <h2 style="font-family: 'Bebas Neue', sans-serif; font-size: 3rem; letter-spacing: 0.2em; color: var(--text-muted); text-transform: uppercase; margin: 0; border: none; padding: 0;">
-        To Be Continued
-      </h2>
-    </div>
-
+<div style="text-align: center; margin: 5rem 0 3rem; user-select: none;">
+  <h2 style="font-family: 'Bebas Neue', sans-serif; font-size: 3rem; letter-spacing: 0.2em; color: var(--text-muted); text-transform: uppercase; margin: 0;">
+    To Be Continued
+  </h2>
+</div>
     <div class="nav-footer">
-      <a href="chapter1.html" class="btn-nav">← Previous Chapter</a>
-      <a href="index.html" class="btn-nav">Home</a>
+      <a href="index.html" class="btn-back">Return to Home</a>
     </div>
 
   </div>
 
   <script>
-    // Centralized Audio Controller
     var currentAudio = null;
-    var currentButtonId = null;
-
-    function playAudio(buttonId, source) {
-      // Toggle off if clicking the same button
-      if (currentButtonId === 'btn-' + buttonId && currentAudio && !currentAudio.paused) {
+    
+    // UPDATED SCRIPT: Now simpler and more robust, matching Chapter 2
+    function playAudio(filename) {
+      if (currentAudio && !currentAudio.paused) {
         currentAudio.pause();
-        currentAudio.currentTime = 0; // Reset track
-        document.getElementById('btn-' + buttonId).classList.remove('playing');
         currentAudio = null;
-        currentButtonId = null;
         return;
       }
-
-      // Stop any other currently playing audio
-      if (currentAudio) {
-        currentAudio.pause();
-        currentAudio.currentTime = 0;
-        if(currentButtonId) {
-           document.getElementById(currentButtonId).classList.remove('playing');
-        }
-      }
-
-      // Start new audio
-      currentAudio = new Audio(source);
-      currentButtonId = 'btn-' + buttonId;
-
-      currentAudio.play().then(() => {
-        document.getElementById(currentButtonId).classList.add('playing');
-      }).catch(error => {
-        console.error("Audio playback failed:", error);
-        alert("Audio file not found or playback blocked.");
+      
+      // Ensure "swim.mp3" is in the same folder as this HTML file
+      currentAudio = new Audio(filename);
+      currentAudio.volume = 0.6; 
+      
+      currentAudio.play().catch(function(e) {
+        console.error("Playback failed:", e);
+        alert("Audio file not found. Check if '" + filename + "' is in your folder.");
       });
-
-      // Cleanup when audio finishes
-      currentAudio.onended = function() {
-        document.getElementById(currentButtonId).classList.remove('playing');
-        currentAudio = null;
-        currentButtonId = null;
-      };
     }
   </script>
 </body>
+
 </html>
