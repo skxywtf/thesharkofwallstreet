@@ -3,27 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Scarlett Blackwell | The Shark of Wall Street</title>
-	  <meta charset="UTF-8" />
-  <meta name="description" content="An AI-themed, neo-noir epic blending fantasy and reality. The true story of a markets-obsessed engineer building World Trade Factory." />
-    <meta name="keywords" content="The Shark of Wall Street, World Trade Factory, Sage Kakkat, AI investing, financial thriller, global macro, movie rights, non-fiction memoir" />
-    <meta name="author" content="Sage Kakkat" />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://thesharkofwallstreet.com" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://thesharkofwallstreet.com" />
-    <meta property="og:title" content="The Shark of Wall Street | A Neo-Noir Finance Epic" />
-    <meta property="og:description" content="From Cairo to Wall Street. A true story where love, obsession, AI, and rock ’n’ roll collide." />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="The Shark of Wall Street" />
-    <meta name="twitter:description" content="An AI-themed, neo-noir epic blending fantasy and reality." />
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RTH99L39VB"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-RTH99L39VB');
-  </script>
+  <title>Scarlett Blackwell</title>
   <style>
     :root{
       --bg:#050608;
@@ -64,6 +44,7 @@
 	      align-items: center;
 	      justify-content: center;
 	      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+	      text-align: center;
 	    }
 
 	    .audio-scroll-container {
@@ -209,6 +190,16 @@
       background: var(--accent);
       box-shadow: 0 0 18px rgba(193,18,47,.7);
     }
+    h1.chapter-title {
+	  font-family: 'Bebas Neue', sans-serif;
+	  font-size: clamp(2rem, 6vw, 4rem);
+	  color: red;
+	  text-transform: uppercase;
+	  line-height: 0.9;
+	  margin-bottom: 0.5rem;
+	  text-shadow: 0 4px 30px rgba(239, 68, 68, 0.2);
+	  text-align: center; /* This is the fix */
+}
   </style>
 </head>
 
@@ -217,9 +208,10 @@
     <div class="audio-scroll-container">
       <button class="btn-audio" id="btn-touch" onclick="playAudio('touch', 'touch.mp3')">🔊 I Don't Touch Her</button>
     </div>
+    <br/>
   </header>
   <main class="wrap">
-
+    <h1 class="chapter-title">Scarlett Blackwell</h1>
     <!-- FIRST VISUAL DROP (NO CAPTION) -->
     <section class="hero" aria-label="Visual Drop">
       <div class="hero-media">
@@ -232,13 +224,14 @@
     <!-- SIGNATURE QUOTE (DROP AFTER IMAGE) -->
     <section class="quote" aria-label="Signature Quote">
       <blockquote>
-        “If looks could kill, I wouldn’t need a <span>knife</span>.”
+         <h4> “If looks could kill, I wouldn’t need a <span>knife</span>.”</h4>
       </blockquote>
     </section>
 
     <!-- INTRO (STANDALONE, NO MENTION OF THE SHARK YET) -->
+
     <section class="intro" aria-label="Intro">
-      <h1>Scarlett Blackwell</h1>
+
 
       <p>No one remembers when Scarlett Blackwell first appeared—only when the room changed.</p>
 
@@ -310,4 +303,3 @@
   </script>
 </body>
 </html>
-
