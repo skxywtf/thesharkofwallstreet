@@ -46,7 +46,15 @@
       --danger: #ef4444;
       --header-height: 70px;
     }
-
+    /* --- HIDE VERCEL TOOLBAR --- */
+    #vercel-toolbar,
+    vercel-live-feedback,
+    [data-vercel-toolbar] {
+      display: none !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+      visibility: hidden !important;
+    }
     body {
       background-color: var(--bg-dark);
       color: var(--text-main);
@@ -445,3 +453,4 @@ h1.chapter-title {
 </body>
 
 </html>
+
