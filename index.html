@@ -296,7 +296,18 @@ h1 span {
   transform: translateY(-1px);
   box-shadow: 0 0 28px rgba(193,18,47,.65);
 }
+.card-row {
+  display: flex;           /* Aligns items in a row */
+  justify-content: center; /* Centers them horizontally (optional) */
+  gap: 20px;               /* Space between the two cards */
+  flex-wrap: wrap;         /* Allows them to stack on very small screens */
+  margin-top: 2rem;        /* Adds space above the row */
+}
 
+/* Optional: Ensure the cards don't stretch weirdly */
+.scarlett-card {
+  width: auto;             /* Or a specific width like 200px */
+}
   </style>
 </head>
 <body>
@@ -328,15 +339,20 @@ h1 span {
         <p style="margin: 1.5rem auto 0; font-size: 1.5rem; line-height: 1.6; color: rgba(255,255,255,0.75); letter-spacing: 0.02em; font-style: italic;">
   An outsider with an uncanny instinct for markets uncovers a hidden architecture of power and desire. As he builds an intelligence engine that threatens the old order, shadows tighten around him—forcing a choice between revelation, obsession, and survival.
 </p>
-<div class="card scarlett-card">
-  <a href="black.html" class="btn meet-scarlett">
-    Meet Scarlett
-  </a>
-</div>
-<div class="card scarlett-card">
-  <a href="mayor.html" class="btn meet-scarlett">
-    The Mayor
-  </a>
+<div class="card-row">
+  
+  <div class="card scarlett-card">
+    <a href="black.html" class="btn meet-scarlett">
+      Meet Scarlett
+    </a>
+  </div>
+
+  <div class="card scarlett-card">
+    <a href="mayor.html" class="btn meet-scarlett">
+      The Mayor
+    </a>
+  </div>
+
 </div>
                 <br />
           <span class="genre-tag">
