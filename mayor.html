@@ -214,6 +214,21 @@ h1.chapter-title {
       background: #fff;
       color: #000;
     }
+    .story-media{
+  max-width: 880px;        /* controls image size */
+  margin: 4rem auto;       /* centers it */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.story-media img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
   </style>
 </head>
 <body>
@@ -229,8 +244,8 @@ h1.chapter-title {
 
     <h1 class="chapter-title">The Mayor of New York</h1>
     
-    <div style="margin-bottom: 3rem; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.1);">
-      <img src="mayor	.png" alt="The Met Terrace at Night" style="width: 100%; display: block;">
+    <div class="story-media"">
+      <img src="mayor	.png" alt="The Met Terrace at Night">
     </div>
 
     <article class="story-text">
@@ -259,8 +274,8 @@ h1.chapter-title {
 
       <p>The Shark was dressed in midnight blue, holding a glass of amber liquid with the casual arrogance of a man who owned the distillery. He leaned against the railing, facing the Mayor. Two men, cut from the same distant cloth, standing at the pinnacle of the American Empire.</p>
       
-      <div style="margin: 4rem 0; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.1);">
-        <img src="shark.png" alt="Two Glasses" style="width: 100%; display: block;">
+      <div class="story-media">
+        <img src="shark.png" alt="Two Glasses">
       </div>
 
       <p class="dialogue">"Congratulations,"</p>
