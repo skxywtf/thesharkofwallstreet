@@ -310,6 +310,20 @@
       .scarlett-header{text-align:left;}
       .sig{justify-content:flex-start;}
     }
+    .story-media-pair{
+	  display: grid;
+	  grid-template-columns: repeat(2, minmax(0, 1fr));
+	  gap: 20px;
+	  max-width: 900px;     /* controls overall width */
+	  margin: 3.5rem auto;  /* centers the pair */
+	}
+
+	@media (max-width: 768px){
+	  .story-media-pair{
+	    grid-template-columns: 1fr; /* stack on mobile */
+	  }
+	}
+
   </style>
 </head>
 
@@ -348,11 +362,18 @@
       <div class="sig"><span class="dot"></span><span>Classified</span></div>
     </article>
 
-    <!-- Visual 2 (contained) -->
-    <div class="story-media" aria-label="Scarlett Visual 2">
-      <img src="black.png" alt="Scarlett Blackwell — Black Dress">
-      <div class="vignette"></div>
-    </div>
+<div class="story-media-pair">
+  <div class="story-media" aria-label="Scarlett Visual Black">
+    <img src="black.png" alt="Scarlett Blackwell — Black Dress">
+    <div class="vignette"></div>
+  </div>
+
+  <div class="story-media" aria-label="Scarlett Visual Champagne">
+    <img src="white.png" alt="Scarlett Blackwell — Champagne Dress">
+    <div class="vignette"></div>
+  </div>
+</div>
+
 
     <!-- Shop the Scene -->
     <section class="scarlett-shop" aria-label="Shop the Scene">
