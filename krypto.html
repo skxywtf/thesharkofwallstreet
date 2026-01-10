@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>The Algorithm of Noise | The Shark of Wall Street — Introducing Krypto</title>
+  <meta name="description" content="4:00 AM at The Void. Krypto predicts a Bitcoin crash using volatility arbitrage while dancing on a table." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="author" content="Sage" />
+  <link rel="canonical" href="https://thesharkofwallstreet.com/the-algorithm-of-noise" />
+
+  <meta name="theme-color" content="#020617" />
+  <meta name="color-scheme" content="dark" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RTH99L39VB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];	
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RTH99L39VB');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #050505;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #ccff00;       /* Kryptonite Green */
+      --secondary: #00f0ff;    /* Cyan glitch */
+      --border: rgba(255,255,255,0.1);
+      --header-height: 70px;
+    }
+
+    #vercel-toolbar, vercel-live-feedback, [data-vercel-toolbar] {
+      display: none !important; opacity: 0 !important; pointer-events: none !important; visibility: hidden !important;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: system-ui, -apple-system, sans-serif;
+      margin: 0;
+      padding-top: var(--header-height);
+      overflow-x: hidden;
+    }
+
+    .reader-container{
+      width: min(1100px, calc(100% - 3rem));
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+
+    h1.chapter-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3rem, 8vw, 5rem);
+      color: var(--accent);
+      text-transform: uppercase;
+      line-height: 0.9;
+      margin-bottom: 0.5rem;
+      text-shadow: 2px 2px 0px var(--secondary);
+      text-align: center;
+    }
+
+    .chapter-meta {
+      font-family: 'Share Tech Mono', monospace;
+      color: var(--secondary);
+      font-size: 1rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 2rem;
+      margin-bottom: 3rem;
+      display: flex;
+      justify-content: space-between;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .story-text {
+      font-family: 'Merriweather', serif;
+      font-size: 1.15rem;
+      line-height: 1.9;
+      color: #e2e8f0;
+    }
+
+    .story-text p { margin-bottom: 2rem; }
+    .story-text .dialogue { color: #fff; font-weight: 400; }
+
+    .drop-cap::first-letter {
+      float: left;
+      font-size: 4rem;
+      line-height: 0.8;
+      font-weight: bold;
+      padding-right: 12px;
+      color: var(--accent);
+      font-family: 'Share Tech Mono', monospace;
+      text-shadow: 2px 2px var(--secondary);
+    }
+
+    .story-media {
+      max-width: 800px;
+      margin: 4rem auto;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 40px rgba(204, 255, 0, 0.15);
+      border: 1px solid var(--border);
+    }
+    .story-media img { width: 100%; height: auto; display: block; }
+
+    .fixed-audio-header {
+      position: fixed; top: 0; left: 0; width: 100%; height: var(--header-height);
+      background: rgba(5, 5, 5, 0.9); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border); z-index: 1000;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
+    .audio-scroll-container {
+      width: 100%; max-width: 1100px; display: flex; gap: 0.8rem;
+      padding: 0 1.5rem; overflow-x: auto; scrollbar-width: none;
+      justify-content: center;
+    }
+    .audio-scroll-container::-webkit-scrollbar { display: none; }
+    @media (max-width: 768px) {
+      .audio-scroll-container { justify-content: flex-start; padding-left: 1rem; padding-right: 1rem; }
+    }
+    .btn-audio {
+      background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border);
+      color: #e0e0e0; padding: 0.4rem 1rem; border-radius: 999px;
+      font-size: 0.75rem; font-weight: 600; cursor: pointer; white-space: nowrap;
+      transition: all 0.2s ease; display: flex; align-items: center; gap: 0.4rem;
+      font-family: 'Share Tech Mono', monospace;
+    }
+    .btn-audio:hover {
+      background-color: rgba(204, 255, 0, 0.1); border-color: var(--accent); color: #fff;
+    }
+    .btn-audio.playing {
+      background-color: var(--accent); color: #050505; border-color: var(--accent);
+      box-shadow: 0 0 15px rgba(204, 255, 0, 0.6);
+    }
+
+    /* --- SHOP THE SCENE --- */
+    .shop-scene { padding: 32px 0; background: transparent; color: #e5e7eb; }
+    .shop-wrap { width: min(1400px, calc(100% - 3rem)); margin: 0 auto; padding: 0 20px; }
+    .shop-header { text-align: center; margin-bottom: 18px; }
+    .shop-header h2 { font-size: 30px; margin: 0 0 10px; letter-spacing: .6px; color: #f9fafb; font-family: 'Bebas Neue', sans-serif; }
+    .shop-header p, .shop-header h3 { margin: 0 auto 22px; max-width: 75ch; line-height: 1.55; color: #9ca3af; font-weight: 400; }
+    
+    .shop-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 20px; }
+    @media (max-width: 860px){ .shop-grid { grid-template-columns: 1fr; } }
+
+    .shop-card {
+      background: linear-gradient(180deg, rgba(204, 255, 0, 0.02), rgba(0,0,0,0.6));
+      border: 1px solid rgba(255,255,255,0.08); border-radius: 18px; padding: 22px;
+      backdrop-filter: blur(4px);
+    }
+    .shop-card h3 { margin: 0 0 6px; font-size: 22px; letter-spacing: .4px; color: var(--accent); font-family: 'Bebas Neue', sans-serif; }
+    .shop-sub { margin: 0 0 16px; color: #9ca3af; font-size: 14px; font-family: 'Share Tech Mono', monospace; }
+    
+    .shop-section { margin-top: 18px; }
+    .shop-section h4 { margin: 0 0 10px; font-size: 12px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--secondary); }
+    .shop-section ul { margin: 0; padding-left: 18px; }
+    .shop-section li { margin: 10px 0; line-height: 1.5; color: #e5e7eb; }
+
+    .links { display: inline-block; margin-left: 6px; }
+    .links a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(204, 255, 0, 0.4); transition: all .2s ease; }
+    .links a:hover { color: #fff; border-bottom-color: #fff; }
+
+    /* NEW: environment callout list (kept consistent) */
+    .muted-note { color: #94a3b8; font-size: 12px; margin-top: 10px; font-family: 'Share Tech Mono', monospace; }
+
+    .disclaimer { font-size: 12px; color: #6b7280; margin: 16px 0 0; text-align: center; }
+
+    .nav-footer { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border); text-align: center; }
+    .btn-back {
+      display: inline-block; text-decoration: none; color: var(--text-muted);
+      border: 1px solid rgba(255,255,255,0.2); padding: 0.8rem 2rem;
+      border-radius: 4px; transition: all 0.2s; text-transform: uppercase;
+      font-size: 0.8rem; letter-spacing: 2px;
+    }
+    .btn-back:hover { background: #fff; color: #000; }
+  </style>
+</head>
+
+<body>
+
+  <header class="fixed-audio-header">
+    <div class="audio-scroll-container">
+      <button class="btn-audio" id="btn-who" onclick="playAudio('who', 'who.mp3')">🔊 Play: Who I Am</button>
+    </div>
+  </header>
+
+  <div class="reader-container">
+    
+    <div style="font-family: 'Bebas Neue'; text-align: center; margin-bottom: 1rem; color: var(--text-muted); letter-spacing: 3px; font-size: 3rem;" class="uppercase">
+      The Shark of Wall Street
+    </div>
+
+    <h1 class="chapter-title">Krypto</h1>
+    
+    <div class="story-media">
+      <img src="krypto.png" alt="Krypto in a techno club">
+    </div>
+
+    <article class="story-text">
+      
+      <div class="chapter-meta" style="text-align: center; margin-bottom: 2rem;">
+        Location: The Void &bull; 04:02 AM &bull; BPM: 180
+      </div>
+
+      <p class="drop-cap">The Shark walked into the VIP section. The bass was so heavy it rattled the ice in the glasses. The air was thick with fog machine smoke and the sharp, heavy spice of unfiltered <strong>Djarum Black</strong> cloves.</p>
+   <div class="story-media">
+      <img src="club.png" alt="Krypto in a techno club">
+    </div>
+
+      <p>There, standing on top of a leather banquette, was <strong>Krypto</strong>.</p>
+
+      <p>He was a blur of motion, a cyber-grunge warlord draped in post-apocalyptic luxury. He wore vintage <strong>Rick Owens</strong> drop-crotch cargo shorts and an oversized <strong>Vetements</strong> hoodie that likely cost more than a mid-sized sedan, now riddled with cigarette burns. On his feet were <strong>Acronym</strong> technical sneakers that looked like moon boots, stomping out a rhythm that didn't exist for anyone else.</p>
+
+      <p>He was dangerously thin, his skin pale and almost translucent, vibrating with a nervous energy that suggested his resting heart rate was permanently locked at 120 BPM.</p>
+
+      <p class="dialogue">"Krypto!"</p>
+
+      <p>The Shark shouted over the music, grabbing him by the ankle and yanking him down.</p>
+          <div class="story-media">
+      <img src="froze.png" alt="Krypto in a techno club">
+    </div>
+
+      <p>Krypto stumbled, landed on the velvet couch, and immediately started typing on a specialized <strong>Framework</strong> laptop balanced precariously on an ice bucket. He didn't look at The Shark; he stared at the screen through vintage <strong>Oakley X-Metal Romeo</strong> sunglasses—a relic from the 90s worn indoors to hide pupils that were blown wide open from a cocktail of nootropics and stimulants.</p>
+
+   
+      <p>His left hand had a constant, violent tremor—a side effect of the chemical cocktail keeping him awake—but the moment his fingertips hovered over the keys, the shaking stopped instantly. He tapped complex polyrhythms on his thighs, subconsciously mimicking the tick-rate of the exchange.</p>
+
+      <p class="dialogue">"The fractal!"</p>
+
+      <p>Krypto whispered, his voice cracking. "Can't you feel it? The rhythm is off. Someone is building a buy wall at $98k. It’s too uniform. It’s not organic flow."</p>
+
+      <p>"It’s not organic, Julian. It’s <strong>Saylor</strong>," The Shark said, leaning in. "MicroStrategy is preparing another tranche. They’re issuing convertible notes to buy the dip. Again."</p>
+
+      <p>Krypto froze. He reached for a bottle of <strong>Suntory Yamazaki 18</strong>, bypassing the glass to take a long pull straight from the neck. He chased it by tearing open a high-sugar energy gel designed for ultra-marathon runners, squeezing the goo into his mouth like he was refueling a machine.</p>
+    <div class="story-media">
+      <img src="drink.png" alt="Krypto in a techno club">
+    </div>   
+    
+      <p class="dialogue">"He's back?"</p>
+
+      <p>Krypto hissed, a manic grin spreading across his face. "The Whale is back to feed?"</p>
+
+      <p>"He's essentially printing fiat to buy hard assets," The Shark explained. "He's issuing debt at 0.8% interest to buy an asset appreciating at 50%. It’s a carry trade on steroids."</p>
+
+      <p>Krypto started giggling—a high-pitched, unnerving sound. "He's long gamma. He creates the volatility he surfs on. But he's heavy, Shark. He moves like a supertanker. He creates a wake."</p>
+
+      <p>"Exactly," The Shark said. "And I want to drown the tourists swimming in his wake."</p>
+
+      <p>Krypto’s fingers flew across the keyboard. Green code cascaded down the screen.</p>
+
+      <p>"If Saylor is buying spot," Krypto muttered, his head bobbing to the 180 BPM industrial techno, treating the market data like sheet music. "He's pushing the price up, which spikes the implied volatility on the call options. The retail plebs are leveraging up to chase him."</p>
+
+      <p>"So we don't chase," The Shark cut in. "We front-run his liquidity requirements. We short the volatility spread. When his VWAP hits the accumulation zone, we don't buy. We trigger a liquidation cascade."</p>
+
+      <p>"We sell the derivatives ceiling while he supports the floor," Krypto finished the sentence, his body vibrating again. "We trap the retail longs in the spread. It’s... it’s beautiful. It’s volatility arbitrage."</p>
+
+      <p>"I need to rewrite the execution bot," Krypto said, his voice dropping to a serious, almost lucid tone. "I need to inverse the Saylor vector. He thinks he's the apex predator? No. He's the plankton. We are the filter feeder."</p>
+
+      <p>"Do it," The Shark commanded. "Leverage it 100x. Target the flush at $99,420."</p>
+
+      <p>Krypto paused. His hand hovered over the 'Execute' key. He looked up at The Shark, sweat dripping from his nose.</p>
+
+      <p class="dialogue">"You want to hunt Michael Saylor?"</p>
+
+      <p>"I want to eat him," The Shark replied.</p>
+          <div class="story-media">
+      <img src="scream.png" alt="Krypto in a techno club">
+    </div>
+	
+      <p>Krypto screamed—a sound of pure, chemical ecstasy—and slammed the enter key exactly as the bass dropped.</p>
+
+      <p class="dialogue"></p> <a href="https://www.linkedin.com/pulse/shark-ate-saylor-sage-kakkat-uu77c/">"The Shark that ate the Saylor!"</a>
+
+      <p>Krypto howled, jumping back onto the table as the market charts turned into a bloodbath of red candles. "It’s feeding time!"</p>
+
+    </article>
+
+    <div style="text-align: center; margin: 5rem 0 3rem; user-select: none;">
+      <h2 style="font-family: 'Bebas Neue', sans-serif; font-size: 3rem; letter-spacing: 0.2em; color: var(--text-muted); text-transform: uppercase; margin: 0;">
+        System Overload
+      </h2>
+    </div>
+
+    <section class="shop-scene">
+      <div class="shop-wrap">
+        <header class="shop-header">
+          <h2>Shop the Scene</h2>
+          <h3>Post-apocalyptic luxury, top-shelf vices, and tech that runs the world.</h3>
+        </header>
+
+        <div class="shop-grid">
+          <article class="shop-card">
+            <h3>The Tech & Vices</h3>
+            <p class="shop-sub">High functioning delirium tools</p>
+
+            <div class="shop-section">
+              <h4>The Fuel</h4>
+              <ul>
+                <li><strong>Suntory Yamazaki 18 Year</strong>
+                  <span class="links">
+                    <a href="https://house.suntory.com/" target="_blank" rel="noopener noreferrer">Suntory</a>
+                  </span>
+                </li>
+                <li><strong>GU Energy Gels (Ultra-Endurance)</strong>
+                  <span class="links">
+                    <a href="https://guenergy.com/" target="_blank" rel="noopener noreferrer">GU Energy</a>
+                  </span>
+                </li>
+                <li><strong>Djarum Black (Clove Cigarettes)</strong>
+                  <span class="links">
+                    <a href="#" style="cursor: default; color: #94a3b8; border-bottom: none;">Import Only</a>
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="shop-section">
+              <h4>The Hardware</h4>
+              <ul>
+                <li><strong>Framework Laptop (Custom Linux Distro)</strong>
+                  <span class="links">
+                    <a href="https://frame.work/" target="_blank" rel="noopener noreferrer">Framework</a>
+                  </span>
+                </li>
+              </ul>
+              <p class="muted-note">Bonus prop: ice bucket “desk” + velvet couch chaos.</p>
+            </div>
+
+            <!-- NEW: Set Dressing / Props -->
+            <div class="shop-section">
+              <h4>Set Dressing</h4>
+              <ul>
+                <li><strong>Lowball / Rocks Glass (heavy bottom)</strong>
+                  <span class="links">
+                    <a href="https://www.riedel.com/" target="_blank" rel="noopener noreferrer">Riedel</a> ·
+                    <a href="https://www.waterford.com/" target="_blank" rel="noopener noreferrer">Waterford</a>
+                  </span>
+                </li>
+                <li><strong>Ice Bucket (stainless / bar-grade)</strong>
+                  <span class="links">
+                    <a href="https://www.williams-sonoma.com/" target="_blank" rel="noopener noreferrer">Williams Sonoma</a> ·
+                    <a href="https://www.crateandbarrel.com/" target="_blank" rel="noopener noreferrer">Crate &amp; Barrel</a>
+                  </span>
+                </li>
+                <li><strong>Leather Banquette + Velvet Couch energy</strong>
+                  <span class="links">
+                    <a href="https://www.restorationhardware.com/" target="_blank" rel="noopener noreferrer">RH</a> ·
+                    <a href="https://www.designwithinreach.com/" target="_blank" rel="noopener noreferrer">Design Within Reach</a>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="shop-card">
+            <h3>The Look</h3>
+            <p class="shop-sub">Expensive clothes, ruined by lifestyle</p>
+
+            <div class="shop-section">
+              <h4>Club Wear</h4>
+              <ul>
+                <li><strong>Oversized Vetements Hoodie (Distressed)</strong>
+                  <span class="links">
+                    <a href="https://vetementswebsite.com/" target="_blank" rel="noopener noreferrer">Vetements</a>
+                  </span>
+                </li>
+
+                <!-- NEW: Rick Owens bottoms -->
+                <li><strong>Rick Owens Drop-Crotch Cargo Shorts</strong>
+                  <span class="links">
+                    <a href="https://www.rickowens.eu/" target="_blank" rel="noopener noreferrer">Rick Owens</a> ·
+                    <a href="https://www.ssense.com/" target="_blank" rel="noopener noreferrer">SSENSE</a> ·
+                    <a href="https://www.grailed.com/" target="_blank" rel="noopener noreferrer">Grailed (Resale)</a>
+                  </span>
+                </li>
+
+                <li><strong>Acronym Technical Sneakers (Moon Boot profile)</strong>
+                  <span class="links">
+                    <a href="https://acrnm.com/" target="_blank" rel="noopener noreferrer">Acronym</a>
+                  </span>
+                </li>
+
+                <li><strong>Oakley X-Metal Romeo (Vintage)</strong>
+                  <span class="links">
+                    <a href="https://www.oakley.com/" target="_blank" rel="noopener noreferrer">Oakley</a> ·
+                    <a href="https://www.ebay.com/" target="_blank" rel="noopener noreferrer">eBay (Vintage)</a>
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- NEW: Accessories -->
+            <div class="shop-section">
+              <h4>Accessories</h4>
+              <ul>
+                <li><strong>Silver chain / minimal hardware</strong>
+                  <span class="links">
+                    <a href="https://www.allsaints.com/" target="_blank" rel="noopener noreferrer">AllSaints</a> ·
+                    <a href="https://www.chromehearts.com/" target="_blank" rel="noopener noreferrer">Chrome Hearts</a>
+                  </span>
+                </li>
+                <li><strong>Rings (industrial / worn-in)</strong>
+                  <span class="links">
+                    <a href="https://www.vitalydesign.com/" target="_blank" rel="noopener noreferrer">Vitaly</a> ·
+                    <a href="https://www.allsaints.com/" target="_blank" rel="noopener noreferrer">AllSaints</a>
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            <p class="muted-note">Optional detail: cigarette-burn distress is “story damage,” not product spec.</p>
+          </article>
+        </div>
+
+        <p class="disclaimer">
+          Links open in a new tab. “Shop the Scene” is an aesthetic reference list, not endorsements.
+        </p>
+      </div>
+    </section>
+
+    <div class="nav-footer">
+      <a href="index.html" class="btn-back">Return to Base</a>
+    </div>
+
+  </div>
+
+  <script>
+    // Audio Controller
+    var currentAudio = null;
+    var currentButtonId = null;
+
+    function playAudio(buttonId, source) {
+      if (currentButtonId === 'btn-' + buttonId && currentAudio && !currentAudio.paused) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+        document.getElementById('btn-' + buttonId).classList.remove('playing');
+        currentAudio = null;
+        currentButtonId = null;
+        return;
+      }
+
+      if (currentAudio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+        if(currentButtonId) {
+          document.getElementById(currentButtonId).classList.remove('playing');
+        }
+      }
+
+      currentAudio = new Audio(source);
+      currentButtonId = 'btn-' + buttonId;
+
+      currentAudio.play().then(() => {
+        document.getElementById(currentButtonId).classList.add('playing');
+      }).catch(error => {
+        console.error("Audio playback failed:", error);
+        alert("Audio file not found or playback blocked.");
+      });
+
+      currentAudio.onended = function() {
+        document.getElementById(currentButtonId).classList.remove('playing');
+        currentAudio = null;
+        currentButtonId = null;
+      };
+    }
+  </script>
+
+</body>
+</html>
