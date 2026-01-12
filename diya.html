@@ -1,18 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Core -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="x-ua-compatible" content="IE=edge" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#020617" />
 
+  <!-- Primary SEO -->
   <title>The Architecture of Distraction | The Shark of Wall Street — Introducing N.V. Diya</title>
-  <meta name="description" content="Lead Architect of Sentient Systems. A force of nature in midnight-blue silk. Coming Soon." />
-  <meta name="robots" content="index, follow, max-image-preview:large" />
-  <meta name="author" content="Sage Kakkat" />
+  <meta name="description" content="N.V. Diya — Lead Architect of Sentient Systems. An AI systems visionary shaping market-grade intelligence, agentic workflows, and the infrastructure behind modern artificial intelligence." />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <link rel="canonical" href="https://thesharkofwallstreet.com/the-architecture-of-distraction" />
 
-  <meta name="theme-color" content="#020617" />
-  <meta name="color-scheme" content="dark" />
+  <!-- (Optional) If you have multiple languages/regions -->
+  <!-- <link rel="alternate" hreflang="en-us" href="https://thesharkofwallstreet.com/the-architecture-of-distraction" /> -->
+  <!-- <link rel="alternate" hreflang="x-default" href="https://thesharkofwallstreet.com/the-architecture-of-distraction" /> -->
 
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <!-- Open Graph (Facebook/LinkedIn/iMessage) -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="The Shark of Wall Street" />
+  <meta property="og:title" content="The Architecture of Distraction — Introducing N.V. Diya" />
+  <meta property="og:description" content="Lead Architect of Sentient Systems. Agentic AI, market prediction, and the engineering behind modern artificial intelligence." />
+  <meta property="og:url" content="https://thesharkofwallstreet.com/the-architecture-of-distraction" />
+  <meta property="og:image" content="https://thesharkofwallstreet.com/images/nv-diya.jpg" />
+  <meta property="og:image:secure_url" content="https://thesharkofwallstreet.com/images/nv-diya.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="N.V. Diya in a midnight-blue silk saree in a high-rise corporate office." />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Architecture of Distraction — N.V. Diya" />
+  <meta name="twitter:description" content="Lead Architect of Sentient Systems. Agentic AI, systems design, and market-grade intelligence." />
+  <meta name="twitter:image" content="https://thesharkofwallstreet.com/images/nv-diya.jpg" />
+  <meta name="twitter:image:alt" content="N.V. Diya in a corporate office setting." />
+
+  <!-- Authoring -->
+  <meta name="author" content="Sage Kakkat" />
+  <meta name="publisher" content="The Shark of Wall Street" />
+
+  <!-- Keywords (not a ranking factor for Google, but harmless) -->
+  <meta name="keywords" content="Artificial Intelligence, AI, agentic AI, AI agents, machine learning, deep learning, LLM, large language model, generative AI, neural networks, inference, training, MLOps, data pipelines, retrieval augmented generation, RAG, vector database, embeddings, transformers, reinforcement learning, market prediction, quantitative finance, algorithmic trading, fintech, OpenAI, Google DeepMind, Anthropic, Microsoft, NVIDIA, Amazon AWS, Meta AI, Apple, Tesla, Oracle, IBM, Intel" />
+
+  <!-- Performance (optional but good) -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" />
+  <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+
+  <!-- Structured Data: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "The Architecture of Distraction — Introducing N.V. Diya",
+    "description": "N.V. Diya — Lead Architect of Sentient Systems. An AI systems visionary shaping market-grade intelligence, agentic workflows, and the infrastructure behind modern artificial intelligence.",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://thesharkofwallstreet.com/the-architecture-of-distraction"
+    },
+    "image": [
+      "https://thesharkofwallstreet.com/images/nv-diya.jpg"
+    ],
+    "author": {
+      "@type": "Person",
+      "name": "Sage Kakkat"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "The Shark of Wall Street",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://thesharkofwallstreet.com/images/logo.png"
+      }
+    },
+    "inLanguage": "en-US",
+    "keywords": [
+      "Artificial Intelligence",
+      "AI",
+      "Agentic AI",
+      "Machine Learning",
+      "LLM",
+      "Generative AI",
+      "FinTech",
+      "Quantitative Finance"
+    ],
+    "about": [
+      { "@type": "Thing", "name": "Artificial Intelligence" },
+      { "@type": "Thing", "name": "Machine Learning" },
+      { "@type": "Thing", "name": "Large Language Models" },
+      { "@type": "Thing", "name": "Agentic AI" },
+      { "@type": "Thing", "name": "Quantitative Finance" }
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: Breadcrumbs (helps sitelinks & clarity) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://thesharkofwallstreet.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Chapters",
+        "item": "https://thesharkofwallstreet.com/chapters"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "The Architecture of Distraction",
+        "item": "https://thesharkofwallstreet.com/the-architecture-of-distraction"
+      }
+    ]
+  }
+  </script>
+
+  <!-- GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RTH99L39VB"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -20,6 +139,8 @@
     gtag('js', new Date());
     gtag('config', 'G-RTH99L39VB');
   </script>
+
+
 
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&display=swap" rel="stylesheet">
