@@ -149,7 +149,17 @@ h1.chapter-title {
       box-shadow: 0 0 30px rgba(16, 185, 129, 0.1);
     }
     .story-media img { width: 100%; height: auto; display: block; filter: grayscale(100%) contrast(1.2); }
-
+    /* --- MEDIA --- */
+    .story-color {
+      max-width: 800px;
+      margin: 4rem auto;
+      border-radius: 4px;
+      overflow: hidden;
+      /* Sharp Green Border instead of soft shadow */
+      border: 1px solid var(--accent);
+      box-shadow: 0 0 30px rgba(16, 185, 129, 0.1);
+    }
+    .story-color img { width: 100%; height: auto; display: block; }
     /* --- AUDIO HEADER --- */
     .fixed-audio-header {
       position: fixed; top: 0; left: 0; width: 100%; height: var(--header-height);
@@ -228,7 +238,12 @@ h1.chapter-title {
     <div class="story-media">
       <img src="steal.png" alt="Silhouette in Vantablack suit">
     </div>
-
+    <div class="story-color">
+      <img src="sit.png" alt="Silhouette in Vantablack suit">
+    </div>
+       <div class="story-color">
+	      <img src="stand.png" alt="Silhouette in Vantablack suit">
+    </div>
     <article class="story-text">
 
       <div style="font-family: 'Share Tech Mono', monospace; color: var(--accent); text-align: center; margin-bottom: 2rem; font-size: 0.9rem; letter-spacing: 2px;">
