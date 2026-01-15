@@ -168,7 +168,56 @@
     }
     .story-media:hover { transform: rotate(0deg) scale(1.02); }
     .story-media img { width: 100%; height: auto; display: block;  }
+ /* --- NEW PHOTO GALLERY STYLES --- */
+    .photo-gallery {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap; /* Allows stacking on small screens */
+      gap: 2rem;
+      margin: 5rem auto;
+      max-width: 1000px;
+      position: relative;
+    }
 
+    /* The base style for each photo */
+    .photo-print {
+      flex: 1 1 280px; /* Responsive sizing */
+      max-width: 350px;
+      background: #fff;
+      /* Polaroid Borders */
+      padding: 10px 10px 40px 10px;
+      box-shadow: 0 15px 40px rgba(255,255,255,0.1);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy effect */
+      position: relative;
+      z-index: 1;
+      cursor: pointer;
+    }
+
+    .photo-print img {
+      width: 100%;
+      height: auto;
+      display: block;
+      /* Keep B&W noir look - remove this line for color */
+
+    }
+
+    /* Specific Tilts for each photo */
+    .tilt-1 { transform: rotate(-6deg) translateY(20px); }
+    .tilt-2 { transform: rotate(3deg) translateY(-15px); z-index: 2; } /* Center one sits slightly higher */
+    .tilt-3 { transform: rotate(8deg) translateY(30px); }
+
+    /* Hover Effect: Straighten, enlarge, and pop to front */
+    .photo-print:hover {
+      transform: rotate(0deg) scale(1.15) !important; /* !important overrides the specific tilts */
+      z-index: 10;
+      box-shadow: 0 30px 70px rgba(255,255,255,0.3);
+    }
+
+    /* Mobile adjustment so they don't overlap too much vertically */
+    @media (max-width: 768px) {
+       .photo-gallery { gap: 4rem; }
+    }
     /* --- AUDIO HEADER --- */
     .fixed-audio-header {
       position: fixed; top: 0; left: 0; width: 100%; height: var(--header-height);
@@ -224,9 +273,23 @@
     </h1>
 
     <div class="story-media">
-      <img src="vegas.png" alt="Vega Vane shielded by sunglasses amidst camera flashes">
+      <img src="bar.png" alt="Vega Vane shielded by sunglasses amidst camera flashes">
     </div>
+    <div class="photo-gallery">
 
+      <div class="photo-print tilt-1">
+        <img src="vegas.png" alt="Vega Vane paparazzi shot 1">
+      </div>
+
+      <div class="photo-print tilt-2">
+         <img src="ball.png" alt="Vega Vane paparazzi shot 2">
+      </div>
+
+      <div class="photo-print tilt-3">
+         <img src="purse.png" alt="Vega Vane paparazzi shot 3">
+      </div>
+
+    </div>
     <article class="story-text">
 
       <div class="chapter-meta">
