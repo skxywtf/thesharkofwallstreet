@@ -720,6 +720,36 @@ h1 span {
   color: var(--accent);
   font-weight: 600;
 }
+/* --- CHAPTER BUTTON ROW (FORCED SIDE-BY-SIDE ON DESKTOP) --- */
+.chapter-row{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  width: 100%;
+  max-width: 900px;   /* keeps it looking intentional */
+  margin: 1rem auto 0;
+}
+
+@media (max-width: 780px){
+  .chapter-row{
+    grid-template-columns: 1fr; /* stack on mobile only */
+  }
+}
+
+/* Remove the huge .card padding impact for these */
+.chapter-card{
+  border-color: var(--danger) !important;
+  background: linear-gradient(180deg, #0f172a 0%, #1e1111 100%) !important;
+  padding: 1rem !important;     /* overrides .card padding:2rem */
+}
+
+.chapter-btn{
+  background: var(--danger) !important;
+  color: #fff !important;
+  width: 100%;
+  text-align: center;
+  margin-top: 0 !important;
+}
 
   </style>
 </head>
@@ -780,6 +810,7 @@ h1 span {
       <div class="drawer-group">
         <div class="drawer-label">Chapters</div>
         <a class="drawer-link" href="chapter-prison.html">Chapter · The Fight</a>
+        <a class="drawer-link" href="cheef.html">Chapter · The Cheef</a>
         <!-- add more chapter links here -->
       </div>
     </div>
@@ -1018,9 +1049,18 @@ h1 span {
           Uncertain where their desires will lead, both find themselves deep in confinement. Inside prison walls, the Shark of Wall Street is remade—body hardened, instincts sharpened through brutal, underground Fight Club like training. What follows is a daring, deceptive escape—set to the sound of <em>Fire Untamed</em>.
         </p>
       </div>
-      <div class="card" style="border-color: var(--danger); background: linear-gradient(180deg, #0f172a 0%, #1e1111 100%);">
-  <a href="chapter-prison.html" class="btn uppercase" style="background: var(--danger); color: white; width: 100%; text-align: center; margin-top: 0.5rem;">Read Chapter - The Fight</a>
+<div class="chapter-row">
+  <div class="card chapter-card">
+    <a href="chapter-prison.html" class="btn uppercase chapter-btn">Read Chapter - The Fight</a>
+  </div>
+
+  <div class="card chapter-card">
+    <a href="cheef.html" class="btn uppercase chapter-btn">Read Chapter - The Cheef</a>
+  </div>
 </div>
+
+</div>
+
     </section>
 
     <section>

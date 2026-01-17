@@ -1,57 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>The Iron Nation | The Shark of Wall Street — Introducing Cheef</title>
-<meta name="description" content="The Superstition Mountains. Cheef—The Warlord—leads the Iron Nation under the desert moon. V-twins, ancient spirits, and the roar of the rebellion." />
+<title>Cheef | The Shark of Wall Street</title>
+<meta name="description" content="Chapter 14: The Gospel of Gasoline. Cheef leads the Iron Nation on a crusade from the Superstition Mountains to New York City." />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <link rel="canonical" href="https://thesharkofwallstreet.com/the-iron-nation" />
 <meta name="author" content="Sage Kakkat" />
 
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="referrer" content="strict-origin-when-cross-origin" />
-<meta name="format-detection" content="telephone=no" />
 
 <meta property="og:type" content="article" />
 <meta property="og:site_name" content="The Shark of Wall Street" />
-<meta property="og:title" content="The Iron Nation | The Shark of Wall Street — Introducing Cheef" />
-<meta property="og:description" content="The Superstition Mountains. Cheef—The Warlord—leads the Iron Nation under the desert moon. V-twins, ancient spirits, and the roar of the rebellion." />
-<meta property="og:url" content="https://thesharkofwallstreet.com/the-iron-nation" />
-<meta property="og:image" content="https://thesharkofwallstreet.com/images/cheef-fire.jpg" />
-<meta property="og:image:alt" content="Cheef in a horned headdress silhouetted against a bonfire." />
-<meta property="og:locale" content="en_US" />
-<!-- optional but nice -->
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="The Iron Nation — Introducing Cheef" />
-<meta name="twitter:description" content="Cheef. The Iron Nation. A horned god of gasoline and grievances." />
-<meta name="twitter:image" content="https://thesharkofwallstreet.com/images/cheef-fire.jpg" />
-<meta name="twitter:image:alt" content="Cheef in a horned headdress silhouetted against a bonfire." />
-<!-- optional -->
-<meta name="twitter:site" content="@thesharkofwallst" />
-
-<meta name="keywords" content="The Shark of Wall Street, Cheef, The Iron Nation, biker fiction, desert noir, native american futurism, tactical thriller" />
+<meta property="og:title" content="The Gospel of Gasoline" />
+<meta property="og:description" content="Cheef—The Warlord—wakes the iron." />
+<meta property="og:image" content="cheef5.jpg" />
 
 <meta name="theme-color" content="#020617" />
 <meta name="color-scheme" content="dark" />
 
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"Article",
-  "headline":"The Iron Nation | The Shark of Wall Street — Introducing Cheef",
-  "description":"The Superstition Mountains. Cheef—The Warlord—leads the Iron Nation under the desert moon.",
-  "author":{"@type":"Person","name":"Sage Kakkat"},
-  "publisher":{"@type":"Organization","name":"The Shark of Wall Street"},
-  "mainEntityOfPage":{"@type":"WebPage","@id":"https://thesharkofwallstreet.com/the-iron-nation"},
-  "image":["https://thesharkofwallstreet.com/images/cheef-fire.jpg"],
-  "inLanguage":"en-US"
-}
-</script>
-
-<!-- GA4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RTH99L39VB"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -60,13 +27,12 @@
   gtag('config', 'G-RTH99L39VB');
 </script>
 
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
 
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
-
-  <style>
+<style>
     /* --- INHERITED VARIABLES --- */
     :root {
       --bg-dark: #020617;
@@ -118,6 +84,7 @@
       margin-bottom: 3rem;
       display: flex;
       justify-content: space-between;
+      letter-spacing: 1px;
     }
 
     .story-text {
@@ -128,7 +95,12 @@
     }
 
     .story-text p { margin-bottom: 2rem; }
-    .story-text .dialogue { color: #fff; font-weight: 400; }
+
+    /* Dialogue Styling */
+    .story-text strong {
+        color: var(--accent);
+        font-weight: 700;
+    }
 
     .drop-cap::first-letter {
       float: left;
@@ -143,7 +115,7 @@
     /* --- MEDIA --- */
     .story-media {
       max-width: 800px;
-      margin: 4rem auto;
+      margin: 2rem auto;
       border-radius: 12px;
       overflow: hidden;
       box-shadow: 0 20px 40px rgba(0,0,0,0.6);
@@ -165,9 +137,7 @@
       justify-content: center;
     }
     .audio-scroll-container::-webkit-scrollbar { display: none; }
-    @media (max-width: 768px) {
-      .audio-scroll-container { justify-content: flex-start; padding-left: 1rem; padding-right: 1rem; }
-    }
+
     .btn-audio {
       background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border);
       color: #e0e0e0; padding: 0.4rem 1rem; border-radius: 999px;
@@ -182,36 +152,6 @@
       box-shadow: 0 0 15px rgba(234, 88, 12, 0.4);
     }
 
-    /* --- SHOP THE SCENE STYLES --- */
-    .shop-scene { padding: 32px 0; background: transparent; color: #e5e7eb; }
-    .shop-wrap { width: min(1400px, calc(100% - 3rem)); margin: 0 auto; padding: 0 20px; }
-    .shop-header { text-align: center; margin-bottom: 18px; }
-    .shop-header h2 { font-size: 30px; margin: 0 0 10px; letter-spacing: .6px; color: #f9fafb; font-family: 'Bebas Neue', sans-serif; }
-    .shop-header p { margin: 0 auto 22px; max-width: 75ch; line-height: 1.55; color: #9ca3af; }
-
-    .shop-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 20px; }
-    @media (max-width: 860px){ .shop-grid { grid-template-columns: 1fr; } }
-
-    .shop-card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(0,0,0,0.35));
-      border: 1px solid rgba(255,255,255,0.08); border-radius: 18px; padding: 22px;
-      backdrop-filter: blur(4px);
-    }
-    .shop-card h3 { margin: 0 0 6px; font-size: 22px; letter-spacing: .4px; color: #f3f4f6; font-family: 'Bebas Neue', sans-serif; }
-    .shop-sub { margin: 0 0 16px; color: #9ca3af; font-size: 14px; }
-
-    .shop-section { margin-top: 18px; }
-    .shop-section h4 { margin: 0 0 10px; font-size: 12px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--accent); }
-    .shop-section ul { margin: 0; padding-left: 18px; }
-    .shop-section li { margin: 10px 0; line-height: 1.5; color: #e5e7eb; }
-
-    .links { display: inline-block; margin-left: 6px; }
-    .links a { color: #fdba74; text-decoration: none; border-bottom: 1px solid rgba(253,186,116,0.4); transition: all .2s ease; }
-    .links a:hover { color: #fff7ed; border-bottom-color: #fff7ed; }
-
-    .shop-footer { margin-top: 18px; }
-    .disclaimer { font-size: 12px; color: #6b7280; margin: 0; text-align: center; }
-
     /* --- FOOTER NAV --- */
     .nav-footer { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border); text-align: center; }
     .btn-back {
@@ -221,7 +161,7 @@
       font-size: 0.8rem; letter-spacing: 2px;
     }
     .btn-back:hover { background: #fff; color: #000; }
-  </style>
+</style>
 </head>
 
 <body>
@@ -239,80 +179,241 @@
     </div>
 
     <h1 class="chapter-title">Cheef</h1>
+
     <div class="story-media">
-	      <img src="cheef5.png" alt="Cheef in a horned headdress against a bonfire">
+        <img src="cheef1.png" alt="Cheef on the Iron Throne of Rebar">
     </div>
-        <div class="story-media">
-	      <img src="cheef1.png" alt="Cheef in a horned headdress against a bonfire">
-    </div>
-
-<div class="story-media">
-      <img src="cheef3.png" alt="Cheef in a horned headdress against a bonfire">
-    </div>
-
 
     <article class="story-text">
 
-      <div style="font-family: 'Cinzel', serif; color: var(--accent); text-align: center; margin-bottom: 2rem; font-size: 0.9rem; letter-spacing: 1px;">
-        The Superstition Mountains &bull; 23:00 Hours
+      <div class="chapter-meta">
+        The Devil’s Amphitheater, Arizona &bull; 23:45 Hours
       </div>
 
-<p style="font-family: 'Bebas Neue', sans-serif; font-size: 4rem; text-align: center; margin: 0; color: var(--accent);">
-  Coming Soon
-</p>
+      <p class="drop-cap">
+        The silence was heavier than the heat. In the volcanic basin of the Superstition Mountains, the night air usually hummed with the biological static of the high desert—the chirping of crickets, the rustle of dry sagebrush, the distant, laughing cry of coyotes hunting in the dark. But tonight, the biology had been displaced by steel. The desert held its breath, pressed down by the weight of intrusion.
+      </p>
+      <div class="story-media">
+         <img src="cheef4.png" alt="Cheef with Axe and Molotov">
+      </div>
+      <p>
+        Four thousand motorcycles sat dormant on the canyon floor.
+      </p>
 
+      <p>
+        From the high ridge, looking down into the bowl of the amphitheater, they looked less like machines and more like the carapace of a sleeping hydra. It was a sprawling, chaotic mass of chrome, matte-black iron, and weathered leather that stretched from the narrow neck of the canyon all the way to the dry wash. The moonlight, pale and uncaring, washed over them, turning handlebars into skeletal ribs and gas tanks into silver scales.
+      </p>
 
+      <div class="story-media">
+         <img src="cheef5.png" alt="Cheef with Axe and Molotov">
+      </div>
+
+      <p>
+        High above them, on a jagged shelf of obsidian rock known as "The Pulpit," <strong>Cheef</strong> sat on a makeshift throne constructed from welded rebar and drift-wood scavenged from flash floods.
+      </p>
+
+      <p>
+        He did not look like a man who belonged in the twenty-first century. He looked like something excavated from the earth, a relic of a harder, bloodier time. He was a mountain of a man, constructed from scar tissue, brisket, and bad intentions. His leather vest—the "cut" of the Iron Nation Warlord—was so worn it looked like his own skin, cured by decades of Arizona sun and highway grit.
+      </p>
+
+      <p>
+        He wore a headdress fashioned from the skull and fur of a bison, the dark horns curving upward like a demon’s crown, casting long, curved shadows against the rock face behind him. His chest was bare, a canvas of history written in ink and violence. His face was painted in the vertical stripes of war: blood red, bone white, and midnight blue.
+      </p>
+
+      <p>
+        He held a hand-forged tomahawk in his right hand. The blade was rusted high-carbon steel, pitted with age but sharpened to a razor’s edge.
+      </p>
+
+      <p>
+        Cheef stood up. He didn't wave to the crowd. He didn't clear his throat. He simply reared back, muscles bunching in his shoulder, and hurled the axe. It spun through the air—a blur of violence—cutting through the moonlight.
+      </p>
+
+      <p>
+        <strong>THWACK.</strong>
+      </p>
+
+      <p>
+        The sound was sharp, brutal, and final. It buried itself into a dead ironwood post fifty feet away. Down in the valley, four thousand heads snapped up. The shifting of boots stopped. The whispering died instantly.
+      </p>
+
+      <p>
+        "THE WIND CARRIES SECRETS!"
+      </p>
+
+      <p>
+        His voice was a boom of thunder, projected from the diaphragm, bouncing off the stone walls and hitting the riders in the chest.
+      </p>
+
+      <p>
+        "It carries them from the cages of the East... to the fires of the West!"
+      </p>
+
+      <p>
+        Cheef began to walk along the ridge. "Three days ago, the wind brought me silver." He stopped and reached into the pocket of his jeans, pulling out a coin. "It came from a brother we buried alive. <strong>Snake.</strong>"
+      </p>
+
+      <p>
+        A low rumble moved through the crowd—the sound of respect. The Snake. The name was legend.
+      </p>
+      <div class="story-media">
+         <img src="cheef8.png" alt="Cheef with Axe and Molotov">
+      </div>
+      <p>
+        "The Snake is sleeping on steel tonight!" Cheef shouted. "He eats slop! He sees the sun one hour a day! But his spirit is not broken! He sent word! He told me of the man in the cell beside him. A man the papers call a villain. A man named <strong>The Shark</strong>."
+      </p>
+
+      <p>
+        He spat the name out, letting it hang in the air like a curse word.
+      </p>
+
+      <p>
+        "I know what you think! I thought it too! Why should the Iron Nation bleed for a suit? Why should we ride for a man who plays with money while we work with our hands?"
+      </p>
+
+      <p>
+        Cheef walked back to his throne and picked up a spear—seven feet of ash wood, tipped with a sharpened steel spike, bearing a tattered, oil-stained flag.
+      </p>
+
+      <p>
+        "I asked the wind why!" Cheef bellowed. "And Snake answered! He said the Shark is not a banker. He is a <strong>Medicine Man</strong> of the Machine!"
+      </p>
+
+      <p>
+        "He looked at their world—their Wall Street, their Washington—and he saw the sickness. He saw the greed eating the buffalo. He saw the waste poisoning the river. And he didn't try to steal from it. He tried to <strong>cure</strong> it!"
+      </p>
+
+      <p>
+        Cheef slammed the butt of the spear against the rock.
+      </p>
+
+      <p>
+        "He built a Factory! A World Trade Factory! Right here in the desert! Not to make money, but to make <strong>Order</strong>! He built a spirit—a chip of pure logic—to hunt the rats in the corn! He tried to bring discipline back to a land that has forgotten honor!"
+      </p>
+
+      <p>
+        "And what do the villagers do when they see a Beast they cannot control? When they see a creature stronger than them?" Cheef screamed, throwing his arms wide. "Do they bow?"
+      </p>
+
+      <p>
+        "NO!" The answer came from the valley floor.
+      </p>
+
+      <p>
+        "They fear it! So they hunt it! They trapped him in New York! They put chains on the Medicine Man because his magic was too strong for their small, weak minds!"
+      </p>
+
+      <p>
+        Cheef ripped the spear from the ground and pointed it toward the eastern horizon. "And they did worse. They took the Spirit of the Land with him. <strong>Vega.</strong>"
+      </p>
+      <div class="story-media">
+         <img src="cheef7.png" alt="Cheef with Axe and Molotov">
+      </div>
+      <p>
+        A shift in the crowd. They knew the name. The face on the billboards.
+      </p>
+
+      <p>
+        "You see her in the lights. You think she is one of them. But Snake says no. Snake says she stood in the fire! When the agents came... when the lies came... she did not run! She stood by the Beast! She saw the honor in him! She saw that underneath the suit, he was an outlaw just like us!"
+      </p>
+
+      <p>
+        "So they took the Beauty!" Cheef’s voice cracked with emotion. "They took the woman who stood tall, and they threw her in the pit! They slandered her name! They tried to break her to hurt him!"
+      </p>
+
+      <p>
+        Cheef fell silent. He let the weight of the injustice settle on the crowd.
+      </p>
+
+      <div class="story-media">
+         <img src="cheef3.png" alt="The Iron Nation raising fists">
+      </div>
+
+      <p>
+        "In the old days," Cheef said, his voice dropping to a dangerous rumble, "when a tribe stole your brother... when they stole your horses... you did not hire a lawyer. You painted your face. You sharpened your iron. And you rode to their camp to burn it down."
+      </p>
+
+      <p>
+        The energy in the valley shifted. It wasn't a rally anymore. It was a war council.
+      </p>
+
+      <p>
+        "The Shark is the Beast of the Bourse!" Cheef bellowed, raising the spear high. "But he is <strong>OUR</strong> Beast! He is the Warlord of Efficiency! And he is sitting in a cage, waiting to die!"
+      </p>
+
+      <p>
+        "Are we going to let the cowards kill the strong?"
+      </p>
+
+      <p>
+        "NO!" Four thousand voices hit the canyon walls.
+      </p>
+
+      <p>
+        "Are we going to let the Beauty rot in chains?"
+      </p>
+
+      <p>
+        "NO!"
+      </p>
+      <div class="story-media">
+         <img src="cheef10.png" alt="The Iron Nation raising fists">
+      </div>
+      <p>
+        Cheef slammed the spear into the ground again, harder this time. "Then we do not protest! We do not beg! We are the <strong>Insurgency of the Road</strong>!"
+      </p>
+
+      <p>
+        "Tonight, we ride to New York City. We will cut a path of fire across this country. We will ride to the prison gates. We will not knock. We will not ask. We will rev ten thousand engines until the walls crack! We will show them that the Beast has a pack! We will show them that the Beauty has guardians!"
+      </p>
+
+      <p>
+        "SNAKE CALLED THE NATION. WHO RIDES WITH ME?"
+      </p>
+
+      <p>
+        "WE DO!"
+      </p>
+
+      <p>
+        "THEN WAKE THE IRON!"
+      </p>
+
+      <p>
+        The command unleashed hell. Four thousand thumbs hit four thousand starter buttons at the exact same second.
+      </p>
+
+      <p>
+        <strong>KA-BOOM.</strong>
+      </p>
+
+      <p>
+        The sound was seismic. It wasn't just noise; it was the earth shaking. The canyon floor exploded into light. Headlights snapped on—a river of blinding white fire.
+      </p>
+      <div class="story-media">
+         <img src="cheef9.png" alt="The Iron Nation raising fists">
+      </div>
+      <p>
+        Cheef scrambled down the rock face to his bike—a matte black monster with handlebars like steer horns. He strapped the spear to the sissy bar, the flag fluttering in the exhaust heat.
+      </p>
+
+      <p>
+        He turned the key. He reached out and hit the starter. The engine fired—a distinct, rhythmic thumping that sounded like a heavy caliber machine gun.
+      </p>
+
+      <p>
+        He twisted the throttle, and the Asphalt Tsunami began to move. They poured out of the Superstition Mountains and hit Highway 60, turning the dark asphalt into a runway of rebellion. They weren't fighting to destroy the government. They were fighting to install a new Manager.
+      </p>
+
+      <p style="text-align: center; margin-top: 3rem; font-style: italic; color: var(--text-muted);">
+        And God help anyone who stood in the middle of the road.
+      </p>
 
     </article>
-<!--
-    <section class="shop-scene">
-      <div class="shop-wrap">
-        <header class="shop-header">
-          <h2>Shop the Scene</h2>
-          <h3>
-            Desert leather, ancient symbols, and raw horsepower.
-          </h3>
-        </header>
-
-        <div class="shop-grid">
-          <article class="shop-card">
-            <h3>The Iron Nation Kit</h3>
-            <p class="shop-sub">Biker leathers · tribal paint · heavy metal</p>
-
-            <div class="shop-section">
-              <h4>The Cut</h4>
-              <ul>
-                <li><strong>[Item Name Here]</strong>
-                  <span class="links">
-                    <a href="#" target="_blank">[Link Here]</a>
-                  </span>
-                </li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="shop-card">
-            <h3>Desert Survival</h3>
-            <p class="shop-sub">Off-grid tools · ceremonial gear</p>
-
-            <div class="shop-section">
-              <h4>Essentials</h4>
-              <ul>
-                 <li><strong>[Item Name Here]</strong>
-                  <span class="links">
-                    <a href="#" target="_blank">[Link Here]</a>
-                  </span>
-                </li>
-              </ul>
-            </div>
-          </article>
-        </div>
-        <p class="disclaimer">
-           Links open in a new tab. “Shop the Scene” is an aesthetic reference list, not endorsements.
-        </p>
-      </div>
-    </section>
--->
+<div style="text-align: center; margin: 5rem 0 3rem; user-select: none;">
+  <h2 style="font-family: 'Bebas Neue', sans-serif; font-size: 3rem; letter-spacing: 0.2em; color: var(--text-muted); text-transform: uppercase; margin: 0;">
+    To Be Continued
+  </h2>
+</div>
     <div class="nav-footer">
       <a href="index.html" class="btn-back">Return to Home</a>
     </div>
@@ -320,7 +421,7 @@
   </div>
 
   <script>
-    // Audio Controller Template
+    // Audio Controller
     var currentAudio = null;
     var currentButtonId = null;
 
@@ -362,3 +463,5 @@
 
 </body>
 </html>
+
+```
