@@ -197,6 +197,84 @@
       font-size: 0.8rem; letter-spacing: 2px; font-family: 'Courier Prime', monospace;
     }
     .btn-back:hover { background: var(--accent); color: #000; border-color: var(--accent); }
+
+
+	     .shop-scene{ padding:64px 0; background:#0c0f14; color:#e9eef6; }
+	     .shop-wrap{ width:min(1120px, 92vw); margin:0 auto; }
+
+	     .shop-header h2{ font-size:clamp(28px, 3vw, 40px); margin:0 0 8px; }
+	     .shop-header h3{ margin:0 0 18px; font-weight:500; color:rgba(233,238,246,.78); }
+
+	     .stills{
+	       display:grid;
+	       grid-auto-flow:column;
+	       grid-auto-columns:minmax(180px, 1fr);
+	       gap:12px;
+	       overflow-x:auto;
+	       padding:12px;
+	       border:1px solid rgba(255,255,255,.08);
+	       border-radius:18px;
+	       background:rgba(255,255,255,.03);
+	       margin:18px 0 26px;
+	     }
+	     .still{ margin:0; }
+	     .still img{
+	       width:100%;
+	       height:180px;
+	       object-fit:cover;
+	       border-radius:14px;
+	       border:1px solid rgba(255,255,255,.10);
+	       display:block;
+	     }
+	     .still figcaption{ margin-top:8px; font-size:12px; color:rgba(233,238,246,.72); }
+
+	     .shop-grid{
+	       display:grid;
+	       grid-template-columns:repeat(12, 1fr);
+	       gap:16px;
+	     }
+	     .shop-card{
+	       grid-column:span 6;
+	       border-radius:22px;
+	       padding:18px;
+	       background:rgba(255,255,255,.04);
+	       border:1px solid rgba(255,255,255,.08);
+	       box-shadow:0 10px 30px rgba(0,0,0,.35);
+	     }
+	     .shop-card--wide{ grid-column:span 12; }
+
+	     .card-top h3{ margin:0 0 6px; font-size:20px; }
+	     .shop-sub{ margin:0 0 10px; color:rgba(233,238,246,.70); }
+
+	     .shop-section{ margin-top:14px; padding-top:14px; border-top:1px solid rgba(255,255,255,.08); }
+	     .shop-section h4{
+	       margin:0 0 10px;
+	       font-size:13px;
+	       letter-spacing:.18em;
+	       text-transform:uppercase;
+	       color:rgba(233,238,246,.78);
+	     }
+	     .shop-section ul{ margin:0; padding-left:18px; }
+	     .shop-section li{ margin:8px 0; line-height:1.35; }
+
+	     .links a{ color:#b8d7ff; text-decoration:none; }
+	     .links a:hover{ text-decoration:underline; }
+	     .muted{ color:rgba(233,238,246,.60); margin-left:6px; }
+
+	     .split{
+	       display:grid;
+	       grid-template-columns:1fr 1fr;
+	       gap:16px;
+	     }
+
+	     .disclaimer{ margin-top:16px; color:rgba(233,238,246,.55); font-size:12px; }
+
+	     @media (max-width: 900px){
+	       .shop-card{ grid-column:span 12; }
+	       .still img{ height:160px; }
+	       .split{ grid-template-columns:1fr; }
+	     }
+
   </style>
 </head>
 
@@ -251,7 +329,7 @@
 
       <p><em>Crackle.</em></p>
 
-      <p class="dialogue" style="font-family: 'Courier Prime'; font-size: 0.9em;">"All units, mobilize ESU. Captain Sato is en route. We are authorizing gas protocols."</p>
+      <p class="dialogue" style="font-family: 'Courier Prime'; font-size: 0.9em;">"All units, mobilize ESU. NYPD is en route. We are authorizing gas protocols."</p>
 
       <p>Miller sighed. It was a heavy, disappointed sound. He reached into his pocket and pulled out a roll of cash—thick, non-sequential bills. He peeled off three hundreds and left them under the glass.</p>
     <div class="story-media">
@@ -280,7 +358,7 @@
     <div class="story-media">
       <img src="speed.png" alt="A man in a trench coat and fedora standing in the rain, back to camera">
     </div>
-      <p class="dialogue" style="font-family: 'Courier Prime'; font-size: 0.9em;">"Captain Sato here. We are five minutes out. Prepare tear gas canisters."</p>
+      <p class="dialogue" style="font-family: 'Courier Prime'; font-size: 0.9em;">"NYPD here. We are five minutes out. Prepare tear gas canisters."</p>
 
       <p>Miller shook his head. <span class="miller-voice">"Wrong tool, son,"</span> he muttered.</p>
 
@@ -307,7 +385,7 @@
     </div>
       <p>He stepped out into the steam rising from the subway grate, the trench coat billowing around him.</p>
 
-      <p>He walked toward Captain Sato, who was busy shouting orders about gas. Miller adjusted his cuffs. He wasn't hurrying. Panic was for people who didn't have a plan.</p>
+      <p>He walked toward NYPD, who was busy shouting orders about gas. Miller adjusted his cuffs. He wasn't hurrying. Panic was for people who didn't have a plan.</p>
 
       <p class="miller-voice">"I wouldn't do that, Captain,"</p>
 
@@ -320,64 +398,220 @@
     </article>
 
 
-    <section class="shop-scene">
-      <div class="shop-wrap">
-        <header class="shop-header">
-          <h2>Shop the Scene</h2>
-          <h3>
-            Vintage wool, aged leather, and analog tools.
-          </h3>
-        </header>
+   <section class="shop-scene shop-scene--miller">
+     <div class="shop-wrap">
+       <header class="shop-header">
+         <h2>Shop the Scene</h2>
+         <h3>Vintage wool, aged leather, and analog tools.</h3>
 
-        <div class="shop-grid">
-          <article class="shop-card">
-            <h3>The Janitor's Kit</h3>
-            <p class="shop-sub">Mid-century silhouette · heavy fabrics</p>
 
-            <div class="shop-section">
-              <h4>Outerwear</h4>
-              <ul>
-                <li><strong>Cashmere Trench Coat (Beige)</strong>
-                  <span class="links">
-                    <a href="https://www.burberry.com/" target="_blank" rel="noopener noreferrer">Burberry</a> ·
-                    <a href="https://www.aquascutum.com/" target="_blank" rel="noopener noreferrer">Aquascutum</a>
-                  </span>
-                </li>
-                <li><strong>Wide-Brim Fedora</strong>
-                  <span class="links">
-                    <a href="https://stetson.com/" target="_blank" rel="noopener noreferrer">Stetson Open Road</a>
-                  </span>
-                </li>
-              </ul>
-            </div>
-          </article>
+       <div class="shop-grid">
+         <!-- 1) MILLER LOOK -->
+         <article class="shop-card">
+           <div class="card-top">
+             <h3>The Janitor’s Kit</h3>
+             <p class="shop-sub">Mid-century silhouette · heavy fabrics · no shine</p>
+           </div>
 
-          <article class="shop-card">
-            <h3>Analog Luxury</h3>
-            <p class="shop-sub">Tools that don't need charging</p>
+           <div class="shop-section">
+             <h4>Outerwear</h4>
+             <ul>
+               <li>
+                 <strong>Wool/Cashmere Trench Coat (Beige)</strong>
+                 <span class="links">
+                   <a href="https://www.burberry.com/" target="_blank" rel="noopener noreferrer">Burberry</a> ·
+                   <a href="https://www.aquascutum.com/" target="_blank" rel="noopener noreferrer">Aquascutum</a> ·
+                   <a href="https://www.mackintosh.com/" target="_blank" rel="noopener noreferrer">Mackintosh</a> ·
+                   <a href="https://www.toddsnyder.com/" target="_blank" rel="noopener noreferrer">Todd Snyder</a>
+                 </span>
+               </li>
+               <li>
+                 <strong>3-Piece Suit (Charcoal / Brown Tweed)</strong>
+                 <span class="links">
+                   <a href="https://www.ralphlauren.com/brands-double-rl-men" target="_blank" rel="noopener noreferrer">RRL</a> ·
+                   <a href="https://www.suitsupply.com/" target="_blank" rel="noopener noreferrer">Suitsupply</a> ·
+                   <a href="https://www.walkerslater.com/" target="_blank" rel="noopener noreferrer">Walker Slater</a>
+                 </span>
+               </li>
+               <li>
+                 <strong>White Shirt + Dark Knit Tie</strong>
+                 <span class="links">
+                   <a href="https://www.turnbullandasser.com/" target="_blank" rel="noopener noreferrer">Turnbull &amp; Asser</a> ·
+                   <a href="https://www.charvet.com/" target="_blank" rel="noopener noreferrer">Charvet</a> ·
+                   <a href="https://www.brooksbrothers.com/" target="_blank" rel="noopener noreferrer">Brooks Brothers</a>
+                 </span>
+               </li>
+             </ul>
+           </div>
 
-            <div class="shop-section">
-              <h4>Accessories</h4>
-              <ul>
-                <li><strong>Silver Cigarette Case</strong>
-                  <span class="links">
-                    <a href="https://www.dunhill.com/" target="_blank" rel="noopener noreferrer">Dunhill</a>
-                  </span>
-                </li>
-                <li><strong>Pocket Watch</strong>
-                  <span class="links">
-                    <a href="#" target="_blank">Vintage Omega</a>
-                  </span>
-                </li>
-              </ul>
-            </div>
-          </article>
-        </div>
-        <p class="disclaimer">
-           Links open in a new tab. “Shop the Scene” is an aesthetic reference list, not endorsements.
-        </p>
-      </div>
-    </section>
+           <div class="shop-section">
+             <h4>Headwear & Hands</h4>
+             <ul>
+               <li>
+                 <strong>Wide-Brim Fedora</strong>
+                 <span class="links">
+                   <a href="https://stetson.com/" target="_blank" rel="noopener noreferrer">Stetson (Open Road)</a> ·
+                   <a href="https://www.borsalino.com/" target="_blank" rel="noopener noreferrer">Borsalino</a>
+                 </span>
+               </li>
+               <li>
+                 <strong>Leather Gloves (Brown/Black)</strong>
+                 <span class="links">
+                   <a href="https://www.dentsgloves.com/" target="_blank" rel="noopener noreferrer">Dents</a> ·
+                   <a href="https://www.hestragloves.us/" target="_blank" rel="noopener noreferrer">Hestra</a>
+                 </span>
+               </li>
+             </ul>
+           </div>
+
+           <div class="shop-section">
+             <h4>Footwear</h4>
+             <ul>
+               <li>
+                 <strong>Black Cap-Toe Oxfords</strong>
+                 <span class="links">
+                   <a href="https://www.crockettandjones.com/" target="_blank" rel="noopener noreferrer">Crockett &amp; Jones</a> ·
+                   <a href="https://www.allenedmonds.com/" target="_blank" rel="noopener noreferrer">Allen Edmonds</a> ·
+                   <a href="https://www.church-footwear.com/" target="_blank" rel="noopener noreferrer">Church’s</a>
+                 </span>
+               </li>
+             </ul>
+           </div>
+         </article>
+
+         <!-- 2) ANALOG LUXURY -->
+         <article class="shop-card">
+           <div class="card-top">
+             <h3>Analog Luxury</h3>
+             <p class="shop-sub">Tools that don’t need charging · weight in the pocket</p>
+           </div>
+
+           <div class="shop-section">
+             <h4>Accessories</h4>
+             <ul>
+               <li>
+                 <strong>Silver Cigarette Case</strong>
+                 <span class="links">
+                   <a href="https://www.dunhill.com/" target="_blank" rel="noopener noreferrer">Dunhill</a> ·
+                   <a href="https://www.smythson.com/" target="_blank" rel="noopener noreferrer">Smythson</a>
+                 </span>
+               </li>
+               <li>
+                 <strong>Old-School Lighter</strong>
+                 <span class="links">
+                   <a href="https://www.zippo.com/" target="_blank" rel="noopener noreferrer">Zippo</a> ·
+                   <a href="https://www.st-dupont.com/" target="_blank" rel="noopener noreferrer">S.T. Dupont</a>
+                 </span>
+               </li>
+               <li>
+                 <strong>Pocket Watch (Vintage)</strong>
+                 <span class="links">
+                   <a href="https://www.omegawatches.com/" target="_blank" rel="noopener noreferrer">Omega</a> ·
+                   <a href="https://www.chrono24.com/" target="_blank" rel="noopener noreferrer">Chrono24 (Vintage)</a> ·
+                   <a href="https://www.hodinkee.com/" target="_blank" rel="noopener noreferrer">Hodinkee</a>
+                 </span>
+               </li>
+               <li>
+                 <strong>Notebook (Case Notes)</strong>
+                 <span class="links">
+                   <a href="https://fieldnotesbrand.com/" target="_blank" rel="noopener noreferrer">Field Notes</a> ·
+                   <a href="https://www.moleskine.com/" target="_blank" rel="noopener noreferrer">Moleskine</a> ·
+                   <a href="https://www.riteintherain.com/" target="_blank" rel="noopener noreferrer">Rite in the Rain</a>
+                 </span>
+               </li>
+             </ul>
+           </div>
+
+           <div class="shop-section">
+             <h4>Everyday Carry</h4>
+             <ul>
+               <li>
+                 <strong>Leather Card Wallet</strong>
+                 <span class="links">
+                   <a href="https://www.bellroy.com/" target="_blank" rel="noopener noreferrer">Bellroy</a> ·
+                   <a href="https://www.coach.com/" target="_blank" rel="noopener noreferrer">Coach</a> ·
+                   <a href="https://www.satchel-page.com/" target="_blank" rel="noopener noreferrer">Satchel &amp; Page</a>
+                 </span>
+               </li>
+               <li>
+                 <strong>Shoulder Holster / Belt Rig (Noir)</strong>
+                 <span class="muted">prop / costume only</span>
+               </li>
+             </ul>
+           </div>
+         </article>
+
+         <!-- 3) THE CAR (NOIR OBJECT) -->
+         <article class="shop-card">
+           <div class="card-top">
+             <h3>The Black Sedan</h3>
+             <p class="shop-sub">Quiet menace · long hood · streetlamp reflections</p>
+           </div>
+
+           <div class="shop-section">
+             <h4>Inspiration</h4>
+             <ul>
+               <li>
+                 <strong>1960s Lincoln Continental vibe</strong>
+                 <span class="links">
+                   <a href="https://www.hemmings.com/" target="_blank" rel="noopener noreferrer">Hemmings</a> ·
+                   <a href="https://bringatrailer.com/" target="_blank" rel="noopener noreferrer">Bring a Trailer</a> ·
+                   <a href="https://www.classic.com/" target="_blank" rel="noopener noreferrer">Classic.com</a>
+                 </span>
+               </li>
+               <li><strong>Interior</strong> <span class="muted">burgundy leather · chrome trim · analog gauges</span></li>
+             </ul>
+           </div>
+
+           <div class="shop-section">
+             <h4>Set Dressing</h4>
+             <ul>
+               <li><strong>Dash ashtray + matchbook</strong> <span class="muted">old steakhouse energy</span></li>
+               <li><strong>Wool blanket in the back seat</strong> <span class="muted">winter stakeout</span></li>
+             </ul>
+           </div>
+         </article>
+
+         <!-- 4) CAFE / STEAKHOUSE MOOD -->
+         <article class="shop-card">
+           <div class="card-top">
+             <h3>Booth Scene</h3>
+             <p class="shop-sub">Red leather · low lamps · smoke & silence</p>
+           </div>
+
+           <div class="shop-section">
+             <h4>Glassware</h4>
+             <ul>
+               <li>
+                 <strong>Heavy Old-Fashioned Glass</strong>
+                 <span class="links">
+                   <a href="https://www.riedel.com/" target="_blank" rel="noopener noreferrer">Riedel</a> ·
+                   <a href="https://www.waterford.com/" target="_blank" rel="noopener noreferrer">Waterford</a> ·
+                   <a href="https://www.crateandbarrel.com/" target="_blank" rel="noopener noreferrer">Crate &amp; Barrel</a>
+                 </span>
+               </li>
+             </ul>
+           </div>
+
+           <div class="shop-section">
+             <h4>Atmosphere</h4>
+             <ul>
+               <li><strong>Warm sconces</strong> <span class="muted">amber light, no overhead glare</span></li>
+               <li><strong>Leather booth</strong> <span class="muted">deep red, worn-in creases</span></li>
+             </ul>
+           </div>
+         </article>
+
+
+       </div>
+
+       <p class="disclaimer">
+         Links open in a new tab. “Shop the Scene” is an aesthetic reference list, not endorsements.
+       </p>
+     </div>
+   </section>
+
+
 
     <div class="nav-footer">
       <a href="index.html" class="btn-back">Return to Home</a>
