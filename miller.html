@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>The Detective | The Shark of Wall Street — Mr. Miller</title>
+  <meta name="description" content="A rare steak. A 1964 Lincoln. And a siege at the Obsidian Tower. Mr. Miller arrives to clean up the mess." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="author" content="Sage" />
+  <link rel="canonical" href="https://thesharkofwallstreet.com/the-janitor" />
+
+  <meta name="theme-color" content="#1c1917" />
+  <meta name="color-scheme" content="dark" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RTH99L39VB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RTH99L39VB');
+  </script>
+
+  <style>
+    /* --- INHERITED VARIABLES --- */
+    :root {
+      --bg-dark: #0c0a09; /* Warm Black (Stone) */
+      --text-main: #e7e5e4;
+      --text-muted: #a8a29e;
+      --accent: #d97706; /* Whiskey / Amber */
+      --paper: #f5f5f4;
+      --border: rgba(217, 119, 6, 0.2);
+      --header-height: 70px;
+    }
+
+    #vercel-toolbar, vercel-live-feedback, [data-vercel-toolbar] {
+      display: none !important; opacity: 0 !important; pointer-events: none !important; visibility: hidden !important;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: system-ui, -apple-system, sans-serif;
+      margin: 0;
+      padding-top: var(--header-height);
+    }
+
+    /* --- READER LAYOUT --- */
+    .reader-container{
+      width: min(1100px, calc(100% - 3rem));
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+
+    h1.chapter-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3rem, 8vw, 6rem);
+      color: var(--accent);
+      text-transform: uppercase;
+      line-height: 0.9;
+      margin-bottom: 0.5rem;
+      text-align: center;
+      text-shadow: 0 4px 30px rgba(217, 119, 6, 0.1);
+    }
+
+    .chapter-meta {
+      font-family: 'Cinzel', serif;
+      color: var(--text-muted);
+      font-size: 1rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 2rem;
+      margin-bottom: 3rem;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .story-text {
+      font-family: 'Merriweather', serif;
+      font-size: 1.15rem;
+      line-height: 1.9;
+      color: #d6d3d1;
+    }
+
+    .story-text p { margin-bottom: 2rem; }
+
+    /* Miller's Dialogue Style */
+    .story-text .miller-voice {
+        color: var(--accent);
+        font-family: 'Courier Prime', monospace;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+    }
+
+    .story-text .dialogue { color: #fff; font-weight: 400; }
+
+    .status-header {
+        font-family: 'Courier Prime', monospace;
+        color: var(--text-muted);
+        font-size: 1rem;
+        letter-spacing: 1px;
+        margin-top: 5rem;
+        margin-bottom: 2rem;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 10px;
+        text-transform: uppercase;
+    }
+
+    .drop-cap::first-letter {
+      float: left;
+      font-size: 4rem;
+      line-height: 0.8;
+      font-weight: bold;
+      padding-right: 12px;
+      color: var(--accent);
+      font-family: 'Bebas Neue', sans-serif;
+    }
+
+    /* --- MEDIA --- */
+    .story-media {
+      max-width: 800px;
+      margin: 4rem auto;
+      border-radius: 2px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    .story-media img { width: 100%; height: auto; display: block; filter: sepia(20%) contrast(110%); }
+
+    /* --- AUDIO HEADER --- */
+    .fixed-audio-header {
+      position: fixed; top: 0; left: 0; width: 100%; height: var(--header-height);
+      background: rgba(12, 10, 9, 0.95); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border); z-index: 1000;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .audio-scroll-container {
+      width: 100%; max-width: 1100px; display: flex; gap: 0.8rem;
+      padding: 0 1.5rem; overflow-x: auto; scrollbar-width: none;
+      justify-content: center;
+    }
+    .audio-scroll-container::-webkit-scrollbar { display: none; }
+    .btn-audio {
+      background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border);
+      color: #e0e0e0; padding: 0.4rem 1rem; border-radius: 999px;
+      font-size: 0.75rem; font-weight: 600; cursor: pointer; white-space: nowrap;
+      transition: all 0.2s ease; display: flex; align-items: center; gap: 0.4rem;
+      font-family: 'Courier Prime', monospace;
+    }
+    .btn-audio:hover {
+      background-color: rgba(217, 119, 6, 0.1); border-color: var(--accent); color: #fff;
+    }
+    .btn-audio.playing {
+      background-color: var(--accent); color: #0c0a09; border-color: var(--accent);
+      box-shadow: 0 0 15px rgba(217, 119, 6, 0.4);
+    }
+
+    /* --- SHOP THE SCENE STYLES --- */
+    .shop-scene { padding: 32px 0; background: transparent; color: #e5e7eb; }
+    .shop-wrap { width: min(1400px, calc(100% - 3rem)); margin: 0 auto; padding: 0 20px; }
+    .shop-header { text-align: center; margin-bottom: 18px; }
+    .shop-header h2 { font-size: 30px; margin: 0 0 10px; letter-spacing: .6px; color: var(--accent); font-family: 'Bebas Neue', sans-serif; }
+    .shop-header p { margin: 0 auto 22px; max-width: 75ch; line-height: 1.55; color: #9ca3af; }
+
+    .shop-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 20px; }
+    @media (max-width: 860px){ .shop-grid { grid-template-columns: 1fr; } }
+
+    .shop-card {
+      background: rgba(28, 25, 23, 0.8);
+      border: 1px solid rgba(255,255,255,0.05); border-radius: 2px; padding: 22px;
+    }
+    .shop-card h3 { margin: 0 0 6px; font-size: 22px; letter-spacing: .4px; color: #f5f5f4; font-family: 'Bebas Neue', sans-serif; }
+    .shop-sub { margin: 0 0 16px; color: #a8a29e; font-size: 14px; font-style: italic; }
+
+    .shop-section { margin-top: 18px; }
+    .shop-section h4 { margin: 0 0 10px; font-size: 12px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--accent); font-family: 'Courier Prime', monospace; }
+    .shop-section ul { margin: 0; padding-left: 18px; }
+    .shop-section li { margin: 10px 0; line-height: 1.5; color: #d6d3d1; }
+
+    .links { display: inline-block; margin-left: 6px; }
+    .links a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(217, 119, 6, 0.4); transition: all .2s ease; }
+    .links a:hover { color: #fff; border-bottom-color: #fff; }
+
+    .shop-footer { margin-top: 18px; }
+    .disclaimer { font-size: 12px; color: #6b7280; margin: 0; text-align: center; }
+
+    /* --- FOOTER NAV --- */
+    .nav-footer { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border); text-align: center; }
+    .btn-back {
+      display: inline-block; text-decoration: none; color: var(--text-muted);
+      border: 1px solid rgba(255,255,255,0.2); padding: 0.8rem 2rem;
+      border-radius: 2px; transition: all 0.2s; text-transform: uppercase;
+      font-size: 0.8rem; letter-spacing: 2px; font-family: 'Courier Prime', monospace;
+    }
+    .btn-back:hover { background: var(--accent); color: #000; border-color: var(--accent); }
+  </style>
+</head>
+
+<body>
+
+
+  <div class="reader-container">
+
+    <div style="font-family: 'Bebas Neue'; text-align: center; margin-bottom: 1rem; color: var(--text-muted); letter-spacing: 3px; font-size: 3rem;" class="uppercase">
+      The Shark of Wall Street
+    </div>
+
+    <h1 class="chapter-title">Detective Miller</h1>
+
+    <div class="story-media">
+      <img src="miller.png" alt="A man in a trench coat and fedora standing in the rain, back to camera">
+    </div>
+
+    <article class="story-text">
+
+      <div class="status-header">The Abattoir Steakhouse</div>
+
+      <p class="drop-cap">The city outside was drowning in a digital storm, but inside The Abattoir, the year was stuck permanently in 1955.</p>
+
+      <p>The air smelled of aged beef, cigar smoke, and rain-soaked wool. There was no Wi-Fi. The booths were red leather, deep and high-backed, designed for conversations that shouldn't be recorded.</p>
+    <div class="story-media">
+      <img src="steak.png" alt="A man in a trench coat and fedora standing in the rain, back to camera">
+    </div>
+      <p>Mr. Miller sat in the corner booth, his back to the wall, face obscured by the shadow of a wide-brimmed fedora hanging on the coat hook beside him.</p>
+
+      <p>On the table: A bone-in ribeye, rare. A glass of bourbon, neat. A police scanner, modified with a vacuum tube amplifier, hissing softly with static.</p>
+
+      <p>Miller sliced the steak. His movements were surgical. No wasted energy. He ate with the patience of a man who knew that digestion was the only part of the job you couldn't rush.</p>
+
+      <p><em>Hiss. Crackle.</em></p>
+
+      <p class="dialogue" style="font-family: 'Courier Prime'; font-size: 0.9em;">"Central, we have a silent alarm at Obsidian Tower. Zone 98. Possible glitch."</p>
+
+      <p>Miller didn't look up. He took a sip of bourbon. Glitches didn't happen in Zone 98.</p>
+
+      <p><em>Crackle.</em></p>
+
+      <p class="dialogue" style="font-family: 'Courier Prime'; font-size: 0.9em;">"Central, thermal sensors are spiking. We have... we have a heat signature moving inside the server room. It's... it's fast."</p>
+
+      <p>Miller stopped chewing. He wiped his mouth with a linen napkin.</p>
+
+      <p class="miller-voice">"Zero,"</p>
+
+      <p>he whispered to the empty booth.</p>
+
+      <p>He knew the kid was good. But he also knew the Obsidian Tower wasn't just a bank; it was a mousetrap. And the mouse had just taken the cheese.</p>
+
+      <p><em>Crackle.</em></p>
+
+      <p class="dialogue" style="font-family: 'Courier Prime'; font-size: 0.9em;">"All units, mobilize ESU. Captain Sato is en route. We are authorizing gas protocols."</p>
+
+      <p>Miller sighed. It was a heavy, disappointed sound. He reached into his pocket and pulled out a roll of cash—thick, non-sequential bills. He peeled off three hundreds and left them under the glass.</p>
+    <div class="story-media">
+      <img src="mirror.png" alt="A man in a trench coat and fedora standing in the rain, back to camera">
+    </div>
+      <p>He stood up and grabbed his coat. As he slid his arms into the beige cashmere, he checked his reflection in the mirror behind the bar. He didn't look at his face. He checked the knot of his tie. He checked the hang of the trench coat to ensure the Thompson submachine gun rigged under his left arm didn't print against the fabric.</p>
+
+      <p>He put on the fedora, tilting the brim down until the world was just a narrow strip of view.</p>
+
+
+      <div class="status-header">The Drive &bull; 23:00 Hours</div>
+
+      <div class="story-media">
+        <img src="lincoln.png" alt="A matte black 1964 Lincoln Continental in the rain">
+      </div>
+
+      <p>The car waited in the alley. A 1964 Lincoln Continental, matte black, with suicide doors and an engine that sounded like a tectonic plate shifting.</p>
+
+      <p>Miller slid into the driver's seat. He didn't use a GPS. He knew the grid.</p>
+    <div class="story-media">
+      <img src="seat.png" alt="A man in a trench coat and fedora standing in the rain, back to camera">
+    </div>
+      <p>He turned the key. The V8 roared to life, shaking the puddles on the asphalt.</p>
+
+      <p>He pulled out into traffic, the heavy steel frame of the Lincoln parting the sea of plastic electric smart-cars like an icebreaker. He turned up the volume on the dashboard scanner.</p>
+    <div class="story-media">
+      <img src="speed.png" alt="A man in a trench coat and fedora standing in the rain, back to camera">
+    </div>
+      <p class="dialogue" style="font-family: 'Courier Prime'; font-size: 0.9em;">"Captain Sato here. We are five minutes out. Prepare tear gas canisters."</p>
+
+      <p>Miller shook his head. <span class="miller-voice">"Wrong tool, son,"</span> he muttered.</p>
+
+      <p>He reached under the dashboard and flipped a switch. The Lincoln’s plates rotated, swapping from a registered NY plate to a government-issue "Diplomatic" tag.</p>
+
+      <p>He floored the accelerator. The Lincoln surged forward, running a red light with majestic indifference.</p>
+
+      <p>He wasn't driving to arrest a criminal. He was driving to save the police from getting slaughtered.</p>
+
+
+      <div class="status-header">The Arrival &bull; 23:15 Hours</div>
+
+      <p>The scene at the Obsidian Tower was a mess. Red and blue lights strobing. Officers shouting. Chaos.</p>
+    <div class="story-media">
+      <img src="barricade.png" alt="A man in a trench coat and fedora standing in the rain, back to camera">
+    </div>
+      <p>Miller drifted the heavy Lincoln around the police barricade, ignoring the officer waving a flashlight at him, and brought the car to a stop right next to the Mobile Command Unit.</p>
+
+      <p>He killed the engine. The silence inside the car was absolute.</p>
+
+      <p>He took a final drag of his cigarette, exhaled a plume of blue smoke against the windshield, and opened the door.</p>
+    <div class="story-media">
+      <img src="drag.png" alt="A man in a trench coat and fedora standing in the rain, back to camera">
+    </div>
+      <p>He stepped out into the steam rising from the subway grate, the trench coat billowing around him.</p>
+
+      <p>He walked toward Captain Sato, who was busy shouting orders about gas. Miller adjusted his cuffs. He wasn't hurrying. Panic was for people who didn't have a plan.</p>
+
+      <p class="miller-voice">"I wouldn't do that, Captain,"</p>
+
+      <p>Miller drawled, his voice cutting through the siren wails.</p>
+
+      <p>NYPD turned.</p>
+
+      <p>And the Detective went to work.</p>
+
+    </article>
+
+
+    <section class="shop-scene">
+      <div class="shop-wrap">
+        <header class="shop-header">
+          <h2>Shop the Scene</h2>
+          <h3>
+            Vintage wool, aged leather, and analog tools.
+          </h3>
+        </header>
+
+        <div class="shop-grid">
+          <article class="shop-card">
+            <h3>The Janitor's Kit</h3>
+            <p class="shop-sub">Mid-century silhouette · heavy fabrics</p>
+
+            <div class="shop-section">
+              <h4>Outerwear</h4>
+              <ul>
+                <li><strong>Cashmere Trench Coat (Beige)</strong>
+                  <span class="links">
+                    <a href="https://www.burberry.com/" target="_blank" rel="noopener noreferrer">Burberry</a> ·
+                    <a href="https://www.aquascutum.com/" target="_blank" rel="noopener noreferrer">Aquascutum</a>
+                  </span>
+                </li>
+                <li><strong>Wide-Brim Fedora</strong>
+                  <span class="links">
+                    <a href="https://stetson.com/" target="_blank" rel="noopener noreferrer">Stetson Open Road</a>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="shop-card">
+            <h3>Analog Luxury</h3>
+            <p class="shop-sub">Tools that don't need charging</p>
+
+            <div class="shop-section">
+              <h4>Accessories</h4>
+              <ul>
+                <li><strong>Silver Cigarette Case</strong>
+                  <span class="links">
+                    <a href="https://www.dunhill.com/" target="_blank" rel="noopener noreferrer">Dunhill</a>
+                  </span>
+                </li>
+                <li><strong>Pocket Watch</strong>
+                  <span class="links">
+                    <a href="#" target="_blank">Vintage Omega</a>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </article>
+        </div>
+        <p class="disclaimer">
+           Links open in a new tab. “Shop the Scene” is an aesthetic reference list, not endorsements.
+        </p>
+      </div>
+    </section>
+
+    <div class="nav-footer">
+      <a href="index.html" class="btn-back">Return to Home</a>
+    </div>
+
+  </div>
+
+  <script>
+    // Audio Controller
+    var currentAudio = null;
+    var currentButtonId = null;
+
+    function playAudio(buttonId, source) {
+      if (currentButtonId === 'btn-' + buttonId && currentAudio && !currentAudio.paused) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+        document.getElementById('btn-' + buttonId).classList.remove('playing');
+        currentAudio = null;
+        currentButtonId = null;
+        return;
+      }
+
+      if (currentAudio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+        if(currentButtonId) {
+           document.getElementById(currentButtonId).classList.remove('playing');
+        }
+      }
+
+      currentAudio = new Audio(source);
+      currentButtonId = 'btn-' + buttonId;
+
+      currentAudio.play().then(() => {
+        document.getElementById(currentButtonId).classList.add('playing');
+      }).catch(error => {
+        console.error("Audio playback failed:", error);
+        alert("Audio file not found or playback blocked.");
+      });
+
+      currentAudio.onended = function() {
+        document.getElementById(currentButtonId).classList.remove('playing');
+        currentAudio = null;
+        currentButtonId = null;
+      };
+    }
+  </script>
+
+</body>
+</html>
