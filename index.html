@@ -377,6 +377,7 @@ h1 span {
   width: 100%;
   height: 220px;
   object-fit: cover;
+  object-position: center top;
   border-radius: 8px;
   margin-bottom: 1rem;
   filter: grayscale(40%);
@@ -385,6 +386,13 @@ h1 span {
 
 .character-card:hover .card-img {
   filter: grayscale(0%);
+}
+
+/* Taller images on mobile for better display */
+@media (max-width: 500px) {
+  .card-img {
+    height: 350px;
+  }
 }
 
 /* --- BUTTON STYLING --- */
@@ -1406,5 +1414,4 @@ h1 span {
 </script>
 
 </body>
-
 </html>
