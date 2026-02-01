@@ -909,9 +909,17 @@ h1 span {
 }
 /* Mobile: stack panels */
 @media (max-width: 980px){
-  .side-panel{ order: 1; }
-  .hero-media{ order: 0; }
-  .side-panel.announce{ order: 2; }
+  .hero-panels-inner{
+    grid-template-columns: 1fr;   /* stack */
+  }
+
+  .hero-media{
+    order: 0;                     /* image first */
+  }
+
+  .side-panel{
+    order: 1;                     /* panels after */
+  }
 }
 
 /* Optional: make the poster a bit wider on small screens */
@@ -923,8 +931,8 @@ h1 span {
   }
 }
 @media (max-width: 980px){
-  .side-panel{ order: 0; }
-  .hero-media{ order: 1; }
+  .side-panel{ order: 1; }
+  .hero-media{ order: 0; }
   .side-panel.announce{ order: 2; }
 }
 
@@ -1127,7 +1135,7 @@ h1 span {
 
       <div class="announce-card">
         <div class="announce-tag warm">BLOCKCHAIN</div>
-        <div class="announce-title">Launch of WorldTradeFuture.io</div>
+        <div class="announce-title">Launch of <a href="https://www.worldtradefuture.io" target="_blank"><strong style="color:#22d3ee; text-decoration: underline;">WorldTradeFuture.io</strong></a></div>
         <div class="announce-text">WorldTradeFuture.io is the public gateway to World Trade Factory’s blockchain initiative—uniting trade settlement, DeFi infrastructure, tokenization, and institutional-grade learning.</div>
       </div>
 
@@ -1678,5 +1686,4 @@ h1 span {
 </script>
 
 </body>
-
 </html>
