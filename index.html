@@ -309,12 +309,20 @@
       padding: 2px 8px;
     }
 
+
     .poster-wrap{
       border: 1px solid rgba(255,255,255,.14);
       box-shadow: var(--shadow);
       background: rgba(0,0,0,.35);
       overflow:hidden;
     }
+
+.poster-wrap img{
+  width:100%;
+  height:auto;
+  object-fit:contain;
+}
+
 
     /* Stats row (kept from your original numbers) */
     .stats-row{
@@ -499,15 +507,17 @@ filter: saturate(0.55) contrast(1.12) brightness(0.92) sepia(0.12) hue-rotate(-8
     .announce-panel{
       border: 1px solid rgba(255,255,255,.10);
       background: rgba(15,23,42,.50);
-      padding: 26px;
+
       box-shadow: var(--shadow);
-      position:relative;
-      overflow:hidden;
+  position:relative;
+  overflow: visible;              /* <-- was hidden */
+  padding-top: 34px;
     }
     .announce-panel::before{
       content: "> ANNOUNCEMENTS";
       position:absolute;
-      top:-10px; left:18px;
+   top: 12px;                      /* <-- was -10px */
+  left: 18px;
       background:#000;
       color: var(--gold);
       font-family:'Share Tech Mono', monospace;
@@ -607,16 +617,104 @@ filter: saturate(0.55) contrast(1.12) brightness(0.92) sepia(0.12) hue-rotate(-8
     }
 
     /* Partners */
-    .partners{
-      display:flex;
-      gap: 42px;
-      justify-content:center;
-      flex-wrap:wrap;
-      opacity:.65;
-      margin-top: 18px;
-      align-items:center;
-    }
-    .partners img{height: 40px}
+ /* Partners Section */
+ .partners-section{
+   padding: 80px 28px;
+   background:
+     radial-gradient(circle at 30% 20%, rgba(34,211,238,.12), transparent 55%),
+     radial-gradient(circle at 70% 80%, rgba(250,204,21,.08), transparent 60%),
+     #020617;
+   border-top: 1px solid rgba(255,255,255,.06);
+   border-bottom: 1px solid rgba(255,255,255,.06);
+ }
+
+ .partners-inner{
+   width: min(1280px, 92vw);
+   margin: 0 auto;
+ }
+
+ .partners-title{
+   font-family: 'Bebas Neue', sans-serif;
+   font-size: 3.1rem;
+   letter-spacing: .12em;
+   text-transform: uppercase;
+   margin: 12px 0 18px;
+   color: #fff;
+   text-shadow: 0 0 22px rgba(34,211,238,.25);
+ }
+
+ .partners-title.alt{
+   margin-top: 52px;
+ }
+
+ .partners-subtitle{
+   font-family: 'Share Tech Mono', monospace;
+   font-size: .9rem;
+   letter-spacing: .18em;
+   text-transform: uppercase;
+   color: var(--cyan);
+   margin-bottom: 14px;
+ }
+
+ .partners-note{
+   max-width: 720px;
+   margin-bottom: 22px;
+   font-family: 'Share Tech Mono', monospace;
+   font-size: .95rem;
+   line-height: 1.6;
+   color: rgba(226,232,240,.85);
+ }
+
+ .partners-grid{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+   gap: 18px;
+ }
+
+ /* Cards */
+ .partner-card{
+   position: relative;
+   padding: 22px 18px;
+   text-align: center;
+   background: rgba(15,23,42,.65);
+   border: 1px solid rgba(34,211,238,.35);
+   box-shadow: 0 22px 70px rgba(0,0,0,.65);
+   transition: .25s ease;
+ }
+
+ .partner-card:hover{
+   transform: translateY(-6px);
+   border-color: rgba(250,204,21,.65);
+   box-shadow: 0 0 26px rgba(250,204,21,.18),
+               0 30px 80px rgba(0,0,0,.75);
+ }
+
+ .partner-card img{
+   height: 56px;
+   width: auto;
+   margin: 0 auto 14px;
+   opacity: 1;
+   filter: none;
+ }
+
+ .partner-name{
+   font-family: 'Share Tech Mono', monospace;
+   font-size: .88rem;
+   letter-spacing: .14em;
+   text-transform: uppercase;
+   color: rgba(248,250,252,.92);
+   line-height: 1.4;
+ }
+
+ /* Potential visual distinction */
+ .partner-card.potential{
+   border-style: dashed;
+   border-color: rgba(148,163,184,.45);
+ }
+
+ .partner-card.potential:hover{
+   border-color: rgba(34,211,238,.6);
+ }
 
     /* Footer */
     footer{
@@ -712,6 +810,57 @@ filter: saturate(0.55) contrast(1.12) brightness(0.92) sepia(0.12) hue-rotate(-8
     /* utility */
     .muted{color: rgba(148,163,184,.95)}
     body::before{ display:none; }
+    /* Left-side intelligence block */
+	.intel-block{
+	  margin-top: 18px;
+	  font-family: 'Share Tech Mono', monospace;
+	}
+
+	.intel-head{
+	  color: var(--cyan);
+	  font-size: .9rem;
+	  letter-spacing: .16em;
+	  text-transform: uppercase;
+	  margin-bottom: 14px;
+	}
+
+	/* stacked terminal lines */
+	.intel-lines{
+	  display: grid;
+	  gap: 10px;
+	}
+
+	.intel-line{
+	  display: grid;
+	  grid-template-columns: 10px 1fr;
+	  gap: 14px;
+	  align-items: start;
+	  color: rgba(226,232,240,.95);
+	  font-size: .95rem;
+	  line-height: 1.55;
+	}
+
+	/* vertical tick */
+	.intel-bar{
+	  width: 2px;
+	  background: var(--cyan);
+	  opacity: .9;
+	  transform: translateY(4px);
+	}
+
+	/* emphasis */
+	.intel-line strong{
+	  color: #fff;
+	  font-weight: 600;
+	}
+@media (max-width: 520px){
+  .hero{
+    height: auto;
+    min-height: 0;
+    padding: 28px 0 22px;
+  }
+}
+
   </style>
 </head>
 
@@ -834,6 +983,45 @@ filter: saturate(0.55) contrast(1.12) brightness(0.92) sepia(0.12) hue-rotate(-8
               <a class="hud-btn link" href="https://www.worldtradefactory.ai" target="_blank" rel="noopener">ENTER_FACTORY</a>
               <a class="hud-btn gold link" href="https://infinityxz.ai" target="_blank" rel="noopener">TRY_INFINITY_AI</a>
             </div>
+
+                          <div class="announce-item">
+			                <span class="tag warm">INSTITUTIONAL USE</span>
+			                <h4>WHO THIS IS BUILT FOR</h4>
+			                <p>Asset managers, hedge funds, family offices, policy advisors, and operators navigating volatile global regimes.</p>
+              </div>
+<div class="intel-block">
+  <div class="intel-head">
+    ACTIVE INTELLIGENCE COVERAGE
+  </div>
+
+  <div class="intel-lines">
+    <div class="intel-line">
+      <span class="intel-bar"></span>
+      <span><strong>North America</strong> — US rates, earnings, fiscal policy</span>
+    </div>
+
+    <div class="intel-line">
+      <span class="intel-bar"></span>
+      <span><strong>Europe</strong> — ECB policy, energy, fragmentation risk</span>
+    </div>
+
+    <div class="intel-line">
+      <span class="intel-bar"></span>
+      <span><strong>China</strong> — growth, credit cycles, geopolitics</span>
+    </div>
+
+    <div class="intel-line">
+      <span class="intel-bar"></span>
+      <span><strong>Emerging Markets</strong> — FX stress, debt, capital controls</span>
+    </div>
+
+    <div class="intel-line">
+      <span class="intel-bar"></span>
+      <span><strong>Frontier Markets</strong> — asymmetric risk & early signals</span>
+    </div>
+  </div>
+</div>
+
           </div>
 
           <div style="display:grid; gap:22px">
@@ -855,11 +1043,7 @@ filter: saturate(0.55) contrast(1.12) brightness(0.92) sepia(0.12) hue-rotate(-8
             <div class="announce-panel" aria-label="Announcements">
               <div class="announce-title">LATEST</div>
 
-              <div class="announce-item">
-                <span class="tag warm">INSTITUTIONAL USE</span>
-                <h4>WHO THIS IS BUILT FOR</h4>
-                <p>Asset managers, hedge funds, family offices, policy advisors, and operators navigating volatile global regimes.</p>
-              </div>
+
 
               <div class="announce-item">
                 <span class="tag">NEW</span>
@@ -904,19 +1088,100 @@ filter: saturate(0.55) contrast(1.12) brightness(0.92) sepia(0.12) hue-rotate(-8
         </div>
       </div>
     </section>
+<section class="section alt" id="trailer">
+  <div class="container">
+    <div class="section-header cyan">&gt; TRAILER_PLAYBACK</div>
+
+    <video
+      src="shark.mp4"
+      controls
+      preload="metadata"
+      style="
+        width:100%;
+        max-width:960px;
+        margin:0 auto;
+        display:block;
+        border:1px solid rgba(34,211,238,.4);
+        box-shadow:0 0 40px rgba(0,0,0,.7);
+      ">
+    </video>
+  </div>
+</section>
 
     <!-- PARTNERS -->
-    <section class="section" aria-label="Partners">
-      <div class="container" style="text-align:center">
-        <div class="section-header cyan">> PARTNERS & COLLABORATORS</div>
-        <div class="partners">
-          <img src="infinity.png" alt="InfinityXZ">
-          <img src="sharkatakk.png" alt="Shark ATaKK">
-          <img src="netflix.png" alt="Netflix">
-          <img src="prime.png" alt="Prime Video">
-        </div>
-      </div>
-    </section>
+<section class="partners-section" id="partners">
+  <div class="partners-inner">
+    <div class="section-header cyan">> PARTNERS & COLLABORATORS</div>
+
+    <h2 class="partners-title">Partners & Collaborators</h2>
+
+    <!-- ACTIVE / CORE -->
+    <div class="partners-subtitle">Core Platforms & Creative</div>
+    <div class="partners-grid">
+      <a href="https://infinityxz.ai" target="_blank" rel="noopener noreferrer" class="partner-card">
+        <img src="infinity.png" alt="InfinityXZ" />
+        <div class="partner-name">Artificial Intelligence & Market Intelligence</div>
+      </a>
+
+      <a href="https://sharkatakk.com" target="_blank" rel="noopener noreferrer" class="partner-card">
+        <img src="sharkatakk.png" alt="SharK ATaKK" />
+        <div class="partner-name">Music, Soundtrack & Cultural Layer</div>
+      </a>
+
+      <a href="https://www.worldtradefuture.io" target="_blank" rel="noopener noreferrer" class="partner-card">
+        <img src="wtf.png" alt="World Trade Future" />
+        <div class="partner-name">Blockchain, Digital Currency & Trade Infrastructure</div>
+      </a>
+    </div>
+
+    <!-- POTENTIAL -->
+    <h2 class="partners-title alt">Potential / Narrative-Aligned Collaborators</h2>
+    <div class="partners-note">
+      Exploratory collaborations aligned with the cinematic, technological, and cultural vision of
+      <strong>The Shark of Wall Street™</strong>.
+    </div>
+
+    <div class="partners-grid">
+      <a href="https://www.netflix.com" target="_blank" rel="noopener noreferrer" class="partner-card potential">
+        <img src="netflix.png" alt="Netflix" />
+        <div class="partner-name">Film / Series — Global Distribution</div>
+      </a>
+
+      <a href="https://www.primevideo.com" target="_blank" rel="noopener noreferrer" class="partner-card potential">
+        <img src="prime.png" alt="Amazon Prime Video" />
+        <div class="partner-name">Film / Series — Prestige Streaming</div>
+      </a>
+
+      <a href="https://www.hbo.com" target="_blank" rel="noopener noreferrer" class="partner-card potential">
+        <img src="hbo.jpg" alt="HBO" />
+        <div class="partner-name">Premium Serialized Storytelling</div>
+      </a>
+
+      <a href="https://a24films.com" target="_blank" rel="noopener noreferrer" class="partner-card potential">
+        <img src="a24.png" alt="A24" />
+        <div class="partner-name">Auteur-Driven Film & IP Expansion</div>
+      </a>
+
+      <a href="https://www.apple.com/apple-tv-plus/" target="_blank" rel="noopener noreferrer" class="partner-card potential">
+        <img src="apple.jpg" alt="Apple TV+" />
+        <div class="partner-name">Global Prestige Content</div>
+      </a>
+
+      <a href="https://www.sonypictures.com" target="_blank" rel="noopener noreferrer" class="partner-card potential">
+        <img src="sony.png" alt="Sony Pictures" />
+        <div class="partner-name">International Film & Series Adaptation</div>
+      </a>
+              <img src="fox.png" alt="Fox Pictures" />
+	          <div class="partner-name">International Film & Series Adaptation</div>
+      </a>
+            </a>
+	                <img src="para.png" alt="Paramount Pictures" />
+	  	          <div class="partner-name">International Film & Series Adaptation</div>
+      </a>
+    </div>
+  </div>
+</section>
+
   </main>
 
   <footer>
