@@ -542,24 +542,27 @@ filter: saturate(0.55) contrast(1.12) brightness(0.92) sepia(0.12) hue-rotate(-8
     .announce-panel{
       border: 1px solid rgba(255,255,255,.10);
       background: rgba(15,23,42,.50);
-
+  position: relative;
+  overflow: visible;
       box-shadow: var(--shadow);
   position:relative;
   overflow: visible;              /* <-- was hidden */
   padding-top: 34px;
     }
-    .announce-panel::before{
-      content: "> ANNOUNCEMENTS";
-      position:absolute;
-   top: 12px;                      /* <-- was -10px */
+
+.announce-panel::before{
+  content: "> ANNOUNCEMENTS";
+  position: absolute;
+  top: -10px;                 /* sits on the border */
   left: 18px;
-      background:#000;
-      color: var(--gold);
-      font-family:'Share Tech Mono', monospace;
-      font-size:.78rem;
-      padding: 2px 8px;
-      border: 1px solid rgba(250,204,21,.28);
-    }
+  background: #020617;        /* same as container bg */
+  color: var(--gold);
+  font-family: 'Share Tech Mono', monospace;
+  font-size: .78rem;
+  padding: 2px 10px;
+  border: 1px solid rgba(250,204,21,.28);
+  z-index: 2;
+}
     .announce-title{
       font-family:'Bebas Neue', sans-serif;
       font-size: 2.0rem;
@@ -1165,14 +1168,58 @@ footer p{
           </div>
 
           <div style="display:grid; gap:22px">
+            <div class="announce-panel" aria-label="Announcements">
+		                <div class="announce-title">LATEST</div>
+
+
+
+		                <div class="announce-item">
+		                  <span class="tag">NEW</span>
+		                  <h4>PHASE 1 IS LIVE</h4>
+		                  <p>The Shark of Wall Street hub is expanding — chapters + character drops rolling out.</p>
+
+		                  <!-- your original thumbnail block -->
+		                  <div class="announce-thumb">
+		                    <img src="ny1.png" alt="New drop thumbnail">
+		                    <div class="meta">
+		                      <div><strong>Drop:</strong> NYPD / Street Operations</div>
+		                      <div><strong>Scene:</strong> “Order vs Chaos”</div>
+		                      <div><a href="#chapters">Jump to Chapters →</a></div>
+		                    </div>
+		                  </div>
+		                </div>
+
+
             <div class="terminal-box danger" id="rights">
-              <h3>IP & RIGHTS MARKETPLACE</h3>
-              <p>> NE-NOIR CINEMATIC PROPERTY AVAILABLE FOR ACQUISITION.</p>
-              <ul class="terminal-list">
-                <li><strong>The Book:</strong> Non-Fiction Memoir. “Shantaram” meets “The Big Short”.</li>
-                <li><strong>The Screenplay:</strong> Neon rock clubs vs. algorithmic trading coldness.</li>
-                <li><strong>Universe:</strong> Characters, chapters, visual IP, soundtrack, “Shop the Scene”.</li>
-              </ul>
+         <h3>IP & RIGHTS MARKETPLACE</h3>
+		 <p>&gt; NEO-NOIR CINEMATIC PROPERTY AVAILABLE FOR ACQUISITION.</p>
+
+		 <ul class="terminal-list">
+		   <li>
+		     <strong>The Book:</strong>
+		     Narrative nonfiction in the lineage of
+		     <em>The Big Short</em>,
+		     <em>Liar’s Poker</em>,
+		     and <em>Flash Boys</em> —
+		     systemic finance, invisible markets, and algorithmic power —
+		     fused with the lived, underground immersion and outsider mythos of
+		     <em>Shantaram</em> and <em>American Kingpin</em>.
+		   </li>
+
+		   <li>
+		     <strong>The Screenplay:</strong>
+		     A tech-noir thriller where neon subcultures, music, obsession, and moral ambiguity
+		     collide with algorithmic trading, institutional coldness, and invisible power structures
+		     — prestige drama with thriller momentum.
+		   </li>
+
+		   <li>
+		     <strong>The Universe:</strong>
+		     A serialized, commerce-native IP ecosystem — characters, chapters, visual identity,
+		     original soundtrack, and integrated storytelling extensions
+		     (“Shop the Scene”, music, culture, and platforms).
+		   </li>
+</ul>
 
               <div class="panel-actions">
                 <a class="hud-btn danger link" href="mailto:info@worldtradefactory.ai">RIGHTS_ENQUIRY</a>
@@ -1180,32 +1227,7 @@ footer p{
               </div>
             </div>
 
-            <div class="announce-panel" aria-label="Announcements">
-              <div class="announce-title">LATEST</div>
 
-
-
-              <div class="announce-item">
-                <span class="tag">NEW</span>
-                <h4>PHASE 1 IS LIVE</h4>
-                <p>The Shark of Wall Street hub is expanding — chapters + character drops rolling out.</p>
-
-                <!-- your original thumbnail block -->
-                <div class="announce-thumb">
-                  <img src="ny1.png" alt="New drop thumbnail">
-                  <div class="meta">
-                    <div><strong>Drop:</strong> NYPD / Street Operations</div>
-                    <div><strong>Scene:</strong> “Order vs Chaos”</div>
-                    <div><a href="#chapters">Jump to Chapters →</a></div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="announce-item">
-                <span class="tag warm">AUDIO</span>
-                <h4>SOUNDTRACK ARCHIVE</h4>
-                <p>Open the <strong>AUDIO_ARCHIVE</strong> drawer to play tracks (SharK ATaKK).</p>
-              </div>
             </div>
           </div>
         </div>
@@ -1536,4 +1558,3 @@ footer p{
   </script>
 </body>
 </html>
-
