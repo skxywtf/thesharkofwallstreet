@@ -200,7 +200,7 @@
       min-width:100%;
       min-height:100%;
       transform: translate(-50%,-50%);
-     filter: brightness(1) contrast(1);
+    filter: brightness(.5) contrast(1.1);
       z-index:-2;
     }
     .hero::before{
@@ -311,6 +311,9 @@
 
 
     .poster-wrap{
+      max-width: 500px;
+	  max-height: 700px;
+  margin-left: auto;
       border: 1px solid rgba(255,255,255,.14);
       box-shadow: var(--shadow);
       background: rgba(0,0,0,.35);
@@ -854,12 +857,99 @@ filter: saturate(0.55) contrast(1.12) brightness(0.92) sepia(0.12) hue-rotate(-8
 	  font-weight: 600;
 	}
 @media (max-width: 520px){
-  .hero{
-    height: auto;
-    min-height: 0;
-    padding: 28px 0 22px;
+  .hud-header{
+    height: auto;           /* allow 2 lines */
+    flex-wrap: wrap;
+    row-gap: 8px;
+    padding: 10px 12px;
+  }
+  .nav-actions{
+    width: 100%;
+    justify-content: flex-end;
+    flex-wrap: wrap;        /* key: lets buttons go to next line */
+    gap: 8px;
   }
 }
+
+footer p{
+  color: rgba(248,250,252,.9);
+  text-shadow: 0 0 6px rgba(34,211,238,.25);
+}
+
+/* make chapters area wide enough */
+/* CHAPTER POSTERS (2 per row, hero-poster size, BUTTON ALWAYS VISIBLE) */
+#chapters .container{
+  width: min(1200px, 96vw);
+}
+
+.chapter-posters{
+  display: grid;
+  grid-template-columns: repeat(3, 420px); /* same scale as hero poster */
+  justify-content: center;
+  gap: 28px;
+  margin-top: 18px;
+}
+
+.chapter-poster{
+  position: relative;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.12);
+  background: #000;
+  box-shadow: 0 18px 60px rgba(0,0,0,.6);
+  transition: .25s ease;
+}
+
+.chapter-poster img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;  /* no cropping */
+  background: #000;
+}
+
+/* ALWAYS ON (not hover-based) */
+.chapter-meta{
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 14px;
+  opacity: 1 !important;
+  transform: none !important;
+  background: linear-gradient(
+    to top,
+    rgba(2,6,23,.92),
+    rgba(2,6,23,.55),
+    transparent
+  );
+}
+
+.chapter-title{
+  display: inline-block;
+  opacity: 1 !important;
+  transform: none !important;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: .90rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  padding: 10px 16px;
+  border: 1px solid rgba(34,211,238,.55);
+  color: #fff;
+  background: rgba(2,6,23,.88);
+}
+
+/* Hover = card glow only (button stays visible) */
+.chapter-poster:hover{
+  transform: translateY(-4px);
+  border-color: rgba(250,204,21,.55);
+  box-shadow: 0 0 24px rgba(250,204,21,.18),
+              0 26px 80px rgba(0,0,0,.75);
+}
+
+/* Responsive */
+@media (max-width: 940px){
+  .chapter-posters{ grid-template-columns: 1fr; }
+  .chapter-poster{ max-width: 420px; margin: 0 auto; }
+}
+
 
   </style>
 </head>
@@ -915,6 +1005,13 @@ filter: saturate(0.55) contrast(1.12) brightness(0.92) sepia(0.12) hue-rotate(-8
               <strong><a href="https://www.worldtradefactory.ai" target="_blank" rel="noopener" style="text-decoration:underline; text-underline-offset:3px;">World Trade Factory</a></strong>
               and created by
               <strong><a href="https://www.linkedin.com/in/sajeeshkakkat" target="_blank" rel="noopener" style="text-decoration:underline; text-underline-offset:3px;">Sage Kakkat</a></strong>.
+                  <!-- STATS (from your original) -->
+			      <section class="stats-row" aria-label="Traction stats">
+			        <div class="stat-unit"><div class="stat-val">10500+</div><div class="stat-label">followers</div></div>
+			        <div class="stat-unit"><div class="stat-val">3,000+</div><div class="stat-label">cities active</div></div>
+			        <div class="stat-unit"><div class="stat-val">100+</div><div class="stat-label">countries</div></div>
+			        <div class="stat-unit"><div class="stat-val">Growing</div><div class="stat-label">traction</div></div>
+    </section>
             </p>
           </div>
         </div>
@@ -925,41 +1022,8 @@ filter: saturate(0.55) contrast(1.12) brightness(0.92) sepia(0.12) hue-rotate(-8
       </div>
     </section>
 
-    <!-- STATS (from your original) -->
-    <section class="stats-row" aria-label="Traction stats">
-      <div class="stat-unit"><div class="stat-val">10500+</div><div class="stat-label">followers</div></div>
-      <div class="stat-unit"><div class="stat-val">3,000+</div><div class="stat-label">cities active</div></div>
-      <div class="stat-unit"><div class="stat-val">100+</div><div class="stat-label">countries</div></div>
-      <div class="stat-unit"><div class="stat-val">Growing</div><div class="stat-label">traction</div></div>
-    </section>
 
-    <!-- PERSONNEL DOSSIERS (expanded cast) -->
-    <section class="section" id="intel">
-      <div class="container">
-        <div class="section-header">> CLASSIFIED PERSONNEL DOSSIERS</div>
-
-        <div class="dossier-grid">
-          <a href="black.html" class="dossier-card"><img src="scar.png" alt="Scarlett"><div class="dossier-label">SCARLETT</div></a>
-          <a href="mayor.html" class="dossier-card"><img src="may.png" alt="The Mayor"><div class="dossier-label">THE MAYOR</div></a>
-          <a href="banker.html" class="dossier-card"><img src="bank.png" alt="The Banker"><div class="dossier-label">THE BANKER</div></a>
-          <a href="snake.html" class="dossier-card"><img src="snake.png" alt="The Snake"><div class="dossier-label">THE SNAKE</div></a>
-          <a href="wolf.html" class="dossier-card"><img src="sniper.png" alt="The Wolf"><div class="dossier-label">THE WOLF</div></a>
-          <a href="fox.html" class="dossier-card"><img src="thefox.png" alt="The Fox"><div class="dossier-label">THE FOX</div></a>
-          <a href="krypto.html" class="dossier-card"><img src="kryptoshot.png" alt="Krypto"><div class="dossier-label">KRYPTO</div></a>
-          <a href="diya.html" class="dossier-card"><img src="diya.png" alt="N.V. Diya"><div class="dossier-label">N.V. DIYA</div></a>
-          <a href="cheef.html" class="dossier-card"><img src="cheef.png" alt="Cheef"><div class="dossier-label">CHEEF</div></a>
-          <a href="nypd.html" class="dossier-card"><img src="nypd.png" alt="NYPD"><div class="dossier-label">NYPD</div></a>
-          <a href="zero.html" class="dossier-card"><img src="zero.png" alt="Zero"><div class="dossier-label">ZERO</div></a>
-          <a href="vega.html" class="dossier-card"><img src="vega.png" alt="Vega"><div class="dossier-label">VEGA</div></a>
-          <a href="miller.html" class="dossier-card"><img src="mill.png" alt="Miller"><div class="dossier-label">MILLER</div></a>
-          <a href="doom.html" class="dossier-card"><img src="doom1.png" alt="Doom"><div class="dossier-label">DOOM</div></a>
-          <a href="zoya.html" class="dossier-card"><img src="zoya.png" alt="Zoya"><div class="dossier-label">ZOYA</div></a>
-          <a href="eve.html" class="dossier-card"><img src="eve.png" alt="AG"><div class="dossier-label">AG</div></a>
-        </div>
-      </div>
-    </section>
-
-    <!-- TERMINALS: Factory + Rights + Announcements -->
+ <!-- TERMINALS: Factory + Rights + Announcements -->
     <section class="section alt" id="factory">
       <div class="container">
         <div class="section-header cyan">> SYSTEMS / TERMINALS</div>
@@ -1072,22 +1136,97 @@ filter: saturate(0.55) contrast(1.12) brightness(0.92) sepia(0.12) hue-rotate(-8
 
       </div>
     </section>
+<!-- CHAPTERS -->
+<section class="section" id="chapters">
+  <div class="container">
+    <div class="section-header gold">> RECENT TRANSMISSIONS / CHAPTERS</div>
 
-    <!-- CHAPTERS -->
-    <section class="section" id="chapters">
+    <div class="chapter-posters">
+      <a class="chapter-poster" href="chapter-prison.html">
+        <img src="fight.png" alt="The Fight poster">
+        <div class="chapter-meta">
+
+          <div class="chapter-title">THE FIGHT</div>
+        </div>
+      </a>
+
+      <a class="chapter-poster" href="fox.html">
+        <img src="suv.png" alt="The Fox poster">
+        <div class="chapter-meta">
+
+          <div class="chapter-title">THE FOX</div>
+        </div>
+      </a>
+
+      <a class="chapter-poster" href="snake.html">
+        <img src="garage.png" alt="The Snake poster">
+        <div class="chapter-meta">
+
+          <div class="chapter-title">THE SNAKE</div>
+        </div>
+      </a>
+
+      <a class="chapter-poster" href="zero.html">
+        <img src="z14.png" alt="Zero poster">
+        <div class="chapter-meta">
+
+          <div class="chapter-title">ZERO</div>
+        </div>
+      </a>
+
+      <a class="chapter-poster" href="diya.html">
+        <img src="sleep.png" alt="N.V. Diya poster">
+        <div class="chapter-meta">
+
+          <div class="chapter-title">N.V. DIYA</div>
+        </div>
+      </a>
+      <a class="chapter-poster" href="cheef.html">
+        <img src="cheef3.png" alt="Cheef poster">
+        <div class="chapter-meta">
+
+          <div class="chapter-title">CHEEF</div>
+        </div>
+      </a>
+      <a class="chapter-poster" href="nypd.html">
+        <img src="ny1.png" alt="NYPD poster">
+        <div class="chapter-meta">
+
+          <div class="chapter-title">NYPD</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+    <!-- PERSONNEL DOSSIERS (expanded cast) -->
+    <section class="section" id="intel">
       <div class="container">
-        <div class="section-header gold">> RECENT TRANSMISSIONS / CHAPTERS</div>
+        <div class="section-header">> CLASSIFIED PERSONNEL DOSSIERS</div>
 
-        <div class="chapter-grid">
-          <a href="chapter-prison.html">READ: THE FIGHT</a>
-          <a href="fox.html">READ: THE FOX</a>
-          <a href="snake.html">READ: THE SNAKE</a>
-          <a href="zero.html">READ: ZERO</a>
-          <a href="diya.html">READ: N.V. DIYA</a>
-          <a href="nypd.html">READ: NYPD</a>
+        <div class="dossier-grid">
+          <a href="black.html" class="dossier-card"><img src="scar.png" alt="Scarlett"><div class="dossier-label">SCARLETT</div></a>
+          <a href="mayor.html" class="dossier-card"><img src="may.png" alt="The Mayor"><div class="dossier-label">THE MAYOR</div></a>
+          <a href="banker.html" class="dossier-card"><img src="bank.png" alt="The Banker"><div class="dossier-label">THE BANKER</div></a>
+          <a href="snake.html" class="dossier-card"><img src="snake.png" alt="The Snake"><div class="dossier-label">THE SNAKE</div></a>
+          <a href="wolf.html" class="dossier-card"><img src="sniper.png" alt="The Wolf"><div class="dossier-label">THE WOLF</div></a>
+          <a href="fox.html" class="dossier-card"><img src="thefox.png" alt="The Fox"><div class="dossier-label">THE FOX</div></a>
+          <a href="krypto.html" class="dossier-card"><img src="kryptoshot.png" alt="Krypto"><div class="dossier-label">KRYPTO</div></a>
+          <a href="diya.html" class="dossier-card"><img src="diya.png" alt="N.V. Diya"><div class="dossier-label">N.V. DIYA</div></a>
+          <a href="cheef.html" class="dossier-card"><img src="cheef.png" alt="Cheef"><div class="dossier-label">CHEEF</div></a>
+          <a href="nypd.html" class="dossier-card"><img src="nypd.png" alt="NYPD"><div class="dossier-label">NYPD</div></a>
+          <a href="zero.html" class="dossier-card"><img src="zero.png" alt="Zero"><div class="dossier-label">ZERO</div></a>
+          <a href="vega.html" class="dossier-card"><img src="vega.png" alt="Vega"><div class="dossier-label">VEGA</div></a>
+          <a href="miller.html" class="dossier-card"><img src="mill.png" alt="Miller"><div class="dossier-label">MILLER</div></a>
+          <a href="doom.html" class="dossier-card"><img src="doom1.png" alt="Doom"><div class="dossier-label">DOOM</div></a>
+          <a href="zoya.html" class="dossier-card"><img src="zoya.png" alt="Zoya"><div class="dossier-label">ZOYA</div></a>
+          <a href="eve.html" class="dossier-card"><img src="eve.png" alt="AG"><div class="dossier-label">AG</div></a>
         </div>
       </div>
     </section>
+
+
+
+
 <section class="section alt" id="trailer">
   <div class="container">
     <div class="section-header cyan">&gt; TRAILER_PLAYBACK</div>
@@ -1168,7 +1307,7 @@ filter: saturate(0.55) contrast(1.12) brightness(0.92) sepia(0.12) hue-rotate(-8
       </a>
 
       <a href="https://www.sonypictures.com" target="_blank" rel="noopener noreferrer" class="partner-card potential">
-        <img src="sony.png" alt="Sony Pictures" />
+        <img src="sony.jpg" alt="Sony Pictures" />
         <div class="partner-name">International Film & Series Adaptation</div>
       </a>
       <a href="https://www.fox.com" target="_blank" rel="noopener noreferrer" class="partner-card potential">
@@ -1185,15 +1324,18 @@ filter: saturate(0.55) contrast(1.12) brightness(0.92) sepia(0.12) hue-rotate(-8
 
   </main>
 
-  <footer>
-    <a href="https://www.skxywtf.com" target="_blank" rel="noopener">
-      <img src="skxy.png" alt="World Trade Factory">
-    </a>
-    <p>
-      &copy; <span id="year"></span> WORLD TRADE FACTORY. ALL RIGHTS RESERVED.<br>
-      CREATED BY SAGE KAKKAT. PROTECTED UNDER INTERNATIONAL IP LAWS.
-    </p>
-  </footer>
+<footer>
+  <a href="https://www.skxywtf.com" target="_blank" rel="noopener">
+    <img src="skxy.png" alt="World Trade Factory">
+  </a>
+
+  <p>
+    &copy; <span id="year"></span> WORLD TRADE FACTORY<br>
+    2390 E CAMELBACK RD, PHOENIX, AZ 85023<br>
+    ALL RIGHTS RESERVED.
+  </p>
+</footer>
+
 
   <!-- Backdrop -->
   <div class="backdrop" id="hudBackdrop" onclick="closeAllDrawers()"></div>
@@ -1307,5 +1449,3 @@ filter: saturate(0.55) contrast(1.12) brightness(0.92) sepia(0.12) hue-rotate(-8
   </script>
 </body>
 </html>
-
-
