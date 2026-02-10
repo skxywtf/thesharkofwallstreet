@@ -1040,9 +1040,8 @@ footer p{
     </a>
 
     <div class="nav-actions">
-      <button class="hud-btn" onclick="openDrawer('navDrawer')">NAV_MENU</button>
-      <button class="hud-btn gold" onclick="openDrawer('songsDrawer')">AUDIO_ARCHIVE</button>
-      <a class="hud-btn danger link" href="#rights">IP_RIGHTS</a>
+      <button class="hud-btn" onclick="openDrawer('navDrawer')">NAVIGATOR</button>
+      <a class="hud-btn danger link" href="#trailer">EXPERIENCE</a>
     </div>
   </header>
 
@@ -1234,6 +1233,8 @@ footer p{
 
       </div>
     </section>
+
+
 <!-- CHAPTERS -->
 <section class="section" id="chapters">
   <div class="container">
@@ -1344,6 +1345,169 @@ footer p{
     </video>
   </div>
 </section>
+<!-- MINI PLAYLIST PLAYER -->
+<section id="playlist" style="padding:38px 28px;background:#000;border-top:1px solid rgba(255,255,255,.08);">
+  <div style="width:min(1200px,92vw);margin:0 auto;">
+    <div style="font-family:'Share Tech Mono',monospace;color:#facc15;letter-spacing:.14em;text-transform:uppercase;border-left:5px solid #facc15;padding-left:12px;margin-bottom:14px;">
+      &gt; SOUNDTRACK
+    </div>
+
+    <!-- Player -->
+    <div style="border:1px solid rgba(34,211,238,.25);background:rgba(15,23,42,.55);box-shadow:0 20px 70px rgba(0,0,0,.65);padding:16px;">
+      <div style="display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;">
+        <div>
+          <div id="trackTitle" style="font-family:'Bebas Neue',sans-serif;letter-spacing:.10em;text-transform:uppercase;font-size:1.8rem;line-height:1;">
+            READY
+          </div>
+          <div id="trackMeta" style="font-family:'Share Tech Mono',monospace;color:rgba(148,163,184,.95);font-size:.86rem;margin-top:6px;">
+            Select a track to begin.
+          </div>
+        </div>
+
+        <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+          <button class="hud-btn" id="btnPrev" type="button">PREV</button>
+          <button class="hud-btn gold" id="btnPlay" type="button">PLAY</button>
+          <button class="hud-btn" id="btnNext" type="button">NEXT</button>
+        </div>
+      </div>
+
+      <div style="margin-top:12px;">
+        <audio id="audioPlayer" preload="metadata" controls style="width:100%;"></audio>
+      </div>
+    </div>
+
+    <!-- Playlist -->
+    <div id="playlistList" style="margin-top:14px;display:grid;gap:10px;"></div>
+  </div>
+</section>
+
+<script>
+  // 1) Put your REAL track URLs here (local mp3 files or https links)
+  const TRACKS = [
+    { title: "BACKGROUND_SCORE", src: "score.mp3" },
+    { title: "THE_SHARK_OF_WALL_STREET", src: "https://www.sharkatakk.com/api/track" },
+    { title: "ELECTRIC_LOVE", src: "love.mp3" },
+    { title: "FIRE_UNTAMED", src: "fire.mp3" },
+    { title: "PREDATORS_IN_THE_STORM", src: "predators.mp3" },
+    { title: "HOT_ROD", src: "hot.mp3" },
+    { title: "I_DONT_TOUCH_HER", src: "touch.mp3" },
+    { title: "WHO_I_AM", src: "who.mp3" },
+    { title: "CHASE_ME", src: "chase.mp3" },
+    { title: "SWIMMING_WITH_THE_SHARKS", src: "swim.mp3" },
+    { title: "BIKERS_AND_LOWRIDERS", src: "bike.mp3" },
+    { title: "I_SEE_EVERYTHING", src: "see.mp3" },
+    { title: "THE_SNAKE_IN_THE_WIRE", src: "snake.mp3" },
+    { title: "ZERO", src: "zero.mp3" },
+    { title: "THE_RANGER", src: "ranger.mp3" },
+    { title: "WE_HOLD_THE_LINE", src: "hold.mp3" },
+    { title: "SEE_THE_SILK", src: "silk.mp3" },
+    { title: "DOOM", src: "doom.mp3" },
+    { title: "HELICOPTERS IN A WAR", src: "war.mp3" },
+  ];
+
+  const audio = document.getElementById("audioPlayer");
+  const titleEl = document.getElementById("trackTitle");
+  const metaEl  = document.getElementById("trackMeta");
+  const listEl  = document.getElementById("playlistList");
+
+  const btnPrev = document.getElementById("btnPrev");
+  const btnPlay = document.getElementById("btnPlay");
+  const btnNext = document.getElementById("btnNext");
+
+  let idx = 0;
+  let started = false;
+
+  function setNowPlaying(i, autoplay = false){
+    idx = (i + TRACKS.length) % TRACKS.length;
+    const t = TRACKS[idx];
+
+    titleEl.textContent = t.title;
+    metaEl.textContent = `Track ${idx + 1} / ${TRACKS.length}`;
+
+    // Update audio source
+    audio.src = t.src;
+    audio.load();
+
+    // Highlight selected
+    document.querySelectorAll(".playlist-item").forEach(el => el.classList.remove("playing"));
+    const active = document.querySelector(`.playlist-item[data-i="${idx}"]`);
+    if(active) active.classList.add("playing");
+
+    if(autoplay){
+      audio.play().then(() => {
+        started = true;
+        btnPlay.textContent = "PAUSE";
+      }).catch(()=>{ /* autoplay may be blocked until user click */ });
+    } else {
+      btnPlay.textContent = "PLAY";
+    }
+  }
+
+  function togglePlay(){
+    if(!started){
+      setNowPlaying(idx, true);
+      return;
+    }
+    if(audio.paused){
+      audio.play().then(()=> btnPlay.textContent = "PAUSE").catch(()=>{});
+    } else {
+      audio.pause();
+      btnPlay.textContent = "PLAY";
+    }
+  }
+
+  function next(){
+    setNowPlaying(idx + 1, true);
+  }
+  function prev(){
+    setNowPlaying(idx - 1, true);
+  }
+
+  // Auto-advance when a track ends
+  audio.addEventListener("ended", next);
+
+  // Update play button label
+  audio.addEventListener("play", () => { started = true; btnPlay.textContent = "PAUSE"; });
+  audio.addEventListener("pause", () => { if(started) btnPlay.textContent = "PLAY"; });
+
+  btnPlay.addEventListener("click", togglePlay);
+  btnNext.addEventListener("click", next);
+  btnPrev.addEventListener("click", prev);
+
+  // Build playlist UI
+  function renderPlaylist(){
+    listEl.innerHTML = TRACKS.map((t, i) => `
+      <button type="button"
+        class="drawer-item playlist-item"
+        data-i="${i}"
+        style="margin:0;"
+      >
+        ${String(i+1).padStart(2,"0")}. ${t.title}
+      </button>
+    `).join("");
+
+    listEl.querySelectorAll(".playlist-item").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const i = parseInt(btn.getAttribute("data-i"), 10);
+        setNowPlaying(i, true);
+      });
+    });
+
+    // Add a tiny style for active
+    const style = document.createElement("style");
+    style.textContent = `
+      .playlist-item.playing{
+        border-color: rgba(250,204,21,.55) !important;
+        color: #facc15 !important;
+        box-shadow: 0 0 14px rgba(250,204,21,.25);
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
+  renderPlaylist();
+  setNowPlaying(0, false);
+</script>
 
     <!-- PARTNERS -->
 <section class="partners-section" id="partners">
@@ -1469,13 +1633,11 @@ footer p{
     </div>
   </aside>
 
-  <!-- SONGS DRAWER -->
+  <!-- SONGS DRAWER
   <aside class="drawer" id="songsDrawer" aria-hidden="true">
     <div class="drawer-panel">
       <div class="drawer-title">AUDIO_ARCHIVE</div>
       <div class="drawer-sub">SOUNDTRACK BY SHARK ATAKK</div>
-
-      <!-- keep your original list (extended) -->
       <button class="drawer-item" id="btn-score" onclick="playAudio('score', 'score.mp3')">BACKGROUND_SCORE</button>
       <button class="drawer-item" id="btn-theme" onclick="playAudio('theme', 'https://www.sharkatakk.com/api/track')">THE_SHARK_OF_WALL_STREET</button>
 
@@ -1501,6 +1663,7 @@ footer p{
       </div>
     </div>
   </aside>
+ -->
 
   <script>
     // year
