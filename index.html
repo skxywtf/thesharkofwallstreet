@@ -1029,6 +1029,20 @@ footer p{
     padding-right: 10px !important;
   }
 }
+/* MOBILE: poster first, text second */
+@media (max-width: 980px){
+  .hero-inner{
+    grid-template-columns: 1fr !important;
+  }
+  .hero-inner > div:first-child{  /* text column */
+    order: 2;
+  }
+  .hero-inner > .poster-wrap{     /* poster column */
+    order: 1;
+    margin: 0 auto 14px;
+    max-width: 520px;            /* optional: make it bigger on mobile */
+  }
+}
 
   </style>
 </head>
