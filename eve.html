@@ -242,11 +242,15 @@
 
 <body>
 
-
+  <header class="fixed-audio-header">
+    <div class="audio-scroll-container">
+      <button class="btn-audio" id="btn-sheriff" onclick="playAudio('sheriff', 'sheriff.mp3')">🔊 Play: I'm the Sheriff</button>
+    </div>
+  </header>
   <div class="reader-container">
 
-    <div style="font-family: 'Montserrat'; text-align: center; margin-bottom: 1rem; color: var(--text-muted); letter-spacing: 3px; font-size: 0.8rem;" class="uppercase">
-      SOUTHERN DISTRICT OF NEW YORK
+    <div style="font-family: 'Montserrat'; text-align: center; margin-bottom: 1rem; color: var(--text-muted); letter-spacing: 3px; font-size: 1.2rem;" class="uppercase">
+      The Shark of Wall Street
     </div>
 
     <h1 class="chapter-title">The Sheriff</h1>
@@ -277,7 +281,9 @@
         <p class="evelyn-voice" style="color: #1a1a1a; border-color: #1a1a1a;">"The market survives on trust. I just took out the trash."</p>
       </div>
 <div class="origin-header">Part II: The Sanctuary</div>
-
+    <div class="story-media">
+      <img src="eve12.png" alt="Evelyn Vance in a white suit standing on the steps of the Federal Courthouse">
+    </div>
       <p>Evelyn lived her life in a corset of expectations. <strong>Julian Hayes</strong> was the only person who knew how to unlace it.</p>
 
       <p>They met ten years ago in Cambridge. She was a law student drowning in expectations; he was an architecture grad student who saw the world in skylines. He didn't care about her last name. He didn't care about her GPA. He was the only place she could go where she didn't have to be "The Sheriff."</p>
@@ -357,7 +363,9 @@
       <p>"SHARK! GET OUT! SHARK!"</p>
 
       <p>The water churned. Thirty yards out, a dorsal fin sliced through the surface. The crowd froze. But not Julian. He dropped the football and sprinted <em>toward</em> the water. He dove into the surf, putting his own body between a group of teenagers and the dark shape circling in the deep.</p>
-
+    <div class="story-media">
+      <img src="eve13.png" alt="Evelyn Vance in a white suit standing on the steps of the Federal Courthouse">
+    </div>
       <p>Evelyn gripped the railing. She watched Julian thrashing in the whitewater, guiding the last kid to the shore. It was chaos. It was primal.</p>
 
       <p>Then, her phone rang. The encrypted line.</p>
@@ -367,13 +375,17 @@
       <p>"Ms. Vance," the Deputy Chief’s voice was grave. "We have a situation. The Shark has surfaced."</p>
 
       <p>Evelyn watched Julian dragging himself onto the sand, alive. He looked up at the deck, waving to her, a wide, adrenaline-fueled grin on his face. <em>I beat it, Ev! I beat the shark!</em></p>
-
+    <div class="story-media">
+      <img src="eve14.png" alt="Evelyn Vance in a white suit standing on the steps of the Federal Courthouse">
+    </div>
       <p>Evelyn didn't wave back. She stared at the phone.</p>
 
       <p class="evelyn-voice">"I know. I'm looking right at it."</p>
 
       <p>"Ma'am?" the Deputy said. "I'm not talking about a fish. The Shark of Wall Street just walked into the Federal Reserve. He's initiated a hostile takeover. He's not hiding anymore, Evelyn. He's hunting."</p>
-
+    <div class="story-media">
+      <img src="eve15.png" alt="Evelyn Vance in a white suit standing on the steps of the Federal Courthouse">
+    </div>
       <p>Evelyn turned her back on the ocean. "Pack my bags. And get the indictment ready. The beach is closed."</p>
 
 
@@ -422,34 +434,77 @@
     </article>
 
 
-    <section class="shop-scene">
-      <div class="shop-wrap">
-        <header class="shop-header">
-          <h2>The Prosecution</h2>
-          <p>Immaculate & Lethal</p>
-        </header>
+<section class="shop-scene">
+  <div class="shop-wrap">
+    <header class="shop-header">
+      <h2>The Prosecution</h2>
+      <p>Immaculate &amp; Lethal</p>
+    </header>
 
-        <div class="shop-grid">
-          <article class="shop-card">
-            <h3>The Aesthetic</h3>
-            <p class="shop-sub">The White Knight</p>
-            <div class="links">
-               <a href="#" target="_blank">Ralph Lauren Collection (White Suits)</a> ·
-               <a href="#" target="_blank">Mikimoto Pearls</a>
-            </div>
-          </article>
+    <div class="shop-grid">
 
-          <article class="shop-card">
-            <h3>The Weapon</h3>
-            <p class="shop-sub">Federal Statute</p>
-            <div class="links">
-               <a href="#" target="_blank">RICO Indictment Draft</a> ·
-               <a href="#" target="_blank">Asset Forfeiture Order</a>
-            </div>
-          </article>
+      <!-- AESTHETIC -->
+      <article class="shop-card">
+        <h3>The Aesthetic</h3>
+        <p class="shop-sub">The White Knight</p>
+        <p class="shop-desc">
+          Precision tailoring. Stark contrast. A silhouette that walks into
+          a courtroom like a verdict already decided.
+        </p>
+        <div class="links">
+          <a href="https://www.ralphlauren.com/women-clothing-collection/" target="_blank">Ralph Lauren Collection – White Suits</a> ·
+          <a href="https://www.mikimotoamerica.com/us_en/jewelry/pearls" target="_blank">Mikimoto Pearl Jewelry</a> ·
+          <a href="https://www.manoloblahnik.com/us/women/shoes" target="_blank">Manolo Blahnik Heels</a> ·
+          <a href="https://www.cartier.com/en-us/jewelry/bracelets/" target="_blank">Cartier Gold Bracelets</a>
         </div>
-      </div>
-    </section>
+      </article>
+
+      <!-- ACCESSORIES -->
+      <article class="shop-card">
+        <h3>The Accessories</h3>
+        <p class="shop-sub">Minimal. Intentional.</p>
+        <p class="shop-desc">
+          Nothing ornamental. Everything strategic.
+        </p>
+        <div class="links">
+          <a href="https://www.celine.com/en-us/celine-shop-women/bags/" target="_blank">CELINE Structured Bags</a> ·
+          <a href="https://www.tiffany.com/jewelry/earrings/" target="_blank">Tiffany &amp; Co. Stud Earrings</a> ·
+          <a href="https://www.rolex.com/watches/datejust.html" target="_blank">Rolex Datejust</a>
+        </div>
+      </article>
+
+      <!-- THE WEAPON -->
+      <article class="shop-card">
+        <h3>The Weapon</h3>
+        <p class="shop-sub">Federal Statute</p>
+        <p class="shop-desc">
+          Power isn’t raised voices. It’s paper filed at 8:01 AM.
+        </p>
+        <div class="links">
+          <a href="https://www.law.cornell.edu/uscode/text/18/1961" target="_blank">18 U.S.C. § 1961–1968 (RICO)</a> ·
+          <a href="https://www.justice.gov/criminal-afmls/asset-forfeiture-policy-manual" target="_blank">DOJ Asset Forfeiture Manual</a> ·
+          <a href="https://www.uscourts.gov/forms/pro-se-forms/complaint-civil-case" target="_blank">Federal Civil Complaint Template</a>
+        </div>
+      </article>
+
+      <!-- THE INTEL -->
+      <article class="shop-card">
+        <h3>The Intel</h3>
+        <p class="shop-sub">Follow the Money</p>
+        <p class="shop-desc">
+          Offshore trails. Shell layers. The signature hidden in plain sight.
+        </p>
+        <div class="links">
+          <a href="https://www.sec.gov/edgar/searchedgar/companysearch" target="_blank">SEC EDGAR Database</a> ·
+          <a href="https://www.icij.org/investigations/" target="_blank">ICIJ Investigations</a> ·
+          <a href="https://www.finra.org/investors/learn-to-invest/advanced-investing" target="_blank">FINRA Advanced Research</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
 
     <div class="nav-footer">
       <a href="index.html" class="btn-back">Close File</a>
