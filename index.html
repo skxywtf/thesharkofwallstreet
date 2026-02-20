@@ -1043,6 +1043,41 @@ footer p{
     max-width: 520px;            /* optional: make it bigger on mobile */
   }
 }
+/* RIGHT COLUMN: 2 posters side-by-side */
+.poster-row{
+  display:flex;
+  gap: 18px;
+  justify-content:flex-end;   /* aligns to right side like your original */
+  align-items:flex-start;
+  flex-wrap: nowrap;          /* IMPORTANT: prevents stacking */
+  min-width: 0;               /* prevents overflow issues in grids */
+}
+
+/* each poster */
+.poster-row .poster-wrap{
+  width: 240px;               /* set the size you want */
+  max-width: none;            /* override your existing max-width:500px */
+  max-height: none;           /* override max-height if needed */
+  flex: 0 0 auto;             /* don’t shrink into stacking */
+  border: 1px solid rgba(255,255,255,.14);
+  box-shadow: var(--shadow);
+  background: rgba(0,0,0,.35);
+  overflow:hidden;
+}
+
+/* show full poster */
+.poster-row .poster-wrap img{
+  width:100%;
+  height:auto;
+  object-fit: contain;
+  display:block;
+}
+.poster-row .poster-wrap{ width: 320px; }
+@media (max-width: 680px){
+  .poster-row{ flex-wrap: wrap; justify-content:center; }
+  .poster-row .poster-wrap{ width: min(92vw, 420px); }
+}
+
 
   </style>
 </head>
@@ -1108,12 +1143,101 @@ footer p{
           </div>
         </div>
 
-        <div class="poster-wrap">
-          <img src="bee.png" alt="The Shark of Wall Street Poster">
-        </div>
+  <div class="poster-wrap">
+    <img src="bee.png" alt="BEE Poster">
+  </div>
+</div>
 
       </div>
     </section>
+<!-- THREE-COLUMN POSTER SECTION -->
+<section class="section alt" id="posters">
+  <div class="container">
+    <div class="section-header gold">&gt; COMING SOON</div>
+
+    <div class="poster-grid">
+      <a class="poster-card" href="#" aria-label="Open poster 1">
+        <img src="bee9.png" alt="Poster 1">
+
+      </a>
+
+      <a class="poster-card" href="#" aria-label="Open poster 2">
+        <img src="sit.png" alt="Poster 2">
+
+      </a>
+
+      <a class="poster-card" href="#" aria-label="Open poster 3">
+        <img src="bee4.png" alt="Poster 3">
+
+      </a>
+
+      <!-- add more cards as needed -->
+    </div>
+  </div>
+</section>
+
+<style>
+/* 3-column poster grid */
+.poster-grid{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+/* poster card */
+.poster-card{
+  position:relative;
+  aspect-ratio: 2 / 3;            /* poster shape */
+  overflow:hidden;
+  border: 1px solid rgba(255,255,255,.12);
+  background:#000;
+  box-shadow: 0 18px 60px rgba(0,0,0,.6);
+  transition: .25s ease;
+}
+
+.poster-card img{
+  width:100%;
+  height:100%;
+  object-fit: contain;            /* shows full poster (no crop) */
+  background:#000;
+}
+
+/* always-visible button overlay */
+.poster-meta{
+  position:absolute;
+  left:0; right:0; bottom:0;
+  padding: 14px;
+  background: linear-gradient(to top, rgba(2,6,23,.92), rgba(2,6,23,.55), transparent);
+}
+
+.poster-btn{
+  display:inline-block;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: .90rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  padding: 10px 16px;
+  border: 1px solid rgba(34,211,238,.55);
+  color:#fff;
+  background: rgba(2,6,23,.88);
+}
+
+/* hover glow only */
+.poster-card:hover{
+  transform: translateY(-4px);
+  border-color: rgba(250,204,21,.55);
+  box-shadow: 0 0 24px rgba(250,204,21,.18),
+              0 26px 80px rgba(0,0,0,.75);
+}
+
+/* responsive */
+@media (max-width: 980px){
+  .poster-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 560px){
+  .poster-grid{ grid-template-columns: 1fr; }
+}
+</style>
 
 
  <!-- TERMINALS: Factory + Rights + Announcements -->
@@ -1333,7 +1457,8 @@ footer p{
           <a href="miller.html" class="dossier-card"><img src="mill.png" alt="Miller"><div class="dossier-label">MILLER</div></a>
           <a href="doom.html" class="dossier-card"><img src="doom1.png" alt="Doom"><div class="dossier-label">DOOM</div></a>
           <a href="zoya.html" class="dossier-card"><img src="zoya.png" alt="Zoya"><div class="dossier-label">ZOYA</div></a>
-          <a href="eve.html" class="dossier-card"><img src="eve.png" alt="AG"><div class="dossier-label">AG</div></a>
+          <a href="eve.html" class="dossier-card"><img src="eve.png" alt="AG"><div class="dossier-label">THE SHERIFF</div></a>
+          <a href="grunt.html" class="dossier-card"><img src="grunt.png" alt="Grunt"><div class="dossier-label">GRUNT</div></a>
         </div>
       </div>
     </section>
@@ -1747,6 +1872,5 @@ footer p{
 </body>
 
 </html>
-
 
 
