@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>The Ghost of Obsidian | The Shark of Wall Street — Nicolás Reyes</title>
+  <meta name="description" content="Nicolás Reyes. El Fantasma. Supreme Leader of the Obsidian Cartel." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+
+  <meta name="theme-color" content="#080908" />
+  <meta name="color-scheme" content="dark" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,500&display=swap" rel="stylesheet">
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-RTH99L39VB');
+  </script>
+  <style>
+    /* --- INHERITED VARIABLES --- */
+    :root {
+      --bg-dark: #080908; /* Deep Jungle/Tactical Black */
+      --text-main: #e5e5e5;
+      --text-muted: #8c8c82;
+      --accent-red: #8b0000; /* Blood Red */
+      --accent-sand: #d6d3d1; /* Tactical Stone/Sand */
+      --header-height: 70px;
+    }
+        #vercel-toolbar, vercel-live-feedback, [data-vercel-toolbar] {
+	      display: none !important; opacity: 0 !important; pointer-events: none !important; visibility: hidden !important;
+    }
+    body {
+      background-color: var(--bg-dark);
+      background-image: linear-gradient(to bottom, #0f110f, #050505);
+      color: var(--text-main);
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding-top: var(--header-height);
+    }
+
+    /* --- READER LAYOUT --- */
+    .reader-container{
+      width: min(1000px, calc(100% - 3rem));
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+
+    h1.chapter-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 8vw, 7rem);
+      color: var(--accent-sand);
+      text-transform: uppercase;
+      line-height: 0.9;
+      margin-bottom: 0.5rem;
+      text-align: center;
+      letter-spacing: 4px;
+      border-bottom: 2px solid var(--accent-red);
+      padding-bottom: 20px;
+    }
+
+    .chapter-meta {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--accent-red);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      padding-bottom: 2rem;
+      margin-bottom: 3rem;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      font-weight: 600;
+    }
+
+    .story-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      line-height: 1.8;
+      color: #d4d4d4;
+    }
+
+    .story-text p { margin-bottom: 2rem; }
+    .story-text strong { color: var(--accent-sand); font-weight: 600; }
+
+    .origin-header {
+        font-family: 'Playfair Display', serif;
+        color: var(--accent-sand);
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+        margin-top: 5rem;
+        margin-bottom: 2rem;
+        text-align: center;
+        font-style: italic;
+        border-bottom: 1px solid rgba(139, 0, 0, 0.4);
+        padding-bottom: 10px;
+    }
+
+    .drop-cap::first-letter {
+      float: left;
+      font-size: 4.5rem;
+      line-height: 0.8;
+      font-weight: 400;
+      padding-right: 12px;
+      color: var(--accent-red);
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* --- MEDIA --- */
+    .story-media {
+      max-width: 900px;
+      margin: 4rem auto;
+      border-radius: 2px;
+      overflow: hidden;
+      border: 1px solid var(--accent-red);
+      box-shadow: 0 15px 40px rgba(139, 0, 0, 0.15);
+      position: relative;
+    }
+    .story-media img { width: 100%; height: auto; display: block; filter: contrast(115%) sepia(10%) hue-rotate(350deg); }
+
+    .media-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(8, 9, 8, 0.9);
+      color: var(--accent-sand);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      padding: 12px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      text-align: center;
+      border-top: 1px solid var(--accent-red);
+    }
+
+    /* --- AUDIO HEADER --- */
+    .fixed-audio-header {
+      position: fixed; top: 0; left: 0; width: 100%; height: var(--header-height);
+      background: rgba(8, 9, 8, 0.95); backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--accent-red); z-index: 1000;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .btn-audio {
+      background: transparent; border: 1px solid var(--accent-red);
+      color: var(--accent-red); padding: 0.4rem 1.5rem; border-radius: 2px;
+      font-size: 0.75rem; font-weight: 600; cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Montserrat', sans-serif; letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .btn-audio:hover {
+      background-color: var(--accent-red); color: #fff; border-color: var(--accent-red);
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <div class="reader-container">
+
+    <div style="font-family: 'Montserrat'; text-align: center; margin-bottom: 1rem; color: var(--accent-red); letter-spacing: 4px; font-size: 1.5rem;" class="uppercase">
+  THE SHARK OF WALL STREET
+    </div>
+
+    <h1 class="chapter-title">The Ghost of Obsidian</h1>
+
+    <div class="chapter-meta">
+      <span>Nicolás Reyes</span>
+      <span>•</span>
+      <span>El Fantasma</span>
+      <span>•</span>
+      <span>Supreme Leader</span>
+    </div>
+
+    <div class="story-media">
+      <img src="rey.png" alt="Portrait of Nicolás Reyes in tactical canvas, wearing a silver crucifix.">
+
+    </div>
+
+    <article class="story-text">
+
+      <div class="origin-header">Phase I: The Mountain Fortress</div>
+
+      <p class="drop-cap">The air at the compound was thin, cold, and smelled of pine and diesel fuel. It was a stark contrast to the climate-controlled, sanitized penthouses of Wall Street where his money lived.</p>
+
+      <p>Nicolás Reyes sat at a simple, scarred wooden table on the veranda of a heavily fortified ranch house. He wasn't wearing an Italian suit. He wore a dark canvas jacket, a simple black t-shirt, and a silver crucifix resting against his collarbone. Around the perimeter of the ranch, sixty men in full tactical gear and level-IV body armor stood watch, holding customized assault rifles. They were his ghosts. His private army.</p>
+      <div class="story-media" style="margin: 3rem auto;">
+        <img src="rey1.png" alt="Arturo standing terrified before Reyes on the mountain veranda.">
+      </div>
+      <p>Reyes was drinking black coffee, watching the sun crest over the jagged peaks of the Sierra Madre mountains.</p>
+
+      <p>A heavy, terrified silence hung over the veranda. Standing ten feet away from the table was Arturo, Obsidian’s chief liaison to their New York banking operations. Arturo was sweating profusely despite the mountain chill. He held a decrypted satellite phone in his trembling hands.</p>
+
+      <div class="story-media" style="margin: 3rem auto;">
+        <img src="rey2.png" alt="Arturo standing terrified before Reyes on the mountain veranda.">
+      </div>
+
+      <div class="origin-header">Phase II: The Bad News</div>
+
+      <p>"Say it again," Reyes ordered. His voice was quiet, almost gentle. It was the voice of a man who never had to raise it to get someone killed.</p>
+
+      <p>Arturo swallowed hard, his eyes darting to the armed guards flanking the table.</p>
+
+      <p>"Patrón... the New York bank. Obsidian Capital," Arturo stammered, his voice cracking. "We lost it. Sloane Kensington orchestrated a blind trust proxy transfer on Friday night. Fifty-one percent of the voting shares. When the market opened thirty minutes ago... a holding company took over the board. They fired our executives. They are liquidating the laundering channels."</p>
+
+      <p>Reyes didn't blink. He took a slow sip of his coffee, his dark, impassive eyes fixed on the horizon.</p>
+
+      <p>"And who owns the holding company?" Reyes asked smoothly.</p>
+
+      <p>"We... we don't have a name, Patrón. It’s buried behind shell corporations. But the street is saying it’s the man they call The Shark."</p>
+
+      <div class="origin-header">Phase III: The Retaliation</div>
+
+      <p>Reyes set his coffee mug down on the wooden table. The <em>clink</em> of the ceramic sounded like a gunshot in the dead silence of the morning.</p>
+
+      <p>He had trusted Sloane Kensington. He had paid her millions to keep his money clean, to navigate the pristine, bloodless halls of Wall Street. And she had handed the keys to his empire to a ghost in a bespoke suit.</p>
+
+      <p>"Sloane Kensington," Reyes murmured, tasting the name, a cold, empty smile touching the corners of his mouth. "She thought because she works in a glass tower, she is untouchable. She forgot who built the tower."</p>
+      <div class="story-media" style="margin: 3rem auto;">
+        <img src="rey4.png" alt="Arturo standing terrified before Reyes on the mountain veranda.">
+      </div>
+      <p>Reyes stood up from the table. The movement was slow, deliberate, radiating absolute, terrifying authority. He walked over to Arturo, taking the satellite phone from his shaking hands.</p>
+
+      <p>"Call the New York cell," Reyes commanded, looking out over the mountains. "Tell them to burn the 84th floor of Obsidian Capital to the ground. If there is a server left, destroy it."</p>
+
+      <p>Arturo nodded frantically. "And Kensington, Patrón? She is missing. Her accounts were moved to Zurich."</p>
+
+
+      <p>Reyes turned his gaze to Arturo. His eyes were completely dead—the eyes of a man who had long ago traded his soul for absolute power.</p>
+
+      <p>"I don't care if she is in Zurich, or Paris, or on the moon," Reyes whispered, the quiet threat carrying more weight than a scream. "Send the <em>Fuerzas Especiales</em>. Put a ten-million-dollar bounty on her head, and twenty million on the man who calls himself The Shark."</p>
+
+      <p>Reyes walked back to his coffee, his face a mask of absolute, calculated violence.</p>
+
+      <p>"I want her brought to me," Reyes said softly. "I want Wall Street to learn exactly what happens when you try to steal from a phantom."</p>
+
+    </article>
+
+  </div>
+
+</body>
+</html>
