@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>The Shipper | The Shark of Wall Street — Marcus Thorne</title>
+  <meta name="description" content="Marcus Thorne. Director of Global Logistics. Obsidian Cartel." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+
+  <meta name="theme-color" content="#0f172a" />
+  <meta name="color-scheme" content="dark" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,500&display=swap" rel="stylesheet">
+  <!-- Google Analytics (kept from your original) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RTH99L39VB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RTH99L39VB');
+  </script>
+  <style>
+    /* --- INHERITED VARIABLES --- */
+    :root {
+      --bg-dark: #020617; /* Deep Maritime Night */
+      --text-main: #e2e8f0;
+      --text-muted: #64748b;
+      --accent-steel: #94a3b8; /* Shipping Container Steel */
+      --accent-blue: #38bdf8; /* Digital Blue */
+      --header-height: 70px;
+    }
+        #vercel-toolbar, vercel-live-feedback, [data-vercel-toolbar] {
+	      display: none !important; opacity: 0 !important; pointer-events: none !important; visibility: hidden !important;
+    }
+    body {
+      background-color: var(--bg-dark);
+      background-image: linear-gradient(to bottom, #0f172a, #020617);
+      color: var(--text-main);
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding-top: var(--header-height);
+    }
+
+    /* --- READER LAYOUT --- */
+    .reader-container{
+      width: min(1000px, calc(100% - 3rem));
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+
+    h1.chapter-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 8vw, 7rem);
+      color: var(--accent-steel);
+      text-transform: uppercase;
+      line-height: 0.9;
+      margin-bottom: 0.5rem;
+      text-align: center;
+      letter-spacing: 4px;
+      border-bottom: 2px solid var(--accent-blue);
+      padding-bottom: 20px;
+    }
+
+    .chapter-meta {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--accent-blue);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      padding-bottom: 2rem;
+      margin-bottom: 3rem;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      font-weight: 600;
+    }
+
+    .story-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      line-height: 1.8;
+      color: #cbd5e1;
+    }
+
+    .story-text p { margin-bottom: 2rem; }
+    .story-text strong { color: var(--accent-white); font-weight: 600; }
+
+    .origin-header {
+        font-family: 'Playfair Display', serif;
+        color: var(--accent-steel);
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+        margin-top: 5rem;
+        margin-bottom: 2rem;
+        text-align: center;
+        font-style: italic;
+        border-bottom: 1px solid rgba(56, 189, 248, 0.4);
+        padding-bottom: 10px;
+    }
+
+    .drop-cap::first-letter {
+      float: left;
+      font-size: 4.5rem;
+      line-height: 0.8;
+      font-weight: 400;
+      padding-right: 12px;
+      color: var(--accent-blue);
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* --- MEDIA --- */
+    .story-media {
+      max-width: 900px;
+      margin: 4rem auto;
+      border-radius: 2px;
+      overflow: hidden;
+      border: 1px solid var(--accent-blue);
+      box-shadow: 0 15px 40px rgba(56, 189, 248, 0.1);
+      position: relative;
+    }
+    .story-media img { width: 100%; height: auto; display: block; filter: contrast(110%) saturate(80%); }
+
+    .media-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(2, 6, 23, 0.9);
+      color: var(--accent-blue);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      padding: 12px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      text-align: center;
+      border-top: 1px solid var(--accent-blue);
+    }
+
+    /* --- AUDIO HEADER --- */
+    .fixed-audio-header {
+      position: fixed; top: 0; left: 0; width: 100%; height: var(--header-height);
+      background: rgba(2, 6, 23, 0.95); backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--accent-blue); z-index: 1000;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .btn-audio {
+      background: transparent; border: 1px solid var(--accent-blue);
+      color: var(--accent-blue); padding: 0.4rem 1.5rem; border-radius: 2px;
+      font-size: 0.75rem; font-weight: 600; cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Montserrat', sans-serif; letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .btn-audio:hover {
+      background-color: var(--accent-blue); color: #020617; border-color: var(--accent-blue);
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <div class="reader-container">
+
+    <div style="font-family: 'Montserrat'; text-align: center; margin-bottom: 1rem; color: var(--accent-blue); letter-spacing: 4px; font-size: 1.5rem;" class="uppercase">
+  The Shark of Wall Street
+    </div>
+
+    <h1 class="chapter-title">Marcus</h1>
+
+    <div class="chapter-meta">
+      <span>Marcus Thorne</span>
+      <span>•</span>
+      <span>Global Logistics</span>
+      <span>•</span>
+      <span>Obsidian Cartel</span>
+    </div>
+
+    <div class="story-media">
+      <img src="marc.png" alt="Marcus Thorne standing in a shipping terminal, looking exhausted.">
+    </div>
+
+    <article class="story-text">
+
+      <div class="story-media">
+        <img src="marc1.png" alt="Marcus Thorne standing in a shipping terminal, looking exhausted.">
+      </div>
+    <div class="story-media">
+      <img src="marc2.png" alt="Marcus Thorne standing in a shipping terminal, looking exhausted.">
+    </div>
+    <div class="story-media">
+      <img src="marc3.png" alt="Marcus Thorne standing in a shipping terminal, looking exhausted.">
+    </div>
+
+    </article>
+<div style="text-align:center; margin:80px 0 40px 0;">
+  <a href="index.html"
+     style="
+       display:inline-block;
+       padding:12px 28px;
+       font-size:32px;
+       letter-spacing:2px;
+       text-transform:uppercase;
+       text-decoration:none;
+       color:#c8a96a;
+       border:1px solid rgba(200,169,106,0.4);
+       background:rgba(255,255,255,0.02);
+       backdrop-filter:blur(4px);
+       transition:all 0.3s ease;
+     "
+     onmouseover="this.style.background='#c8a96a'; this.style.color='#111'; this.style.borderColor='#c8a96a';"
+     onmouseout="this.style.background='rgba(255,255,255,0.02)'; this.style.color='#c8a96a'; this.style.borderColor='rgba(200,169,106,0.4)';">
+Coming Soon
+  </a>
+</div>
+  </div>
+
+</body>
+</html>
