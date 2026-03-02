@@ -1150,10 +1150,162 @@ footer p{
 
       </div>
     </section>
+
+<!-- SKXY TERMINAL INTRO (drop this above your terminal embed/section) -->
+<section class="terminal-intro" aria-label="The Shark’s Command Deck">
+  <div class="container">
+    <div class="terminal-intro-card">
+      <div class="terminal-kicker uppercase">SKXY Terminal</div>
+
+      <h2 class="terminal-title">The Shark’s Command Deck</h2>
+
+      <p class="terminal-lead">
+        Markets don’t move. They hunt. Nations posture. Capital migrates. Liquidity vanishes.
+      </p>
+
+      <p class="terminal-sub">
+        The <strong>SKXY Terminal</strong> is the live Macro Intelligence layer of
+        <a class="terminal-link" href="https://infinityxz.ai/macrodata" target="_blank" rel="noopener">INFINITY MACRO</a>
+        — tracking:
+      </p>
+      <a class="poster-card" href="#" aria-label="Infinity">
+        <img src="macro.png" alt="Macro">
+
+      </a>
+      <ul class="terminal-list">
+        <li><strong>Rates &amp; inflation cycles</strong></li>
+        <li><strong>FX</strong> and dollar regimes</li>
+        <li><strong>Global growth</strong> pulses</li>
+        <li><strong>Commodities</strong> &amp; credit stress</li>
+      </ul>
+
+      <p class="terminal-closing">
+        This is where macro becomes instinct. This is where narrative meets signal.
+      </p>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  /* If you already have :root + .container + .btn styles, keep these minimal overrides */
+  .terminal-intro{ padding: 2.5rem 0; border-top: 1px solid var(--border); }
+  .terminal-intro-card{
+    background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(15,23,42,0.6));
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 18px;
+    padding: 1.6rem 1.6rem 1.4rem;
+    box-shadow: 0 18px 55px rgba(0,0,0,0.55);
+    max-width: 1600px;
+    margin: 0 auto;
+    width: min(1400px, 95%);
+
+}
+  .terminal-kicker{
+    font-size: .7rem;
+    letter-spacing: .22em;
+    color: rgba(148,163,184,0.95);
+    margin-bottom: .6rem;
+  }
+
+  .terminal-title{
+    font-family: 'Teko', sans-serif;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    margin: 0 0 .75rem;
+    color: #22d3ee;
+    border-left: 4px solid var(--accent);
+    padding-left: .9rem;
+  }
+
+  .terminal-lead{
+    color: rgba(248,250,252,0.92);
+    font-size: 1.1rem;
+    line-height: 1.55;
+    margin: 0 0 1rem;
+  }
+
+  .terminal-sub{
+    color: rgba(148,163,184,0.95);
+    margin: 0 0 .75rem;
+  }
+
+  .terminal-link{
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba(34,211,238,0.35);
+    font-weight: 800;
+  }
+  .terminal-link:hover{ text-decoration-color: var(--accent); }
+
+  .terminal-list{
+    list-style: none;
+    padding: 0;
+    margin: .25rem 0 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .55rem 1rem;
+  }
+  .terminal-list li{
+    position: relative;
+    padding-left: 1.2rem;
+    color: rgba(226,232,240,0.95);
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: .65rem .75rem .65rem 1.6rem;
+  }
+  .terminal-list li::before{
+    content: "";
+    position: absolute;
+    left: .7rem;
+    top: 50%;
+    width: 7px;
+    height: 7px;
+    border-radius: 999px;
+    background: var(--accent);
+    transform: translateY(-50%);
+    box-shadow: 0 0 14px rgba(34,211,238,0.35);
+  }
+
+  .terminal-closing{
+    margin: 0 0 1.2rem;
+    color: rgba(248,250,252,0.86);
+    font-style: italic;
+    font-size: 1.05rem;
+    border-left: 2px solid rgba(250,204,21,0.35);
+    padding-left: .9rem;
+  }
+
+  .terminal-actions{
+    display: flex;
+    gap: .8rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .terminal-ghost{
+    background: transparent !important;
+    color: var(--text-main) !important;
+    border: 1px solid rgba(255,255,255,0.14) !important;
+  }
+  .terminal-ghost:hover{
+    border-color: var(--accent) !important;
+    box-shadow: 0 0 18px rgba(34,211,238,0.25);
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 720px){
+    .terminal-list{ grid-template-columns: 1fr; }
+    .terminal-intro-card{ padding: 1.2rem; }
+  }
+</style>
 <!-- THREE-COLUMN POSTER SECTION -->
 <section class="section alt" id="posters">
   <div class="container">
-    <div class="section-header gold">&gt; COMING SOON</div>
+    <div class="section-header gold">&gt; Characters/Chapters COMING SOON</div>
 
     <div class="poster-grid">
       <a class="poster-card" href="#" aria-label="Open poster 1">
@@ -1258,8 +1410,6 @@ footer p{
   .poster-grid{ grid-template-columns: 1fr; }
 }
 </style>
-
-
  <!-- TERMINALS: Factory + Rights + Announcements -->
     <section class="section alt" id="factory">
       <div class="container">
