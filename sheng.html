@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>The Extraction | The Shark of Wall Street</title>
+  <meta name="description" content="Terminal 4. The Cartel Hit. The Valkyrie." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+
+  <meta name="theme-color" content="#020617" />
+  <meta name="color-scheme" content="dark" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+  <!-- Google Analytics (kept from your original) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RTH99L39VB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RTH99L39VB');
+  </script>
+  <style>
+    /* --- INHERITED VARIABLES --- */
+    :root {
+      --bg-dark: #0a0a0c; /* Midnight Skyline */
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent-gold: #f59e0b; /* Sparkler/Whiskey Gold */
+      --accent-white: #ffffff;
+      --header-height: 70px;
+    }
+        #vercel-toolbar, vercel-live-feedback, [data-vercel-toolbar] {
+	      display: none !important; opacity: 0 !important; pointer-events: none !important; visibility: hidden !important;
+    }
+    body {
+      background-color: var(--bg-dark);
+      background-image: linear-gradient(to bottom, #0f172a, #020617);
+      color: var(--text-main);
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding-top: var(--header-height);
+    }
+
+    /* --- READER LAYOUT --- */
+    .reader-container{
+      width: min(1000px, calc(100% - 3rem));
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+
+    h1.chapter-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 8vw, 7rem);
+      color: var(--accent-steel);
+      text-transform: uppercase;
+      line-height: 0.9;
+      margin-bottom: 0.5rem;
+      text-align: center;
+      letter-spacing: 4px;
+      border-bottom: 2px solid var(--accent-blue);
+      padding-bottom: 20px;
+    }
+
+    .chapter-meta {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--accent-blue);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      padding-bottom: 2rem;
+      margin-bottom: 3rem;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      font-weight: 600;
+    }
+
+    .story-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      line-height: 1.8;
+      color: #cbd5e1;
+    }
+
+    .story-text p { margin-bottom: 2rem; }
+    .story-text strong { color: var(--accent-white); font-weight: 600; }
+
+    .terminal-text {
+        font-family: 'Share Tech Mono', monospace;
+        color: var(--accent-blue);
+        background: rgba(2, 6, 23, 0.8);
+        border: 1px solid var(--accent-blue);
+        padding: 20px;
+        border-radius: 4px;
+        margin: 2rem 0;
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+    }
+
+    .terminal-text.error {
+        color: var(--accent-red);
+        border-color: var(--accent-red);
+    }
+
+    .origin-header {
+        font-family: 'Playfair Display', serif;
+        color: var(--accent-steel);
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+        margin-top: 5rem;
+        margin-bottom: 2rem;
+        text-align: center;
+        font-style: italic;
+        border-bottom: 1px solid rgba(14, 165, 233, 0.4);
+        padding-bottom: 10px;
+    }
+
+    .drop-cap::first-letter {
+      float: left;
+      font-size: 4.5rem;
+      line-height: 0.8;
+      font-weight: 400;
+      padding-right: 12px;
+      color: var(--accent-blue);
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* --- MEDIA --- */
+    .story-media {
+      max-width: 900px;
+      margin: 4rem auto;
+      border-radius: 2px;
+      overflow: hidden;
+      border: 1px solid var(--accent-blue);
+      box-shadow: 0 15px 40px rgba(14, 165, 233, 0.15);
+      position: relative;
+    }
+    .story-media img { width: 100%; height: auto; display: block; filter: contrast(110%); }
+
+    .media-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(2, 6, 23, 0.9);
+      color: var(--accent-blue);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      padding: 12px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      text-align: center;
+      border-top: 1px solid var(--accent-blue);
+    }
+
+    /* --- AUDIO HEADER --- */
+    .fixed-audio-header {
+      position: fixed; top: 0; left: 0; width: 100%; height: var(--header-height);
+      background: rgba(2, 6, 23, 0.95); backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--accent-blue); z-index: 1000;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .btn-audio {
+      background: transparent; border: 1px solid var(--accent-blue);
+      color: var(--accent-blue); padding: 0.4rem 1.5rem; border-radius: 2px;
+      font-size: 0.75rem; font-weight: 600; cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Montserrat', sans-serif; letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .btn-audio:hover {
+      background-color: var(--accent-blue); color: #020617; border-color: var(--accent-blue);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="reader-container">
+
+    <div style="font-family: 'Montserrat'; text-align: center; margin-bottom: 1rem; color: var(--accent-blue); letter-spacing: 4px; font-size: 1.5rem;" class="uppercase">
+THE SHARK OF WALL STREET
+    </div>
+
+    <h1 class="chapter-title">The Extraction</h1>
+
+    <div class="chapter-meta">
+      <span>Mia Sheng</span>
+            * <span>Marcus Thorne</span>
+    </div>
+      <div class="story-media" style="margin: 3rem auto;">
+        <img src="ex12.png" alt="The BEE EVTOL hovering in the rain over the gantry crane.">
+      </div>
+    <article class="story-text">
+
+      <div class="origin-header">Part I: The Kill Order</div>
+
+      <p class="drop-cap">The freezing rain lashed against the soundproof glass of the observation deck. Below, Terminal 4 of the Newark Port was a sprawling, mechanical wasteland of towering steel shipping containers and massive gantry cranes.</p>
+      <div class="story-media" style="margin: 3rem auto;">
+        <img src="ex6.png" alt="The BEE EVTOL hovering in the rain over the gantry crane.">
+      </div>
+      <p>Marcus Thorne stood alone in the dark office, clutching his encrypted tablet. His lungs burned. He had just watched three unmarked, black SUVs tear through the terminal’s security gates, their tires hydroplaning wildly before slamming to a halt in front of Quarantine Lane 4—the exact location of his flagged cargo.</p>
+      <div class="story-media" style="margin: 3rem auto;">
+        <img src="ex13.png" alt="The BEE EVTOL hovering in the rain over the gantry crane.">
+      </div>
+      <p>Four men stepped out into the pouring rain. They weren't wearing DEA windbreakers. They wore tactical dark canvas and level-IV ballistic plates. They were carrying suppressed, short-barreled rifles, moving with a terrifying, synchronized military precision. They were the <em>Fuerzas Especiales</em>—Nicolás Reyes’s personal hit squad.</p>
+      <div class="story-media" style="margin: 3rem auto;">
+        <img src="ex2.png" alt="The BEE EVTOL hovering in the rain over the gantry crane.">
+      </div>
+      <p>Marcus backed away from the glass, his analytical mind processing the data at lightning speed. The math was simple, and it was fatal. The Shark had hijacked his shipping network, costing the Obsidian Cartel eighty million dollars. Reyes didn't forgive failure, and he certainly didn't accept resignations. The hit squad wasn't here to secure the cargo. They were here to execute the architect who lost it.</p>
+
+      <p>Marcus looked down at his tablet. The screen was still glowing with the catastrophic red error codes of his dismantled empire. He thought of Harper. He thought of her laughing on that rooftop in Tribeca, entirely insulated from this brutal, ugly world. If he died tonight, at least she was safe.</p>
+      <div class="story-media" style="margin: 3rem auto;">
+        <img src="ex1.png" alt="The BEE EVTOL hovering in the rain over the gantry crane.">
+      </div>
+      <p>He set the tablet on the mahogany desk, preparing to surrender to the inevitable. He didn't have a gun. He was a logistics director, not a soldier.</p>
+
+      <p>Downstairs, the heavy steel door of the facility echoed with a dull <em>thump</em>. They were setting a breaching charge.</p>
+      <div class="story-media" style="margin: 3rem auto;">
+        <img src="ex14.png" alt="The BEE EVTOL hovering in the rain over the gantry crane.">
+      </div>
+      <p>Suddenly, the red error codes on the tablet vanished.</p>
+
+      <div class="origin-header">Part II: The Override</div>
+
+      <p>The screen went entirely black. For a second, Marcus thought the battery had died. Then, a single line of bright blue text crawled across the dark screen, typed in real-time.</p>
+
+      <div class="terminal-text">
+        > SYSTEM OVERRIDE INITIATED.<br>
+        > LOCAL ENCRYPTION BYPASSED.<br>
+        > Take a deep breath, Architect. We are breaking you out.
+      </div>
+
+      <p>Marcus stared at the screen, his heart stopping in his chest. No one called him "Architect" except the cartel lieutenants. And only one person in the world possessed the mathematical brilliance to bypass his local encryption that fast.</p>
+
+      <p>Harper.</p>
+
+      <p>His hands shook as he picked the tablet back up. A new message appeared, the cursor blinking frantically.</p>
+
+      <div class="terminal-text">
+        > The hostile takeover is a smokescreen. <br>
+        > I'm buying your freedom. But you have to run.<br>
+        > Proceed immediately to Extraction Point Bravo: The roof of Gantry Crane 4. <br>
+        > Do not look back. I love you.
+      </div>
+
+      <p>Marcus couldn't breathe. The woman he loved wasn't insulated from the underworld—she was manipulating it. She had orchestrated the hijack. She was working with The Shark to tear down his cage.</p>
+
+      <p><em>BOOM.</em></p>
+
+      <p>The floorboards shuddered as the breaching charge blew the downstairs security door off its hinges. The hit squad was inside the building.</p>
+      <div class="story-media" style="margin: 3rem auto;">
+        <img src="ex3.png" alt="The BEE EVTOL hovering in the rain over the gantry crane.">
+      </div>
+      <p>Marcus didn't hesitate. He dropped the tablet, grabbed his wool overcoat, and bolted out the emergency maintenance exit just as heavy combat boots began pounding up the stairwell.</p>
+
+      <div class="origin-header">Part III: Point Bravo</div>
+
+      <p>He hit the freezing rain at a dead sprint. The port was a labyrinth of steel corridors created by stacked shipping containers. He ran toward Gantry Crane 4, a massive, skeletal steel structure looming two hundred feet in the air over the dark, churning water of the Hudson.</p>
+      <div class="story-media" style="margin: 3rem auto;">
+        <img src="ex4.png" alt="The BEE EVTOL hovering in the rain over the gantry crane.">
+      </div>
+      <p>"Target is on the move! Sector seven!" a voice barked over a radio behind him.</p>
+
+      <p>Footsteps splashed heavy in the puddles. Marcus vaulted over a discarded wooden pallet, his dress shoes slipping on the wet asphalt. A suppressed gunshot <em>coughed</em> in the dark, and a spark of hot metal exploded off the red shipping container mere inches from Marcus's head. The supersonic crack of the bullet passing his ear made him stumble.</p>
+
+      <p>He ducked, adrenaline flooding his exhausted system, and threw himself around the corner of a container stack. He used his intimate knowledge of the port's geometry, cutting through a blind alley between two stacks of refrigerated units, temporarily losing his pursuers. He burst out into the open and threw himself at the rusted steel ladder welded to the leg of Gantry Crane 4.</p>
+
+      <p>He climbed. The wind tore at his tailored suit, soaking him to the bone. Below him, three members of the hit squad reached the base of the crane. They didn't bother climbing the ladder; they simply spread out, raised their rifles, and tracked his dark silhouette against the ambient amber lights of the port.</p>
+      <div class="story-media" style="margin: 3rem auto;">
+        <img src="ex5.png" alt="The BEE EVTOL hovering in the rain over the gantry crane.">
+      </div>
+      <p>Marcus reached the top platform, two hundred feet in the air. He was trapped on a catwalk of grated steel. There was nowhere left to run. Below him was the freezing black water. Below him were the rifles.</p>
+
+      <p>He backed up to the edge of the railing, his chest heaving, rain plastering his hair to his forehead. He had made it to Point Bravo. But he was entirely alone.</p>
+
+      <p>Suddenly, the storm clouds above him seemed to tear open.</p>
+
+      <div class="origin-header">Part IV: The Valkyrie</div>
+      <div class="story-media" style="margin: 3rem auto;">
+        <img src="ex12.png" alt="The BEE EVTOL hovering in the rain over the gantry crane.">
+      </div>
+      <p>It didn't sound like a helicopter. It sounded like a localized hurricane driven by a massive, high-frequency electrical generator.</p>
+
+      <p>Dropping out of the low-hanging clouds with terrifying, silent precision was <strong>The HX50</strong>. The sleek helicopter pitched downward at a sickening angle before its thrusters violently flared. The aircraft transitioned seamlessly from a dive to a dead hover, the wash throwing a blinding wall of rain and mist across the catwalk. It stabilized flawlessly in the gale-force winds, mere feet away from the edge of the crane.</p>
+
+      <div class="story-media" style="margin: 3rem auto;">
+        <img src="ex8.png" alt="The BEE EVTOL hovering in the rain over the gantry crane.">
+      </div>
+
+      <p>The heavy side door slid open.</p>
+
+      <p>Standing in the bay was Mia Sheng. She wasn't wearing tactical gear. She was wearing a breathtaking, soaked white lace haute-couture gown, a black leather aviator jacket thrown over her shoulders. She looked like an angel of death descending on the financial district.</p>
+
+      <p>"Harper says you're terrified of flying, Architect!" Mia yelled over the deafening whine of the electric rotors, a wild, adrenaline-fueled smile lighting up her face. "You might want to close your eyes!"</p>
+
+      <p>A bullet sparked violently against the armored hull of the eVTOL. The hit squad below had opened fire.</p>
+      <div class="story-media" style="margin: 3rem auto;">
+        <img src="ex11.png" alt="The BEE EVTOL hovering in the rain over the gantry crane.">
+      </div>
+      <p>Mia didn't flinch. She grabbed the heavy winch harness bolted to the chassis of the aircraft with one hand, and reached her other hand out into the freezing rain toward Marcus.</p>
+
+      <p>"Jump, Thorne! Now!"</p>
+
+      <p>Marcus didn't look down at the hit squad. He didn't look back at the empire of shipping containers he had built. He lunged forward across the void, his hand locking around Mia's wrist.</p>
+
+      <p>With surprising, brutal strength, she hauled him into the cabin just as a volley of suppressed gunfire chewed through the steel railing where he had been standing a second before.</p>
+
+      <p>"Get down!" Mia commanded, shoving Marcus to the grated floor.</p>
+
+      <p>She didn't immediately pull away. Instead, she slammed her hand against the auxiliary controls on the bulkhead. "Let's give them some weather."</p>
+     <div class="story-media" style="margin: 3rem auto;">
+        <img src="ex10.png" alt="The BEE EVTOL hovering in the rain over the gantry crane.">
+      </div>
+      <p>Mia manually pitched the helicopter’s ducted fans downward and slammed the throttle to maximum output. The sheer, hurricane-force kinetic energy of the electric rotor wash blasted the base of the crane. Marcus watched through the open door as the three hitmen below were literally blown off their feet, sent skidding across the wet asphalt amidst a hail of flying debris.</p>
+
+      <p>Mia hit the door seal. The heavy panel slid shut, instantly cutting off the roar of the storm, replacing it with the humming, pressurized silence of the aircraft's interior.</p>
+
+      <p>She slid gracefully into the pilot's seat, her soaked white lace dress spilling over the illuminated glass cockpit panels. She strapped into her five-point harness, her fingers dancing across the avionics.</p>
+
+      <p>"Strap in, Architect," Mia said, her voice dropping to a cool, focused register over the cabin intercom. "They have a mounted heavy machine gun on the lead SUV. This is going to get bumpy."</p>
+
+      <p>Marcus scrambled into the co-pilot seat, his hands shaking so badly he could barely latch the buckle. "Can we just get into the clouds?"</p>
+
+      <p>"Too slow. They'll shred our underbelly before we get altitude," Mia said, her eyes flashing with a dangerous, predatory joy. "We go low."</p>
+
+      <p>She slammed the cyclic forward. The helicopter dropped like a stone, diving off the two-hundred-foot crane straight toward the labyrinth of shipping containers.</p>
+     <div class="story-media" style="margin: 3rem auto;">
+        <img src="ex7.png" alt="The BEE EVTOL hovering in the rain over the gantry crane.">
+      </div>
+      <p>"What are you doing?!" Marcus screamed, bracing for an impact that would vaporize them.</p>
+
+      <p>"Trust the math, Thorne!" Mia laughed.</p>
+
+      <p>At the last possible second, she pulled back, leveling the helicopter out a mere ten feet above the asphalt. She threaded the fifty-foot-wide aircraft through a narrow alley of stacked shipping containers at one hundred and forty miles per hour. The heavy machine gun from the cartel SUV opened up behind them, the tracer rounds lighting up the rain, shattering the steel containers exactly where the BEE had been a fraction of a second prior.</p>
+
+      <p>Mia banked hard to the right, pulling a staggering 4-G turn that pinned Marcus to his seat. She wove through the gantry cranes like she was dancing, using the massive steel structures to block the cartel's line of sight.</p>
+
+      <p>"Hold your breath," she warned.</p>
+
+      <p>Mia dropped the aircraft entirely off the edge of the port. They plummeted toward the black, freezing water of the Hudson River. Just as the landing gear grazed the cresting waves, she engaged the forward thrusters, skimming the surface of the river like a skipped stone, completely disappearing into the dense, rolling fog bank.</p>
+     <div class="story-media" style="margin: 3rem auto;">
+        <img src="ex9.png" alt="The BEE EVTOL hovering in the rain over the gantry crane.">
+      </div>
+      <p>The gunfire faded into the distance.</p>
+
+      <p>Marcus collapsed back into his seat, staring at the ceiling, his chest heaving as he gasped for air. He turned his head to look at Mia. She was calmly adjusting the cabin temperature, her breathing perfectly even, a satisfied smirk playing on her lips.</p>
+
+      <p>The Obsidian Cartel thought they had executed him. The world thought he was dead.</p>
+
+      <p>But as Mia banked the aircraft toward the underwater safehouse, Marcus Thorne realized two things: he was finally free of his cage, and he was flying with a woman who was absolutely, undeniably insane.</p>
+
+    </article>
+
+  </div>
+
+</body>
+</html>
