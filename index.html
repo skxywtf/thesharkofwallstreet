@@ -1168,8 +1168,8 @@ footer p{
         <a class="terminal-link" href="https://infinityxz.ai/macrodata" target="_blank" rel="noopener">INFINITY MACRO</a>
       </p>
 
-<a class="terminal-hero-img" href="#" aria-label="Infinity">
-  <img src="macro.png" alt="Macro">
+<a class="terminal-macro-link" href="https://infinityxz.ai" target="_blank" rel="noopener" aria-label="Explore Infinity AI Macro Terminal">
+  <img src="macro.png" alt="Infinity Macro Intelligence Terminal">
 </a>
       <ul class="terminal-list">
         <li><strong>Rates &amp; inflation cycles</strong></li>
@@ -1316,6 +1316,29 @@ footer p{
 .terminal-hero-img:hover {
   transform: scale(1.01);
   box-shadow: 0 0 50px rgba(34, 211, 238, 0.4);
+}
+/* Custom styling for the wide terminal image link */
+.terminal-macro-link {
+  display: block;
+  width: 100%;
+  margin: 25px 0;
+  border: 1px solid rgba(34, 211, 238, 0.4);
+  background: #000;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+.terminal-macro-link img {
+  width: 100%;
+  height: auto; /* Maintains original aspect ratio */
+  display: block;
+}
+
+.terminal-macro-link:hover {
+  border-color: var(--cyan);
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(34, 211, 238, 0.3);
 }
   @media (max-width: 720px){
     .terminal-list{ grid-template-columns: 1fr; }
