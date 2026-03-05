@@ -1155,23 +1155,22 @@ footer p{
 <section class="terminal-intro" aria-label="The Shark’s Command Deck">
   <div class="container">
     <div class="terminal-intro-card">
-      <div class="terminal-kicker uppercase">SKXY Terminal</div>
+        <div class="section-header gold">SKXY Terminal</div>
 
       <h2 class="terminal-title">The Shark’s Command Deck</h2>
 
       <p class="terminal-lead">
-        Markets don’t move. They hunt. Nations posture. Capital migrates. Liquidity vanishes.
+        Markets don’t move. They hunt. Nations posture. Capital migrates. Liquidity flows.
       </p>
 
       <p class="terminal-sub">
         The <strong>SKXY Terminal</strong> is the live Macro Intelligence layer of
         <a class="terminal-link" href="https://infinityxz.ai/macrodata" target="_blank" rel="noopener">INFINITY MACRO</a>
-        — tracking:
       </p>
-      <a class="poster-card" href="#" aria-label="Infinity">
-        <img src="macro.png" alt="Macro">
 
-      </a>
+<a class="terminal-hero-img" href="#" aria-label="Infinity">
+  <img src="macro.png" alt="Macro">
+</a>
       <ul class="terminal-list">
         <li><strong>Rates &amp; inflation cycles</strong></li>
         <li><strong>FX</strong> and dollar regimes</li>
@@ -1221,7 +1220,7 @@ footer p{
 
   .terminal-lead{
     color: rgba(248,250,252,0.92);
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     line-height: 1.55;
     margin: 0 0 1rem;
   }
@@ -1229,6 +1228,7 @@ footer p{
   .terminal-sub{
     color: rgba(148,163,184,0.95);
     margin: 0 0 .75rem;
+    font-size: 1.5rem;
   }
 
   .terminal-link{
@@ -1274,7 +1274,7 @@ footer p{
     margin: 0 0 1.2rem;
     color: rgba(248,250,252,0.86);
     font-style: italic;
-    font-size: 1.05rem;
+    font-size: 1.2rem;
     border-left: 2px solid rgba(250,204,21,0.35);
     padding-left: .9rem;
   }
@@ -1296,7 +1296,27 @@ footer p{
     box-shadow: 0 0 18px rgba(34,211,238,0.25);
     transform: translateY(-2px);
   }
+.terminal-hero-img {
+  display: block;
+  width: 100%;
+  max-width: 1100px; /* Adjust this to make it as big as you want */
+  margin: 20px 0;
+  border: 1px solid var(--cyan);
+  box-shadow: 0 0 30px rgba(34, 211, 238, 0.2);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
 
+.terminal-hero-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.terminal-hero-img:hover {
+  transform: scale(1.01);
+  box-shadow: 0 0 50px rgba(34, 211, 238, 0.4);
+}
   @media (max-width: 720px){
     .terminal-list{ grid-template-columns: 1fr; }
     .terminal-intro-card{ padding: 1.2rem; }
