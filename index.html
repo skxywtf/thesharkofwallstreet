@@ -215,7 +215,22 @@
     .hud-btn.danger{border-color:var(--danger); color:var(--danger)}
     .hud-btn.danger:hover{background:var(--danger); color:#000; box-shadow:0 0 20px rgba(239,68,68,.35)}
     .hud-btn.link{display:inline-block}
+:root {
+    --cool: #00f2ff;   /* New Electric Cyan */
+}
 
+/* Updated Cool Button */
+.hud-btn.cool {
+    border-color: var(--cool);
+    color: var(--cool);
+}
+
+.hud-btn.cool:hover {
+    background: var(--cool);
+    color: #050608; /* Dark background color for contrast */
+    box-shadow: 0 0 20px rgba(0, 242, 255, .35);
+    text-shadow: none;
+}
     /* HERO */
     .topSpacer{height:72px}
     .hero{
@@ -1094,7 +1109,7 @@ footer p{
     <div class="nav-actions">
       <button class="hud-btn" onclick="openDrawer('navDrawer')">NAVIGATOR</button>
       <a class="hud-btn danger link" href="#trailer">EXPERIENCE</a>
-        <a class="hud-btn danger link" href="shop.html">WARDROBE</a>
+        <a class="hud-btn cool link" href="shop.html">WARDROBE</a>
     </div>
 
   </header>
