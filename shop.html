@@ -100,228 +100,699 @@
 /* Vercel toolbar suppression */
 #vercel-toolbar,vercel-live-feedback,[data-vercel-toolbar]{display:none!important;opacity:0!important;pointer-events:none!important;visibility:hidden!important;}
 
-:root{
-  --void:#050608;--panel:#111520;--raise:#161b28;
-  --wire:rgba(255,255,255,0.06);--wire-g:rgba(214,182,116,0.22);
-  --text:#e8eaf0;--muted:rgba(200,206,220,0.62);--dim:rgba(200,206,220,0.36);
-  --gold:#c9a84c;--gold-lt:#e8c97a;--gold-bg:rgba(201,168,76,0.08);--gold-bd:rgba(201,168,76,0.28);
-  --blood:#8b1a1a;--blood-lt:#c0392b;--blood-bg:rgba(139,26,26,0.14);
+:root {
+  --void: #03040a;
+  --panel: #080c16;
+  --raise: #0f1525;
+  --lift: #141a2e;
+
+  --wire: rgba(255,255,255,0.055);
+  --wire-g: rgba(196,158,84,0.25);
+  --wire-gold: rgba(196,158,84,0.45);
+
+  --gold: #c49e54;
+  --gold-lt: #e8c97a;
+  --gold-bright: #f5dfa0;
+  --gold-bg: rgba(196,158,84,0.06);
+  --gold-bg2: rgba(196,158,84,0.1);
+
+  --blood: #7a1212;
+  --blood-lt: #c0392b;
+  --blood-vivid: #e03030;
+  --blood-bg: rgba(122,18,18,0.15);
+
+  --cyan: #00d4e8;
+  --cyan-bg: rgba(0,212,232,0.06);
+
+  --text: #dce0ec;
+  --muted: rgba(190,198,220,0.62);
+  --dim: rgba(180,188,210,0.38);
+  --faint: rgba(180,188,210,0.18);
 }
-*{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
-body{background:var(--void);color:var(--text);font-family:'Courier Prime','Courier New',monospace;line-height:1.7;overflow-x:hidden;}
-/* scanlines */
-body::before{content:'';position:fixed;inset:0;z-index:999;pointer-events:none;
-  background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.04) 2px,rgba(0,0,0,0.04) 4px);}
-a{color:inherit;text-decoration:none;}
-img{max-width:100%;display:block;object-fit:cover;}
-.wrap{max-width:1320px;margin:0 auto;padding:0 28px;}
 
-/* ANIMATIONS */
-@keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
-@keyframes flicker{0%,100%{opacity:1;}92%{opacity:1;}93%{opacity:.55;}94%{opacity:1;}96%{opacity:.7;}97%{opacity:1;}}
-@keyframes blink{0%,100%{opacity:1;}50%{opacity:0;}}
-@keyframes kenburns{from{transform:scale(1.08) translateY(0);}to{transform:scale(1.0) translateY(-1.5%);}}
-
-/* CLASSBAR */
-.classbar{position:fixed;top:0;left:0;right:0;z-index:600;height:3px;
-  background:repeating-linear-gradient(90deg,var(--blood) 0,var(--blood) 80px,var(--void) 80px,var(--void) 84px);
-  animation:flicker 9s ease-in-out infinite;}
-
-/* NAV */
-.sitenav{position:sticky;top:0;z-index:500;background:rgba(5,6,8,0.96);backdrop-filter:blur(18px);border-bottom:1px solid var(--wire);}
-.sitenav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 28px;max-width:1320px;margin:0 auto;height:52px;}
-.nav-brand{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.12em;color:var(--gold);white-space:nowrap;}
-.nav-brand span{color:rgba(200,206,220,.38);}
-.nav-pills{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:8px 0;}
-.nav-pills::-webkit-scrollbar{display:none;}
-.nav-pill{white-space:nowrap;padding:6px 14px;border:1px solid var(--wire);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);transition:.2s;background:rgba(255,255,255,.02);}
-.nav-pill:hover{border-color:var(--gold-bd);color:var(--gold-lt);background:var(--gold-bg);}
-.nav-pill.active{border-color:var(--blood);color:#e87070;background:var(--blood-bg);}
-
-/* HERO */
-.hero{min-height:96vh;display:flex;flex-direction:column;justify-content:flex-end;padding:120px 0 64px;position:relative;border-bottom:1px solid var(--wire);overflow:hidden;}
-.hero-bg-img{position:absolute;inset:0;z-index:0;}
-.hero-bg-img img{width:100%;height:100%;object-fit:cover;object-position:center 35%;animation:kenburns 22s ease-in-out alternate infinite;}
-.hero-bg-img::after{content:'';position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(5,6,8,.68) 0%,rgba(5,6,8,.5) 30%,rgba(5,6,8,.8) 70%,rgba(5,6,8,.98) 100%);}
-.hero-grid-bg{position:absolute;inset:0;z-index:1;pointer-events:none;
-  background:linear-gradient(90deg,rgba(255,255,255,.015) 1px,transparent 1px),linear-gradient(0deg,rgba(255,255,255,.01) 1px,transparent 1px);
-  background-size:64px 64px;mask-image:linear-gradient(to bottom,transparent 0%,black 20%,black 70%,transparent 100%);}
-.hero-content{position:relative;z-index:2;}
-.file-header{display:flex;align-items:center;gap:12px;margin-bottom:32px;animation:fadeUp .8s ease both;}
-.file-stamp{font-size:9px;letter-spacing:.22em;text-transform:uppercase;padding:5px 10px;border:1px solid var(--blood);color:var(--blood-lt);background:var(--blood-bg);}
-.file-id{font-size:10px;letter-spacing:.18em;color:var(--dim);text-transform:uppercase;}
-.file-id::after{content:'█';margin-left:3px;animation:blink 1.1s step-end infinite;color:var(--gold);}
-.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(4rem,11vw,9.5rem);font-weight:700;line-height:.88;letter-spacing:-.04em;max-width:16ch;animation:fadeUp .8s .15s ease both;}
-.hero h1 em{font-style:italic;font-weight:300;color:var(--gold-lt);display:block;}
-.hero-sub-row{display:grid;grid-template-columns:1fr 380px;gap:48px;align-items:end;margin-top:36px;animation:fadeUp .8s .3s ease both;}
-.hero-copy{font-size:14px;color:var(--muted);max-width:60ch;line-height:1.85;}
-.hero-dossier{border:1px solid var(--wire-g);padding:20px 22px;background:rgba(201,168,76,.04);position:relative;}
-.hero-dossier::before{content:'DOSSIER REF: WS-7';position:absolute;top:-9px;left:16px;background:var(--void);padding:0 8px;font-size:9px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;}
-.dossier-line{display:flex;justify-content:space-between;align-items:baseline;padding:7px 0;border-bottom:1px solid var(--wire);font-size:11px;}
-.dossier-line:last-child{border-bottom:none;}
-.dossier-label{color:var(--dim);letter-spacing:.1em;text-transform:uppercase;}
-.dossier-val{color:var(--gold-lt);font-weight:700;}
-.dossier-val.red{color:#e07070;}
-.hero-cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:40px;animation:fadeUp .8s .45s ease both;}
-
-/* BUTTONS */
-.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;border:1px solid transparent;transition:.25s;}
-.btn-primary{background:var(--gold);color:var(--void);border-color:var(--gold);font-weight:700;}
-.btn-primary:hover{background:var(--gold-lt);transform:translateY(-2px);box-shadow:0 8px 28px rgba(201,168,76,.28);}
-.btn-ghost{border-color:var(--wire);color:var(--muted);}
-.btn-ghost:hover{border-color:var(--wire-g);color:var(--gold-lt);}
-.btn-blood{border-color:var(--blood);color:#e07070;background:var(--blood-bg);}
-.btn-blood:hover{background:rgba(139,26,26,.28);transform:translateY(-1px);}
-
-/* IMAGE STRIP */
-.img-strip{display:grid;gap:3px;overflow:hidden;}
-.img-strip.c3{grid-template-columns:1.5fr 1fr 1fr;}
-.img-strip.c4{grid-template-columns:1fr 1fr 1fr 1fr;}
-.img-strip.c2{grid-template-columns:1.6fr 1fr;}
-.img-frame{position:relative;overflow:hidden;}
-.img-frame img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease,filter .5s ease;filter:brightness(.65) saturate(.55) contrast(1.1);}
-.img-frame:hover img{transform:scale(1.05);filter:brightness(.82) saturate(.72) contrast(1.05);}
-.img-h380{height:380px;}
-.img-h240{height:240px;}
-.img-h300{height:300px;}
-.img-h200{height:200px;}
-.img-cap{position:absolute;bottom:0;left:0;right:0;padding:32px 18px 14px;
-  background:linear-gradient(to top,rgba(5,6,8,.88) 0%,transparent 100%);
-  font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);pointer-events:none;}
-
-/* SECTION */
-.section{padding:80px 0;border-bottom:1px solid var(--wire);}
-.sec-header{margin-bottom:40px;}
-.sec-label{display:inline-flex;align-items:center;gap:10px;font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--blood-lt);margin-bottom:12px;}
-.sec-label::before{content:'';display:inline-block;width:20px;height:1px;background:var(--blood-lt);}
-.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,5vw,4rem);font-weight:600;line-height:.95;letter-spacing:-.03em;margin-bottom:14px;}
-.sec-title em{font-style:italic;color:var(--gold);}
-.sec-desc{font-size:13px;color:var(--muted);max-width:70ch;line-height:1.85;}
-
-/* EDITORIAL GRID */
-.ed-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;}
-.feat-card{grid-column:span 3;border:1px solid var(--wire);background:var(--panel);overflow:hidden;position:relative;transition:border-color .3s,transform .3s;}
-.feat-card.wide{grid-column:span 6;}
-.feat-card-img{overflow:hidden;position:relative;}
-.feat-card-img img{width:100%;height:220px;object-fit:cover;transition:transform .6s ease,filter .4s;filter:brightness(.62) saturate(.6);}
-.feat-card.wide .feat-card-img img{height:280px;}
-.feat-card:hover .feat-card-img img{transform:scale(1.07);filter:brightness(.8) saturate(.78);}
-.feat-card-body{padding:24px;}
-.feat-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
-  background:linear-gradient(90deg,var(--gold) 0%,transparent 100%);transform:scaleX(0);transform-origin:left;transition:transform .35s;}
-.feat-card:hover{border-color:var(--gold-bd);transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,.5);}
-.feat-card:hover::after{transform:scaleX(1);}
-.card-tag{display:inline-block;font-size:9px;letter-spacing:.2em;text-transform:uppercase;padding:4px 10px;border:1px solid var(--blood);color:var(--blood-lt);background:var(--blood-bg);margin-bottom:12px;}
-.feat-card h3{font-family:'Cormorant Garamond',serif;font-size:1.75rem;font-weight:600;line-height:1;letter-spacing:-.02em;margin-bottom:8px;}
-.feat-card p{font-size:12px;color:var(--muted);margin-bottom:18px;line-height:1.8;}
-.link-list{display:flex;flex-direction:column;gap:6px;}
-.link-list a{font-size:12px;color:var(--text);transition:color .2s;display:flex;align-items:center;gap:6px;}
-.link-list a::before{content:'//';color:var(--gold);font-size:10px;font-weight:700;}
-.link-list a:hover{color:var(--gold-lt);}
-
-/* QUOTE BREAK */
-.quote-break{position:relative;overflow:hidden;border-top:1px solid var(--wire);border-bottom:1px solid var(--wire);}
-.quote-break-img{position:absolute;inset:0;}
-.quote-break-img img{width:100%;height:100%;object-fit:cover;filter:brightness(.2) saturate(.3);}
-.quote-break-content{position:relative;z-index:2;padding:72px 28px;text-align:center;max-width:1320px;margin:0 auto;}
-.quote-break blockquote{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,4vw,3.2rem);font-style:italic;font-weight:300;color:var(--gold-lt);max-width:800px;margin:0 auto 14px;line-height:1.18;letter-spacing:-.01em;}
-.quote-break cite{font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:var(--dim);}
-
-/* POWER STRIP */
-.power-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--wire);border:1px solid var(--wire);}
-.power-cell{background:var(--panel);overflow:hidden;transition:background .25s;}
-.power-cell-img{overflow:hidden;height:140px;}
-.power-cell-img img{width:100%;height:100%;object-fit:cover;filter:brightness(.55) saturate(.5);transition:filter .4s,transform .5s;}
-.power-cell:hover{background:var(--raise);}
-.power-cell:hover .power-cell-img img{filter:brightness(.76) saturate(.72);transform:scale(1.06);}
-.power-cell-body{padding:20px;}
-.power-cell h4{font-family:'Cormorant Garamond',serif;font-size:1.08rem;font-weight:600;margin-bottom:4px;}
-.power-cell .sub{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;display:block;}
-.power-cell p{font-size:11px;color:var(--muted);line-height:1.7;margin-bottom:10px;}
-.power-cell .link-list a{font-size:11px;}
-
-/* SCENE CARDS */
-.scene-stack{display:flex;flex-direction:column;gap:2px;}
-.scene-card{border:1px solid var(--wire);background:var(--panel);overflow:hidden;position:relative;transition:border-color .35s;}
-.scene-card:hover{border-color:rgba(139,26,26,.55);}
-.scene-card::before{content:attr(data-class);position:absolute;top:22px;right:-28px;font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:rgba(139,26,26,.75);border:1px solid rgba(139,26,26,.4);padding:4px 42px;transform:rotate(12deg);z-index:10;background:var(--blood-bg);}
-.scene-inner{display:grid;grid-template-columns:.65fr 1.35fr;}
-.scene-meta-bar{display:flex;flex-direction:column;border-right:1px solid var(--wire);overflow:hidden;transition:background .3s;position:relative;}
-.scene-meta-bar::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--blood) 0%,transparent 100%);transform:scaleX(0);transform-origin:left;transition:transform .45s;}
-.scene-card:hover .scene-meta-bar::after{transform:scaleX(1);}
-.scene-card:hover .scene-meta-bar{background:rgba(139,26,26,.05);}
-
-/* scene portrait image */
-.scene-portrait{position:relative;overflow:hidden;height:220px;flex-shrink:0;}
-.scene-portrait img{width:100%;height:100%;object-fit:cover;object-position:top center;filter:brightness(.6) saturate(.5) contrast(1.1);transition:filter .5s,transform .7s;}
-.scene-card:hover .scene-portrait img{filter:brightness(.78) saturate(.65);transform:scale(1.04);}
-.scene-portrait-fade{position:absolute;bottom:0;left:0;right:0;height:60%;background:linear-gradient(to top,rgba(17,21,32,1) 0%,transparent 100%);}
-
-.scene-meta-body{padding:24px 24px 20px;flex:1;}
-.scene-kicker{font-size:9px;letter-spacing:.26em;text-transform:uppercase;color:var(--blood-lt);margin-bottom:8px;display:flex;align-items:center;gap:8px;}
-.scene-kicker::before{content:'▶';font-size:7px;}
-.scene-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.5rem,2.8vw,2.4rem);font-weight:600;line-height:.95;letter-spacing:-.03em;margin-bottom:12px;}
-.scene-subline{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;}
-.scene-copy{font-size:12px;color:var(--dim);line-height:1.85;font-style:italic;}
-.scene-meta-footer{padding:14px 24px;display:flex;gap:6px;flex-wrap:wrap;border-top:1px solid var(--wire);}
-.scene-tag{font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:3px 8px;border:1px solid var(--wire);color:var(--dim);}
-
-.scene-products{padding:24px;}
-.prod-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
-.prod-cell{border:1px solid var(--wire);padding:16px;background:rgba(5,6,8,.5);transition:border-color .25s,background .25s;}
-.prod-cell:hover{border-color:var(--gold-bd);background:var(--gold-bg);}
-.prod-cell h4{font-size:13px;font-weight:700;margin-bottom:2px;}
-.prod-cell .psub{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;display:block;}
-.prod-cell .link-list a{font-size:11px;}
-
-/* CTA TERMINAL */
-.cta-terminal{border:1px solid var(--wire-g);background:var(--panel);overflow:hidden;}
-.terminal-header{background:rgba(201,168,76,.06);border-bottom:1px solid var(--wire-g);padding:14px 24px;display:flex;align-items:center;gap:12px;}
-.terminal-dot{width:10px;height:10px;border-radius:50%;}
-.terminal-dot:nth-child(1){background:#ff5f57;}
-.terminal-dot:nth-child(2){background:#febc2e;}
-.terminal-dot:nth-child(3){background:#28c840;}
-.terminal-title{margin-left:8px;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);}
-.terminal-hero-img{height:380px;overflow:hidden;position:relative;}
-.terminal-hero-img img{width:100%;height:100%;object-fit:cover;filter:brightness(.38) saturate(.4);}
-.terminal-hero-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(5,6,8,.92) 0%,transparent 55%);}
-.terminal-body{padding:52px 28px;text-align:center;}
-.terminal-body .prompt{font-size:11px;color:var(--gold);letter-spacing:.16em;text-transform:uppercase;margin-bottom:18px;display:flex;align-items:center;justify-content:center;gap:8px;}
-.terminal-body .prompt::before{content:'$_';}
-.terminal-body h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,5vw,4.2rem);font-weight:600;line-height:.95;letter-spacing:-.03em;margin-bottom:16px;}
-.terminal-body h2 em{font-style:italic;color:var(--gold-lt);}
-.terminal-body p{font-size:13px;color:var(--muted);max-width:52ch;margin:0 auto 32px;line-height:1.85;}
-.terminal-cta-row{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;}
-
-/* FOOTER */
-footer{padding:32px 28px;border-top:1px solid var(--wire);display:flex;justify-content:space-between;align-items:center;max-width:1320px;margin:0 auto;flex-wrap:wrap;gap:12px;}
-.foot-brand{font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:.14em;color:var(--gold);}
-.foot-class{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);}
-.foot-class span{color:var(--blood-lt);}
-
-/* RESPONSIVE */
-@media(max-width:1100px){
-  .img-strip.c4{grid-template-columns:1fr 1fr;}
-  .feat-card{grid-column:span 6;}.feat-card.wide{grid-column:span 12;}
-  .power-strip{grid-template-columns:repeat(3,1fr);}
-  .hero-sub-row{grid-template-columns:1fr;}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--void);
+  color: var(--text);
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  line-height: 1.7;
+  overflow-x: hidden;
 }
-@media(max-width:780px){
-  .hero{padding-top:88px;}.wrap{padding:0 16px;}
-  .feat-card,.feat-card.wide{grid-column:span 12;}.ed-grid{grid-template-columns:1fr;}
-  .power-strip{grid-template-columns:1fr 1fr;}
-  .scene-inner{grid-template-columns:1fr;}
-  .scene-meta-bar{border-right:none;border-bottom:1px solid var(--wire);}
-  .prod-grid{grid-template-columns:1fr;}
-  .sitenav-inner{padding:0 16px;}
-  .img-strip.c3,.img-strip.c2{grid-template-columns:1fr 1fr;}
+
+/* GRAIN TEXTURE OVERLAY */
+body::after {
+  content: '';
+  position: fixed; inset: 0; z-index: 998; pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity: 0.4;
+  mix-blend-mode: overlay;
 }
-@media(max-width:480px){
-  .power-strip{grid-template-columns:1fr;}
-  .img-strip.c3,.img-strip.c2,.img-strip.c4{grid-template-columns:1fr;}
-  .hero h1{font-size:3.4rem;}
+
+/* SCANLINES */
+body::before {
+  content: '';
+  position: fixed; inset: 0; z-index: 997; pointer-events: none;
+  background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 4px);
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; object-fit: cover; }
+.wrap { max-width: 1360px; margin: 0 auto; padding: 0 32px; }
+
+/* ═══════════════════════════════════
+   ANIMATIONS
+═══════════════════════════════════ */
+@keyframes fadeUp { from { opacity:0; transform:translateY(22px); } to { opacity:1; transform:translateY(0); } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes kenburns { from { transform:scale(1.1) translateY(0); } to { transform:scale(1.0) translateY(-2%); } }
+@keyframes flicker { 0%,100%{opacity:1;} 92%{opacity:1;} 93%{opacity:.4;} 94%{opacity:1;} 96%{opacity:.65;} 97%{opacity:1;} }
+@keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0;} }
+@keyframes goldPulse { 0%,100%{box-shadow:0 0 0 0 rgba(196,158,84,0);} 50%{box-shadow:0 0 40px 8px rgba(196,158,84,0.12);} }
+@keyframes slideRight { from{transform:scaleX(0);} to{transform:scaleX(1);} }
+@keyframes rotateSlow { from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
+@keyframes tickerScroll { from{transform:translateX(0);} to{transform:translateX(-50%);} }
+
+/* ═══════════════════════════════════
+   CLASSIFICATION BAR
+═══════════════════════════════════ */
+.classbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 700;
+  height: 3px;
+  background: repeating-linear-gradient(90deg, var(--blood) 0, var(--blood) 70px, var(--void) 70px, var(--void) 74px);
+  animation: flicker 11s ease-in-out infinite;
+}
+
+/* ═══════════════════════════════════
+   NAV
+═══════════════════════════════════ */
+.sitenav {
+  position: sticky; top: 0; z-index: 500;
+  background: rgba(3,4,10,0.96);
+  backdrop-filter: blur(24px) saturate(1.4);
+  border-bottom: 1px solid var(--wire);
+}
+.sitenav-inner {
+  display: flex; align-items: center; justify-content: space-between; gap: 20px;
+  padding: 0 32px; max-width: 1360px; margin: 0 auto; height: 56px;
+}
+.nav-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 14px; letter-spacing: .22em; color: var(--gold);
+  white-space: nowrap; text-transform: uppercase;
+  display: flex; align-items: center; gap: 10px;
+}
+.nav-brand-divider { width: 1px; height: 20px; background: var(--wire-g); }
+.nav-brand-sub { font-size: 8px; letter-spacing: .35em; color: var(--dim); font-family: 'Courier Prime', monospace; }
+.nav-pills { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; padding: 8px 0; }
+.nav-pills::-webkit-scrollbar { display: none; }
+.nav-pill {
+  white-space: nowrap; padding: 6px 14px;
+  border: 1px solid var(--wire); font-size: 9px; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--dim);
+  transition: .2s; background: rgba(255,255,255,.015);
+  position: relative; overflow: hidden;
+}
+.nav-pill::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
+  background: var(--gold); transform: scaleX(0); transition: transform .3s;
+}
+.nav-pill:hover, .nav-pill.active {
+  border-color: var(--wire-g); color: var(--gold-lt); background: var(--gold-bg);
+}
+.nav-pill:hover::after, .nav-pill.active::after { transform: scaleX(1); }
+.nav-pill.active { border-color: var(--blood); color: var(--blood-vivid); background: var(--blood-bg); }
+.nav-pill.active::after { background: var(--blood-vivid); transform: scaleX(1); }
+
+/* ═══════════════════════════════════
+   TICKER
+═══════════════════════════════════ */
+.ticker-bar {
+  background: rgba(8,12,22,0.9); border-bottom: 1px solid var(--wire);
+  height: 32px; overflow: hidden; position: relative;
+  display: flex; align-items: center;
+}
+.ticker-label {
+  flex-shrink: 0; padding: 0 18px; font-size: 8px; letter-spacing: .3em;
+  text-transform: uppercase; color: var(--blood-vivid); background: var(--blood-bg);
+  border-right: 1px solid var(--wire); height: 100%;
+  display: flex; align-items: center; z-index: 2;
+}
+.ticker-track { flex: 1; overflow: hidden; }
+.ticker-inner {
+  display: flex; gap: 0; white-space: nowrap;
+  animation: tickerScroll 40s linear infinite;
+}
+.ticker-item {
+  font-size: 9px; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--dim); padding: 0 32px;
+  display: flex; align-items: center; gap: 10px;
+}
+.ticker-item .t-name { color: var(--gold); }
+.ticker-item .t-val { color: var(--text); }
+.ticker-item .t-up { color: #4ade80; }
+.ticker-item .t-dn { color: var(--blood-vivid); }
+
+/* ═══════════════════════════════════
+   HERO
+═══════════════════════════════════ */
+.hero {
+  min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 140px 0 80px; position: relative; overflow: hidden;
+  border-bottom: 1px solid var(--wire);
+}
+.hero-bg {
+  position: absolute; inset: 0; z-index: 0;
+}
+.hero-bg img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center 30%;
+  animation: kenburns 28s ease-in-out alternate infinite;
+  filter: brightness(.35) saturate(.6);
+}
+.hero-bg::after {
+  content: ''; position: absolute; inset: 0;
+  background:
+    linear-gradient(180deg, rgba(3,4,10,.55) 0%, rgba(3,4,10,.3) 25%, rgba(3,4,10,.65) 60%, rgba(3,4,10,.99) 100%),
+    linear-gradient(90deg, rgba(3,4,10,.5) 0%, transparent 50%);
+}
+.hero-grid-lines {
+  position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,.012) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(255,255,255,.008) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 75%, transparent 100%);
+}
+.hero-vignette {
+  position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: radial-gradient(ellipse at 60% 40%, transparent 40%, rgba(3,4,10,.6) 100%);
+}
+.hero-content { position: relative; z-index: 2; }
+
+.file-header {
+  display: flex; align-items: center; gap: 14px; margin-bottom: 36px;
+  animation: fadeUp .7s ease both;
+}
+.file-stamp {
+  font-size: 8px; letter-spacing: .28em; text-transform: uppercase;
+  padding: 5px 12px; border: 1px solid var(--blood); color: var(--blood-vivid);
+  background: var(--blood-bg); position: relative; overflow: hidden;
+}
+.file-stamp::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(192,57,43,.12) 100%);
+}
+.file-id {
+  font-size: 9px; letter-spacing: .2em; color: var(--dim); text-transform: uppercase;
+}
+.file-id::after { content: '█'; margin-left: 3px; animation: blink 1.1s step-end infinite; color: var(--gold); }
+
+.hero-eyebrow {
+  font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: .6em;
+  color: var(--gold); text-transform: uppercase; margin-bottom: 20px;
+  display: flex; align-items: center; gap: 16px;
+  animation: fadeUp .7s .1s ease both;
+}
+.hero-eyebrow::before, .hero-eyebrow::after {
+  content: ''; flex: none; width: 40px; height: 1px; background: var(--gold); opacity: .4;
+}
+
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(4rem, 12vw, 10rem);
+  font-weight: 700; line-height: .87; letter-spacing: -.04em;
+  max-width: 18ch;
+  animation: fadeUp .8s .15s ease both;
+}
+.hero h1 em {
+  font-style: italic; font-weight: 300; color: var(--gold-lt); display: block;
+}
+
+.hero-bottom {
+  display: grid; grid-template-columns: 1fr 400px;
+  gap: 56px; align-items: end; margin-top: 48px;
+  animation: fadeUp .8s .3s ease both;
+}
+.hero-copy {
+  font-size: 14px; color: var(--muted); max-width: 58ch; line-height: 1.9;
+  border-left: 2px solid rgba(122,18,18,.5); padding-left: 24px;
+}
+.hero-copy strong { color: var(--gold-lt); font-weight: 700; }
+
+/* DOSSIER */
+.dossier {
+  border: 1px solid var(--wire-g); padding: 24px;
+  background: linear-gradient(135deg, var(--gold-bg) 0%, rgba(8,12,22,0.8) 100%);
+  position: relative;
+}
+.dossier::before {
+  content: 'DOSSIER REF: WS-7';
+  position: absolute; top: -9px; left: 18px;
+  background: var(--void); padding: 0 10px;
+  font-size: 8px; letter-spacing: .25em; color: var(--gold); text-transform: uppercase;
+}
+.dossier::after {
+  content: '';
+  position: absolute; top: 0; right: 0;
+  width: 40px; height: 40px;
+  border-top: 1px solid var(--wire-g); border-right: 1px solid var(--wire-g);
+}
+.d-line {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: 8px 0; border-bottom: 1px solid var(--wire); font-size: 11px;
+}
+.d-line:last-child { border-bottom: none; }
+.d-label { color: var(--dim); letter-spacing: .1em; text-transform: uppercase; }
+.d-val { color: var(--gold-lt); font-weight: 700; }
+.d-val.red { color: #e07070; }
+
+.hero-cta {
+  display: flex; flex-wrap: wrap; gap: 12px; margin-top: 44px;
+  animation: fadeUp .8s .45s ease both;
+}
+
+/* ═══════════════════════════════════
+   BUTTONS
+═══════════════════════════════════ */
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 14px 28px; font-family: 'Courier Prime', monospace;
+  font-size: 10px; letter-spacing: .22em; text-transform: uppercase;
+  border: 1px solid transparent; transition: .3s; position: relative; overflow: hidden;
+  cursor: pointer;
+}
+.btn::before {
+  content: ''; position: absolute; inset: 0; opacity: 0; transition: opacity .3s;
+  background: linear-gradient(135deg, rgba(255,255,255,.05) 0%, transparent 100%);
+}
+.btn:hover::before { opacity: 1; }
+.btn-gold {
+  background: var(--gold); color: var(--void); border-color: var(--gold); font-weight: 700;
+}
+.btn-gold:hover { background: var(--gold-bright); transform: translateY(-2px); box-shadow: 0 10px 36px rgba(196,158,84,.3); }
+.btn-ghost { border-color: var(--wire-g); color: var(--gold); background: var(--gold-bg); }
+.btn-ghost:hover { border-color: var(--gold); color: var(--gold-lt); transform: translateY(-1px); }
+.btn-blood { border-color: var(--blood); color: var(--blood-vivid); background: var(--blood-bg); }
+.btn-blood:hover { background: rgba(122,18,18,.28); transform: translateY(-1px); }
+
+/* ═══════════════════════════════════
+   IMAGE STRIP
+═══════════════════════════════════ */
+.img-strip { display: grid; gap: 2px; overflow: hidden; }
+.img-strip.c3 { grid-template-columns: 1.6fr 1fr 1fr; }
+.img-strip.c4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+.img-strip.c2 { grid-template-columns: 1.5fr 1fr; }
+.img-frame { position: relative; overflow: hidden; }
+.img-frame img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform .8s ease, filter .5s;
+  filter: brightness(.55) saturate(.45) contrast(1.1);
+}
+.img-frame:hover img { transform: scale(1.06); filter: brightness(.75) saturate(.65) contrast(1.05); }
+.img-cap {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 36px 18px 14px;
+  background: linear-gradient(to top, rgba(3,4,10,.9) 0%, transparent 100%);
+  font-size: 8px; letter-spacing: .25em; text-transform: uppercase;
+  color: var(--gold); pointer-events: none;
+}
+.img-frame::before {
+  content: ''; position: absolute; inset: 0;
+  border: 1px solid transparent; transition: border-color .4s; z-index: 2; pointer-events: none;
+}
+.img-frame:hover::before { border-color: var(--wire-g); }
+
+/* ═══════════════════════════════════
+   SECTION BASE
+═══════════════════════════════════ */
+.section { padding: 100px 0; border-bottom: 1px solid var(--wire); }
+.sec-header { margin-bottom: 56px; }
+.sec-label {
+  display: inline-flex; align-items: center; gap: 12px;
+  font-size: 8px; letter-spacing: .35em; text-transform: uppercase;
+  color: var(--blood-vivid); margin-bottom: 14px;
+}
+.sec-label::before {
+  content: ''; display: inline-block; width: 24px; height: 1px; background: var(--blood-vivid);
+}
+.sec-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 700; line-height: .88; letter-spacing: -.04em; margin-bottom: 16px;
+}
+.sec-title em { font-style: italic; font-weight: 300; color: var(--gold-lt); }
+.sec-desc { font-size: 13px; color: var(--muted); max-width: 65ch; line-height: 1.9; }
+
+/* ═══════════════════════════════════
+   EDITORIAL GRID
+═══════════════════════════════════ */
+.ed-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
+.feat-card {
+  grid-column: span 3; border: 1px solid var(--wire);
+  background: var(--panel); overflow: hidden; position: relative;
+  transition: border-color .35s, transform .35s, box-shadow .35s;
+}
+.feat-card.wide { grid-column: span 6; }
+.feat-card-img { overflow: hidden; position: relative; }
+.feat-card-img::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(8,12,22,.7) 100%);
+  pointer-events: none;
+}
+.feat-card-img img {
+  width: 100%; height: 240px; object-fit: cover;
+  transition: transform .7s ease, filter .5s;
+  filter: brightness(.55) saturate(.5) contrast(1.1);
+}
+.feat-card.wide .feat-card-img img { height: 300px; }
+.feat-card:hover .feat-card-img img { transform: scale(1.07); filter: brightness(.75) saturate(.7); }
+.feat-card-body { padding: 28px; }
+.feat-card::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--gold-lt) 50%, transparent 100%);
+  transform: scaleX(0); transform-origin: left; transition: transform .4s;
+}
+.feat-card:hover {
+  border-color: var(--wire-g); transform: translateY(-6px);
+  box-shadow: 0 24px 60px rgba(0,0,0,.6), 0 0 40px rgba(196,158,84,.06);
+}
+.feat-card:hover::after { transform: scaleX(1); }
+
+.card-tag {
+  display: inline-block; font-size: 8px; letter-spacing: .22em;
+  text-transform: uppercase; padding: 4px 10px;
+  border: 1px solid var(--blood); color: var(--blood-vivid);
+  background: var(--blood-bg); margin-bottom: 14px;
+}
+.feat-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem; font-weight: 600; line-height: .95;
+  letter-spacing: -.025em; margin-bottom: 10px;
+}
+.feat-card p { font-size: 12px; color: var(--muted); margin-bottom: 20px; line-height: 1.85; }
+
+.link-list { display: flex; flex-direction: column; gap: 7px; }
+.link-list a {
+  font-size: 11px; color: var(--text); transition: color .2s, padding-left .2s;
+  display: flex; align-items: center; gap: 8px;
+  border-bottom: 1px solid var(--wire); padding: 5px 0;
+}
+.link-list a::before { content: '→'; color: var(--gold); font-size: 12px; flex-shrink: 0; }
+.link-list a:hover { color: var(--gold-lt); padding-left: 4px; }
+.link-list a:last-child { border-bottom: none; }
+
+/* ═══════════════════════════════════
+   QUOTE BREAK
+═══════════════════════════════════ */
+.quote-break {
+  position: relative; overflow: hidden;
+  border-top: 1px solid var(--wire); border-bottom: 1px solid var(--wire);
+}
+.quote-break-img { position: absolute; inset: 0; }
+.quote-break-img img { width: 100%; height: 100%; object-fit: cover; filter: brightness(.15) saturate(.25); }
+.quote-break-content {
+  position: relative; z-index: 2; padding: 80px 32px; text-align: center;
+  max-width: 1360px; margin: 0 auto;
+}
+.qb-ornament {
+  font-family: 'Cormorant Garamond', serif; font-size: 80px; line-height: .5;
+  color: var(--gold); opacity: .25; margin-bottom: 24px;
+  font-style: italic; font-weight: 300;
+}
+.quote-break blockquote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 4.5vw, 3.6rem);
+  font-style: italic; font-weight: 300;
+  color: var(--gold-lt); max-width: 900px; margin: 0 auto 18px;
+  line-height: 1.15; letter-spacing: -.01em;
+}
+.quote-break cite {
+  font-size: 8px; letter-spacing: .3em; text-transform: uppercase; color: var(--dim);
+}
+.quote-divider {
+  width: 60px; height: 1px; background: var(--wire-g);
+  margin: 20px auto;
+}
+
+/* ═══════════════════════════════════
+   POWER STRIP
+═══════════════════════════════════ */
+.power-strip {
+  display: grid; grid-template-columns: repeat(6, 1fr);
+  gap: 1px; background: var(--wire); border: 1px solid var(--wire);
+}
+.power-cell { background: var(--panel); overflow: hidden; transition: background .3s; position: relative; }
+.power-cell-img { overflow: hidden; height: 150px; }
+.power-cell-img img {
+  width: 100%; height: 100%; object-fit: cover;
+  filter: brightness(.5) saturate(.45) contrast(1.1);
+  transition: filter .5s, transform .6s;
+}
+.power-cell:hover { background: var(--raise); }
+.power-cell:hover .power-cell-img img { filter: brightness(.72) saturate(.7); transform: scale(1.08); }
+.power-cell-body { padding: 22px; }
+.power-cell h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem; font-weight: 600; margin-bottom: 5px;
+}
+.power-cell .sub {
+  font-size: 8px; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 10px; display: block;
+}
+.power-cell p { font-size: 11px; color: var(--muted); line-height: 1.75; margin-bottom: 12px; }
+.power-cell .link-list a { font-size: 10px; }
+.power-cell::after {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, var(--gold) 0%, transparent 100%);
+  transform: scaleX(0); transform-origin: left; transition: transform .4s;
+}
+.power-cell:hover::after { transform: scaleX(1); }
+
+/* ═══════════════════════════════════
+   SCENE CARDS — LUXURY REDESIGN
+═══════════════════════════════════ */
+.scene-stack { display: flex; flex-direction: column; gap: 2px; }
+
+.scene-card {
+  border: 1px solid var(--wire);
+  background: var(--panel);
+  overflow: hidden; position: relative;
+  transition: border-color .4s, box-shadow .4s;
+}
+.scene-card::before {
+  content: attr(data-class);
+  position: absolute; top: 24px; right: -32px;
+  font-size: 7px; letter-spacing: .3em; text-transform: uppercase;
+  color: rgba(192,57,43,.7); border: 1px solid rgba(122,18,18,.4);
+  padding: 4px 44px; transform: rotate(12deg); z-index: 15;
+  background: rgba(122,18,18,.1);
+}
+.scene-card:hover {
+  border-color: rgba(196,158,84,.22);
+  box-shadow: 0 0 80px rgba(196,158,84,.04);
+}
+
+.scene-inner {
+  display: grid; grid-template-columns: .55fr 1.45fr;
+}
+
+/* LEFT PANEL */
+.scene-left {
+  display: flex; flex-direction: column;
+  border-right: 1px solid var(--wire);
+  overflow: hidden; position: relative;
+}
+.scene-portrait {
+  flex: 1; min-height: 300px; overflow: hidden; position: relative;
+}
+.scene-portrait img {
+  width: 100%; height: 100%; object-fit: cover; object-position: top center;
+  filter: brightness(.5) saturate(.55) contrast(1.1);
+  transition: filter .6s, transform .8s;
+}
+.scene-card:hover .scene-portrait img {
+  filter: brightness(.68) saturate(.72);
+  transform: scale(1.04);
+}
+.scene-portrait-fade {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(to top, rgba(8,12,22,1) 0%, rgba(8,12,22,.3) 35%, transparent 60%),
+    linear-gradient(to right, transparent 70%, rgba(8,12,22,.8) 100%);
+}
+
+.scene-id-badge {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 28px 24px 20px; z-index: 2;
+}
+.scene-kicker {
+  font-size: 9px; color: var(--gold); letter-spacing: .3em; text-transform: uppercase;
+  margin-bottom: 5px; display: block;
+}
+.scene-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.1rem; font-weight: 700; line-height: .9;
+  letter-spacing: -.03em; margin-bottom: 10px;
+}
+.scene-subline {
+  font-size: 9px; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--dim); line-height: 1.6;
+}
+
+.scene-tags {
+  padding: 16px 24px; border-top: 1px solid var(--wire);
+  display: flex; flex-wrap: wrap; gap: 6px;
+}
+.scene-tag {
+  font-size: 8px; letter-spacing: .18em; text-transform: uppercase;
+  padding: 4px 10px; border: 1px solid var(--wire-g);
+  color: var(--dim); background: var(--gold-bg);
+}
+
+.scene-copy-panel {
+  padding: 20px 24px; border-top: 1px solid var(--wire);
+  font-size: 11px; font-style: italic; color: var(--muted); line-height: 1.8;
+}
+
+/* RIGHT PANEL */
+.scene-right {
+  display: flex; flex-direction: column;
+}
+.scene-right-header {
+  padding: 28px 32px; border-bottom: 1px solid var(--wire);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.scene-right-label {
+  font-size: 8px; letter-spacing: .3em; text-transform: uppercase; color: var(--dim);
+}
+.scene-right-title {
+  font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--gold);
+}
+
+.prod-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  flex: 1;
+}
+.prod-cell {
+  padding: 28px 28px; border-right: 1px solid var(--wire);
+  border-bottom: 1px solid var(--wire);
+  transition: background .3s;
+}
+.prod-cell:last-child { border-right: none; }
+.prod-cell:hover { background: rgba(196,158,84,.025); }
+.prod-cell h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem; font-weight: 600; margin-bottom: 4px; line-height: 1;
+}
+.psub {
+  font-size: 8px; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 14px; display: block;
+}
+
+/* ═══════════════════════════════════
+   TERMINAL CTA
+═══════════════════════════════════ */
+.cta-block {
+  border: 1px solid var(--wire-g);
+  background: linear-gradient(135deg, var(--panel) 0%, var(--raise) 100%);
+  position: relative; overflow: hidden;
+}
+.cta-block::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 30% 50%, rgba(196,158,84,.08) 0%, transparent 60%);
+}
+.cta-block-inner { display: grid; grid-template-columns: 1fr 540px; }
+.cta-visual { position: relative; overflow: hidden; min-height: 480px; }
+.cta-visual img { width: 100%; height: 100%; object-fit: cover; filter: brightness(.3) saturate(.5); }
+.cta-visual::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(90deg, transparent 60%, rgba(8,12,22,.9) 100%);
+}
+.cta-content {
+  padding: 60px 52px; display: flex; flex-direction: column; justify-content: center;
+  position: relative; z-index: 2;
+}
+.cta-eyebrow {
+  font-size: 8px; letter-spacing: .4em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 20px;
+  display: flex; align-items: center; gap: 12px;
+}
+.cta-eyebrow::before { content: ''; width: 20px; height: 1px; background: var(--gold); }
+.cta-content h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
+  font-weight: 700; line-height: .9; letter-spacing: -.04em;
+  margin-bottom: 20px;
+}
+.cta-content h2 em { font-style: italic; font-weight: 300; color: var(--gold-lt); display: block; }
+.cta-content p { font-size: 13px; color: var(--muted); line-height: 1.9; margin-bottom: 36px; }
+.cta-buttons { display: flex; flex-wrap: wrap; gap: 12px; }
+
+/* ═══════════════════════════════════
+   DIVIDER ORNAMENT
+═══════════════════════════════════ */
+.section-divider {
+  display: flex; align-items: center; gap: 20px;
+  padding: 0 32px; max-width: 1360px; margin: 0 auto;
+  height: 2px;
+}
+.section-divider::before, .section-divider::after {
+  content: ''; flex: 1; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--wire-g) 50%, transparent);
+}
+.section-divider-dot {
+  width: 6px; height: 6px; border: 1px solid var(--gold);
+  transform: rotate(45deg); flex-shrink: 0;
+}
+
+/* ═══════════════════════════════════
+   FOOTER
+═══════════════════════════════════ */
+footer {
+  padding: 56px 32px;
+  border-top: 1px solid var(--wire);
+  text-align: center;
+  background: var(--panel);
+  position: relative; overflow: hidden;
+}
+footer::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 100%, rgba(196,158,84,.04) 0%, transparent 70%);
+}
+.foot-brand {
+  font-family: 'Cinzel', serif; font-size: 18px; letter-spacing: .3em;
+  color: var(--gold); text-transform: uppercase; margin-bottom: 10px;
+}
+.foot-sub {
+  font-size: 8px; letter-spacing: .3em; text-transform: uppercase;
+  color: var(--dim); margin-bottom: 28px;
+}
+.foot-divider { width: 40px; height: 1px; background: var(--wire-g); margin: 0 auto 20px; }
+.foot-class { font-size: 8px; letter-spacing: .2em; text-transform: uppercase; color: var(--faint); }
+
+/* ═══════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════ */
+@media (max-width: 1100px) {
+  .ed-grid { grid-template-columns: repeat(6, 1fr); }
+  .feat-card, .feat-card.wide { grid-column: span 6; }
+  .power-strip { grid-template-columns: repeat(3, 1fr); }
+  .scene-inner { grid-template-columns: 1fr; }
+  .scene-left { flex-direction: row; flex-wrap: wrap; }
+  .scene-portrait { min-height: 240px; flex: 1; min-width: 280px; }
+  .prod-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero-bottom { grid-template-columns: 1fr; }
+  .cta-block-inner { grid-template-columns: 1fr; }
+  .cta-visual { min-height: 280px; }
+}
+@media (max-width: 768px) {
+  .wrap { padding: 0 20px; }
+  .hero h1 { font-size: clamp(3rem, 14vw, 6rem); }
+  .img-strip.c3, .img-strip.c4 { grid-template-columns: 1fr 1fr; }
+  .power-strip { grid-template-columns: repeat(2, 1fr); }
+  .prod-grid { grid-template-columns: 1fr 1fr; }
+  .nav-brand-sub { display: none; }
 }
 </style>
 </head>
@@ -332,59 +803,99 @@ footer{padding:32px 28px;border-top:1px solid var(--wire);display:flex;justify-c
 <!-- NAV -->
 <nav class="sitenav">
   <div class="sitenav-inner">
-    <div class="nav-brand">The Shark <span>/ Commerce</span></div>
+    <a href="https://thesharkofwallstreet.com" class="nav-brand">
+      The Shark of Wall Street
+      <div class="nav-brand-divider"></div>
+      <span class="nav-brand-sub">Shop / Editorial Commerce</span>
+    </a>
     <div class="nav-pills">
-      <a class="nav-pill active" href="#editorial">Architecture</a>
+      <a class="nav-pill" href="#editorial">Architecture</a>
       <a class="nav-pill" href="#power">Essentials</a>
-      <a class="nav-pill" href="#scenes">Scene Loadouts</a>
-      <a class="nav-pill" href="#terminal">Enter World</a>
+      <a class="nav-pill" href="#scenes">Loadouts</a>
+      <a class="nav-pill" href="https://thesharkofwallstreet.com" target="_blank">Universe →</a>
     </div>
   </div>
 </nav>
 
+<!-- TICKER -->
+<div class="ticker-bar">
+  <div class="ticker-label">The Wardrobe</div>
+  <div class="ticker-track">
+    <div class="ticker-inner">
+      <span class="ticker-item"><span class="t-name">BRIONI BESPOKE</span> <span class="t-val">Power Tailoring</span> <span class="t-up">↑ Boardroom</span></span>
+      <span class="ticker-item"><span class="t-name">CARTIER TANK</span> <span class="t-val">Time / Geometry</span> <span class="t-up">↑ Timeless</span></span>
+      <span class="ticker-item"><span class="t-name">TOM FORD</span> <span class="t-val">Seduction Armor</span> <span class="t-up">↑ Control</span></span>
+      <span class="ticker-item"><span class="t-name">MONTBLANC 149</span> <span class="t-val">Ink / Threat</span> <span class="t-up">↑ Signature</span></span>
+      <span class="ticker-item"><span class="t-name">PATEK PHILIPPE</span> <span class="t-val">Quiet Inheritance</span> <span class="t-up">↑ Calatrava</span></span>
+      <span class="ticker-item"><span class="t-name">RICK OWENS</span> <span class="t-val">Industrial Noir</span> <span class="t-dn">↓ Predator</span></span>
+      <span class="ticker-item"><span class="t-name">CHRISTIAN LOUBOUTIN</span> <span class="t-val">Executive Venom</span> <span class="t-up">↑ Women</span></span>
+      <span class="ticker-item"><span class="t-name">JOHN LOBB</span> <span class="t-val">Quiet Authority</span> <span class="t-up">↑ Bespoke</span></span>
+      <!-- duplicate for seamless loop -->
+      <span class="ticker-item"><span class="t-name">BRIONI BESPOKE</span> <span class="t-val">Power Tailoring</span> <span class="t-up">↑ Boardroom</span></span>
+      <span class="ticker-item"><span class="t-name">CARTIER TANK</span> <span class="t-val">Time / Geometry</span> <span class="t-up">↑ Timeless</span></span>
+      <span class="ticker-item"><span class="t-name">TOM FORD</span> <span class="t-val">Seduction Armor</span> <span class="t-up">↑ Control</span></span>
+      <span class="ticker-item"><span class="t-name">MONTBLANC 149</span> <span class="t-val">Ink / Threat</span> <span class="t-up">↑ Signature</span></span>
+      <span class="ticker-item"><span class="t-name">PATEK PHILIPPE</span> <span class="t-val">Quiet Inheritance</span> <span class="t-up">↑ Calatrava</span></span>
+      <span class="ticker-item"><span class="t-name">RICK OWENS</span> <span class="t-val">Industrial Noir</span> <span class="t-dn">↓ Predator</span></span>
+      <span class="ticker-item"><span class="t-name">CHRISTIAN LOUBOUTIN</span> <span class="t-val">Executive Venom</span> <span class="t-up">↑ Women</span></span>
+      <span class="ticker-item"><span class="t-name">JOHN LOBB</span> <span class="t-val">Quiet Authority</span> <span class="t-up">↑ Bespoke</span></span>
+    </div>
+  </div>
+</div>
+
 <!-- ░░ HERO ░░ -->
 <header class="hero" id="top">
-  <div class="hero-bg-img">
-    <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1800&q=85&fit=crop&crop=center" alt="City night aerial"/>
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1800&q=85&fit=crop" alt="City night skyline"/>
   </div>
-  <div class="hero-grid-bg"></div>
-  <div class="wrap hero-content">
+  <div class="hero-grid-lines"></div>
+  <div class="hero-vignette"></div>
+  <div class="hero-content wrap">
     <div class="file-header">
-      <div class="file-stamp">Classified Commerce</div>
-      <div class="file-id">File WS-SHOP-001 / Active</div>
+      <span class="file-stamp">Classified</span>
+      <span class="file-id">DOSSIER-WARDROBE // FILE WS-7 // ACCESS GRANTED</span>
     </div>
-    <h1>Shop the World<br>of <em>The Shark of Wall Street</em></h1>
-    <div class="hero-sub-row">
-      <p class="hero-copy">A standalone editorial commerce experience built around the characters, weapons, uniforms, rituals, and status objects that define <em>The Shark of Wall Street</em>. Bespoke houses. Quiet watches. White-collar armor. Field gear. Women of power. Instruments of control. Each object carries a scene. Each scene carries a consequence.</p>
-      <div class="hero-dossier">
-        <div class="dossier-line"><span class="dossier-label">Classification</span><span class="dossier-val red">Top Secret / Commercial</span></div>
-        <div class="dossier-line"><span class="dossier-label">Universe</span><span class="dossier-val">Shark of Wall Street</span></div>
-        <div class="dossier-line"><span class="dossier-label">Sections</span><span class="dossier-val">7 Active</span></div>
-        <div class="dossier-line"><span class="dossier-label">Characters</span><span class="dossier-val">5 Profiled</span></div>
-        <div class="dossier-line"><span class="dossier-label">Status</span><span class="dossier-val red">Commerce Active</span></div>
+    <div class="hero-eyebrow">Editorial Commerce</div>
+    <h1>
+      The Wardrobe<br>
+      <em>of Power.</em>
+    </h1>
+    <div class="hero-bottom">
+      <div>
+        <p class="hero-copy">
+          Every suit is a verdict. Every watch, a warning. Every heel, a weapon.<br><br>
+          This is not a fashion page. This is the <strong>material language of power</strong> — curated from the universe of <em>The Shark of Wall Street</em>. Bespoke houses. Quiet timepieces. Women who dress to dominate. Scene-specific loadouts for characters who never lose.
+        </p>
+        <div class="hero-cta">
+          <a href="#editorial" class="btn btn-gold">Enter the Wardrobe</a>
+          <a href="#scenes" class="btn btn-ghost">Scene Loadouts</a>
+          <a href="https://thesharkofwallstreet.com" target="_blank" class="btn btn-blood">Back to Universe</a>
+        </div>
       </div>
-    </div>
-    <div class="hero-cta-row">
-      <a class="btn btn-primary" href="https://thesharkofwallstreet.com" target="_blank" rel="noopener">Enter TheSharkOfWallStreet.com →</a>
-      <a class="btn btn-blood" href="#scenes">Browse Scene Loadouts</a>
-      <a class="btn btn-ghost" href="#editorial">View Architecture</a>
+      <div class="dossier">
+        <div class="d-line"><span class="d-label">Classification</span><span class="d-val">Editorial Commerce</span></div>
+        <div class="d-line"><span class="d-label">Universe</span><span class="d-val">Neo-Noir / Finance</span></div>
+        <div class="d-line"><span class="d-label">Subjects</span><span class="d-val red">6 Active Characters</span></div>
+        <div class="d-line"><span class="d-label">Aesthetic</span><span class="d-val">Dark Luxury / Power</span></div>
+        <div class="d-line"><span class="d-label">Status</span><span class="d-val red">Operational</span></div>
+      </div>
     </div>
   </div>
 </header>
 
-<!-- IMAGE STRIP 1 — city / suit / watch -->
+<!-- IMAGE STRIP 1 — 3 UP -->
 <div class="img-strip c3">
-  <div class="img-frame img-h380">
-    <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=900&q=80&fit=crop" alt="Dark city at night"/>
-    <div class="img-cap">The city never sleeps. Neither do they.</div>
+  <div class="img-frame" style="height:400px;">
+    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=900&q=80&fit=crop&crop=top" alt="Executive portrait"/>
+    <div class="img-cap">The operator / The threat</div>
   </div>
-  <div class="img-frame img-h240" style="align-self:start;">
-    <img src="https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?w=600&q=80&fit=crop&crop=top" alt="Bespoke tailoring dark"/>
-    <div class="img-cap">Bespoke / Made to measure</div>
+  <div class="img-frame" style="height:400px;">
+    <img src="https://images.unsplash.com/photo-1548169874-53e85f753f1e?w=600&q=80&fit=crop" alt="Luxury watch precision"/>
+    <div class="img-cap">Time as status</div>
   </div>
-  <div class="img-frame img-h240" style="align-self:end;">
-    <img src="https://images.unsplash.com/photo-1587836374828-4dbafa94cf0e?w=600&q=80&fit=crop" alt="Luxury watch close-up"/>
-    <div class="img-cap">Time is the only currency that matters</div>
+  <div class="img-frame" style="height:400px;">
+    <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&q=80&fit=crop&crop=top" alt="Women of power editorial"/>
+    <div class="img-cap">Precision / Seduction</div>
   </div>
 </div>
 
@@ -394,18 +905,18 @@ footer{padding:32px 28px;border-top:1px solid var(--wire);display:flex;justify-c
     <div class="sec-header">
       <div class="sec-label">Foundations / Presence / Authority</div>
       <h2 class="sec-title">The architecture<br><em>of power</em></h2>
-      <p class="sec-desc">Before the scenes, before the betrayals, before the bloodless threats — there is the uniform. These are the houses and objects that make the universe feel lived in, aspirational, and dangerous.</p>
+      <p class="sec-desc">Before the scenes. Before the betrayals. Before the bloodless threats — there is the uniform. These are the houses and objects that make the universe feel lived in, aspirational, and dangerous.</p>
     </div>
     <div class="ed-grid">
 
       <article class="feat-card wide" id="bespoke">
         <div class="feat-card-img">
-          <img src="https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?w=900&q=80&fit=crop" alt="Bespoke tailoring suit"/>
+          <img src="https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?w=900&q=80&fit=crop" alt="Bespoke tailoring"/>
         </div>
         <div class="feat-card-body">
           <div class="card-tag">Tailoring / Bespoke</div>
           <h3>Bespoke Houses</h3>
-          <p>Private clothiers, Roman prestige, Savile Row lineage, and Italian precision for the men who never need to explain themselves.</p>
+          <p>Private clothiers, Roman prestige, Savile Row lineage, and Italian precision — for the men who never need to explain themselves.</p>
           <div class="link-list">
             <a href="https://www.tomjames.com/" target="_blank" rel="noopener">Tom James — Private Clothier</a>
             <a href="https://www.brioni.com/en/us/the-world-of-bespoke" target="_blank" rel="noopener">Brioni Bespoke</a>
@@ -417,7 +928,7 @@ footer{padding:32px 28px;border-top:1px solid var(--wire);display:flex;justify-c
 
       <article class="feat-card" id="instruments">
         <div class="feat-card-img">
-          <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600&q=80&fit=crop" alt="Luxury pen and leather"/>
+          <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600&q=80&fit=crop" alt="Luxury pen leather"/>
         </div>
         <div class="feat-card-body">
           <div class="card-tag">Ink / Leather / Signature</div>
@@ -449,12 +960,12 @@ footer{padding:32px 28px;border-top:1px solid var(--wire);display:flex;justify-c
 
       <article class="feat-card wide" id="women">
         <div class="feat-card-img">
-          <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=900&q=80&fit=crop&crop=top" alt="Fashion editorial women of power"/>
+          <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=900&q=80&fit=crop&crop=top" alt="Women of power fashion editorial"/>
         </div>
         <div class="feat-card-body">
           <div class="card-tag">Control / Precision / Seduction</div>
           <h3>Women of Power</h3>
-          <p>Severe tailoring, sculpted heels, clean geometry, and jewelry that looks like diplomacy until it becomes threat display.</p>
+          <p>Severe tailoring, sculpted heels, clean geometry, and jewelry that looks like diplomacy — until it becomes threat display.</p>
           <div class="link-list">
             <a href="https://www.tomfordfashion.com/collections/women-ready-to-wear" target="_blank" rel="noopener">Tom Ford Women Ready-to-Wear</a>
             <a href="https://us.christianlouboutin.com/us_en/ladies/shoes/" target="_blank" rel="noopener">Christian Louboutin</a>
@@ -471,10 +982,12 @@ footer{padding:32px 28px;border-top:1px solid var(--wire);display:flex;justify-c
 <!-- QUOTE BREAK 1 -->
 <div class="quote-break">
   <div class="quote-break-img">
-    <img src="https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?w=1600&q=80&fit=crop" alt="dark space stars"/>
+    <img src="https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?w=1600&q=80&fit=crop" alt="dark starfield"/>
   </div>
   <div class="quote-break-content">
-    <blockquote>"Dress like the verdict has already been written — and you wrote it."</blockquote>
+    <div class="qb-ornament">"</div>
+    <blockquote>Dress like the verdict has already been written — and you wrote it.</blockquote>
+    <div class="quote-divider"></div>
     <cite>— The World of The Shark of Wall Street</cite>
   </div>
 </div>
@@ -485,13 +998,13 @@ footer{padding:32px 28px;border-top:1px solid var(--wire);display:flex;justify-c
     <div class="sec-header">
       <div class="sec-label">Curated / High-Finance / Editorial</div>
       <h2 class="sec-title"><em>Power</em> essentials</h2>
-      <p class="sec-desc">For readers who don't yet know the characters but already understand the aesthetic.</p>
+      <p class="sec-desc">For readers who don't yet know the characters — but already understand the aesthetic.</p>
     </div>
     <div class="power-strip">
 
       <div class="power-cell">
         <div class="power-cell-img">
-          <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=400&q=80&fit=crop&crop=top" alt="Man in dark suit"/>
+          <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=400&q=80&fit=crop&crop=top" alt="Man dark suit"/>
         </div>
         <div class="power-cell-body">
           <span class="sub">The operator's clothier</span>
@@ -506,7 +1019,7 @@ footer{padding:32px 28px;border-top:1px solid var(--wire);display:flex;justify-c
 
       <div class="power-cell">
         <div class="power-cell-img">
-          <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=400&q=80&fit=crop" alt="Luxury pen dark"/>
+          <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=400&q=80&fit=crop" alt="Luxury pen Montblanc dark"/>
         </div>
         <div class="power-cell-body">
           <span class="sub">Sterling energy</span>
@@ -520,7 +1033,7 @@ footer{padding:32px 28px;border-top:1px solid var(--wire);display:flex;justify-c
 
       <div class="power-cell">
         <div class="power-cell-img">
-          <img src="https://images.unsplash.com/photo-1548169874-53e85f753f1e?w=400&q=80&fit=crop" alt="Watch face close up"/>
+          <img src="https://images.unsplash.com/photo-1548169874-53e85f753f1e?w=400&q=80&fit=crop" alt="Watch face close up dark"/>
         </div>
         <div class="power-cell-body">
           <span class="sub">Geometry / permanence</span>
@@ -534,7 +1047,7 @@ footer{padding:32px 28px;border-top:1px solid var(--wire);display:flex;justify-c
 
       <div class="power-cell">
         <div class="power-cell-img">
-          <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=400&q=80&fit=crop" alt="Woman watch luxury"/>
+          <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=400&q=80&fit=crop" alt="Woman luxury watch Rolex"/>
         </div>
         <div class="power-cell-body">
           <span class="sub">Wealth worn as a verdict</span>
@@ -548,7 +1061,7 @@ footer{padding:32px 28px;border-top:1px solid var(--wire);display:flex;justify-c
 
       <div class="power-cell">
         <div class="power-cell-img">
-          <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=400&q=80&fit=crop" alt="Luxury dark shoes"/>
+          <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=400&q=80&fit=crop" alt="Luxury shoes dark"/>
         </div>
         <div class="power-cell-body">
           <span class="sub">Quiet-footed authority</span>
@@ -562,7 +1075,7 @@ footer{padding:32px 28px;border-top:1px solid var(--wire);display:flex;justify-c
 
       <div class="power-cell">
         <div class="power-cell-img">
-          <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=400&q=80&fit=crop" alt="Heels luxury dark"/>
+          <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=400&q=80&fit=crop" alt="Louboutin heels luxury dark"/>
         </div>
         <div class="power-cell-body">
           <span class="sub">Executive venom</span>
@@ -578,22 +1091,22 @@ footer{padding:32px 28px;border-top:1px solid var(--wire);display:flex;justify-c
   </div>
 </section>
 
-<!-- IMAGE STRIP 2 — 4-up noir panorama -->
+<!-- IMAGE STRIP 2 — 4 UP -->
 <div class="img-strip c4">
-  <div class="img-frame img-h300">
-    <img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=500&q=80&fit=crop" alt="Night city noir"/>
+  <div class="img-frame" style="height:300px;">
+    <img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=500&q=80&fit=crop" alt="Night city lights noir"/>
     <div class="img-cap">Night / The City</div>
   </div>
-  <div class="img-frame img-h300">
-    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=500&q=80&fit=crop&crop=top" alt="Woman portrait editorial dark"/>
+  <div class="img-frame" style="height:300px;">
+    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=500&q=80&fit=crop&crop=top" alt="Editorial woman dark portrait"/>
     <div class="img-cap">Power / Seduction</div>
   </div>
-  <div class="img-frame img-h300">
-    <img src="https://images.unsplash.com/photo-1590004987778-bece5c9adab6?w=500&q=80&fit=crop" alt="Man suit dark dramatic"/>
+  <div class="img-frame" style="height:300px;">
+    <img src="https://images.unsplash.com/photo-1590004987778-bece5c9adab6?w=500&q=80&fit=crop" alt="Man dark suit editorial"/>
     <div class="img-cap">The Operator</div>
   </div>
-  <div class="img-frame img-h300">
-    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500&q=80&fit=crop" alt="Data screens night"/>
+  <div class="img-frame" style="height:300px;">
+    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500&q=80&fit=crop" alt="Data screens network control"/>
     <div class="img-cap">The Network / Control</div>
   </div>
 </div>
@@ -611,24 +1124,28 @@ footer{padding:32px 28px;border-top:1px solid var(--wire);display:flex;justify-c
       <!-- MARCUS THORNE -->
       <article class="scene-card" data-class="CODE RED">
         <div class="scene-inner">
-          <div class="scene-meta-bar">
+          <div class="scene-left">
             <div class="scene-portrait">
-              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&q=80&fit=crop&crop=top" alt="Marcus Thorne portrait"/>
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&q=80&fit=crop&crop=top" alt="Marcus Thorne"/>
               <div class="scene-portrait-fade"></div>
+              <div class="scene-id-badge">
+                <span class="scene-kicker">Marcus Thorne</span>
+                <h3 class="scene-title">Server Room<br>Ignition</h3>
+                <p class="scene-subline">Ivory · Control · Charcoal · Steel</p>
+              </div>
             </div>
-            <div class="scene-meta-body">
-              <p class="scene-kicker">Marcus Thorne</p>
-              <h3 class="scene-title">Server Room Ignition</h3>
-              <p class="scene-subline">Ivory · Light · Control · Charcoal · Sweat · Steel</p>
-              <p class="scene-copy">A tension-heavy boardroom noir scene. Masculine ruin, feminine leverage, whiskey glass reflections, and blue-lit bad decisions. The moment before everything changes.</p>
-            </div>
-            <div class="scene-meta-footer">
+            <div class="scene-tags">
               <span class="scene-tag">Boardroom</span>
               <span class="scene-tag">Noir</span>
               <span class="scene-tag">Financial Thriller</span>
             </div>
+            <div class="scene-copy-panel">A tension-heavy boardroom noir scene. Masculine ruin, feminine leverage, whiskey reflections, and blue-lit bad decisions. The moment before everything changes.</div>
           </div>
-          <div class="scene-products">
+          <div class="scene-right">
+            <div class="scene-right-header">
+              <span class="scene-right-label">Scene Ref: WS-01 // Server Room 3AM</span>
+              <span class="scene-right-title">The Loadout</span>
+            </div>
             <div class="prod-grid">
               <div class="prod-cell">
                 <h4>Her Leverage</h4><span class="psub">Ivory / light / control</span>
@@ -669,24 +1186,28 @@ footer{padding:32px 28px;border-top:1px solid var(--wire);display:flex;justify-c
       <!-- VALENTINA CRUZ -->
       <article class="scene-card" data-class="EYES ONLY">
         <div class="scene-inner">
-          <div class="scene-meta-bar">
+          <div class="scene-left">
             <div class="scene-portrait">
-              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&q=80&fit=crop&crop=top" alt="Valentina Cruz portrait"/>
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&q=80&fit=crop&crop=top" alt="Valentina Cruz"/>
               <div class="scene-portrait-fade"></div>
+              <div class="scene-id-badge">
+                <span class="scene-kicker">Valentina Cruz</span>
+                <h3 class="scene-title">The Vault</h3>
+                <p class="scene-subline">Secrets · Leverage · Quiet Force</p>
+              </div>
             </div>
-            <div class="scene-meta-body">
-              <p class="scene-kicker">Valentina Cruz</p>
-              <h3 class="scene-title">The Vault</h3>
-              <p class="scene-subline">Secrets · Leverage · Quiet Force</p>
-              <p class="scene-copy">Seduction, coins, concealed force, and elegant criminal infrastructure. One of the strongest female luxury blocks in the universe — where every object is also evidence.</p>
-            </div>
-            <div class="scene-meta-footer">
+            <div class="scene-tags">
               <span class="scene-tag">Femme Fatale</span>
               <span class="scene-tag">Covert</span>
               <span class="scene-tag">Seduction</span>
             </div>
+            <div class="scene-copy-panel">Seduction, coins, concealed force, and elegant criminal infrastructure. Every object is also evidence.</div>
           </div>
-          <div class="scene-products">
+          <div class="scene-right">
+            <div class="scene-right-header">
+              <span class="scene-right-label">Scene Ref: WS-02 // The Vault Meeting</span>
+              <span class="scene-right-title">The Loadout</span>
+            </div>
             <div class="prod-grid">
               <div class="prod-cell">
                 <h4>The Aesthetic</h4><span class="psub">Seductive armor</span>
@@ -699,22 +1220,23 @@ footer{padding:32px 28px;border-top:1px solid var(--wire);display:flex;justify-c
               <div class="prod-cell">
                 <h4>The Arsenal</h4><span class="psub">Quiet force</span>
                 <div class="link-list">
-                  <a href="https://www.seagate.com/products/external-hard-drives/lacie-rugged-ssd-pro/" target="_blank" rel="noopener">LaCie Rugged SSD Pro</a>
-                  <a href="https://www.vertu.com/" target="_blank" rel="noopener">Vertu Signature Series</a>
-                  <a href="https://www.humidors.com/" target="_blank" rel="noopener">Spanish Cedar Humidor</a>
+                  <a href="https://www.tomfordfashion.com/en-us/women/ready-to-wear/" target="_blank" rel="noopener">Tom Ford RTW</a>
+                  <a href="https://www.seagate.com/products/external-hard-drives/lacie-rugged-ssd-pro/" target="_blank" rel="noopener">LaCie Rugged SSD</a>
+                  <a href="https://www.vertu.com/" target="_blank" rel="noopener">Vertu Signature</a>
                 </div>
               </div>
               <div class="prod-cell">
-                <h4>The Coin</h4><span class="psub">1922 / symbolic</span>
+                <h4>The Exit</h4><span class="psub">Clean disappearance</span>
                 <div class="link-list">
-                  <a href="https://www.ngccoin.com/coin-explorer/united-states/commemoratives/silver-commemoratives-1892-1954/19306/1922-grant-50c-ms/" target="_blank" rel="noopener">1922 Grant Commemorative</a>
+                  <a href="https://www.tumi.com/c/womens-luggage" target="_blank" rel="noopener">TUMI Luggage</a>
+                  <a href="https://www.celine.com/en-us/celine-shop-women/bags/" target="_blank" rel="noopener">CELINE Bag</a>
                 </div>
               </div>
               <div class="prod-cell">
-                <h4>The Exit</h4><span class="psub">Never stay long</span>
+                <h4>Encrypted Layer</h4><span class="psub">Digital warfare</span>
                 <div class="link-list">
-                  <a href="https://www.tumi.com/c/womens-luggage" target="_blank" rel="noopener">TUMI Women's Luggage</a>
-                  <a href="https://www.celine.com/en-us/celine-shop-women/bags/" target="_blank" rel="noopener">CELINE Structured Bag</a>
+                  <a href="https://us.christianlouboutin.com/us_en/ladies/shoes/" target="_blank" rel="noopener">Christian Louboutin</a>
+                  <a href="https://www.celine.com/en-us/celine-shop-women/bags/" target="_blank" rel="noopener">CELINE Luggage</a>
                 </div>
               </div>
             </div>
@@ -725,55 +1247,57 @@ footer{padding:32px 28px;border-top:1px solid var(--wire);display:flex;justify-c
       <!-- EVELYN VANCE -->
       <article class="scene-card" data-class="FEDERAL">
         <div class="scene-inner">
-          <div class="scene-meta-bar">
+          <div class="scene-left">
             <div class="scene-portrait">
-              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&q=80&fit=crop&crop=top" alt="Evelyn Vance portrait"/>
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&q=80&fit=crop&crop=top" alt="Evelyn Vance"/>
               <div class="scene-portrait-fade"></div>
+              <div class="scene-id-badge">
+                <span class="scene-kicker">Evelyn Vance</span>
+                <h3 class="scene-title">The Prosecution</h3>
+                <p class="scene-subline">Federal Chic · Legal Power</p>
+              </div>
             </div>
-            <div class="scene-meta-body">
-              <p class="scene-kicker">Evelyn Vance</p>
-              <h3 class="scene-title">The Prosecution</h3>
-              <p class="scene-subline">Immaculate · Lethal · Federal Chic</p>
-              <p class="scene-copy">Pearl-hard restraint and legal architecture presented as a shopping surface. She dresses like the verdict has already been written — and she wrote it.</p>
-            </div>
-            <div class="scene-meta-footer">
-              <span class="scene-tag">Federal</span>
+            <div class="scene-tags">
+              <span class="scene-tag">Federal Chic</span>
               <span class="scene-tag">Legal Power</span>
-              <span class="scene-tag">White Knight</span>
+              <span class="scene-tag">Authority</span>
             </div>
+            <div class="scene-copy-panel">Sharp tailoring for someone who has read the file twice and knows exactly what she's going to do with it.</div>
           </div>
-          <div class="scene-products">
+          <div class="scene-right">
+            <div class="scene-right-header">
+              <span class="scene-right-label">Scene Ref: WS-03 // Federal Courtroom</span>
+              <span class="scene-right-title">The Loadout</span>
+            </div>
             <div class="prod-grid">
               <div class="prod-cell">
-                <h4>The White Knight</h4><span class="psub">Federal precision</span>
+                <h4>The Weapon</h4><span class="psub">Power suiting</span>
                 <div class="link-list">
                   <a href="https://www.ralphlauren.com/women-clothing-collection/" target="_blank" rel="noopener">Ralph Lauren Collection</a>
-                  <a href="https://www.mikimotoamerica.com/us_en/jewelry/pearls" target="_blank" rel="noopener">Mikimoto Pearls</a>
-                  <a href="https://www.manoloblahnik.com/us/women/shoes" target="_blank" rel="noopener">Manolo Blahnik</a>
-                  <a href="https://www.cartier.com/en-us/jewelry/bracelets/" target="_blank" rel="noopener">Cartier Bracelets</a>
+                  <a href="https://www.manoloblahniklabel.com/women/" target="_blank" rel="noopener">Manolo Blahnik</a>
+                  <a href="https://www.mikimotoamerica.com/" target="_blank" rel="noopener">Mikimoto Pearls</a>
                 </div>
               </div>
               <div class="prod-cell">
-                <h4>The Accessories</h4><span class="psub">Minimal. Intentional.</span>
+                <h4>Time Piece</h4><span class="psub">Judicial certainty</span>
                 <div class="link-list">
-                  <a href="https://www.celine.com/en-us/celine-shop-women/bags/" target="_blank" rel="noopener">CELINE Structured Bags</a>
-                  <a href="https://www.tiffany.com/jewelry/earrings/" target="_blank" rel="noopener">Tiffany & Co. Earrings</a>
-                  <a href="https://www.rolex.com/watches/datejust.html" target="_blank" rel="noopener">Rolex Datejust</a>
+                  <a href="https://www.rolex.com/watches/lady-datejust" target="_blank" rel="noopener">Rolex Datejust</a>
+                  <a href="https://www.cartier.com/en-us/watches/collections/tank/" target="_blank" rel="noopener">Cartier Tank</a>
                 </div>
               </div>
               <div class="prod-cell">
-                <h4>The Weapon</h4><span class="psub">Federal statute</span>
-                <div class="link-list">
-                  <a href="https://www.law.cornell.edu/uscode/text/18/1961" target="_blank" rel="noopener">RICO Statute (18 U.S.C. §1961)</a>
-                  <a href="https://www.justice.gov/criminal-afmls/asset-forfeiture-policy-manual" target="_blank" rel="noopener">DOJ Asset Forfeiture Manual</a>
-                </div>
-              </div>
-              <div class="prod-cell">
-                <h4>The Intel</h4><span class="psub">Follow the money</span>
+                <h4>Intel</h4><span class="psub">Case evidence</span>
                 <div class="link-list">
                   <a href="https://www.sec.gov/edgar/searchedgar/companysearch" target="_blank" rel="noopener">SEC EDGAR</a>
                   <a href="https://www.icij.org/investigations/" target="_blank" rel="noopener">ICIJ Investigations</a>
-                  <a href="https://www.finra.org/investors/learn-to-invest/advanced-investing" target="_blank" rel="noopener">FINRA Research</a>
+                  <a href="https://www.law.cornell.edu/uscode/text/18/1961" target="_blank" rel="noopener">RICO Statute</a>
+                </div>
+              </div>
+              <div class="prod-cell">
+                <h4>The Brief</h4><span class="psub">Carry / presence</span>
+                <div class="link-list">
+                  <a href="https://www.smythson.com/us/bags/briefcases/" target="_blank" rel="noopener">Smythson Briefcase</a>
+                  <a href="https://www.montblanc.com/en-us/collection/writing-instruments" target="_blank" rel="noopener">Montblanc Pen</a>
                 </div>
               </div>
             </div>
@@ -784,55 +1308,56 @@ footer{padding:32px 28px;border-top:1px solid var(--wire);display:flex;justify-c
       <!-- THE SNAKE -->
       <article class="scene-card" data-class="PREDATOR">
         <div class="scene-inner">
-          <div class="scene-meta-bar">
+          <div class="scene-left">
             <div class="scene-portrait">
-              <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=500&q=80&fit=crop&crop=top" alt="The Snake portrait"/>
+              <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=500&q=80&fit=crop" alt="The Snake"/>
               <div class="scene-portrait-fade"></div>
+              <div class="scene-id-badge">
+                <span class="scene-kicker">The Snake</span>
+                <h3 class="scene-title">Predator Calm</h3>
+                <p class="scene-subline">Industrial Noir · Covert</p>
+              </div>
             </div>
-            <div class="scene-meta-body">
-              <p class="scene-kicker">The Snake</p>
-              <h3 class="scene-title">Predator Calm</h3>
-              <p class="scene-subline">Industrial Noir · Amber Optics · Quiet Exits</p>
-              <p class="scene-copy">Covert movement, hard leather, amber optics, exotic texture, and analog workbench ritual. He arrived before you noticed and will leave before you remember.</p>
+            <div class="scene-tags">
+              <span class="scene-tag">Industrial</span>
+              <span class="scene-tag">Covert Ops</span>
+              <span class="scene-tag">Noir</span>
             </div>
-            <div class="scene-meta-footer">
-              <span class="scene-tag">Industrial Noir</span>
-              <span class="scene-tag">Covert</span>
-              <span class="scene-tag">Predatory</span>
-            </div>
+            <div class="scene-copy-panel">Everything looks understated. Nothing is accidental. The most dangerous outfit in the universe looks like it costs nothing.</div>
           </div>
-          <div class="scene-products">
+          <div class="scene-right">
+            <div class="scene-right-header">
+              <span class="scene-right-label">Scene Ref: WS-04 // Industrial Warehouse</span>
+              <span class="scene-right-title">The Loadout</span>
+            </div>
             <div class="prod-grid">
               <div class="prod-cell">
-                <h4>The Snake's Skin</h4><span class="psub">Leather / silhouette</span>
+                <h4>The Skin</h4><span class="psub">Predator uniform</span>
                 <div class="link-list">
                   <a href="https://www.rickowens.eu/" target="_blank" rel="noopener">Rick Owens</a>
                   <a href="https://www.bottegaveneta.com/" target="_blank" rel="noopener">Bottega Veneta</a>
-                  <a href="https://www.schottnyc.com/" target="_blank" rel="noopener">Schott NYC Perfecto</a>
-                </div>
-              </div>
-              <div class="prod-cell">
-                <h4>The Gaze</h4><span class="psub">Amber optics</span>
-                <div class="link-list">
                   <a href="https://jacquesmariemage.com/" target="_blank" rel="noopener">Jacques Marie Mage</a>
-                  <a href="https://www.tomford.com/men/eyewear/" target="_blank" rel="noopener">Tom Ford Eyewear</a>
-                  <a href="https://www.persol.com/" target="_blank" rel="noopener">Persol</a>
                 </div>
               </div>
               <div class="prod-cell">
-                <h4>Silent Steps</h4><span class="psub">Exotic texture / hard soles</span>
+                <h4>Workbench</h4><span class="psub">Non-electronic</span>
                 <div class="link-list">
-                  <a href="https://www.ysl.com/" target="_blank" rel="noopener">Saint Laurent</a>
-                  <a href="https://www.gucci.com/" target="_blank" rel="noopener">Gucci</a>
-                  <a href="https://www.johnlobb.com/en_us/bespoke" target="_blank" rel="noopener">John Lobb</a>
+                  <a href="https://www.dahle.com/" target="_blank" rel="noopener">Dahle Precision Cutter</a>
+                  <a href="https://www.bhphotovideo.com/" target="_blank" rel="noopener">B&H Analog Supply</a>
                 </div>
               </div>
               <div class="prod-cell">
-                <h4>Air-Gapped Workbench</h4><span class="psub">Paper only / no wi-fi</span>
+                <h4>The Signal</h4><span class="psub">Communication dark</span>
                 <div class="link-list">
-                  <a href="https://www.dahle.com/" target="_blank" rel="noopener">Dahle</a>
-                  <a href="https://www.esslinger.com/" target="_blank" rel="noopener">Esslinger Tools</a>
-                  <a href="https://www.bhphotovideo.com/" target="_blank" rel="noopener">B&H Photo / Analog Supply</a>
+                  <a href="https://www.vertu.com/" target="_blank" rel="noopener">Vertu Encrypted</a>
+                  <a href="https://www.blackberry.com/" target="_blank" rel="noopener">BlackBerry Classic</a>
+                </div>
+              </div>
+              <div class="prod-cell">
+                <h4>Exit Gear</h4><span class="psub">Disappear clean</span>
+                <div class="link-list">
+                  <a href="https://www.tumi.com/" target="_blank" rel="noopener">TUMI Alpha Carry-On</a>
+                  <a href="https://www.berluti.com/" target="_blank" rel="noopener">Berluti Boots</a>
                 </div>
               </div>
             </div>
@@ -843,52 +1368,56 @@ footer{padding:32px 28px;border-top:1px solid var(--wire);display:flex;justify-c
       <!-- COMMISSIONER ZOYA -->
       <article class="scene-card" data-class="MATRIARCH">
         <div class="scene-inner">
-          <div class="scene-meta-bar">
+          <div class="scene-left">
             <div class="scene-portrait">
-              <img src="https://images.unsplash.com/photo-1504703395950-b89145a5425b?w=500&q=80&fit=crop&crop=top" alt="Commissioner Zoya portrait"/>
+              <img src="https://images.unsplash.com/photo-1504703395950-b89145a5425b?w=500&q=80&fit=crop&crop=top" alt="Commissioner Zoya"/>
               <div class="scene-portrait-fade"></div>
+              <div class="scene-id-badge">
+                <span class="scene-kicker">Commissioner Zoya</span>
+                <h3 class="scene-title">The Matriarch</h3>
+                <p class="scene-subline">Architectural · Authority</p>
+              </div>
             </div>
-            <div class="scene-meta-body">
-              <p class="scene-kicker">Commissioner Zoya</p>
-              <h3 class="scene-title">The Matriarch's Wardrobe</h3>
-              <p class="scene-subline">Architectural · Power · Authority</p>
-              <p class="scene-copy">Architectural modestwear, silk precision, utility masked as luxury. She dresses for history, not fashion. Every fold is a deliberate signal.</p>
-            </div>
-            <div class="scene-meta-footer">
+            <div class="scene-tags">
               <span class="scene-tag">Modestwear</span>
               <span class="scene-tag">Architectural</span>
               <span class="scene-tag">Authority</span>
             </div>
+            <div class="scene-copy-panel">Structural elegance. Every seam an assertion of authority. The kind of dressing that doesn't need to explain itself.</div>
           </div>
-          <div class="scene-products">
+          <div class="scene-right">
+            <div class="scene-right-header">
+              <span class="scene-right-label">Scene Ref: WS-05 // Commissioner's Office</span>
+              <span class="scene-right-title">The Loadout</span>
+            </div>
             <div class="prod-grid">
               <div class="prod-cell">
-                <h4>The Silhouette</h4><span class="psub">Commanding / structured</span>
+                <h4>Silhouette</h4><span class="psub">Architectural modestwear</span>
                 <div class="link-list">
                   <a href="https://us.maxmara.com/" target="_blank" rel="noopener">Max Mara</a>
-                  <a href="https://www.toteme-studio.com/" target="_blank" rel="noopener">Totême Tailoring</a>
-                </div>
-              </div>
-              <div class="prod-cell">
-                <h4>The Crown</h4><span class="psub">Silk / symbolism</span>
-                <div class="link-list">
                   <a href="https://hautehijab.com/" target="_blank" rel="noopener">Haute Hijab</a>
-                  <a href="https://www.vela-scarves.com/" target="_blank" rel="noopener">Vela Scarves</a>
-                </div>
-              </div>
-              <div class="prod-cell">
-                <h4>The Armor</h4><span class="psub">Elegant / concealed</span>
-                <div class="link-list">
-                  <a href="https://www.meretec.com/" target="_blank" rel="noopener">Meretec Concealable Armor</a>
-                  <a href="https://wonderhoodie.com/" target="_blank" rel="noopener">Wonder Hoodie Armor</a>
-                </div>
-              </div>
-              <div class="prod-cell">
-                <h4>The Belt & Presence</h4><span class="psub">Luxury utility</span>
-                <div class="link-list">
-                  <a href="https://www.senreve.com/" target="_blank" rel="noopener">Senreve Leather</a>
-                  <a href="https://www.tomford.com/" target="_blank" rel="noopener">Tom Ford Footwear</a>
                   <a href="https://www.therow.com/" target="_blank" rel="noopener">The Row</a>
+                </div>
+              </div>
+              <div class="prod-cell">
+                <h4>Armor</h4><span class="psub">Protective luxury</span>
+                <div class="link-list">
+                  <a href="https://www.meretec.com/" target="_blank" rel="noopener">Meretec Armor</a>
+                  <a href="https://wonderhoodie.com/" target="_blank" rel="noopener">Wonder Hoodie</a>
+                </div>
+              </div>
+              <div class="prod-cell">
+                <h4>Accessories</h4><span class="psub">Quiet jewelry</span>
+                <div class="link-list">
+                  <a href="https://www.patek.com/en/collection/calatrava" target="_blank" rel="noopener">Patek Calatrava</a>
+                  <a href="https://www.mikimotoamerica.com/" target="_blank" rel="noopener">Mikimoto Pearls</a>
+                </div>
+              </div>
+              <div class="prod-cell">
+                <h4>Transport</h4><span class="psub">State-level carry</span>
+                <div class="link-list">
+                  <a href="https://www.therow.com/" target="_blank" rel="noopener">The Row Bag</a>
+                  <a href="https://www.smythson.com/" target="_blank" rel="noopener">Smythson Folio</a>
                 </div>
               </div>
             </div>
@@ -899,24 +1428,28 @@ footer{padding:32px 28px;border-top:1px solid var(--wire);display:flex;justify-c
       <!-- DOOM -->
       <article class="scene-card" data-class="SUBJECT 77">
         <div class="scene-inner">
-          <div class="scene-meta-bar">
+          <div class="scene-left">
             <div class="scene-portrait">
-              <img src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=500&q=80&fit=crop" alt="Doom — containment"/>
+              <img src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=500&q=80&fit=crop" alt="Doom"/>
               <div class="scene-portrait-fade"></div>
+              <div class="scene-id-badge">
+                <span class="scene-kicker">Doom</span>
+                <h3 class="scene-title">Containment<br>Manifest</h3>
+                <p class="scene-subline">Prison Logic · Ritual</p>
+              </div>
             </div>
-            <div class="scene-meta-body">
-              <p class="scene-kicker">Doom</p>
-              <h3 class="scene-title">Containment Manifest</h3>
-              <p class="scene-subline">Authorized Possessions · Subject 77</p>
-              <p class="scene-copy">Prison logic, stripped-down ritual, and state machinery. These are the objects that outlast the sentence. The brutal tonal shift that makes the world feel bigger.</p>
-            </div>
-            <div class="scene-meta-footer">
+            <div class="scene-tags">
               <span class="scene-tag">Stripped</span>
               <span class="scene-tag">Institutional</span>
               <span class="scene-tag">Ritual</span>
             </div>
+            <div class="scene-copy-panel">Prison logic, stripped-down ritual, and state machinery. These are the objects that outlast the sentence.</div>
           </div>
-          <div class="scene-products">
+          <div class="scene-right">
+            <div class="scene-right-header">
+              <span class="scene-right-label">Scene Ref: WS-06 // Containment / Solitude</span>
+              <span class="scene-right-title">The Loadout</span>
+            </div>
             <div class="prod-grid">
               <div class="prod-cell">
                 <h4>Reading Material</h4><span class="psub">Religious / philosophical</span>
@@ -930,7 +1463,7 @@ footer{padding:32px 28px;border-top:1px solid var(--wire);display:flex;justify-c
                 <h4>Standard Issue</h4><span class="psub">Dept. of corrections</span>
                 <div class="link-list">
                   <a href="https://www.carhartt.com/product/K87" target="_blank" rel="noopener">Carhartt K87</a>
-                  <a href="https://www.511tactical.com/taclite-pro-pants.html" target="_blank" rel="noopener">5.11 Taclite Pro Pants</a>
+                  <a href="https://www.511tactical.com/taclite-pro-pants.html" target="_blank" rel="noopener">5.11 Taclite Pro</a>
                   <a href="https://www.511tactical.com/union-6-inch-boot.html" target="_blank" rel="noopener">5.11 Union Boot</a>
                 </div>
               </div>
@@ -961,46 +1494,47 @@ footer{padding:32px 28px;border-top:1px solid var(--wire);display:flex;justify-c
 <!-- QUOTE BREAK 2 -->
 <div class="quote-break">
   <div class="quote-break-img">
-    <img src="https://images.unsplash.com/photo-1500964757637-c85e8a162699?w=1600&q=80&fit=crop" alt="dark dramatic landscape"/>
+    <img src="https://images.unsplash.com/photo-1500964757637-c85e8a162699?w=1600&q=80&fit=crop" alt="Vast dark landscape"/>
   </div>
   <div class="quote-break-content">
-    <blockquote>"Every object in this universe was chosen to survive something."</blockquote>
+    <div class="qb-ornament">"</div>
+    <blockquote>Every object in this universe was chosen to survive something.</blockquote>
+    <div class="quote-divider"></div>
     <cite>— Scene Notes / The Shark of Wall Street</cite>
   </div>
 </div>
 
-<!-- IMAGE STRIP 3 — 2-up wide cinematic -->
+<!-- IMAGE STRIP 3 -->
 <div class="img-strip c2">
-  <div class="img-frame" style="height:320px;">
-    <img src="https://images.unsplash.com/photo-1560472355-536de3962603?w=900&q=80&fit=crop" alt="Dark trading screens finance"/>
+  <div class="img-frame" style="height:340px;">
+    <img src="https://images.unsplash.com/photo-1560472355-536de3962603?w=900&q=80&fit=crop" alt="Trading screens finance dark"/>
     <div class="img-cap">The machines never stop running</div>
   </div>
-  <div class="img-frame" style="height:320px;">
+  <div class="img-frame" style="height:340px;">
     <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=700&q=80&fit=crop" alt="Luxury objects dark still life"/>
     <div class="img-cap">Objects that carry weight</div>
   </div>
 </div>
 
-<!-- ░░ TERMINAL CTA ░░ -->
-<section class="section" id="terminal" style="border-bottom:none;padding-bottom:0;">
+<!-- ░░ CTA TERMINAL ░░ -->
+<section class="section" id="terminal" style="border-bottom:none; padding-bottom:0;">
   <div class="wrap">
-    <div class="cta-terminal">
-      <div class="terminal-header">
-        <div class="terminal-dot"></div>
-        <div class="terminal-dot"></div>
-        <div class="terminal-dot"></div>
-        <span class="terminal-title">SHARK_UNIVERSE.EXE — ACCESS GRANTED</span>
-      </div>
-      <div class="terminal-hero-img">
-        <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1600&q=80&fit=crop&crop=bottom" alt="City night terminal"/>
-      </div>
-      <div class="terminal-body">
-        <p class="prompt">Enter the world</p>
-        <h2>Dress like the people<br>who move markets<br><em>in silence.</em></h2>
-        <p>Explore the characters, betrayals, scenes, symbols, and power structures behind the wardrobe. This page is the gateway. The story lives deeper inside.</p>
-        <div class="terminal-cta-row">
-          <a class="btn btn-primary" href="https://thesharkofwallstreet.com" target="_blank" rel="noopener">Enter TheSharkOfWallStreet.com →</a>
-          <a class="btn btn-blood" href="#top">Back to Top</a>
+    <div class="cta-block">
+      <div class="cta-block-inner">
+        <div class="cta-visual">
+          <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1200&q=80&fit=crop&crop=bottom" alt="City night terminal"/>
+        </div>
+        <div class="cta-content">
+          <div class="cta-eyebrow">System Ready // Access Mainframe</div>
+          <h2>
+            Dress like the people who move markets
+            <em>in silence.</em>
+          </h2>
+          <p>Explore the characters, betrayals, scenes, symbols, and power structures behind the wardrobe. This page is the gateway. The story lives deeper inside.</p>
+          <div class="cta-buttons">
+            <a class="btn btn-gold" href="https://thesharkofwallstreet.com" target="_blank" rel="noopener">Enter TheSharkOfWallStreet.com →</a>
+            <a class="btn btn-ghost" href="#top">Back to Top</a>
+          </div>
         </div>
       </div>
     </div>
@@ -1009,19 +1543,41 @@ footer{padding:32px 28px;border-top:1px solid var(--wire);display:flex;justify-c
 
 <footer>
   <div class="foot-brand">The Shark of Wall Street®</div>
-  <div class="foot-class">Standalone editorial commerce · <span>Classification: Open / Commercial</span></div>
+  <div class="foot-sub">World Trade Factory · Editorial Commerce Universe</div>
+  <div class="foot-divider"></div>
+  <div class="foot-class">Standalone editorial commerce · Classification: Open / Commercial · © 2026</div>
 </footer>
 
 <script>
-const sections = document.querySelectorAll('section[id],header[id]');
+// Active nav pill on scroll
+const sections = document.querySelectorAll('section[id], header[id]');
 const pills = document.querySelectorAll('.nav-pill');
-const obs = new IntersectionObserver(e=>{
-  e.forEach(entry=>{
-    if(entry.isIntersecting)
-      pills.forEach(p=>p.classList.toggle('active',p.getAttribute('href')==='#'+entry.target.id));
+const obs = new IntersectionObserver(e => {
+  e.forEach(entry => {
+    if (entry.isIntersecting)
+      pills.forEach(p => p.classList.toggle('active', p.getAttribute('href') === '#' + entry.target.id));
   });
-},{threshold:.25});
-sections.forEach(s=>obs.observe(s));
+}, { threshold: .25 });
+sections.forEach(s => obs.observe(s));
+
+// Fade-up on scroll for scene cards
+const cards = document.querySelectorAll('.scene-card, .feat-card, .power-cell');
+const cardObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.08 });
+
+cards.forEach(c => {
+  c.style.opacity = '0';
+  c.style.transform = 'translateY(20px)';
+  c.style.transition = 'opacity .6s ease, transform .6s ease, border-color .35s, box-shadow .4s';
+  cardObs.observe(c);
+});
 </script>
+
 </body>
 </html>
