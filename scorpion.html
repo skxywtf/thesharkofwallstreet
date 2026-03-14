@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>The Scorpion | The Shark of Wall Street</title>
+  <meta name="description" content="The Scorpion. Legal Consigliere. Asset Sanitization." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+
+  <meta name="theme-color" content="#020617" />
+  <meta name="color-scheme" content="dark" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,500&display=swap" rel="stylesheet">
+<!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RTH99L39VB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RTH99L39VB');
+  </script>
+  <style>
+    /* --- INHERITED VARIABLES --- */
+    :root {
+      --bg-dark: #0a0a0c;
+      --text-main: #e2e8f0;
+      --accent-venom: #10b981; /* Toxic/Emerald Green */
+      --accent-steel: #94a3b8;
+      --accent-white: #ffffff;
+      --header-height: 70px;
+    }
+/* Vercel toolbar suppression */
+#vercel-toolbar,vercel-live-feedback,[data-vercel-toolbar]{display:none!important;opacity:0!important;pointer-events:none!important;visibility:hidden!important;}
+
+    body {
+      background-color: var(--bg-dark);
+      background-image: linear-gradient(to bottom, #05100a, #050505);
+      color: var(--text-main);
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding-top: var(--header-height);
+    }
+
+    /* --- READER LAYOUT --- */
+    .reader-container {
+      width: min(1000px, calc(100% - 3rem));
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+
+    h1.chapter-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      color: var(--accent-white);
+      text-transform: uppercase;
+      line-height: 0.9;
+      margin-bottom: 0.5rem;
+      text-align: center;
+      letter-spacing: 4px;
+      border-bottom: 2px solid var(--accent-venom);
+      padding-bottom: 20px;
+    }
+
+    .chapter-meta {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--accent-venom);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      padding-bottom: 2rem;
+      margin-bottom: 3rem;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      font-weight: 600;
+    }
+
+    .story-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      line-height: 1.8;
+      color: #cbd5e1;
+    }
+
+    .story-text p { margin-bottom: 2rem; }
+
+    .origin-header {
+      font-family: 'Playfair Display', serif;
+      color: var(--accent-white);
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+      margin-top: 5rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      font-style: italic;
+      border-bottom: 1px solid rgba(16, 185, 129, 0.4);
+      padding-bottom: 10px;
+    }
+
+    .drop-cap::first-letter {
+      float: left;
+      font-size: 4.5rem;
+      line-height: 0.8;
+      font-weight: 400;
+      padding-right: 12px;
+      color: var(--accent-venom);
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* --- MEDIA --- */
+    .story-media {
+      max-width: 900px;
+      margin: 4rem auto;
+      border-radius: 2px;
+      overflow: hidden;
+      border: 1px solid var(--accent-venom);
+      box-shadow: 0 15px 40px rgba(16, 185, 129, 0.15);
+      position: relative;
+    }
+
+    .story-media img { width: 100%; height: auto; display: block; filter: contrast(110%); }
+
+    .media-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(10, 10, 12, 0.9);
+      color: var(--accent-steel);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      padding: 12px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      text-align: center;
+      border-top: 1px solid var(--accent-venom);
+    }
+
+    /* --- SHOP SCENE --- */
+    .shop-scene {
+      --card-bg:rgba(255,255,255,0.04);
+      --card-border:rgba(255,255,255,0.08);
+      --card-hover-border:rgba(16, 185, 129, 0.4);
+      --link:#cbd5e1;
+      --link-hover:#ffffff;
+      --shadow:0 20px 50px rgba(0,0,0,0.28);
+      padding: 56px 20px;
+      background:
+        radial-gradient(circle at top left, rgba(16, 185, 129, 0.04), transparent 28%),
+        linear-gradient(180deg, rgba(5, 16, 10, 0.92) 0%, rgba(5, 5, 5, 0.98) 100%);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .shop-wrap { max-width: 1180px; margin: 0 auto; }
+    .shop-header { margin-bottom: 28px; }
+    .shop-header h2 { margin: 0 0 8px 0; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.05; }
+    .shop-header p { margin: 0; }
+    .shop-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+
+    .shop-card {
+      background: var(--card-bg); border: 1px solid var(--card-border);
+      border-radius: 20px; padding: 24px 22px; backdrop-filter: blur(10px);
+      box-shadow: var(--shadow); transition: all 220ms ease;
+    }
+    .shop-card:hover { transform: translateY(-4px); border-color: var(--card-hover-border); }
+    .shop-card h3 { margin: 0 0 6px 0; font-size: 1.35rem; line-height: 1.2; }
+    .shop-sub { margin: 0 0 18px 0; color: #a7a7ad; font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 1.8px; font-size: 0.72rem; }
+
+    .links a { color: var(--link); text-decoration: none; font-family: 'Montserrat', sans-serif; font-size: 0.95rem; line-height: 1.7; transition: color 180ms ease; display: block; margin-bottom: 8px;}
+    .links a:hover { color: var(--link-hover); }
+
+    @media (max-width: 640px) { .shop-grid { grid-template-columns: 1fr; } }
+
+    /* --- AUDIO HEADER --- */
+    .fixed-audio-header {
+      position: fixed; top: 0; left: 0; width: 100%; height: var(--header-height);
+      background: rgba(10, 10, 12, 0.95); backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--accent-venom); z-index: 1000;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .btn-audio {
+      background: transparent; border: 1px solid var(--accent-venom);
+      color: var(--accent-venom); padding: 0.4rem 1.5rem; border-radius: 2px;
+      font-size: 0.75rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease;
+      font-family: 'Montserrat', sans-serif; letter-spacing: 2px; text-transform: uppercase;
+    }
+    .btn-audio:hover { background-color: var(--accent-venom); color: #000; }
+  </style>
+</head>
+
+<body>
+
+  <div class="reader-container">
+
+    <div style="font-family: 'Montserrat'; text-align: center; margin-bottom: 1rem; color: var(--accent-venom); letter-spacing: 4px; font-size: 1.5rem;" class="uppercase">
+      The Shark of Wall Street
+    </div>
+
+    <h1 class="chapter-title">The Scorpion</h1>
+
+    <div class="chapter-meta">
+      <span>The Scorpion</span>
+      <span>•</span>
+      <span>Legal Consigliere</span>
+      <span>•</span>
+      <span>Asset Sanitization</span>
+    </div>
+
+    <div class="story-media">
+      <img src="sc.png" alt="A figure draped in a structured coat standing on a darkened tarmac.">
+    </div>
+
+    <article class="story-text">
+      <div class="origin-header">Part I: Savile Row</div>
+
+      <p class="drop-cap">To dismantle a rigged system, you first have to become entirely invisible within it. The Scorpion understood this better than anyone breathing.</p>
+
+      <p>Born into a meticulous lineage of Savile Row tailors but destined for the bar, she had spent her early career in the London legal system—drafting the flawless, airtight contracts that senior partners took the credit for. But after her transition, she realized something profound: being a transgender woman in the hyper-masculine, ego-driven world of high finance was her ultimate cloaking device.</p>
+
+      <p>Men like Marcus Thorne or the cartel lieutenants often looked right past her, assuming she was a mid-level assistant or a boutique consultant. They didn't guard their tongues around her. They didn't hide their ledgers.</p>
+
+      <p>She used that invisibility to study their blind spots. She learned exactly where the bodies were buried, and more importantly, how the dirt was taxed. Eventually, she became the only lawyer in the underworld capable of sanitizing the Cartel’s most radioactive assets. The Scorpion didn't just know the law; she knew the exact pressure points of the men who believed they were above it.</p>
+
+      <div class="origin-header">Part II: The Midnight Audit</div>
+    <div class="story-media">
+      <img src="sc1.png" alt="A figure draped in a structured coat standing on a darkened tarmac.">
+    </div>
+      <p>The air in the private hangar at Sky Harbor was thin, smelling sharply of jet fuel, hot asphalt, and expensive leather.</p>
+
+      <p>Valentina Cruz stood by the wing of a sleek Gulfstream jet, her Tom Ford heels clicking like a relentless countdown against the Phoenix concrete. She was the Seductive Armor of the underworld—a criminal architect who usually controlled every variable in the room. But tonight, she was out of her depth. Across from her stood The Scorpion, draped in a structured Max Mara coat that moved in the desert wind like liquid shadow.</p>
+
+      <p>"The Feds froze the Barcelona accounts an hour ago," Valentina said, her voice like sandpaper on silk. She adjusted her Cartier Tank watch, her dark eyes tracking the distant, sweeping headlights of a black SUV patrolling the perimeter of the terminal. "I need the extraction finished before the sun hits the tarmac."</p>
+    <div class="story-media">
+      <img src="sc2.png" alt="A figure draped in a structured coat standing on a darkened tarmac.">
+    </div>
+      <p>The Scorpion didn't look up from her encrypted glass tablet. She calmly unscrewed the cap of a Montblanc 149 fountain pen with a deliberate, surgical twist.</p>
+
+      <p>"You didn't hire me for speed, Valentina," The Scorpion murmured, her tone perfectly even, devoid of any panic. "You hired me for permanence."</p>
+
+      <p>"They're calling it a RICO sweep," Valentina hissed, stepping closer, the cartel's panic bleeding through her glamorous facade.</p>
+    <div class="story-media">
+      <img src="sc3.png" alt="A figure draped in a structured coat standing on a darkened tarmac.">
+    </div>
+      <p>The Scorpion finally looked up. Her gaze was as sharp and cold as the steel on a Patek Philippe.</p>
+
+      <p>"Let them call it whatever they want," she replied softly. "I’ve already filed a counter-injunction through a shell corporation in Figueres. By the time the Department of Justice realizes the 'money' they froze is actually a debt-leveraged asset owned by a Spanish non-profit, your liquid capital will be sitting safely in a vault in Singapore."</p>
+
+      <p>She handed a heavy, cream-colored document to Valentina, holding out the gold-leaf fountain pen.</p>
+    <div class="story-media">
+      <img src="sc4.png" alt="A figure draped in a structured coat standing on a darkened tarmac.">
+    </div>
+      <p>"Sign at the 'X'," The Scorpion instructed. "And don't use a ballpoint. It’s an insult to the contract."</p>
+
+      <p>Valentina took the pen. The "sting" had landed flawlessly. The assets were sanitized, the federal sweep was dismantled, and the law was, once again, entirely silent.</p>
+
+
+      <div class="origin-header">Part III: The Glass Web</div>
+
+      <p>Seventy-two hours later, the chessboard shifted from a sun-baked runway to the pristine halls of Manhattan. </p>
+    <div class="story-media">
+      <img src="sc5.png" alt="A figure draped in a structured coat standing on a darkened tarmac.">
+    </div>
+      <p>Camilla Sterling did not do back-alley meetings. When the CEO of Axiom Global Media wanted to broker a treasonous deal with the underworld's most elusive lawyer, she bought out the entire west wing of the Museum of Modern Art after hours.</p>
+
+      <p>She stood in the center of the stark, white gallery, staring up at a massive, violent canvas of abstract expressionism. Her asymmetrical suit caught the gallery lighting perfectly. She was the matriarch of the spotlight, a woman who controlled global narratives with a single broadcast. </p>
+
+      <p>"You are very difficult to locate," Camilla said, her voice echoing off the polished hardwood floors. She didn't turn around. She knew she wasn't alone.</p>
+
+      <p>"I'm standing right next to you, Ms. Sterling," a smooth, velvet voice replied.</p>
+    <div class="story-media">
+      <img src="sc7.png" alt="A figure draped in a structured coat standing on a darkened tarmac.">
+    </div>
+      <p>Camilla turned. The Scorpion was there, standing effortlessly in her emerald-cut trench coat. She had made no sound on the hardwood. She simply existed in the blind spot between Camilla's peripheral vision and the art on the wall.</p>
+
+      <div class="origin-header">Part IV: The Irony of Exposure</div>
+    <div class="story-media">
+      <img src="sc6.png" alt="A figure draped in a structured coat standing on a darkened tarmac.">
+    </div>
+      <p>Camilla offered a predatory smile. "Your reputation precedes you. They say you can sanitize a cartel blood-diamond vault faster than my anchors can read a teleprompter."</p>
+
+      <p>"I don't sanitize anything," The Scorpion corrected. "I simply remind the federal government of their own jurisdictional loopholes. Law is just syntax, Camilla. I'm an editor."</p>
+
+      <p>"Then edit this," Camilla challenged, stepping closer. "Nicolás Reyes is a dead man. My father is preparing to authorize a Department of Defense drone strike on his compound in Mexico. The second that missile hits, the Department of Justice is going to seize every remaining shell company and shadow bank Obsidian owns."</p>
+
+      <p>Camilla walked slowly around The Scorpion, her heels clicking aggressively. "I know you hold the routing numbers. I know you manage the trusts. I want you to betray the Cartel. Route the remaining billions into Axiom’s European expansion funds before the DOJ drops the hammer. Work for me, and I ensure your name never appears on a federal indictment. Refuse, and tomorrow night at eight o'clock, Axiom News runs a prime-time exposé on the Ghost of Savile Row."</p>
+    <div class="story-media">
+      <img src="sc8.png" alt="A figure draped in a structured coat standing on a darkened tarmac.">
+    </div>
+      <p>The Scorpion didn’t flinch. She reached into the interior pocket of her structured coat and pulled out a single, folded piece of thick archival paper. She held it out.</p>
+
+      <p>"What is this?" Camilla demanded, taking the paper.</p>
+
+      <p>"It is a preemptive transfer deed, executed four hours ago," The Scorpion said softly. Her venomous green eyes finally locked onto Camilla's. "You are threatening to expose my connection to Nicolás Reyes's assets. But legally, Nicolás Reyes doesn't own those assets anymore. The moment your father began threatening drone strikes, I triggered a poison pill clause in the Obsidian contracts."</p>
+    <div class="story-media">
+      <img src="sc10.png" alt="A figure draped in a structured coat standing on a darkened tarmac.">
+    </div>
+      <p>Camilla's eyes scanned the document, her sharp features tightening as she read the dense legalese.</p>
+
+      <p>"Those billions don't belong to the Cartel, and they don't belong to the DOJ," The Scorpion whispered, her voice like ice water. "They belong to an irrevocable blind trust located in Zurich. A trust that, by pure coincidence, lists me as the sole executor. I didn't hide the money from the Feds, Camilla. I legally expropriated it."</p>
+    <div class="story-media">
+      <img src="sc9.png" alt="A figure draped in a structured coat standing on a darkened tarmac.">
+    </div>
+      <p>The Scorpion took a step forward, completely unfazed by the media mogul's aura. "Run your exposé. Put my face on every screen in Times Square. The law doesn't care about public opinion; it cares about signatures. And right now, I am the only person on earth legally authorized to touch that capital. I don't need your protection. You need my permission."</p>
+
+      <p>The gallery was dead silent.</p>
+
+      <p>"So," The Scorpion smiled, the legal predator baring her fangs. "Would Axiom Media like to negotiate a legitimate loan from a Zurich trust, or should I leave you to the art?"</p>
+
+    </article>
+
+<section class="shop-scene">
+  <div class="shop-wrap">
+
+    <header class="shop-header">
+      <h2 style="color: var(--accent-white); font-family: 'Playfair Display', serif;">The Loadout</h2>
+      <p style="color: var(--accent-steel); font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem;">The Legal Arsenal</p>
+    </header>
+
+    <div class="shop-grid">
+
+      <article class="shop-card">
+        <h3 style="color: #fff; font-family: 'Playfair Display', serif;">The Uniform</h3>
+        <p class="shop-sub">Structured / Liquid Shadow / Savile Row</p>
+
+        <div class="links">
+          <a href="https://us.maxmara.com/p-1016023306001-madam-black" target="_blank" rel="noopener noreferrer">
+          Max Mara Madame Icon Coat
+          </a>
+
+          <a href="https://toteme.com/products/tailored-wool-blazer-black" target="_blank" rel="noopener noreferrer">
+          Totême Tailored Wool Evening Blazer
+          </a>
+
+          <a href="https://www.celine.com/en-us/celine-shop-women/bags/16/medium-16-bag-in-satinated-calfskin-188003BEY.38NO.html" target="_blank" rel="noopener noreferrer">
+          CELINE Medium 16 Structured Bag
+          </a>
+        </div>
+      </article>
+
+
+      <article class="shop-card">
+        <h3 style="color: #fff; font-family: 'Playfair Display', serif;">The Sting</h3>
+        <p class="shop-sub">Precision / Ink / Injunctions</p>
+
+        <div class="links">
+          <a href="https://www.patek.com/en/collection/calatrava/5227G-010" target="_blank" rel="noopener noreferrer">
+          Patek Philippe Calatrava 5227
+          </a>
+
+          <a href="https://www.montblanc.com/en-us/fountain-pens_cod1647597318123677.html" target="_blank" rel="noopener noreferrer">
+          Montblanc Meisterstück 149 Fountain Pen
+          </a>
+
+          <a href="https://www.justice.gov/criminal-afmls/asset-forfeiture-policy-manual" target="_blank" rel="noopener noreferrer">
+          DOJ Asset Forfeiture Policy Manual
+          </a>
+        </div>
+      </article>
+
+
+      <article class="shop-card">
+        <h3 style="color: #fff; font-family: 'Playfair Display', serif;">The Client</h3>
+        <p class="shop-sub">Cartel Architect / Seductive Armor</p>
+
+        <div class="links">
+          <a href="https://www.tomford.com/lock-sandal-105-mm/L1293-LCL041G.html" target="_blank" rel="noopener noreferrer">
+          Tom Ford Lock 105 Sandal Heels
+          </a>
+
+          <a href="https://www.cartier.com/en-us/watches/collections/tank/tank-must-watch-CRWSTA0041.html" target="_blank" rel="noopener noreferrer">
+          Cartier Tank Must Watch
+          </a>
+
+          <a href="https://www.net-a-porter.com/en-us/shop/product/tom-ford/clothing/gowns/draped-silk-satin-gown/1647597318974242" target="_blank" rel="noopener noreferrer">
+          Tom Ford Draped Silk Evening Gown
+          </a>
+        </div>
+      </article>
+
+
+      <article class="shop-card">
+        <h3 style="color: #fff; font-family: 'Playfair Display', serif;">The Adversary</h3>
+        <p class="shop-sub">Axiom Media / Asymmetry / Spotlight</p>
+
+        <div class="links">
+          <a href="https://www.tomford.com/wool-blend-jacket/GI2823-FAX1076.html" target="_blank" rel="noopener noreferrer">
+          Tom Ford Asymmetrical Wool Blazer
+          </a>
+
+          <a href="https://us.christianlouboutin.com/us_en/pigalle-follies-100-black-3191411bk01.html" target="_blank" rel="noopener noreferrer">
+          Christian Louboutin Pigalle Follies Pumps
+          </a>
+
+          <a href="https://www.bulgari.com/en-us/jewelry/necklaces/serpenti-necklace-white-gold-diamond-358643" target="_blank" rel="noopener noreferrer">
+          Bulgari Serpenti Diamond Necklace
+          </a>
+        </div>
+      </article>
+
+
+    </div>
+  </div>
+</section>
+
+  </div>
+
+</body>
+</html>
