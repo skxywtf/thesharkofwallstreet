@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>The Ghost | The Shark of Wall Street</title>
+  <meta name="description" content="Cedric Ellis meets Diya at the World Trade Factory." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+
+  <meta name="theme-color" content="#020617" />
+  <meta name="color-scheme" content="dark" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,500&display=swap" rel="stylesheet">
+<!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RTH99L39VB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RTH99L39VB');
+  </script>
+  <style>
+    /* --- INHERITED VARIABLES --- */
+    :root {
+      --bg-dark: #020617;
+      --text-main: #e2e8f0;
+      --accent-ice: #38bdf8; /* High-tech blue */
+      --accent-steel: #94a3b8;
+      --accent-white: #ffffff;
+      --header-height: 70px;
+    }
+/* Vercel toolbar suppression */
+#vercel-toolbar,vercel-live-feedback,[data-vercel-toolbar]{display:none!important;opacity:0!important;pointer-events:none!important;visibility:hidden!important;}
+
+    body {
+      background-color: var(--bg-dark);
+      background-image: linear-gradient(to bottom, #0f172a, #020617);
+      color: var(--text-main);
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding-top: var(--header-height);
+    }
+
+    /* --- READER LAYOUT --- */
+    .reader-container {
+      width: min(1000px, calc(100% - 3rem));
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+
+    h1.chapter-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      color: var(--accent-white);
+      text-transform: uppercase;
+      line-height: 0.9;
+      margin-bottom: 0.5rem;
+      text-align: center;
+      letter-spacing: 4px;
+      border-bottom: 2px solid var(--accent-ice);
+      padding-bottom: 20px;
+    }
+
+    .chapter-meta {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--accent-ice);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      padding-bottom: 2rem;
+      margin-bottom: 3rem;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      font-weight: 600;
+    }
+
+    .story-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      line-height: 1.8;
+      color: #cbd5e1;
+    }
+
+    .story-text p { margin-bottom: 2rem; }
+
+    .origin-header {
+      font-family: 'Playfair Display', serif;
+      color: var(--accent-white);
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+      margin-top: 5rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      font-style: italic;
+      border-bottom: 1px solid rgba(56, 189, 248, 0.4);
+      padding-bottom: 10px;
+    }
+
+    .drop-cap::first-letter {
+      float: left;
+      font-size: 4.5rem;
+      line-height: 0.8;
+      font-weight: 400;
+      padding-right: 12px;
+      color: var(--accent-ice);
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* --- MEDIA --- */
+    .story-media {
+      max-width: 900px;
+      margin: 4rem auto;
+      border-radius: 2px;
+      overflow: hidden;
+      border: 1px solid var(--accent-ice);
+      box-shadow: 0 15px 40px rgba(56, 189, 248, 0.15);
+      position: relative;
+    }
+
+    .story-media img { width: 100%; height: auto; display: block; filter: contrast(110%); }
+
+    .media-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(2, 6, 23, 0.9);
+      color: var(--accent-ice);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      padding: 12px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      text-align: center;
+      border-top: 1px solid var(--accent-ice);
+    }
+
+    /* --- SHOP SCENE --- */
+    .shop-scene {
+      --card-bg:rgba(255,255,255,0.04);
+      --card-border:rgba(255,255,255,0.08);
+      --card-hover-border:rgba(56, 189, 248, 0.4);
+      --link:#cbd5e1;
+      --link-hover:#ffffff;
+      --shadow:0 20px 50px rgba(0,0,0,0.28);
+      padding: 56px 20px;
+      background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.04), transparent 28%),
+        linear-gradient(180deg, rgba(15, 23, 42, 0.92) 0%, rgba(2, 6, 23, 0.98) 100%);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .shop-wrap { max-width: 1180px; margin: 0 auto; }
+    .shop-header { margin-bottom: 28px; }
+    .shop-header h2 { margin: 0 0 8px 0; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.05; }
+    .shop-header p { margin: 0; }
+    .shop-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+
+    .shop-card {
+      background: var(--card-bg); border: 1px solid var(--card-border);
+      border-radius: 20px; padding: 24px 22px; backdrop-filter: blur(10px);
+      box-shadow: var(--shadow); transition: all 220ms ease;
+    }
+    .shop-card:hover { transform: translateY(-4px); border-color: var(--card-hover-border); }
+    .shop-card h3 { margin: 0 0 6px 0; font-size: 1.35rem; line-height: 1.2; }
+    .shop-sub { margin: 0 0 18px 0; color: #a7a7ad; font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 1.8px; font-size: 0.72rem; }
+
+    .links a { color: var(--link); text-decoration: none; font-family: 'Montserrat', sans-serif; font-size: 0.95rem; line-height: 1.7; transition: color 180ms ease; }
+    .links a:hover { color: var(--link-hover); }
+
+    @media (max-width: 980px) { .shop-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 640px) { .shop-grid { grid-template-columns: 1fr; } }
+
+    /* --- AUDIO HEADER --- */
+    .fixed-audio-header {
+      position: fixed; top: 0; left: 0; width: 100%; height: var(--header-height);
+      background: rgba(2, 6, 23, 0.95); backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--accent-ice); z-index: 1000;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .btn-audio {
+      background: transparent; border: 1px solid var(--accent-ice);
+      color: var(--accent-ice); padding: 0.4rem 1.5rem; border-radius: 2px;
+      font-size: 0.75rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease;
+      font-family: 'Montserrat', sans-serif; letter-spacing: 2px; text-transform: uppercase;
+    }
+    .btn-audio:hover { background-color: var(--accent-ice); color: #000; }
+  </style>
+</head>
+
+<body>
+
+  <div class="reader-container">
+
+    <div style="font-family: 'Montserrat'; text-align: center; margin-bottom: 1rem; color: var(--accent-ice); letter-spacing: 4px; font-size: 1.5rem;" class="uppercase">
+     The Shark of Wall Street
+    </div>
+
+    <h1 class="chapter-title">The Ghost</h1>
+
+    <div class="chapter-meta">
+      <span>Cedric Ellis</span>
+      <span>•</span>
+      <span>Diya</span>
+      <span>•</span>
+      <span>Level 80</span>
+    </div>
+
+    <div class="story-media">
+      <img src="ced5.png" alt="A sterile, brightly lit, white-on-white conference room high above Manhattan.">
+    </div>
+
+    <article class="story-text">
+      <div class="origin-header">Part I: The White Room</div>
+
+      <p class="drop-cap">Cedric Ellis had survived the B4 parking garage by being invisible. He had slipped past the weeping guards, the hissing Gaboon viper, and the security cameras without leaving a trace. But invisibility was a street-level trick. It didn't work on the 80th floor of the World Trade Factory.</p>
+
+    <div class="story-media">
+      <img src="ced2.png" alt="A sterile, brightly lit, white-on-white conference room high above Manhattan.">
+    </div>
+      <p>The conference room was a terrifying marvel of modern architecture. It was entirely white—white marble floors, white leather chairs, and a massive frosted glass table that seemed to float in the center of the room. The only color came from the floor-to-ceiling windows overlooking the sprawling, glittering grid of Manhattan below. It felt less like an office and more like a surgical theater.</p>
+
+      <p>Cedric sat perfectly still, his matte-black techwear jacket zipped to his chin, his slate-grey messenger bag resting against his boot. He was currently carrying a two-million-dollar syndicate bounty on his head for losing ten million dollars in bearer bonds. Every shadow in the city belonged to a hitman looking for him.</p>
+    <div class="story-media">
+      <img src="ced6.png" alt="A sterile, brightly lit, white-on-white conference room high above Manhattan.">
+    </div>
+      <p>The frosted glass door slid open silently. Diya walked in.</p>
+
+      <div class="origin-header">Part II: The Interrogation</div>
+
+      <p>She didn't introduce herself. She didn't offer him a drink. She carried a single, translucent glass tablet.</p>
+    <div class="story-media">
+      <img src="ced7.png" alt="A sterile, brightly lit, white-on-white conference room high above Manhattan.">
+    </div>
+      <p>She sat across from him, laying the tablet flat on the glass table. It immediately lit up, displaying a terrifyingly comprehensive web of Cedric's entire existence: his burner phone logs, his subway transit swipes, his childhood address, and the precise moment his syndicate handlers had issued the kill order.</p>
+
+      <p>"You are a liability, Cedric," Diya said softly, her voice cool and perfectly modulated. She didn't blink. "Your former employers have dispatched three separate teams to locate you. You called an encrypted dark web node begging for an audience with The Shark. Why should we absorb the risk of keeping a dead man alive? What could you possibly offer us that my algorithms cannot find themselves?"</p>
+
+      <p>Cedric swallowed hard. The air in the room was highly filtered and freezing cold.</p>
+
+      <p>"I can give you the man who broke your algorithms," Cedric replied, his voice steady despite the adrenaline. "The man who stole the ten million."</p>
+
+      <p>Diya's fingers paused over the glass tablet. "We have access to the city's entire closed-circuit grid. We have facial recognition software running through Homeland Security databases. We will find him."</p>
+
+    <div class="story-media">
+      <img src="ced1.png" alt="A sterile, brightly lit, white-on-white conference room high above Manhattan.">
+    </div>
+
+      <p>"No, you won't," Cedric countered, leaning forward slightly. "Because satellites don't see him. He glides. He stays in the blind spots between the pillars. And he didn't just steal the bonds; he knew exactly how the guards would react to biological panic. He used a Gaboon viper and an albino python. It was orchestrated psychological warfare."</p>
+
+      <p>Cedric met her icy stare. "You can't calculate a snakebite on a Bloomberg terminal, Diya. You need someone who was in the room. I know how he moves. I know the scent of the leather he wears. I know the exact pitch of the whistle in his voice when he speaks."</p>
+
+      <div class="origin-header">Part III: The Ghost Protocol</div>
+
+      <p>Diya stared at him for a long, agonizing moment. She wasn't just analyzing his story; she was analyzing *him*. </p>
+
+      <p>She noted his perfectly unbranded clothing. She noted his lack of nervous tics. She noted that despite being hunted by a heavily armed cartel, his heart rate—which her tablet was currently monitoring via thermal micro-fluctuations in his face—was shockingly stable. He was a perfect, unreadable blank slate.</p>
+
+      <p>She tapped her earpiece, listening to a silent transmission from the penthouse suite above them. The Shark was listening.</p>
+
+      <p>"The Shark was intrigued by the mathematical anomaly of the heist," Diya murmured, her eyes never leaving Cedric's. "He recognizes that this 'Snake' is a rogue variable that needs to be quantified. But he also recognizes a gap in our own infrastructure."</p>
+    <div class="story-media">
+      <img src="ced8.png" alt="A sterile, brightly lit, white-on-white conference room high above Manhattan.">
+    </div>
+      <p>Diya slid a sleek, obsidian-black keycard across the pristine glass table. It had no logo, no magnetic strip, and no name.</p>
+
+      <p>"Our empire is digital. We move billions of dollars in milliseconds using offshore dark pools," Diya explained smoothly. "But occasionally, the physical world requires our attention. A physical ledger. An encrypted hard drive. A diamond. Items that cannot be transmitted over a fiber-optic cable. Items that require a delivery mechanism completely devoid of a digital footprint."</p>
+    <div class="story-media">
+      <img src="ced4.png" alt="A sterile, brightly lit, white-on-white conference room high above Manhattan.">
+    </div>
+      <p>Cedric looked down at the black card.</p>
+
+      <p>"Your old identity is dead, Cedric. The syndicate believes you drowned in the East River an hour ago. I have scrubbed the surveillance footage and manufactured the police reports," Diya said, standing up from the table. "Welcome to Obsidian Capital. You are no longer a target. You are our Ghost Runner. You are invisible."</p>
+
+      <p>Cedric picked up the keycard. It was heavy, made of solid tungsten. He had walked into the World Trade Factory as terrified prey. He was walking out as a phantom.</p>
+    <div class="story-media">
+      <img src="ced3.png" alt="A sterile, brightly lit, white-on-white conference room high above Manhattan.">
+    </div>
+    </article>
+
+  <section class="shop-scene">
+    <div class="shop-wrap">
+      <header class="shop-header">
+        <h2 style="color: var(--accent-white); font-family: 'Playfair Display', serif;">The Loadout</h2>
+        <p style="color: var(--accent-steel); font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem;">The Ghost Protocol</p>
+      </header>
+
+      <div class="shop-grid">
+        <article class="shop-card">
+          <h3 style="color: #fff; font-family: 'Playfair Display', serif;">The Shell</h3>
+          <p class="shop-sub">Matte / Unbranded / Weatherproof</p>
+          <div class="links">
+            <a href="https://arcteryx.com/us/en/shop/mens/field-jacket-9942" target="_blank" rel="noopener noreferrer">Arc'teryx Veilance Field Jacket Men's</a><br><br>
+            <a href="https://outlier.nyc/products/slim-dungarees" target="_blank" rel="noopener noreferrer">Outlier Slim Dungarees</a><br><br>
+            <a href="https://www.adidas.com/us/y-3-classic-logo-cap/JP1142.html" target="_blank" rel="noopener noreferrer">Y-3 Classic Logo Cap — Black</a>
+          </div>
+        </article>
+
+        <article class="shop-card">
+          <h3 style="color: #fff; font-family: 'Playfair Display', serif;">The Payload</h3>
+          <p class="shop-sub">Silent / Secured / Anti-Theft</p>
+          <div class="links">
+            <a href="https://missionworkshop.com/collections/laptop-bags/products/khyte-laptop-messenger-bag" target="_blank" rel="noopener noreferrer">Mission Workshop Khyte Laptop Messenger Bag</a><br><br>
+            <a href="https://www.pelican.com/us/en/product/cases/1490" target="_blank" rel="noopener noreferrer">Pelican 1490 Protector Laptop Case</a><br><br>
+            <a href="https://mosequipment.com/collections/faraday-bags" target="_blank" rel="noopener noreferrer">Mission Darkness Faraday Bags</a>
+          </div>
+        </article>
+
+        <article class="shop-card">
+          <h3 style="color: #fff; font-family: 'Playfair Display', serif;">The Footprint</h3>
+          <p class="shop-sub">Rubber / Swift / Zero Echo</p>
+          <div class="links">
+            <a href="https://www.salomon.com/en-us/product/xt-6-gore-tex-lg9333/L47450600" target="_blank" rel="noopener noreferrer">Salomon XT-6 GORE-TEX — Black</a><br><br>
+            <a href="https://darntough.com/products/unisex-merino-wool-t3001-tactical-micro-crew-cushioned-lightweight-tactical-socks" target="_blank" rel="noopener noreferrer">Darn Tough T3001 Tactical Micro Crew Socks</a><br><br>
+            <a href="https://paracord.com/products/zipper-pull" target="_blank" rel="noopener noreferrer">Black Paracord Zipper Pulls</a>
+          </div>
+        </article>
+
+        <article class="shop-card">
+          <h3 style="color: #fff; font-family: 'Playfair Display', serif;">The Analyst</h3>
+          <p class="shop-sub">Ice / Algorithms / Control</p>
+          <div class="links">
+            <a href="https://www.theory.com/women/blazers-and-jackets/carissa-blazer-in-good-wool/grey/197222559475.html" target="_blank" rel="noopener noreferrer">Theory Carissa Blazer in Good Wool — Grey</a><br><br>
+            <a href="https://www.theory.com/straight-pant%2C-32%27%27-in-good-wool/P0101207.html?dwvar_P0101207_color=001" target="_blank" rel="noopener noreferrer">Theory Straight Pant in Good Wool</a><br><br>
+            <a href="https://www.prada.com/us/en/p/brushed-leather-loafers/1D329N_055_F0002_F_DD25" target="_blank" rel="noopener noreferrer">Prada Brushed Leather Loafers</a><br><br>
+            <a href="https://solutions.lg.com/us/transparent-oled" target="_blank" rel="noopener noreferrer">Transparent OLED Display Reference</a>
+          </div>
+        </article>
+      </div>
+    </div>
+</section>
+
+  </div>
+
+</body>
+</html>
