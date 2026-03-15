@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>The Honey-Trap | The Shark of Wall Street - The Bitch</title>
+  <meta name="description" content="Cleo Vargas. The Bitch. Information Broker and Honey-Trap." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+
+  <meta name="theme-color" content="#0a0a0c" />
+  <meta name="color-scheme" content="dark" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,500&display=swap" rel="stylesheet">
+<!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RTH99L39VB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RTH99L39VB');
+  </script>
+  <style>
+    /* --- INHERITED VARIABLES --- */
+    :root {
+      --bg-dark: #0a0a0c;
+      --text-main: #e2e8f0;
+      --accent-neon: #f43f5e; /* Aggressive Neon Rose/Red */
+      --accent-latex: #171717; /* Glossy Black */
+      --accent-white: #ffffff;
+      --header-height: 70px;
+    }
+/* Vercel toolbar suppression */
+#vercel-toolbar,vercel-live-feedback,[data-vercel-toolbar]{display:none!important;opacity:0!important;pointer-events:none!important;visibility:hidden!important;}
+    body {
+      background-color: var(--bg-dark);
+      background-image: linear-gradient(to bottom, #120408, #050505);
+      color: var(--text-main);
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding-top: var(--header-height);
+    }
+
+    /* --- READER LAYOUT --- */
+    .reader-container {
+      width: min(1000px, calc(100% - 3rem));
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+
+    h1.chapter-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      color: var(--accent-white);
+      text-transform: uppercase;
+      line-height: 0.9;
+      margin-bottom: 0.5rem;
+      text-align: center;
+      letter-spacing: 4px;
+      border-bottom: 2px solid var(--accent-neon);
+      padding-bottom: 20px;
+    }
+
+    .chapter-meta {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--accent-neon);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      padding-bottom: 2rem;
+      margin-bottom: 3rem;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      font-weight: 600;
+    }
+
+    .story-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      line-height: 1.8;
+      color: #cbd5e1;
+    }
+
+    .story-text p { margin-bottom: 2rem; }
+    .story-text strong { color: var(--accent-white); font-weight: 600; }
+
+    .origin-header {
+      font-family: 'Playfair Display', serif;
+      color: var(--accent-white);
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+      margin-top: 5rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      font-style: italic;
+      border-bottom: 1px solid rgba(244, 63, 94, 0.4);
+      padding-bottom: 10px;
+    }
+
+    .drop-cap::first-letter {
+      float: left;
+      font-size: 4.5rem;
+      line-height: 0.8;
+      font-weight: 400;
+      padding-right: 12px;
+      color: var(--accent-neon);
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* --- MEDIA --- */
+    .story-media {
+      max-width: 900px;
+      margin: 4rem auto;
+      border-radius: 2px;
+      overflow: hidden;
+      border: 1px solid var(--accent-neon);
+      box-shadow: 0 15px 40px rgba(244, 63, 94, 0.2);
+      position: relative;
+    }
+
+    .story-media img { width: 100%; height: auto; display: block; filter: contrast(120%) saturate(130%); }
+
+    .media-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(10, 10, 12, 0.9);
+      color: var(--accent-neon);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      padding: 12px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      text-align: center;
+      border-top: 1px solid var(--accent-neon);
+    }
+
+    /* --- SHOP SCENE --- */
+    .shop-scene {
+      --card-bg:rgba(255,255,255,0.04);
+      --card-border:rgba(255,255,255,0.08);
+      --card-hover-border:rgba(244, 63, 94, 0.5);
+      --link:#cbd5e1;
+      --link-hover:#ffffff;
+      --shadow:0 20px 50px rgba(0,0,0,0.35);
+      padding: 56px 20px;
+      background:
+        radial-gradient(circle at top left, rgba(244, 63, 94, 0.08), transparent 28%),
+        linear-gradient(180deg, rgba(18, 4, 8, 0.92) 0%, rgba(5, 5, 5, 0.98) 100%);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .shop-wrap { max-width: 1180px; margin: 0 auto; }
+    .shop-header { margin-bottom: 28px; }
+    .shop-header h2 { margin: 0 0 8px 0; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.05; }
+    .shop-header p { margin: 0; }
+    .shop-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+
+    .shop-card {
+      background: var(--card-bg); border: 1px solid var(--card-border);
+      border-radius: 20px; padding: 24px 22px; backdrop-filter: blur(10px);
+      box-shadow: var(--shadow); transition: all 220ms ease;
+    }
+    .shop-card:hover { transform: translateY(-4px); border-color: var(--card-hover-border); }
+    .shop-card h3 { margin: 0 0 6px 0; font-size: 1.35rem; line-height: 1.2; }
+    .shop-sub { margin: 0 0 18px 0; color: var(--accent-neon); font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 1.8px; font-size: 0.72rem; }
+
+    .links a { color: var(--link); text-decoration: none; font-family: 'Montserrat', sans-serif; font-size: 0.95rem; line-height: 1.7; transition: color 180ms ease; display: block; margin-bottom: 8px;}
+    .links a:hover { color: var(--link-hover); }
+
+    @media (max-width: 980px) { .shop-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 640px) { .shop-grid { grid-template-columns: 1fr; } }
+
+    /* --- AUDIO HEADER --- */
+    .fixed-audio-header {
+      position: fixed; top: 0; left: 0; width: 100%; height: var(--header-height);
+      background: rgba(10, 10, 12, 0.95); backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--accent-neon); z-index: 1000;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .btn-audio {
+      background: transparent; border: 1px solid var(--accent-neon);
+      color: var(--accent-neon); padding: 0.4rem 1.5rem; border-radius: 2px;
+      font-size: 0.75rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease;
+      font-family: 'Montserrat', sans-serif; letter-spacing: 2px; text-transform: uppercase;
+    }
+    .btn-audio:hover { background-color: var(--accent-neon); color: #000; }
+  </style>
+</head>
+
+<body>
+
+
+  <div class="reader-container">
+
+    <div style="font-family: 'Montserrat'; text-align: center; margin-bottom: 1rem; color: var(--accent-neon); letter-spacing: 4px; font-size: 1.5rem;" class="uppercase">
+The Shark of Wall Street
+    </div>
+
+    <h1 class="chapter-title">The Bitch</h1>
+
+    <div class="chapter-meta">
+      <span>Cleo Vargas</span>
+      <span>•</span>
+      <span>The Honey-Trap</span>
+    </div>
+
+    <div class="story-media">
+      <img src="b1.png" alt="A dark, neon-lit hallway with red and pink lights reflecting off a wet industrial floor.">
+    </div>
+
+    <article class="story-text">
+      <div class="origin-header">Part I: Weaponized Couture</div>
+
+      <p class="drop-cap">Wall Street executives went to Valentina Cruz when they wanted to feel like emperors. They drank vintage champagne in private hangars, signed flawless contracts, and convinced themselves they were gentlemen of the highest order.</p>
+
+      <p>But they went to Cleo Vargas when they wanted to be animals.</p>
+    <div class="story-media">
+      <img src="b2.png" alt="A dark, neon-lit hallway with red and pink lights reflecting off a wet industrial floor.">
+    </div>
+      <p>Cleo was thirty-two years old, and she moved with the terrifying, coiled grace of a pitbull. She didn't possess the soft, polished beauty of high-society escorts. She had hard angles, olive skin marred by a faint silver scar across her collarbone, and eyes that calculated the net worth of every man in the room within three seconds. Her hair was a severe, glossy black bob, cut sharp enough to draw blood.</p>
+
+      <p>She didn't wear Chanel or Tom Ford. Cleo wore weaponized couture. Her wardrobe consisted of heavy chromed hardware, structured Mugler latex bodysuits, and tactical corsets laced with Kevlar that could stop a switchblade. She stalked the floors of her club in custom eight-inch Pleaser stilettos—heels reinforced with solid steel shafts that doubled as lethal weapons if a client got out of line. She looked exactly like what she was: a woman entirely prepared for war.</p>
+
+      <div class="origin-header">Part II: The Hostile Takeover</div>
+
+      <p>Cleo hadn't inherited her underworld empire. Ten years ago, she was just another dancer in a dingy, cinderblock club owned by the Bratva—the Russian mob. She watched night after night as Wall Street brokers, cartel bosses, and mob lieutenants threw around tens of thousands of dollars.</p>
+    <div class="story-media">
+      <img src="b3.png" alt="A dark, neon-lit hallway with red and pink lights reflecting off a wet industrial floor.">
+    </div>
+      <p>But Cleo noticed something else. When men were drunk, high, and desperate for validation, they became incredibly careless with their encrypted phones.</p>
+
+      <p>While the other girls danced for tips, Cleo taught herself basic Python coding. She bought a black-market biometric skimmer. And she started collecting. She didn't steal their cash; she stole their secrets. Thumbprints lifted from whiskey glasses. Routing numbers memorized while clients were passed out. Texts copied from unlocked screens.</p>
+
+      <p>When the Bratva boss who owned the club finally found out and cornered her in the back office with a gun, Cleo didn't scream. She smiled. She showed him a tablet containing the exact routing numbers of his offshore accounts, alongside audio recordings of him ordering hits on rival families. She didn't just kill him; she emptied his accounts, bought the club out from under his lieutenants using his own stolen money, and renamed it <em>The Trench</em>.</p>
+    <div class="story-media">
+      <img src="b4.png" alt="A dark, neon-lit hallway with red and pink lights reflecting off a wet industrial floor.">
+    </div>
+      <div class="origin-header">Part III: The Moniker</div>
+
+      <p>Operating out of the Meatpacking District, <em>The Trench</em> became the most aggressively underground, invite-only honey-trap in New York. The men who frequented her VIP rooms didn't know her real name. They called her <strong>"The Bitch."</strong></p>
+    <div class="story-media">
+      <img src="b5.png" alt="A dark, neon-lit hallway with red and pink lights reflecting off a wet industrial floor.">
+    </div>
+      <p>It was a title she had brutally ripped from their hands. Two years prior, a notoriously arrogant hedge fund manager had tried to drug her and assault her in a private suite. Cleo broke his jaw with her steel-reinforced heel, stripped his fund of fifty million dollars, and emailed the evidence of his corporate embezzlement to the SEC—while simultaneously emailing the photos of his mistresses to his wife.</p>
+
+      <p>As the FBI dragged the ruined hedge fund manager out of his Tribeca loft the next morning, he had screamed <em>"You bitch!"</em> into the flashing cameras of the paparazzi.</p>
+    <div class="story-media">
+      <img src="b6.png" alt="A dark, neon-lit hallway with red and pink lights reflecting off a wet industrial floor.">
+    </div>
+      <p>Cleo found it so deeply satisfying that she had the word bent into hot pink neon glass. It now hung directly above her desk in the counting room. She didn't seduce men by validating their egos; she seduced them by discovering their absolute worst, darkest vices and indulging them until they were completely paralyzed. Then, she took everything they owned.</p>
+
+      <p>Cleo didn't trade in stocks. She traded in ruin.</p>
+
+      <div class="origin-header">Part IV: The Descent</div>
+    <div class="story-media">
+      <img src="b7.png" alt="A dark, neon-lit hallway with red and pink lights reflecting off a wet industrial floor.">
+    </div>
+      <p>The Shark's empire was bleeding. Tariq Al-Fayed, the Macau Whale, had just unleashed a devastating, half-billion-dollar synthetic short attack on the World Trade Factory's shell companies. The Shark’s algorithms were suffocating under the sheer, impossible volume of Tariq's sovereign wealth. To survive the night, The Shark couldn't fight math with math. He needed to throw a wrench into the gears of Tariq's syndicate.</p>
+
+      <p>He needed physical, undeniable blackmail on Hector, the Cartel lieutenant who was currently acting as Tariq's bridge in Macau. And there was only one place on earth to get it.</p>
+    <div class="story-media">
+      <img src="b8.png" alt="A dark, neon-lit hallway with red and pink lights reflecting off a wet industrial floor.">
+    </div>
+      <p>The Shark descended the concrete stairs into <em>The Trench</em>. The air was thick with the smell of cheap cherry vape smoke, expensive fear, and stale liquor. The bass from the main floor was so heavy it rattled the fillings in his teeth. He ignored the dancers bathed in toxic pink neon and walked directly past the massive, heavily armed bouncers who parted silently for him.</p>
+
+      <p>He opened the reinforced steel door to the counting room.</p>
+
+      <div class="origin-header">Part V: The Extraction</div>
+    <div class="story-media">
+      <img src="b9.png" alt="A dark, neon-lit hallway with red and pink lights reflecting off a wet industrial floor.">
+    </div>
+      <p>Cleo Vargas sat beneath her glowing pink neon sign, counting thick stacks of physical cash while an industrial bill-counter whirred violently beside her. Her latex bodysuit gleamed in the dim light. She didn't look up when The Shark walked in. She was busy monitoring a progress bar on a ruggedized military laptop hooked up to a cloned iPhone via a thick data cable.</p>
+
+      <p>"I don't do walk-ins," Cleo said, her voice a raspy, nicotine-laced drawl. She expertly flipped a stack of hundreds into the machine. "And if you're here to audit me, you better have brought a SWAT team."</p>
+    <div class="story-media">
+      <img src="b10.png" alt="A dark, neon-lit hallway with red and pink lights reflecting off a wet industrial floor.">
+    </div>
+      <p>"I don't care about your cash, Cleo," The Shark said, stepping into the harsh magenta light. "I need Hector's secondary ledger. The one he kept off the Cartel's books. I know he was in your VIP room three weeks ago before he fled to Macau."</p>
+
+      <p>Cleo finally stopped counting. She looked up, her dark eyes entirely devoid of warmth. She recognized the Apex Predator of Wall Street standing in her counting room, and she didn't bat an eyelash. She reached down, her manicured fingers brushing past the straight razor she kept sheathed in her latex boot, and tapped the ruggedized laptop.</p>
+    <div class="story-media">
+      <img src="b11.png" alt="A dark, neon-lit hallway with red and pink lights reflecting off a wet industrial floor.">
+    </div>
+      <p>"Hector," she mused, a cruel smile forming. "Likes a synthetic ketamine analog. Cries about his mother when he's under. Sweats like a pig. Yeah, I dumped his phone. I have his biometrics. I have his offshore routing numbers."</p>
+
+      <p>"I need the biometric bypass," The Shark demanded. "Tariq Al-Fayed is using him to broker a hundred-million-dollar bridge loan. If I can access Hector's off-book ledgers, I can anonymously leak them to Nicolás Reyes. The Cartel will think Hector is stealing from them to fund Tariq. The Cartel will tear Tariq's Macau operation apart from the inside, and the short-squeeze on my companies will collapse."</p>
+
+      <p>Cleo leaned back in her chair, the latex squeaking sharply. She understood the play instantly. It was a brilliant, vicious deflection of kinetic energy.</p>
+    <div class="story-media">
+      <img src="b12.png" alt="A dark, neon-lit hallway with red and pink lights reflecting off a wet industrial floor.">
+    </div>
+      <p>"You want to use my intel to start a shooting war between a Mexican Cartel and a Gulf State Royal," she summarized, her eyes gleaming with predatory delight. "That's a beautiful mess."</p>
+
+      <div class="origin-header">Part VI: The Transaction</div>
+
+      <p>"Name your price," The Shark said, unblinking.</p>
+
+      <p>Cleo didn't ask for equity. She didn't ask for algorithmic favors or stock tips. She dealt in the reality of the gutter, where digital money could vanish in a power outage.</p>
+
+      <p>"Ten million," Cleo said flatly. "Physical. Unmarked bearer bonds or GIA-certified conflict diamonds. Delivered to this desk in exactly two hours. You bring the rocks, I give you the biometric key that burns Hector to the ground."</p>
+    <div class="story-media">
+      <img src="b13.png" alt="A dark, neon-lit hallway with red and pink lights reflecting off a wet industrial floor.">
+    </div>
+      <p>The Shark stared at her. It was extortion at the highest level, executed in a room that smelled like spilled tequila.</p>
+
+      <p>"Done," The Shark said.</p>
+
+      <p>Cleo smiled—a sharp, terrifying flash of teeth. "Pleasure doing business with you. Now get the hell out of my club before you ruin the vibe."</p>
+
+      <p>As The Shark turned and walked back out into the suffocating neon haze of the dance floor, he realized something profound. He might be the king of the digital ocean, but down here in the dark, she was exactly what the neon sign said she was.</p>
+
+    </article>
+
+<section class="shop-scene">
+  <div class="shop-wrap">
+    <header class="shop-header">
+      <h2 style="color: var(--accent-white); font-family: 'Playfair Display', serif;">The Loadout</h2>
+      <p style="color: var(--accent-neon); font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem;">The Honey-Trap Toolkit</p>
+    </header>
+
+    <div class="shop-grid">
+
+      <article class="shop-card">
+        <h3 style="color: #fff; font-family: 'Playfair Display', serif;">The Armor</h3>
+        <p class="shop-sub">Latex / Stilettos / Intimidation</p>
+        <div class="links">
+          <a href="https://www.mugler.com/us/en/latex-bodysuits/" target="_blank" rel="noopener noreferrer">Mugler Black Latex Bodysuit</a><br><br>
+          <a href="https://pleasershoes.com/products/flamingo-808" target="_blank" rel="noopener noreferrer">Pleaser Flamingo 808 — 8" Stilettos</a><br><br>
+          <a href="https://www.alexanderwang.com/us-en" target="_blank" rel="noopener noreferrer">Alexander Wang Corset Bodysuits</a>
+        </div>
+      </article>
+
+      <article class="shop-card">
+        <h3 style="color: #fff; font-family: 'Playfair Display', serif;">The Extraction</h3>
+        <p class="shop-sub">Clones / Biometrics / Blackmail</p>
+        <div class="links">
+          <a href="https://cellebrite.com/en/ufed/" target="_blank" rel="noopener noreferrer">Cellebrite UFED Mobile Extractor</a><br><br>
+          <a href="https://www.smooth-on.com/products/dragon-skin-10-fast/" target="_blank" rel="noopener noreferrer">Dragon Skin Silicone (Biometric Mold Material)</a><br><br>
+          <a href="https://www.scopolaminepatch.com/" target="_blank" rel="noopener noreferrer">Transdermal Scopolamine Patches</a>
+        </div>
+      </article>
+
+      <article class="shop-card">
+        <h3 style="color: #fff; font-family: 'Playfair Display', serif;">The Club</h3>
+        <p class="shop-sub">Neon / Bass / The Gutter</p>
+        <div class="links">
+          <a href="https://www.amazon.com/Ribao-BC-40-Bill-Counter/dp/B00A2C6XBG" target="_blank" rel="noopener noreferrer">Ribao BC-40 Bill Counting Machine</a><br><br>
+          <a href="https://www.amazon.com/Govee-Neon-Rope-Light/dp/B0B5XH9KMG" target="_blank" rel="noopener noreferrer">Govee Neon Rope Lighting</a><br><br>
+          <a href="https://www.steeldoor.org/commercial-steel-doors/" target="_blank" rel="noopener noreferrer">Commercial Reinforced Steel Security Door</a>
+        </div>
+      </article>
+
+      <article class="shop-card">
+        <h3 style="color: #fff; font-family: 'Playfair Display', serif;">The Edge</h3>
+        <p class="shop-sub">Physical / Sharp / Unforgiving</p>
+        <div class="links">
+          <a href="https://www.dovo.com/en/straight-razors/" target="_blank" rel="noopener noreferrer">DOVO Carbon Steel Straight Razor</a><br><br>
+          <a href="https://www.investopedia.com/terms/b/bearer-bond.asp" target="_blank" rel="noopener noreferrer">Bearer Bonds — Historical Overview</a><br><br>
+          <a href="https://www.bluenile.com/diamonds" target="_blank" rel="noopener noreferrer">GIA-Certified Diamonds</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+  </div>
+
+</body>
+</html>
