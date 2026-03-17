@@ -129,6 +129,7 @@ img{max-width:100%;display:block;}
 }
 
 .nav-actions{display:flex;gap:10px;align-items:center;}
+.btn-show-mobile{display:none!important;} /* hidden on desktop, shown via media query */
 
 .btn{
   background:transparent;
@@ -215,10 +216,10 @@ img{max-width:100%;display:block;}
 .tagline-strip{
   margin-top:18px;
   background:var(--crimson);
-  color:#fff;padding:11px 14px;
-  font-family:'Cormorant Garamond',serif;
-  font-size:1.1rem;font-style:italic;font-weight:300;
-  letter-spacing:.5px;
+  color:#fff;padding:11px 18px;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.35rem;font-style:normal;font-weight:400;
+  letter-spacing:3px;text-transform:uppercase;
   display:inline-block;
 }
 
@@ -263,7 +264,7 @@ img{max-width:100%;display:block;}
   font-size:1.8rem;color:var(--gold);line-height:1;letter-spacing:2px;
 }
 .stat-label{
-  margin-top:5px;color:var(--muted);
+  margin-top:5px;color:var(--silver);
   font-family:'Share Tech Mono',monospace;
   font-size:.56rem;text-transform:uppercase;letter-spacing:.14em;
 }
@@ -763,7 +764,7 @@ footer p{
   .poster-grid{grid-template-columns:repeat(2,1fr);}
 }
 @media(max-width:768px){
-  .nav{padding:0 20px;}
+  .nav{padding:0 16px;}
   .section{padding:52px 20px;}
   .t-list{grid-template-columns:1fr;}
   .stats-row{grid-template-columns:1fr 1fr;}
@@ -771,8 +772,19 @@ footer p{
   .lp:nth-child(n){grid-column:span 1;grid-row:span 1;}
   .lp:nth-child(1){grid-column:span 2;}
   .chapter-grid{grid-template-columns:repeat(2,1fr);}
+  .btn-hide-tablet{display:none!important;}
 }
 @media(max-width:520px){
+  .nav{height:52px;padding:0 14px;}
+  .spacer{height:52px;}
+  .nav-brand{font-size:1.05rem;letter-spacing:1.5px;gap:4px;white-space:nowrap;flex-shrink:1;min-width:0;overflow:hidden;}
+  .nav-brand .shark{font-size:1.25rem;}
+  .nav-brand-pre,.nav-brand-post{display:none;}
+  .nav-actions{gap:6px;flex-shrink:0;}
+  .btn-hide-mobile{display:none!important;}
+  .btn-show-mobile{display:inline-flex!important;}
+  .btn-icon{padding:5px 9px!important;font-size:.85rem!important;letter-spacing:0!important;line-height:1;}
+  .btn-nav-mobile{padding:6px 14px!important;font-size:.65rem!important;letter-spacing:2.5px!important;}
   .poster-grid{grid-template-columns:1fr;}
   .life-grid{grid-template-columns:1fr;grid-auto-rows:240px;}
   .lp:nth-child(n){grid-column:span 1;grid-row:span 1;}
@@ -784,11 +796,16 @@ footer p{
 
 <!-- ═══ NAV ═══ -->
 <header class="nav">
-  <a href="#top" class="nav-brand">THE <span class="shark">SHARK</span> OF WALL STREET</a>
+  <a href="#top" class="nav-brand" aria-label="Home">
+    <span class="nav-brand-pre">THE </span><span class="shark">SHARK</span><span class="nav-brand-post"> OF WALL STREET</span>
+  </a>
   <div class="nav-actions">
-    <button class="btn" onclick="openDrawer('navDrawer')">Navigator</button>
-    <a class="btn red" href="#trailer">Experience</a>
-    <button class="btn gold" onclick="openDrawer('lifeDrawer')">Lifestyle</button>
+    <a class="btn btn-hide-mobile btn-hide-tablet" href="#trailer" style="border-color:rgba(192,57,43,.5);color:var(--red);">Experience</a>
+    <button class="btn btn-hide-mobile btn-hide-tablet gold" onclick="openDrawer('lifeDrawer')">Lifestyle</button>
+    <!-- Mobile icon buttons -->
+    <a class="btn btn-icon btn-show-mobile" href="#trailer" title="Experience" style="border-color:rgba(192,57,43,.5);color:var(--red);">▶</a>
+    <button class="btn btn-icon btn-show-mobile gold" onclick="openDrawer('lifeDrawer')" title="Lifestyle">⊞</button>
+    <button class="btn btn-nav-mobile" style="border-color:var(--silver);color:var(--white);" onclick="openDrawer('navDrawer')">Navigator</button>
   </div>
 </header>
 <div id="top" class="spacer"></div>
@@ -807,7 +824,7 @@ footer p{
         <span class="shark">SHARK</span>
         <span class="rest">OF WALL STREET</span>
       </div>
-      <div class="tagline-strip">"Before you change the world, the world tries to change you."</div>
+      <div class="tagline-strip">Before you change the world, the world tries to change you.</div>
       <p class="hero-copy">An outsider with an uncanny instinct for markets uncovers a hidden architecture of power and desire. As he builds an intelligence engine that threatens the old order, shadows tighten around him — forcing a choice between revelation, obsession, and survival.</p>
       <div class="hero-cta">
         <a class="btn" href="#factory">World Trade Factory</a>
@@ -823,7 +840,7 @@ footer p{
           <strong><a href="https://www.linkedin.com/in/sajeeshkakkat" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:underline;text-underline-offset:3px;">Sage Kakkat</a></strong>.
         </p>
         <div class="stats-row" style="margin-top:14px;">
-          <div class="stat-unit"><div class="stat-val">11k+</div><div class="stat-label">LinkedIn followers</div></div>
+          <div class="stat-unit"><div class="stat-val">11,000+</div><div class="stat-label">LinkedIn followers</div></div>
           <div class="stat-unit"><div class="stat-val">350+</div><div class="stat-label">Cities active</div></div>
           <div class="stat-unit"><div class="stat-val">50+</div><div class="stat-label">Countries</div></div>
           <div class="stat-unit"><div class="stat-val">Growing</div><div class="stat-label">Traction</div></div>
