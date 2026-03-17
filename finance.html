@@ -118,6 +118,11 @@ body{background:var(--bg);font-family:var(--body-font),sans-serif;color:var(--wh
 /* RESPONSIVE */
 @media(max-width:1199px){.s-grid{grid-template-columns:repeat(3,1fr);}.s-splash{grid-column:span 2;}}
 @media(max-width:860px){.mast-content{padding:0 24px 40px;flex-direction:column;align-items:flex-start;}.s-grid{grid-template-columns:repeat(2,1fr);}.s-splash{grid-column:span 1;}.s-div-inner{padding:10px 24px;}.top-bar{padding:12px 20px;}.page-footer{padding:14px 20px;}}
+@media(max-width:860px){
+  div[style*="grid-template-columns:repeat(5,1fr)"]{grid-template-columns:repeat(2,1fr)!important;}
+  div[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important;}
+  div[style*="padding:0 48px"]{padding:0 20px!important;}
+}
 @media(max-width:520px){.s-grid{grid-template-columns:1fr;}.s-card{border-right:none!important;min-height:320px;}}
 
 </style>
@@ -127,7 +132,7 @@ body{background:var(--bg);font-family:var(--body-font),sans-serif;color:var(--wh
 
 <!-- TOP BAR -->
 <div class="top-bar">
-  <div class="tb-brand">World Trade Factory &nbsp;·&nbsp; Finance & Markets</div>
+  <div class="tb-brand">World Trade Factory &nbsp;·&nbsp; Finance &amp; Markets</div>
   <div style="display:flex;align-items:center;gap:16px;">
     <a href="life.html" class="tb-back">← Life Index</a>
     <a href="https://thesharkofwallstreet.com" target="_blank" rel="noopener noreferrer" class="tb-cta">Enter The Universe →</a>
@@ -141,17 +146,173 @@ body{background:var(--bg);font-family:var(--body-font),sans-serif;color:var(--wh
   <div class="mast-content">
     <div>
       <p class="mast-eyebrow">The Shark of Wall Street &nbsp;·&nbsp; Life</p>
-      <h1 class="mast-h1">FINANCE & MARKETS</h1>
+      <h1 class="mast-h1">FINANCE &amp;<br>MARKETS</h1>
     </div>
     <div>
       <p class="mast-deck">This is the engine room. The brokers, the families, the funds, and the exchanges. Everything on every other page in this universe was made possible by what happens here.</p>
       <div class="mast-stats">
-        <div><span class="stat-n">4</span><span class="stat-l">Categories</span></div>
+        <div><span class="stat-n">5</span><span class="stat-l">Categories</span></div>
         <div><span class="stat-n">∞</span><span class="stat-l">Leverage</span></div>
       </div>
     </div>
   </div>
 </div>
+
+<!-- ═══════════════════════════════════════════════════════
+     INFINITY XZ + WORLD TRADE FACTORY — COMMAND CENTER
+════════════════════════════════════════════════════════ -->
+
+<!-- SECTION LABEL -->
+<div class="s-divider" style="border-top:2px solid rgba(0,255,136,0.2);">
+  <div class="s-div-inner">
+    <span class="sd-num" style="color:var(--accent);">00</span>
+    <span class="sd-name" style="color:var(--accent);font-size:1.1rem;">InfinityXZ &amp; World Trade Factory</span>
+    <span class="sd-sub">The Intelligence Layer · Applied Strategic AI · Live Market Data</span>
+    <span class="sd-line"></span>
+  </div>
+</div>
+
+<!-- HERO COMMAND BLOCK -->
+<div style="background:linear-gradient(160deg,rgba(0,20,12,0.95),rgba(3,4,8,0.98));border-bottom:1px solid rgba(0,255,136,0.12);padding:0 48px 0;">
+
+  <!-- INFINITY XZ MAIN CARD -->
+  <div style="max-width:1400px;margin:0 auto;padding:52px 0 40px;">
+
+    <!-- Eyebrow -->
+    <div style="font-family:'Share Tech Mono',monospace;font-size:0.58rem;letter-spacing:5px;color:var(--accent);text-transform:uppercase;margin-bottom:18px;display:flex;align-items:center;gap:12px;">
+      <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent);animation:blink 1.6s infinite;"></span>
+      LIVE CONNECTION: ACTIVE &nbsp;·&nbsp; WORLD TRADE FACTORY REASONING ENGINE
+    </div>
+
+    <!-- Main title + deck -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;margin-bottom:40px;">
+      <div>
+        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,5vw,5.5rem);line-height:0.9;letter-spacing:3px;color:#fff;margin-bottom:16px;">
+          INFINITY<span style="color:var(--accent);">XZ</span>
+        </h2>
+        <p style="font-family:'Share Tech Mono',monospace;font-size:0.75rem;letter-spacing:1.5px;color:rgba(112,160,112,0.9);line-height:1.9;margin-bottom:20px;">
+          Applied Strategic Intelligence // World Trade Factory.<br/>
+          True Market Reasoning — an intelligence that understands the structural causality of global finance. Goes beyond pattern matching. Identifies the <em style="color:#fff;">why</em> behind market movements.
+        </p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <a href="https://infinityxz.ai" target="_blank" rel="noopener noreferrer"
+            style="font-family:'Share Tech Mono',monospace;font-size:0.62rem;letter-spacing:3px;color:#000;text-transform:uppercase;background:var(--accent);padding:10px 22px;text-decoration:none;font-weight:700;transition:all 0.2s;"
+            onmouseover="this.style.background='#33ffaa'" onmouseout="this.style.background='var(--accent)'">
+            Enter InfinityXZ →
+          </a>
+          <a href="https://www.worldtradefactory.ai" target="_blank" rel="noopener noreferrer"
+            style="font-family:'Share Tech Mono',monospace;font-size:0.62rem;letter-spacing:3px;color:var(--accent);text-transform:uppercase;border:1px solid rgba(0,255,136,0.4);padding:10px 22px;text-decoration:none;transition:all 0.2s;"
+            onmouseover="this.style.borderColor='var(--accent)';this.style.background='rgba(0,255,136,0.06)'" onmouseout="this.style.borderColor='rgba(0,255,136,0.4)';this.style.background='transparent'">
+            World Trade Factory →
+          </a>
+        </div>
+      </div>
+      <div>
+        <!-- Four pillars -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+          <div style="border:1px solid rgba(0,255,136,0.15);padding:16px;background:rgba(0,255,136,0.03);">
+            <div style="font-family:'Share Tech Mono',monospace;font-size:0.5rem;letter-spacing:3px;color:var(--accent);text-transform:uppercase;margin-bottom:6px;">Causal Logic Engine</div>
+            <div style="font-family:'Share Tech Mono',monospace;font-size:0.68rem;color:rgba(112,160,112,0.8);line-height:1.6;">Identifies the <em style="color:#ccc;">why</em> behind market movements using structural macro analysis.</div>
+          </div>
+          <div style="border:1px solid rgba(0,255,136,0.15);padding:16px;background:rgba(0,255,136,0.03);">
+            <div style="font-family:'Share Tech Mono',monospace;font-size:0.5rem;letter-spacing:3px;color:var(--accent);text-transform:uppercase;margin-bottom:6px;">Signal Synthesis</div>
+            <div style="font-family:'Share Tech Mono',monospace;font-size:0.68rem;color:rgba(112,160,112,0.8);line-height:1.6;">Filters noise. Delivers one clean narrative from 200+ verified data streams.</div>
+          </div>
+          <div style="border:1px solid rgba(0,255,136,0.15);padding:16px;background:rgba(0,255,136,0.03);">
+            <div style="font-family:'Share Tech Mono',monospace;font-size:0.5rem;letter-spacing:3px;color:var(--accent);text-transform:uppercase;margin-bottom:6px;">Grounded Reality</div>
+            <div style="font-family:'Share Tech Mono',monospace;font-size:0.68rem;color:rgba(112,160,112,0.8);line-height:1.6;">Built with guardrails against hallucination. If not verified, Infinity doesn't trade on it.</div>
+          </div>
+          <div style="border:1px solid rgba(0,255,136,0.15);padding:16px;background:rgba(0,255,136,0.03);">
+            <div style="font-family:'Share Tech Mono',monospace;font-size:0.5rem;letter-spacing:3px;color:var(--accent);text-transform:uppercase;margin-bottom:6px;">Execution Velocity</div>
+            <div style="font-family:'Share Tech Mono',monospace;font-size:0.68rem;color:rgba(112,160,112,0.8);line-height:1.6;">From insight to decision in milliseconds. XperienZ removes friction between thought and action.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FEATURE LINKS — 5 verified tools -->
+    <div style="font-family:'Share Tech Mono',monospace;font-size:0.5rem;letter-spacing:4px;color:var(--muted);text-transform:uppercase;margin-bottom:14px;">InfinityXZ · Live Tools</div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:rgba(0,255,136,0.08);border:1px solid rgba(0,255,136,0.12);margin-bottom:40px;">
+
+      <!-- XperienZ Console -->
+      <a href="https://infinityxz.ai/experienz" target="_blank" rel="noopener noreferrer"
+        style="display:flex;flex-direction:column;padding:22px 20px;background:var(--bg);text-decoration:none;border-right:1px solid rgba(0,255,136,0.08);transition:background 0.25s;"
+        onmouseover="this.style.background='rgba(0,255,136,0.05)'" onmouseout="this.style.background='var(--bg)'">
+        <span style="font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:2px;color:#fff;margin-bottom:6px;">XperienZ Console</span>
+        <span style="font-family:'Share Tech Mono',monospace;font-size:0.5rem;letter-spacing:2px;color:var(--accent);text-transform:uppercase;margin-bottom:10px;">infinityxz.ai/experienz</span>
+        <span style="font-family:'Share Tech Mono',monospace;font-size:0.62rem;color:rgba(112,160,112,0.75);line-height:1.7;">AI partner for financial decisions. Heatmaps · stock screener · candlestick charts · trending stocks · ETF heatmap · market overview · financials · price history</span>
+        <span style="font-family:'Share Tech Mono',monospace;font-size:0.52rem;letter-spacing:2px;color:var(--accent);margin-top:12px;">Enter Beta →</span>
+      </a>
+
+      <!-- SKXY Terminal / Macrodata -->
+      <a href="https://infinityxz.ai/macrodata" target="_blank" rel="noopener noreferrer"
+        style="display:flex;flex-direction:column;padding:22px 20px;background:var(--bg);text-decoration:none;border-right:1px solid rgba(0,255,136,0.08);transition:background 0.25s;"
+        onmouseover="this.style.background='rgba(0,255,136,0.05)'" onmouseout="this.style.background='var(--bg)'">
+        <span style="font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:2px;color:#fff;margin-bottom:6px;">SKXY Terminal</span>
+        <span style="font-family:'Share Tech Mono',monospace;font-size:0.5rem;letter-spacing:2px;color:var(--accent);text-transform:uppercase;margin-bottom:10px;">infinityxz.ai/macrodata</span>
+        <span style="font-family:'Share Tech Mono',monospace;font-size:0.62rem;color:rgba(112,160,112,0.75);line-height:1.7;">Live macro intelligence. S&P 500 · 10Y yield · DXY · BTC · Gold · Real GDP. Ask the AI Analyst directly on live data.</span>
+        <span style="font-family:'Share Tech Mono',monospace;font-size:0.52rem;letter-spacing:2px;color:var(--accent);margin-top:12px;">Open Terminal →</span>
+      </a>
+
+      <!-- Trading Agent -->
+      <a href="https://infinityxz.ai/trading-agent" target="_blank" rel="noopener noreferrer"
+        style="display:flex;flex-direction:column;padding:22px 20px;background:var(--bg);text-decoration:none;border-right:1px solid rgba(0,255,136,0.08);transition:background 0.25s;"
+        onmouseover="this.style.background='rgba(0,255,136,0.05)'" onmouseout="this.style.background='var(--bg)'">
+        <span style="font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:2px;color:#fff;margin-bottom:6px;">Trading Agent</span>
+        <span style="font-family:'Share Tech Mono',monospace;font-size:0.5rem;letter-spacing:2px;color:var(--accent);text-transform:uppercase;margin-bottom:10px;">infinityxz.ai/trading-agent</span>
+        <span style="font-family:'Share Tech Mono',monospace;font-size:0.62rem;color:rgba(112,160,112,0.75);line-height:1.7;">AI-powered trading intelligence. Ticker analysis · analyst reports · strategy generation · RiskGuard · system stream.</span>
+        <span style="font-family:'Share Tech Mono',monospace;font-size:0.52rem;letter-spacing:2px;color:var(--accent);margin-top:12px;">Init Sequence →</span>
+      </a>
+
+      <!-- Infinity Terminal (OpenBB) -->
+      <a href="https://infinityxz.ai/openbb" target="_blank" rel="noopener noreferrer"
+        style="display:flex;flex-direction:column;padding:22px 20px;background:var(--bg);text-decoration:none;border-right:1px solid rgba(0,255,136,0.08);transition:background 0.25s;"
+        onmouseover="this.style.background='rgba(0,255,136,0.05)'" onmouseout="this.style.background='var(--bg)'">
+        <span style="font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:2px;color:#fff;margin-bottom:6px;">Infinity Terminal</span>
+        <span style="font-family:'Share Tech Mono',monospace;font-size:0.5rem;letter-spacing:2px;color:var(--accent);text-transform:uppercase;margin-bottom:10px;">infinityxz.ai/openbb</span>
+        <span style="font-family:'Share Tech Mono',monospace;font-size:0.62rem;color:rgba(112,160,112,0.75);line-height:1.7;">Multi-asset terminal. Stocks · crypto · forex · economy. MACD · Bollinger Bands · quant data · market overview.</span>
+        <span style="font-family:'Share Tech Mono',monospace;font-size:0.52rem;letter-spacing:2px;color:var(--accent);margin-top:12px;">Open Terminal →</span>
+      </a>
+
+      <!-- WTF Platform -->
+      <a href="https://www.worldtradefactory.ai" target="_blank" rel="noopener noreferrer"
+        style="display:flex;flex-direction:column;padding:22px 20px;background:var(--bg);text-decoration:none;transition:background 0.25s;"
+        onmouseover="this.style.background='rgba(0,255,136,0.05)'" onmouseout="this.style.background='var(--bg)'">
+        <span style="font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:2px;color:#fff;margin-bottom:6px;">WTF Platform</span>
+        <span style="font-family:'Share Tech Mono',monospace;font-size:0.5rem;letter-spacing:2px;color:var(--accent);text-transform:uppercase;margin-bottom:10px;">worldtradefactory.ai</span>
+        <span style="font-family:'Share Tech Mono',monospace;font-size:0.62rem;color:rgba(112,160,112,0.75);line-height:1.7;">Full intelligence stack. Pulse · Economy · Indices · Screener · StoX-RaY · Rates · Yield · Events · Crypto · Forex · FRED · Map.</span>
+        <span style="font-family:'Share Tech Mono',monospace;font-size:0.52rem;letter-spacing:2px;color:var(--accent);margin-top:12px;">Enter Platform →</span>
+      </a>
+
+    </div><!-- /5-tool grid -->
+
+    <!-- WTF DEEP LINKS — individual features -->
+    <div style="font-family:'Share Tech Mono',monospace;font-size:0.5rem;letter-spacing:4px;color:var(--muted);text-transform:uppercase;margin-bottom:12px;">World Trade Factory · Feature Index</div>
+    <div style="display:flex;flex-wrap:wrap;gap:6px;padding-bottom:48px;">
+      <!-- Each pill links to a real WTF feature page -->
+      <a href="https://www.worldtradefactory.ai/pulse" target="_blank" rel="noopener noreferrer" style="font-family:'Share Tech Mono',monospace;font-size:0.52rem;letter-spacing:2px;color:var(--accent);border:1px solid rgba(0,255,136,0.2);padding:5px 12px;text-decoration:none;text-transform:uppercase;transition:all 0.15s;" onmouseover="this.style.background='rgba(0,255,136,0.08)';this.style.borderColor='var(--accent)'" onmouseout="this.style.background='transparent';this.style.borderColor='rgba(0,255,136,0.2)'">Pulse</a>
+      <a href="https://www.worldtradefactory.ai/country" target="_blank" rel="noopener noreferrer" style="font-family:'Share Tech Mono',monospace;font-size:0.52rem;letter-spacing:2px;color:var(--accent);border:1px solid rgba(0,255,136,0.2);padding:5px 12px;text-decoration:none;text-transform:uppercase;transition:all 0.15s;" onmouseover="this.style.background='rgba(0,255,136,0.08)';this.style.borderColor='var(--accent)'" onmouseout="this.style.background='transparent';this.style.borderColor='rgba(0,255,136,0.2)'">Economy</a>
+      <a href="https://www.worldtradefactory.ai/indices" target="_blank" rel="noopener noreferrer" style="font-family:'Share Tech Mono',monospace;font-size:0.52rem;letter-spacing:2px;color:var(--accent);border:1px solid rgba(0,255,136,0.2);padding:5px 12px;text-decoration:none;text-transform:uppercase;transition:all 0.15s;" onmouseover="this.style.background='rgba(0,255,136,0.08)';this.style.borderColor='var(--accent)'" onmouseout="this.style.background='transparent';this.style.borderColor='rgba(0,255,136,0.2)'">Indices</a>
+      <a href="https://www.worldtradefactory.ai/news" target="_blank" rel="noopener noreferrer" style="font-family:'Share Tech Mono',monospace;font-size:0.52rem;letter-spacing:2px;color:var(--accent);border:1px solid rgba(0,255,136,0.2);padding:5px 12px;text-decoration:none;text-transform:uppercase;transition:all 0.15s;" onmouseover="this.style.background='rgba(0,255,136,0.08)';this.style.borderColor='var(--accent)'" onmouseout="this.style.background='transparent';this.style.borderColor='rgba(0,255,136,0.2)'">Flash News</a>
+      <a href="https://www.worldtradefactory.ai/overview" target="_blank" rel="noopener noreferrer" style="font-family:'Share Tech Mono',monospace;font-size:0.52rem;letter-spacing:2px;color:var(--accent);border:1px solid rgba(0,255,136,0.2);padding:5px 12px;text-decoration:none;text-transform:uppercase;transition:all 0.15s;" onmouseover="this.style.background='rgba(0,255,136,0.08)';this.style.borderColor='var(--accent)'" onmouseout="this.style.background='transparent';this.style.borderColor='rgba(0,255,136,0.2)'">Stocks</a>
+      <a href="https://www.worldtradefactory.ai/screeners" target="_blank" rel="noopener noreferrer" style="font-family:'Share Tech Mono',monospace;font-size:0.52rem;letter-spacing:2px;color:var(--accent);border:1px solid rgba(0,255,136,0.2);padding:5px 12px;text-decoration:none;text-transform:uppercase;transition:all 0.15s;" onmouseover="this.style.background='rgba(0,255,136,0.08)';this.style.borderColor='var(--accent)'" onmouseout="this.style.background='transparent';this.style.borderColor='rgba(0,255,136,0.2)'">Screener</a>
+      <a href="https://www.worldtradefactory.ai/stock" target="_blank" rel="noopener noreferrer" style="font-family:'Share Tech Mono',monospace;font-size:0.52rem;letter-spacing:2px;color:var(--accent);border:1px solid rgba(0,255,136,0.2);padding:5px 12px;text-decoration:none;text-transform:uppercase;transition:all 0.15s;" onmouseover="this.style.background='rgba(0,255,136,0.08)';this.style.borderColor='var(--accent)'" onmouseout="this.style.background='transparent';this.style.borderColor='rgba(0,255,136,0.2)'">Assets</a>
+      <a href="https://www.worldtradefactory.ai/stox-ray" target="_blank" rel="noopener noreferrer" style="font-family:'Share Tech Mono',monospace;font-size:0.52rem;letter-spacing:2px;color:var(--accent);border:1px solid rgba(0,255,136,0.2);padding:5px 12px;text-decoration:none;text-transform:uppercase;transition:all 0.15s;" onmouseover="this.style.background='rgba(0,255,136,0.08)';this.style.borderColor='var(--accent)'" onmouseout="this.style.background='transparent';this.style.borderColor='rgba(0,255,136,0.2)'">StoX-RaY</a>
+      <a href="https://www.worldtradefactory.ai/chart" target="_blank" rel="noopener noreferrer" style="font-family:'Share Tech Mono',monospace;font-size:0.52rem;letter-spacing:2px;color:var(--accent);border:1px solid rgba(0,255,136,0.2);padding:5px 12px;text-decoration:none;text-transform:uppercase;transition:all 0.15s;" onmouseover="this.style.background='rgba(0,255,136,0.08)';this.style.borderColor='var(--accent)'" onmouseout="this.style.background='transparent';this.style.borderColor='rgba(0,255,136,0.2)'">Charts</a>
+      <a href="https://www.worldtradefactory.ai/trend" target="_blank" rel="noopener noreferrer" style="font-family:'Share Tech Mono',monospace;font-size:0.52rem;letter-spacing:2px;color:var(--accent);border:1px solid rgba(0,255,136,0.2);padding:5px 12px;text-decoration:none;text-transform:uppercase;transition:all 0.15s;" onmouseover="this.style.background='rgba(0,255,136,0.08)';this.style.borderColor='var(--accent)'" onmouseout="this.style.background='transparent';this.style.borderColor='rgba(0,255,136,0.2)'">Trend</a>
+      <a href="https://www.worldtradefactory.ai/rates-and-bonds-dashboard/" target="_blank" rel="noopener noreferrer" style="font-family:'Share Tech Mono',monospace;font-size:0.52rem;letter-spacing:2px;color:var(--accent);border:1px solid rgba(0,255,136,0.2);padding:5px 12px;text-decoration:none;text-transform:uppercase;transition:all 0.15s;" onmouseover="this.style.background='rgba(0,255,136,0.08)';this.style.borderColor='var(--accent)'" onmouseout="this.style.background='transparent';this.style.borderColor='rgba(0,255,136,0.2)'">Rates &amp; Bonds</a>
+      <a href="https://www.worldtradefactory.ai/yield" target="_blank" rel="noopener noreferrer" style="font-family:'Share Tech Mono',monospace;font-size:0.52rem;letter-spacing:2px;color:var(--accent);border:1px solid rgba(0,255,136,0.2);padding:5px 12px;text-decoration:none;text-transform:uppercase;transition:all 0.15s;" onmouseover="this.style.background='rgba(0,255,136,0.08)';this.style.borderColor='var(--accent)'" onmouseout="this.style.background='transparent';this.style.borderColor='rgba(0,255,136,0.2)'">Yield</a>
+      <a href="https://www.worldtradefactory.ai/events" target="_blank" rel="noopener noreferrer" style="font-family:'Share Tech Mono',monospace;font-size:0.52rem;letter-spacing:2px;color:var(--accent);border:1px solid rgba(0,255,136,0.2);padding:5px 12px;text-decoration:none;text-transform:uppercase;transition:all 0.15s;" onmouseover="this.style.background='rgba(0,255,136,0.08)';this.style.borderColor='var(--accent)'" onmouseout="this.style.background='transparent';this.style.borderColor='rgba(0,255,136,0.2)'">Events Calendar</a>
+      <a href="https://www.worldtradefactory.ai/cryptocurrencies" target="_blank" rel="noopener noreferrer" style="font-family:'Share Tech Mono',monospace;font-size:0.52rem;letter-spacing:2px;color:var(--accent);border:1px solid rgba(0,255,136,0.2);padding:5px 12px;text-decoration:none;text-transform:uppercase;transition:all 0.15s;" onmouseover="this.style.background='rgba(0,255,136,0.08)';this.style.borderColor='var(--accent)'" onmouseout="this.style.background='transparent';this.style.borderColor='rgba(0,255,136,0.2)'">Crypto</a>
+      <a href="https://www.worldtradefactory.ai/future" target="_blank" rel="noopener noreferrer" style="font-family:'Share Tech Mono',monospace;font-size:0.52rem;letter-spacing:2px;color:var(--accent);border:1px solid rgba(0,255,136,0.2);padding:5px 12px;text-decoration:none;text-transform:uppercase;transition:all 0.15s;" onmouseover="this.style.background='rgba(0,255,136,0.08)';this.style.borderColor='var(--accent)'" onmouseout="this.style.background='transparent';this.style.borderColor='rgba(0,255,136,0.2)'">WTF Coin</a>
+      <a href="https://www.worldtradefactory.ai/forex" target="_blank" rel="noopener noreferrer" style="font-family:'Share Tech Mono',monospace;font-size:0.52rem;letter-spacing:2px;color:var(--accent);border:1px solid rgba(0,255,136,0.2);padding:5px 12px;text-decoration:none;text-transform:uppercase;transition:all 0.15s;" onmouseover="this.style.background='rgba(0,255,136,0.08)';this.style.borderColor='var(--accent)'" onmouseout="this.style.background='transparent';this.style.borderColor='rgba(0,255,136,0.2)'">Forex</a>
+      <a href="https://www.worldtradefactory.ai/fred" target="_blank" rel="noopener noreferrer" style="font-family:'Share Tech Mono',monospace;font-size:0.52rem;letter-spacing:2px;color:var(--accent);border:1px solid rgba(0,255,136,0.2);padding:5px 12px;text-decoration:none;text-transform:uppercase;transition:all 0.15s;" onmouseover="this.style.background='rgba(0,255,136,0.08)';this.style.borderColor='var(--accent)'" onmouseout="this.style.background='transparent';this.style.borderColor='rgba(0,255,136,0.2)'">FRED Data</a>
+      <a href="https://www.worldtradefactory.ai/map" target="_blank" rel="noopener noreferrer" style="font-family:'Share Tech Mono',monospace;font-size:0.52rem;letter-spacing:2px;color:var(--accent);border:1px solid rgba(0,255,136,0.2);padding:5px 12px;text-decoration:none;text-transform:uppercase;transition:all 0.15s;" onmouseover="this.style.background='rgba(0,255,136,0.08)';this.style.borderColor='var(--accent)'" onmouseout="this.style.background='transparent';this.style.borderColor='rgba(0,255,136,0.2)'">Global Map</a>
+      <a href="https://www.worldtradefactory.ai/clock" target="_blank" rel="noopener noreferrer" style="font-family:'Share Tech Mono',monospace;font-size:0.52rem;letter-spacing:2px;color:var(--accent);border:1px solid rgba(0,255,136,0.2);padding:5px 12px;text-decoration:none;text-transform:uppercase;transition:all 0.15s;" onmouseover="this.style.background='rgba(0,255,136,0.08)';this.style.borderColor='var(--accent)'" onmouseout="this.style.background='transparent';this.style.borderColor='rgba(0,255,136,0.2)'">Market Clock</a>
+    </div>
+
+  </div><!-- /max-width wrap -->
+</div><!-- /hero command block -->
 
 
 <div class="s-divider"><div class="s-div-inner">
