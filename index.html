@@ -1109,8 +1109,9 @@ footer p{
     <div class="nav-actions">
       <button class="hud-btn" onclick="openDrawer('navDrawer')">NAVIGATOR</button>
       <a class="hud-btn danger link" href="#trailer">EXPERIENCE</a>
-        <a class="hud-btn cool link" href="shop.html">WARDROBE</a>
-              <a class="hud-btn danger link" href="fleet.html">FLEET</a>
+      <button class="hud-btn" onclick="openDrawer('lifeDrawer')">LIFESTYLE</button>
+            <!-- HERO<a class="hud-btn cool link" href="shop.html">WARDROBE</a>
+              <a class="hud-btn danger link" href="fleet.html">FLEET</a>-->
     </div>
 
   </header>
@@ -1118,7 +1119,7 @@ footer p{
   <div id="top" class="topSpacer"></div>
 
   <main>
-    <!-- HERO -->
+
     <section class="hero" aria-label="Hero">
       <video class="video-bg" autoplay muted loop playsinline poster="sowt.png">
         <source src="shark.mp4" type="video/mp4">
@@ -2091,7 +2092,17 @@ footer p{
       </div>
     </div>
   </aside>
+  <aside class="drawer" id="lifeDrawer" aria-hidden="true">
+    <div class="drawer-panel">
+      <div class="drawer-title">MAIN_MENU</div>
+      <div class="drawer-sub">SECTIONS</div>
 
+      <a class="drawer-item" href="shop.html" target="_blank" onclick="closeAllDrawers()" style="text-decoration:none">00. WARDROBE</a>
+      <a class="drawer-item" href="fleet.html" target="_blank" onclick="closeAllDrawers()" style="text-decoration:none">01. FLEET</a>
+      <a class="drawer-item" href="travel.html" target="_blank" onclick="closeAllDrawers()" style="text-decoration:none">02. TRAVEL</a>
+
+    </div>
+  </aside>
   <!-- SONGS DRAWER
   <aside class="drawer" id="songsDrawer" aria-hidden="true">
     <div class="drawer-panel">

@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Travel — The Shark of Wall Street</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RTH99L39VB"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RTH99L39VB');</script>
+<style>
+#vercel-toolbar,vercel-live-feedback,[data-vercel-toolbar]{display:none!important;opacity:0!important;pointer-events:none!important;visibility:hidden!important;}
+
+:root {
+  --ink:        #0a0a0a;
+  --ink-soft:   #111111;
+  --ivory:      #f5f0e8;
+  --ivory-dim:  #c8c0b0;
+  --ivory-faint:#3a3530;
+  --copper:     #b87333;
+  --copper-bright:#d4915a;
+  --crimson:    #8b1a1a;
+  --white:      #f0ede8;
+  --silver:     #b0a898;
+  --muted:      #665e52;
+  --border:     rgba(245,240,232,0.08);
+  --border-ivory: rgba(200,192,176,0.2);
+}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--ink);font-family:'Montserrat',sans-serif;color:var(--white);overflow-x:hidden;}
+
+.travel-section{position:relative;background:var(--ink);overflow:hidden;}
+
+/* Subtle warm grain */
+.travel-section::before{
+  content:'';
+  position:fixed;inset:0;
+  background:
+    repeating-linear-gradient(0deg,transparent,transparent 4px,rgba(245,240,232,0.006) 4px,rgba(245,240,232,0.006) 5px),
+    repeating-linear-gradient(90deg,transparent,transparent 4px,rgba(245,240,232,0.003) 4px,rgba(245,240,232,0.003) 5px);
+  pointer-events:none;z-index:100;
+}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.2}}
+
+/* ═══════════════════════════════
+   MASTHEAD HERO
+═══════════════════════════════ */
+.travel-masthead{
+  position:relative;
+  min-height:85vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  overflow:hidden;
+}
+
+.travel-masthead-img{
+  position:absolute;inset:0;
+  background-image:url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1800&q=85&auto=format&fit=crop');
+  background-size:cover;
+  background-position:center 40%;
+  filter:brightness(0.55) saturate(0.8);
+  transition:transform 8s ease;
+}
+
+.travel-masthead:hover .travel-masthead-img{transform:scale(1.03);}
+
+.travel-masthead-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(
+    to top,
+    rgba(10,10,10,1) 0%,
+    rgba(10,10,10,0.75) 30%,
+    rgba(10,10,10,0.2) 65%,
+    transparent 100%
+  );
+  z-index:1;
+}
+
+.travel-masthead-content{
+  position:relative;z-index:2;
+  padding:0 60px 64px;
+  animation:fadeUp 0.8s ease both;
+}
+
+.travel-eyebrow{
+  font-family:'Share Tech Mono',monospace;
+  font-size:0.6rem;
+  letter-spacing:5px;
+  color:var(--copper);
+  text-transform:uppercase;
+  margin-bottom:20px;
+  display:flex;align-items:center;gap:12px;
+}
+
+.travel-eyebrow::before{content:'';display:inline-block;width:32px;height:1px;background:var(--crimson);}
+
+.travel-eyebrow-dot{
+  display:inline-block;width:5px;height:5px;border-radius:50%;
+  background:var(--crimson);box-shadow:0 0 6px var(--crimson);
+  animation:blink 2s infinite;
+}
+
+.travel-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(72px,11vw,160px);
+  font-weight:300;
+  line-height:0.88;
+  letter-spacing:-1px;
+  color:var(--ivory);
+  margin-bottom:28px;
+  position:relative;
+}
+
+.travel-title em{
+  font-style:italic;
+  color:var(--copper-bright);
+}
+
+.travel-masthead-meta{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:40px;
+  flex-wrap:wrap;
+}
+
+.travel-deck{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.25rem;
+  font-weight:300;
+  font-style:italic;
+  letter-spacing:0.5px;
+  color:var(--ivory-dim);
+  line-height:1.7;
+  max-width:500px;
+  border-left:1px solid var(--copper);
+  padding-left:20px;
+}
+
+.travel-stats{display:flex;gap:32px;}
+.travel-stat{display:flex;flex-direction:column;gap:3px;text-align:right;}
+.travel-stat-num{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:300;color:var(--copper-bright);line-height:1;}
+.travel-stat-label{font-family:'Share Tech Mono',monospace;font-size:0.5rem;letter-spacing:2px;color:var(--muted);text-transform:uppercase;}
+
+/* ═══════════════════════════════
+   CATEGORY NAVIGATION STRIP
+═══════════════════════════════ */
+.travel-nav{
+  position:relative;z-index:2;
+  display:grid;
+  grid-template-columns:repeat(8,1fr);
+  border-bottom:1px solid var(--border-ivory);
+  background:rgba(10,10,10,0.95);
+  backdrop-filter:blur(12px);
+}
+
+.travel-nav-item{
+  position:relative;
+  padding:20px 16px 18px;
+  border-right:1px solid var(--border);
+  cursor:pointer;
+  transition:background 0.3s;
+  text-decoration:none;
+  display:block;
+}
+
+.travel-nav-item:last-child{border-right:none;}
+.travel-nav-item:hover{background:rgba(184,115,51,0.06);}
+
+.travel-nav-item::after{
+  content:'';
+  position:absolute;
+  bottom:0;left:0;right:0;
+  height:2px;
+  background:linear-gradient(to right,var(--crimson),var(--copper));
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform 0.35s ease;
+}
+
+.travel-nav-item:hover::after{transform:scaleX(1);}
+
+.travel-nav-num{
+  font-family:'Share Tech Mono',monospace;
+  font-size:0.48rem;
+  letter-spacing:2px;
+  color:var(--crimson);
+  display:block;
+  margin-bottom:5px;
+}
+
+.travel-nav-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:0.85rem;
+  font-weight:400;
+  letter-spacing:1px;
+  color:var(--ivory-dim);
+  display:block;
+  line-height:1.1;
+  transition:color 0.3s;
+}
+
+.travel-nav-item:hover .travel-nav-name{color:var(--copper-bright);}
+
+/* ═══════════════════════════════
+   SECTION DIVIDER
+═══════════════════════════════ */
+.travel-section-divider{
+  display:flex;align-items:center;
+  padding:16px 60px;
+  border-bottom:1px solid var(--border);
+  background:rgba(184,115,51,0.025);
+  gap:16px;
+}
+
+.tsd-num{font-family:'Share Tech Mono',monospace;font-size:0.65rem;letter-spacing:3px;color:var(--crimson);}
+.tsd-name{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;letter-spacing:3px;color:var(--copper-bright);}
+.tsd-sub{font-family:'Share Tech Mono',monospace;font-size:0.52rem;letter-spacing:2px;color:var(--muted);text-transform:uppercase;}
+.tsd-line{flex:1;height:1px;background:linear-gradient(to right,var(--border-ivory),transparent);margin-left:12px;}
+
+/* ═══════════════════════════════
+   CARDS GRID
+═══════════════════════════════ */
+.travel-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  position:relative;z-index:2;
+}
+
+/* ── STANDARD CARD ── */
+.t-card{
+  position:relative;
+  overflow:hidden;
+  border-right:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  min-height:440px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  animation:fadeUp 0.5s ease both;
+}
+
+.t-card:nth-child(4n){border-right:none;}
+.t-card:last-child{border-right:none;}
+
+.t-card-img{
+  position:absolute;inset:0;
+  background-size:cover;
+  background-position:center;
+  filter:brightness(0.72) saturate(0.85);
+  transition:transform 0.9s cubic-bezier(0.25,0.46,0.45,0.94),filter 0.6s ease;
+  z-index:0;
+}
+
+.t-card:hover .t-card-img{transform:scale(1.06);filter:brightness(0.45) saturate(0.65);}
+
+.t-card-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,
+    rgba(10,10,10,0.97) 0%,
+    rgba(10,10,10,0.72) 32%,
+    rgba(10,10,10,0.12) 62%,
+    transparent 100%
+  );
+  z-index:1;transition:background 0.5s;
+}
+
+.t-card:hover .t-card-overlay{
+  background:linear-gradient(to top,
+    rgba(10,10,10,0.99) 0%,
+    rgba(10,10,10,0.93) 52%,
+    rgba(10,10,10,0.68) 100%
+  );
+}
+
+/* Warm copper top line on hover */
+.t-card::after{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(to right,var(--crimson),var(--copper-bright));
+  transform:scaleX(0);transform-origin:left;
+  transition:transform 0.4s ease;z-index:5;
+}
+
+.t-card:hover::after{transform:scaleX(1);}
+
+.t-card-content{position:relative;z-index:3;padding:22px 24px 0;}
+
+.t-card-cat{
+  font-family:'Share Tech Mono',monospace;
+  font-size:0.52rem;letter-spacing:3px;
+  color:var(--crimson);text-transform:uppercase;
+  display:flex;align-items:center;gap:8px;margin-bottom:6px;
+}
+
+.t-card-cat::before{content:'';display:inline-block;width:10px;height:1px;background:var(--crimson);flex-shrink:0;}
+
+.t-card-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:2.1rem;font-weight:300;
+  letter-spacing:1px;color:#fff;line-height:1.05;
+  margin-bottom:4px;text-shadow:0 2px 20px rgba(0,0,0,0.9);
+  transition:color 0.3s;
+}
+
+.t-card:hover .t-card-name{color:var(--ivory);}
+
+.t-card-sub{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.62rem;font-weight:500;
+  letter-spacing:2.5px;
+  color:var(--copper);text-transform:uppercase;
+}
+
+/* links */
+.t-card-links{position:relative;z-index:3;padding:14px 24px 26px;margin-top:10px;}
+
+.t-divider{height:1px;background:rgba(184,115,51,0.25);margin-bottom:12px;}
+
+.t-link{
+  display:flex;align-items:flex-start;gap:9px;
+  padding:7px 0;text-decoration:none;
+  border-bottom:1px solid rgba(245,240,232,0.06);
+}
+
+.t-link:last-child{border-bottom:none;padding-bottom:0;}
+.t-link:hover .t-link-arrow{color:var(--copper-bright);transform:translateX(3px);}
+.t-link:hover .t-link-name{color:var(--copper-bright);}
+
+.t-link-arrow{
+  font-family:'Share Tech Mono',monospace;
+  font-size:0.62rem;color:var(--crimson);
+  flex-shrink:0;line-height:1.65;
+  transition:color .2s,transform .2s;
+}
+
+.t-link-body{display:flex;flex-direction:column;}
+
+.t-link-name{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.78rem;font-weight:600;
+  letter-spacing:1.2px;color:var(--white);
+  text-transform:uppercase;line-height:1.2;transition:color .2s;
+}
+
+.t-link-detail{
+  font-family:'Share Tech Mono',monospace;
+  font-size:0.5rem;letter-spacing:1px;
+  color:var(--silver);margin-top:2px;line-height:1.2;
+}
+
+/* ── SPLASH / EDITORIAL CARD ── */
+.t-splash-img{filter:brightness(0.55) saturate(0.7);}
+.t-card:hover .t-splash-img{filter:brightness(0.35) saturate(0.5);}
+
+.t-splash-pad{padding:30px 32px 0;}
+.t-splash-body-pad{position:relative;z-index:3;padding:18px 32px 30px;}
+
+.t-splash-tag{
+  font-family:'Share Tech Mono',monospace;
+  font-size:0.55rem;letter-spacing:3px;
+  color:var(--muted);text-transform:uppercase;margin-bottom:10px;
+}
+
+.t-splash-hed{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.9rem,3.2vw,3rem);
+  font-weight:300;font-style:italic;
+  letter-spacing:1px;color:var(--ivory);line-height:1.1;
+  text-shadow:0 2px 20px rgba(0,0,0,0.9);
+}
+
+.t-splash-hed .hl{color:var(--copper-bright);font-style:normal;}
+.t-splash-hed .hl-cr{color:#c0392b;font-style:normal;}
+
+.t-splash-body{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1rem;font-weight:300;
+  letter-spacing:0.5px;
+  color:var(--ivory-dim);line-height:1.8;max-width:520px;
+}
+
+/* ── DESTINATION TAGS ── */
+.t-dest-tags{
+  position:relative;z-index:3;
+  padding:10px 24px 20px;
+  display:flex;flex-wrap:wrap;gap:6px;
+}
+
+.t-tag{
+  font-family:'Share Tech Mono',monospace;
+  font-size:0.48rem;letter-spacing:2px;
+  color:var(--muted);text-transform:uppercase;
+  border:1px solid rgba(184,115,51,0.2);
+  padding:3px 8px;
+  transition:border-color .3s,color .3s;
+}
+
+.t-card:hover .t-tag{border-color:rgba(184,115,51,0.4);color:var(--copper);}
+
+/* ═══════════════════════════════
+   FOOTER
+═══════════════════════════════ */
+.travel-footer{
+  position:relative;z-index:2;
+  padding:16px 60px;
+  border-top:1px solid var(--border-ivory);
+  display:flex;align-items:center;gap:14px;
+}
+
+.travel-footer-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--copper);box-shadow:0 0 8px var(--copper);
+  animation:blink 2s infinite;flex-shrink:0;
+}
+
+.travel-footer-text{
+  font-family:'Share Tech Mono',monospace;
+  font-size:0.58rem;letter-spacing:3px;
+  color:var(--muted);text-transform:uppercase;
+}
+
+.travel-footer-text strong{color:var(--copper);font-weight:400;}
+.travel-footer-ver{margin-left:auto;font-family:'Share Tech Mono',monospace;font-size:0.54rem;letter-spacing:2px;color:#3a342e;}
+
+/* ═══════════════════════════════
+   RESPONSIVE
+═══════════════════════════════ */
+@media(max-width:1199px){
+  .travel-grid{grid-template-columns:repeat(3,1fr);}
+  .t-card:nth-child(4n){border-right:1px solid var(--border);}
+  .t-card:nth-child(3n){border-right:none;}
+  .t-card:last-child{border-right:none;}
+  .travel-nav{grid-template-columns:repeat(4,1fr);}
+}
+
+@media(max-width:860px){
+  .travel-masthead-content{padding:0 24px 48px;}
+  .travel-grid{grid-template-columns:repeat(2,1fr);}
+  .t-card:nth-child(3n){border-right:1px solid var(--border);}
+  .t-card:nth-child(even){border-right:none;}
+  .t-card:last-child{border-right:none;}
+  .travel-section-divider{padding:14px 24px;}
+  .travel-nav{grid-template-columns:repeat(4,1fr);}
+  .travel-footer{padding:14px 24px;}
+  .t-splash-pad{padding:22px 22px 0;}
+  .t-splash-body-pad{padding:14px 22px 24px;}
+}
+
+@media(max-width:520px){
+  .travel-grid{grid-template-columns:1fr;}
+  .t-card{border-right:none!important;min-height:360px;}
+  .travel-nav{grid-template-columns:repeat(2,1fr);}
+  .travel-masthead{min-height:70vh;}
+}
+</style>
+</head>
+<body>
+<section class="travel-section">
+
+<!-- ═══════════════════════
+     MASTHEAD
+═══════════════════════════ -->
+<div class="travel-masthead">
+  <div class="travel-masthead-img"></div>
+  <div class="travel-masthead-overlay"></div>
+  <div class="travel-masthead-content">
+    <p class="travel-eyebrow">
+      <span class="travel-eyebrow-dot"></span>
+      WORLD TRADE FACTORY / THE SHARK OF WALL STREET &nbsp;·&nbsp; LIFESTYLE
+    </p>
+    <h1 class="travel-title">TRAVEL<br><em>& Beyond</em></h1>
+    <div class="travel-masthead-meta">
+      <p class="travel-deck">Eight dimensions of the world worth knowing. Cities that never sleep, islands that have no clocks, mountains that demand silence. The places the fleet lands.</p>
+      <div class="travel-stats">
+        <div class="travel-stat">
+          <span class="travel-stat-num">8</span>
+          <span class="travel-stat-label">Categories</span>
+        </div>
+        <div class="travel-stat">
+          <span class="travel-stat-num">40+</span>
+          <span class="travel-stat-label">Destinations</span>
+        </div>
+        <div class="travel-stat">
+          <span class="travel-stat-num">∞</span>
+          <span class="travel-stat-label">Appetite</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════
+     NAV STRIP
+═══════════════════════════ -->
+<nav class="travel-nav">
+  <a href="#cities" class="travel-nav-item"><span class="travel-nav-num">01</span><span class="travel-nav-name">Cities</span></a>
+  <a href="#islands" class="travel-nav-item"><span class="travel-nav-num">02</span><span class="travel-nav-name">Islands &amp; Beach</span></a>
+  <a href="#mountains" class="travel-nav-item"><span class="travel-nav-num">03</span><span class="travel-nav-name">Mountains &amp; Ski</span></a>
+  <a href="#safari" class="travel-nav-item"><span class="travel-nav-num">04</span><span class="travel-nav-name">Safari &amp; Wild</span></a>
+  <a href="#hotels" class="travel-nav-item"><span class="travel-nav-num">05</span><span class="travel-nav-name">Hotels &amp; Resorts</span></a>
+  <a href="#villas" class="travel-nav-item"><span class="travel-nav-num">06</span><span class="travel-nav-name">Private Villas</span></a>
+  <a href="#dining" class="travel-nav-item"><span class="travel-nav-num">07</span><span class="travel-nav-name">Fine Dining</span></a>
+  <a href="#nightlife" class="travel-nav-item"><span class="travel-nav-num">08</span><span class="travel-nav-name">Nightlife</span></a>
+</nav>
+
+<!-- ═══════════════════════
+  01 — CITIES
+═══════════════════════════ -->
+<div id="cities" class="travel-section-divider">
+  <span class="tsd-num">01</span>
+  <span class="tsd-name">Cities</span>
+  <span class="tsd-sub">Urban / Power / Culture / After Dark</span>
+  <span class="tsd-line"></span>
+</div>
+<div class="travel-grid">
+  <!-- Splash -->
+  <article class="t-card" style="grid-column:span 2;">
+    <div class="t-card-img t-splash-img" style="background-image:url('https://images.unsplash.com/photo-1538970272646-f61fabb3a8a2?w=1200&q=80&auto=format&fit=crop')"></div>
+    <div class="t-card-overlay"></div>
+    <div class="t-card-content t-splash-pad">
+      <p class="t-splash-tag">THE GRID</p>
+      <p class="t-splash-hed">Every deal<br>starts in a <span class="hl">city.</span></p>
+    </div>
+    <div class="t-splash-body-pad"><p class="t-splash-body">These are the rooms where decisions are made, the streets where the money moves. Tokyo at 3am. Monaco in May. Dubai before the heat. Know your cities.</p></div>
+  </article>
+  <!-- Card: City Guides -->
+  <article class="t-card">
+    <div class="t-card-img" style="background-image:url('https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=900&q=80&auto=format&fit=crop')"></div>
+    <div class="t-card-overlay"></div>
+    <div class="t-card-content">
+      <p class="t-card-cat">Guides</p>
+      <h3 class="t-card-name">The Capitals</h3>
+      <p class="t-card-sub">NYC · London · Paris · Tokyo</p>
+    </div>
+    <div class="t-card-links"><div class="t-divider"></div>
+      <a href="https://www.cntraveler.com/cities" class="t-link" target="_blank" rel="noopener noreferrer"><span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">Condé Nast Traveler</span><span class="t-link-detail">world's best city guides</span></span></a>
+      <a href="https://monocle.com/travel" class="t-link" target="_blank" rel="noopener noreferrer"><span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">Monocle</span><span class="t-link-detail">quality of life · city intelligence</span></span></a>
+      <a href="https://www.timeout.com/travel" class="t-link" target="_blank" rel="noopener noreferrer"><span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">Time Out</span><span class="t-link-detail">what's on · where to go</span></span></a>
+      <a href="https://www.wallpaper.com/travel" class="t-link" target="_blank" rel="noopener noreferrer"><span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">Wallpaper*</span><span class="t-link-detail">design-led city travel</span></span></a>
+    </div>
+  </article>
+  <!-- Card: Power Cities -->
+  <article class="t-card">
+    <div class="t-card-img" style="background-image:url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=900&q=80&auto=format&fit=crop')"></div>
+    <div class="t-card-overlay"></div>
+    <div class="t-card-content">
+      <p class="t-card-cat">Money Cities</p>
+      <h3 class="t-card-name">Dubai · Monaco</h3>
+      <p class="t-card-sub">Wealth / Speed / Excess</p>
+    </div>
+    <div class="t-dest-tags">
+      <span class="t-tag">Dubai</span><span class="t-tag">Monaco</span><span class="t-tag">Singapore</span><span class="t-tag">Abu Dhabi</span><span class="t-tag">Geneva</span>
+    </div>
+    <div class="t-card-links"><div class="t-divider"></div>
+      <a href="https://www.visitdubai.com/en" class="t-link" target="_blank" rel="noopener noreferrer"><span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">Visit Dubai</span><span class="t-link-detail">official luxury guide</span></span></a>
+      <a href="https://www.visitmonaco.com/en" class="t-link" target="_blank" rel="noopener noreferrer"><span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">Monaco Tourism</span><span class="t-link-detail">principality guide</span></span></a>
+      <a href="https://www.yoursingapore.com" class="t-link" target="_blank" rel="noopener noreferrer"><span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">Visit Singapore</span><span class="t-link-detail">asia's financial capital</span></span></a>
+    </div>
+  </article>
+</div>
+
+<!-- ═══════════════════════
+  02 — ISLANDS & BEACH
+═══════════════════════════ -->
+<div id="islands" class="travel-section-divider">
+  <span class="tsd-num">02</span>
+  <span class="tsd-name">Islands &amp; Beach</span>
+  <span class="tsd-sub">Maldives / Ibiza / St Barts / Capri / Bora Bora</span>
+  <span class="tsd-line"></span>
+</div>
+<div class="travel-grid">
+  <article class="t-card">
+    <div class="t-card-img" style="background-image:url('https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=900&q=80&auto=format&fit=crop')"></div>
+    <div class="t-card-overlay"></div>
+    <div class="t-card-content">
+      <p class="t-card-cat">Overwater</p>
+      <h3 class="t-card-name">Maldives</h3>
+      <p class="t-card-sub">Indian Ocean / Private Islands</p>
+    </div>
+    <div class="t-card-links"><div class="t-divider"></div>
+      <a href="https://visitmaldives.com" class="t-link" target="_blank" rel="noopener noreferrer"><span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">Visit Maldives</span><span class="t-link-detail">official island guide</span></span></a>
+      <a href="https://www.six-senses.com/resorts/laamu" class="t-link" target="_blank" rel="noopener noreferrer"><span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">Six Senses Laamu</span><span class="t-link-detail">remote luxury · coral atoll</span></span></a>
+      <a href="https://www.fourseasons.com/maldives" class="t-link" target="_blank" rel="noopener noreferrer"><span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">Four Seasons Maldives</span><span class="t-link-detail">voavah · private island</span></span></a>
+    </div>
+  </article>
+  <article class="t-card">
+    <div class="t-card-img" style="background-image:url('https://images.unsplash.com/photo-1555952517-2e8e729e0b44?w=900&q=80&auto=format&fit=crop')"></div>
+    <div class="t-card-overlay"></div>
+    <div class="t-card-content">
+      <p class="t-card-cat">Mediterranean</p>
+      <h3 class="t-card-name">Ibiza · Capri</h3>
+      <p class="t-card-sub">Riviera / Clubs / Yachts</p>
+    </div>
+    <div class="t-dest-tags">
+      <span class="t-tag">Ibiza</span><span class="t-tag">Capri</span><span class="t-tag">Mykonos</span><span class="t-tag">Sardinia</span>
+    </div>
+    <div class="t-card-links"><div class="t-divider"></div>
+      <a href="https://www.ibiza-spotlight.com" class="t-link" target="_blank" rel="noopener noreferrer"><span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">Ibiza Spotlight</span><span class="t-link-detail">the island authority</span></span></a>
+      <a href="https://www.capritourism.com" class="t-link" target="_blank" rel="noopener noreferrer"><span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">Capri Tourism</span><span class="t-link-detail">the blue grotto · dolce vita</span></span></a>
+      <a href="https://www.mykonosguide.com" class="t-link" target="_blank" rel="noopener noreferrer"><span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">Mykonos Guide</span><span class="t-link-detail">cyclades · sunset to sunrise</span></span></a>
+    </div>
+  </article>
+  <article class="t-card">
+    <div class="t-card-img" style="background-image:url('https://images.unsplash.com/photo-1559494007-9f5847c49d94?w=900&q=80&auto=format&fit=crop')"></div>
+    <div class="t-card-overlay"></div>
+    <div class="t-card-content">
+      <p class="t-card-cat">Caribbean</p>
+      <h3 class="t-card-name">St Barts · BVI</h3>
+      <p class="t-card-sub">Atlantic / Reef / Seclusion</p>
+    </div>
+    <div class="t-card-links"><div class="t-divider"></div>
+      <a href="https://www.saintbarth-tourisme.com/en" class="t-link" target="_blank" rel="noopener noreferrer"><span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">Saint Barth Tourism</span><span class="t-link-detail">the franco-caribbean jewel</span></span></a>
+      <a href="https://www.bvitourism.com" class="t-link" target="_blank" rel="noopener noreferrer"><span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">BVI Tourism</span><span class="t-link-detail">british virgin islands · sailing</span></span></a>
+      <a href="https://www.turksandcaicostourism.com" class="t-link" target="_blank" rel="noopener noreferrer"><span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">Turks &amp; Caicos</span><span class="t-link-detail">grace bay · world's best beach</span></span></a>
+    </div>
+  </article>
+  <article class="t-card">
+    <div class="t-card-img t-splash-img" style="background-image:url('https://images.unsplash.com/photo-1483683804023-6ccdb62f86ef?w=900&q=80&auto=format&fit=crop')"></div>
+    <div class="t-card-overlay"></div>
+    <div class="t-card-content t-splash-pad" style="padding:20px 20px 0;">
+      <p class="t-splash-tag">FRENCH POLYNESIA</p>
+      <p class="t-splash-hed" style="font-size:clamp(1.6rem,2.4vw,2.4rem);">Where the<br>sea is <span class="hl">floor.</span></p>
+    </div>
+    <div class="t-splash-body-pad" style="padding:10px 20px 22px;">
+      <p class="t-splash-body" style="font-size:0.9rem;">Bora Bora. The St Regis. Overwater. You already know.</p>
+      <div style="margin-top:12px;">
+        <a href="https://www.tahititourisme.com/en-us" class="t-link" target="_blank" rel="noopener noreferrer" style="border-bottom:1px solid rgba(245,240,232,0.06);">
+          <span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">Tahiti Tourism</span><span class="t-link-detail">bora bora · moorea · tahaa</span></span>
+        </a>
+        <a href="https://www.marriott.com/en-us/hotels/pptsb-the-st-regis-bora-bora-resort" class="t-link" target="_blank" rel="noopener noreferrer">
+          <span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">St Regis Bora Bora</span><span class="t-link-detail">overwater villas · lagoon access</span></span>
+        </a>
+      </div>
+    </div>
+  </article>
+</div>
+
+<!-- ═══════════════════════
+  03 — MOUNTAINS & SKI
+═══════════════════════════ -->
+<div id="mountains" class="travel-section-divider">
+  <span class="tsd-num">03</span>
+  <span class="tsd-name">Mountains &amp; Ski</span>
+  <span class="tsd-sub">Aspen / Verbier / Zermatt / St Moritz / Courchevel</span>
+  <span class="tsd-line"></span>
+</div>
+<div class="travel-grid">
+  <article class="t-card" style="grid-column:span 2;">
+    <div class="t-card-img t-splash-img" style="background-image:url('https://images.unsplash.com/photo-1548484352-ea579e5233a8?w=1200&q=80&auto=format&fit=crop')"></div>
+    <div class="t-card-overlay"></div>
+    <div class="t-card-content t-splash-pad">
+      <p class="t-splash-tag">ALTITUDE</p>
+      <p class="t-splash-hed">Cold air.<br><span class="hl">Hot money.</span></p>
+    </div>
+    <div class="t-splash-body-pad"><p class="t-splash-body">The mountains are where the quiet conversations happen. Verbier's chalets. St Moritz's frozen lake. Aspen at New Year. The deals that don't get announced.</p></div>
+  </article>
+  <article class="t-card">
+    <div class="t-card-img" style="background-image:url('https://images.unsplash.com/photo-1551524559-8af4e6624178?w=900&q=80&auto=format&fit=crop')"></div>
+    <div class="t-card-overlay"></div>
+    <div class="t-card-content">
+      <p class="t-card-cat">Alps</p>
+      <h3 class="t-card-name">Europe</h3>
+      <p class="t-card-sub">Verbier · Zermatt · Courchevel</p>
+    </div>
+    <div class="t-dest-tags">
+      <span class="t-tag">Verbier</span><span class="t-tag">Zermatt</span><span class="t-tag">Courchevel</span><span class="t-tag">St Moritz</span>
+    </div>
+    <div class="t-card-links"><div class="t-divider"></div>
+      <a href="https://www.verbier.ch/en" class="t-link" target="_blank" rel="noopener noreferrer"><span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">Verbier</span><span class="t-link-detail">4 vallées · the jet-set mountain</span></span></a>
+      <a href="https://www.zermatt.ch/en" class="t-link" target="_blank" rel="noopener noreferrer"><span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">Zermatt</span><span class="t-link-detail">matterhorn · car-free village</span></span></a>
+      <a href="https://www.courchevel.com/en" class="t-link" target="_blank" rel="noopener noreferrer"><span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">Courchevel 1850</span><span class="t-link-detail">3 vallées · michelin on piste</span></span></a>
+    </div>
+  </article>
+  <article class="t-card">
+    <div class="t-card-img" style="background-image:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&q=80&auto=format&fit=crop')"></div>
+    <div class="t-card-overlay"></div>
+    <div class="t-card-content">
+      <p class="t-card-cat">Americas</p>
+      <h3 class="t-card-name">Aspen · Vail</h3>
+      <p class="t-card-sub">Colorado / Celebrity / Culture</p>
+    </div>
+    <div class="t-card-links"><div class="t-divider"></div>
+      <a href="https://www.aspen.com" class="t-link" target="_blank" rel="noopener noreferrer"><span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">Aspen</span><span class="t-link-detail">four mountains · year-round</span></span></a>
+      <a href="https://www.vail.com" class="t-link" target="_blank" rel="noopener noreferrer"><span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">Vail</span><span class="t-link-detail">back bowls · world-class terrain</span></span></a>
+      <a href="https://www.scottdunn.com/ski" class="t-link" target="_blank" rel="noopener noreferrer"><span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">Scott Dunn Ski</span><span class="t-link-detail">bespoke alpine itineraries</span></span></a>
+    </div>
+  </article>
+</div>
+
+<!-- ═══════════════════════
+  04 — SAFARI & WILDERNESS
+═══════════════════════════ -->
+<div id="safari" class="travel-section-divider">
+  <span class="tsd-num">04</span>
+  <span class="tsd-name">Safari &amp; Wilderness</span>
+  <span class="tsd-sub">Kenya / Botswana / Patagonia / Iceland / Antarctica</span>
+  <span class="tsd-line"></span>
+</div>
+<div class="travel-grid">
+  <article class="t-card">
+    <div class="t-card-img" style="background-image:url('https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=900&q=80&auto=format&fit=crop')"></div>
+    <div class="t-card-overlay"></div>
+    <div class="t-card-content">
+      <p class="t-card-cat">Africa</p>
+      <h3 class="t-card-name">Safari</h3>
+      <p class="t-card-sub">Kenya · Botswana · Tanzania</p>
+    </div>
+    <div class="t-card-links"><div class="t-divider"></div>
+      <a href="https://www.andbeyond.com" class="t-link" target="_blank" rel="noopener noreferrer"><span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">&amp;Beyond</span><span class="t-link-detail">ultra-luxury safari camps</span></span></a>
+      <a href="https://singita.com" class="t-link" target="_blank" rel="noopener noreferrer"><span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">Singita</span><span class="t-link-detail">conservation · world's best lodges</span></span></a>
+      <a href="https://wilderness.com" class="t-link" target="_blank" rel="noopener noreferrer"><span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">Wilderness Safaris</span><span class="t-link-detail">botswana · okavango delta</span></span></a>
+      <a href="https://www.elewanacollection.com" class="t-link" target="_blank" rel="noopener noreferrer"><span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">Elewana Collection</span><span class="t-link-detail">kenya · masai mara · amboseli</span></span></a>
+    </div>
+  </article>
+  <article class="t-card">
+    <div class="t-card-img" style="background-image:url('https://images.unsplash.com/photo-1501854140801-50d01698950b?w=900&q=80&auto=format&fit=crop')"></div>
+    <div class="t-card-overlay"></div>
+    <div class="t-card-content">
+      <p class="t-card-cat">Remote</p>
+      <h3 class="t-card-name">Patagonia</h3>
+      <p class="t-card-sub">Argentina · Chile · End of Earth</p>
+    </div>
+    <div class="t-card-links"><div class="t-divider"></div>
+      <a href="https://www.explora.com/patagonia" class="t-link" target="_blank" rel="noopener noreferrer"><span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">Explora Patagonia</span><span class="t-link-detail">torres del paine · remote luxury</span></span></a>
+      <a href="https://www.awasi.cl/en/patagonia" class="t-link" target="_blank" rel="noopener noreferrer"><span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">Awasi Patagonia</span><span class="t-link-detail">private guides · ultra-remote</span></span></a>
+    </div>
+  </article>
+  <article class="t-card" style="grid-column:span 2;">
+    <div class="t-card-img t-splash-img" style="background-image:url('https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=1200&q=80&auto=format&fit=crop')"></div>
+    <div class="t-card-overlay"></div>
+    <div class="t-card-content t-splash-pad">
+      <p class="t-splash-tag">EDGE OF THE WORLD</p>
+      <p class="t-splash-hed">Where the<br>map <span class="hl">ends.</span></p>
+    </div>
+    <div class="t-splash-body-pad">
+      <p class="t-splash-body">No service. No schedules. Just the planet in its original state. These are the experiences you don't post about.</p>
+      <div style="margin-top:14px;display:flex;flex-direction:column;gap:0;">
+        <a href="https://www.quarkexpeditions.com" class="t-link" target="_blank" rel="noopener noreferrer" style="border-bottom:1px solid rgba(245,240,232,0.06);">
+          <span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">Quark Expeditions</span><span class="t-link-detail">antarctica · arctic · polar</span></span>
+        </a>
+        <a href="https://www.nat-hab.com" class="t-link" target="_blank" rel="noopener noreferrer" style="border-bottom:1px solid rgba(245,240,232,0.06);">
+          <span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">Natural Habitat Adventures</span><span class="t-link-detail">wildlife expeditions worldwide</span></span>
+        </a>
+        <a href="https://www.secret-escapes.com" class="t-link" target="_blank" rel="noopener noreferrer">
+          <span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">Secret Escapes</span><span class="t-link-detail">curated luxury · members only</span></span>
+        </a>
+      </div>
+    </div>
+  </article>
+</div>
+
+<!-- ═══════════════════════
+  05 — HOTELS & RESORTS
+═══════════════════════════ -->
+<div id="hotels" class="travel-section-divider">
+  <span class="tsd-num">05</span>
+  <span class="tsd-name">Hotels &amp; Resorts</span>
+  <span class="tsd-sub">Aman / Four Seasons / Rosewood / Peninsula / Raffles</span>
+  <span class="tsd-line"></span>
+</div>
+<div class="travel-grid">
+  <article class="t-card" style="grid-column:span 2;">
+    <div class="t-card-img t-splash-img" style="background-image:url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1200&q=80&auto=format&fit=crop')"></div>
+    <div class="t-card-overlay"></div>
+    <div class="t-card-content t-splash-pad">
+      <p class="t-splash-tag">THE ROOM MATTERS</p>
+      <p class="t-splash-hed">A great hotel<br>is never <span class="hl">just a bed.</span></p>
+    </div>
+    <div class="t-splash-body-pad"><p class="t-splash-body">It's a position. A statement of intent. The right address in the right city signals everything before you open your mouth.</p></div>
+  </article>
+  <article class="t-card">
+    <div class="t-card-img" style="background-image:url('https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900&q=80&auto=format&fit=crop')"></div>
+    <div class="t-card-overlay"></div>
+    <div class="t-card-content">
+      <p class="t-card-cat">Ultra Luxury</p>
+      <h3 class="t-card-name">The Icons</h3>
+      <p class="t-card-sub">Aman · Four Seasons · Rosewood</p>
+    </div>
+    <div class="t-card-links"><div class="t-divider"></div>
+      <a href="https://www.aman.com" class="t-link" target="_blank" rel="noopener noreferrer"><span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">Aman</span><span class="t-link-detail">the quietest rooms on earth</span></span></a>
+      <a href="https://www.fourseasons.com" class="t-link" target="_blank" rel="noopener noreferrer"><span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">Four Seasons</span><span class="t-link-detail">the global standard</span></span></a>
+      <a href="https://www.rosewoodhotels.com" class="t-link" target="_blank" rel="noopener noreferrer"><span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">Rosewood</span><span class="t-link-detail">a sense of place · unscripted</span></span></a>
+      <a href="https://www.peninsula.com" class="t-link" target="_blank" rel="noopener noreferrer"><span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">The Peninsula</span><span class="t-link-detail">hongkong · paris · tokyo</span></span></a>
+    </div>
+  </article>
+  <article class="t-card">
+    <div class="t-card-img" style="background-image:url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=900&q=80&auto=format&fit=crop')"></div>
+    <div class="t-card-overlay"></div>
+    <div class="t-card-content">
+      <p class="t-card-cat">Curators</p>
+      <h3 class="t-card-name">Find The Room</h3>
+      <p class="t-card-sub">Discovery / Booking / Access</p>
+    </div>
+    <div class="t-card-links"><div class="t-divider"></div>
+      <a href="https://www.mrandmrssmith.com" class="t-link" target="_blank" rel="noopener noreferrer"><span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">Mr &amp; Mrs Smith</span><span class="t-link-detail">boutique hotels · honest reviews</span></span></a>
+      <a href="https://www.tablethotels.com" class="t-link" target="_blank" rel="noopener noreferrer"><span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">Tablet Hotels</span><span class="t-link-detail">world's best independent hotels</span></span></a>
+      <a href="https://www.virtuoso.com/travel/luxury-hotels" class="t-link" target="_blank" rel="noopener noreferrer"><span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">Virtuoso</span><span class="t-link-detail">curated · perks · advisor access</span></span></a>
+      <a href="https://www.lhw.com" class="t-link" target="_blank" rel="noopener noreferrer"><span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">Leading Hotels</span><span class="t-link-detail">the world's finest independents</span></span></a>
+    </div>
+  </article>
+</div>
+
+<!-- ═══════════════════════
+  06 — PRIVATE VILLAS
+═══════════════════════════ -->
+<div id="villas" class="travel-section-divider">
+  <span class="tsd-num">06</span>
+  <span class="tsd-name">Private Villas</span>
+  <span class="tsd-sub">Tuscany / Bali / Mykonos / Caribbean / Côte d'Azur</span>
+  <span class="tsd-line"></span>
+</div>
+<div class="travel-grid">
+  <article class="t-card">
+    <div class="t-card-img" style="background-image:url('https://images.unsplash.com/photo-1613977257363-707ba9348227?w=900&q=80&auto=format&fit=crop')"></div>
+    <div class="t-card-overlay"></div>
+    <div class="t-card-content">
+      <p class="t-card-cat">Private Estates</p>
+      <h3 class="t-card-name">Villas</h3>
+      <p class="t-card-sub">Europe / Asia / Caribbean</p>
+    </div>
+    <div class="t-card-links"><div class="t-divider"></div>
+      <a href="https://www.onefinestay.com" class="t-link" target="_blank" rel="noopener noreferrer"><span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">Onefinestay</span><span class="t-link-detail">unhotel stays · private homes</span></span></a>
+      <a href="https://www.airbnb.com/luxury" class="t-link" target="_blank" rel="noopener noreferrer"><span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">Airbnb Luxe</span><span class="t-link-detail">handpicked estates · concierge</span></span></a>
+      <a href="https://www.villasinvillas.com" class="t-link" target="_blank" rel="noopener noreferrer"><span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">Villas in Villas</span><span class="t-link-detail">italy · tuscany · amalfi</span></span></a>
+      <a href="https://www.elitehavens.com" class="t-link" target="_blank" rel="noopener noreferrer"><span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">Elite Havens</span><span class="t-link-detail">bali · sri lanka · southeast asia</span></span></a>
+    </div>
+  </article>
+  <article class="t-card" style="grid-column:span 3;">
+    <div class="t-card-img t-splash-img" style="background-image:url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1400&q=80&auto=format&fit=crop')"></div>
+    <div class="t-card-overlay"></div>
+    <div class="t-card-content t-splash-pad">
+      <p class="t-splash-tag">THE PRIVATE RESIDENCE</p>
+      <p class="t-splash-hed">No lobby.<br>No one watching.<br><span class="hl">Just yours.</span></p>
+    </div>
+    <div class="t-splash-body-pad">
+      <p class="t-splash-body">A private villa is the only accommodation that doesn't require you to perform. No check-in. No service theater. Staff who know when to disappear. The pool is yours. The chef is yours. The view is yours at 4am.</p>
+      <div style="margin-top:16px;display:flex;flex-direction:column;">
+        <a href="https://www.villaway.com" class="t-link" target="_blank" rel="noopener noreferrer" style="border-bottom:1px solid rgba(245,240,232,0.06);">
+          <span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">Villaway</span><span class="t-link-detail">global private villa rentals</span></span>
+        </a>
+        <a href="https://www.pura-aventura.com/luxury-villas" class="t-link" target="_blank" rel="noopener noreferrer">
+          <span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">Pura Aventura</span><span class="t-link-detail">latin america · bespoke villa trips</span></span>
+        </a>
+      </div>
+    </div>
+  </article>
+</div>
+
+<!-- ═══════════════════════
+  07 — FINE DINING
+═══════════════════════════ -->
+<div id="dining" class="travel-section-divider">
+  <span class="tsd-num">07</span>
+  <span class="tsd-name">Fine Dining</span>
+  <span class="tsd-sub">Michelin / The World's 50 Best / Omakase / Reservations</span>
+  <span class="tsd-line"></span>
+</div>
+<div class="travel-grid">
+  <article class="t-card" style="grid-column:span 2;">
+    <div class="t-card-img t-splash-img" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80&auto=format&fit=crop')"></div>
+    <div class="t-card-overlay"></div>
+    <div class="t-card-content t-splash-pad">
+      <p class="t-splash-tag">THE TABLE</p>
+      <p class="t-splash-hed">The best meal<br>you've <span class="hl">never had.</span></p>
+    </div>
+    <div class="t-splash-body-pad"><p class="t-splash-body">Three Michelin stars is a minimum. Omakase in Tokyo is a religion. The World's 50 Best is the only list worth studying. Eat where decisions are made and where they're celebrated.</p></div>
+  </article>
+  <article class="t-card">
+    <div class="t-card-img" style="background-image:url('https://images.unsplash.com/photo-1559339352-11d035aa65de?w=900&q=80&auto=format&fit=crop')"></div>
+    <div class="t-card-overlay"></div>
+    <div class="t-card-content">
+      <p class="t-card-cat">Discovery</p>
+      <h3 class="t-card-name">The Lists</h3>
+      <p class="t-card-sub">Michelin · 50 Best · Stars</p>
+    </div>
+    <div class="t-card-links"><div class="t-divider"></div>
+      <a href="https://guide.michelin.com/en/restaurants" class="t-link" target="_blank" rel="noopener noreferrer"><span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">Michelin Guide</span><span class="t-link-detail">the original arbiter</span></span></a>
+      <a href="https://www.theworlds50best.com" class="t-link" target="_blank" rel="noopener noreferrer"><span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">World's 50 Best</span><span class="t-link-detail">the definitive ranking</span></span></a>
+      <a href="https://www.eater.com/maps" class="t-link" target="_blank" rel="noopener noreferrer"><span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">Eater Maps</span><span class="t-link-detail">essential restaurants by city</span></span></a>
+    </div>
+  </article>
+  <article class="t-card">
+    <div class="t-card-img" style="background-image:url('https://images.unsplash.com/photo-1600891964092-4316c288032e?w=900&q=80&auto=format&fit=crop')"></div>
+    <div class="t-card-overlay"></div>
+    <div class="t-card-content">
+      <p class="t-card-cat">Reservations</p>
+      <h3 class="t-card-name">Book the Table</h3>
+      <p class="t-card-sub">Global Booking Platforms</p>
+    </div>
+    <div class="t-card-links"><div class="t-divider"></div>
+      <a href="https://resy.com" class="t-link" target="_blank" rel="noopener noreferrer"><span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">Resy</span><span class="t-link-detail">hard-to-get tables · global</span></span></a>
+      <a href="https://www.tock.com" class="t-link" target="_blank" rel="noopener noreferrer"><span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">Tock</span><span class="t-link-detail">experiences · tasting menus</span></span></a>
+      <a href="https://www.opentable.com" class="t-link" target="_blank" rel="noopener noreferrer"><span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">OpenTable</span><span class="t-link-detail">1m+ restaurants · instant book</span></span></a>
+      <a href="https://www.sevenrooms.com" class="t-link" target="_blank" rel="noopener noreferrer"><span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">SevenRooms</span><span class="t-link-detail">vip guest experience platform</span></span></a>
+    </div>
+  </article>
+</div>
+
+<!-- ═══════════════════════
+  08 — NIGHTLIFE
+═══════════════════════════ -->
+<div id="nightlife" class="travel-section-divider">
+  <span class="tsd-num">08</span>
+  <span class="tsd-name">Nightlife</span>
+  <span class="tsd-sub">Ibiza / Miami / Tokyo / Dubai / London / NYC</span>
+  <span class="tsd-line"></span>
+</div>
+<div class="travel-grid">
+  <article class="t-card">
+    <div class="t-card-img" style="background-image:url('https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=900&q=80&auto=format&fit=crop')"></div>
+    <div class="t-card-overlay"></div>
+    <div class="t-card-content">
+      <p class="t-card-cat">Electronic</p>
+      <h3 class="t-card-name">Ibiza · Berlin</h3>
+      <p class="t-card-sub">Clubs / Residencies / Culture</p>
+    </div>
+    <div class="t-card-links"><div class="t-divider"></div>
+      <a href="https://www.ibiza-spotlight.com/night" class="t-link" target="_blank" rel="noopener noreferrer"><span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">Ibiza Spotlight</span><span class="t-link-detail">club guide · lineups · tickets</span></span></a>
+      <a href="https://ra.co" class="t-link" target="_blank" rel="noopener noreferrer"><span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">Resident Advisor</span><span class="t-link-detail">electronic music · global listings</span></span></a>
+      <a href="https://www.djmag.com/top100clubs" class="t-link" target="_blank" rel="noopener noreferrer"><span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">DJ Mag Top 100 Clubs</span><span class="t-link-detail">the world's best venues</span></span></a>
+    </div>
+  </article>
+  <article class="t-card">
+    <div class="t-card-img" style="background-image:url('https://images.unsplash.com/photo-1566737236500-c8ac43014a67?w=900&q=80&auto=format&fit=crop')"></div>
+    <div class="t-card-overlay"></div>
+    <div class="t-card-content">
+      <p class="t-card-cat">Luxury</p>
+      <h3 class="t-card-name">VIP · Tables</h3>
+      <p class="t-card-sub">Miami · Dubai · Vegas · London</p>
+    </div>
+    <div class="t-dest-tags">
+      <span class="t-tag">Miami</span><span class="t-tag">Dubai</span><span class="t-tag">Vegas</span><span class="t-tag">London</span><span class="t-tag">NYC</span>
+    </div>
+    <div class="t-card-links"><div class="t-divider"></div>
+      <a href="https://www.therooftopguide.com" class="t-link" target="_blank" rel="noopener noreferrer"><span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">Rooftop Guide</span><span class="t-link-detail">world's best rooftop bars</span></span></a>
+      <a href="https://www.timeout.com/nightlife" class="t-link" target="_blank" rel="noopener noreferrer"><span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">Time Out Nightlife</span><span class="t-link-detail">best bars &amp; clubs by city</span></span></a>
+      <a href="https://www.vipsocialgroup.com" class="t-link" target="_blank" rel="noopener noreferrer"><span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">VIP Social</span><span class="t-link-detail">table reservations · bottle service</span></span></a>
+    </div>
+  </article>
+  <article class="t-card" style="grid-column:span 2;">
+    <div class="t-card-img t-splash-img" style="background-image:url('https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=1200&q=80&auto=format&fit=crop')"></div>
+    <div class="t-card-overlay"></div>
+    <div class="t-card-content t-splash-pad">
+      <p class="t-splash-tag">AFTER MIDNIGHT</p>
+      <p class="t-splash-hed">The city<br>starts at <span class="hl">midnight.</span></p>
+    </div>
+    <div class="t-splash-body-pad">
+      <p class="t-splash-body">The best conversations happen after the restaurants close. The deals that don't exist on paper. The rooms that aren't on any guest list until you're already in them.</p>
+      <div style="margin-top:14px;display:flex;flex-direction:column;">
+        <a href="https://www.nightlifediaries.com" class="t-link" target="_blank" rel="noopener noreferrer" style="border-bottom:1px solid rgba(245,240,232,0.06);">
+          <span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">Nightlife Diaries</span><span class="t-link-detail">premium global nightlife intel</span></span>
+        </a>
+        <a href="https://www.timeout.com/tokyo/nightlife" class="t-link" target="_blank" rel="noopener noreferrer" style="border-bottom:1px solid rgba(245,240,232,0.06);">
+          <span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">Tokyo Nightlife</span><span class="t-link-detail">roppongi · shibuya · kabukicho</span></span>
+        </a>
+        <a href="https://www.clubbingspain.com/en" class="t-link" target="_blank" rel="noopener noreferrer">
+          <span class="t-link-arrow">→</span><span class="t-link-body"><span class="t-link-name">Clubbing Spain</span><span class="t-link-detail">ibiza · madrid · barcelona</span></span>
+        </a>
+      </div>
+    </div>
+  </article>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<div class="travel-footer">
+  <span class="travel-footer-dot"></span>
+  <span class="travel-footer-text">Travel guide <strong>active</strong> &nbsp;·&nbsp; 8 categories &nbsp;·&nbsp; 40+ destinations</span>
+  <span class="travel-footer-ver">WORLD TRADE FACTORY / TRAVEL.V1</span>
+</div>
+
+</section>
+</body>
+</html>
