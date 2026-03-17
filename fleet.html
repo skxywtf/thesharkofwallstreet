@@ -7,673 +7,489 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-<!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RTH99L39VB"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-RTH99L39VB');
-  </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RTH99L39VB"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RTH99L39VB');</script>
 <style>
-  :root {
-    --gold:     #c9a84c;
-    --gold-dim: #7a6130;
-    --red:      #c0392b;
-    --white:    #f0f0f0;
-    --silver:   #cccccc;
-    --bg:       #080808;
-    --border:   rgba(255,255,255,0.08);
-  }
-/* Vercel toolbar suppression */
 #vercel-toolbar,vercel-live-feedback,[data-vercel-toolbar]{display:none!important;opacity:0!important;pointer-events:none!important;visibility:hidden!important;}
-  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 
-  body {
-    background: var(--bg);
-    font-family: 'Rajdhani', sans-serif;
-    color: var(--white);
-  }
+:root {
+  --gold:       #c9a84c;
+  --gold-dim:   #7a6130;
+  --red:        #c0392b;
+  --white:      #f0f0f0;
+  --silver:     #cccccc;
+  --muted:      #888888;
+  --bg:         #080808;
+  --border:     rgba(255,255,255,0.08);
+  --border-gold:rgba(201,168,76,0.25);
+}
 
-  /* ═══════════════════════════
-     SECTION SHELL
-  ═══════════════════════════ */
-  .fleet-section {
-    position: relative;
-    padding: 80px 0 0;
-    background: var(--bg);
-    overflow: hidden;
-  }
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);font-family:'Rajdhani',sans-serif;color:var(--white);overflow-x:hidden;}
 
-  /* Scanlines */
-  .fleet-section::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 3px,
-      rgba(201,168,76,0.012) 3px,
-      rgba(201,168,76,0.012) 4px
-    );
-    pointer-events: none;
-    z-index: 10;
-  }
+.fleet-section{position:relative;background:var(--bg);overflow:hidden;}
 
-  /* ── HEADER ── */
-  .fleet-header {
-    position: relative;
-    z-index: 2;
-    padding: 0 48px 48px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 32px;
-    border-bottom: 1px solid var(--border);
-  }
+/* scanlines */
+.fleet-section::before{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(201,168,76,0.007) 3px,rgba(201,168,76,0.007) 4px);pointer-events:none;z-index:100;}
 
-  .fleet-eyebrow {
-    font-family: 'Share Tech Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 4px;
-    color: var(--gold);
-    text-transform: uppercase;
-    margin-bottom: 10px;
-  }
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.15}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 
-  .fleet-eyebrow::before { content: '▶ '; color: var(--red); }
+/* ═══ HEADER ═══ */
+.fleet-hero{position:relative;padding:80px 48px 0;overflow:hidden;}
+.fleet-hero::before{content:'';position:absolute;top:-100px;right:-80px;width:700px;height:500px;background:linear-gradient(135deg,transparent 48%,rgba(201,168,76,0.04) 48%,rgba(201,168,76,0.04) 49.5%,transparent 49.5%,transparent 52%,rgba(201,168,76,0.025) 52%,rgba(201,168,76,0.025) 53%,transparent 53%);pointer-events:none;}
+.fleet-hero-inner{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;padding-bottom:48px;border-bottom:1px solid var(--border);}
+.fleet-eyebrow{font-family:'Share Tech Mono',monospace;font-size:0.62rem;letter-spacing:4px;color:var(--gold);text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.fleet-eyebrow::before{content:'';display:inline-block;width:24px;height:1px;background:var(--red);}
+.fleet-eyebrow-dot{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--red);box-shadow:0 0 6px var(--red);animation:blink 1.8s infinite;margin-right:4px;}
+.fleet-title-wrap{position:relative;display:inline-block;}
+.fleet-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(80px,10vw,148px);line-height:0.85;letter-spacing:4px;color:var(--white);position:relative;z-index:2;}
+.fleet-h1 .gold{color:var(--gold);}
+.fleet-h1-shadow{position:absolute;top:5px;left:5px;font-family:'Bebas Neue',sans-serif;font-size:clamp(80px,10vw,148px);line-height:0.85;letter-spacing:4px;color:var(--red);opacity:0.18;z-index:1;pointer-events:none;white-space:pre;}
+.fleet-tagline{font-family:'Rajdhani',sans-serif;font-size:0.95rem;font-weight:500;letter-spacing:2.5px;color:var(--silver);text-transform:uppercase;line-height:2;border-left:2px solid var(--gold-dim);padding-left:20px;margin-bottom:24px;}
+.fleet-stat-row{display:flex;gap:28px;}
+.fleet-stat{display:flex;flex-direction:column;gap:2px;}
+.fleet-stat-num{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--gold);line-height:1;letter-spacing:2px;}
+.fleet-stat-label{font-family:'Share Tech Mono',monospace;font-size:0.52rem;letter-spacing:2px;color:var(--muted);text-transform:uppercase;}
 
-  .fleet-h1 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(72px, 9vw, 130px);
-    line-height: 0.88;
-    letter-spacing: 3px;
-    color: var(--white);
-    position: relative;
-  }
+/* ═══ PANEL STRIP ═══ */
+.fleet-panel-strip{display:grid;grid-template-columns:repeat(8,1fr);height:220px;border-bottom:2px solid var(--border-gold);overflow:hidden;}
+.fleet-panel{position:relative;overflow:hidden;border-right:1px solid rgba(0,0,0,0.6);cursor:default;animation:fadeUp 0.6s ease both;}
+.fleet-panel:last-child{border-right:none;}
+.fleet-panel:nth-child(1){animation-delay:.05s}.fleet-panel:nth-child(2){animation-delay:.10s}.fleet-panel:nth-child(3){animation-delay:.15s}.fleet-panel:nth-child(4){animation-delay:.20s}.fleet-panel:nth-child(5){animation-delay:.25s}.fleet-panel:nth-child(6){animation-delay:.30s}.fleet-panel:nth-child(7){animation-delay:.35s}.fleet-panel:nth-child(8){animation-delay:.40s}
 
-  .fleet-h1 .accent { color: var(--gold); }
+/* PANELS: much brighter — readable at rest, rich on hover */
+.fleet-panel-img{position:absolute;inset:0;background-size:cover;background-position:center;filter:brightness(0.7) saturate(0.75);transition:transform 1s cubic-bezier(0.25,0.46,0.45,0.94),filter 0.5s ease;}
+.fleet-panel:hover .fleet-panel-img{transform:scale(1.1);filter:brightness(0.9) saturate(1);}
 
-  .fleet-h1::before {
-    content: attr(data-text);
-    position: absolute;
-    top: 4px; left: 4px;
-    color: var(--red);
-    opacity: 0.22;
-    pointer-events: none;
-    white-space: pre;
-  }
+.fleet-panel::before{content:'';position:absolute;top:0;bottom:0;left:0;width:2px;background:var(--gold);transform:scaleY(0);transform-origin:bottom;transition:transform 0.35s ease;z-index:3;}
+.fleet-panel:hover::before{transform:scaleY(1);}
+.fleet-panel-label{position:absolute;bottom:0;left:0;right:0;padding:10px 12px;background:linear-gradient(to top,rgba(0,0,0,0.92) 0%,transparent 100%);z-index:2;}
+.fleet-panel-num{font-family:'Share Tech Mono',monospace;font-size:0.5rem;letter-spacing:2px;color:var(--red);display:block;margin-bottom:2px;}
+.fleet-panel-name{font-family:'Bebas Neue',sans-serif;font-size:1.05rem;letter-spacing:2px;color:#fff;display:block;line-height:1;transition:color .3s;}
+.fleet-panel:hover .fleet-panel-name{color:var(--gold);}
 
-  .fleet-tagline {
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 0.92rem;
-    font-weight: 500;
-    letter-spacing: 2px;
-    color: var(--silver);
-    text-transform: uppercase;
-    line-height: 1.9;
-    border-left: 2px solid var(--gold-dim);
-    padding-left: 18px;
-    max-width: 260px;
-  }
+/* ═══ CATEGORY DIVIDER ═══ */
+.fleet-cat-divider{display:flex;align-items:center;border-bottom:1px solid var(--border);background:rgba(201,168,76,0.02);}
+.fleet-cat-divider-inner{display:flex;align-items:center;gap:16px;padding:10px 48px;width:100%;}
+.fleet-cat-divider-num{font-family:'Bebas Neue',sans-serif;font-size:0.9rem;letter-spacing:3px;color:var(--red);}
+.fleet-cat-divider-name{font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:4px;color:var(--gold);}
+.fleet-cat-divider-sub{font-family:'Share Tech Mono',monospace;font-size:0.55rem;letter-spacing:2px;color:var(--muted);text-transform:uppercase;}
+.fleet-cat-divider-line{flex:1;height:1px;background:linear-gradient(to right,var(--border-gold),transparent);margin-left:16px;}
 
-  /* ── GRID ── */
-  .fleet-grid {
-    position: relative;
-    z-index: 2;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-  }
+/* ═══ GRID ═══ */
+.fleet-grid{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);}
 
-  /* ── CARD ── */
-  .fleet-card {
-    position: relative;
-    overflow: hidden;
-    border-right: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    min-height: 460px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-  }
+/* ═══ CARD ═══ */
+.fleet-card{position:relative;overflow:hidden;border-right:1px solid var(--border);border-bottom:1px solid var(--border);min-height:400px;display:flex;flex-direction:column;justify-content:flex-end;animation:fadeUp 0.5s ease both;}
+.fleet-card:nth-child(4n){border-right:none;}
+.fleet-card:last-child{border-right:none;}
 
-  /* Last card in each row — no right border */
-  .fleet-card:nth-child(4n) { border-right: none; }
-  /* Row 2 (cards 5-7) — last card */
-  .fleet-card:last-child { border-right: none; }
+/* CARDS: brighter at rest — you can actually see the photo */
+.fleet-card-img{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 0.9s cubic-bezier(0.25,0.46,0.45,0.94),filter 0.5s ease;filter:brightness(0.7) saturate(0.8);z-index:0;}
+.fleet-card:hover .fleet-card-img{transform:scale(1.06);filter:brightness(0.4) saturate(0.5);}
 
-  /* BG photo */
-  .fleet-card-img {
-    position: absolute;
-    inset: 0;
-    background-size: cover;
-    background-position: center;
-    transition: transform 0.9s cubic-bezier(0.25,0.46,0.45,0.94),
-                filter 0.6s ease;
-    filter: brightness(0.5) saturate(0.65);
-    z-index: 0;
-  }
+/* gradient always covers just the bottom for text — top of card shows full photo */
+.fleet-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.96) 0%,rgba(0,0,0,0.7) 30%,rgba(0,0,0,0.1) 60%,transparent 100%);z-index:1;transition:background 0.5s;}
+.fleet-card:hover .fleet-card-overlay{background:linear-gradient(to top,rgba(0,0,0,0.99) 0%,rgba(0,0,0,0.92) 50%,rgba(0,0,0,0.65) 100%);}
 
-  .fleet-card:hover .fleet-card-img {
-    transform: scale(1.07);
-    filter: brightness(0.28) saturate(0.4);
-  }
+/* gold+red gradient top bar on hover */
+.fleet-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,var(--red),var(--gold));transform:scaleX(0);transform-origin:left;transition:transform 0.4s ease;z-index:5;}
+.fleet-card:hover::after{transform:scaleX(1);}
 
-  /* Always-present dark gradient — guarantees legibility */
-  .fleet-card-overlay {
-    position: absolute;
-    inset: 0;
-    background:
-      linear-gradient(to top,
-        rgba(0,0,0,0.98) 0%,
-        rgba(0,0,0,0.80) 38%,
-        rgba(0,0,0,0.30) 65%,
-        rgba(0,0,0,0.08) 100%
-      );
-    z-index: 1;
-    transition: background 0.5s;
-  }
+.fleet-card-num{position:absolute;top:12px;right:16px;font-family:'Bebas Neue',sans-serif;font-size:5rem;line-height:1;color:rgba(255,255,255,0.06);z-index:2;pointer-events:none;transition:color 0.4s;letter-spacing:2px;}
+.fleet-card:hover .fleet-card-num{color:rgba(201,168,76,0.14);}
 
-  .fleet-card:hover .fleet-card-overlay {
-    background:
-      linear-gradient(to top,
-        rgba(0,0,0,0.99) 0%,
-        rgba(0,0,0,0.92) 55%,
-        rgba(0,0,0,0.65) 100%
-      );
-  }
+.fleet-card-content{position:relative;z-index:3;padding:20px 20px 0;}
+.fleet-card-class{font-family:'Share Tech Mono',monospace;font-size:0.55rem;letter-spacing:3px;color:var(--red);text-transform:uppercase;display:flex;align-items:center;gap:7px;margin-bottom:4px;}
+.fleet-card-class::before{content:'';display:inline-block;width:10px;height:1px;background:var(--red);flex-shrink:0;}
+.fleet-card-name{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:2px;color:#fff;line-height:1;margin-bottom:4px;text-shadow:0 2px 16px rgba(0,0,0,0.95);}
+.fleet-card-sub{font-family:'Rajdhani',sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:2.5px;color:var(--gold);text-transform:uppercase;}
 
-  /* Gold top bar — slides in on hover */
-  .fleet-card::after {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 2px;
-    background: var(--gold);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.45s ease;
-    z-index: 5;
-  }
+.fleet-card-links{position:relative;z-index:3;padding:12px 20px 24px;margin-top:10px;}
+.fleet-divider{height:1px;background:rgba(201,168,76,0.28);margin-bottom:10px;}
+.fleet-link{display:flex;align-items:flex-start;gap:8px;padding:6px 0;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.07);}
+.fleet-link:last-child{border-bottom:none;padding-bottom:0;}
+.fleet-link:hover .fleet-link-arrow{color:var(--gold);transform:translateX(3px);}
+.fleet-link:hover .fleet-link-name{color:var(--gold);}
+.fleet-link-arrow{font-family:'Share Tech Mono',monospace;font-size:0.65rem;color:var(--red);flex-shrink:0;line-height:1.65;transition:color .2s,transform .2s;}
+.fleet-link-body{display:flex;flex-direction:column;}
+.fleet-link-name{font-family:'Rajdhani',sans-serif;font-size:0.85rem;font-weight:700;letter-spacing:1.5px;color:#fff;text-transform:uppercase;line-height:1.2;transition:color .2s;}
+.fleet-link-detail{font-family:'Share Tech Mono',monospace;font-size:0.52rem;letter-spacing:1px;color:#bbb;margin-top:2px;line-height:1.2;}
 
-  .fleet-card:hover::after { transform: scaleX(1); }
+/* Splash cards */
+.splash-pad{padding:28px 32px 0;}
+.splash-body-pad{position:relative;z-index:3;padding:16px 32px 28px;}
+.splash-eyebrow{font-family:'Share Tech Mono',monospace;font-size:0.58rem;letter-spacing:3px;color:var(--muted);text-transform:uppercase;margin-bottom:8px;}
+.splash-headline{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,3.5vw,3.2rem);letter-spacing:3px;color:#fff;line-height:1;text-shadow:0 2px 20px rgba(0,0,0,0.9);}
+.splash-headline .hl{color:var(--gold);}
+.splash-headline .hl-red{color:var(--red);}
+.splash-body{font-family:'Rajdhani',sans-serif;font-size:0.82rem;font-weight:500;letter-spacing:2px;color:#d0d0d0;text-transform:uppercase;line-height:1.75;max-width:500px;}
 
-  /* Ghost class number */
-  .fleet-card-num {
-    position: absolute;
-    top: 14px; right: 18px;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 5.5rem;
-    line-height: 1;
-    color: rgba(255,255,255,0.05);
-    z-index: 2;
-    pointer-events: none;
-    transition: color 0.4s;
-    letter-spacing: 2px;
-  }
+/* Splash card images — also brighter */
+.splash-img{filter:brightness(0.55) saturate(0.55);}
+.fleet-card:hover .splash-img{filter:brightness(0.35) saturate(0.4);}
 
-  .fleet-card:hover .fleet-card-num {
-    color: rgba(201,168,76,0.13);
-  }
+/* ═══ FOOTER ═══ */
+.fleet-footer{position:relative;z-index:2;padding:14px 48px;border-top:1px solid var(--border);display:flex;align-items:center;gap:14px;}
+.fleet-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px var(--gold);animation:blink 2s infinite;flex-shrink:0;}
+.fleet-footer-text{font-family:'Share Tech Mono',monospace;font-size:0.6rem;letter-spacing:3px;color:#777;text-transform:uppercase;}
+.fleet-footer-text strong{color:var(--gold);font-weight:400;}
+.fleet-ver{margin-left:auto;font-family:'Share Tech Mono',monospace;font-size:0.56rem;letter-spacing:2px;color:#3a3a3a;}
 
-  /* ── CARD CONTENT ── */
-  .fleet-card-content {
-    position: relative;
-    z-index: 3;
-    padding: 22px 22px 0;
-  }
-
-  .fleet-card-class {
-    font-family: 'Share Tech Mono', monospace;
-    font-size: 0.58rem;
-    letter-spacing: 3px;
-    color: var(--red);
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 5px;
-  }
-
-  .fleet-card-class::before {
-    content: '';
-    display: inline-block;
-    width: 12px; height: 1px;
-    background: var(--red);
-    flex-shrink: 0;
-  }
-
-  .fleet-card-name {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2.3rem;
-    letter-spacing: 2px;
-    color: #ffffff;
-    line-height: 1;
-    margin-bottom: 5px;
-    text-shadow: 0 2px 16px rgba(0,0,0,0.9);
-  }
-
-  .fleet-card-sub {
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 2.5px;
-    color: var(--gold);
-    text-transform: uppercase;
-  }
-
-  /* ── LINKS ── */
-  .fleet-card-links {
-    position: relative;
-    z-index: 3;
-    padding: 14px 22px 26px;
-    margin-top: 12px;
-  }
-
-  .fleet-divider {
-    height: 1px;
-    background: rgba(201,168,76,0.3);
-    margin-bottom: 12px;
-  }
-
-  .fleet-link {
-    display: flex;
-    align-items: flex-start;
-    gap: 9px;
-    padding: 7px 0;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(255,255,255,0.07);
-    transition: border-color 0.2s;
-  }
-
-  .fleet-link:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-  }
-
-  .fleet-link:hover .fleet-link-arrow {
-    color: var(--gold);
-    transform: translateX(3px);
-  }
-
-  .fleet-link:hover .fleet-link-name {
-    color: var(--gold);
-  }
-
-  .fleet-link-arrow {
-    font-family: 'Share Tech Mono', monospace;
-    font-size: 0.68rem;
-    color: var(--red);
-    flex-shrink: 0;
-    line-height: 1.6;
-    transition: color 0.2s, transform 0.2s;
-  }
-
-  .fleet-link-body {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .fleet-link-name {
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 0.88rem;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    color: #ffffff;
-    text-transform: uppercase;
-    line-height: 1.2;
-    transition: color 0.2s;
-  }
-
-  .fleet-link-detail {
-    font-family: 'Share Tech Mono', monospace;
-    font-size: 0.54rem;
-    letter-spacing: 1px;
-    color: #b0b0b0;
-    margin-top: 2px;
-    line-height: 1.2;
-  }
-
-  /* ── FOOTER ── */
-  .fleet-footer {
-    position: relative;
-    z-index: 2;
-    padding: 14px 48px;
-    border-top: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    gap: 14px;
-  }
-
-  .fleet-dot {
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    background: var(--gold);
-    box-shadow: 0 0 8px var(--gold);
-    animation: blink 2s infinite;
-    flex-shrink: 0;
-  }
-
-  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
-
-  .fleet-footer-text {
-    font-family: 'Share Tech Mono', monospace;
-    font-size: 0.6rem;
-    letter-spacing: 3px;
-    color: #888;
-    text-transform: uppercase;
-  }
-
-  .fleet-footer-text strong {
-    color: var(--gold);
-    font-weight: 400;
-  }
-
-  .fleet-ver {
-    margin-left: auto;
-    font-family: 'Share Tech Mono', monospace;
-    font-size: 0.58rem;
-    letter-spacing: 2px;
-    color: #444;
-  }
-
-  /* ── RESPONSIVE ── */
-  @media (max-width: 1199px) {
-    .fleet-grid { grid-template-columns: repeat(3, 1fr); }
-    .fleet-card:nth-child(3n) { border-right: none; }
-    .fleet-card:nth-child(4n) { border-right: 1px solid var(--border); }
-    .fleet-card:last-child    { border-right: none; }
-  }
-
-  @media (max-width: 860px) {
-    .fleet-header { padding: 0 24px 36px; flex-direction: column; align-items: flex-start; }
-    .fleet-grid   { grid-template-columns: repeat(2, 1fr); }
-    .fleet-card   { min-height: 380px; }
-    .fleet-card:nth-child(4n) { border-right: 1px solid var(--border); }
-    .fleet-card:nth-child(even) { border-right: none; }
-    .fleet-card:last-child { border-right: none; }
-    .fleet-footer { padding: 14px 24px; }
-  }
-
-  @media (max-width: 520px) {
-    .fleet-grid { grid-template-columns: 1fr; }
-    .fleet-card { border-right: none !important; min-height: 340px; }
-    .fleet-header { padding: 0 20px 28px; }
-  }
+/* ═══ RESPONSIVE ═══ */
+@media(max-width:1199px){
+  .fleet-panel-strip{grid-template-columns:repeat(4,1fr);height:180px;}
+  .fleet-grid{grid-template-columns:repeat(3,1fr);}
+  .fleet-card:nth-child(4n){border-right:1px solid var(--border);}
+  .fleet-card:nth-child(3n){border-right:none;}
+  .fleet-card:last-child{border-right:none;}
+}
+@media(max-width:860px){
+  .fleet-hero{padding:60px 24px 0;}
+  .fleet-hero-inner{flex-direction:column;align-items:flex-start;padding-bottom:36px;}
+  .fleet-panel-strip{grid-template-columns:repeat(4,1fr);height:140px;}
+  .fleet-grid{grid-template-columns:repeat(2,1fr);}
+  .fleet-card{min-height:360px;}
+  .fleet-card:nth-child(3n){border-right:1px solid var(--border);}
+  .fleet-card:nth-child(even){border-right:none;}
+  .fleet-card:last-child{border-right:none;}
+  .fleet-footer{padding:14px 24px;}
+  .fleet-cat-divider-inner{padding:10px 24px;}
+  .splash-pad{padding:20px 20px 0;}
+  .splash-body-pad{padding:12px 20px 20px;}
+}
+@media(max-width:520px){
+  .fleet-panel-strip{grid-template-columns:repeat(2,1fr);height:200px;}
+  .fleet-grid{grid-template-columns:1fr;}
+  .fleet-card{border-right:none!important;min-height:320px;}
+  .fleet-hero{padding:40px 20px 0;}
+}
 </style>
 </head>
 <body>
-
 <section class="fleet-section">
 
-  <!-- HEADER -->
-  <header class="fleet-header">
+<!-- ═══ HEADER ═══ -->
+<div class="fleet-hero">
+  <div class="fleet-hero-inner">
     <div>
-      <p class="fleet-eyebrow">SKXYWTF / SHARK UNIVERSE &nbsp;·&nbsp; ASSET REGISTRY</p>
-      <h2 class="fleet-h1" data-text="THE&#10;FLEET">THE<br><span class="accent">FLEET</span></h2>
+      <p class="fleet-eyebrow"><span class="fleet-eyebrow-dot"></span>WORLD TRADE FACTORY / THE SHARK OF WALL STREET &nbsp;·&nbsp; ASSET REGISTRY</p>
+      <div class="fleet-title-wrap">
+        <div class="fleet-h1-shadow" aria-hidden="true">THE&#10;FLEET</div>
+        <h2 class="fleet-h1">THE<br><span class="gold">FLEET</span></h2>
+      </div>
     </div>
-    <p class="fleet-tagline">Seven classes of machine.<br>Iron. Exotic. Rotor. Sail.<br>Rail. Two wheels. Armor.<br>Everything that moves.</p>
-  </header>
-
-  <!-- GRID -->
-  <div class="fleet-grid">
-
-    <!-- 01 IRON -->
-    <article class="fleet-card">
-      <div class="fleet-card-img" style="background-image:url('https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=900&q=80&auto=format&fit=crop')"></div>
-      <div class="fleet-card-overlay"></div>
-      <span class="fleet-card-num">01</span>
-      <div class="fleet-card-content">
-        <p class="fleet-card-class">Class 01</p>
-        <h3 class="fleet-card-name">Iron</h3>
-        <p class="fleet-card-sub">Classic / Muscle / American</p>
+    <div>
+      <p class="fleet-tagline">Eight classes of machine.<br>Iron. Exotic. Two Wheels.<br>Air. Marine. Rail.<br>Armor. Rotor &amp; eVTOL.<br>Everything that moves.</p>
+      <div class="fleet-stat-row">
+        <div class="fleet-stat"><span class="fleet-stat-num">8</span><span class="fleet-stat-label">Classes</span></div>
+        <div class="fleet-stat"><span class="fleet-stat-num">30+</span><span class="fleet-stat-label">Entries</span></div>
+        <div class="fleet-stat"><span class="fleet-stat-num">∞</span><span class="fleet-stat-label">Range</span></div>
       </div>
-      <div class="fleet-card-links">
-        <div class="fleet-divider"></div>
-        <a href="https://bringatrailer.com" class="fleet-link" target="_blank" rel="noopener noreferrer">
-          <span class="fleet-link-arrow">→</span>
-          <span class="fleet-link-body">
-            <span class="fleet-link-name">Bring a Trailer</span>
-            <span class="fleet-link-detail">collector car auctions</span>
-          </span>
-        </a>
-        <a href="https://www.hagerty.com" class="fleet-link" target="_blank" rel="noopener noreferrer">
-          <span class="fleet-link-arrow">→</span>
-          <span class="fleet-link-body">
-            <span class="fleet-link-name">Hagerty</span>
-            <span class="fleet-link-detail">valuations · insurance · culture</span>
-          </span>
-        </a>
-        <a href="https://www.mecum.com" class="fleet-link" target="_blank" rel="noopener noreferrer">
-          <span class="fleet-link-arrow">→</span>
-          <span class="fleet-link-body">
-            <span class="fleet-link-name">Mecum Auctions</span>
-            <span class="fleet-link-detail">where heavyweights change hands</span>
-          </span>
-        </a>
-      </div>
-    </article>
-
-    <!-- 02 EXOTIC -->
-    <article class="fleet-card">
-      <div class="fleet-card-img" style="background-image:url('https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=900&q=80&auto=format&fit=crop')"></div>
-      <div class="fleet-card-overlay"></div>
-      <span class="fleet-card-num">02</span>
-      <div class="fleet-card-content">
-        <p class="fleet-card-class">Class 02</p>
-        <h3 class="fleet-card-name">Exotic</h3>
-        <p class="fleet-card-sub">Supercar / European / Rare</p>
-      </div>
-      <div class="fleet-card-links">
-        <div class="fleet-divider"></div>
-        <a href="https://www.dupontregistry.com" class="fleet-link" target="_blank" rel="noopener noreferrer">
-          <span class="fleet-link-arrow">→</span>
-          <span class="fleet-link-body">
-            <span class="fleet-link-name">duPont Registry</span>
-            <span class="fleet-link-detail">dark money car marketplace</span>
-          </span>
-        </a>
-        <a href="https://www.lamborghini.com/en-en" class="fleet-link" target="_blank" rel="noopener noreferrer">
-          <span class="fleet-link-arrow">→</span>
-          <span class="fleet-link-body">
-            <span class="fleet-link-name">Lamborghini</span>
-            <span class="fleet-link-detail">official configurator</span>
-          </span>
-        </a>
-        <a href="https://www.pagani.com" class="fleet-link" target="_blank" rel="noopener noreferrer">
-          <span class="fleet-link-arrow">→</span>
-          <span class="fleet-link-body">
-            <span class="fleet-link-name">Pagani</span>
-            <span class="fleet-link-detail">handbuilt · ultra-rare · obsessive</span>
-          </span>
-        </a>
-      </div>
-    </article>
-
-    <!-- 03 TWO WHEELS -->
-    <article class="fleet-card">
-      <div class="fleet-card-img" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80&auto=format&fit=crop')"></div>
-      <div class="fleet-card-overlay"></div>
-      <span class="fleet-card-num">03</span>
-      <div class="fleet-card-content">
-        <p class="fleet-card-class">Class 03</p>
-        <h3 class="fleet-card-name">Two Wheels</h3>
-        <p class="fleet-card-sub">Moto / Custom / Raw</p>
-      </div>
-      <div class="fleet-card-links">
-        <div class="fleet-divider"></div>
-        <a href="https://deuscustoms.com" class="fleet-link" target="_blank" rel="noopener noreferrer">
-          <span class="fleet-link-arrow">→</span>
-          <span class="fleet-link-body">
-            <span class="fleet-link-name">Deus Ex Machina</span>
-            <span class="fleet-link-detail">custom builds · cultural cache</span>
-          </span>
-        </a>
-        <a href="https://www.ducati.com/us/en/home" class="fleet-link" target="_blank" rel="noopener noreferrer">
-          <span class="fleet-link-arrow">→</span>
-          <span class="fleet-link-body">
-            <span class="fleet-link-name">Ducati</span>
-            <span class="fleet-link-detail">performance motorcycles</span>
-          </span>
-        </a>
-        <a href="https://www.classifiedmoto.com" class="fleet-link" target="_blank" rel="noopener noreferrer">
-          <span class="fleet-link-arrow">→</span>
-          <span class="fleet-link-body">
-            <span class="fleet-link-name">Classified Moto</span>
-            <span class="fleet-link-detail">bespoke · dark aesthetic</span>
-          </span>
-        </a>
-      </div>
-    </article>
-
-    <!-- 04 AIR -->
-    <article class="fleet-card">
-      <div class="fleet-card-img" style="background-image:url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=900&q=80&auto=format&fit=crop')"></div>
-      <div class="fleet-card-overlay"></div>
-      <span class="fleet-card-num">04</span>
-      <div class="fleet-card-content">
-        <p class="fleet-card-class">Class 04</p>
-        <h3 class="fleet-card-name">Air</h3>
-        <p class="fleet-card-sub">Charter / Private / Rotor</p>
-      </div>
-      <div class="fleet-card-links">
-        <div class="fleet-divider"></div>
-        <a href="https://www.vistajet.com" class="fleet-link" target="_blank" rel="noopener noreferrer">
-          <span class="fleet-link-arrow">→</span>
-          <span class="fleet-link-body">
-            <span class="fleet-link-name">VistaJet</span>
-            <span class="fleet-link-detail">global private jet membership</span>
-          </span>
-        </a>
-        <a href="https://www.blade.com" class="fleet-link" target="_blank" rel="noopener noreferrer">
-          <span class="fleet-link-arrow">→</span>
-          <span class="fleet-link-body">
-            <span class="fleet-link-name">Blade</span>
-            <span class="fleet-link-detail">helicopter + jet · urban ops</span>
-          </span>
-        </a>
-        <a href="https://acj.airbus.com/en" class="fleet-link" target="_blank" rel="noopener noreferrer">
-          <span class="fleet-link-arrow">→</span>
-          <span class="fleet-link-body">
-            <span class="fleet-link-name">Airbus Corporate Jets</span>
-            <span class="fleet-link-detail">the machines themselves</span>
-          </span>
-        </a>
-      </div>
-    </article>
-
-    <!-- 05 MARINE -->
-    <article class="fleet-card">
-      <div class="fleet-card-img" style="background-image:url('https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=900&q=80&auto=format&fit=crop')"></div>
-      <div class="fleet-card-overlay"></div>
-      <span class="fleet-card-num">05</span>
-      <div class="fleet-card-content">
-        <p class="fleet-card-class">Class 05</p>
-        <h3 class="fleet-card-name">Marine</h3>
-        <p class="fleet-card-sub">Superyacht / Open Water</p>
-      </div>
-      <div class="fleet-card-links">
-        <div class="fleet-divider"></div>
-        <a href="https://www.lurssen.com/en/new-build/" class="fleet-link" target="_blank" rel="noopener noreferrer">
-          <span class="fleet-link-arrow">→</span>
-          <span class="fleet-link-body">
-            <span class="fleet-link-name">Lürssen</span>
-            <span class="fleet-link-detail">custom superyacht builders</span>
-          </span>
-        </a>
-        <a href="https://www.burgessyachts.com/en" class="fleet-link" target="_blank" rel="noopener noreferrer">
-          <span class="fleet-link-arrow">→</span>
-          <span class="fleet-link-body">
-            <span class="fleet-link-name">Burgess Yachts</span>
-            <span class="fleet-link-detail">megayacht sales &amp; charter</span>
-          </span>
-        </a>
-        <a href="https://iyc.com" class="fleet-link" target="_blank" rel="noopener noreferrer">
-          <span class="fleet-link-arrow">→</span>
-          <span class="fleet-link-body">
-            <span class="fleet-link-name">IYC</span>
-            <span class="fleet-link-detail">luxury yachting worldwide</span>
-          </span>
-        </a>
-      </div>
-    </article>
-
-    <!-- 06 RAIL -->
-    <article class="fleet-card">
-      <div class="fleet-card-img" style="background-image:url('https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=900&q=80&auto=format&fit=crop')"></div>
-      <div class="fleet-card-overlay"></div>
-      <span class="fleet-card-num">06</span>
-      <div class="fleet-card-content">
-        <p class="fleet-card-class">Class 06</p>
-        <h3 class="fleet-card-name">Rail</h3>
-        <p class="fleet-card-sub">Luxury / Sleeper / Old World</p>
-      </div>
-      <div class="fleet-card-links">
-        <div class="fleet-divider"></div>
-        <a href="https://www.orient-express.com/en/trains" class="fleet-link" target="_blank" rel="noopener noreferrer">
-          <span class="fleet-link-arrow">→</span>
-          <span class="fleet-link-body">
-            <span class="fleet-link-name">Orient Express</span>
-            <span class="fleet-link-detail">iconic journeys · legend</span>
-          </span>
-        </a>
-        <a href="https://www.belmond.com/trains/europe/venice-simplon-orient-express/" class="fleet-link" target="_blank" rel="noopener noreferrer">
-          <span class="fleet-link-arrow">→</span>
-          <span class="fleet-link-body">
-            <span class="fleet-link-name">Venice Simplon</span>
-            <span class="fleet-link-detail">paris → venice · belmond</span>
-          </span>
-        </a>
-      </div>
-    </article>
-
-    <!-- 07 ARMORED -->
-    <article class="fleet-card">
-      <div class="fleet-card-img" style="background-image:url('https://images.unsplash.com/photo-1612825173281-9a193378527e?w=900&q=80&auto=format&fit=crop')"></div>
-      <div class="fleet-card-overlay"></div>
-      <span class="fleet-card-num">07</span>
-      <div class="fleet-card-content">
-        <p class="fleet-card-class">Class 07</p>
-        <h3 class="fleet-card-name">Armored</h3>
-        <p class="fleet-card-sub">Bulletproof / Hardened / Ghost</p>
-      </div>
-      <div class="fleet-card-links">
-        <div class="fleet-divider"></div>
-        <a href="https://armormax.com/armored-cars/" class="fleet-link" target="_blank" rel="noopener noreferrer">
-          <span class="fleet-link-arrow">→</span>
-          <span class="fleet-link-body">
-            <span class="fleet-link-name">Armormax</span>
-            <span class="fleet-link-detail">armored &amp; bulletproof vehicles</span>
-          </span>
-        </a>
-        <a href="https://texasarmoring.com" class="fleet-link" target="_blank" rel="noopener noreferrer">
-          <span class="fleet-link-arrow">→</span>
-          <span class="fleet-link-body">
-            <span class="fleet-link-name">Texas Armoring Corp</span>
-            <span class="fleet-link-detail">threat-level protection</span>
-          </span>
-        </a>
-        <a href="https://www.armored-doors.com" class="fleet-link" target="_blank" rel="noopener noreferrer">
-          <span class="fleet-link-arrow">→</span>
-          <span class="fleet-link-body">
-            <span class="fleet-link-name">Armored Doors</span>
-            <span class="fleet-link-detail">fortified entry systems</span>
-          </span>
-        </a>
-      </div>
-    </article>
-
-  </div><!-- /fleet-grid -->
-
-  <!-- FOOTER -->
-  <div class="fleet-footer">
-    <span class="fleet-dot"></span>
-    <span class="fleet-footer-text">Asset registry <strong>active</strong> &nbsp;·&nbsp; 7 classes &nbsp;·&nbsp; 21 entries</span>
-    <span class="fleet-ver">SKXYWTF / FLEET.V2</span>
+    </div>
   </div>
+</div>
+
+<!-- ═══ PANEL STRIP ═══ -->
+<div class="fleet-panel-strip">
+  <div class="fleet-panel"><div class="fleet-panel-img" style="background-image:url('https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=600&q=80&auto=format&fit=crop')"></div><div class="fleet-panel-label"><span class="fleet-panel-num">01</span><span class="fleet-panel-name">Iron</span></div></div>
+  <div class="fleet-panel"><div class="fleet-panel-img" style="background-image:url('https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=600&q=80&auto=format&fit=crop')"></div><div class="fleet-panel-label"><span class="fleet-panel-num">02</span><span class="fleet-panel-name">Exotic</span></div></div>
+  <div class="fleet-panel"><div class="fleet-panel-img" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&auto=format&fit=crop')"></div><div class="fleet-panel-label"><span class="fleet-panel-num">03</span><span class="fleet-panel-name">Two Wheels</span></div></div>
+  <div class="fleet-panel"><div class="fleet-panel-img" style="background-image:url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&q=80&auto=format&fit=crop')"></div><div class="fleet-panel-label"><span class="fleet-panel-num">04</span><span class="fleet-panel-name">Air</span></div></div>
+  <div class="fleet-panel"><div class="fleet-panel-img" style="background-image:url('https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=600&q=80&auto=format&fit=crop')"></div><div class="fleet-panel-label"><span class="fleet-panel-num">05</span><span class="fleet-panel-name">Marine</span></div></div>
+  <div class="fleet-panel"><div class="fleet-panel-img" style="background-image:url('https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=600&q=80&auto=format&fit=crop')"></div><div class="fleet-panel-label"><span class="fleet-panel-num">06</span><span class="fleet-panel-name">Rail</span></div></div>
+  <div class="fleet-panel"><div class="fleet-panel-img" style="background-image:url('https://images.unsplash.com/photo-1612825173281-9a193378527e?w=600&q=80&auto=format&fit=crop')"></div><div class="fleet-panel-label"><span class="fleet-panel-num">07</span><span class="fleet-panel-name">Armored</span></div></div>
+  <div class="fleet-panel"><div class="fleet-panel-img" style="background-image:url('https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=600&q=80&auto=format&fit=crop')"></div><div class="fleet-panel-label"><span class="fleet-panel-num">08</span><span class="fleet-panel-name">Rotor & eVTOL</span></div></div>
+</div>
+
+<!-- ══════════ CLASS 01 — IRON ══════════ -->
+<div class="fleet-cat-divider"><div class="fleet-cat-divider-inner"><span class="fleet-cat-divider-num">01</span><span class="fleet-cat-divider-name">Iron</span><span class="fleet-cat-divider-sub">Classic / Muscle / American Steel</span><span class="fleet-cat-divider-line"></span></div></div>
+<div class="fleet-grid">
+  <article class="fleet-card">
+    <div class="fleet-card-img" style="background-image:url('https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=900&q=80&auto=format&fit=crop')"></div>
+    <div class="fleet-card-overlay"></div><span class="fleet-card-num">01</span>
+    <div class="fleet-card-content"><p class="fleet-card-class">Class 01</p><h3 class="fleet-card-name">Iron</h3><p class="fleet-card-sub">Classic / Muscle / American</p></div>
+    <div class="fleet-card-links"><div class="fleet-divider"></div>
+      <a href="https://bringatrailer.com" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">Bring a Trailer</span><span class="fleet-link-detail">collector car auctions</span></span></a>
+      <a href="https://www.hagerty.com" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">Hagerty</span><span class="fleet-link-detail">valuations · insurance · culture</span></span></a>
+      <a href="https://www.mecum.com" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">Mecum Auctions</span><span class="fleet-link-detail">where heavyweights change hands</span></span></a>
+      <a href="https://rmsothebys.com" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">RM Sotheby's</span><span class="fleet-link-detail">world's premier auto auction</span></span></a>
+      <a href="https://www.bonhams.com/cars" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">Bonhams</span><span class="fleet-link-detail">rare &amp; historic automobiles</span></span></a>
+    </div>
+  </article>
+  <article class="fleet-card" style="grid-column:span 3;">
+    <div class="fleet-card-img splash-img" style="background-image:url('https://images.unsplash.com/photo-1553440569-bcc63803a83d?w=1400&q=80&auto=format&fit=crop')"></div>
+    <div class="fleet-card-overlay"></div>
+    <div class="fleet-card-content splash-pad"><p class="splash-eyebrow">THE AUCTION FLOOR</p><p class="splash-headline">Every Icon<br><span class="hl">Has a Price.</span></p></div>
+    <div class="splash-body-pad"><p class="splash-body">From first-generation muscle cars to last-century legends — the iron that wrote the American myth is still changing hands. Know where to look.</p></div>
+  </article>
+</div>
+
+<!-- ══════════ CLASS 02 — EXOTIC ══════════ -->
+<div class="fleet-cat-divider"><div class="fleet-cat-divider-inner"><span class="fleet-cat-divider-num">02</span><span class="fleet-cat-divider-name">Exotic</span><span class="fleet-cat-divider-sub">Supercar / European / Ultra-Rare</span><span class="fleet-cat-divider-line"></span></div></div>
+<div class="fleet-grid">
+  <article class="fleet-card" style="grid-column:span 2;">
+    <div class="fleet-card-img splash-img" style="background-image:url('https://images.unsplash.com/photo-1580274455191-1c62238fa333?w=1200&q=80&auto=format&fit=crop')"></div>
+    <div class="fleet-card-overlay"></div>
+    <div class="fleet-card-content splash-pad"><p class="splash-eyebrow">MACHINE AS ART</p><p class="splash-headline">Engineered<br><span class="hl">Beyond Reason.</span></p></div>
+    <div class="splash-body-pad"><p class="splash-body">Handbuilt. Carbon-wrapped. Numbered. These are not cars — they are statements of intent.</p></div>
+  </article>
+  <article class="fleet-card">
+    <div class="fleet-card-img" style="background-image:url('https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=900&q=80&auto=format&fit=crop')"></div>
+    <div class="fleet-card-overlay"></div><span class="fleet-card-num">02</span>
+    <div class="fleet-card-content"><p class="fleet-card-class">Class 02</p><h3 class="fleet-card-name">Exotic</h3><p class="fleet-card-sub">Supercar / European / Rare</p></div>
+    <div class="fleet-card-links"><div class="fleet-divider"></div>
+      <a href="https://www.dupontregistry.com" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">duPont Registry</span><span class="fleet-link-detail">dark money car marketplace</span></span></a>
+      <a href="https://www.lamborghini.com/en-en" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">Lamborghini</span><span class="fleet-link-detail">official configurator</span></span></a>
+      <a href="https://www.pagani.com" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">Pagani</span><span class="fleet-link-detail">handbuilt · ultra-rare · obsessive</span></span></a>
+      <a href="https://www.ferrari.com/en-US" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">Ferrari</span><span class="fleet-link-detail">prancing horse · maranello</span></span></a>
+      <a href="https://www.koenigsegg.com" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">Koenigsegg</span><span class="fleet-link-detail">world record machines</span></span></a>
+    </div>
+  </article>
+  <article class="fleet-card">
+    <div class="fleet-card-img" style="background-image:url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=900&q=80&auto=format&fit=crop')"></div>
+    <div class="fleet-card-overlay"></div>
+    <div class="fleet-card-content"><p class="fleet-card-class">Also</p><h3 class="fleet-card-name">Ultra Luxury</h3><p class="fleet-card-sub">Daily Driver / Coachbuilt</p></div>
+    <div class="fleet-card-links"><div class="fleet-divider"></div>
+      <a href="https://www.rolls-roycemotorcars.com" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">Rolls-Royce</span><span class="fleet-link-detail">the pinnacle of coachbuilding</span></span></a>
+      <a href="https://www.bentleymotors.com" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">Bentley</span><span class="fleet-link-detail">hand-stitched · hand-built</span></span></a>
+      <a href="https://www.astonmartin.com" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">Aston Martin</span><span class="fleet-link-detail">british. bonded. lethal.</span></span></a>
+    </div>
+  </article>
+</div>
+
+<!-- ══════════ CLASS 03 — TWO WHEELS ══════════ -->
+<div class="fleet-cat-divider"><div class="fleet-cat-divider-inner"><span class="fleet-cat-divider-num">03</span><span class="fleet-cat-divider-name">Two Wheels</span><span class="fleet-cat-divider-sub">Moto / Custom / Raw Power</span><span class="fleet-cat-divider-line"></span></div></div>
+<div class="fleet-grid">
+  <article class="fleet-card">
+    <div class="fleet-card-img" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80&auto=format&fit=crop')"></div>
+    <div class="fleet-card-overlay"></div><span class="fleet-card-num">03</span>
+    <div class="fleet-card-content"><p class="fleet-card-class">Class 03</p><h3 class="fleet-card-name">Two Wheels</h3><p class="fleet-card-sub">Moto / Custom / Raw</p></div>
+    <div class="fleet-card-links"><div class="fleet-divider"></div>
+      <a href="https://deuscustoms.com" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">Deus Ex Machina</span><span class="fleet-link-detail">custom builds · cultural cache</span></span></a>
+      <a href="https://www.ducati.com/us/en/home" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">Ducati</span><span class="fleet-link-detail">performance motorcycles</span></span></a>
+      <a href="https://www.classifiedmoto.com" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">Classified Moto</span><span class="fleet-link-detail">bespoke · dark aesthetic</span></span></a>
+      <a href="https://www.indian-motorcycles.com" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">Indian Motorcycles</span><span class="fleet-link-detail">america's first motorcycle brand</span></span></a>
+      <a href="https://www.arch-motorcycle.com" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">ARCH Motorcycle</span><span class="fleet-link-detail">keanu reeves' bespoke atelier</span></span></a>
+    </div>
+  </article>
+  <article class="fleet-card">
+    <div class="fleet-card-img" style="background-image:url('https://images.unsplash.com/photo-1609630875171-b1321377ee65?w=900&q=80&auto=format&fit=crop')"></div>
+    <div class="fleet-card-overlay"></div>
+    <div class="fleet-card-content"><p class="fleet-card-class">Also</p><h3 class="fleet-card-name">The Build</h3><p class="fleet-card-sub">Custom / Bespoke / One-Off</p></div>
+    <div class="fleet-card-links"><div class="fleet-divider"></div>
+      <a href="https://www.confederatemotorcycles.com" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">Confederate Moto</span><span class="fleet-link-detail">american outlaw engineering</span></span></a>
+      <a href="https://www.bmwmotorrad.com/en" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">BMW Motorrad</span><span class="fleet-link-detail">GS to M series · pure precision</span></span></a>
+    </div>
+  </article>
+  <article class="fleet-card" style="grid-column:span 2;">
+    <div class="fleet-card-img splash-img" style="background-image:url('https://images.unsplash.com/photo-1449426468159-d96dbf08f19f?w=1200&q=80&auto=format&fit=crop')"></div>
+    <div class="fleet-card-overlay"></div>
+    <div class="fleet-card-content splash-pad"><p class="splash-eyebrow">STRIP. RIDE. DISAPPEAR.</p><p class="splash-headline">Two Wheels.<br><span class="hl">No Witnesses.</span></p></div>
+    <div class="splash-body-pad"><p class="splash-body">The only vehicle class that can vanish in traffic and arrive before anyone noticed it left.</p></div>
+  </article>
+</div>
+
+<!-- ══════════ CLASS 04 — AIR ══════════ -->
+<div class="fleet-cat-divider"><div class="fleet-cat-divider-inner"><span class="fleet-cat-divider-num">04</span><span class="fleet-cat-divider-name">Air</span><span class="fleet-cat-divider-sub">Private Jet / Charter / Fixed Wing</span><span class="fleet-cat-divider-line"></span></div></div>
+<div class="fleet-grid">
+  <article class="fleet-card">
+    <div class="fleet-card-img" style="background-image:url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=900&q=80&auto=format&fit=crop')"></div>
+    <div class="fleet-card-overlay"></div><span class="fleet-card-num">04</span>
+    <div class="fleet-card-content"><p class="fleet-card-class">Class 04</p><h3 class="fleet-card-name">Air</h3><p class="fleet-card-sub">Charter / Private / Fixed Wing</p></div>
+    <div class="fleet-card-links"><div class="fleet-divider"></div>
+      <a href="https://www.vistajet.com" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">VistaJet</span><span class="fleet-link-detail">global private jet membership</span></span></a>
+      <a href="https://www.netjets.com" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">NetJets</span><span class="fleet-link-detail">fractional ownership · the original</span></span></a>
+      <a href="https://acj.airbus.com/en" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">Airbus Corporate Jets</span><span class="fleet-link-detail">ACJ TwoTwenty · ultra-long-range</span></span></a>
+      <a href="https://www.gulfstream.com" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">Gulfstream</span><span class="fleet-link-detail">G700 · the benchmark of range</span></span></a>
+      <a href="https://www.bombardier.com/en/aviation.html" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">Bombardier</span><span class="fleet-link-detail">global 7500 · ultra-long-range</span></span></a>
+    </div>
+  </article>
+  <article class="fleet-card" style="grid-column:span 2;">
+    <div class="fleet-card-img splash-img" style="background-image:url('https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1200&q=80&auto=format&fit=crop')"></div>
+    <div class="fleet-card-overlay"></div>
+    <div class="fleet-card-content splash-pad"><p class="splash-eyebrow">NO QUEUES. NO RECORDS.</p><p class="splash-headline">Wheels Up<br><span class="hl">Before Dawn.</span></p></div>
+    <div class="splash-body-pad"><p class="splash-body">Private aviation isn't a luxury. It's operational infrastructure. No manifests. No delays. No witnesses at the gate.</p></div>
+  </article>
+  <article class="fleet-card">
+    <div class="fleet-card-img" style="background-image:url('https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=900&q=80&auto=format&fit=crop')"></div>
+    <div class="fleet-card-overlay"></div>
+    <div class="fleet-card-content"><p class="fleet-card-class">Also</p><h3 class="fleet-card-name">The Iron Bird</h3><p class="fleet-card-sub">Ownership / Configuration</p></div>
+    <div class="fleet-card-links"><div class="fleet-divider"></div>
+      <a href="https://www.dassaultfalcon.com" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">Dassault Falcon</span><span class="fleet-link-detail">french precision · Falcon 10X</span></span></a>
+      <a href="https://www.cessna.com/citation" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">Cessna Citation</span><span class="fleet-link-detail">light jets · versatile range</span></span></a>
+    </div>
+  </article>
+</div>
+
+<!-- ══════════ CLASS 05 — MARINE ══════════ -->
+<div class="fleet-cat-divider"><div class="fleet-cat-divider-inner"><span class="fleet-cat-divider-num">05</span><span class="fleet-cat-divider-name">Marine</span><span class="fleet-cat-divider-sub">Superyacht / Ship / Speedboat / Jetski / Open Water</span><span class="fleet-cat-divider-line"></span></div></div>
+
+<!-- MARINE ROW 1: Superyacht -->
+<div class="fleet-grid">
+  <article class="fleet-card" style="grid-column:span 2;">
+    <div class="fleet-card-img splash-img" style="background-image:url('https://images.unsplash.com/photo-1605281317010-fe5ffe798166?w=1200&q=80&auto=format&fit=crop')"></div>
+    <div class="fleet-card-overlay"></div>
+    <div class="fleet-card-content splash-pad"><p class="splash-eyebrow">INTERNATIONAL WATERS</p><p class="splash-headline">No Jurisdiction.<br><span class="hl">Only Horizon.</span></p></div>
+    <div class="splash-body-pad"><p class="splash-body">A superyacht isn't a boat. It's a floating sovereign territory — with better wine and faster Wi-Fi.</p></div>
+  </article>
+  <article class="fleet-card">
+    <div class="fleet-card-img" style="background-image:url('https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=900&q=80&auto=format&fit=crop')"></div>
+    <div class="fleet-card-overlay"></div><span class="fleet-card-num">05</span>
+    <div class="fleet-card-content"><p class="fleet-card-class">Superyacht</p><h3 class="fleet-card-name">Megayacht</h3><p class="fleet-card-sub">Custom Build / Charter</p></div>
+    <div class="fleet-card-links"><div class="fleet-divider"></div>
+      <a href="https://www.lurssen.com/en/new-build/" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">Lürssen</span><span class="fleet-link-detail">custom superyacht builders</span></span></a>
+      <a href="https://www.burgessyachts.com/en" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">Burgess Yachts</span><span class="fleet-link-detail">megayacht sales &amp; charter</span></span></a>
+      <a href="https://www.feadship.nl" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">Feadship</span><span class="fleet-link-detail">dutch engineering · pure custom</span></span></a>
+      <a href="https://iyc.com" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">IYC</span><span class="fleet-link-detail">luxury yachting worldwide</span></span></a>
+    </div>
+  </article>
+  <article class="fleet-card">
+    <div class="fleet-card-img" style="background-image:url('https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=900&q=80&auto=format&fit=crop')"></div>
+    <div class="fleet-card-overlay"></div>
+    <div class="fleet-card-content"><p class="fleet-card-class">Charter</p><h3 class="fleet-card-name">On Demand</h3><p class="fleet-card-sub">Access / Seasonal / Global</p></div>
+    <div class="fleet-card-links"><div class="fleet-divider"></div>
+      <a href="https://www.fraseryachts.com" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">Fraser Yachts</span><span class="fleet-link-detail">global charter &amp; brokerage</span></span></a>
+      <a href="https://www.bluewater-yachting.com" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">Bluewater Yachting</span><span class="fleet-link-detail">expeditions · charters · delivery</span></span></a>
+      <a href="https://www.nautal.com/en" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">Nautal</span><span class="fleet-link-detail">on-demand yacht rental</span></span></a>
+    </div>
+  </article>
+</div>
+
+<!-- MARINE ROW 2: Sailing / Speedboat / Jetski -->
+<div class="fleet-grid">
+  <article class="fleet-card">
+    <div class="fleet-card-img" style="background-image:url('https://images.unsplash.com/photo-1540946485063-a40da27545f8?w=900&q=80&auto=format&fit=crop')"></div>
+    <div class="fleet-card-overlay"></div>
+    <div class="fleet-card-content"><p class="fleet-card-class">Sail</p><h3 class="fleet-card-name">Sailing</h3><p class="fleet-card-sub">Open Ocean / Blue Water</p></div>
+    <div class="fleet-card-links"><div class="fleet-divider"></div>
+      <a href="https://www.jeanneau.com/en" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">Jeanneau</span><span class="fleet-link-detail">performance sailing yachts</span></span></a>
+      <a href="https://www.beneteaugroup.com" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">Bénéteau</span><span class="fleet-link-detail">world's largest sailboat brand</span></span></a>
+      <a href="https://www.oyster.com" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">Oyster Yachts</span><span class="fleet-link-detail">bluewater cruisers · handbuilt</span></span></a>
+    </div>
+  </article>
+  <article class="fleet-card">
+    <div class="fleet-card-img" style="background-image:url('https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=900&q=80&auto=format&fit=crop')"></div>
+    <div class="fleet-card-overlay"></div>
+    <div class="fleet-card-content"><p class="fleet-card-class">Powerboat</p><h3 class="fleet-card-name">Speedboat</h3><p class="fleet-card-sub">Fast / Offshore / Performance</p></div>
+    <div class="fleet-card-links"><div class="fleet-divider"></div>
+      <a href="https://www.sunseeker.com" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">Sunseeker</span><span class="fleet-link-detail">british luxury powerboats</span></span></a>
+      <a href="https://www.regalboats.com" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">Regal Marine</span><span class="fleet-link-detail">sport boats · cruisers</span></span></a>
+      <a href="https://www.riva-motorboats.com" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">Riva</span><span class="fleet-link-detail">italian icon · lake como legend</span></span></a>
+      <a href="https://www.cigaretteracing.com" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">Cigarette Racing</span><span class="fleet-link-detail">offshore powerboat · 100mph+</span></span></a>
+    </div>
+  </article>
+  <article class="fleet-card">
+    <div class="fleet-card-img" style="background-image:url('https://images.unsplash.com/photo-1605281317010-fe5ffe798166?w=900&q=80&auto=format&fit=crop')"></div>
+    <div class="fleet-card-overlay"></div>
+    <div class="fleet-card-content"><p class="fleet-card-class">PWC</p><h3 class="fleet-card-name">Jetski</h3><p class="fleet-card-sub">Personal Watercraft / Raw Speed</p></div>
+    <div class="fleet-card-links"><div class="fleet-divider"></div>
+      <a href="https://www.seadoo.com/us/en" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">Sea-Doo</span><span class="fleet-link-detail">RXP-X 325 · the benchmark</span></span></a>
+      <a href="https://www.kawasaki.com/en-us/watercraft" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">Kawasaki Jet Ski</span><span class="fleet-link-detail">ultra 310lx · the original</span></span></a>
+      <a href="https://yamahawaverunners.com" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">Yamaha WaveRunner</span><span class="fleet-link-detail">FX SVHO · supercharged</span></span></a>
+    </div>
+  </article>
+  <article class="fleet-card">
+    <div class="fleet-card-img" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900&q=80&auto=format&fit=crop')"></div>
+    <div class="fleet-card-overlay"></div>
+    <div class="fleet-card-content splash-pad" style="padding:20px 20px 0;"><p class="splash-eyebrow">THE WATER DOESN'T KEEP RECORDS</p><p class="splash-headline" style="font-size:clamp(1.6rem,2.5vw,2.5rem);">Salt Air.<br><span class="hl">Full Throttle.</span></p></div>
+    <div class="splash-body-pad" style="padding:12px 20px 22px;"><p class="splash-body" style="font-size:0.75rem;">From superyacht to jetski — every class of watercraft serves a different kind of freedom. The fleet doesn't stop at the shoreline.</p></div>
+  </article>
+</div>
+
+<!-- ══════════ CLASS 06 — RAIL ══════════ -->
+<div class="fleet-cat-divider"><div class="fleet-cat-divider-inner"><span class="fleet-cat-divider-num">06</span><span class="fleet-cat-divider-name">Rail</span><span class="fleet-cat-divider-sub">Luxury Train / Sleeper / Old World</span><span class="fleet-cat-divider-line"></span></div></div>
+<div class="fleet-grid">
+  <article class="fleet-card">
+    <div class="fleet-card-img" style="background-image:url('https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=900&q=80&auto=format&fit=crop')"></div>
+    <div class="fleet-card-overlay"></div><span class="fleet-card-num">06</span>
+    <div class="fleet-card-content"><p class="fleet-card-class">Class 06</p><h3 class="fleet-card-name">Rail</h3><p class="fleet-card-sub">Luxury / Sleeper / Old World</p></div>
+    <div class="fleet-card-links"><div class="fleet-divider"></div>
+      <a href="https://www.orient-express.com/en/trains" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">Orient Express</span><span class="fleet-link-detail">iconic journeys · legend</span></span></a>
+      <a href="https://www.belmond.com/trains/europe/venice-simplon-orient-express/" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">Venice Simplon</span><span class="fleet-link-detail">paris → venice · belmond</span></span></a>
+      <a href="https://www.rovos.com" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">Rovos Rail</span><span class="fleet-link-detail">africa · the pride of africa</span></span></a>
+      <a href="https://www.rockymountaineer.com" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">Rocky Mountaineer</span><span class="fleet-link-detail">glass-dome · canadian rockies</span></span></a>
+    </div>
+  </article>
+  <article class="fleet-card" style="grid-column:span 3;">
+    <div class="fleet-card-img splash-img" style="background-image:url('https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=1400&q=80&auto=format&fit=crop')"></div>
+    <div class="fleet-card-overlay"></div>
+    <div class="fleet-card-content splash-pad"><p class="splash-eyebrow">COMPARTMENT 7 · AFTER MIDNIGHT</p><p class="splash-headline">The Deal Was Made<br><span class="hl">Before Vienna.</span></p></div>
+    <div class="splash-body-pad"><p class="splash-body">The luxury train is the only vehicle class that understands the journey is the negotiation. Slow enough to talk. Moving too fast to be found.</p></div>
+  </article>
+</div>
+
+<!-- ══════════ CLASS 07 — ARMORED ══════════ -->
+<div class="fleet-cat-divider"><div class="fleet-cat-divider-inner"><span class="fleet-cat-divider-num">07</span><span class="fleet-cat-divider-name">Armored</span><span class="fleet-cat-divider-sub">Bulletproof / Hardened / Ghost Protocol</span><span class="fleet-cat-divider-line"></span></div></div>
+<div class="fleet-grid">
+  <article class="fleet-card" style="grid-column:span 2;">
+    <div class="fleet-card-img splash-img" style="background-image:url('https://images.unsplash.com/photo-1612825173281-9a193378527e?w=1200&q=80&auto=format&fit=crop')"></div>
+    <div class="fleet-card-overlay"></div>
+    <div class="fleet-card-content splash-pad"><p class="splash-eyebrow">UL LEVEL 8 · CERTIFIED</p><p class="splash-headline">Threat Level<br><span class="hl-red">Classified.</span></p></div>
+    <div class="splash-body-pad"><p class="splash-body">When you're the asset, the vehicle becomes the perimeter. Steel-plated. Run-flat tires. Blast-resistant glass. You don't buy this for fear — you buy it for certainty.</p></div>
+  </article>
+  <article class="fleet-card">
+    <div class="fleet-card-img" style="background-image:url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=900&q=80&auto=format&fit=crop')"></div>
+    <div class="fleet-card-overlay"></div><span class="fleet-card-num">07</span>
+    <div class="fleet-card-content"><p class="fleet-card-class">Class 07</p><h3 class="fleet-card-name">Armored</h3><p class="fleet-card-sub">Bulletproof / Hardened / Ghost</p></div>
+    <div class="fleet-card-links"><div class="fleet-divider"></div>
+      <a href="https://armormax.com/armored-cars/" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">Armormax</span><span class="fleet-link-detail">armored &amp; bulletproof vehicles</span></span></a>
+      <a href="https://texasarmoring.com" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">Texas Armoring Corp</span><span class="fleet-link-detail">threat-level protection</span></span></a>
+      <a href="https://www.armored-doors.com" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">Armored Doors</span><span class="fleet-link-detail">fortified entry systems</span></span></a>
+      <a href="https://www.tssbulletproof.com/product/doors/steel" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">TSS Bulletproof</span><span class="fleet-link-detail">ballistic steel doors · UL rated</span></span></a>
+      <a href="https://www.alpineco.com" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">Alpine Armoring</span><span class="fleet-link-detail">custom armored limousines &amp; SUVs</span></span></a>
+    </div>
+  </article>
+  <article class="fleet-card">
+    <div class="fleet-card-img" style="background-image:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&q=80&auto=format&fit=crop')"></div>
+    <div class="fleet-card-overlay"></div>
+    <div class="fleet-card-content"><p class="fleet-card-class">Also</p><h3 class="fleet-card-name">The Perimeter</h3><p class="fleet-card-sub">Entry / Security / Control</p></div>
+    <div class="fleet-card-links"><div class="fleet-divider"></div>
+      <a href="https://www.inkas.com" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">INKAS</span><span class="fleet-link-detail">armored vehicles &amp; cash-in-transit</span></span></a>
+    </div>
+  </article>
+</div>
+
+<!-- ══════════ CLASS 08 — ROTOR & eVTOL ══════════ -->
+<div class="fleet-cat-divider"><div class="fleet-cat-divider-inner"><span class="fleet-cat-divider-num">08</span><span class="fleet-cat-divider-name">Rotor &amp; eVTOL</span><span class="fleet-cat-divider-sub">Helicopter / Electric Air Taxi / Future Mobility</span><span class="fleet-cat-divider-line"></span></div></div>
+<div class="fleet-grid">
+  <article class="fleet-card">
+    <div class="fleet-card-img" style="background-image:url('https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=900&q=80&auto=format&fit=crop')"></div>
+    <div class="fleet-card-overlay"></div><span class="fleet-card-num">08</span>
+    <div class="fleet-card-content"><p class="fleet-card-class">Class 08</p><h3 class="fleet-card-name">Rotor</h3><p class="fleet-card-sub">Helicopter / Urban / Charter</p></div>
+    <div class="fleet-card-links"><div class="fleet-divider"></div>
+      <a href="https://www.blade.com" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">Blade</span><span class="fleet-link-detail">helicopter + jet · urban ops</span></span></a>
+      <a href="https://www.airbus.com/en/products-services/helicopters" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">Airbus Helicopters</span><span class="fleet-link-detail">H175 · H160 · VIP configured</span></span></a>
+      <a href="https://www.bellflight.com" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">Bell Textron</span><span class="fleet-link-detail">525 relentless · tiltrotor future</span></span></a>
+      <a href="https://www.robinsonheli.com" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">Robinson Helicopter</span><span class="fleet-link-detail">R66 · the world's workhorse</span></span></a>
+    </div>
+  </article>
+  <article class="fleet-card">
+    <div class="fleet-card-img" style="background-image:url('https://images.unsplash.com/photo-1570710891163-6d3b5c47248b?w=900&q=80&auto=format&fit=crop')"></div>
+    <div class="fleet-card-overlay"></div>
+    <div class="fleet-card-content"><p class="fleet-card-class">Next Gen</p><h3 class="fleet-card-name">eVTOL</h3><p class="fleet-card-sub">Electric / Autonomous / Future</p></div>
+    <div class="fleet-card-links"><div class="fleet-divider"></div>
+      <a href="https://www.jobyaviation.com" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">Joby Aviation</span><span class="fleet-link-detail">200mph · near-silent · zero emission</span></span></a>
+      <a href="https://archer.com" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">Archer Aviation</span><span class="fleet-link-detail">midnight · electric air taxi</span></span></a>
+      <a href="https://wisk.aero" class="fleet-link" target="_blank" rel="noopener noreferrer"><span class="fleet-link-arrow">→</span><span class="fleet-link-body"><span class="fleet-link-name">Wisk Aero</span><span class="fleet-link-detail">autonomous · boeing-backed</span></span></a>
+    </div>
+  </article>
+  <article class="fleet-card" style="grid-column:span 2;">
+    <div class="fleet-card-img splash-img" style="background-image:url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80&auto=format&fit=crop')"></div>
+    <div class="fleet-card-overlay"></div>
+    <div class="fleet-card-content splash-pad"><p class="splash-eyebrow">VERTICAL TAKEOFF · ZERO TRACE</p><p class="splash-headline">The Roof Is<br><span class="hl">The Runway.</span></p></div>
+    <div class="splash-body-pad"><p class="splash-body">No runway. No airport. No record of departure. The next generation of urban mobility lifts straight off the building and disappears into the grid. The future of the fleet doesn't need roads.</p></div>
+  </article>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<div class="fleet-footer">
+  <span class="fleet-dot"></span>
+  <span class="fleet-footer-text">Asset registry <strong>active</strong> &nbsp;·&nbsp; 8 classes &nbsp;·&nbsp; 30+ entries</span>
+  <span class="fleet-ver">WORLD TRADE FACTORY / FLEET.V4</span>
+</div>
 
 </section>
-
 </body>
 </html>
