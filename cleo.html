@@ -406,13 +406,25 @@ img{max-width:100%;display:block;}
   .sb-sub{display:none;}
   .chapter-footer{padding:28px 20px;}
 }
+
+/* Mobile nav */
+.nb-pre,.nb-post{transition:none;}
+@media(max-width:640px){
+  .nav{height:52px;padding:0 14px;}
+  .spacer{height:52px;}
+  .nav-brand{font-size:1.05rem;letter-spacing:1.5px;gap:4px;white-space:nowrap;flex-shrink:1;min-width:0;overflow:hidden;}
+  .nav-brand .shark{font-size:1.25rem;}
+  .nb-post{display:none;}
+  .nav-right{gap:6px;flex-shrink:0;}
+  .nav-btn{padding:5px 10px;font-size:.58rem;letter-spacing:2px;}
+}
 </style>
 </head>
 <body>
 
 <!-- ═══ NAV ═══ -->
 <header class="nav">
-  <a href="index.html" class="nav-brand">THE <span class="shark">SHARK</span> OF WALL STREET</a>
+  <a href="index.html" class="nav-brand"><span class="nb-pre">THE </span><span class="shark">SHARK</span><span class="nb-post"> OF WALL STREET</span></a>
   <div class="nav-right">
     <a href="index.html#intel" class="nav-btn">← Personnel</a>
     <a href="shop.html" class="nav-btn">Shop</a>
