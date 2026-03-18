@@ -285,7 +285,24 @@ img{max-width:100%;display:block;}
   background:radial-gradient(circle at center, rgba(10,10,12,1) 0%, var(--bg) 100%);
   border-top:1px solid var(--border2);border-bottom:1px solid var(--border2);
 }
+/* Full-bleed — no max-width, edge to edge like the Life grid */
+.section.full{padding:0;overflow:hidden;}
+.section.full .sec-hdr{padding:40px 40px 0;}
 .wrap{width:min(1280px,92vw);margin:0 auto;}
+/* Cinematic section header bar — matches Life section divider style */
+.sec-bar{
+  display:flex;align-items:center;gap:14px;
+  padding:14px 40px;
+  border-top:1px solid var(--border2);
+  border-bottom:1px solid var(--border);
+  background:rgba(201,168,76,.018);
+}
+.sec-bar-num{font-family:'Share Tech Mono',monospace;font-size:.6rem;letter-spacing:4px;color:var(--red);}
+.sec-bar-name{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:4px;color:var(--gold);}
+.sec-bar-sub{font-family:'Share Tech Mono',monospace;font-size:.55rem;letter-spacing:2px;color:var(--silver);text-transform:uppercase;}
+.sec-bar-line{flex:1;height:1px;background:linear-gradient(to right,rgba(201,168,76,.2),transparent);margin-left:12px;}
+.sec-bar-link{font-family:'Share Tech Mono',monospace;font-size:.54rem;letter-spacing:2px;color:var(--gold);text-decoration:none;border:1px solid rgba(201,168,76,.3);padding:4px 12px;transition:all .2s;white-space:nowrap;}
+.sec-bar-link:hover{background:rgba(201,168,76,.08);border-color:var(--gold);}
 
 .sec-label{
   font-family:'Share Tech Mono',monospace;
@@ -377,12 +394,12 @@ img{max-width:100%;display:block;}
 ═══════════════════════════════ */
 .poster-grid{
   display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:20px;margin-top:0;
+  gap:2px;margin-top:0;
 }
 .poster-card{
   position:relative;aspect-ratio:2/3;
-  overflow:hidden;border:1px solid var(--border2);
-  background:#000;box-shadow:var(--shadow);
+  overflow:hidden;border:none;
+  background:#000;
   transition:.25s ease;display:block;
 }
 .poster-card img{width:100%;height:100%;object-fit:contain;background:#000;}
@@ -392,8 +409,8 @@ img{max-width:100%;display:block;}
    DOSSIERS
 ═══════════════════════════════ */
 .dossier-grid{
-  display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));
-  gap:10px;
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));
+  gap:2px;
 }
 .dossier-card{
   position:relative;aspect-ratio:2/3;
@@ -418,13 +435,13 @@ img{max-width:100%;display:block;}
    CHAPTERS
 ═══════════════════════════════ */
 .chapter-grid{
-  display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
-  gap:16px;margin-top:8px;
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:2px;margin-top:0;
 }
 .chapter-card{
   position:relative;aspect-ratio:2/3;overflow:hidden;
-  border:1px solid var(--border2);background:#000;
-  box-shadow:var(--shadow);transition:.25s ease;display:block;
+  border:none;background:#000;
+  transition:.3s ease;display:block;
 }
 .chapter-card img{width:100%;height:100%;object-fit:contain;background:#000;}
 .chapter-card:hover{transform:translateY(-4px);border-color:rgba(201,168,76,.5);box-shadow:0 0 22px rgba(201,168,76,.15),0 26px 80px rgba(0,0,0,.75);}
@@ -669,8 +686,8 @@ img{max-width:100%;display:block;}
    PARTNERS
 ═══════════════════════════════ */
 .partners-grid{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:16px;margin-top:8px;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:10px;margin-top:8px;
 }
 .partner-card{
   position:relative;padding:22px 18px;text-align:center;
@@ -765,6 +782,8 @@ footer p{
 }
 @media(max-width:768px){
   .nav{padding:0 16px;}
+  .sec-bar{padding:12px 20px;}
+  .sec-bar-sub{display:none;}
   .section{padding:52px 20px;}
   .t-list{grid-template-columns:1fr;}
   .stats-row{grid-template-columns:1fr 1fr;}
@@ -776,10 +795,11 @@ footer p{
 }
 @media(max-width:520px){
   .nav{height:52px;padding:0 14px;}
+  div[style*="grid-template-columns:repeat(6"]{grid-template-columns:repeat(3,1fr)!important;}
   .spacer{height:52px;}
   .nav-brand{font-size:1.05rem;letter-spacing:1.5px;gap:4px;white-space:nowrap;flex-shrink:1;min-width:0;overflow:hidden;}
   .nav-brand .shark{font-size:1.25rem;}
-  .nav-brand-pre,.nav-brand-post{display:none;}
+  .nav-brand-pre{display:inline;}.nav-brand-post{display:none;}
   .nav-actions{gap:6px;flex-shrink:0;}
   .btn-hide-mobile{display:none!important;}
   .btn-show-mobile{display:inline-flex!important;}
@@ -853,11 +873,12 @@ footer p{
   </div>
 </section>
 
+
 <!-- ═══ SKXY TERMINAL ═══ -->
 <section class="section" style="padding-top:48px;padding-bottom:48px;">
+  <div class="sec-bar" style="margin:-48px -40px 32px;"><span class="sec-bar-num">01</span><span class="sec-bar-name">Intelligence</span><span class="sec-bar-sub">SKXY Terminal · InfinityXZ · Applied Strategic AI</span><span class="sec-bar-line"></span><a href="https://infinityxz.ai" target="_blank" rel="noopener" class="sec-bar-link">infinityxz.ai →</a></div>
   <div class="wrap">
     <div class="terminal-hero">
-      <div class="sec-label">SKXY Terminal</div>
       <h2>The Shark's Command Deck</h2>
       <p>Markets don't move. They hunt. Nations posture. Capital migrates. Liquidity flows.</p>
       <p>The <strong>SKXY Terminal</strong> is the live Macro Intelligence layer of <a href="https://infinityxz.ai/macrodata" target="_blank" rel="noopener">INFINITY AI</a> — The Applied Strategic Intelligence XperienZ.</p>
@@ -876,26 +897,22 @@ footer p{
 </section>
 
 <!-- ═══ CHARACTER / CHAPTER POSTERS ═══ -->
-<section class="section alt" id="posters">
-  <div class="wrap">
-    <div class="sec-label gold">&gt; Characters / Chapters — Coming Soon</div>
-    <div class="poster-grid" style="margin-bottom:20px;">
-      <a class="poster-card" href="#"><img src="tank.png" alt="Poster"/></a>
-      <a class="poster-card" href="#"><img src="bee.png" alt="Poster"/></a>
-      <a class="poster-card" href="#"><img src="bike.png" alt="Poster"/></a>
-    </div>
-    <div class="poster-grid">
-      <a class="poster-card" href="#"><img src="cruz1.png" alt="Poster"/></a>
-      <a class="poster-card" href="#"><img src="harp4.png" alt="Poster"/></a>
-      <a class="poster-card" href="#"><img src="cam2.png" alt="Poster"/></a>
-    </div>
+<section class="section full" id="posters">
+  <div class="sec-bar"><span class="sec-bar-num">02</span><span class="sec-bar-name">Characters</span><span class="sec-bar-sub">Coming Soon — Character Drops</span><span class="sec-bar-line"></span></div>
+  <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:2px;">
+    <a class="poster-card" href="#"><img src="tank.png" alt="Poster"/></a>
+    <a class="poster-card" href="#"><img src="bee.png" alt="Poster"/></a>
+    <a class="poster-card" href="#"><img src="bike.png" alt="Poster"/></a>
+    <a class="poster-card" href="#"><img src="cruz1.png" alt="Poster"/></a>
+    <a class="poster-card" href="#"><img src="harp4.png" alt="Poster"/></a>
+    <a class="poster-card" href="#"><img src="cam2.png" alt="Poster"/></a>
   </div>
 </section>
 
 <!-- ═══ WTF TERMINAL + IP RIGHTS + ANNOUNCEMENTS ═══ -->
 <section class="section alt" id="factory">
+  <div class="sec-bar" style="margin:-72px -40px 32px;"><span class="sec-bar-num">03</span><span class="sec-bar-name">Systems</span><span class="sec-bar-sub">World Trade Factory · IP Rights · Intelligence</span><span class="sec-bar-line"></span></div>
   <div class="wrap">
-    <div class="sec-label">&gt; Systems / Terminals</div>
     <div class="terminal-grid">
       <div class="terminal-box">
         <h3>World Trade Factory</h3>
@@ -968,10 +985,9 @@ footer p{
 </section>
 
 <!-- ═══ CHAPTERS ═══ -->
-<section class="section" id="chapters">
-  <div class="wrap">
-    <div class="sec-label gold">&gt; Recent Transmissions / Chapters</div>
-    <div class="chapter-grid">
+<section class="section full" id="chapters">
+  <div class="sec-bar"><span class="sec-bar-num">04</span><span class="sec-bar-name">Chapters</span><span class="sec-bar-sub">Recent Transmissions</span><span class="sec-bar-line"></span></div>
+  <div class="chapter-grid">
       <a class="chapter-card" href="chapter-prison.html"><img src="fight.png" alt="The Fight"/><div class="chapter-meta"><div class="chapter-title">The Fight</div></div></a>
       <a class="chapter-card" href="fox.html"><img src="suv.png" alt="The Fox"/><div class="chapter-meta"><div class="chapter-title">The Fox</div></div></a>
       <a class="chapter-card" href="snake.html"><img src="garage.png" alt="The Snake"/><div class="chapter-meta"><div class="chapter-title">The Snake</div></div></a>
@@ -985,15 +1001,13 @@ footer p{
       <a class="chapter-card" href="sheng.html"><img src="ex10.png" alt="The Extraction"/><div class="chapter-meta"><div class="chapter-title">The Extraction</div></div></a>
       <a class="chapter-card" href="marcus.html"><img src="mar15.png" alt="The Shipper"/><div class="chapter-meta"><div class="chapter-title">The Shipper</div></div></a>
       <a class="chapter-card" href="whale.html"><img src="w3.png" alt="The Whale"/><div class="chapter-meta"><div class="chapter-title">The Whale</div></div></a>
-    </div>
   </div>
 </section>
 
 <!-- ═══ PERSONNEL DOSSIERS ═══ -->
-<section class="section alt" id="intel">
-  <div class="wrap">
-    <div class="sec-label red">&gt; Classified Personnel Dossiers</div>
-    <div class="dossier-grid">
+<section class="section full" id="intel">
+  <div class="sec-bar"><span class="sec-bar-num">05</span><span class="sec-bar-name">Personnel</span><span class="sec-bar-sub">Classified Dossiers</span><span class="sec-bar-line"></span></div>
+  <div class="dossier-grid">
       <a href="black.html" class="dossier-card"><img src="scar.png" alt="Scarlett"/><div class="dossier-label">Scarlett</div></a>
       <a href="mayor.html" class="dossier-card"><img src="may.png" alt="The Mayor"/><div class="dossier-label">The Mayor</div></a>
       <a href="banker.html" class="dossier-card"><img src="bank.png" alt="The Banker"/><div class="dossier-label">The Banker</div></a>
@@ -1024,24 +1038,21 @@ footer p{
       <a href="cedric.html" class="dossier-card"><img src="ced.png" alt="The Ghost"/><div class="dossier-label">The Ghost</div></a>
       <a href="cleo.html" class="dossier-card"><img src="cleo.png" alt="The Bitch"/><div class="dossier-label">The Bitch</div></a>
       <a href="whale.html" class="dossier-card"><img src="tariq.png" alt="The Whale"/><div class="dossier-label">The Whale</div></a>
-    </div>
   </div>
 </section>
 
 <!-- ═══ TRAILER ═══ -->
-<section class="section" id="trailer">
-  <div class="wrap">
-    <div class="sec-label">&gt; Trailer Playback</div>
-    <video src="shark.mp4" controls preload="metadata"
-      style="width:100%;max-width:960px;margin:0 auto;display:block;border:1px solid rgba(201,168,76,.35);box-shadow:var(--shadow);">
-    </video>
-  </div>
+<section class="section full" id="trailer">
+  <div class="sec-bar"><span class="sec-bar-num">06</span><span class="sec-bar-name">Trailer</span><span class="sec-bar-sub">Experience the Universe</span><span class="sec-bar-line"></span></div>
+  <video src="shark.mp4" controls preload="metadata"
+    style="width:100%;display:block;border-top:none;border-bottom:1px solid rgba(201,168,76,.2);background:#000;">
+  </video>
 </section>
 
 <!-- ═══ SOUNDTRACK ═══ -->
-<section class="section alt" id="playlist">
-  <div class="wrap">
-    <div class="sec-label gold">&gt; Soundtrack — SharK ATaKK</div>
+<section class="section full" id="playlist">
+  <div class="sec-bar"><span class="sec-bar-num">07</span><span class="sec-bar-name">Soundtrack</span><span class="sec-bar-sub">SharK ATaKK — Original Score</span><span class="sec-bar-line"></span><a href="https://sharkatakk.com" target="_blank" rel="noopener" class="sec-bar-link">sharkatakk.com →</a></div>
+  <div style="padding:32px 40px;">
     <div class="player-box">
       <div class="player-inner">
         <div>
@@ -1060,17 +1071,16 @@ footer p{
     </div>
     <div id="playlistList" class="playlist-grid" style="margin-top:10px;"></div>
   </div>
+  </div>
 </section>
 
 <!-- ═══ COMING SOON POSTERS ═══ -->
-<section class="section" id="coming-soon">
-  <div class="wrap">
-    <div class="sec-label gold">&gt; Coming Soon</div>
-    <div class="poster-grid">
-      <a class="poster-card" href="#"><img src="soon4.png" alt="Coming Soon"/></a>
-      <a class="poster-card" href="#"><img src="soon3.png" alt="Coming Soon"/></a>
-      <a class="poster-card" href="#"><img src="soon2.png" alt="Coming Soon"/></a>
-    </div>
+<section class="section full" id="coming-soon">
+  <div class="sec-bar"><span class="sec-bar-num">08</span><span class="sec-bar-name">Coming Soon</span><span class="sec-bar-sub">Next Drops</span><span class="sec-bar-line"></span></div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;">
+    <a class="poster-card" href="#"><img src="soon4.png" alt="Coming Soon"/></a>
+    <a class="poster-card" href="#"><img src="soon3.png" alt="Coming Soon"/></a>
+    <a class="poster-card" href="#"><img src="soon2.png" alt="Coming Soon"/></a>
   </div>
 </section>
 
@@ -1078,19 +1088,7 @@ footer p{
      THE LIFE — LIFESTYLE HUB EMBEDDED
 ═══════════════════════════════════════ -->
 <section class="section alt" id="life" style="padding:0;overflow:hidden;">
-  <!-- Section header outside grid -->
-  <div style="padding:48px 40px 0;">
-    <div class="wrap">
-      <div class="sec-label gold">&gt; The Shark of Wall Street — Life</div>
-      <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;padding-bottom:28px;border-bottom:1px solid var(--border2);">
-        <div>
-          <h2 class="sec-title">THE <em>LIFE</em></h2>
-          <p class="sec-desc" style="margin-bottom:0;">Eleven dimensions of the universe. The machines, the destinations, the rooms, the bottles, the art, the deals.</p>
-        </div>
-        <a href="life.html" class="btn gold" style="white-space:nowrap;">Full Life Index →</a>
-      </div>
-    </div>
-  </div>
+  <div class="sec-bar"><span class="sec-bar-num">09</span><span class="sec-bar-name">The Life</span><span class="sec-bar-sub">11 Dimensions · Fleet · Travel · Style · Spirits · Art · Real Estate · Wellness · Tech · Culture · Finance · Events</span><span class="sec-bar-line"></span><a href="life.html" class="sec-bar-link">Full Index →</a></div>
 
   <div class="life-grid">
     <a href="fleet.html" class="lp">
@@ -1153,8 +1151,8 @@ footer p{
 
 <!-- ═══ PARTNERS ═══ -->
 <section class="section" id="partners">
+  <div class="sec-bar" style="margin:-72px -40px 32px;"><span class="sec-bar-num">10</span><span class="sec-bar-name">Partners</span><span class="sec-bar-sub">Collaborators · Narrative-Aligned</span><span class="sec-bar-line"></span></div>
   <div class="wrap">
-    <div class="sec-label">&gt; Partners &amp; Collaborators</div>
     <h2 class="sec-title" style="margin-bottom:4px;">Partners</h2>
     <p class="sec-desc">Core platforms and creative collaborators in the World Trade Factory universe.</p>
     <div class="partners-grid" style="margin-bottom:48px;">
