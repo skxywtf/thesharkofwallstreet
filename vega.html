@@ -1,358 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <title>The Actress | The Shark of Wall Street — Introducing Vega Vane</title>
-  <meta name="description" content="Vega Vane. The Global Icon. The Laundromat. She turns The Shark's black money into red carpet gold. The brightest star in a fake sky." />
-  <meta name="robots" content="index, follow, max-image-preview:large" />
-  <meta name="author" content="Sage Kakkat" />
-  <link rel="canonical" href="https://thesharkofwallstreet.com/the-distraction" />
-
-  <meta name="referrer" content="strict-origin-when-cross-origin" />
-  <meta name="format-detection" content="telephone=no" />
-
-  <meta property="og:type" content="article" />
-  <meta property="og:site_name" content="The Shark of Wall Street" />
-  <meta property="og:title" content="The Distraction | The Shark of Wall Street — Introducing Vega Vane" />
-  <meta property="og:description" content="Vega Vane. The Global Icon. The Laundromat. The only woman who can lie better than the AI." />
-  <meta property="og:url" content="https://thesharkofwallstreet.com/the-distraction" />
-  <meta property="og:image" content="https://thesharkofwallstreet.com/images/vega-red-carpet.jpg" />
-  <meta property="og:image:alt" content="Vega Vane in a silver gown surrounded by paparazzi flashes." />
-  <meta property="og:locale" content="en_US" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="The Distraction — Introducing Vega Vane" />
-  <meta name="twitter:description" content="She is the distraction. The face of the lie. Introducing Vega." />
-  <meta name="twitter:image" content="https://thesharkofwallstreet.com/images/vega-red-carpet.jpg" />
-  <meta name="twitter:image:alt" content="Vega Vane on the red carpet." />
-  <meta name="twitter:site" content="@thesharkofwallst" />
-
-  <meta name="keywords" content="The Shark of Wall Street, Vega Vane, Hollywood noir, money laundering, celebrity fiction, satire, fashion thriller" />
-
-  <meta name="theme-color" content="#000000" />
-  <meta name="color-scheme" content="dark" />
-
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Article",
-    "headline":"The Distraction | The Shark of Wall Street — Introducing Vega Vane",
-    "description":"Vega Vane. The Global Icon. The Laundromat.",
-    "author":{"@type":"Person","name":"Sage Kakkat"},
-    "publisher":{"@type":"Organization","name":"The Shark of Wall Street"},
-    "mainEntityOfPage":{"@type":"WebPage","@id":"https://thesharkofwallstreet.com/the-distraction"},
-    "image":["https://thesharkofwallstreet.com/images/vega-red-carpet.jpg"],
-    "inLanguage":"en-US"
-  }
-  </script>
-
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RTH99L39VB"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-RTH99L39VB');
-  </script>
-
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400&display=swap" rel="stylesheet">
-
-  <style>
-    /* --- INHERITED VARIABLES --- */
-    :root {
-      --bg-dark: #000000; /* Pure Black for that Flash Photography contrast */
-      --text-main: #f8fafc;
-      --text-muted: #94a3b8;
-      --accent: #e2e8f0; /* Platinum / Diamond White */
-      --accent-secondary: #be123c; /* Red Carpet Crimson */
-      --border: rgba(255,255,255,0.2);
-      --header-height: 70px;
-    }
-
-    /* --- HIDE VERCEL TOOLBAR --- */
-    #vercel-toolbar, vercel-live-feedback, [data-vercel-toolbar] {
-      display: none !important; opacity: 0 !important; pointer-events: none !important; visibility: hidden !important;
-    }
-
-    body {
-      background-color: var(--bg-dark);
-      color: var(--text-main);
-      font-family: 'Montserrat', sans-serif;
-      margin: 0;
-      padding-top: var(--header-height);
-    }
-
-    /* --- READER LAYOUT --- */
-    .reader-container{
-      width: min(1100px, calc(100% - 3rem));
-      margin: 0 auto;
-      padding: 4rem 1.5rem;
-    }
-
-    /* Magazine Style Headline */
-    h1.chapter-title {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: clamp(3rem, 9vw, 6rem);
-      color: var(--text-main);
-      text-transform: none; /* Keep it elegant, not blocky */
-      line-height: 0.85;
-      margin-bottom: 0.5rem;
-      text-align: center;
-      /* Diamond Glow Effect */
-      text-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
-    }
-
-    h1.chapter-title span {
-        font-family: 'Montserrat', sans-serif;
-        font-style: normal;
-        font-weight: 600;
-        text-transform: uppercase;
-        color: var(--accent-secondary); /* The Red Carpet Touch */
-        display: block;
-        font-size: 0.3em;
-        letter-spacing: 6px;
-        margin-bottom: 15px;
-    }
-
-    .chapter-meta {
-      font-family: 'Cinzel', serif;
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 2rem;
-      margin-bottom: 3rem;
-      display: flex;
-      justify-content: center;
-      letter-spacing: 2px;
-    }
-
-    .story-text {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
-      line-height: 1.8;
-      color: #cbd5e1;
-      text-align: center; /* Centered text for that "Vanity Fair" quote look */
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .story-text p { margin-bottom: 2rem; }
-
-    /* Drop Cap for Magazine Feel */
-    .drop-cap::first-letter {
-      float: left;
-      font-size: 4.5rem;
-      line-height: 0.8;
-      font-style: italic;
-      padding-right: 12px;
-      color: var(--accent-secondary);
-      font-family: 'Playfair Display', serif;
-    }
-
-    /* --- MEDIA --- */
-    .story-media {
-      max-width: 700px;
-      margin: 3rem auto;
-      /* Polaroid / Photo Print Effect */
-      border: 12px solid #fff;
-      border-bottom: 40px solid #fff;
-      box-shadow: 0 20px 50px rgba(255,255,255,0.15);
-      transform: rotate(-2deg);
-      transition: transform 0.3s ease;
-    }
-    .story-media:hover { transform: rotate(0deg) scale(1.02); }
-    .story-media img { width: 100%; height: auto; display: block;  }
- /* --- NEW PHOTO GALLERY STYLES --- */
-    .photo-gallery {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap; /* Allows stacking on small screens */
-      gap: 2rem;
-      margin: 5rem auto;
-      max-width: 1000px;
-      position: relative;
-    }
-
-    /* The base style for each photo */
-    .photo-print {
-      flex: 1 1 280px; /* Responsive sizing */
-      max-width: 350px;
-      background: #fff;
-      /* Polaroid Borders */
-      padding: 10px 10px 40px 10px;
-      box-shadow: 0 15px 40px rgba(255,255,255,0.1);
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy effect */
-      position: relative;
-      z-index: 1;
-      cursor: pointer;
-    }
-
-    .photo-print img {
-      width: 100%;
-      height: auto;
-      display: block;
-      /* Keep B&W noir look - remove this line for color */
-
-    }
-
-    /* Specific Tilts for each photo */
-    .tilt-1 { transform: rotate(-6deg) translateY(20px); }
-    .tilt-2 { transform: rotate(3deg) translateY(-15px); z-index: 2; } /* Center one sits slightly higher */
-    .tilt-3 { transform: rotate(8deg) translateY(30px); }
-
-    /* Hover Effect: Straighten, enlarge, and pop to front */
-    .photo-print:hover {
-      transform: rotate(0deg) scale(1.15) !important; /* !important overrides the specific tilts */
-      z-index: 10;
-      box-shadow: 0 30px 70px rgba(255,255,255,0.3);
-    }
-
-    /* Mobile adjustment so they don't overlap too much vertically */
-    @media (max-width: 768px) {
-       .photo-gallery { gap: 4rem; }
-    }
-    /* --- AUDIO HEADER --- */
-    .fixed-audio-header {
-      position: fixed; top: 0; left: 0; width: 100%; height: var(--header-height);
-      background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border); z-index: 1000;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .audio-scroll-container {
-      width: 100%; max-width: 1100px; display: flex; gap: 0.8rem;
-      padding: 0 1.5rem; overflow-x: auto; scrollbar-width: none;
-      justify-content: center;
-    }
-    .audio-scroll-container::-webkit-scrollbar { display: none; }
-
-    .btn-audio {
-      background: transparent; border: 1px solid var(--text-muted);
-      color: var(--text-muted); padding: 0.5rem 1.5rem; border-radius: 0; /* Sharp corners */
-      font-family: 'Montserrat', sans-serif; font-size: 0.75rem; font-weight: 600;
-      cursor: pointer; white-space: nowrap; letter-spacing: 1px; text-transform: uppercase;
-      transition: all 0.3s ease; display: flex; align-items: center; gap: 0.4rem;
-    }
-    .btn-audio:hover {
-      background-color: #fff; border-color: #fff; color: #000;
-    }
-    .btn-audio.playing {
-      background-color: var(--accent-secondary); color: #fff; border-color: var(--accent-secondary);
-      box-shadow: 0 0 20px rgba(190, 18, 60, 0.5);
-    }
-
-    /* --- FOOTER NAV --- */
-    .nav-footer { margin-top: 5rem; padding-top: 2rem; border-top: 1px solid var(--border); text-align: center; }
-    .btn-back {
-      display: inline-block; text-decoration: none; color: var(--text-muted);
-      border-bottom: 1px solid transparent; padding-bottom: 4px;
-      transition: all 0.2s; text-transform: uppercase;
-      font-size: 0.8rem; letter-spacing: 2px;
-    }
-    .btn-back:hover { color: #fff; border-bottom-color: #fff; }
-  </style>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Vega &mdash; The Distraction | The Shark of Wall Street</title>
+<meta name="description" content="Vega Vane. The Global Icon. The Laundromat. She turns black money into red carpet gold. The brightest star in a fake sky."/>
+<meta name="keywords" content="Vega Vane, The Distraction, global icon, Shark of Wall Street character, Hollywood noir, World Trade Factory"/>
+<meta name="author" content="Sage Kakkat / World Trade Factory"/>
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1"/>
+<meta name="theme-color" content="#050506"/>
+<link rel="canonical" href="https://thesharkofwallstreet.com/vega"/>
+<meta property="og:type" content="article"/><meta property="og:title" content="Vega &mdash; The Distraction | The Shark of Wall Street"/>
+<meta property="og:description" content="Vega Vane. The Global Icon. The Laundromat. She turns black money into red carpet gold. The brightest star in a fake sky."/><meta property="og:image" content="https://thesharkofwallstreet.com/bar.png"/>
+<meta property="og:url" content="https://thesharkofwallstreet.com/vega"/>
+<meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Vega &mdash; The Distraction | The Shark of Wall Street"/>
+<meta name="twitter:image" content="https://thesharkofwallstreet.com/bar.png"/>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RTH99L39VB"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RTH99L39VB');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet"/>
+<style>#vercel-toolbar,vercel-live-feedback,[data-vercel-toolbar]{display:none!important;opacity:0!important;pointer-events:none!important;visibility:hidden!important;}
+:root{--bg:#050506;--panel:#0a0a0c;--gold:#c9a84c;--white:#f0ede8;--silver:#a8a090;--muted:#55504a;--border:rgba(201,168,76,0.12);--border2:rgba(240,237,232,0.07);--char:#be123c;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--white);font-family:'Rajdhani',sans-serif;overflow-x:hidden;}
+body::after{content:"";position:fixed;inset:-30%;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");opacity:.04;pointer-events:none;z-index:2;transform:rotate(10deg);mix-blend-mode:overlay;}
+body::before{content:"";position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 3px,#be123c08 3px,#be123c08 4px);pointer-events:none;z-index:1;}
+a{color:inherit;text-decoration:none;}img{max-width:100%;display:block;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.15}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.nav{position:fixed;top:0;left:0;right:0;height:64px;background:rgba(5,5,6,.95);backdrop-filter:blur(16px);border-bottom:1px solid #be123c22;display:flex;align-items:center;justify-content:space-between;padding:0 40px;z-index:500;}
+.nav-brand{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:4px;color:var(--white);display:flex;align-items:center;gap:8px;text-decoration:none;}
+.nav-brand .shark{color:var(--gold);font-size:1.8rem;}
+.nav-brand::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--char);box-shadow:0 0 6px var(--char);animation:blink 1.8s infinite;margin-right:4px;}
+.nb-post{transition:none;}
+.nav-right{display:flex;align-items:center;gap:10px;}
+.nav-btn{font-family:'Share Tech Mono',monospace;font-size:.68rem;letter-spacing:3px;color:var(--silver);text-transform:uppercase;text-decoration:none;border:1px solid rgba(240,237,232,0.2);padding:6px 16px;transition:.2s;background:transparent;cursor:pointer;}
+.nav-btn:hover{border-color:var(--gold);color:var(--gold);}
+.nav-btn.accent{color:var(--char);border-color:#be123c44;}
+.nav-btn.accent:hover{border-color:var(--char);}
+.spacer{height:64px;}
+.masthead{position:relative;border-bottom:1px solid #be123c22;padding:60px 40px 52px;overflow:hidden;animation:fadeUp .7s ease both;}
+.masthead::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 100% 50%,#be123c0f 0%,transparent 60%);pointer-events:none;}
+.masthead-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:end;gap:40px;position:relative;z-index:2;}
+.mast-eyebrow{font-family:'Share Tech Mono',monospace;font-size:.6rem;letter-spacing:5px;color:var(--char);text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+.mast-eyebrow::before{content:'';display:inline-block;width:28px;height:1px;background:var(--char);}
+.mast-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(64px,10vw,140px);line-height:0.88;letter-spacing:3px;color:var(--white);position:relative;display:inline-block;}
+.mast-title::after{content:'';position:absolute;left:0;right:0;bottom:-8px;height:2px;background:linear-gradient(90deg,var(--char),#be123c44,transparent);}
+.mast-subtitle{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-style:italic;font-weight:300;color:var(--silver);letter-spacing:1px;margin-top:16px;}
+.mast-meta{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap;}
+.mast-tag{font-family:'Share Tech Mono',monospace;font-size:.58rem;letter-spacing:3px;color:var(--char);text-transform:uppercase;border:1px solid #be123c44;padding:4px 12px;}
+.mast-right{text-align:right;}
+.dossier-num{font-family:'Bebas Neue',sans-serif;font-size:clamp(80px,12vw,160px);line-height:1;color:#be123c0d;letter-spacing:4px;pointer-events:none;}
+.dossier-label{font-family:'Share Tech Mono',monospace;font-size:.55rem;letter-spacing:4px;color:var(--muted);text-transform:uppercase;text-align:right;}
+.sec-bar{display:flex;align-items:center;gap:14px;padding:12px 40px;border-top:1px solid var(--border2);border-bottom:1px solid var(--border);background:#be123c05;}
+.sb-num{font-family:'Share Tech Mono',monospace;font-size:.6rem;letter-spacing:4px;color:var(--char);}
+.sb-name{font-family:'Bebas Neue',sans-serif;font-size:1.05rem;letter-spacing:4px;color:var(--gold);}
+.sb-sub{font-family:'Share Tech Mono',monospace;font-size:.54rem;letter-spacing:2px;color:var(--silver);text-transform:uppercase;}
+.sb-line{flex:1;height:1px;background:linear-gradient(to right,#be123c33,transparent);margin-left:12px;}
+.story-outer{max-width:900px;margin:0 auto;padding:56px 40px;}
+.story-outer p{font-family:'Cormorant Garamond',serif;font-size:1.25rem;line-height:1.9;color:#c8c0b8;margin-bottom:1.8rem;}
+.story-outer p:last-child{margin-bottom:0;}
+.story-outer p strong{color:var(--white);font-weight:600;}
+.story-outer p em{color:var(--silver);font-style:italic;}
+.story-outer p a{color:var(--char);text-decoration:underline;text-underline-offset:3px;}
+.part-header{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:4px;color:var(--white);margin:52px 0 24px;display:flex;align-items:center;gap:14px;}
+.part-header::before{content:'';display:inline-block;width:28px;height:2px;background:var(--char);flex-shrink:0;}
+.part-header::after{content:'';flex:1;height:1px;background:linear-gradient(to right,#be123c40,transparent);margin-left:8px;}
+.part-header:first-child{margin-top:0;}
+.status-tag{font-family:'Share Tech Mono',monospace;font-size:.58rem;letter-spacing:3px;color:var(--char);text-transform:uppercase;border-left:2px solid var(--char);padding-left:12px;display:inline-block;margin-bottom:24px;}
+.drop-cap::first-letter{float:left;font-size:5rem;line-height:0.8;padding-right:14px;padding-top:4px;color:var(--char);font-family:'Cormorant Garamond',serif;font-weight:400;}
+.dialogue{color:var(--white)!important;font-style:italic!important;}
+.story-img{margin:36px -40px;position:relative;overflow:hidden;border-top:1px solid #be123c20;border-bottom:1px solid #be123c20;}
+.story-img img{width:100%;height:auto;display:block;filter:contrast(1) saturate(0.88);transition:filter .5s;}
+.story-img:hover img{filter:contrast(1.05) saturate(1);}
+.tbc{text-align:center;margin:48px 0 0;font-family:'Share Tech Mono',monospace;color:#ef4444;letter-spacing:3px;font-size:.75rem;text-transform:uppercase;animation:blink 2.2s infinite;}
+.loadout{background:radial-gradient(circle at top right,#be123c0f 0%,transparent 35%),linear-gradient(180deg,rgba(10,5,5,.95) 0%,rgba(5,5,6,1) 100%);border-top:1px solid #be123c33;}
+.loadout-inner{max-width:1280px;margin:0 auto;padding:52px 40px;}
+.loadout-header{margin-bottom:32px;}
+.loadout-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,3.5rem);letter-spacing:3px;color:var(--white);margin-bottom:6px;}
+.loadout-sub{font-family:'Share Tech Mono',monospace;font-size:.6rem;letter-spacing:4px;color:var(--char);text-transform:uppercase;}
+.loadout-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#be123c14;border:1px solid #be123c1a;}
+.loadout-card{background:var(--bg);padding:28px 24px;transition:background .25s;position:relative;}
+.loadout-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,var(--char),transparent);transform:scaleX(0);transform-origin:left;transition:transform .35s;}
+.loadout-card:hover{background:#be123c07;}
+.loadout-card:hover::before{transform:scaleX(1);}
+.loadout-card-title{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:2px;color:var(--white);margin-bottom:6px;}
+.loadout-card-sub{font-family:'Share Tech Mono',monospace;font-size:.52rem;letter-spacing:2px;color:var(--char);text-transform:uppercase;margin-bottom:20px;}
+.loadout-links{display:flex;flex-direction:column;}
+.loadout-link{display:flex;align-items:flex-start;gap:8px;padding:8px 0;text-decoration:none;border-bottom:1px solid rgba(240,237,232,.06);transition:all .2s;}
+.loadout-link:last-child{border-bottom:none;padding-bottom:0;}
+.loadout-link:hover .ll-arrow{color:var(--char);transform:translateX(3px);}
+.loadout-link:hover .ll-name{color:var(--white);}
+.ll-arrow{font-family:'Share Tech Mono',monospace;font-size:.6rem;color:#be123c88;flex-shrink:0;line-height:1.7;transition:color .2s,transform .2s;}
+.ll-name{font-family:'Rajdhani',sans-serif;font-size:.85rem;font-weight:600;letter-spacing:1px;color:var(--silver);text-transform:uppercase;line-height:1.4;transition:color .2s;}
+.chapter-footer{padding:40px;border-top:1px solid var(--border2);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;background:#000;}
+.cf-brand{font-family:'Share Tech Mono',monospace;font-size:.56rem;letter-spacing:3px;color:var(--muted);text-transform:uppercase;}
+.cf-brand strong{color:var(--gold);font-weight:400;}
+.cf-nav{display:flex;gap:10px;flex-wrap:wrap;}
+.cf-link{font-family:'Share Tech Mono',monospace;font-size:.52rem;letter-spacing:2px;color:var(--silver);text-transform:uppercase;text-decoration:none;border:1px solid var(--border2);padding:5px 12px;transition:.2s;}
+.cf-link:hover{border-color:var(--gold);color:var(--gold);}
+.cf-link.accent{border-color:#be123c44;color:var(--char);}
+.cf-link.accent:hover{border-color:var(--char);}
+@media(max-width:980px){.loadout-grid{grid-template-columns:repeat(2,1fr);} .masthead-inner{grid-template-columns:1fr;} .mast-right{display:none;}}
+@media(max-width:640px){
+  .nav{height:52px;padding:0 14px;}.spacer{height:52px;}
+  .nav-brand{font-size:1.05rem;letter-spacing:1.5px;}.nb-post{display:none;}
+  .nav-right{gap:6px;}.nav-btn{padding:5px 10px;font-size:.58rem;}
+  .masthead{padding:40px 20px 36px;}.story-outer{padding:40px 20px;}.story-img{margin:28px -20px;}
+  .loadout-inner{padding:40px 20px;}.loadout-grid{grid-template-columns:1fr;}
+  .sec-bar{padding:12px 20px;}.sb-sub{display:none;}.chapter-footer{padding:28px 20px;}
+}</style>
 </head>
-
 <body>
-
-
-  <div class="reader-container">
-
-    <div style="font-family: 'Montserrat'; text-align: center; margin-bottom: 2rem; color: var(--text-muted); letter-spacing: 4px; font-size: 2rem; text-transform: uppercase;">
-      The Shark of Wall Street
-    </div>
-
-    <h1 class="chapter-title">
-        Vega
-    </h1>
-
-    <div class="story-media">
-      <img src="bar.png" alt="Vega Vane shielded by sunglasses amidst camera flashes">
-    </div>
-    <div class="photo-gallery">
-
-      <div class="photo-print tilt-1">
-        <img src="vegas.png" alt="Vega Vane paparazzi shot 1">
-      </div>
-
-      <div class="photo-print tilt-2">
-         <img src="ball.png" alt="Vega Vane paparazzi shot 2">
-      </div>
-
-      <div class="photo-print tilt-3">
-         <img src="purse.png" alt="Vega Vane paparazzi shot 3">
-      </div>
-
-    </div>
-    <article class="story-text">
-
-      <div class="chapter-meta">
-        Beverly Hills Hotel &bull; Bungalow 7
-      </div>
-
-      <p class="drop-cap">
-
-      </p>
-
-      <p style="font-style: italic; color: var(--text-muted); font-size: 1rem; margin-top: 3rem;">
-        Coming Soon.
-      </p>
-
-    </article>
-
-    <div class="nav-footer">
-      <a href="index.html" class="btn-back">Back to Home     </a>
-    </div>
-
+<header class="nav">
+  <a href="index.html" class="nav-brand"><span class="nb-pre">THE </span><span class="shark">SHARK</span><span class="nb-post"> OF WALL STREET</span></a>
+  <div class="nav-right">
+    <a href="index.html#intel" class="nav-btn">&#8592; Personnel</a>
+    <a href="shop.html" class="nav-btn">Shop</a>
+    <a href="index.html" class="nav-btn accent">Universe</a>
   </div>
+</header>
+<div class="spacer"></div>
+<div class="masthead">
+  <div class="masthead-inner">
+    <div>
+      <p class="mast-eyebrow">The Shark of Wall Street &nbsp;&middot;&nbsp; Dossier</p>
+      <h1 class="mast-title">Vega</h1>
+      <p class="mast-subtitle">Vega Vane &mdash; The Global Icon</p>
+      <div class="mast-meta"><span class="mast-tag">Vega Vane</span><span class="mast-tag">The Distraction</span><span class="mast-tag">The Laundromat</span><span class="mast-tag">Beverly Hills</span><span class="mast-tag">Red Carpet</span></div>
+    </div>
+    <div class="mast-right">
+      <div class="dossier-num">VV</div>
+      <div class="dossier-label">Dossier &middot; Classified</div>
+    </div>
+  </div>
+</div>
 
-  <script>
-    // Audio Controller
-    var currentAudio = null;
-    var currentButtonId = null;
+<div class="sec-bar"><span class="sb-num">01</span><span class="sb-name">The Character</span><span class="sb-sub">Full Dossier &mdash; Coming Soon</span><span class="sb-line"></span></div>
+<div class="story-img" style="margin:0;border:none;"><img src="bar.png" alt="Vega Vane &mdash; shielded by sunglasses amidst camera flashes"/></div>
 
-    function playAudio(buttonId, source) {
-      if (currentButtonId === 'btn-' + buttonId && currentAudio && !currentAudio.paused) {
-        currentAudio.pause();
-        currentAudio.currentTime = 0;
-        document.getElementById('btn-' + buttonId).classList.remove('playing');
-        currentAudio = null;
-        currentButtonId = null;
-        return;
-      }
+<style>
+.photo-gallery{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:2rem;margin:48px 40px;position:relative;}
+.photo-print{flex:1 1 260px;max-width:320px;background:#fff;padding:10px 10px 40px;box-shadow:0 15px 40px rgba(255,255,255,0.08);transition:all 0.4s cubic-bezier(0.175,0.885,0.32,1.275);position:relative;z-index:1;cursor:pointer;}
+.photo-print img{width:100%;height:auto;display:block;}
+.tilt-1{transform:rotate(-6deg) translateY(20px);}
+.tilt-2{transform:rotate(3deg) translateY(-15px);z-index:2;}
+.tilt-3{transform:rotate(8deg) translateY(30px);}
+.photo-print:hover{transform:rotate(0deg) scale(1.12)!important;z-index:10;box-shadow:0 30px 70px rgba(190,18,60,0.3);}
+@media(max-width:640px){.photo-gallery{gap:3rem;margin:32px 20px;}}
+</style>
 
-      if (currentAudio) {
-        currentAudio.pause();
-        currentAudio.currentTime = 0;
-        if(currentButtonId) {
-           document.getElementById(currentButtonId).classList.remove('playing');
-        }
-      }
+<div class="photo-gallery">
+  <div class="photo-print tilt-1"><img src="vegas.png" alt="Vega Vane &mdash; paparazzi shot"/></div>
+  <div class="photo-print tilt-2"><img src="ball.png" alt="Vega Vane &mdash; red carpet"/></div>
+  <div class="photo-print tilt-3"><img src="purse.png" alt="Vega Vane &mdash; closeup"/></div>
+</div>
 
-      currentAudio = new Audio(source);
-      currentButtonId = 'btn-' + buttonId;
-
-      currentAudio.play().then(() => {
-        document.getElementById(currentButtonId).classList.add('playing');
-      }).catch(error => {
-        console.error("Audio playback failed:", error);
-        alert("Audio file not found or playback blocked.");
-      });
-
-      currentAudio.onended = function() {
-        document.getElementById(currentButtonId).classList.remove('playing');
-        currentAudio = null;
-        currentButtonId = null;
-      };
-    }
-  </script>
-
+<div style="padding:32px 40px 64px;text-align:center;border-bottom:1px solid rgba(240,237,232,0.07);">
+  <p style="font-family:'Bebas Neue',sans-serif;font-size:.7rem;letter-spacing:6px;color:#be123c;text-transform:uppercase;margin-bottom:8px;">Beverly Hills Hotel &nbsp;&middot;&nbsp; Bungalow 7</p>
+  <p style="font-family:'Bebas Neue',sans-serif;font-size:3rem;letter-spacing:6px;color:#be123c;margin-bottom:16px;">Coming Soon</p>
+  <p style="font-family:'Share Tech Mono',monospace;font-size:.72rem;letter-spacing:3px;color:#a8a090;text-transform:uppercase;">Full Dossier &nbsp;&middot;&nbsp; Story &nbsp;&middot;&nbsp; Loadout</p>
+</div>
+<div class="chapter-footer">
+  <div class="cf-brand">World Trade Factory &nbsp;&middot;&nbsp; <strong>The Shark of Wall Street</strong> &nbsp;&middot;&nbsp; Vega</div>
+  <div class="cf-nav">
+    <a href="index.html" class="cf-link">&#8592; Home</a>
+    <a href="index.html#chapters" class="cf-link">Chapters</a>
+    <a href="index.html#intel" class="cf-link">Personnel</a>
+    <a href="shop.html" class="cf-link">Shop</a>
+    <a href="https://thesharkofwallstreet.com" class="cf-link accent">thesharkofwallstreet.com &#8594;</a>
+  </div>
+</div>
 </body>
-
 </html>

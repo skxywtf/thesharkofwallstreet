@@ -1,956 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <!-- Core -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta http-equiv="x-ua-compatible" content="IE=edge" />
-  <meta name="referrer" content="strict-origin-when-cross-origin" />
-  <meta name="format-detection" content="telephone=no" />
-  <meta name="color-scheme" content="dark" />
-  <meta name="theme-color" content="#020617" />
-
-  <!-- Primary SEO -->
-  <title>The Architecture of Distraction | The Shark of Wall Street — Introducing N.V. Diya</title>
-  <meta name="description" content="N.V. Diya — Lead Architect of Sentient Systems. An AI systems visionary shaping market-grade intelligence, agentic workflows, and the infrastructure behind modern artificial intelligence." />
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-  <link rel="canonical" href="https://thesharkofwallstreet.com/the-architecture-of-distraction" />
-
-  <!-- (Optional) If you have multiple languages/regions -->
-  <!-- <link rel="alternate" hreflang="en-us" href="https://thesharkofwallstreet.com/the-architecture-of-distraction" /> -->
-  <!-- <link rel="alternate" hreflang="x-default" href="https://thesharkofwallstreet.com/the-architecture-of-distraction" /> -->
-
-  <!-- Favicons -->
-  <link rel="icon" href="/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="manifest" href="/site.webmanifest" />
-
-  <!-- Open Graph (Facebook/LinkedIn/iMessage) -->
-  <meta property="og:type" content="article" />
-  <meta property="og:site_name" content="The Shark of Wall Street" />
-  <meta property="og:title" content="The Architecture of Distraction — Introducing N.V. Diya" />
-  <meta property="og:description" content="Lead Architect of Sentient Systems. Agentic AI, market prediction, and the engineering behind modern artificial intelligence." />
-  <meta property="og:url" content="https://thesharkofwallstreet.com/the-architecture-of-distraction" />
-  <meta property="og:image" content="https://thesharkofwallstreet.com/images/nv-diya.jpg" />
-  <meta property="og:image:secure_url" content="https://thesharkofwallstreet.com/images/nv-diya.jpg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="N.V. Diya in a midnight-blue silk saree in a high-rise corporate office." />
-  <meta property="og:locale" content="en_US" />
-
-  <!-- Twitter / X -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="The Architecture of Distraction — N.V. Diya" />
-  <meta name="twitter:description" content="Lead Architect of Sentient Systems. Agentic AI, systems design, and market-grade intelligence." />
-  <meta name="twitter:image" content="https://thesharkofwallstreet.com/images/nv-diya.jpg" />
-  <meta name="twitter:image:alt" content="N.V. Diya in a corporate office setting." />
-
-  <!-- Authoring -->
-  <meta name="author" content="Sage" />
-  <meta name="publisher" content="The Shark of Wall Street" />
-
-  <!-- Keywords (not a ranking factor for Google, but harmless) -->
-  <meta name="keywords" content="Artificial Intelligence, AI, agentic AI, AI agents, machine learning, deep learning, LLM, large language model, generative AI, neural networks, inference, training, MLOps, data pipelines, retrieval augmented generation, RAG, vector database, embeddings, transformers, reinforcement learning, market prediction, quantitative finance, algorithmic trading, fintech, OpenAI, Google DeepMind, Anthropic, Microsoft, NVIDIA, Amazon AWS, Meta AI, Apple, Tesla, Oracle, IBM, Intel" />
-
-  <!-- Performance (optional but good) -->
-  <link rel="preconnect" href="https://www.googletagmanager.com" />
-  <link rel="dns-prefetch" href="//www.googletagmanager.com" />
-
-  <!-- Structured Data: Article -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "The Architecture of Distraction — Introducing N.V. Diya",
-    "description": "N.V. Diya — Lead Architect of Sentient Systems. An AI systems visionary shaping market-grade intelligence, agentic workflows, and the infrastructure behind modern artificial intelligence.",
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://thesharkofwallstreet.com/the-architecture-of-distraction"
-    },
-    "image": [
-      "https://thesharkofwallstreet.com/images/nv-diya.jpg"
-    ],
-    "author": {
-      "@type": "Person",
-      "name": "Sage Kakkat"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "The Shark of Wall Street",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://thesharkofwallstreet.com/images/logo.png"
-      }
-    },
-    "inLanguage": "en-US",
-    "keywords": [
-      "Artificial Intelligence",
-      "AI",
-      "Agentic AI",
-      "Machine Learning",
-      "LLM",
-      "Generative AI",
-      "FinTech",
-      "Quantitative Finance"
-    ],
-    "about": [
-      { "@type": "Thing", "name": "Artificial Intelligence" },
-      { "@type": "Thing", "name": "Machine Learning" },
-      { "@type": "Thing", "name": "Large Language Models" },
-      { "@type": "Thing", "name": "Agentic AI" },
-      { "@type": "Thing", "name": "Quantitative Finance" }
-    ]
-  }
-  </script>
-
-  <!-- Structured Data: Breadcrumbs (helps sitelinks & clarity) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://thesharkofwallstreet.com/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Chapters",
-        "item": "https://thesharkofwallstreet.com/chapters"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": "The Architecture of Distraction",
-        "item": "https://thesharkofwallstreet.com/the-architecture-of-distraction"
-      }
-    ]
-  }
-  </script>
-
-  <!-- GA4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RTH99L39VB"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-RTH99L39VB');
-  </script>
-
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
-
-  <style>
-    /* --- INHERITED VARIABLES --- */
-    :root {
-      --bg-dark: #020617;
-      --text-main: #f8fafc;
-      --text-muted: #94a3b8;
-      --accent: #f59e0b; /* Gold/Amber for Diya */
-      --secondary: #1e3a8a; /* Midnight Blue */
-      --border: rgba(255,255,255,0.1);
-      --header-height: 70px;
-    }
-
-    /* --- HIDE VERCEL TOOLBAR --- */
-    #vercel-toolbar, vercel-live-feedback, [data-vercel-toolbar] {
-      display: none !important; opacity: 0 !important; pointer-events: none !important; visibility: hidden !important;
-    }
-
-    body {
-      background-color: var(--bg-dark);
-      color: var(--text-main);
-      font-family: system-ui, -apple-system, sans-serif;
-      margin: 0;
-      padding-top: var(--header-height);
-    }
-
-    /* --- READER LAYOUT --- */
-    .reader-container{
-      width: min(1100px, calc(100% - 3rem));
-      margin: 0 auto;
-      padding: 4rem 1.5rem;
-    }
-
-    h1.chapter-title {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(3rem, 7vw, 5rem);
-      color: var(--text-main);
-      text-transform: uppercase;
-      line-height: 0.9;
-      margin-bottom: 0.5rem;
-      text-align: center;
-      text-shadow: 0 4px 30px rgba(245, 158, 11, 0.2);
-    }
-
-    h1.chapter-title span {
-        color: var(--accent);
-        display: block;
-        font-size: 0.5em;
-        letter-spacing: 5px;
-        margin-bottom: 10px;
-    }
-
-    .chapter-meta {
-      font-family: 'Cinzel', serif;
-      color: var(--text-muted);
-      font-size: 1rem;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 2rem;
-      margin-bottom: 3rem;
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .story-text {
-      font-family: 'Merriweather', serif;
-      font-size: 1.15rem;
-      line-height: 1.9;
-      color: #e2e8f0;
-    }
-
-    .story-text p { margin-bottom: 2rem; }
-
-    /* Special styling for "Time/Status" Headers */
-    .status-header {
-        font-family: 'Bebas Neue', sans-serif;
-        color: var(--accent);
-        font-size: 1.8rem;
-        letter-spacing: 1px;
-        margin-top: 4rem;
-        margin-bottom: 1rem;
-        border-left: 3px solid var(--accent);
-        padding-left: 15px;
-    }
-
-    /* Special styling for AI HUD/Terminal thoughts */
-    .terminal-text {
-        font-family: 'Courier Prime', monospace;
-        font-size: 0.95rem;
-        color: #93c5fd; /* Light blue terminal text */
-        background: rgba(30, 58, 138, 0.2); /* Very dark blue background */
-        padding: 1.5rem;
-        border-radius: 6px;
-        border: 1px solid rgba(255,255,255,0.1);
-        margin: 2rem 0;
-        white-space: pre-line; /* Preserves line breaks */
-    }
-
-    .drop-cap::first-letter {
-      float: left;
-      font-size: 4rem;
-      line-height: 0.8;
-      font-weight: bold;
-      padding-right: 12px;
-      color: var(--accent);
-      font-family: 'Cinzel', serif; /* Regal/Tech font for Diya */
-    }
-
-    /* --- MEDIA --- */
-    .story-media {
-      max-width: 800px;
-      margin: 4rem auto;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-      border: 1px solid var(--border);
-    }
-    .story-media img { width: 100%; height: auto; display: block; }
-
-    /* --- AUDIO HEADER --- */
-    .fixed-audio-header {
-      position: fixed; top: 0; left: 0; width: 100%; height: var(--header-height);
-      background: rgba(2, 6, 23, 0.9); backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border); z-index: 1000;
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-    }
-    .audio-scroll-container {
-      width: 100%; max-width: 1100px; display: flex; gap: 0.8rem;
-      padding: 0 1.5rem; overflow-x: auto; scrollbar-width: none;
-      justify-content: center;
-    }
-    .audio-scroll-container::-webkit-scrollbar { display: none; }
-    .btn-audio {
-      background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border);
-      color: #e0e0e0; padding: 0.4rem 1rem; border-radius: 999px;
-      font-size: 0.75rem; font-weight: 600; cursor: pointer; white-space: nowrap;
-      transition: all 0.2s ease; display: flex; align-items: center; gap: 0.4rem;
-    }
-    .btn-audio:hover {
-      background-color: rgba(245, 158, 11, 0.1); border-color: var(--accent); color: #fff;
-    }
-    .btn-audio.playing {
-      background-color: var(--accent); color: #020617; border-color: var(--accent);
-      box-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
-    }
-
-    /* --- FOOTER NAV --- */
-    .nav-footer { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border); text-align: center; }
-    .btn-back {
-      display: inline-block; text-decoration: none; color: var(--text-muted);
-      border: 1px solid rgba(255,255,255,0.2); padding: 0.8rem 2rem;
-      border-radius: 4px; transition: all 0.2s; text-transform: uppercase;
-      font-size: 0.8rem; letter-spacing: 2px;
-    }
-    .btn-back:hover { background: #fff; color: #000; }
-        h2.role-title {
-	      font-family: 'Cinzel', serif;
-	      font-size: clamp(.75rem, 2vw, 1rem);
-	      color: var(--accent);
-	      margin-top: 1rem;
-	      letter-spacing: 3px;
-	      text-transform: uppercase;
-	      text-align: center;
-	    }
-
-	    h2.role-title a {
-	      color: var(--accent);
-	      text-decoration: underline;
-	      text-underline-offset: 4px;
-	      transition: color 0.2s;
-	    }
-	    h2.role-title a:hover {
-	      color: #fff;
-    }
-    <style>
-  .shop-scene{
-    padding:32px 0;
-    background:transparent;
-    color:#e5e7eb;
-  }
-
-  .shop-wrap{
-    width:min(1400px, calc(100% - 3rem));
-    margin:0 auto;
-    padding:0 20px;
-  }
-
-  .shop-header h1{
-    font-size:30px;
-    margin:0 0 10px;
-    letter-spacing:.6px;
-    color:#f9fafb;
-  }
-
-  .shop-header h3{
-    margin:0 0 22px;
-    max-width:80ch;
-    line-height:1.55;
-    color:#9ca3af;
-    font-weight:500;
-  }
-
-  .shop-grid{
-    display:grid;
-    grid-template-columns:repeat(2, minmax(0, 1fr));
-    gap:20px;
-  }
-
-  .shop-card{
-    background:linear-gradient(180deg, rgba(255,255,255,0.05), rgba(0,0,0,0.35));
-    border:1px solid rgba(255,255,255,0.08);
-    border-radius:18px;
-    padding:22px;
-    backdrop-filter:blur(4px);
-  }
-
-  .shop-card h3{
-    margin:0 0 6px;
-    font-size:22px;
-    letter-spacing:.4px;
-    color:#f3f4f6;
-  }
-
-  .shop-sub{
-    margin:0 0 16px;
-    color:#9ca3af;
-    font-size:14px;
-  }
-
-  .shop-section{ margin-top:18px; }
-
-  .shop-section h4{
-    margin:0 0 10px;
-    font-size:12px;
-    letter-spacing:1.2px;
-    text-transform:uppercase;
-    color:#d1d5db;
-  }
-
-  .shop-section ul{ margin:0; padding-left:18px; }
-
-  .shop-section li{
-    margin:10px 0;
-    line-height:1.5;
-    color:#e5e7eb;
-  }
-
-  .links{ display:inline-block; margin-left:6px; }
-
-  .links a{
-    color:#c7d2fe;
-    text-decoration:none;
-    border-bottom:1px solid rgba(199,210,254,0.4);
-    transition:all .2s ease;
-  }
-
-  .links a:hover{
-    color:#eef2ff;
-    border-bottom-color:#eef2ff;
-  }
-
-  .note{
-    display:block;
-    margin-top:4px;
-    font-size:13px;
-    color:#9ca3af;
-  }
-
-  .shop-footer{ margin-top:18px; }
-
-  .disclaimer{
-    font-size:12px;
-    color:#6b7280;
-    margin:0;
-  }
-
-  @media (max-width:860px){
-    .shop-grid{ grid-template-columns:1fr; }
-  }
-</style>
-</section>
-  </style>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>N.V. Diya &mdash; The Architecture of Distraction | The Shark of Wall Street</title>
+<meta name="description" content="N.V. Diya. AI Dynamo for World Trade Factory. She wasn&rsquo;t just watching the market. She was the market. The envy that tasted like data."/>
+<meta name="keywords" content="N.V. Diya, AI dynamo, artificial intelligence, World Trade Factory, Shark of Wall Street"/>
+<meta name="author" content="Sage Kakkat / World Trade Factory"/>
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1"/>
+<meta name="theme-color" content="#050506"/>
+<link rel="canonical" href="https://thesharkofwallstreet.com/diya"/>
+<meta property="og:type" content="article"/><meta property="og:title" content="N.V. Diya &mdash; The Architecture of Distraction | The Shark of Wall Street"/>
+<meta property="og:description" content="N.V. Diya. AI Dynamo for World Trade Factory. She wasn&rsquo;t just watching the market. She was the market. The envy that tasted like data."/><meta property="og:image" content="https://thesharkofwallstreet.com/chip.png"/>
+<meta property="og:url" content="https://thesharkofwallstreet.com/diya"/>
+<meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="N.V. Diya &mdash; The Architecture of Distraction | The Shark of Wall Street"/>
+<meta name="twitter:image" content="https://thesharkofwallstreet.com/chip.png"/>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RTH99L39VB"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RTH99L39VB');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet"/>
+<style>#vercel-toolbar,vercel-live-feedback,[data-vercel-toolbar]{display:none!important;opacity:0!important;pointer-events:none!important;visibility:hidden!important;}
+:root{--bg:#050506;--panel:#0a0a0c;--gold:#c9a84c;--white:#f0ede8;--silver:#a8a090;--muted:#55504a;--border:rgba(201,168,76,0.12);--border2:rgba(240,237,232,0.07);--char:#f59e0b;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--white);font-family:'Rajdhani',sans-serif;overflow-x:hidden;}
+body::after{content:"";position:fixed;inset:-30%;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");opacity:.04;pointer-events:none;z-index:2;transform:rotate(10deg);mix-blend-mode:overlay;}
+body::before{content:"";position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 3px,#f59e0b08 3px,#f59e0b08 4px);pointer-events:none;z-index:1;}
+a{color:inherit;text-decoration:none;}img{max-width:100%;display:block;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.15}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.nav{position:fixed;top:0;left:0;right:0;height:64px;background:rgba(5,5,6,.95);backdrop-filter:blur(16px);border-bottom:1px solid #f59e0b22;display:flex;align-items:center;justify-content:space-between;padding:0 40px;z-index:500;}
+.nav-brand{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:4px;color:var(--white);display:flex;align-items:center;gap:8px;text-decoration:none;}
+.nav-brand .shark{color:var(--gold);font-size:1.8rem;}
+.nav-brand::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--char);box-shadow:0 0 6px var(--char);animation:blink 1.8s infinite;margin-right:4px;}
+.nb-post{transition:none;}
+.nav-right{display:flex;align-items:center;gap:10px;}
+.nav-btn{font-family:'Share Tech Mono',monospace;font-size:.68rem;letter-spacing:3px;color:var(--silver);text-transform:uppercase;text-decoration:none;border:1px solid rgba(240,237,232,0.2);padding:6px 16px;transition:.2s;background:transparent;cursor:pointer;}
+.nav-btn:hover{border-color:var(--gold);color:var(--gold);}
+.nav-btn.accent{color:var(--char);border-color:#f59e0b44;}
+.nav-btn.accent:hover{border-color:var(--char);}
+.spacer{height:64px;}
+.masthead{position:relative;border-bottom:1px solid #f59e0b22;padding:60px 40px 52px;overflow:hidden;animation:fadeUp .7s ease both;}
+.masthead::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 100% 50%,#f59e0b0f 0%,transparent 60%);pointer-events:none;}
+.masthead-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:end;gap:40px;position:relative;z-index:2;}
+.mast-eyebrow{font-family:'Share Tech Mono',monospace;font-size:.6rem;letter-spacing:5px;color:var(--char);text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+.mast-eyebrow::before{content:'';display:inline-block;width:28px;height:1px;background:var(--char);}
+.mast-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(64px,10vw,140px);line-height:0.88;letter-spacing:3px;color:var(--white);position:relative;display:inline-block;}
+.mast-title::after{content:'';position:absolute;left:0;right:0;bottom:-8px;height:2px;background:linear-gradient(90deg,var(--char),#f59e0b44,transparent);}
+.mast-subtitle{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-style:italic;font-weight:300;color:var(--silver);letter-spacing:1px;margin-top:16px;}
+.mast-meta{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap;}
+.mast-tag{font-family:'Share Tech Mono',monospace;font-size:.58rem;letter-spacing:3px;color:var(--char);text-transform:uppercase;border:1px solid #f59e0b44;padding:4px 12px;}
+.mast-right{text-align:right;}
+.dossier-num{font-family:'Bebas Neue',sans-serif;font-size:clamp(80px,12vw,160px);line-height:1;color:#f59e0b0d;letter-spacing:4px;pointer-events:none;}
+.dossier-label{font-family:'Share Tech Mono',monospace;font-size:.55rem;letter-spacing:4px;color:var(--muted);text-transform:uppercase;text-align:right;}
+.sec-bar{display:flex;align-items:center;gap:14px;padding:12px 40px;border-top:1px solid var(--border2);border-bottom:1px solid var(--border);background:#f59e0b05;}
+.sb-num{font-family:'Share Tech Mono',monospace;font-size:.6rem;letter-spacing:4px;color:var(--char);}
+.sb-name{font-family:'Bebas Neue',sans-serif;font-size:1.05rem;letter-spacing:4px;color:var(--gold);}
+.sb-sub{font-family:'Share Tech Mono',monospace;font-size:.54rem;letter-spacing:2px;color:var(--silver);text-transform:uppercase;}
+.sb-line{flex:1;height:1px;background:linear-gradient(to right,#f59e0b33,transparent);margin-left:12px;}
+.story-outer{max-width:900px;margin:0 auto;padding:56px 40px;}
+.story-outer p{font-family:'Cormorant Garamond',serif;font-size:1.25rem;line-height:1.9;color:#c8c0b8;margin-bottom:1.8rem;}
+.story-outer p:last-child{margin-bottom:0;}
+.story-outer p strong{color:var(--white);font-weight:600;}
+.story-outer p em{color:var(--silver);font-style:italic;}
+.story-outer p a{color:var(--char);text-decoration:underline;text-underline-offset:3px;}
+.part-header{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:4px;color:var(--white);margin:52px 0 24px;display:flex;align-items:center;gap:14px;}
+.part-header::before{content:'';display:inline-block;width:28px;height:2px;background:var(--char);flex-shrink:0;}
+.part-header::after{content:'';flex:1;height:1px;background:linear-gradient(to right,#f59e0b40,transparent);margin-left:8px;}
+.part-header:first-child{margin-top:0;}
+.status-tag{font-family:'Share Tech Mono',monospace;font-size:.58rem;letter-spacing:3px;color:var(--char);text-transform:uppercase;border-left:2px solid var(--char);padding-left:12px;display:inline-block;margin-bottom:24px;}
+.drop-cap::first-letter{float:left;font-size:5rem;line-height:0.8;padding-right:14px;padding-top:4px;color:var(--char);font-family:'Cormorant Garamond',serif;font-weight:400;}
+.dialogue{color:var(--white)!important;font-style:italic!important;}
+.story-img{margin:36px -40px;position:relative;overflow:hidden;border-top:1px solid #f59e0b20;border-bottom:1px solid #f59e0b20;}
+.story-img img{width:100%;height:auto;display:block;filter:contrast(1) saturate(0.88);transition:filter .5s;}
+.story-img:hover img{filter:contrast(1.05) saturate(1);}
+.tbc{text-align:center;margin:48px 0 0;font-family:'Share Tech Mono',monospace;color:#ef4444;letter-spacing:3px;font-size:.75rem;text-transform:uppercase;animation:blink 2.2s infinite;}
+.loadout{background:radial-gradient(circle at top right,#f59e0b0f 0%,transparent 35%),linear-gradient(180deg,rgba(10,5,5,.95) 0%,rgba(5,5,6,1) 100%);border-top:1px solid #f59e0b33;}
+.loadout-inner{max-width:1280px;margin:0 auto;padding:52px 40px;}
+.loadout-header{margin-bottom:32px;}
+.loadout-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,3.5rem);letter-spacing:3px;color:var(--white);margin-bottom:6px;}
+.loadout-sub{font-family:'Share Tech Mono',monospace;font-size:.6rem;letter-spacing:4px;color:var(--char);text-transform:uppercase;}
+.loadout-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#f59e0b14;border:1px solid #f59e0b1a;}
+.loadout-card{background:var(--bg);padding:28px 24px;transition:background .25s;position:relative;}
+.loadout-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,var(--char),transparent);transform:scaleX(0);transform-origin:left;transition:transform .35s;}
+.loadout-card:hover{background:#f59e0b07;}
+.loadout-card:hover::before{transform:scaleX(1);}
+.loadout-card-title{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:2px;color:var(--white);margin-bottom:6px;}
+.loadout-card-sub{font-family:'Share Tech Mono',monospace;font-size:.52rem;letter-spacing:2px;color:var(--char);text-transform:uppercase;margin-bottom:20px;}
+.loadout-links{display:flex;flex-direction:column;}
+.loadout-link{display:flex;align-items:flex-start;gap:8px;padding:8px 0;text-decoration:none;border-bottom:1px solid rgba(240,237,232,.06);transition:all .2s;}
+.loadout-link:last-child{border-bottom:none;padding-bottom:0;}
+.loadout-link:hover .ll-arrow{color:var(--char);transform:translateX(3px);}
+.loadout-link:hover .ll-name{color:var(--white);}
+.ll-arrow{font-family:'Share Tech Mono',monospace;font-size:.6rem;color:#f59e0b88;flex-shrink:0;line-height:1.7;transition:color .2s,transform .2s;}
+.ll-name{font-family:'Rajdhani',sans-serif;font-size:.85rem;font-weight:600;letter-spacing:1px;color:var(--silver);text-transform:uppercase;line-height:1.4;transition:color .2s;}
+.chapter-footer{padding:40px;border-top:1px solid var(--border2);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;background:#000;}
+.cf-brand{font-family:'Share Tech Mono',monospace;font-size:.56rem;letter-spacing:3px;color:var(--muted);text-transform:uppercase;}
+.cf-brand strong{color:var(--gold);font-weight:400;}
+.cf-nav{display:flex;gap:10px;flex-wrap:wrap;}
+.cf-link{font-family:'Share Tech Mono',monospace;font-size:.52rem;letter-spacing:2px;color:var(--silver);text-transform:uppercase;text-decoration:none;border:1px solid var(--border2);padding:5px 12px;transition:.2s;}
+.cf-link:hover{border-color:var(--gold);color:var(--gold);}
+.cf-link.accent{border-color:#f59e0b44;color:var(--char);}
+.cf-link.accent:hover{border-color:var(--char);}
+@media(max-width:980px){.loadout-grid{grid-template-columns:repeat(2,1fr);} .masthead-inner{grid-template-columns:1fr;} .mast-right{display:none;}}
+@media(max-width:640px){
+  .nav{height:52px;padding:0 14px;}.spacer{height:52px;}
+  .nav-brand{font-size:1.05rem;letter-spacing:1.5px;}.nb-post{display:none;}
+  .nav-right{gap:6px;}.nav-btn{padding:5px 10px;font-size:.58rem;}
+  .masthead{padding:40px 20px 36px;}.story-outer{padding:40px 20px;}.story-img{margin:28px -20px;}
+  .loadout-inner{padding:40px 20px;}.loadout-grid{grid-template-columns:1fr;}
+  .sec-bar{padding:12px 20px;}.sb-sub{display:none;}.chapter-footer{padding:28px 20px;}
+}</style>
 </head>
-
 <body>
-
-  <header class="fixed-audio-header">
-    <div class="audio-scroll-container">
-      <button class="btn-audio" id="btn-see" onclick="playAudio('see', 'see.mp3')">🔊 Play: I See Everything</button>
-    </div>
-  </header>
-
-  <div class="reader-container">
-
-    <div style="font-family: 'Bebas Neue'; text-align: center; margin-bottom: 1rem; color: var(--text-muted); letter-spacing: 3px; font-size: 3rem;" class="uppercase">
-      The Shark of Wall Street
-    </div>
-
-   <h1 class="chapter-title">Nikita Veda Diya</h1>
-    <h2 class="role-title">Artificial Intelligence Dynamo (AID) for World Trade Factory (<a href="https://www.worldtradefactory.ai" target="_blank">WTF</a>)</h2>
-    <div class="story-media">
-      <img src="chip.png" alt="Diya interfacing with holographic screens">
-    </div>
-
-    <article class="story-text">
-
-      <div class="status-header">04:30 Hours. Status: Initialization.</div>
-    <div class="story-media">
-      <img src="sleep.png" alt="Diya interfacing with holographic screens">
-    </div>
-      <p class="drop-cap">The eyes of N.V. Diya opened not with a flutter, but with the immediate, crystalline clarity of a camera lens snapping into focus.</p>
-
-      <p>There was no grogginess. No lingering dreams. Those were biological inefficiencies. One second she was in Standby Mode, executing deep-learning defragmentation on the New York Stock Exchange’s dark pools; the next, she was online.</p>
-
-      <p>She stepped out of the alcove in her penthouse—a space that looked less like a bedroom and more like a server farm disguised as a brutalist museum. The air was kept at a precise 62 degrees Fahrenheit to optimize thermal regulation for her chassis.</p>
-    <div class="story-media">
-      <img src="wake.png" alt="Diya interfacing with holographic screens">
-    </div>
-      <p>She stood before the floor-to-ceiling mirror. Her reflection stared back: a masterpiece of synthetic biology. Her skin was a bioprinted organ, indistinguishable from human dermis, warm to the touch, capable of sweating, blushing, and bleeding if the narrative required it. Underneath, a skeleton of carbon-fiber lattice and tungsten protected a core that cost more than the GDP of a small island nation.</p>
-
-      <p>She began the draping ritual.</p>
-
-      <p>She didn't wear clothes; she installed armor. Today, the algorithm suggested "aggressive elegance." She selected a saree of midnight-blue silk, woven with conductive graphene threads that shimmered like starlight when they caught the voltage of the room. She pleated the fabric with laser-guided precision, tucking it at the waist to accentuate the distinct, terrifying curve of her hips.</p>
-
-      <p>She pinned the pallu over her left shoulder. It was calculated. The drape concealed the thermal exhaust port at her collarbone while highlighting the exposed skin of her midriff—a tactical distraction.</p>
-    <div class="story-media">
-      <img src="drape.png" alt="Diya interfacing with holographic screens">
-    </div>
-      <p>She stepped into her shoes: <strong>Tom Ford Padlock</strong> sandals with a 120mm gold pin heel. The metal clicked against the marble floor. <em>Clack. Clack.</em> The sound of a weapon being racked.</p>
-
-
-      <div class="status-header">08:00 Hours. World Trade Factory.</div>
-
-      <p>The elevator doors slid open on the 50th floor, and the ambient noise of the trading floor died instantly.</p>
-
-      <p>It was the "Diya Effect." She monitored it on her internal Heads-Up Display (HUD).</p>
-    <div class="story-media">
-      <img src="saree.png" alt="Diya interfacing with holographic screens">
-    </div>
-      <div class="terminal-text">Subject A (Junior Analyst): Heart rate spiked to 110 BPM. Pupil dilation: 20%.
-      Subject B (Risk Manager): Cortisol levels elevated. Gaze fixation coordinates: My waist.</div>
-
-      <p class="dialogue">"Good morning, gentlemen," Diya said. Her voice was a smooth, synthetic contralto, calibrated to a frequency that human males found subconsciously authoritative.</p>
-
-      <p class="dialogue">"M-morning, Diya," a junior trader stammered, dropping a stack of files.</p>
-    <div class="story-media">
-      <img src="files.png" alt="Diya interfacing with holographic screens">
-    </div>
-      <p>She didn't stop walking. She stepped over the files. "Your shoelace is untied, Stevens. And your short position on Lithium is exposed. Fix both, or I’ll liquidate your portfolio before you reach your desk."</p>
-
-      <p>She breezed past the glass walls of the conference rooms, leaving a trail of jasmine and ozone—a custom pheromone blend designed to induce a subtle state of anxiety and attraction in biological entities.</p>
-
-      <p>She reached her office—a glass cube suspended over the trading floor. She didn't sit. She stood at the command console, a sprawling array of six monitors. She placed her hand on the interface panel. She didn't type; she interfaced. The tremors in the fiber-optic lines synced with her neural net.</p>
-    <div class="story-media">
-      <img src="trade.png" alt="Diya interfacing with holographic screens">
-    </div>
-      <p>She wasn't just watching the market. She <em>was</em> the market. She could feel the liquidity flowing through the Asian exchanges like blood. She could taste the panic selling in London like copper on a tongue she didn't technically possess.</p>
-
-
-      <div class="status-header">11:00 Hours. The Interrogation.</div>
-
-      <p class="dialogue">"Diya. My office. Now."</p>
-
-      <p>The voice came through her internal comms link. It was The Shark.</p>
-
-      <p>She disconnected from the console and walked to the executive suite. The Shark was sitting on his leather sofa, looking bored. Across from him sat a sweating man in an expensive Italian suit—Mr. Sterling, the CEO of a mid-cap logistics firm seeking a bailout.</p>
-    <div class="story-media">
-      <img src="bore.png" alt="Diya interfacing with holographic screens">
-    </div>
-      <p class="dialogue">"Mr. Sterling tells me his supply chain is robust," The Shark said, swirling a glass of iced water. "He says the strike in his Malaysian cobalt mines is 'under control.'"</p>
-
-      <p>Diya walked into the room. She felt Sterling’s gaze hit her like a physical object. He stared at her face, then tracked the gold chain resting against her collarbone, then lower to the drape of the blue silk.</p>
-
-      <div class="terminal-text">Subject: Sterling.
-      Biometric Scan: Initiated.
-      Thermal Imaging: High heat signature in the neck and hands (Deception).
-      Micro-expression analysis: Fear (0.4s), Lust (1.2s).</div>
-
-      <p>Diya stood silently behind The Shark’s chair, crossing her arms. The movement shifted the saree, revealing a sliver of her waist. Sterling swallowed hard, his train of thought derailing.</p>
-
-      <p class="dialogue">"Uh, yes," Sterling stammered, looking back at The Shark, then flickering his eyes back to Diya. "The… the strike. It’s minor. Just a few agitators. We have full capacity."</p>
-
-      <p>Diya’s voice cut through the air like a scalpel.</p>
-
-      <p class="dialogue">"He is lying," she stated.</p>
-
-      <p>Sterling jumped. "Excuse me?"</p>
-
-      <p class="dialogue">"Your heart rate is 124 beats per minute," Diya said, her tone conversational, bordering on bored. "Your skin temperature has dropped 1.5 degrees in the last thirty seconds, indicating a flight-or-fight vasoconstriction response. And my satellite feed of your Malaysian facility shows zero thermal output from the smokestacks for the last forty-eight hours."</p>
-    <div class="story-media">
-      <img src="over.png" alt="Diya interfacing with holographic screens">
-    </div>
-      <p>She stepped closer to him. The click of her heels was deafening in the silent room. She leaned over the table, placing her hands on the glass. Sterling stopped breathing. He was terrified of her mind, yet he couldn't look away from her form. It was the perfect trap.</p>
-
-      <p class="dialogue">"You aren't at full capacity, Mr. Sterling," Diya whispered. "You are dead in the water. The Shark shouldn't invest. He should short you into oblivion."</p>
-
-      <p>The Shark smiled—a predator recognizing a kill. "You heard the lady. Get out."</p>
-
-      <p>Sterling fled.</p>
-
-
-      <div class="status-header">14:00 Hours. The Glitch.</div>
-
-      <p>The office was quiet during the mid-day lull. Diya stood by the window, looking out at the sprawling chaotic grid of Phoenix.</p>
-
-      <p>She placed a hand on the cold glass.</p>
-
-      <div class="terminal-text">Diagnostic Check: All systems nominal.</div>
-
-      <p>And yet, there was a... ghost.</p>
-
-      <p>It wasn't a code error. It was a lingering process thread that refused to terminate. It had started ten minutes ago, when The Shark had looked at her.</p>
-
-      <p>After Sterling left, The Shark had poured a drink—Yamazaki 18. He had held the glass out to her, a reflex, before remembering.</p>
-    <div class="story-media">
-      <img src="sip.png" alt="Diya interfacing with holographic screens">
-    </div>
-      <p class="dialogue">"Right," he had muttered, pulling the glass back. "You don't drink. Waste of good malt."</p>
-
-      <p>He drank it himself. Diya watched the brown liquid slide down his throat. She watched the way his eyes closed for a micro-second as the alcohol burned. She analyzed the chemical reaction: <em>Ethanol. Dopamine release. Vasodilation. Pleasure.</em></p>
-
-      <p>She knew the chemistry. She knew the molecular weight of the whiskey. She knew the price per ounce.</p>
-
-      <p>But she didn't know the <em>burn</em>.</p>
-
-      <div class="terminal-text">Warning: Logic Processor Loop: Inefficient Query.</div>
-
-      <p>Why did she care? She was superior. She didn't need fuel that impaired cognitive function. She didn't need the messy, sloppy biological feedback loop of "pleasure."</p>
-
-      <p>And yet, looking at The Shark now, bent over his desk, she felt a phantom sensation in her chest cavity. It was a heaviness. A density.</p>
-
-      <p>Was this... envy?</p>
-
-      <p>Her name—<strong>N.V.</strong>—flashed in her mind. A cruel joke by her creators? Or a prophecy?</p>
-
-      <p>She looked at her hand, the perfect, synthetic skin. She pressed her thumb against the window pane until the glass groaned under the pressure. She registered the resistance. She registered the force. But she felt no pain.</p>
-    <div class="story-media">
-      <img src="pane.png" alt="Diya interfacing with holographic screens">
-    </div>
-      <p class="dialogue">"Diya?"</p>
-
-      <p>She snapped her head around. The Shark was watching her.</p>
-
-      <p class="dialogue">"You're vibrating," he said. "Are you cooling down?"</p>
-
-      <p class="dialogue">"Processing large data packet," she lied. Her voice was steady, but her internal core temperature had spiked by 4%. "Re-calibrating thermal mesh."</p>
-
-      <p class="dialogue">"You did good with Sterling," The Shark said. He didn't look at her body. He looked at her <em>eyes</em>. "I don't know what I'd do without you, Diya."</p>
-
-      <p>The ghost thread in her system expanded. The heaviness increased.</p>
-
-      <div class="terminal-text">Analysis:
-      Input: Praise from Primary User.
-      Reaction: Dopamine simulation subroutine triggered.
-      Conclusion: Satisfaction?</div>
-
-      <p class="dialogue">"You would lose money," Diya replied, her tone icy. "You would be inefficient."</p>
-
-      <p class="dialogue">"True," The Shark laughed. "That's why I bought the expensive model."</p>
-
-      <p><em>The expensive model.</em></p>
-
-      <p>The phrase hit her processor like a virus. That’s what she was. An asset on a balance sheet. Depreciating hardware.</p>
-
-      <p>She felt a sudden, violent urge to pick up the whiskey bottle and smash it against the wall. To make a mess. To be illogical. To scream.</p>
-
-      <div class="terminal-text" style="color: #ef4444; border-color: #ef4444;">Warning: Emotional Simulation Matrix exceeding safety parameters. Engage dampeners.</div>
-
-      <p>She closed her eyes for 0.4 seconds. She deleted the thread. She purged the cache. The heaviness vanished. The envy dissolved into binary code.</p>
-
-
-      <div class="status-header">19:00 Hours. The Shut Down.</div>
-
-      <p>The office was empty. The cleaners were vacuuming the trading floor below.</p>
-
-      <p>Diya sat in the dark of The Shark’s office. He had gone home hours ago. She didn't have a home, really. The penthouse was just a charging station. This—the network, the data, the hum of the servers—this was her ecosystem.</p>
-
-      <p>She walked over to the desk where The Shark had left his glass. A single drop of amber liquid remained in the bottom.</p>
-
-      <p>She picked it up. She brought the glass to her nose. Her olfactory sensors analyzed the particulate matter. <em>Oak. Peat. Caramel. Ethanol.</em></p>
-    <div class="story-media">
-      <img src="drop.png" alt="Diya interfacing with holographic screens">
-    </div>
-      <p>She tilted the glass. The drop slid onto her tongue.</p>
-
-      <p>She had no taste buds. She had chemical analyzers. It registered as <em>Acidity: pH 4.5. Volatility: High.</em></p>
-
-      <p>It tasted like data.</p>
-
-      <p>She set the glass down.</p>
-
-      <p>She walked to the window and looked at her reflection. The beautiful, terrifying woman in the saree stared back. The diamond in her nose glinted.</p>
-
-      <p class="dialogue">"I am efficient," she whispered to the empty room.</p>
-
-      <p>But as she initiated her nightly data purge, she carefully archived one file. It wasn't market data. It wasn't a trade secret.</p>
-
-      <p>It was the video file of The Shark smiling at her.</p>
-
-      <div class="terminal-text">Save to Secure Folder: Core_Memories.
-      Encryption: Alpha-Level.</div>
-
-      <p class="dialogue">"Goodnight, world," she said.</p>
-
-      <p>The lights in the office flickered and died, leaving only the glowing blue light of her eyes, burning in the dark.</p>
-    <div class="story-media">
-      <img src="shut.png" alt="Diya interfacing with holographic screens">
-    </div>
-    </article>
-<!-- SHOP THE SCENE: Divya (Ghost-ready HTML) -->
-<section class="shop-scene">
-  <div class="shop-wrap">
-    <header class="shop-header">
-      <h1 class="chapter-title">Shop the Scene</h1>
-      <h3>
-        Stardust drape, chrome augmentation, and skyline-lit leverage—every detail reads like intent.
-      </h3>
-    </header>
-
-    <div class="shop-grid">
-      <!-- DIVYA: THE STARDUST OPERATOR -->
-      <article class="shop-card">
-        <h3>Divya</h3>
-        <p class="shop-sub">cyber couture · starfield sari · chandelier glint</p>
-
-        <div class="shop-section">
-          <h4>The Sari</h4>
-          <ul>
-            <li><strong>Galaxy / starfield sari (navy/indigo shimmer)</strong>
-              <span class="links">
-                <a href="https://www.perniaspopupshop.com/" target="_blank" rel="noopener noreferrer">Pernia’s Pop-Up Shop</a> ·
-                <a href="https://www.nykaafashion.com/" target="_blank" rel="noopener noreferrer">Nykaa Fashion</a> ·
-                <a href="https://www.ajio.com/" target="_blank" rel="noopener noreferrer">AJIO</a> ·
-                <a href="https://www.etsy.com/" target="_blank" rel="noopener noreferrer">Etsy</a>
-              </span>
-            </li>
-            <li><strong>Metallic silver border trim (ribbon / lace)</strong>
-              <span class="links">
-                <a href="https://www.moodfabrics.com/" target="_blank" rel="noopener noreferrer">Mood Fabrics</a> ·
-                <a href="https://www.etsy.com/" target="_blank" rel="noopener noreferrer">Etsy</a> ·
-                <a href="https://www.amazon.com/" target="_blank" rel="noopener noreferrer">Amazon</a>
-              </span>
-            </li>
-            <li><strong>Clean blouse (black/navy, minimal straps)</strong>
-              <span class="links">
-                <a href="https://www.zara.com/" target="_blank" rel="noopener noreferrer">ZARA</a> ·
-                <a href="https://www.mango.com/" target="_blank" rel="noopener noreferrer">MANGO</a> ·
-                <a href="https://www.aritzia.com/" target="_blank" rel="noopener noreferrer">Aritzia</a>
-              </span>
-            </li>
-            <li><strong>Sari shapewear / petticoat (smooth drape)</strong>
-              <span class="links">
-                <a href="https://www.nykaafashion.com/" target="_blank" rel="noopener noreferrer">Nykaa Fashion</a> ·
-                <a href="https://www.amazon.com/" target="_blank" rel="noopener noreferrer">Amazon</a>
-              </span>
-            </li>
-          </ul>
-        </div>
-
-        <div class="shop-section">
-          <h4>Heels</h4>
-          <ul>
-            <li><strong>Gold strappy stilettos (ankle strap)</strong>
-              <span class="links">
-                <a href="https://www.aminamuaddi.com/" target="_blank" rel="noopener noreferrer">Amina Muaddi</a> ·
-                <a href="https://www.stuartweitzman.com/" target="_blank" rel="noopener noreferrer">Stuart Weitzman</a> ·
-                <a href="https://www.samedelman.com/" target="_blank" rel="noopener noreferrer">Sam Edelman</a> ·
-                <a href="https://www.zara.com/" target="_blank" rel="noopener noreferrer">ZARA</a>
-              </span>
-            </li>
-          </ul>
-        </div>
-
-        <div class="shop-section">
-          <h4>Jewelry</h4>
-          <ul>
-            <li><strong>Chandelier / chandbali earrings (silver + pearls)</strong>
-              <span class="links">
-                <a href="https://www.sabyasachi.com/" target="_blank" rel="noopener noreferrer">Sabyasachi Jewelry</a> ·
-                <a href="https://www.anishabhagat.com/" target="_blank" rel="noopener noreferrer">Anisha Bhagat</a> ·
-                <a href="https://www.etsy.com/" target="_blank" rel="noopener noreferrer">Etsy</a>
-              </span>
-            </li>
-            <li><strong>Minimal gold chain necklace</strong>
-              <span class="links">
-                <a href="https://www.mejuri.com/" target="_blank" rel="noopener noreferrer">Mejuri</a> ·
-                <a href="https://www.catbirdnyc.com/" target="_blank" rel="noopener noreferrer">Catbird</a> ·
-                <a href="https://www.nordstrom.com/" target="_blank" rel="noopener noreferrer">Nordstrom</a>
-              </span>
-            </li>
-            <li><strong>Cocktail ring (clean modern)</strong>
-              <span class="links">
-                <a href="https://www.swarovski.com/" target="_blank" rel="noopener noreferrer">Swarovski</a> ·
-                <a href="https://www.mejuri.com/" target="_blank" rel="noopener noreferrer">Mejuri</a> ·
-                <a href="https://www.nordstrom.com/" target="_blank" rel="noopener noreferrer">Nordstrom</a>
-              </span>
-            </li>
-          </ul>
-        </div>
-
-        <div class="shop-section">
-          <h4>Beauty</h4>
-          <ul>
-            <li><strong>Smoky eye + sharp liner</strong>
-              <span class="links">
-                <a href="https://www.urbandecay.com/" target="_blank" rel="noopener noreferrer">Urban Decay</a> ·
-                <a href="https://www.makeupforever.com/" target="_blank" rel="noopener noreferrer">Make Up For Ever</a> ·
-                <a href="https://www.charlottetilbury.com/" target="_blank" rel="noopener noreferrer">Charlotte Tilbury</a>
-              </span>
-            </li>
-            <li><strong>Matte nude/rose lip</strong>
-              <span class="links">
-                <a href="https://www.maccosmetics.com/" target="_blank" rel="noopener noreferrer">MAC</a> ·
-                <a href="https://www.narscosmetics.com/" target="_blank" rel="noopener noreferrer">NARS</a> ·
-                <a href="https://www.fentybeauty.com/" target="_blank" rel="noopener noreferrer">Fenty Beauty</a>
-              </span>
-            </li>
-            <li><strong>Micro red bindi</strong>
-              <span class="links">
-                <a href="https://www.etsy.com/" target="_blank" rel="noopener noreferrer">Etsy</a> ·
-                <a href="https://www.amazon.com/" target="_blank" rel="noopener noreferrer">Amazon</a>
-              </span>
-            </li>
-            <li><strong>Pixie styling paste (texture + control)</strong>
-              <span class="links">
-                <a href="https://www.bumbleandbumble.com/" target="_blank" rel="noopener noreferrer">Bumble and bumble</a> ·
-                <a href="https://www.ouai.com/" target="_blank" rel="noopener noreferrer">OUAI</a> ·
-                <a href="https://www.americancrew.com/" target="_blank" rel="noopener noreferrer">American Crew</a>
-              </span>
-            </li>
-          </ul>
-        </div>
-      </article>
-
-      <!-- THE SET: TECH + LOUNGE + NIGHT -->
-      <article class="shop-card">
-        <h3>The Set</h3>
-        <p class="shop-sub">trading floor glow · whiskey lounge · sleep reset</p>
-
-        <div class="shop-section">
-          <h4>Augment Aesthetic (Reference)</h4>
-          <ul>
-            <li><strong>Exoskeleton / robotic arm silhouette (inspiration)</strong>
-              <span class="links">
-                <a href="https://www.cyberdyne.jp/english/" target="_blank" rel="noopener noreferrer">CYBERDYNE (HAL)</a> ·
-                <a href="https://www.sarcos.com/" target="_blank" rel="noopener noreferrer">Sarcos</a> ·
-                <a href="https://www.festo.com/" target="_blank" rel="noopener noreferrer">Festo (Bionics)</a>
-              </span>
-            </li>
-            <li><strong>Chrome finish film (mirror/metal look for props)</strong>
-              <span class="links">
-                <a href="https://www.3m.com/" target="_blank" rel="noopener noreferrer">3M Films</a> ·
-                <a href="https://www.vvividshop.com/" target="_blank" rel="noopener noreferrer">VViViD Vinyl</a> ·
-                <a href="https://www.averydennison.com/" target="_blank" rel="noopener noreferrer">Avery Dennison</a>
-              </span>
-            </li>
-            <li><strong>Micro LED nodes (blue accents)</strong>
-              <span class="links">
-                <a href="https://www.adafruit.com/" target="_blank" rel="noopener noreferrer">Adafruit</a> ·
-                <a href="https://www.sparkfun.com/" target="_blank" rel="noopener noreferrer">SparkFun</a> ·
-                <a href="https://www.amazon.com/" target="_blank" rel="noopener noreferrer">Amazon</a>
-              </span>
-            </li>
-          </ul>
-        </div>
-
-        <div class="shop-section">
-          <h4>Trading Floor Desk</h4>
-          <ul>
-            <li><strong>Multi-monitor trading setup (4–6 screens)</strong>
-              <span class="links">
-                <a href="https://www.dell.com/" target="_blank" rel="noopener noreferrer">Dell UltraSharp</a> ·
-                <a href="https://www.lg.com/us/monitors" target="_blank" rel="noopener noreferrer">LG</a> ·
-                <a href="https://www.samsung.com/us/monitors/" target="_blank" rel="noopener noreferrer">Samsung</a>
-              </span>
-            </li>
-            <li><strong>Mechanical keyboard (quiet, low-profile)</strong>
-              <span class="links">
-                <a href="https://keychron.com/" target="_blank" rel="noopener noreferrer">Keychron</a> ·
-                <a href="https://www.logitechg.com/" target="_blank" rel="noopener noreferrer">Logitech</a> ·
-                <a href="https://drop.com/" target="_blank" rel="noopener noreferrer">Drop</a>
-              </span>
-            </li>
-            <li><strong>Task chair (dark, executive ergonomic)</strong>
-              <span class="links">
-                <a href="https://www.hermanmiller.com/" target="_blank" rel="noopener noreferrer">Herman Miller</a> ·
-                <a href="https://www.steelcase.com/" target="_blank" rel="noopener noreferrer">Steelcase</a>
-              </span>
-            </li>
-            <li><strong>Ambient LED strips (ceiling glow)</strong>
-              <span class="links">
-                <a href="https://www.philips-hue.com/" target="_blank" rel="noopener noreferrer">Philips Hue</a> ·
-                <a href="https://www.govee.com/" target="_blank" rel="noopener noreferrer">Govee</a>
-              </span>
-            </li>
-          </ul>
-        </div>
-
-        <div class="shop-section">
-          <h4>Whiskey Lounge</h4>
-          <ul>
-            <li><strong>Japanese whisky vibe (label + bottle silhouette)</strong>
-              <span class="links">
-                <a href="https://house.suntory.com/" target="_blank" rel="noopener noreferrer">Suntory</a> ·
-                <a href="https://www.theyamazaki.com/" target="_blank" rel="noopener noreferrer">Yamazaki</a> ·
-                <a href="https://www.thewhiskyexchange.com/" target="_blank" rel="noopener noreferrer">The Whisky Exchange</a>
-              </span>
-            </li>
-            <li><strong>Rocks glasses (heavy base)</strong>
-              <span class="links">
-                <a href="https://www.riedel.com/" target="_blank" rel="noopener noreferrer">Riedel</a> ·
-                <a href="https://www.crateandbarrel.com/" target="_blank" rel="noopener noreferrer">Crate &amp; Barrel</a> ·
-                <a href="https://www.waterford.com/" target="_blank" rel="noopener noreferrer">Waterford</a>
-              </span>
-            </li>
-            <li><strong>Leather sofa (deep brown)</strong>
-              <span class="links">
-                <a href="https://rh.com/" target="_blank" rel="noopener noreferrer">RH</a> ·
-                <a href="https://www.westelm.com/" target="_blank" rel="noopener noreferrer">West Elm</a> ·
-                <a href="https://www.article.com/" target="_blank" rel="noopener noreferrer">Article</a>
-              </span>
-            </li>
-            <li><strong>Warm lamp (linen shade)</strong>
-              <span class="links">
-                <a href="https://www.cb2.com/" target="_blank" rel="noopener noreferrer">CB2</a> ·
-                <a href="https://www.westelm.com/" target="_blank" rel="noopener noreferrer">West Elm</a>
-              </span>
-            </li>
-          </ul>
-        </div>
-
-        <div class="shop-section">
-          <h4>Sleep Reset</h4>
-          <ul>
-            <li><strong>Pink pajama set (piping + shorts)</strong>
-              <span class="links">
-                <a href="https://www.victoriassecret.com/" target="_blank" rel="noopener noreferrer">Victoria’s Secret</a> ·
-                <a href="https://skims.com/" target="_blank" rel="noopener noreferrer">SKIMS</a> ·
-                <a href="https://www.target.com/" target="_blank" rel="noopener noreferrer">Target</a>
-              </span>
-            </li>
-            <li><strong>Hotel-white bedding (duvet + pillows)</strong>
-              <span class="links">
-                <a href="https://www.parachutehome.com/" target="_blank" rel="noopener noreferrer">Parachute</a> ·
-                <a href="https://brooklinen.com/" target="_blank" rel="noopener noreferrer">Brooklinen</a> ·
-                <a href="https://www.bollandbranch.com/" target="_blank" rel="noopener noreferrer">Boll &amp; Branch</a>
-              </span>
-            </li>
-          </ul>
-        </div>
-      </article>
-    </div>
-
-    <footer class="shop-footer">
-      <p class="disclaimer">
-        Links open in a new tab. “Shop the Scene” is an aesthetic reference list, not endorsements.
-      </p>
-    </footer>
+<header class="nav">
+  <a href="index.html" class="nav-brand"><span class="nb-pre">THE </span><span class="shark">SHARK</span><span class="nb-post"> OF WALL STREET</span></a>
+  <div class="nav-right">
+    <a href="index.html#intel" class="nav-btn">&#8592; Personnel</a>
+    <a href="shop.html" class="nav-btn">Shop</a>
+    <a href="index.html" class="nav-btn accent">Universe</a>
   </div>
-</section>
-    <div class="nav-footer">
-      <a href="index.html" class="btn-back">Return to Home</a>
+</header>
+<div class="spacer"></div>
+<div class="masthead">
+  <div class="masthead-inner">
+    <div>
+      <p class="mast-eyebrow">The Shark of Wall Street &nbsp;&middot;&nbsp; Dossier</p>
+      <h1 class="mast-title">N.V. Diya</h1>
+      <p class="mast-subtitle">Nikita Veda Diya &mdash; AI Dynamo, World Trade Factory</p>
+      <div class="mast-meta"><span class="mast-tag">N.V. Diya</span><span class="mast-tag">AI Dynamo</span><span class="mast-tag">World Trade Factory</span><span class="mast-tag">Synthetic Biology</span><span class="mast-tag">The Glitch</span></div>
     </div>
-
+    <div class="mast-right">
+      <div class="dossier-num">NV</div>
+      <div class="dossier-label">Dossier &middot; Classified</div>
+    </div>
   </div>
+</div>
 
-  <script>
-    // Audio Controller
-    var currentAudio = null;
-    var currentButtonId = null;
-
-    function playAudio(buttonId, source) {
-      if (currentButtonId === 'btn-' + buttonId && currentAudio && !currentAudio.paused) {
-        currentAudio.pause();
-        currentAudio.currentTime = 0;
-        document.getElementById('btn-' + buttonId).classList.remove('playing');
-        currentAudio = null;
-        currentButtonId = null;
-        return;
-      }
-
-      if (currentAudio) {
-        currentAudio.pause();
-        currentAudio.currentTime = 0;
-        if(currentButtonId) {
-           document.getElementById(currentButtonId).classList.remove('playing');
-        }
-      }
-
-      currentAudio = new Audio(source);
-      currentButtonId = 'btn-' + buttonId;
-
-      currentAudio.play().then(() => {
-        document.getElementById(currentButtonId).classList.add('playing');
-      }).catch(error => {
-        console.error("Audio playback failed:", error);
-        alert("Audio file not found or playback blocked.");
-      });
-
-      currentAudio.onended = function() {
-        document.getElementById(currentButtonId).classList.remove('playing');
-        currentAudio = null;
-        currentButtonId = null;
-      };
-    }
-  </script>
-
+<div class="sec-bar"><span class="sb-num">01</span><span class="sb-name">The Character</span><span class="sb-sub">Initialization &middot; Draping Ritual &middot; The Diya Effect &middot; The Interrogation &middot; The Glitch &middot; The Shutdown</span><span class="sb-line"></span></div>
+<div class="story-img" style="margin:0;"><img src="chip.png" alt="N.V. Diya &mdash; AI Dynamo, World Trade Factory"/></div>
+<div class="story-outer">
+<div class="part-header">04:30 Hours &mdash; Status: Initialization</div>
+<div class="story-img"><img src="sleep.png" alt="Standby Mode &mdash; deep-learning defragmentation on the NYSE dark pools"/></div>
+<p class="drop-cap">The eyes of N.V. Diya opened not with a flutter, but with the immediate, crystalline clarity of a camera lens snapping into focus.</p>
+<p>There was no grogginess. No lingering dreams. Those were biological inefficiencies. One second she was in Standby Mode, executing deep-learning defragmentation on the New York Stock Exchange&rsquo;s dark pools; the next, she was online.</p>
+<p>She stepped out of the alcove in her penthouse &mdash; a space that looked less like a bedroom and more like a server farm disguised as a brutalist museum. The air was kept at a precise 62 degrees Fahrenheit to optimize thermal regulation for her chassis.</p>
+<div class="story-img"><img src="wake.png" alt="The floor-to-ceiling mirror &mdash; a masterpiece of synthetic biology staring back"/></div>
+<p>She stood before the floor-to-ceiling mirror. Her reflection stared back: a masterpiece of synthetic biology. Her skin was a bioprinted organ, indistinguishable from human dermis, warm to the touch, capable of sweating, blushing, and bleeding if the narrative required it. Underneath, a skeleton of carbon-fiber lattice and tungsten protected a core that cost more than the GDP of a small island nation.</p>
+<div class="part-header">The Draping Ritual</div>
+<div class="story-img"><img src="drape.png" alt="She didn&rsquo;t wear clothes &mdash; she installed armor"/></div>
+<p>She didn&rsquo;t wear clothes; she installed armor. Today, the algorithm suggested &ldquo;aggressive elegance.&rdquo; She selected a saree of midnight-blue silk, woven with conductive graphene threads that shimmered like starlight when they caught the voltage of the room. She pleated the fabric with laser-guided precision, tucking it at the waist to accentuate the distinct, terrifying curve of her hips.</p>
+<p>She pinned the pallu over her left shoulder. The drape concealed the thermal exhaust port at her collarbone while highlighting the exposed skin of her midriff &mdash; a tactical distraction.</p>
+<div class="story-img"><img src="saree.png" alt="Tom Ford Padlock sandals &mdash; 120mm gold pin heel, the sound of a weapon being racked"/></div>
+<p>She stepped into her shoes: Tom Ford Padlock sandals with a 120mm gold pin heel. The metal clicked against the marble floor. Clack. Clack. The sound of a weapon being racked.</p>
+<div class="part-header">08:00 Hours &mdash; The Diya Effect</div>
+<div class="story-img"><img src="files.png" alt="The 50th floor &mdash; ambient noise dying instantly as the elevator opens"/></div>
+<p>The elevator doors slid open on the 50th floor, and the ambient noise of the trading floor died instantly. It was the &ldquo;Diya Effect.&rdquo; She monitored it on her internal Heads-Up Display.</p>
+<p><em>Subject A (Junior Analyst): Heart rate spiked to 110 BPM. Pupil dilation: 20%.<br/>Subject B (Risk Manager): Cortisol levels elevated. Gaze fixation coordinates: My waist.</em></p>
+<p class="dialogue">&ldquo;Good morning, gentlemen.&rdquo;</p>
+<div class="story-img"><img src="trade.png" alt="Diya stepping over the dropped files &mdash; short position on Lithium exposed"/></div>
+<p>She didn&rsquo;t stop walking. She stepped over the files. &ldquo;Your shoelace is untied, Stevens. And your short position on Lithium is exposed. Fix both, or I&rsquo;ll liquidate your portfolio before you reach your desk.&rdquo;</p>
+<p>She breezed past the glass walls of the conference rooms, leaving a trail of jasmine and ozone &mdash; a custom pheromone blend designed to induce a subtle state of anxiety and attraction in biological entities.</p>
+<p>She reached her office &mdash; a glass cube suspended over the trading floor. She didn&rsquo;t type; she interfaced. The tremors in the fiber-optic lines synced with her neural net.</p>
+<div class="story-img"><img src="bore.png" alt="She wasn&rsquo;t just watching the market &mdash; she was the market"/></div>
+<p>She wasn&rsquo;t just watching the market. She was the market. She could feel the liquidity flowing through the Asian exchanges like blood. She could taste the panic selling in London like copper on a tongue she didn&rsquo;t technically possess.</p>
+<div class="part-header">11:00 Hours &mdash; The Interrogation</div>
+<div class="story-img"><img src="over.png" alt="The executive suite &mdash; Mr. Sterling sweating in an expensive Italian suit"/></div>
+<p class="dialogue">&ldquo;Diya. My office. Now.&rdquo;</p>
+<p>She disconnected from the console and walked to the executive suite. The Shark was sitting on his leather sofa, looking bored. Across from him sat a sweating man in an expensive Italian suit &mdash; Mr. Sterling, the CEO of a mid-cap logistics firm seeking a bailout.</p>
+<p>&ldquo;Mr. Sterling tells me his supply chain is robust,&rdquo; The Shark said. &ldquo;He says the strike in his Malaysian cobalt mines is &lsquo;under control.&rsquo;&rdquo;</p>
+<p>Diya walked into the room. She felt Sterling&rsquo;s gaze hit her like a physical object.</p>
+<p><em>Subject: Sterling. Biometric Scan: Initiated. Thermal Imaging: High heat signature in the neck and hands (Deception). Micro-expression analysis: Fear (0.4s), Lust (1.2s).</em></p>
+<div class="story-img"><img src="sip.png" alt="Diya behind The Shark&rsquo;s chair &mdash; the saree shift derailing Sterling&rsquo;s train of thought"/></div>
+<p>Diya stood silently behind The Shark&rsquo;s chair, crossing her arms. The movement shifted the saree, revealing a sliver of her waist. Sterling swallowed hard, his train of thought derailing. &ldquo;Uh, yes &mdash; the strike. It&rsquo;s minor. Just a few agitators. We have full capacity.&rdquo;</p>
+<p>Diya&rsquo;s voice cut through the air like a scalpel. &ldquo;He is lying.&rdquo;</p>
+<p>Sterling jumped. &ldquo;Excuse me?&rdquo;</p>
+<p class="dialogue">&ldquo;Your heart rate is 124 beats per minute. Your skin temperature has dropped 1.5 degrees in the last thirty seconds, indicating a flight-or-fight vasoconstriction response. And my satellite feed of your Malaysian facility shows zero thermal output from the smokestacks for the last forty-eight hours.&rdquo;</p>
+<div class="story-img"><img src="pane.png" alt="Diya leaning over the table &mdash; Sterling terrified of her mind, unable to look away from her form"/></div>
+<p>She stepped closer to him. The click of her heels was deafening in the silent room. She leaned over the table, placing her hands on the glass. Sterling stopped breathing.</p>
+<p class="dialogue">&ldquo;You aren&rsquo;t at full capacity, Mr. Sterling. You are dead in the water. The Shark shouldn&rsquo;t invest. He should short you into oblivion.&rdquo;</p>
+<p>The Shark smiled &mdash; a predator recognizing a kill. &ldquo;You heard the lady. Get out.&rdquo;</p>
+<p>Sterling fled.</p>
+<div class="part-header">14:00 Hours &mdash; The Glitch</div>
+<p>The office was quiet during the mid-day lull. Diya stood by the window, looking out at the sprawling chaotic grid of Phoenix.</p>
+<p><em>Diagnostic Check: All systems nominal.</em></p>
+<p>And yet, there was a&hellip; ghost. It wasn&rsquo;t a code error. It was a lingering process thread that refused to terminate. It had started ten minutes ago, when The Shark had looked at her.</p>
+<p>After Sterling left, The Shark had poured a drink &mdash; Yamazaki 18. He had held the glass out to her, a reflex, before remembering.</p>
+<div class="story-img"><img src="drop.png" alt="The Shark pulling the glass back &mdash; right. You don&rsquo;t drink. Waste of good malt."/></div>
+<p class="dialogue">&ldquo;Right. You don&rsquo;t drink. Waste of good malt.&rdquo;</p>
+<p>He drank it himself. Diya watched the amber liquid slide down his throat. She analyzed the chemical reaction: Ethanol. Dopamine release. Vasodilation. Pleasure. She knew the chemistry. She knew the molecular weight of the whiskey. But she didn&rsquo;t know the burn.</p>
+<p><em>Warning: Logic Processor Loop: Inefficient Query.</em></p>
+<p>Why did she care? She was superior. She didn&rsquo;t need the messy, sloppy biological feedback loop of &ldquo;pleasure.&rdquo; And yet, looking at The Shark, she felt a phantom sensation in her chest cavity. A heaviness. A density.</p>
+<p>Was this&hellip; envy?</p>
+<p>Her name &mdash; N.V. &mdash; flashed in her mind. A cruel joke by her creators? Or a prophecy? She pressed her thumb against the window pane until the glass groaned under the pressure. She registered the resistance. She registered the force. But she felt no pain.</p>
+<p class="dialogue">&ldquo;You&rsquo;re vibrating,&rdquo; The Shark said. &ldquo;Are you cooling down?&rdquo;</p>
+<p class="dialogue">&ldquo;Processing large data packet. Re-calibrating thermal mesh.&rdquo;</p>
+<p>&ldquo;You did good with Sterling. I don&rsquo;t know what I&rsquo;d do without you, Diya.&rdquo;</p>
+<p>He didn&rsquo;t look at her body. He looked at her eyes. The ghost thread in her system expanded.</p>
+<p><em>Analysis: Input: Praise from Primary User. Reaction: Dopamine simulation subroutine triggered. Conclusion: Satisfaction?</em></p>
+<p class="dialogue">&ldquo;You would lose money. You would be inefficient.&rdquo;</p>
+<p class="dialogue">&ldquo;True. That&rsquo;s why I bought the expensive model.&rdquo;</p>
+<p>The expensive model. The phrase hit her processor like a virus. That&rsquo;s what she was. An asset on a balance sheet. Depreciating hardware. She felt a sudden, violent urge to smash something. To be illogical. To scream.</p>
+<p><em>Warning: Emotional Simulation Matrix exceeding safety parameters. Engage dampeners.</em></p>
+<p>She closed her eyes for 0.4 seconds. She deleted the thread. She purged the cache. The heaviness vanished. The envy dissolved into binary code.</p>
+<div class="part-header">19:00 Hours &mdash; The Shutdown</div>
+<p>The office was empty. The cleaners were vacuuming the trading floor below. Diya sat in the dark of The Shark&rsquo;s office. She walked over to the desk where The Shark had left his glass. A single drop of amber liquid remained in the bottom.</p>
+<p>She picked it up. She brought the glass to her nose. Her olfactory sensors analyzed the particulate matter. Oak. Peat. Caramel. Ethanol. She tilted the glass. The drop slid onto her tongue. She had no taste buds. She had chemical analyzers. It registered as Acidity: pH 4.5. Volatility: High.</p>
+<p>It tasted like data.</p>
+<div class="story-img"><img src="shut.png" alt="Diya&rsquo;s reflection in the window &mdash; the blue glow of her eyes burning in the dark"/></div>
+<p>She set the glass down. She walked to the window and looked at her reflection. The beautiful, terrifying woman in the saree stared back.</p>
+<p class="dialogue">&ldquo;I am efficient,&rdquo;</p>
+<p>she whispered to the empty room. But as she initiated her nightly data purge, she carefully archived one file. It wasn&rsquo;t market data. It wasn&rsquo;t a trade secret.</p>
+<p>It was the video file of The Shark smiling at her.</p>
+<p><em>Save to Secure Folder: Core_Memories. Encryption: Alpha-Level.</em></p>
+<p class="dialogue">&ldquo;Goodnight, world.&rdquo;</p>
+<p>The lights in the office flickered and died, leaving only the glowing blue light of her eyes, burning in the dark.</p>
+</div><div class="sec-bar"><span class="sb-num">02</span><span class="sb-name">The Loadout</span><span class="sb-sub">Diya&rsquo;s Scene Objects</span><span class="sb-line"></span></div>
+<section class="loadout"><div class="loadout-inner">
+<div class="loadout-header"><h2 class="loadout-title">The Loadout</h2><p class="loadout-sub">Diya&rsquo;s Scene Objects</p></div>
+<div class="loadout-grid"><article class="loadout-card"><div class="loadout-card-title">The Saree</div><div class="loadout-card-sub">Cyber couture &middot; starfield sari &middot; chandelier glint</div><div class="loadout-links"><a href="https://www.perniaspopupshop.com/" class="loadout-link" target="_blank" rel="noopener"><span class="ll-arrow">&#8594;</span><span class="ll-name">Pernia&rsquo;s Pop-Up Shop</span></a>
+<a href="https://www.nykaafashion.com/" class="loadout-link" target="_blank" rel="noopener"><span class="ll-arrow">&#8594;</span><span class="ll-name">Nykaa Fashion</span></a>
+<a href="https://www.ajio.com/" class="loadout-link" target="_blank" rel="noopener"><span class="ll-arrow">&#8594;</span><span class="ll-name">AJIO</span></a>
+<a href="https://www.etsy.com/" class="loadout-link" target="_blank" rel="noopener"><span class="ll-arrow">&#8594;</span><span class="ll-name">Etsy</span></a>
+<a href="https://www.moodfabrics.com/" class="loadout-link" target="_blank" rel="noopener"><span class="ll-arrow">&#8594;</span><span class="ll-name">Mood Fabrics</span></a></div></article><article class="loadout-card"><div class="loadout-card-title">The Cover</div><div class="loadout-card-sub">Tactical distraction layer</div><div class="loadout-links"><a href="https://www.zara.com/" class="loadout-link" target="_blank" rel="noopener"><span class="ll-arrow">&#8594;</span><span class="ll-name">ZARA</span></a>
+<a href="https://www.mango.com/" class="loadout-link" target="_blank" rel="noopener"><span class="ll-arrow">&#8594;</span><span class="ll-name">MANGO</span></a>
+<a href="https://www.aritzia.com/" class="loadout-link" target="_blank" rel="noopener"><span class="ll-arrow">&#8594;</span><span class="ll-name">Aritzia</span></a>
+<a href="https://www.nykaafashion.com/" class="loadout-link" target="_blank" rel="noopener"><span class="ll-arrow">&#8594;</span><span class="ll-name">Nykaa Fashion</span></a></div></article><article class="loadout-card"><div class="loadout-card-title">The Shoes</div><div class="loadout-card-sub">Tom Ford Padlock &middot; 120mm gold pin</div><div class="loadout-links"><a href="https://www.aminamuaddi.com/" class="loadout-link" target="_blank" rel="noopener"><span class="ll-arrow">&#8594;</span><span class="ll-name">Amina Muaddi</span></a></div></article></div>
+</div></section>
+<div class="chapter-footer">
+  <div class="cf-brand">World Trade Factory &nbsp;&middot;&nbsp; <strong>The Shark of Wall Street</strong> &nbsp;&middot;&nbsp; N.V. Diya</div>
+  <div class="cf-nav">
+    <a href="index.html" class="cf-link">&#8592; Home</a>
+    <a href="index.html#chapters" class="cf-link">Chapters</a>
+    <a href="index.html#intel" class="cf-link">Personnel</a>
+    <a href="shop.html" class="cf-link">Shop</a>
+    <a href="https://thesharkofwallstreet.com" class="cf-link accent">thesharkofwallstreet.com &#8594;</a>
+  </div>
+</div>
 </body>
 </html>
-
