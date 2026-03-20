@@ -225,10 +225,13 @@ img{max-width:100%;display:block;}
 
 .hero-copy{
   margin-top:14px;
-  font-family:'Share Tech Mono',monospace;
-  color:rgba(240,237,232,.78);
-  line-height:1.65;font-size:.88rem;
-  max-width:680px;
+  font-family:'Rajdhani',sans-serif;
+  font-size:1.1rem;
+  font-weight:500;
+  color:rgba(240,237,232,.88);
+  line-height:1.75;
+  max-width:640px;
+  letter-spacing:.5px;
 }
 
 .hero-cta{margin-top:18px;display:flex;flex-wrap:wrap;gap:10px;}
@@ -323,8 +326,8 @@ img{max-width:100%;display:block;}
 .sec-title em{font-style:italic;color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:1.1em;}
 
 .sec-desc{
-  font-family:'Share Tech Mono',monospace;
-  color:var(--silver);font-size:.78rem;
+  font-family:'Rajdhani',sans-serif;
+  font-size:.95rem;font-weight:500;letter-spacing:.5px;
   line-height:1.7;letter-spacing:1.5px;
   max-width:620px;margin-bottom:28px;
 }
@@ -351,8 +354,8 @@ img{max-width:100%;display:block;}
   color:var(--gold);margin-bottom:12px;
 }
 .terminal-hero p{
-  font-family:'Share Tech Mono',monospace;
-  color:rgba(240,237,232,.8);font-size:.84rem;
+  font-family:'Rajdhani',sans-serif;
+  color:rgba(240,237,232,.85);font-size:1rem;font-weight:500;
   line-height:1.7;margin-bottom:10px;
 }
 .terminal-hero p strong{color:var(--white);}
@@ -373,7 +376,7 @@ img{max-width:100%;display:block;}
   position:relative;padding:.6rem .75rem .6rem 1.5rem;
   background:rgba(201,168,76,.03);
   border:1px solid rgba(201,168,76,.1);
-  font-family:'Share Tech Mono',monospace;font-size:.78rem;
+  font-family:'Rajdhani',sans-serif;font-size:.95rem;font-weight:500;
   color:rgba(240,237,232,.85);
 }
 .t-list li::before{
@@ -383,10 +386,10 @@ img{max-width:100%;display:block;}
   box-shadow:0 0 10px rgba(201,168,76,.4);
 }
 .t-italic{
-  font-style:italic;font-size:.88rem;
+  font-style:italic;font-size:1rem;
   border-left:2px solid rgba(201,168,76,.3);
   padding-left:.9rem;color:rgba(240,237,232,.8);
-  font-family:'Cormorant Garamond',serif;font-weight:300;
+  font-family:'Rajdhani',sans-serif;font-weight:500;
 }
 
 /* ═══════════════════════════════
@@ -494,7 +497,7 @@ img{max-width:100%;display:block;}
   border-left:2px solid var(--gold);
   padding-left:14px;margin-bottom:10px;
   color:rgba(240,237,232,.88);
-  font-family:'Share Tech Mono',monospace;font-size:.78rem;line-height:1.55;
+  font-family:'Rajdhani',sans-serif;font-size:.95rem;font-weight:500;letter-spacing:.3px;line-height:1.55;
 }
 .terminal-box.danger .t-items li{border-left-color:var(--red);}
 .panel-actions{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap;}
@@ -532,8 +535,8 @@ img{max-width:100%;display:block;}
   letter-spacing:.08em;text-transform:uppercase;color:#fff;margin-bottom:7px;
 }
 .announce-item p{
-  font-family:'Share Tech Mono',monospace;
-  font-size:.78rem;line-height:1.6;color:rgba(168,160,144,.9);
+  font-family:'Rajdhani',sans-serif;
+  font-size:.95rem;font-weight:500;line-height:1.6;color:rgba(168,160,144,.9);
 }
 .announce-thumb{
   display:flex;align-items:center;gap:12px;
@@ -551,7 +554,7 @@ img{max-width:100%;display:block;}
 .intel-block{margin-top:16px;font-family:'Share Tech Mono',monospace;}
 .intel-head{color:var(--gold);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:12px;}
 .intel-lines{display:grid;gap:8px;}
-.intel-line{display:grid;grid-template-columns:10px 1fr;gap:14px;align-items:start;color:rgba(240,237,232,.9);font-size:.78rem;line-height:1.5;}
+.intel-line{display:grid;grid-template-columns:10px 1fr;gap:14px;align-items:start;color:rgba(240,237,232,.9);font-family:'Rajdhani',sans-serif;font-size:.95rem;font-weight:500;line-height:1.5;}
 .intel-bar{width:2px;background:var(--gold);opacity:.8;transform:translateY(4px);}
 .intel-line strong{color:#fff;}
 
@@ -681,6 +684,179 @@ img{max-width:100%;display:block;}
   transition:max-height .4s ease .05s,opacity .35s ease .05s,margin-top .3s;
 }
 .lp:hover .lp-arrow{max-height:40px;opacity:1;margin-top:8px;}
+
+/* ═══════════════════════════════
+   INTELLIGENCE + SYSTEMS GRID
+═══════════════════════════════ */
+.intel-sys-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0;
+  border-top:1px solid var(--border2);
+}
+.is-col{display:flex;flex-direction:column;}
+.is-col-left{border-right:1px solid var(--border2);}
+.is-panel{
+  position:relative;
+  border-bottom:1px solid var(--border2);
+  overflow:hidden;
+}
+.is-panel-img{
+  position:absolute;inset:0;
+  background-size:cover;background-position:center;
+  filter:brightness(.18) saturate(.4);
+  z-index:0;
+}
+.is-panel-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(5,5,6,.97) 0%,rgba(10,10,12,.88) 100%);
+  z-index:1;
+}
+.is-panel-overlay-red{
+  background:linear-gradient(135deg,rgba(8,2,2,.97) 0%,rgba(20,5,5,.88) 100%);
+}
+.is-panel-content{
+  position:relative;z-index:2;
+  padding:36px 40px;
+}
+.is-panel-terminal::after{
+  content:"";
+  position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(to right,var(--gold),transparent);
+  z-index:3;
+}
+.is-panel-rights::after{
+  content:"";
+  position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(to right,var(--red),transparent);
+  z-index:3;
+}
+.is-label{
+  font-family:'Share Tech Mono',monospace;
+  font-size:.55rem;letter-spacing:4px;
+  color:var(--gold);text-transform:uppercase;
+  margin-bottom:10px;
+  display:flex;align-items:center;gap:8px;
+}
+.is-label::before{content:'';display:inline-block;width:20px;height:1px;background:var(--gold);}
+.is-label-red{color:var(--red);}
+.is-label-red::before{background:var(--red);}
+.is-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(2rem,3vw,2.8rem);letter-spacing:3px;
+  color:var(--gold);margin-bottom:14px;line-height:1;
+}
+.is-title-red{color:var(--red);}
+.is-body{
+  font-family:'Rajdhani',sans-serif;
+  color:rgba(240,237,232,.85);font-size:1rem;font-weight:500;
+  line-height:1.7;margin-bottom:10px;
+}
+.is-body strong{color:var(--white);}
+.is-body a{color:var(--gold);text-decoration:underline;text-underline-offset:3px;}
+.is-img-link{
+  display:block;width:100%;margin:18px 0;
+  border:1px solid rgba(201,168,76,.35);
+  background:#000;overflow:hidden;transition:all .3s;
+}
+.is-img-link img{width:100%;height:auto;display:block;}
+.is-img-link:hover{border-color:var(--gold);box-shadow:0 0 28px rgba(201,168,76,.2);}
+.is-list{
+  list-style:none;padding:0;margin:.5rem 0 1rem;
+  display:grid;grid-template-columns:repeat(2,1fr);gap:.5rem 1rem;
+}
+.is-list li{
+  position:relative;padding:.6rem .75rem .6rem 1.5rem;
+  background:rgba(201,168,76,.03);
+  border:1px solid rgba(201,168,76,.1);
+  font-family:'Share Tech Mono',monospace;font-size:.75rem;
+  color:rgba(240,237,232,.85);
+}
+.is-list li::before{
+  content:'';position:absolute;left:.65rem;top:50%;
+  width:6px;height:6px;border-radius:50%;
+  background:var(--gold);transform:translateY(-50%);
+  box-shadow:0 0 10px rgba(201,168,76,.4);
+}
+.is-italic{
+  font-style:italic;font-size:1rem;
+  border-left:2px solid rgba(201,168,76,.3);
+  padding-left:.9rem;color:rgba(240,237,232,.8);
+  font-family:'Rajdhani',sans-serif;font-weight:500;
+  margin-bottom:18px;
+}
+.is-items{list-style:none;padding:0;margin:.5rem 0 1.2rem;}
+.is-items li{
+  border-left:2px solid var(--gold);
+  padding:8px 0 8px 14px;
+  margin-bottom:6px;
+  color:rgba(240,237,232,.88);
+  font-family:'Rajdhani',sans-serif;font-size:.95rem;font-weight:500;line-height:1.5;
+}
+.is-items-red li{border-left-color:var(--red);}
+.is-intel{margin-top:16px;}
+.is-intel-head{
+  color:var(--gold);font-size:.75rem;letter-spacing:.16em;
+  text-transform:uppercase;margin-bottom:10px;
+  font-family:'Share Tech Mono',monospace;
+}
+.is-intel-lines{display:grid;gap:6px;}
+.is-tag-block{
+  margin-top:16px;padding:14px;
+  border:1px solid var(--border);
+  background:rgba(201,168,76,.02);
+}
+.is-tag-block .tag{display:block;margin-bottom:8px;}
+.is-tag-text{
+  font-family:'Rajdhani',sans-serif;
+  color:rgba(168,160,144,.9);font-size:.95rem;font-weight:500;line-height:1.6;
+}
+.is-actions{margin-top:20px;display:flex;gap:10px;flex-wrap:wrap;}
+@media(max-width:980px){
+  .intel-sys-grid{grid-template-columns:1fr;}
+  .is-col-left{border-right:none;}
+}
+@media(max-width:640px){
+  .is-panel-content{padding:24px 20px;}
+  .is-list{grid-template-columns:1fr;}
+}
+
+.is-feature-divider{
+  height:1px;background:rgba(192,57,43,.2);
+  margin:28px 0 0;
+}
+.is-feature-headline{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(1.8rem,2.5vw,2.4rem);letter-spacing:2px;
+  color:var(--white);margin-bottom:12px;line-height:1;
+}
+.is-feature-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:10px;margin-top:16px;
+}
+.is-feature-card{
+  padding:16px;
+  background:rgba(192,57,43,.04);
+  border:1px solid rgba(192,57,43,.2);
+  transition:.2s;
+}
+.is-feature-card:hover{background:rgba(192,57,43,.08);border-color:rgba(192,57,43,.4);}
+.is-feature-icon{
+  font-size:1.2rem;color:var(--red);
+  margin-bottom:8px;
+}
+.is-feature-name{
+  font-family:'Share Tech Mono',monospace;
+  font-size:.6rem;letter-spacing:2px;
+  color:var(--red);text-transform:uppercase;
+  margin-bottom:6px;
+}
+.is-feature-desc{
+  font-family:'Rajdhani',sans-serif;
+  font-size:.9rem;font-weight:500;line-height:1.6;
+  color:rgba(240,237,232,.75);
+}
+@media(max-width:640px){.is-feature-grid{grid-template-columns:1fr;}}
 
 /* ═══════════════════════════════
    PARTNERS
@@ -874,31 +1050,133 @@ footer p{
 </section>
 
 
-<!-- ═══ SKXY TERMINAL ═══ -->
-<section class="section" style="padding-top:48px;padding-bottom:48px;">
-  <div class="sec-bar" style="margin:-48px -40px 32px;"><span class="sec-bar-num">01</span><span class="sec-bar-name">Intelligence</span><span class="sec-bar-sub">SKXY Terminal · InfinityXZ · Applied Strategic AI</span><span class="sec-bar-line"></span><a href="https://infinityxz.ai" target="_blank" rel="noopener" class="sec-bar-link">infinityxz.ai →</a></div>
-  <div class="wrap">
-    <div class="terminal-hero">
-      <h2>The Shark's Command Deck</h2>
-      <p>Markets don't move. They hunt. Nations posture. Capital migrates. Liquidity flows.</p>
-      <p>The <strong>SKXY Terminal</strong> is the live Macro Intelligence layer of <a href="https://infinityxz.ai/macrodata" target="_blank" rel="noopener">INFINITY AI</a> — The Applied Strategic Intelligence XperienZ.</p>
-      <a class="terminal-img-link" href="https://infinityxz.ai" target="_blank" rel="noopener" aria-label="Explore Infinity AI Macro Terminal">
-        <img src="macro.png" alt="Infinity Macro Intelligence Terminal"/>
-      </a>
-      <ul class="t-list">
-        <li><strong>Rates &amp; inflation cycles</strong></li>
-        <li><strong>FX</strong> and dollar regimes</li>
-        <li><strong>Global growth</strong> pulses</li>
-        <li><strong>Commodities</strong> &amp; credit stress</li>
-      </ul>
-      <p class="t-italic">This is where macro becomes instinct. Ask the <strong>AI Analyst</strong> questions on the data and what you can do with it.</p>
+<!-- ═══ INTELLIGENCE + SYSTEMS ═══ -->
+<section class="section alt" id="factory" style="padding:0;overflow:hidden;">
+  <div class="sec-bar"><span class="sec-bar-num">01</span><span class="sec-bar-name">Intelligence &amp; Systems</span><span class="sec-bar-sub">SKXY Terminal · InfinityXZ · World Trade Factory · IP Rights</span><span class="sec-bar-line"></span><a href="https://infinityxz.ai" target="_blank" rel="noopener" class="sec-bar-link">infinityxz.ai →</a></div>
+
+  <div class="intel-sys-grid">
+
+    <!-- LEFT COL: Infinity AI + WTF -->
+    <div class="is-col is-col-left">
+
+      <!-- Infinity AI / Future Is Thinking -->
+      <div class="is-panel is-panel-infinity">
+        <div class="is-panel-img" style="background-image:url('https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=900&q=85&auto=format&fit=crop')"></div>
+        <div class="is-panel-overlay" style="background:linear-gradient(135deg,rgba(0,8,16,.97) 0%,rgba(0,20,30,.88) 100%);"></div>
+        <div class="is-panel-content" style="text-align:center;padding:40px;">
+          <a href="https://infinityxz.ai" target="_blank" rel="noopener" style="display:block;">
+            <img src="infinity1.png" alt="Infinity AI — World Trade Factory"
+              style="width:100%;max-width:420px;height:auto;margin:0 auto;display:block;filter:drop-shadow(0 0 32px rgba(0,200,220,.35));" />
+          </a>
+          <div class="is-label" style="justify-content:center;margin-top:24px;">Applied Strategic Intelligence &nbsp;·&nbsp; World Trade Factory</div>
+          <h3 class="is-feature-headline" style="text-align:center;color:var(--white);margin-top:8px;">The Future Is Thinking.</h3>
+          <p class="is-body" style="text-align:center;max-width:460px;margin:12px auto 0;">Go beyond simple computation. InfinityXZ provides <strong>True Market Reasoning</strong> — an intelligence that understands the structural causality of global finance.</p>
+          <div class="is-feature-grid" style="margin-top:20px;">
+            <div class="is-feature-card" style="border-color:rgba(0,200,220,.2);background:rgba(0,200,220,.04);">
+              <div class="is-feature-name" style="color:#00c8dc;">Causal Logic Engine</div>
+              <div class="is-feature-desc">Beyond pattern matching. Infinity identifies the &lsquo;why&rsquo; behind market movements using structural macro analysis.</div>
+            </div>
+            <div class="is-feature-card" style="border-color:rgba(0,200,220,.2);background:rgba(0,200,220,.04);">
+              <div class="is-feature-name" style="color:#00c8dc;">Signal Synthesis</div>
+              <div class="is-feature-desc">Filters out the noise to deliver a single, clean narrative from 200+ verified data streams.</div>
+            </div>
+            <div class="is-feature-card" style="border-color:rgba(0,200,220,.2);background:rgba(0,200,220,.04);">
+              <div class="is-feature-name" style="color:#00c8dc;">Grounded Reality</div>
+              <div class="is-feature-desc">Built with guardrails against hallucination. If the data isn&rsquo;t verified, Infinity doesn&rsquo;t trade on it.</div>
+            </div>
+            <div class="is-feature-card" style="border-color:rgba(0,200,220,.2);background:rgba(0,200,220,.04);">
+              <div class="is-feature-name" style="color:#00c8dc;">Execution Velocity</div>
+              <div class="is-feature-desc">From insight to decision in milliseconds. The XperienZ interface removes friction between thought and action.</div>
+            </div>
+          </div>
+          <div class="is-actions" style="margin-top:20px;justify-content:center;">
+            <a class="btn" style="border-color:#00c8dc;color:#00c8dc;" href="https://infinityxz.ai" target="_blank" rel="noopener">Enter InfinityXZ (Beta) &rarr;</a>
+            <a class="btn" href="https://infinityxz.ai/#how" target="_blank" rel="noopener">How it reasons</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- World Trade Factory -->
+      <div class="is-panel">
+        <div class="is-panel-img" style="background-image:url('https://images.unsplash.com/photo-1642790551116-18e4f979f0fb?w=1200&q=85&auto=format&fit=crop')"></div>
+        <div class="is-panel-overlay"></div>
+        <div class="is-panel-content">
+          <div class="is-label">Intelligence Platform</div>
+          <h2 class="is-title">World Trade Factory</h2>
+          <p class="is-body">&gt; Decoding how power, money, and risk move globally.</p>
+          <ul class="is-items">
+            <li><strong>Global Macro Strategy</strong> — rates, inflation, liquidity cycles, FX regimes</li>
+            <li><strong>Cross-Asset Allocation</strong> — equities, fixed income, commodities, crypto</li>
+            <li><strong>Regional Intelligence</strong> — US, Europe, Asia, Developing, Emerging, Frontier markets</li>
+            <li><strong>Capital Flow Tracking</strong> — FDI, portfolio flows, reserve movements</li>
+            <li><strong>Policy &amp; Central Bank Analysis</strong> — Fed, ECB, PBoC, BOJ, EM CBs</li>
+          </ul>
+
+          <div class="is-actions">
+            <a class="btn gold" href="https://www.worldtradefactory.ai" target="_blank" rel="noopener">Enter Factory</a>
+          </div>
+        </div>
+      </div>
+
     </div>
+
+    <!-- RIGHT COL: Command Deck + IP Rights -->
+    <div class="is-col is-col-right">
+
+      <!-- The Shark's Command Deck -->
+      <div class="is-panel is-panel-terminal">
+        <div class="is-panel-img" style="background-image:url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&q=85&auto=format&fit=crop')"></div>
+        <div class="is-panel-overlay"></div>
+        <div class="is-panel-content">
+          <div class="is-label">SKXY Terminal · InfinityXZ</div>
+          <h2 class="is-title">The Shark's Command Deck</h2>
+          <p class="is-body">Markets don't move. They hunt. Nations posture. Capital migrates. Liquidity flows.</p>
+          <p class="is-body">The <strong>SKXY Terminal</strong> is the live Macro Intelligence layer of <a href="https://infinityxz.ai/macrodata" target="_blank" rel="noopener">INFINITY AI</a> — The Applied Strategic Intelligence XperienZ.</p>
+          <a class="is-img-link" href="https://infinityxz.ai" target="_blank" rel="noopener">
+            <img src="macro.png" alt="Infinity Macro Intelligence Terminal"/>
+          </a>
+          <ul class="is-list">
+            <li><strong>Rates &amp; inflation cycles</strong></li>
+            <li><strong>FX</strong> and dollar regimes</li>
+            <li><strong>Global growth</strong> pulses</li>
+            <li><strong>Commodities</strong> &amp; credit stress</li>
+          </ul>
+          <p class="is-italic">This is where macro becomes instinct. Ask the <strong>AI Analyst</strong> questions on the data and what you can do with it.</p>
+          <div class="is-actions">
+            <a class="btn gold" href="https://infinityxz.ai" target="_blank" rel="noopener">Try Infinity AI</a>
+          </div>
+        </div>
+      </div>
+</br>
+      <!-- IP & Rights Marketplace -->
+      <div class="is-panel is-panel-rights" id="rights">
+        <div class="is-panel-img" style="background-image:url('https://images.unsplash.com/photo-1485846234645-a62644f84728?w=900&q=85&auto=format&fit=crop')"></div>
+        <div class="is-panel-overlay is-panel-overlay-red"></div>
+        <div class="is-panel-content">
+          <div class="is-label is-label-red">Neo-Noir Cinematic Property</div>
+          <h2 class="is-title is-title-red">IP &amp; Rights Marketplace</h2>
+          <p class="is-body">&gt; Available for acquisition.</p>
+          <ul class="is-items is-items-red">
+            <li><strong>The Book:</strong> Narrative nonfiction in the lineage of <em>The Big Short</em>, <em>Liar&rsquo;s Poker</em>, and <em>Flash Boys</em> — systemic finance, invisible markets, and algorithmic power — fused with the lived immersion and outsider mythos of <em>Shantaram</em> and <em>American Kingpin</em>.</li>
+            <li><strong>The Screenplay:</strong> A tech-noir thriller where neon subcultures, music, obsession, and moral ambiguity collide with algorithmic trading, institutional coldness, and invisible power structures — prestige drama with thriller momentum.</li>
+            <li><strong>The Universe:</strong> A serialized, commerce-native IP ecosystem — characters, chapters, visual identity, original soundtrack, and integrated storytelling extensions.</li>
+          </ul>
+          <div class="is-actions" style="margin-top:24px;">
+            <a class="btn red" href="/cdn-cgi/l/email-protection#e390828486a3948c918f879791828786858280978c919acd828a">Rights Enquiry</a>
+            <a class="btn" href="https://www.linkedin.com/in/sajeeshkakkat/" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
   </div>
 </section>
 
+
 <!-- ═══ CHARACTER / CHAPTER POSTERS ═══ -->
 <section class="section full" id="posters">
-  <div class="sec-bar"><span class="sec-bar-num">02</span><span class="sec-bar-name">Characters</span><span class="sec-bar-sub">Coming Soon — Character Drops</span><span class="sec-bar-line"></span></div>
+  <div class="sec-bar"><span class="sec-bar-num">02</span><span class="sec-bar-name">Characters/Chapters</span><span class="sec-bar-sub">Coming Soon — Character Drops</span><span class="sec-bar-line"></span></div>
   <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:2px;">
     <a class="poster-card" href="#"><img src="tank.png" alt="Poster"/></a>
     <a class="poster-card" href="#"><img src="bee.png" alt="Poster"/></a>
@@ -909,84 +1187,9 @@ footer p{
   </div>
 </section>
 
-<!-- ═══ WTF TERMINAL + IP RIGHTS + ANNOUNCEMENTS ═══ -->
-<section class="section alt" id="factory">
-  <div class="sec-bar" style="margin:-72px -40px 32px;"><span class="sec-bar-num">03</span><span class="sec-bar-name">Systems</span><span class="sec-bar-sub">World Trade Factory · IP Rights · Intelligence</span><span class="sec-bar-line"></span></div>
-  <div class="wrap">
-    <div class="terminal-grid">
-      <div class="terminal-box">
-        <h3>World Trade Factory</h3>
-        <p>&gt; Decoding how power, money, and risk move globally.</p>
-        <ul class="t-items">
-          <li><strong>Global Macro Strategy</strong> — rates, inflation, liquidity cycles, FX regimes</li>
-          <li><strong>Cross-Asset Allocation</strong> — equities, fixed income, commodities, crypto</li>
-          <li><strong>Geopolitical Risk Mapping</strong> — sanctions, conflicts, elections, trade wars</li>
-          <li><strong>Regional Intelligence</strong> — US, Europe, China, EM, frontier markets</li>
-          <li><strong>Capital Flow Tracking</strong> — FDI, portfolio flows, reserve movements</li>
-          <li><strong>Policy &amp; Central Bank Analysis</strong> — Fed, ECB, PBoC, BOJ, EM CBs</li>
-          <li><strong>Scenario &amp; Stress Testing</strong> — regime shifts, tail risks, shocks</li>
-          <li><strong>Narrative &amp; Sentiment Signals</strong> — media, positioning, crowd behavior</li>
-        </ul>
-        <div class="panel-actions">
-          <a class="btn gold" href="https://www.worldtradefactory.ai" target="_blank" rel="noopener">Enter Factory</a>
-          <a class="btn gold" href="https://infinityxz.ai" target="_blank" rel="noopener">Try Infinity AI</a>
-        </div>
-        <div class="announce-item" style="margin-top:16px;border:1px solid var(--border);padding:14px;">
-          <span class="tag">Institutional Use</span>
-          <h4>Who This Is Built For</h4>
-          <p>Asset managers, hedge funds, family offices, policy advisors, and operators navigating volatile global regimes.</p>
-        </div>
-        <div class="intel-block">
-          <div class="intel-head">Active Intelligence Coverage</div>
-          <div class="intel-lines">
-            <div class="intel-line"><span class="intel-bar"></span><span><strong>North America</strong> — US rates, earnings, fiscal policy</span></div>
-            <div class="intel-line"><span class="intel-bar"></span><span><strong>Europe</strong> — ECB policy, energy, fragmentation risk</span></div>
-            <div class="intel-line"><span class="intel-bar"></span><span><strong>China</strong> — growth, credit cycles, geopolitics</span></div>
-            <div class="intel-line"><span class="intel-bar"></span><span><strong>Emerging Markets</strong> — FX stress, debt, capital controls</span></div>
-            <div class="intel-line"><span class="intel-bar"></span><span><strong>Frontier Markets</strong> — asymmetric risk &amp; early signals</span></div>
-          </div>
-        </div>
-      </div>
-
-      <div style="display:grid;gap:20px;">
-        <div class="announce-panel">
-          <div class="announce-title">Latest</div>
-          <div class="announce-item">
-            <span class="tag">New</span>
-            <h4>Phase 1 Is Live</h4>
-            <p>The Shark of Wall Street hub is expanding — chapters + character drops rolling out.</p>
-            <div class="announce-thumb">
-              <img src="stix.png" alt="Drop thumbnail"/>
-              <div class="meta">
-                <div><strong>Drop:</strong> Stix Stox</div>
-                <div><strong>Scene:</strong> The Tik Tok Trader</div>
-                <div>Jump to <a href="#chapters">Chapters</a> and <a href="#intel">Characters</a> →</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="terminal-box danger" id="rights">
-          <h3>IP &amp; Rights Marketplace</h3>
-          <p>&gt; Neo-noir cinematic property available for acquisition.</p>
-          <ul class="t-items">
-            <li><strong>The Book:</strong> Narrative nonfiction in the lineage of <em>The Big Short</em>, <em>Liar's Poker</em>, and <em>Flash Boys</em> — systemic finance, invisible markets, and algorithmic power — fused with the lived immersion and outsider mythos of <em>Shantaram</em> and <em>American Kingpin</em>.</li>
-            <li><strong>The Screenplay:</strong> A tech-noir thriller where neon subcultures, music, obsession, and moral ambiguity collide with algorithmic trading, institutional coldness, and invisible power structures — prestige drama with thriller momentum.</li>
-            <li><strong>The Universe:</strong> A serialized, commerce-native IP ecosystem — characters, chapters, visual identity, original soundtrack, and integrated storytelling extensions.</li>
-          </ul>
-          <div class="panel-actions">
-            <a class="btn red" href="/cdn-cgi/l/email-protection#2940474f46695e465b454d5d5b484d4c4f484a5d465b50074840">Rights Enquiry</a>
-            <a class="btn" href="https://www.linkedin.com/in/sajeeshkakkat/" target="_blank" rel="noopener">LinkedIn</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ═══ CHAPTERS ═══ -->
 <section class="section full" id="chapters">
-  <div class="sec-bar"><span class="sec-bar-num">04</span><span class="sec-bar-name">Chapters</span><span class="sec-bar-sub">Recent Transmissions</span><span class="sec-bar-line"></span></div>
+  <div class="sec-bar"><span class="sec-bar-num">03</span><span class="sec-bar-name">Chapters</span><span class="sec-bar-sub">Recent Transmissions</span><span class="sec-bar-line"></span></div>
   <div class="chapter-grid">
       <a class="chapter-card" href="chapter-prison.html"><img src="fight.png" alt="The Fight"/><div class="chapter-meta"><div class="chapter-title">The Fight</div></div></a>
       <a class="chapter-card" href="fox.html"><img src="suv.png" alt="The Fox"/><div class="chapter-meta"><div class="chapter-title">The Fox</div></div></a>
@@ -1007,7 +1210,7 @@ footer p{
 
 <!-- ═══ PERSONNEL DOSSIERS ═══ -->
 <section class="section full" id="intel">
-  <div class="sec-bar"><span class="sec-bar-num">05</span><span class="sec-bar-name">Personnel</span><span class="sec-bar-sub">Classified Dossiers</span><span class="sec-bar-line"></span></div>
+  <div class="sec-bar"><span class="sec-bar-num">04</span><span class="sec-bar-name">Personnel</span><span class="sec-bar-sub">Classified Dossiers</span><span class="sec-bar-line"></span></div>
   <div class="dossier-grid">
       <a href="black.html" class="dossier-card"><img src="scar.png" alt="Scarlett"/><div class="dossier-label">Scarlett</div></a>
       <a href="mayor.html" class="dossier-card"><img src="may.png" alt="The Mayor"/><div class="dossier-label">The Mayor</div></a>
@@ -1041,12 +1244,13 @@ footer p{
       <a href="whale.html" class="dossier-card"><img src="tariq.png" alt="The Whale"/><div class="dossier-label">The Whale</div></a>
       <a href="stix.html" class="dossier-card"><img src="stix.png" alt="The Swarm"/><div class="dossier-label">Stix Stox</div></a>
       <a href="prince.html" class="dossier-card"><img src="prince.png" alt="The Prince"/><div class="dossier-label">The Prince</div></a>
+      <a href="max.html" class="dossier-card"><img src="max.png" alt="The Tycoon"/><div class="dossier-label">The Tycoon</div></a>
   </div>
 </section>
 
 <!-- ═══ TRAILER ═══ -->
 <section class="section full" id="trailer">
-  <div class="sec-bar"><span class="sec-bar-num">06</span><span class="sec-bar-name">Trailer</span><span class="sec-bar-sub">Experience the Universe</span><span class="sec-bar-line"></span></div>
+  <div class="sec-bar"><span class="sec-bar-num">05</span><span class="sec-bar-name">Trailer</span><span class="sec-bar-sub">Experience the Universe</span><span class="sec-bar-line"></span></div>
   <video src="shark.mp4" controls preload="metadata"
     style="width:100%;display:block;border-top:none;border-bottom:1px solid rgba(201,168,76,.2);background:#000;">
   </video>
@@ -1054,7 +1258,7 @@ footer p{
 
 <!-- ═══ SOUNDTRACK ═══ -->
 <section class="section full" id="playlist">
-  <div class="sec-bar"><span class="sec-bar-num">07</span><span class="sec-bar-name">Soundtrack</span><span class="sec-bar-sub">SharK ATaKK — Original Score</span><span class="sec-bar-line"></span><a href="https://sharkatakk.com" target="_blank" rel="noopener" class="sec-bar-link">sharkatakk.com →</a></div>
+  <div class="sec-bar"><span class="sec-bar-num">06</span><span class="sec-bar-name">Soundtrack</span><span class="sec-bar-sub">SharK ATaKK — Original Score</span><span class="sec-bar-line"></span><a href="https://sharkatakk.com" target="_blank" rel="noopener" class="sec-bar-link">sharkatakk.com →</a></div>
   <div style="padding:32px 40px;">
     <div class="player-box">
       <div class="player-inner">
@@ -1079,7 +1283,7 @@ footer p{
 
 <!-- ═══ COMING SOON POSTERS ═══ -->
 <section class="section full" id="coming-soon">
-  <div class="sec-bar"><span class="sec-bar-num">08</span><span class="sec-bar-name">Coming Soon</span><span class="sec-bar-sub">Next Drops</span><span class="sec-bar-line"></span></div>
+  <div class="sec-bar"><span class="sec-bar-num">07</span><span class="sec-bar-name">Coming Soon</span><span class="sec-bar-sub">Next Drops</span><span class="sec-bar-line"></span></div>
   <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;">
     <a class="poster-card" href="#"><img src="soon4.png" alt="Coming Soon"/></a>
     <a class="poster-card" href="#"><img src="soon3.png" alt="Coming Soon"/></a>
@@ -1091,7 +1295,7 @@ footer p{
      THE LIFE — LIFESTYLE HUB EMBEDDED
 ═══════════════════════════════════════ -->
 <section class="section alt" id="life" style="padding:0;overflow:hidden;">
-  <div class="sec-bar"><span class="sec-bar-num">09</span><span class="sec-bar-name">The Life</span><span class="sec-bar-sub">11 Dimensions · Fleet · Travel · Style · Spirits · Art · Real Estate · Wellness · Tech · Culture · Finance · Events</span><span class="sec-bar-line"></span><a href="life.html" class="sec-bar-link">Full Index →</a></div>
+  <div class="sec-bar"><span class="sec-bar-num">08</span><span class="sec-bar-name">The Shark Life</span><span class="sec-bar-sub">11 Dimensions · Fleet · Travel · Style · Spirits · Art · Real Estate · Wellness · Tech · Culture · Finance · Events</span><span class="sec-bar-line"></span><a href="life.html" class="sec-bar-link">Full Index →</a></div>
 
   <div class="life-grid">
     <a href="fleet.html" class="lp">
@@ -1154,7 +1358,7 @@ footer p{
 
 <!-- ═══ PARTNERS ═══ -->
 <section class="section" id="partners">
-  <div class="sec-bar" style="margin:-72px -40px 32px;"><span class="sec-bar-num">10</span><span class="sec-bar-name">Partners</span><span class="sec-bar-sub">Collaborators · Narrative-Aligned</span><span class="sec-bar-line"></span></div>
+  <div class="sec-bar" style="margin:-72px -40px 32px;"><span class="sec-bar-num">09</span><span class="sec-bar-name">Partners</span><span class="sec-bar-sub">Collaborators · Narrative-Aligned</span><span class="sec-bar-line"></span></div>
   <div class="wrap">
     <h2 class="sec-title" style="margin-bottom:4px;">Partners</h2>
     <p class="sec-desc">Core platforms and creative collaborators in the World Trade Factory universe.</p>
@@ -1217,7 +1421,7 @@ footer p{
     <a class="drawer-item" href="#factory" onclick="closeAllDrawers()">02. Systems Terminal</a>
     <a class="drawer-item" href="#chapters" onclick="closeAllDrawers()">03. Chapter Archive</a>
     <a class="drawer-item" href="#rights" onclick="closeAllDrawers()">04. IP Rights</a>
-    <a class="drawer-item" href="#life" onclick="closeAllDrawers()">05. The Life</a>
+    <a class="drawer-item" href="#life" onclick="closeAllDrawers()">05. The Shark Life</a>
     <div class="drawer-foot">
       <a class="btn gold" href="https://www.worldtradefactory.ai" target="_blank" rel="noopener" style="text-align:center;display:block;">World Trade Factory</a>
       <a class="btn gold" href="https://infinityxz.ai" target="_blank" rel="noopener" style="text-align:center;display:block;">Infinity AI</a>
@@ -1248,7 +1452,7 @@ footer p{
   </div>
 </aside>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 <script>
   // Year
   document.getElementById('year').textContent = new Date().getFullYear();
@@ -1330,11 +1534,4 @@ footer p{
       </button>
     `).join("");
     listEl.querySelectorAll(".playlist-item").forEach(btn=>{
-      btn.addEventListener("click",()=>setNowPlaying(parseInt(btn.getAttribute("data-i"),10),true));
-    });
-  }
-  renderPlaylist();
-  setNowPlaying(0,false);
-</script>
-</body>
-</html>
+      btn.addEventListener("click",
