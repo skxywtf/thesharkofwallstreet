@@ -1049,7 +1049,6 @@ footer p{
   </div>
 </section>
 
-
 <!-- ═══ INTELLIGENCE + SYSTEMS ═══ -->
 <section class="section alt" id="factory" style="padding:0;overflow:hidden;">
   <div class="sec-bar"><span class="sec-bar-num">01</span><span class="sec-bar-name">Intelligence &amp; Systems</span><span class="sec-bar-sub">SKXY Terminal · InfinityXZ · World Trade Factory · IP Rights</span><span class="sec-bar-line"></span><a href="https://infinityxz.ai" target="_blank" rel="noopener" class="sec-bar-link">infinityxz.ai →</a></div>
@@ -1172,7 +1171,6 @@ footer p{
 
   </div>
 </section>
-
 
 <!-- ═══ CHARACTER / CHAPTER POSTERS ═══ -->
 <section class="section full" id="posters">
@@ -1452,7 +1450,7 @@ footer p{
   </div>
 </aside>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 <script>
   // Year
   document.getElementById('year').textContent = new Date().getFullYear();
@@ -1534,4 +1532,11 @@ footer p{
       </button>
     `).join("");
     listEl.querySelectorAll(".playlist-item").forEach(btn=>{
-      btn.addEventListener("click",
+      btn.addEventListener("click",()=>setNowPlaying(parseInt(btn.getAttribute("data-i"),10),true));
+    });
+  }
+  renderPlaylist();
+  setNowPlaying(0,false);
+</script>
+</body>
+</html>
