@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
-<title>Style &amp; Shop — Power Dressing | The Shark of Wall Street</title>
-<meta name="description" content="Editorial commerce for The Shark of Wall Street universe. Bespoke houses, sovereign watches, tactical loadouts — curated by character and scene."/>
+<title>Style &amp; Shop — Editorial Commerce | The Shark of Wall Street</title>
+<meta name="description" content="Editorial commerce from the universe of The Shark of Wall Street. Power Tailoring, Women of Power, Watches of Command, Dark Luxury, Tactical & Operative — curated by character and scene."/>
 <meta name="author" content="Sage Kakkat"/>
 <meta property="og:title" content="Style &amp; Shop — The Shark of Wall Street"/>
 <meta property="og:image" content="https://thesharkofwallstreet.com/sowt.png"/>
@@ -15,368 +15,96 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Share+Tech+Mono&display=swap" rel="stylesheet"/>
 <style>
 #vercel-toolbar,vercel-live-feedback,[data-vercel-toolbar]{display:none!important;opacity:0!important;pointer-events:none!important;visibility:hidden!important;}
-
 :root{
-  --bg:#050506;
-  --panel:#0a0a0c;
-  --gold:#c9a84c;
-  --gold-d:#7a6130;
-  --red:#c0392b;
-  --crimson:#8b1a1a;
-  --white:#f0ede8;
-  --silver:#a8a090;
-  --muted:#55504a;
-  --border:rgba(201,168,76,0.12);
-  --border2:rgba(240,237,232,0.07);
-  --shadow:0 24px 80px rgba(0,0,0,0.75);
+  --bg:#050506;--panel:#0a0a0c;
+  --gold:#c9a84c;--gold-d:#7a6130;
+  --red:#c0392b;--crimson:#8b1a1a;
+  --white:#f0ede8;--silver:#a8a090;--muted:#55504a;
+  --border:rgba(201,168,76,0.12);--border2:rgba(240,237,232,0.07);
 }
-
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
-body{
-  background:var(--bg);
-  color:var(--white);
-  font-family:'Rajdhani',sans-serif;
-  letter-spacing:.4px;
-  overflow-x:hidden;
-}
-body::after{
-  content:"";position:fixed;inset:-30%;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
-  opacity:.04;pointer-events:none;z-index:2;
-  transform:rotate(10deg);mix-blend-mode:overlay;
-}
-body::before{
-  content:"";position:fixed;inset:0;
-  background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(201,168,76,0.008) 3px,rgba(201,168,76,0.008) 4px);
-  pointer-events:none;z-index:1;
-}
-a{color:inherit;text-decoration:none;}
-img{max-width:100%;display:block;}
-
+body{background:var(--bg);color:var(--white);font-family:'Rajdhani',sans-serif;letter-spacing:.4px;overflow-x:hidden;}
+body::after{content:"";position:fixed;inset:-30%;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");opacity:.04;pointer-events:none;z-index:2;transform:rotate(10deg);mix-blend-mode:overlay;}
+body::before{content:"";position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(201,168,76,0.008) 3px,rgba(201,168,76,0.008) 4px);pointer-events:none;z-index:1;}
+a{color:inherit;text-decoration:none;}img{max-width:100%;display:block;}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0.15}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 
-/* NAV */
-.nav{
-  position:fixed;top:0;left:0;right:0;height:64px;
-  background:rgba(5,5,6,.92);backdrop-filter:blur(16px);
-  border-bottom:1px solid var(--border);
-  display:flex;align-items:center;justify-content:space-between;
-  padding:0 40px;z-index:500;
-}
-.nav-brand{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:1.5rem;letter-spacing:4px;color:var(--white);
-  display:flex;align-items:center;gap:8px;
-}
+.nav{position:fixed;top:0;left:0;right:0;height:64px;background:rgba(5,5,6,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 40px;z-index:500;}
+.nav-brand{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:4px;color:var(--white);display:flex;align-items:center;gap:8px;}
 .nav-brand .shark{color:var(--gold);font-size:1.8rem;text-shadow:0 0 18px rgba(201,168,76,.4);}
-.nav-brand::before{
-  content:'';display:inline-block;
-  width:6px;height:6px;border-radius:50%;
-  background:var(--red);box-shadow:0 0 6px var(--red);
-  animation:blink 1.8s infinite;margin-right:4px;
-}
+.nav-brand::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--red);box-shadow:0 0 6px var(--red);animation:blink 1.8s infinite;margin-right:4px;}
 .nav-actions{display:flex;gap:10px;align-items:center;}
-.btn{
-  background:transparent;border:1px solid var(--border);color:var(--silver);
-  padding:7px 18px;font-family:'Share Tech Mono',monospace;
-  font-size:.72rem;letter-spacing:3px;cursor:pointer;text-transform:uppercase;
-  transition:.2s ease;display:inline-flex;align-items:center;
-}
+.btn{background:transparent;border:1px solid var(--border);color:var(--silver);padding:7px 18px;font-family:'Share Tech Mono',monospace;font-size:.72rem;letter-spacing:3px;cursor:pointer;text-transform:uppercase;transition:.2s ease;display:inline-flex;align-items:center;}
 .btn:hover{border-color:var(--gold);color:var(--gold);}
 .btn.gold{border-color:var(--gold-d);color:var(--gold);}
 .btn.gold:hover{border-color:var(--gold);background:rgba(201,168,76,.08);}
 .spacer{height:64px;}
 
-/* SEC-BAR */
-.sec-bar{
-  display:flex;align-items:center;gap:14px;
-  padding:14px 40px;
-  border-top:1px solid var(--border2);
-  border-bottom:1px solid var(--border);
-  background:rgba(201,168,76,.018);
-}
+.sec-bar{display:flex;align-items:center;gap:14px;padding:14px 40px;border-top:1px solid var(--border2);border-bottom:1px solid var(--border);background:rgba(201,168,76,.018);}
 .sec-bar-num{font-family:'Share Tech Mono',monospace;font-size:.6rem;letter-spacing:4px;color:var(--red);}
 .sec-bar-name{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:4px;color:var(--gold);}
 .sec-bar-sub{font-family:'Share Tech Mono',monospace;font-size:.55rem;letter-spacing:2px;color:var(--silver);text-transform:uppercase;}
 .sec-bar-line{flex:1;height:1px;background:linear-gradient(to right,rgba(201,168,76,.2),transparent);margin-left:12px;}
-.sec-bar-link{font-family:'Share Tech Mono',monospace;font-size:.54rem;letter-spacing:2px;color:var(--gold);text-decoration:none;border:1px solid rgba(201,168,76,.3);padding:4px 12px;transition:all .2s;white-space:nowrap;}
+.sec-bar-link{font-family:'Share Tech Mono',monospace;font-size:.54rem;letter-spacing:2px;color:var(--gold);border:1px solid rgba(201,168,76,.3);padding:4px 12px;transition:all .2s;}
 .sec-bar-link:hover{background:rgba(201,168,76,.08);border-color:var(--gold);}
 
 /* MASTHEAD */
-.shop-masthead{
-  padding:60px 40px 48px;
-  border-bottom:1px solid var(--border2);
-  background:radial-gradient(ellipse at 30% 0%, rgba(139,26,26,.12) 0%, transparent 60%),
-             radial-gradient(ellipse at 70% 100%, rgba(201,168,76,.06) 0%, transparent 60%);
-}
-.shop-masthead-eyebrow{
-  font-family:'Share Tech Mono',monospace;
-  font-size:.6rem;letter-spacing:4px;color:var(--red);text-transform:uppercase;
-  margin-bottom:16px;display:flex;align-items:center;gap:10px;
-}
-.shop-masthead-eyebrow::before{content:'';display:inline-block;width:24px;height:1px;background:var(--red);}
-.shop-masthead-title{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:clamp(3rem,7vw,6rem);letter-spacing:.04em;
-  color:var(--white);line-height:.9;margin-bottom:16px;
-}
-.shop-masthead-title em{color:var(--gold);font-style:italic;font-family:'Cormorant Garamond',serif;}
-.shop-masthead-copy{
-  font-family:'Rajdhani',sans-serif;
-  font-size:1.05rem;font-weight:500;
-  color:rgba(240,237,232,.8);line-height:1.7;
-  max-width:640px;margin-bottom:24px;
-}
-.shop-masthead-quote{
-  font-family:'Cormorant Garamond',serif;
-  font-size:1.2rem;font-style:italic;font-weight:300;
-  color:var(--gold);border-left:2px solid var(--gold);
-  padding-left:18px;max-width:560px;
-  line-height:1.6;
-}
-.shop-masthead-meta{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
-  border:1px solid var(--border);margin-top:32px;max-width:640px;
-}
-.shop-meta-item{
-  padding:14px 16px;background:rgba(10,10,12,.55);
-}
-.shop-meta-label{font-family:'Share Tech Mono',monospace;font-size:.55rem;letter-spacing:3px;color:var(--muted);text-transform:uppercase;margin-bottom:4px;}
-.shop-meta-val{font-family:'Rajdhani',sans-serif;font-size:.9rem;font-weight:600;color:var(--gold);}
+.shop-masthead{padding:64px 48px 52px;border-bottom:1px solid var(--border2);background:radial-gradient(ellipse at 20% 0%,rgba(139,26,26,.14) 0%,transparent 55%),radial-gradient(ellipse at 80% 100%,rgba(201,168,76,.07) 0%,transparent 55%);position:relative;overflow:hidden;}
+.shop-masthead::before{content:'WARDROBE';position:absolute;right:-10px;top:-10px;font-family:'Bebas Neue',sans-serif;font-size:16rem;line-height:1;color:rgba(201,168,76,.022);pointer-events:none;letter-spacing:-6px;}
+.shop-eyebrow{font-family:'Share Tech Mono',monospace;font-size:.6rem;letter-spacing:4px;color:var(--red);text-transform:uppercase;margin-bottom:18px;}
+.shop-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.5rem,8vw,7rem);letter-spacing:.04em;color:var(--white);line-height:.88;margin-bottom:20px;}
+.shop-title em{color:var(--gold);font-style:italic;font-family:'Cormorant Garamond',serif;font-size:.85em;}
+.shop-copy{font-family:'Rajdhani',sans-serif;font-size:1.05rem;font-weight:500;color:rgba(240,237,232,.78);line-height:1.7;max-width:620px;margin-bottom:24px;}
+.shop-quote{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-style:italic;font-weight:300;color:var(--gold);border-left:2px solid var(--gold);padding-left:20px;max-width:540px;line-height:1.6;margin-bottom:36px;}
+.shop-meta{display:flex;gap:40px;flex-wrap:wrap;}
+.shop-meta-item .label{font-family:'Share Tech Mono',monospace;font-size:.52rem;letter-spacing:3px;color:var(--muted);text-transform:uppercase;}
+.shop-meta-item .val{font-family:'Bebas Neue',sans-serif;font-size:1.15rem;letter-spacing:2px;color:var(--gold);}
 
-/* ARCHITECTURE SECTION */
-.arch-grid{
-  display:grid;grid-template-columns:repeat(2,1fr);gap:2px;
-}
-@media(min-width:1024px){.arch-grid{grid-template-columns:repeat(4,1fr);}}
-.arch-card{
-  padding:32px;border-right:1px solid var(--border2);border-bottom:1px solid var(--border2);
-  transition:.3s;
-}
-.arch-card:hover{background:rgba(201,168,76,.03);}
-.arch-card-eyebrow{font-family:'Share Tech Mono',monospace;font-size:.55rem;letter-spacing:3px;color:var(--red);text-transform:uppercase;margin-bottom:10px;}
-.arch-card-title{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:2px;color:var(--gold);margin-bottom:8px;}
-.arch-card-desc{font-family:'Rajdhani',sans-serif;font-size:.9rem;font-weight:500;color:var(--silver);line-height:1.6;margin-bottom:16px;}
-.arch-card-links{display:flex;flex-direction:column;gap:6px;}
-.arch-link{
-  font-family:'Share Tech Mono',monospace;font-size:.7rem;letter-spacing:1.5px;
-  color:rgba(240,237,232,.8);display:flex;align-items:center;gap:8px;
-  transition:.2s;padding:4px 0;border-bottom:1px solid transparent;
-}
-.arch-link:hover{color:var(--gold);border-bottom-color:rgba(201,168,76,.2);}
-.arch-link .ll-arrow{color:var(--gold);font-size:.9rem;}
-
-/* ESSENTIALS */
-.ess-grid{
-  display:grid;grid-template-columns:repeat(2,1fr);gap:2px;
-}
-@media(min-width:768px){.ess-grid{grid-template-columns:repeat(3,1fr);}}
-@media(min-width:1200px){.ess-grid{grid-template-columns:repeat(6,1fr);}}
-.ess-card{
-  padding:28px 24px;
-  border-right:1px solid var(--border2);border-bottom:1px solid var(--border2);
-  display:flex;flex-direction:column;gap:6px;
-  transition:.3s;position:relative;overflow:hidden;
-}
-.ess-card::after{
-  content:'';position:absolute;top:0;left:0;right:0;height:2px;
-  background:linear-gradient(to right,var(--gold),transparent);
-  transform:scaleX(0);transform-origin:left;transition:.3s;
-}
-.ess-card:hover{background:rgba(201,168,76,.04);}
-.ess-card:hover::after{transform:scaleX(1);}
-.ess-card-eyebrow{font-family:'Share Tech Mono',monospace;font-size:.52rem;letter-spacing:3px;color:var(--red);text-transform:uppercase;}
-.ess-card-name{font-family:'Bebas Neue',sans-serif;font-size:1.35rem;letter-spacing:2px;color:var(--gold);line-height:1;}
-.ess-card-desc{font-family:'Rajdhani',sans-serif;font-size:.85rem;font-weight:500;color:var(--silver);line-height:1.55;flex:1;}
-.ess-card-arrow{font-family:'Share Tech Mono',monospace;font-size:.8rem;color:var(--gold);margin-top:6px;}
-
-/* TABS */
-.shop-tabs-nav{
-  display:flex;gap:2px;padding:0 40px;
-  border-bottom:1px solid var(--border);
-  background:var(--panel);overflow-x:auto;scrollbar-width:none;
-}
-.shop-tabs-nav::-webkit-scrollbar{display:none;}
-.shop-tab{
-  background:transparent;border:none;
-  padding:16px 24px;cursor:pointer;
-  display:flex;align-items:center;gap:8px;
-  font-family:'Share Tech Mono',monospace;font-size:.68rem;letter-spacing:2px;
-  color:var(--muted);text-transform:uppercase;
-  border-bottom:2px solid transparent;transition:.2s;white-space:nowrap;
-  position:relative;bottom:-1px;
-}
-.shop-tab:hover{color:var(--silver);}
-.shop-tab.active{color:var(--gold);border-bottom-color:var(--gold);}
-.shop-tab-icon{font-size:1rem;}
-.shop-tab-count{
-  font-size:.55rem;background:rgba(201,168,76,.15);
-  color:var(--gold);padding:2px 6px;border-radius:2px;
-}
-
-/* TAB PANELS */
-.shop-panel{padding:0;}
-.shop-panel-header{
-  padding:28px 40px;
-  border-bottom:1px solid var(--border2);
-  background:radial-gradient(ellipse at 50% 0%, rgba(201,168,76,.04) 0%, transparent 70%);
-}
-.shop-panel-desc{
-  font-family:'Cormorant Garamond',serif;
-  font-size:1.1rem;font-style:italic;font-weight:300;
-  color:rgba(240,237,232,.75);max-width:720px;line-height:1.65;
-}
-
-/* CHARACTER CARDS */
-.shop-cards-grid{display:flex;flex-direction:column;gap:0;}
-.shop-card{
-  display:grid;
-  grid-template-columns:280px 1fr;
-  border-bottom:1px solid var(--border2);
-  animation:fadeUp .4s ease both;
-  transition:.3s;
-}
-.shop-card:hover{background:rgba(201,168,76,.018);}
-@media(max-width:900px){.shop-card{grid-template-columns:1fr;}}
-
-.shop-card-portrait{
-  position:relative;overflow:hidden;
-  min-height:320px;
-}
-.shop-card-portrait img{
-  width:100%;height:100%;object-fit:cover;
-  filter:saturate(.6) contrast(1.1) brightness(.85);
-  transition:.6s;
-}
-.shop-card:hover .shop-card-portrait img{
-  filter:saturate(.8) contrast(1.05) brightness(.9);
-  transform:scale(1.04);
-}
-.shop-card-portrait-overlay{
-  position:absolute;inset:0;
-  background:linear-gradient(to right, transparent 40%, var(--bg) 100%),
-             linear-gradient(to top, rgba(5,5,6,.8) 0%, transparent 50%);
-}
-.shop-card-id{
-  position:absolute;bottom:0;left:0;right:0;
-  padding:16px 20px;
-}
-.shop-card-kicker{
-  font-family:'Share Tech Mono',monospace;
-  font-size:.58rem;letter-spacing:3px;color:var(--gold);
-  text-transform:uppercase;margin-bottom:4px;
-}
-.shop-card-title{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:1.5rem;letter-spacing:2px;color:var(--white);line-height:1;
-}
-.shop-card-subline{
-  font-family:'Share Tech Mono',monospace;
-  font-size:.55rem;letter-spacing:2px;color:var(--silver);
-  margin-top:4px;
-}
-
-.shop-card-body{
-  padding:24px 32px;
-  border-left:1px solid var(--border2);
-  display:flex;flex-direction:column;gap:14px;
-}
-.shop-card-meta{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
-.shop-card-tags{display:flex;flex-wrap:wrap;gap:4px;}
-.shop-tag{
-  font-family:'Share Tech Mono',monospace;
-  font-size:.52rem;letter-spacing:2px;text-transform:uppercase;
-  padding:3px 8px;border:1px solid var(--border);color:var(--silver);
-}
-.shop-card-ref{
-  font-family:'Share Tech Mono',monospace;
-  font-size:.52rem;letter-spacing:2px;color:var(--muted);
-}
-.shop-card-copy{
-  font-family:'Rajdhani',sans-serif;
-  font-size:.95rem;font-weight:500;
-  color:rgba(240,237,232,.7);line-height:1.65;
-  font-style:italic;
-}
-.shop-loadout-label{
-  font-family:'Share Tech Mono',monospace;
-  font-size:.58rem;letter-spacing:4px;color:var(--gold);
-  text-transform:uppercase;padding-bottom:10px;
-  border-bottom:1px solid var(--border);
-}
-.shop-prod-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:12px 20px;
-}
-@media(min-width:1200px){.shop-prod-grid{grid-template-columns:repeat(4,1fr);}}
-.shop-cell{display:flex;flex-direction:column;gap:4px;}
-.shop-cell-title{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:1rem;letter-spacing:2px;color:var(--white);
-}
-.shop-cell-sub{
-  font-family:'Share Tech Mono',monospace;
-  font-size:.5rem;letter-spacing:2px;color:var(--muted);text-transform:uppercase;
-  margin-bottom:4px;
-}
-.shop-cell-links{display:flex;flex-direction:column;gap:3px;}
-.shop-link{
-  font-family:'Rajdhani',sans-serif;
-  font-size:.88rem;font-weight:500;
-  color:rgba(240,237,232,.8);
-  display:flex;align-items:center;gap:6px;
-  transition:.2s;padding:2px 0;
-}
-.shop-link:hover{color:var(--gold);}
-.shop-link .ll-arrow{color:var(--gold);font-size:.8rem;flex-shrink:0;}
+/* CULTURE-STYLE CARDS */
+.s-grid{display:grid;grid-template-columns:repeat(4,1fr);position:relative;z-index:2;}
+.s-card{position:relative;overflow:hidden;border-right:1px solid var(--border2);border-bottom:1px solid var(--border2);min-height:560px;display:flex;flex-direction:column;justify-content:flex-end;animation:fadeUp .5s ease both;}
+.s-card:nth-child(4n){border-right:none;}
+.s-img{position:absolute;inset:0;background-size:cover;background-position:center;filter:brightness(.85) saturate(.8);transition:transform .9s cubic-bezier(.25,.46,.45,.94),filter .5s ease;z-index:0;}
+.s-card:hover .s-img{transform:scale(1.06);filter:brightness(.25) saturate(.4);}
+.s-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.98) 0%,rgba(0,0,0,.75) 30%,rgba(0,0,0,.15) 60%,transparent 100%);z-index:1;transition:background .5s;}
+.s-card:hover .s-overlay{background:linear-gradient(to top,rgba(0,0,0,.99) 0%,rgba(0,0,0,.95) 55%,rgba(0,0,0,.7) 100%);}
+.s-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,var(--crimson),var(--gold));transform:scaleX(0);transform-origin:left;transition:transform .4s ease;z-index:5;}
+.s-card:hover::after{transform:scaleX(1);}
+.s-num{position:absolute;top:12px;right:16px;font-family:'Bebas Neue',sans-serif;font-size:5rem;line-height:1;color:rgba(255,255,255,.04);z-index:2;pointer-events:none;transition:color .4s;letter-spacing:2px;}
+.s-card:hover .s-num{color:rgba(201,168,76,.1);}
+.s-content{position:relative;z-index:3;padding:20px 20px 0;}
+.s-cat{font-family:'Share Tech Mono',monospace;font-size:.52rem;letter-spacing:3px;color:var(--crimson);text-transform:uppercase;display:flex;align-items:center;gap:7px;margin-bottom:6px;}
+.s-cat::before{content:'';display:inline-block;width:10px;height:1px;background:var(--crimson);flex-shrink:0;}
+.s-name{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;letter-spacing:2px;color:#fff;line-height:1;margin-bottom:6px;text-shadow:0 2px 16px rgba(0,0,0,.95);}
+.s-sub{font-family:'Cormorant Garamond',serif;font-size:.9rem;font-style:italic;font-weight:300;color:rgba(240,237,232,.75);line-height:1.5;margin-bottom:6px;}
+.s-chars{font-family:'Share Tech Mono',monospace;font-size:.48rem;letter-spacing:2px;color:var(--gold);text-transform:uppercase;opacity:.8;}
+.s-links{position:relative;z-index:3;padding:12px 20px 22px;margin-top:10px;}
+.s-div-line{height:1px;background:rgba(255,255,255,.12);margin-bottom:8px;}
+.s-scene-ref{font-family:'Share Tech Mono',monospace;font-size:.48rem;letter-spacing:2px;color:var(--muted);text-transform:uppercase;margin-bottom:8px;}
+.s-link{display:flex;align-items:flex-start;gap:8px;padding:4px 0;border-bottom:1px solid rgba(255,255,255,.05);transition:.2s;}
+.s-link:last-child{border-bottom:none;}
+.s-link:hover .s-arrow{color:var(--gold);transform:translateX(3px);}
+.s-link:hover .s-lname{color:var(--gold);}
+.s-arrow{font-family:'Share Tech Mono',monospace;font-size:.62rem;color:var(--crimson);flex-shrink:0;line-height:1.65;transition:color .2s,transform .2s;}
+.s-lbody{display:flex;flex-direction:column;}
+.s-lname{font-family:'Rajdhani',sans-serif;font-size:.82rem;font-weight:600;letter-spacing:1.2px;color:#fff;text-transform:uppercase;line-height:1.2;transition:color .2s;}
+.s-ldetail{font-family:'Share Tech Mono',monospace;font-size:.48rem;letter-spacing:1px;color:var(--muted);margin-top:1px;line-height:1.2;}
 
 /* FOOTER */
-.shop-footer{
-  padding:48px 40px;
-  border-top:1px solid var(--border);
-  text-align:center;background:#000;
-}
-.shop-footer-brand{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:1.4rem;letter-spacing:4px;color:var(--gold);
-  margin-bottom:12px;
-}
-.shop-footer-p{
-  font-family:'Share Tech Mono',monospace;
-  color:var(--muted);font-size:.68rem;line-height:1.8;
-}
-.shop-footer-link{
-  color:var(--gold);text-decoration:underline;text-underline-offset:3px;
-}
+footer{padding:48px 40px;text-align:center;border-top:1px solid var(--border);background:#000;}
+footer p{font-family:'Share Tech Mono',monospace;color:var(--muted);font-size:.68rem;line-height:1.8;}
+footer a{color:var(--gold);text-decoration:underline;text-underline-offset:3px;}
+.footer-brand{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:4px;color:var(--gold);display:block;margin-bottom:10px;}
 
-/* RESPONSIVE */
-@media(max-width:768px){
-  .nav{padding:0 16px;}
-  .sec-bar{padding:12px 20px;}
-  .sec-bar-sub{display:none;}
-  .shop-masthead{padding:40px 20px 32px;}
-  .shop-masthead-meta{grid-template-columns:repeat(2,1fr);}
-  .shop-tabs-nav{padding:0 20px;}
-  .shop-panel-header{padding:20px;}
-  .shop-card-body{padding:16px 20px;}
-  .shop-prod-grid{grid-template-columns:1fr 1fr;}
-  .arch-grid{grid-template-columns:1fr;}
-}
-@media(max-width:520px){
-  .nav{height:52px;padding:0 14px;}
-  .spacer{height:52px;}
-  .nav-brand{font-size:1.05rem;letter-spacing:1.5px;}
-  .nav-brand .shark{font-size:1.25rem;}
-  .shop-prod-grid{grid-template-columns:1fr;}
-}
+@media(max-width:1200px){.s-grid{grid-template-columns:repeat(2,1fr);}.s-card:nth-child(4n){border-right:1px solid var(--border2);}.s-card:nth-child(2n){border-right:none;}}
+@media(max-width:768px){.nav{padding:0 16px;}.sec-bar{padding:12px 20px;}.sec-bar-sub{display:none;}.shop-masthead{padding:40px 20px 32px;}.shop-masthead::before{display:none;}}
+@media(max-width:520px){.nav{height:52px;padding:0 14px;}.spacer{height:52px;}.s-grid{grid-template-columns:1fr;}.s-card:nth-child(n){border-right:none;}.s-card{min-height:480px;}}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <header class="nav">
   <a href="/" class="nav-brand" aria-label="Home">
     <span>THE </span><span class="shark">SHARK</span><span> OF WALL STREET</span>
@@ -388,1425 +116,775 @@ img{max-width:100%;display:block;}
 </header>
 <div class="spacer"></div>
 
-<!-- SEC-BAR -->
 <div class="sec-bar">
   <span class="sec-bar-num">03</span>
   <span class="sec-bar-name">Style &amp; Shop</span>
-  <span class="sec-bar-sub">Bespoke · Power Dressing · Scene Loadouts · 23 Characters</span>
+  <span class="sec-bar-sub">Bespoke · Power Dressing · Scene Loadouts · 8 Categories</span>
   <span class="sec-bar-line"></span>
-  <a href="#loadouts" class="sec-bar-link">Scene Loadouts →</a>
+  <a href="#power-tailoring" class="sec-bar-link">Enter →</a>
 </div>
 
-<!-- MASTHEAD -->
 <section class="shop-masthead">
-  <div class="shop-masthead-eyebrow">Editorial Commerce · Dark Luxury · World Trade Factory</div>
-  <h1 class="shop-masthead-title">The Wardrobe<br><em>of Power.</em></h1>
-  <p class="shop-masthead-copy">Every suit is a verdict. Every watch, a warning. Every heel, a weapon. This is not a fashion page. This is the material language of power — curated from the universe of The Shark of Wall Street. Bespoke houses. Quiet timepieces. Women who dress to dominate. Scene-specific loadouts for characters who never lose.</p>
-  <p class="shop-masthead-quote">Dress like the verdict has already been written — and you wrote it.</p>
-  <div class="shop-masthead-meta">
-    <div class="shop-meta-item"><div class="shop-meta-label">Classification</div><div class="shop-meta-val">Editorial Commerce</div></div>
-    <div class="shop-meta-item"><div class="shop-meta-label">Universe</div><div class="shop-meta-val">Neo-Noir / Finance</div></div>
-    <div class="shop-meta-item"><div class="shop-meta-label">Characters</div><div class="shop-meta-val">23 Active</div></div>
-    <div class="shop-meta-item"><div class="shop-meta-label">Status</div><div class="shop-meta-val">Operational</div></div>
+  <div class="shop-eyebrow">DOSSIER-WARDROBE // FILE WS-7 // ACCESS GRANTED</div>
+  <h1 class="shop-title">The Wardrobe<br><em>of Power.</em></h1>
+  <p class="shop-copy">Every suit is a verdict. Every watch, a warning. Every heel, a weapon. This is not a fashion page. This is the material language of power — curated from the universe of The Shark of Wall Street. Eight categories. Bespoke houses. Quiet timepieces. Women who dress to dominate. Objects that look civilized right until they ruin someone's life.</p>
+  <p class="shop-quote">Dress like the verdict has already been written — and you wrote it.</p>
+  <div class="shop-meta">
+    <div class="shop-meta-item"><div class="label">Classification</div><div class="val">Editorial Commerce</div></div>
+    <div class="shop-meta-item"><div class="label">Universe</div><div class="val">Neo-Noir / Finance</div></div>
+    <div class="shop-meta-item"><div class="label">Categories</div><div class="val">8 Active</div></div>
+    <div class="shop-meta-item"><div class="label">Status</div><div class="val">Operational</div></div>
   </div>
 </section>
 
-<!-- ARCHITECTURE -->
 <div class="sec-bar">
   <span class="sec-bar-num">01</span>
-  <span class="sec-bar-name">The Architecture</span>
-  <span class="sec-bar-sub">Tailoring · Timepieces · Instruments · Women of Power</span>
-  <span class="sec-bar-line"></span>
-</div>
-<div class="arch-grid">
-        <div class="arch-card">
-          <div class="arch-card-eyebrow">Tailoring / Bespoke</div>
-          <h3 class="arch-card-title">Bespoke Houses</h3>
-          <p class="arch-card-desc">Private clothiers, Roman prestige, Savile Row lineage, and Italian precision.</p>
-          <div class="arch-card-links"><a href="https://www.tomjames.com/" class="arch-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Tom James</a><a href="https://www.brioni.com/en/us/the-world-of-bespoke" class="arch-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Brioni Bespoke</a><a href="https://www.zegna.com/us-en/services/mens-tailoring/made-to-measure/" class="arch-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>ZEGNA Su Misura</a><a href="https://www.huntsmansavilerow.com/pages/bespoke-tailoring" class="arch-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Huntsman Savile Row</a></div>
-        </div>
-        <div class="arch-card">
-          <div class="arch-card-eyebrow">Ink / Leather / Signature</div>
-          <h3 class="arch-card-title">Instruments of Power</h3>
-          <p class="arch-card-desc">Objects that look civilized right until they ruin someone's life.</p>
-          <div class="arch-card-links"><a href="https://www.montblanc.com/en-us/collection/writing-instruments" class="arch-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Montblanc Writing Instruments</a><a href="https://www.smythson.com/us/bags/briefcases/" class="arch-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Smythson Briefcases</a><a href="https://www.baccarat.com/en_us/glassware/" class="arch-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Baccarat Crystal</a></div>
-        </div>
-        <div class="arch-card">
-          <div class="arch-card-eyebrow">Steel / Gold / Time</div>
-          <h3 class="arch-card-title">Watches of Command</h3>
-          <p class="arch-card-desc">Quiet status on the wrist — the kind that implies inheritance, memory, and intent.</p>
-          <div class="arch-card-links"><a href="https://www.patek.com/en/collection/calatrava" class="arch-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Patek Philippe Calatrava</a><a href="https://www.cartier.com/en-us/watches/collections/tank/" class="arch-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Cartier Tank</a><a href="https://www.rolex.com/watches/lady-datejust" class="arch-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Rolex Lady-Datejust</a></div>
-        </div>
-        <div class="arch-card">
-          <div class="arch-card-eyebrow">Control / Precision / Seduction</div>
-          <h3 class="arch-card-title">Women of Power</h3>
-          <p class="arch-card-desc">Severe tailoring, sculpted heels, clean geometry — jewelry that looks like diplomacy until it becomes threat display.</p>
-          <div class="arch-card-links"><a href="https://www.tomfordfashion.com/en-us/women/ready-to-wear/" class="arch-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Tom Ford Women RTW</a><a href="https://us.christianlouboutin.com/us_en/ladies/shoes/" class="arch-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Christian Louboutin</a><a href="https://www.mikimotoamerica.com/us_en/jewelry/categories/earrings" class="arch-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Mikimoto Earrings</a><a href="https://www.celine.com/en-us/celine-shop-women/bags/" class="arch-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>CELINE Bags</a></div>
-        </div>
-</div>
-
-<!-- ESSENTIALS -->
-<div class="sec-bar">
-  <span class="sec-bar-num">02</span>
-  <span class="sec-bar-name">Power Essentials</span>
-  <span class="sec-bar-sub">Curated · High-Finance · Editorial</span>
-  <span class="sec-bar-line"></span>
-</div>
-<div class="ess-grid">
-        <a href="https://www.tomjames.com/mens-custom-clothing/default.aspx" class="ess-card" target="_blank" rel="noopener">
-          <div class="ess-card-eyebrow">The Operator's Clothier</div>
-          <div class="ess-card-name">Tom James</div>
-          <p class="ess-card-desc">Custom clothing energy for founders, financiers, and men who want bespoke without showroom friction.</p>
-          <span class="ess-card-arrow">→</span>
-        </a>
-        <a href="https://www.montblanc.com/en-us/discover/meisterstuck" class="ess-card" target="_blank" rel="noopener">
-          <div class="ess-card-eyebrow">Ink / Signature</div>
-          <div class="ess-card-name">Montblanc Meisterstück</div>
-          <p class="ess-card-desc">The fountain pen as status object, legal instrument, and whispered threat.</p>
-          <span class="ess-card-arrow">→</span>
-        </a>
-        <a href="https://www.cartier.com/en-us/watches/collections/tank/tank-must-watch-CRWSTA0041.html" class="ess-card" target="_blank" rel="noopener">
-          <div class="ess-card-eyebrow">Geometry / Permanence</div>
-          <div class="ess-card-name">Cartier Tank Must</div>
-          <p class="ess-card-desc">Sharp, clean, unforgettable — for operators, heiresses, prosecutors, and ghosts.</p>
-          <span class="ess-card-arrow">→</span>
-        </a>
-        <a href="https://www.rolex.com/watches/lady-datejust" class="ess-card" target="_blank" rel="noopener">
-          <div class="ess-card-eyebrow">Wealth Worn as Verdict</div>
-          <div class="ess-card-name">Rolex Lady-Datejust</div>
-          <p class="ess-card-desc">Polished certainty with old-world staying power. Camilla. Zoya. Sloane.</p>
-          <span class="ess-card-arrow">→</span>
-        </a>
-        <a href="https://www.johnlobb.com/en_us/bespoke" class="ess-card" target="_blank" rel="noopener">
-          <div class="ess-card-eyebrow">Quiet Authority</div>
-          <div class="ess-card-name">John Lobb Bespoke</div>
-          <p class="ess-card-desc">Traditional leather excellence for scenes where shoes whisper power instead of shouting it.</p>
-          <span class="ess-card-arrow">→</span>
-        </a>
-        <a href="https://us.christianlouboutin.com/us_en/ladies/shoes/" class="ess-card" target="_blank" rel="noopener">
-          <div class="ess-card-eyebrow">Executive Venom</div>
-          <div class="ess-card-name">Christian Louboutin</div>
-          <p class="ess-card-desc">High heels for women who understand that posture can be a weapon in the right room.</p>
-          <span class="ess-card-arrow">→</span>
-        </a>
-</div>
-
-<!-- SCENE LOADOUTS -->
-<div class="sec-bar" id="loadouts">
-  <span class="sec-bar-num">03</span>
-  <span class="sec-bar-name">Scene Loadouts</span>
-  <span class="sec-bar-sub">Character Commerce · Scene-Specific · 23 Dossiers</span>
+  <span class="sec-bar-name">The Wardrobe Index</span>
+  <span class="sec-bar-sub">Hover to reveal · Click to shop</span>
   <span class="sec-bar-line"></span>
 </div>
 
-<div class="shop-tabs-nav" role="tablist">
-        <button class="shop-tab active" data-tab="boardroom" role="tab">
-          <span class="shop-tab-icon">◈</span>
-          <span class="shop-tab-label">The Boardroom</span>
-          <span class="shop-tab-count">6</span>
-        </button>
-        <button class="shop-tab" data-tab="operatives" role="tab">
-          <span class="shop-tab-icon">◆</span>
-          <span class="shop-tab-label">The Operatives</span>
-          <span class="shop-tab-count">6</span>
-        </button>
-        <button class="shop-tab" data-tab="underworld" role="tab">
-          <span class="shop-tab-icon">◉</span>
-          <span class="shop-tab-label">The Underworld</span>
-          <span class="shop-tab-count">5</span>
-        </button>
-        <button class="shop-tab" data-tab="wildcards" role="tab">
-          <span class="shop-tab-icon">◇</span>
-          <span class="shop-tab-label">The Wildcards</span>
-          <span class="shop-tab-count">6</span>
-        </button>
+<div class="s-grid">
+  <article class="s-card" id="power-tailoring">
+    <div class="s-img" style="background-image:url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=900&q=85&auto=format&fit=crop')"></div>
+    <div class="s-overlay"></div>
+    <span class="s-num">01</span>
+    <div class="s-content">
+      <p class="s-cat">Bespoke / Made-to-Measure / Suiting</p>
+      <h2 class="s-name">Power Tailoring</h2>
+      <p class="s-sub">The uniform before the meeting. The verdict before the verdict.</p>
+      <p class="s-chars">Marcus Thorne · Tariq Al-Fayed · The Scorpion · Detective Miller</p>
+    </div>
+    <div class="s-links">
+      <div class="s-div-line"></div>
+      <p class="s-scene-ref">Scene: Boardroom Noir · Federal Chic · Sovereign Suite</p>
+
+      <a href="https://www.tomjames.com/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Tom James — Private Clothier</span>
+          <span class="s-ldetail">custom suiting without showroom friction</span>
+        </span>
+      </a>
+      <a href="https://www.brioni.com/en/us/the-world-of-bespoke" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Brioni Bespoke</span>
+          <span class="s-ldetail">roman power tailoring</span>
+        </span>
+      </a>
+      <a href="https://www.zegna.com/us-en/services/mens-tailoring/made-to-measure/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">ZEGNA Su Misura</span>
+          <span class="s-ldetail">made-to-measure milan</span>
+        </span>
+      </a>
+      <a href="https://www.huntsmansavilerow.com/pages/bespoke-tailoring" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Huntsman Savile Row</span>
+          <span class="s-ldetail">savile row lineage</span>
+        </span>
+      </a>
+      <a href="https://www.tomfordfashion.com/en-us/men/ready-to-wear/suits-tuxedos/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Tom Ford Atticus Wool Suit</span>
+          <span class="s-ldetail">tom ford men's suiting</span>
+        </span>
+      </a>
+      <a href="https://www.suitsupply.com/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Suitsupply</span>
+          <span class="s-ldetail">accessible precision tailoring</span>
+        </span>
+      </a>
+      <a href="https://www.charvet.com/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Charvet White Dress Shirt</span>
+          <span class="s-ldetail">the shirt as signature</span>
+        </span>
+      </a>
+      <a href="https://www.turnbullandasser.com/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Turnbull & Asser</span>
+          <span class="s-ldetail">bespoke shirting</span>
+        </span>
+      </a>
+      <a href="https://www.burberry.com/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Burberry Trench</span>
+          <span class="s-ldetail">the iconic overcoat</span>
+        </span>
+      </a>
+      <a href="https://www.aquascutum.com/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Aquascutum Classic</span>
+          <span class="s-ldetail">british precision outwear</span>
+        </span>
+      </a>
+    </div>
+  </article>
+  <article class="s-card" id="women-of-power">
+    <div class="s-img" style="background-image:url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=900&q=85&auto=format&fit=crop')"></div>
+    <div class="s-overlay"></div>
+    <span class="s-num">02</span>
+    <div class="s-content">
+      <p class="s-cat">Control / Precision / Seduction</p>
+      <h2 class="s-name">Women of Power</h2>
+      <p class="s-sub">Severe tailoring, sculpted heels, clean geometry — jewelry that looks like diplomacy until it becomes threat display.</p>
+      <p class="s-chars">Evelyn Vance · Commissioner Zoya · The Scorpion · Harper Hayes · Cleo Vargas</p>
+    </div>
+    <div class="s-links">
+      <div class="s-div-line"></div>
+      <p class="s-scene-ref">Scene: Federal Courtroom · Commissioner's Office · The Legal Chamber · The Gallery</p>
+
+      <a href="https://www.tomfordfashion.com/en-us/women/ready-to-wear/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Tom Ford Women RTW</span>
+          <span class="s-ldetail">seduction armor</span>
+        </span>
+      </a>
+      <a href="https://us.maxmara.com/categories/coats-and-jackets-1016" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Max Mara Madame Icon Coat</span>
+          <span class="s-ldetail">structural elegance</span>
+        </span>
+      </a>
+      <a href="https://www.therow.com/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">The Row</span>
+          <span class="s-ldetail">minimal power</span>
+        </span>
+      </a>
+      <a href="https://www.celine.com/en-us/celine-shop-women/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">CELINE Ready-to-Wear</span>
+          <span class="s-ldetail">quiet authority</span>
+        </span>
+      </a>
+      <a href="https://www.ralphlauren.com/women-clothing-collection/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Ralph Lauren Collection</span>
+          <span class="s-ldetail">power suiting</span>
+        </span>
+      </a>
+      <a href="https://www.theory.com/women/blazers-and-jackets/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Theory Women's Blazers</span>
+          <span class="s-ldetail">analyst precision</span>
+        </span>
+      </a>
+      <a href="https://us.christianlouboutin.com/us_en/ladies/shoes/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Christian Louboutin</span>
+          <span class="s-ldetail">executive venom</span>
+        </span>
+      </a>
+      <a href="https://www.manoloblahnik.com/us/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Manolo Blahnik</span>
+          <span class="s-ldetail">the weapon</span>
+        </span>
+      </a>
+      <a href="https://www.mikimotoamerica.com/us_en/jewelry/categories/earrings" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Mikimoto Earrings</span>
+          <span class="s-ldetail">diplomacy display</span>
+        </span>
+      </a>
+      <a href="https://hautehijab.com/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Haute Hijab</span>
+          <span class="s-ldetail">architectural modestwear</span>
+        </span>
+      </a>
+    </div>
+  </article>
+  <article class="s-card" id="watches-of-command">
+    <div class="s-img" style="background-image:url('https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=900&q=85&auto=format&fit=crop')"></div>
+    <div class="s-overlay"></div>
+    <span class="s-num">03</span>
+    <div class="s-content">
+      <p class="s-cat">Steel / Gold / Time</p>
+      <h2 class="s-name">Watches of Command</h2>
+      <p class="s-sub">Quiet status on the wrist — the kind that implies inheritance, memory, and intent.</p>
+      <p class="s-chars">Tariq Al-Fayed · The Scorpion · Commissioner Zoya · Nicolás Reyes · Evelyn Vance</p>
+    </div>
+    <div class="s-links">
+      <div class="s-div-line"></div>
+      <p class="s-scene-ref">Scene: Sovereign Suite · The Legal Chamber · Commissioner's Office</p>
+
+      <a href="https://www.patek.com/en/collection/calatrava" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Patek Philippe Calatrava</span>
+          <span class="s-ldetail">quiet inheritance</span>
+        </span>
+      </a>
+      <a href="https://www.cartier.com/en-us/watches/collections/tank/tank-must-watch-CRWSTA0041.html" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Cartier Tank Must</span>
+          <span class="s-ldetail">geometry / permanence</span>
+        </span>
+      </a>
+      <a href="https://www.rolex.com/watches/lady-datejust" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Rolex Lady-Datejust</span>
+          <span class="s-ldetail">polished certainty</span>
+        </span>
+      </a>
+      <a href="https://www.richardmille.com/page/rm-53-02-tourbillon-sapphire-w" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Richard Mille RM 53-02</span>
+          <span class="s-ldetail">tourbillon / decadence</span>
+        </span>
+      </a>
+      <a href="https://www.cartier.com/en-us/watches/collections/tank/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Cartier Santos</span>
+          <span class="s-ldetail">boardroom authority</span>
+        </span>
+      </a>
+      <a href="https://www.rolex.com/watches/lady-datejust" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Rolex Datejust</span>
+          <span class="s-ldetail">judicial certainty</span>
+        </span>
+      </a>
+      <a href="https://www.bulgari.com/en-us/jewelry/rings/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Bvlgari B.zero1</span>
+          <span class="s-ldetail">sovereign ring</span>
+        </span>
+      </a>
+      <a href="https://www.garmin.com/en-US/p/869175" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Garmin Tactix 7</span>
+          <span class="s-ldetail">tactical field navigation</span>
+        </span>
+      </a>
+      <a href="https://www.gshock.com/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">G-SHOCK Mudmaster</span>
+          <span class="s-ldetail">indestructible precision</span>
+        </span>
+      </a>
+    </div>
+  </article>
+  <article class="s-card" id="dark-luxury">
+    <div class="s-img" style="background-image:url('https://images.unsplash.com/photo-1534536281715-e28d76689b4d?w=900&q=85&auto=format&fit=crop')"></div>
+    <div class="s-overlay"></div>
+    <span class="s-num">04</span>
+    <div class="s-content">
+      <p class="s-cat">Night / Decadence / After Dark</p>
+      <h2 class="s-name">Dark Luxury</h2>
+      <p class="s-sub">The gown is the alibi. The silk is the strategy. Everything after midnight is a transaction.</p>
+      <p class="s-chars">Tariq Al-Fayed · Scarlett Blackwell · Mia Sheng · Valentina Cruz · Vega Vane</p>
+    </div>
+    <div class="s-links">
+      <div class="s-div-line"></div>
+      <p class="s-scene-ref">Scene: Sovereign Suite · After Dark · The Gala · Beverly Hills Hotel Bungalow 7</p>
+
+      <a href="https://www.tomfordfashion.com/en-us/men/ready-to-wear/suits-tuxedos/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Tom Ford Shelton Silk Dinner Jacket</span>
+          <span class="s-ldetail">midnight decadence</span>
+        </span>
+      </a>
+      <a href="https://www.etonshirts.com/us/en/c/tuxedo-shirts/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Eton White Piqué Tuxedo Shirt</span>
+          <span class="s-ldetail">white-tie precision</span>
+        </span>
+      </a>
+      <a href="https://www.alexandermcqueen.com/en-us/women/dresses/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Alexander McQueen Evening Dress</span>
+          <span class="s-ldetail">runway to rotorwash</span>
+        </span>
+      </a>
+      <a href="https://www.versace.com/us/en/women/ready-to-wear/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Versace Gown</span>
+          <span class="s-ldetail">red carpet armor</span>
+        </span>
+      </a>
+      <a href="https://fashion.mugler.com/collections/bodysuits-leggings" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Mugler Black Latex Bodysuit</span>
+          <span class="s-ldetail">latex / intimidation</span>
+        </span>
+      </a>
+      <a href="https://www.tomfordfashion.com/en-us/beauty/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Tom Ford Black Orchid</span>
+          <span class="s-ldetail">the scent of threat</span>
+        </span>
+      </a>
+      <a href="https://www.chanel.com/us/fragrance/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Chanel Coco Noir</span>
+          <span class="s-ldetail">after-dark signature</span>
+        </span>
+      </a>
+      <a href="https://www.charlottetilbury.com/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Charlotte Tilbury</span>
+          <span class="s-ldetail">red lip / night gaze</span>
+        </span>
+      </a>
+      <a href="https://www.giuseppezanotti.com/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Giuseppe Zanotti Heels</span>
+          <span class="s-ldetail">flash photography armor</span>
+        </span>
+      </a>
+      <a href="https://www.cartier.com/en-us/jewelry/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Cartier High Jewelry</span>
+          <span class="s-ldetail">diamonds as armor</span>
+        </span>
+      </a>
+    </div>
+  </article>
+  <article class="s-card" id="tactical-operative">
+    <div class="s-img" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=85&auto=format&fit=crop')"></div>
+    <div class="s-overlay"></div>
+    <span class="s-num">05</span>
+    <div class="s-content">
+      <p class="s-cat">Ghost Ops / Field Grade / Matte Black</p>
+      <h2 class="s-name">Tactical & Operative</h2>
+      <p class="s-sub">These operatives dress to disappear — or to arrive at exactly the wrong moment for everyone else.</p>
+      <p class="s-chars">ZERO · Cedric Ellis · The Wolf · The Snake · The Fox</p>
+    </div>
+    <div class="s-links">
+      <div class="s-div-line"></div>
+      <p class="s-scene-ref">Scene: Obsidian Tower · World Trade Factory · Field Operations · Industrial Warehouse</p>
+
+      <a href="https://arcteryx.com/us/en/c/mens-jackets/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Arc'teryx Veilance</span>
+          <span class="s-ldetail">matte / weatherproof</span>
+        </span>
+      </a>
+      <a href="https://acrnm.com/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">ACRONYM</span>
+          <span class="s-ldetail">light-absorbing geometry</span>
+        </span>
+      </a>
+      <a href="https://www.cryeprecision.com/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Crye Precision</span>
+          <span class="s-ldetail">field-grade precision</span>
+        </span>
+      </a>
+      <a href="https://www.vollebak.com/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Vollebak</span>
+          <span class="s-ldetail">extreme materials</span>
+        </span>
+      </a>
+      <a href="https://outlier.nyc/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Outlier</span>
+          <span class="s-ldetail">unbranded / technical</span>
+        </span>
+      </a>
+      <a href="https://www.rickowens.eu/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Rick Owens</span>
+          <span class="s-ldetail">industrial noir uniform</span>
+        </span>
+      </a>
+      <a href="https://www.bottegaveneta.com/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Bottega Veneta</span>
+          <span class="s-ldetail">dark luxury stealth</span>
+        </span>
+      </a>
+      <a href="https://www.salomon.com/en-us/product/xt-6-gore-tex-lg9333/L47450600" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Salomon XT-6 GORE-TEX</span>
+          <span class="s-ldetail">zero echo boots</span>
+        </span>
+      </a>
+      <a href="https://missionworkshop.com/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Mission Workshop</span>
+          <span class="s-ldetail">silent carry system</span>
+        </span>
+      </a>
+      <a href="https://www.pelican.com/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Pelican Cases</span>
+          <span class="s-ldetail">secured payload</span>
+        </span>
+      </a>
+      <a href="https://www.mechanix.com/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Mechanix Tactical Gloves</span>
+          <span class="s-ldetail">no trace / no reflection</span>
+        </span>
+      </a>
+      <a href="https://www.oakley.com/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Oakley SI Ballistic Goggles</span>
+          <span class="s-ldetail">panoramic ops vision</span>
+        </span>
+      </a>
+    </div>
+  </article>
+  <article class="s-card" id="instruments-objects">
+    <div class="s-img" style="background-image:url('https://images.unsplash.com/photo-1455390582262-044cdead277a?w=900&q=85&auto=format&fit=crop')"></div>
+    <div class="s-overlay"></div>
+    <span class="s-num">06</span>
+    <div class="s-content">
+      <p class="s-cat">Ink / Leather / Precision</p>
+      <h2 class="s-name">Instruments of Power</h2>
+      <p class="s-sub">Objects that look civilized right until they ruin someone's life.</p>
+      <p class="s-chars">Marcus Thorne · Evelyn Vance · Nicolás Reyes · Harper Hayes · The Scorpion</p>
+    </div>
+    <div class="s-links">
+      <div class="s-div-line"></div>
+      <p class="s-scene-ref">Scene: Server Room 3AM · Federal Courtroom · The Gallery · The Legal Chamber</p>
+
+      <a href="https://www.montblanc.com/en-us/discover/meisterstuck" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Montblanc Meisterstück 149</span>
+          <span class="s-ldetail">the pen as legal instrument</span>
+        </span>
+      </a>
+      <a href="https://www.smythson.com/us/bags/briefcases/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Smythson Panama Briefcase</span>
+          <span class="s-ldetail">carry / presence</span>
+        </span>
+      </a>
+      <a href="https://www.smythson.com/us/leather/accessories/notebooks/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Smythson Panama Notebook</span>
+          <span class="s-ldetail">ink on cream</span>
+        </span>
+      </a>
+      <a href="https://www.baccarat.com/en_us/glassware/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Baccarat Crystal</span>
+          <span class="s-ldetail">the glass before the decision</span>
+        </span>
+      </a>
+      <a href="https://www.riedel.com/en-us/glasses/vinum/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Riedel Vinum Whiskey Glass</span>
+          <span class="s-ldetail">blue-lit infrastructure</span>
+        </span>
+      </a>
+      <a href="https://www.glencairn.co.uk/product/glencairn-glass/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Glencairn Crystal</span>
+          <span class="s-ldetail">the amber verdict</span>
+        </span>
+      </a>
+      <a href="https://www.johnlobb.com/en_us/bespoke" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">John Lobb Bespoke</span>
+          <span class="s-ldetail">shoes that whisper power</span>
+        </span>
+      </a>
+      <a href="https://www.berluti.com/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Berluti Calfskin Oxford</span>
+          <span class="s-ldetail">the exit</span>
+        </span>
+      </a>
+      <a href="https://www.tumi.com/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">TUMI Alpha Briefcase</span>
+          <span class="s-ldetail">operational carry</span>
+        </span>
+      </a>
+      <a href="https://www.loewe.com/us/en/women/bags/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Loewe Puzzle Bag</span>
+          <span class="s-ldetail">geometry as status</span>
+        </span>
+      </a>
+      <a href="https://www.sothebys.com/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Sotheby's Auction</span>
+          <span class="s-ldetail">provenance / authentication</span>
+        </span>
+      </a>
+      <a href="https://www.christies.com/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Christie's Fine Art</span>
+          <span class="s-ldetail">asset laundering as culture</span>
+        </span>
+      </a>
+    </div>
+  </article>
+  <article class="s-card" id="iron-counter-culture">
+    <div class="s-img" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=85&auto=format&fit=crop')"></div>
+    <div class="s-overlay"></div>
+    <span class="s-num">07</span>
+    <div class="s-content">
+      <p class="s-cat">Road Kit / Iron Nation / Underground</p>
+      <h2 class="s-name">Iron & Counter-Culture</h2>
+      <p class="s-sub">From the Superstition Mountains to New York City. The Iron Nation doesn't negotiate. It arrives.</p>
+      <p class="s-chars">Cheef · The Fox · Krypto · DOOM · Detective Miller</p>
+    </div>
+    <div class="s-links">
+      <div class="s-div-line"></div>
+      <p class="s-scene-ref">Scene: Devil's Amphitheater · Fifth Avenue · The Void · Containment</p>
+
+      <a href="https://www.schottnyc.com/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Schott NYC Leather</span>
+          <span class="s-ldetail">desert steel / moto culture</span>
+        </span>
+      </a>
+      <a href="https://www.drmartens.com/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Dr. Martens Jadon</span>
+          <span class="s-ldetail">boots that survive the curb</span>
+        </span>
+      </a>
+      <a href="https://www.carhartt.com/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Carhartt Workwear</span>
+          <span class="s-ldetail">iron nation standard issue</span>
+        </span>
+      </a>
+      <a href="https://www.redwingshoes.com/work/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Red Wing Work Boots</span>
+          <span class="s-ldetail">brute / indestructible</span>
+        </span>
+      </a>
+      <a href="https://www.allsaints.com/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">AllSaints Leather Jacket</span>
+          <span class="s-ldetail">punk / wet asphalt</span>
+        </span>
+      </a>
+      <a href="https://www.grailed.com/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Grailed — Vintage</span>
+          <span class="s-ldetail">band tees / thrift precision</span>
+        </span>
+      </a>
+      <a href="https://www.harley-davidson.com/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Harley-Davidson</span>
+          <span class="s-ldetail">iron / loud / permanent</span>
+        </span>
+      </a>
+      <a href="https://www.indianmotorcycle.com/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Indian Motorcycle</span>
+          <span class="s-ldetail">the ride</span>
+        </span>
+      </a>
+      <a href="https://frame.work/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Framework Modular Laptop</span>
+          <span class="s-ldetail">crypto delirium setup</span>
+        </span>
+      </a>
+      <a href="https://shop.ledger.com/products/ledger-nano-x" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Ledger Nano X</span>
+          <span class="s-ldetail">volatility arbitrage</span>
+        </span>
+      </a>
+      <a href="https://www.amazon.com/Bhagavad-Gita-Eknath-Easwaran/dp/1586380192" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Bhagavad Gita</span>
+          <span class="s-ldetail">the doctrine</span>
+        </span>
+      </a>
+      <a href="https://www.penguinrandomhouse.com/books/331376/meditations-by-marcus-aurelius/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Meditations — Marcus Aurelius</span>
+          <span class="s-ldetail">nation building / no surrender</span>
+        </span>
+      </a>
+    </div>
+  </article>
+  <article class="s-card" id="intelligence-systems">
+    <div class="s-img" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=900&q=85&auto=format&fit=crop')"></div>
+    <div class="s-overlay"></div>
+    <span class="s-num">08</span>
+    <div class="s-content">
+      <p class="s-cat">Encrypted / Terminal / Covert</p>
+      <h2 class="s-name">Intelligence & Systems</h2>
+      <p class="s-sub">The most dangerous outfit in the universe looks like it costs nothing. Everything is also evidence.</p>
+      <p class="s-chars">N.V. Diya · Cedric Ellis · Krypto · Valentina Cruz · The Snake</p>
+    </div>
+    <div class="s-links">
+      <div class="s-div-line"></div>
+      <p class="s-scene-ref">Scene: World Trade Factory Lab · The Void · The Vault Meeting · Industrial Warehouse</p>
+
+      <a href="https://www.bloomberg.com/professional/solution/bloomberg-terminal/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Bloomberg Professional Terminal</span>
+          <span class="s-ldetail">live macro intelligence</span>
+        </span>
+      </a>
+      <a href="https://www.worldtradefactory.ai" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">World Trade Factory AI</span>
+          <span class="s-ldetail">applied strategic intelligence</span>
+        </span>
+      </a>
+      <a href="https://shop.ledger.com/products/ledger-nano-x" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Ledger Nano X</span>
+          <span class="s-ldetail">hardware wallet / cold storage</span>
+        </span>
+      </a>
+      <a href="https://www.vertu.com/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Vertu Signature</span>
+          <span class="s-ldetail">encrypted luxury comms</span>
+        </span>
+      </a>
+      <a href="https://www.seagate.com/products/external-hard-drives/lacie-rugged-ssd-pro/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">LaCie Rugged SSD</span>
+          <span class="s-ldetail">secured payload</span>
+        </span>
+      </a>
+      <a href="https://www.pelican.com/us/en/product/cases/laptop-case/protector/1490" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Pelican 1490 Protector Case</span>
+          <span class="s-ldetail">mission-grade protection</span>
+        </span>
+      </a>
+      <a href="https://cellebrite.com/en/solutions/lawful-access/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Cellebrite UFED</span>
+          <span class="s-ldetail">mobile extraction</span>
+        </span>
+      </a>
+      <a href="https://jacquesmariemage.com/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">Jacques Marie Mage</span>
+          <span class="s-ldetail">optical precision</span>
+        </span>
+      </a>
+      <a href="https://www.sec.gov/edgar/searchedgar/companysearch" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">SEC EDGAR</span>
+          <span class="s-ldetail">the filing is the weapon</span>
+        </span>
+      </a>
+      <a href="https://www.icij.org/investigations/" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">ICIJ Investigations</span>
+          <span class="s-ldetail">follow the offshore money</span>
+        </span>
+      </a>
+      <a href="https://www.law.cornell.edu/uscode/text/18/1961" class="s-link" target="_blank" rel="noopener">
+        <span class="s-arrow">→</span>
+        <span class="s-lbody">
+          <span class="s-lname">RICO Statute</span>
+          <span class="s-ldetail">the legal architecture of ruin</span>
+        </span>
+      </a>
+    </div>
+  </article>
 </div>
 
-
-      <div class="shop-panel" id="tab-boardroom" style="display:block;">
-        <div class="shop-panel-header">
-          <p class="shop-panel-desc">Power suits. Sovereign watches. The architecture of authority. These are the people who move markets from behind closed doors — and dress like the verdict was already written.</p>
-        </div>
-        <div class="shop-cards-grid">
-      <article class="shop-card">
-        <div class="shop-card-portrait">
-          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&q=80&fit=crop&crop=top" alt="Marcus Thorne" loading="lazy"/>
-          <div class="shop-card-portrait-overlay"></div>
-          <div class="shop-card-id">
-            <div class="shop-card-kicker">Marcus Thorne</div>
-            <h3 class="shop-card-title">Server Room Ignition</h3>
-            <div class="shop-card-subline">Ivory · Control · Charcoal · Steel</div>
-          </div>
-        </div>
-        <div class="shop-card-body">
-          <div class="shop-card-meta">
-            <div class="shop-card-tags"><span class="shop-tag">Boardroom</span><span class="shop-tag">Noir</span><span class="shop-tag">Financial Thriller</span></div>
-            <div class="shop-card-ref">Scene Ref: WS-01 // Server Room 3AM</div>
-          </div>
-          <p class="shop-card-copy">A tension-heavy boardroom noir scene. Masculine ruin, feminine leverage, whiskey reflections, and blue-lit bad decisions. The moment before everything changes.</p>
-          <div class="shop-loadout-label">The Loadout</div>
-          <div class="shop-prod-grid">
-          <div class="shop-cell">
-            <div class="shop-cell-title">Her Leverage</div>
-            <div class="shop-cell-sub">Ivory / light / control</div>
-            <div class="shop-cell-links">
-                <a href="https://www.saksfifthavenue.com/c/dresses" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Dress the Population Lyla Midi</a>
-                <a href="https://www.berricle.com/collections/drop-earrings" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>BERRICLE Drop Earrings</a>
-                <a href="https://www.nordstrom.com/sr?origin=keywordsearch&keyword=schutz+lou+pump" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Schutz Lou Pumps</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">His Ruin</div>
-            <div class="shop-cell-sub">Charcoal / sweat / steel</div>
-            <div class="shop-cell-links">
-                <a href="https://www.brioni.com/en/us/the-world-of-bespoke" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Brioni Bespoke Suit</a>
-                <a href="https://www.cartier.com/en-us/watches/collections/tank/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Cartier Santos</a>
-                <a href="https://www.johnlobb.com/en_us/bespoke" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>John Lobb Oxfords</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">The Room</div>
-            <div class="shop-cell-sub">Blue-lit infrastructure</div>
-            <div class="shop-cell-links">
-                <a href="https://www.riedel.com/en-us/glasses/vinum/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Riedel Vinum Whiskey Glass</a>
-                <a href="https://www.glencairn.co.uk/product/glencairn-glass/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Glencairn Crystal</a>
-                <a href="https://www.smythson.com/us/bags/briefcases/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Smythson Panama Briefcase</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">The Threat Object</div>
-            <div class="shop-cell-sub">Signed / binding</div>
-            <div class="shop-cell-links">
-                <a href="https://www.montblanc.com/en-us/discover/meisterstuck" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Montblanc Meisterstück 149</a>
-                <a href="https://www.smythson.com/us/leather/accessories/notebooks/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Smythson Panama Notebook</a>
-            </div>
-          </div>
-          </div>
-        </div>
-      </article>
-      <article class="shop-card">
-        <div class="shop-card-portrait">
-          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&q=80&fit=crop&crop=top" alt="Evelyn Vance" loading="lazy"/>
-          <div class="shop-card-portrait-overlay"></div>
-          <div class="shop-card-id">
-            <div class="shop-card-kicker">Evelyn Vance</div>
-            <h3 class="shop-card-title">The Prosecution</h3>
-            <div class="shop-card-subline">Federal Chic · Legal Power</div>
-          </div>
-        </div>
-        <div class="shop-card-body">
-          <div class="shop-card-meta">
-            <div class="shop-card-tags"><span class="shop-tag">Federal Chic</span><span class="shop-tag">Legal Power</span><span class="shop-tag">Authority</span></div>
-            <div class="shop-card-ref">Scene Ref: WS-03 // Federal Courtroom</div>
-          </div>
-          <p class="shop-card-copy">Sharp tailoring for someone who has read the file twice and knows exactly what she's going to do with it.</p>
-          <div class="shop-loadout-label">The Loadout</div>
-          <div class="shop-prod-grid">
-          <div class="shop-cell">
-            <div class="shop-cell-title">The Weapon</div>
-            <div class="shop-cell-sub">Power suiting</div>
-            <div class="shop-cell-links">
-                <a href="https://www.ralphlauren.com/women-clothing-collection/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Ralph Lauren Collection</a>
-                <a href="https://www.manoloblahnik.com/us/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Manolo Blahnik</a>
-                <a href="https://www.mikimotoamerica.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Mikimoto Pearls</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">Time Piece</div>
-            <div class="shop-cell-sub">Judicial certainty</div>
-            <div class="shop-cell-links">
-                <a href="https://www.rolex.com/watches/lady-datejust" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Rolex Datejust</a>
-                <a href="https://www.cartier.com/en-us/watches/collections/tank/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Cartier Tank</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">Intel</div>
-            <div class="shop-cell-sub">Case evidence</div>
-            <div class="shop-cell-links">
-                <a href="https://www.sec.gov/edgar/searchedgar/companysearch" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>SEC EDGAR</a>
-                <a href="https://www.icij.org/investigations/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>ICIJ Investigations</a>
-                <a href="https://www.law.cornell.edu/uscode/text/18/1961" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>RICO Statute</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">The Brief</div>
-            <div class="shop-cell-sub">Carry / presence</div>
-            <div class="shop-cell-links">
-                <a href="https://www.smythson.com/us/bags/briefcases/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Smythson Briefcase</a>
-                <a href="https://www.montblanc.com/en-us/collection/writing-instruments" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Montblanc Pen</a>
-            </div>
-          </div>
-          </div>
-        </div>
-      </article>
-      <article class="shop-card">
-        <div class="shop-card-portrait">
-          <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=500&q=80&fit=crop&crop=top" alt="Tariq Al-Fayed" loading="lazy"/>
-          <div class="shop-card-portrait-overlay"></div>
-          <div class="shop-card-id">
-            <div class="shop-card-kicker">Tariq Al-Fayed</div>
-            <h3 class="shop-card-title">The Whale</h3>
-            <div class="shop-card-subline">Sovereign Wealth · Geopolitical Play</div>
-          </div>
-        </div>
-        <div class="shop-card-body">
-          <div class="shop-card-meta">
-            <div class="shop-card-tags"><span class="shop-tag">Sovereign</span><span class="shop-tag">Arbitrage</span><span class="shop-tag">Decadence</span></div>
-            <div class="shop-card-ref">Scene Ref: WS-08 // Sovereign Suite</div>
-          </div>
-          <p class="shop-card-copy">Tom Ford silk, tourbillon sapphire, and Bloomberg terminals. The Whale moves so quietly the market doesn't notice until it's already over.</p>
-          <div class="shop-loadout-label">The Loadout</div>
-          <div class="shop-prod-grid">
-          <div class="shop-cell">
-            <div class="shop-cell-title">The Silk</div>
-            <div class="shop-cell-sub">Midnight / Decadence / Tom Ford</div>
-            <div class="shop-cell-links">
-                <a href="https://www.tomfordfashion.com/en-us/men/ready-to-wear/suits-tuxedos/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Tom Ford Shelton Silk Dinner Jacket</a>
-                <a href="https://www.etonshirts.com/us/en/c/tuxedo-shirts/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Eton White Piqué Tuxedo Shirt</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">The Timepiece</div>
-            <div class="shop-cell-sub">Tourbillon / Sapphire / Wealth</div>
-            <div class="shop-cell-links">
-                <a href="https://www.richardmille.com/page/rm-53-02-tourbillon-sapphire-w" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Richard Mille RM 53-02 Tourbillon</a>
-                <a href="https://www.bulgari.com/en-us/jewelry/rings/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Bvlgari B.zero1 White Gold Ring</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">The Intelligence</div>
-            <div class="shop-cell-sub">Analysis / Foresight / Execution</div>
-            <div class="shop-cell-links">
-                <a href="https://www.bloomberg.com/professional/solution/bloomberg-terminal/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Bloomberg Professional Terminal</a>
-                <a href="https://shop.ledger.com/products/ledger-nano-x" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Ledger Nano X Hardware Wallet</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">The Leverage</div>
-            <div class="shop-cell-sub">Shorts / Arbitrage / Ruin</div>
-            <div class="shop-cell-links">
-                <a href="https://www.linkedin.com/pulse/wall-street-private-credit-sage-kakkat/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Dossier: Private Credit Rot</a>
-                <a href="https://www.linkedin.com/pulse/shark-ate-saylor-sage-kakkat-uu77c/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Dossier: The Saylor Liquidation</a>
-            </div>
-          </div>
-          </div>
-        </div>
-      </article>
-      <article class="shop-card">
-        <div class="shop-card-portrait">
-          <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=500&q=80&fit=crop&crop=top" alt="The Scorpion" loading="lazy"/>
-          <div class="shop-card-portrait-overlay"></div>
-          <div class="shop-card-id">
-            <div class="shop-card-kicker">The Scorpion</div>
-            <h3 class="shop-card-title">Legal Consigliere</h3>
-            <div class="shop-card-subline">Asset Sanitization · Cartel Architect</div>
-          </div>
-        </div>
-        <div class="shop-card-body">
-          <div class="shop-card-meta">
-            <div class="shop-card-tags"><span class="shop-tag">Legal Noir</span><span class="shop-tag">Injunctions</span><span class="shop-tag">Precision</span></div>
-            <div class="shop-card-ref">Scene Ref: WS-09 // The Legal Chamber</div>
-          </div>
-          <p class="shop-card-copy">Max Mara and Patek in the courtroom. Tom Ford heels at the cartel dinner. The sting is always legal. The damage is always permanent.</p>
-          <div class="shop-loadout-label">The Loadout</div>
-          <div class="shop-prod-grid">
-          <div class="shop-cell">
-            <div class="shop-cell-title">The Uniform</div>
-            <div class="shop-cell-sub">Structured / Liquid Shadow</div>
-            <div class="shop-cell-links">
-                <a href="https://us.maxmara.com/categories/coats-and-jackets-1016" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Max Mara Madame Icon Coat</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">The Sting</div>
-            <div class="shop-cell-sub">Precision / Ink / Injunctions</div>
-            <div class="shop-cell-links">
-                <a href="https://www.patek.com/en/collection/calatrava" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Patek Philippe Calatrava 5227</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">The Client</div>
-            <div class="shop-cell-sub">Cartel Architect / Seductive Armor</div>
-            <div class="shop-cell-links">
-                <a href="https://www.tomfordfashion.com/en-us/women/ready-to-wear/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Tom Ford Lock 105 Sandal Heels</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">The Adversary</div>
-            <div class="shop-cell-sub">Axiom / Asymmetry / Spotlight</div>
-            <div class="shop-cell-links">
-                <a href="https://www.tomfordfashion.com/en-us/women/ready-to-wear/outerwear/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Tom Ford Asymmetrical Wool Blazer</a>
-            </div>
-          </div>
-          </div>
-        </div>
-      </article>
-      <article class="shop-card">
-        <div class="shop-card-portrait">
-          <img src="https://images.unsplash.com/photo-1504703395950-b89145a5425b?w=500&q=80&fit=crop&crop=top" alt="Commissioner Zoya" loading="lazy"/>
-          <div class="shop-card-portrait-overlay"></div>
-          <div class="shop-card-id">
-            <div class="shop-card-kicker">Commissioner Zoya</div>
-            <h3 class="shop-card-title">The Matriarch</h3>
-            <div class="shop-card-subline">Architectural · Authority</div>
-          </div>
-        </div>
-        <div class="shop-card-body">
-          <div class="shop-card-meta">
-            <div class="shop-card-tags"><span class="shop-tag">Modestwear</span><span class="shop-tag">Architectural</span><span class="shop-tag">Authority</span></div>
-            <div class="shop-card-ref">Scene Ref: WS-05 // Commissioner's Office</div>
-          </div>
-          <p class="shop-card-copy">Structural elegance. Every seam an assertion of authority. The kind of dressing that doesn't need to explain itself.</p>
-          <div class="shop-loadout-label">The Loadout</div>
-          <div class="shop-prod-grid">
-          <div class="shop-cell">
-            <div class="shop-cell-title">Silhouette</div>
-            <div class="shop-cell-sub">Architectural modestwear</div>
-            <div class="shop-cell-links">
-                <a href="https://us.maxmara.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Max Mara</a>
-                <a href="https://hautehijab.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Haute Hijab</a>
-                <a href="https://www.therow.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>The Row</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">Armor</div>
-            <div class="shop-cell-sub">Protective luxury</div>
-            <div class="shop-cell-links">
-                <a href="https://www.meretec.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Meretec Armor</a>
-                <a href="https://wonderhoodie.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Wonder Hoodie</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">Accessories</div>
-            <div class="shop-cell-sub">Quiet jewelry</div>
-            <div class="shop-cell-links">
-                <a href="https://www.patek.com/en/collection/calatrava" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Patek Calatrava</a>
-                <a href="https://www.mikimotoamerica.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Mikimoto Pearls</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">Transport</div>
-            <div class="shop-cell-sub">State-level carry</div>
-            <div class="shop-cell-links">
-                <a href="https://www.therow.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>The Row Bag</a>
-                <a href="https://www.smythson.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Smythson Folio</a>
-            </div>
-          </div>
-          </div>
-        </div>
-      </article>
-      <article class="shop-card">
-        <div class="shop-card-portrait">
-          <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&q=80&fit=crop" alt="Harper Hayes" loading="lazy"/>
-          <div class="shop-card-portrait-overlay"></div>
-          <div class="shop-card-id">
-            <div class="shop-card-kicker">Harper Hayes</div>
-            <h3 class="shop-card-title">The Curator</h3>
-            <div class="shop-card-subline">High-End Art Dealer · Asset Launderer</div>
-          </div>
-        </div>
-        <div class="shop-card-body">
-          <div class="shop-card-meta">
-            <div class="shop-card-tags"><span class="shop-tag">Art Dealer</span><span class="shop-tag">Laundering</span><span class="shop-tag">Provenance</span></div>
-            <div class="shop-card-ref">Scene Ref: WS-23 // The Gallery / Private Auction</div>
-          </div>
-          <p class="shop-card-copy">The gallery is the front. The provenance is the fiction. Harper Hayes turns dirty capital into museum-grade assets and calls it culture.</p>
-          <div class="shop-loadout-label">The Loadout</div>
-          <div class="shop-prod-grid">
-          <div class="shop-cell">
-            <div class="shop-cell-title">The Gallery Uniform</div>
-            <div class="shop-cell-sub">Understated luxury / Whiskey gold</div>
-            <div class="shop-cell-links">
-                <a href="https://www.therow.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>The Row — Minimal Power</a>
-                <a href="https://us.maxmara.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Max Mara Coat</a>
-                <a href="https://www.celine.com/en-us/celine-shop-women/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>CELINE Ready-to-Wear</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">The Provenance</div>
-            <div class="shop-cell-sub">Art world / Authentication</div>
-            <div class="shop-cell-links">
-                <a href="https://www.sothebys.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Sotheby's Auction</a>
-                <a href="https://www.christies.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Christie's Fine Art</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">The Tools</div>
-            <div class="shop-cell-sub">Eye / Ink / Authentication</div>
-            <div class="shop-cell-links">
-                <a href="https://www.montblanc.com/en-us/collection/writing-instruments" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Montblanc Writing Instruments</a>
-                <a href="https://www.smythson.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Smythson Gallery Notebook</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">The Accessories</div>
-            <div class="shop-cell-sub">Cartier / Quiet statement</div>
-            <div class="shop-cell-links">
-                <a href="https://www.cartier.com/en-us/watches/collections/tank/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Cartier Tank Watch</a>
-                <a href="https://www.mikimotoamerica.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Mikimoto Pearl Earrings</a>
-            </div>
-          </div>
-          </div>
-        </div>
-      </article>
-        </div>
-      </div>
-      <div class="shop-panel" id="tab-operatives" style="display:none;">
-        <div class="shop-panel-header">
-          <p class="shop-panel-desc">Ghost shells, tactical loadouts, and field-grade precision. These operatives dress to disappear — or to arrive at exactly the wrong moment for everyone else.</p>
-        </div>
-        <div class="shop-cards-grid">
-      <article class="shop-card">
-        <div class="shop-card-portrait">
-          <img src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=500&q=80&fit=crop" alt="ZERO" loading="lazy"/>
-          <div class="shop-card-portrait-overlay"></div>
-          <div class="shop-card-id">
-            <div class="shop-card-kicker">ZERO</div>
-            <h3 class="shop-card-title">The Zero Sum</h3>
-            <div class="shop-card-subline">Ballistic Weave · Tools of the Void</div>
-          </div>
-        </div>
-        <div class="shop-card-body">
-          <div class="shop-card-meta">
-            <div class="shop-card-tags"><span class="shop-tag">Void</span><span class="shop-tag">Stealth</span><span class="shop-tag">Breach</span></div>
-            <div class="shop-card-ref">Scene Ref: WS-13 // Obsidian Tower / 98F</div>
-          </div>
-          <p class="shop-card-copy">Matte black architecture. From 45,000 feet in a Gulfstream to the 98th floor. ZERO deletes errors and retrieves assets.</p>
-          <div class="shop-loadout-label">The Loadout</div>
-          <div class="shop-prod-grid">
-          <div class="shop-cell">
-            <div class="shop-cell-title">The Void Suit</div>
-            <div class="shop-cell-sub">Light-absorbing / Stealth geometry</div>
-            <div class="shop-cell-links">
-                <a href="https://acrnm.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>ACRONYM</a>
-                <a href="https://www.vollebak.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Vollebak</a>
-                <a href="https://outlier.nyc/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Outlier</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">Gloves / Mask</div>
-            <div class="shop-cell-sub">No trace / No reflection</div>
-            <div class="shop-cell-links">
-                <a href="https://www.mechanix.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Mechanix Tactical Gloves</a>
-                <a href="https://www.oakley.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Oakley SI Ballistic Goggles</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">Breach Tools</div>
-            <div class="shop-cell-sub">High-altitude / Precision access</div>
-            <div class="shop-cell-links">
-                <a href="https://www.petzl.com/US/en/Tactical" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Petzl Tactical</a>
-                <a href="https://www.blackdiamondequipment.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Black Diamond Equipment</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">Carry System</div>
-            <div class="shop-cell-sub">Silent / Secured</div>
-            <div class="shop-cell-links">
-                <a href="https://www.blueforcegear.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Blue Force Gear</a>
-                <a href="https://missionworkshop.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Mission Workshop</a>
-            </div>
-          </div>
-          </div>
-        </div>
-      </article>
-      <article class="shop-card">
-        <div class="shop-card-portrait">
-          <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500&q=80&fit=crop" alt="Cedric Ellis · Diya" loading="lazy"/>
-          <div class="shop-card-portrait-overlay"></div>
-          <div class="shop-card-id">
-            <div class="shop-card-kicker">Cedric Ellis · Diya</div>
-            <h3 class="shop-card-title">The Ghost</h3>
-            <div class="shop-card-subline">Matte / Ice Algorithms / Level 80</div>
-          </div>
-        </div>
-        <div class="shop-card-body">
-          <div class="shop-card-meta">
-            <div class="shop-card-tags"><span class="shop-tag">Ghost Ops</span><span class="shop-tag">Tech Noir</span><span class="shop-tag">Ice Analyst</span></div>
-            <div class="shop-card-ref">Scene Ref: WS-10 // World Trade Factory</div>
-          </div>
-          <p class="shop-card-copy">Arc'teryx shell, Pelican case, zero echo boots. She runs the algorithms. He runs the exits. They don't leave evidence.</p>
-          <div class="shop-loadout-label">The Loadout</div>
-          <div class="shop-prod-grid">
-          <div class="shop-cell">
-            <div class="shop-cell-title">The Shell</div>
-            <div class="shop-cell-sub">Matte / Unbranded / Weatherproof</div>
-            <div class="shop-cell-links">
-                <a href="https://arcteryx.com/us/en/c/mens-jackets/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Arc'teryx Veilance Field Jacket</a>
-                <a href="https://outlier.nyc/products/slim-dungarees" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Outlier Slim Dungarees</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">The Payload</div>
-            <div class="shop-cell-sub">Silent / Secured / Anti-Theft</div>
-            <div class="shop-cell-links">
-                <a href="https://missionworkshop.com/collections/messenger-bags" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Mission Workshop Khyte Bag</a>
-                <a href="https://www.pelican.com/us/en/product/cases/laptop-case/protector/1490" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Pelican 1490 Protector Case</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">The Footprint</div>
-            <div class="shop-cell-sub">Rubber / Swift / Zero Echo</div>
-            <div class="shop-cell-links">
-                <a href="https://www.salomon.com/en-us/product/xt-6-gore-tex-lg9333/L47450600" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Salomon XT-6 GORE-TEX Black</a>
-                <a href="https://darntough.com/products/unisex-merino-wool-t3001-tactical-micro-crew-cushioned-lightweight-tactical-socks" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Darn Tough Tactical Socks</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">The Analyst</div>
-            <div class="shop-cell-sub">Ice / Algorithms / Control</div>
-            <div class="shop-cell-links">
-                <a href="https://www.theory.com/women/blazers-and-jackets/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Theory Carissa Blazer — Grey</a>
-                <a href="https://www.theory.com/women/pants/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Theory Straight Pant in Good Wool</a>
-            </div>
-          </div>
-          </div>
-        </div>
-      </article>
-      <article class="shop-card">
-        <div class="shop-card-portrait">
-          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&q=80&fit=crop&crop=top" alt="Mia Sheng" loading="lazy"/>
-          <div class="shop-card-portrait-overlay"></div>
-          <div class="shop-card-id">
-            <div class="shop-card-kicker">Mia Sheng</div>
-            <h3 class="shop-card-title">The Alibi</h3>
-            <div class="shop-card-subline">Haute Couture · Runway to Rotorwash</div>
-          </div>
-        </div>
-        <div class="shop-card-body">
-          <div class="shop-card-meta">
-            <div class="shop-card-tags"><span class="shop-tag">Model</span><span class="shop-tag">Heiress</span><span class="shop-tag">Cover Story</span></div>
-            <div class="shop-card-ref">Scene Ref: WS-11 // The Extraction / Gala</div>
-          </div>
-          <p class="shop-card-copy">Alexander McQueen lace to Saint Laurent leather in forty seconds flat. The gown is the alibi. The jacket is the getaway.</p>
-          <div class="shop-loadout-label">The Loadout</div>
-          <div class="shop-prod-grid">
-          <div class="shop-cell">
-            <div class="shop-cell-title">Mia Sheng</div>
-            <div class="shop-cell-sub">Runway to Rotorwash</div>
-            <div class="shop-cell-links">
-                <a href="https://www.alexandermcqueen.com/en-us/women/dresses/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Alexander McQueen Lace Evening Dress</a>
-                <a href="https://www.ysl.com/en-us/women/ready-to-wear/leather-jackets/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Saint Laurent Leather Aviator Jacket</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">Marcus Thorne</div>
-            <div class="shop-cell-sub">Cold Precision</div>
-            <div class="shop-cell-links">
-                <a href="https://www.tomfordfashion.com/en-us/men/ready-to-wear/suits-tuxedos/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Tom Ford Atticus Wool Suit</a>
-                <a href="https://www.charvet.com/en/white-dress-shirt/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Charvet White Dress Shirt</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">Operational Gear</div>
-            <div class="shop-cell-sub">Field Essentials</div>
-            <div class="shop-cell-links">
-                <a href="https://www.pelican.com/us/en/product/cases/laptop-case/protector/1495cc1" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Pelican 1495 Secure Laptop Case</a>
-                <a href="https://www.vertx.com/transit-sling-bag" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Vertx Transit Sling Bag</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">The Machine</div>
-            <div class="shop-cell-sub">Pilot Loadout</div>
-            <div class="shop-cell-links">
-                <a href="https://www.bose.com/en_us/categories/aviation.html" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Bose A20 Aviation Headset</a>
-                <a href="https://www.sportys.com/david-clark-h10-13-4-headset.html" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>David Clark Pilot Headset</a>
-            </div>
-          </div>
-          </div>
-        </div>
-      </article>
-      <article class="shop-card">
-        <div class="shop-card-portrait">
-          <img src="https://images.unsplash.com/photo-1504703395950-b89145a5425b?w=500&q=80&fit=crop" alt="The Wolf" loading="lazy"/>
-          <div class="shop-card-portrait-overlay"></div>
-          <div class="shop-card-id">
-            <div class="shop-card-kicker">The Wolf</div>
-            <h3 class="shop-card-title">Battle-Worn Granite</h3>
-            <div class="shop-card-subline">Heavy Infantry · Muddy Boots · Scarred</div>
-          </div>
-        </div>
-        <div class="shop-card-body">
-          <div class="shop-card-meta">
-            <div class="shop-card-tags"><span class="shop-tag">Warlord</span><span class="shop-tag">Tactical</span><span class="shop-tag">Ballistic</span></div>
-            <div class="shop-card-ref">Scene Ref: WS-19 // Field Operations</div>
-          </div>
-          <p class="shop-card-copy">Battle-worn granite, ballistic precision, and the tools of the wolf. He doesn't arrive. He materializes.</p>
-          <div class="shop-loadout-label">The Loadout</div>
-          <div class="shop-prod-grid">
-          <div class="shop-cell">
-            <div class="shop-cell-title">The Warlord Kit</div>
-            <div class="shop-cell-sub">Heavy infantry / Scarred texture</div>
-            <div class="shop-cell-links">
-                <a href="https://leaf.arcteryx.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Arc'teryx LEAF</a>
-                <a href="https://www.cryeprecision.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Crye Precision</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">Boots</div>
-            <div class="shop-cell-sub">Muddy / Indestructible</div>
-            <div class="shop-cell-links">
-                <a href="https://www.lowaboots.com/tactical" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Lowa Zephyr</a>
-                <a href="https://www.salomon.com/en-us/shop/men/shoes/forces.html" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Salomon Forces</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">Ballistic Tools</div>
-            <div class="shop-cell-sub">Long-range / Ruggedized tech</div>
-            <div class="shop-cell-links">
-                <a href="https://www.garmin.com/en-US/p/869175" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Garmin Tactix 7</a>
-                <a href="https://www.gshock.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>G-SHOCK Mudmaster</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">Case &amp; Carry</div>
-            <div class="shop-cell-sub">Ruggedized / Field ready</div>
-            <div class="shop-cell-links">
-                <a href="https://www.pelican.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Pelican Cases</a>
-                <a href="https://www.nanuk.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Nanuk Hard Cases</a>
-            </div>
-          </div>
-          </div>
-        </div>
-      </article>
-      <article class="shop-card">
-        <div class="shop-card-portrait">
-          <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=500&q=80&fit=crop" alt="The Fox" loading="lazy"/>
-          <div class="shop-card-portrait-overlay"></div>
-          <div class="shop-card-id">
-            <div class="shop-card-kicker">The Fox</div>
-            <h3 class="shop-card-title">The Cradle Run</h3>
-            <div class="shop-card-subline">Band Tee · Bump Armor · Wet Asphalt</div>
-          </div>
-        </div>
-        <div class="shop-card-body">
-          <div class="shop-card-meta">
-            <div class="shop-card-tags"><span class="shop-tag">Getaway</span><span class="shop-tag">Punk</span><span class="shop-tag">Fifth Ave</span></div>
-            <div class="shop-card-ref">Scene Ref: WS-18 // Fifth Avenue Extraction</div>
-          </div>
-          <p class="shop-card-copy">Pregnant. Punk-rock. Negotiating a financial restructure mid-drift on Fifth Avenue. The Fox doesn't slow down for anyone.</p>
-          <div class="shop-loadout-label">The Loadout</div>
-          <div class="shop-prod-grid">
-          <div class="shop-cell">
-            <div class="shop-cell-title">The Fox</div>
-            <div class="shop-cell-sub">Band tee · bump-friendly armor</div>
-            <div class="shop-cell-links">
-                <a href="https://www.grailed.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Grailed — Vintage Band Tees</a>
-                <a href="https://www.allsaints.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>AllSaints Leather Jacket</a>
-                <a href="https://www.schottnyc.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Schott NYC Moto</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">The Boots</div>
-            <div class="shop-cell-sub">Boots that survive the curb</div>
-            <div class="shop-cell-links">
-                <a href="https://www.drmartens.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Dr. Martens Jadon</a>
-                <a href="https://www.blundstone.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Blundstone Workhorse</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">The Drive</div>
-            <div class="shop-cell-sub">Wet asphalt / Tight gaps</div>
-            <div class="shop-cell-links">
-                <a href="https://www.audiusa.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Audi RS Performance</a>
-                <a href="https://www.weathertech.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>WeatherTech Floor Mats</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">Body Armor</div>
-            <div class="shop-cell-sub">Maternity / Unstoppable</div>
-            <div class="shop-cell-links">
-                <a href="https://www.gap.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Gap Maternity</a>
-                <a href="https://www.target.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Target Isabel Maternity</a>
-            </div>
-          </div>
-          </div>
-        </div>
-      </article>
-      <article class="shop-card">
-        <div class="shop-card-portrait">
-          <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500&q=80&fit=crop" alt="The Silicon Short" loading="lazy"/>
-          <div class="shop-card-portrait-overlay"></div>
-          <div class="shop-card-id">
-            <div class="shop-card-kicker">The Silicon Short</div>
-            <h3 class="shop-card-title">Taiwan Extraction</h3>
-            <div class="shop-card-subline">HALO Jump · Industrial Espionage</div>
-          </div>
-        </div>
-        <div class="shop-card-body">
-          <div class="shop-card-meta">
-            <div class="shop-card-tags"><span class="shop-tag">Taiwan</span><span class="shop-tag">HALO</span><span class="shop-tag">Chip Magnate</span></div>
-            <div class="shop-card-ref">Scene Ref: WS-20 // Hsinchu Science Park</div>
-          </div>
-          <p class="shop-card-copy">Hsinchu Science Park. A rogue chip magnate. High-stakes industrial espionage meets military precision at 45,000 feet.</p>
-          <div class="shop-loadout-label">The Loadout</div>
-          <div class="shop-prod-grid">
-          <div class="shop-cell">
-            <div class="shop-cell-title">The Operator Kit</div>
-            <div class="shop-cell-sub">Military precision / Matte black</div>
-            <div class="shop-cell-links">
-                <a href="https://www.cryeprecision.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Crye Precision</a>
-                <a href="https://arcteryx.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Arc'teryx LEAF</a>
-                <a href="https://www.salomon.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Salomon Forces</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">Field Watch</div>
-            <div class="shop-cell-sub">Navigation / Survival utility</div>
-            <div class="shop-cell-links">
-                <a href="https://www.garmin.com/en-US/p/869175" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Garmin Tactix Delta</a>
-                <a href="https://www.suunto.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Suunto Core</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">The Princeling's Office</div>
-            <div class="shop-cell-sub">Corporate excess / Stolen tech</div>
-            <div class="shop-cell-links">
-                <a href="https://house.suntory.com/hibiki-whisky" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Hibiki Harmony</a>
-                <a href="https://www.theyamazaki.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Yamazaki 18</a>
-                <a href="https://www.apple.com/macbook-pro/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>MacBook Pro M4</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">Sleepwear / Recovery</div>
-            <div class="shop-cell-sub">Corporate luxury downtime</div>
-            <div class="shop-cell-links">
-                <a href="https://www.derek-rose.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Derek Rose</a>
-                <a href="https://www.zimmerli.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Zimmerli Swiss</a>
-            </div>
-          </div>
-          </div>
-        </div>
-      </article>
-        </div>
-      </div>
-      <div class="shop-panel" id="tab-underworld" style="display:none;">
-        <div class="shop-panel-header">
-          <p class="shop-panel-desc">Seduction, leverage, venom, and silence. These characters operate in the spaces between legality and power — and they dress to prove nothing can touch them.</p>
-        </div>
-        <div class="shop-cards-grid">
-      <article class="shop-card">
-        <div class="shop-card-portrait">
-          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&q=80&fit=crop&crop=top" alt="Valentina Cruz" loading="lazy"/>
-          <div class="shop-card-portrait-overlay"></div>
-          <div class="shop-card-id">
-            <div class="shop-card-kicker">Valentina Cruz</div>
-            <h3 class="shop-card-title">The Vault</h3>
-            <div class="shop-card-subline">Secrets · Leverage · Quiet Force</div>
-          </div>
-        </div>
-        <div class="shop-card-body">
-          <div class="shop-card-meta">
-            <div class="shop-card-tags"><span class="shop-tag">Femme Fatale</span><span class="shop-tag">Covert</span><span class="shop-tag">Seduction</span></div>
-            <div class="shop-card-ref">Scene Ref: WS-02 // The Vault Meeting</div>
-          </div>
-          <p class="shop-card-copy">Seduction, coins, concealed force, and elegant criminal infrastructure. Every object is also evidence.</p>
-          <div class="shop-loadout-label">The Loadout</div>
-          <div class="shop-prod-grid">
-          <div class="shop-cell">
-            <div class="shop-cell-title">The Aesthetic</div>
-            <div class="shop-cell-sub">Seductive armor</div>
-            <div class="shop-cell-links">
-                <a href="https://www.tomfordfashion.com/en-us/women/ready-to-wear/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Tom Ford Women's RTW</a>
-                <a href="https://www.cartier.com/en-us/watches/collections/tank/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Cartier Tank</a>
-                <a href="https://www.mikimotoamerica.com/us_en/jewelry/categories/earrings" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Mikimoto Earrings</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">The Arsenal</div>
-            <div class="shop-cell-sub">Quiet force</div>
-            <div class="shop-cell-links">
-                <a href="https://www.tomfordfashion.com/en-us/women/ready-to-wear/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Tom Ford RTW</a>
-                <a href="https://www.seagate.com/products/external-hard-drives/lacie-rugged-ssd-pro/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>LaCie Rugged SSD</a>
-                <a href="https://www.vertu.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Vertu Signature</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">The Exit</div>
-            <div class="shop-cell-sub">Clean disappearance</div>
-            <div class="shop-cell-links">
-                <a href="https://www.tumi.com/c/womens-luggage" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>TUMI Luggage</a>
-                <a href="https://www.celine.com/en-us/celine-shop-women/bags/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>CELINE Bag</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">Encrypted Layer</div>
-            <div class="shop-cell-sub">Digital warfare</div>
-            <div class="shop-cell-links">
-                <a href="https://us.christianlouboutin.com/us_en/ladies/shoes/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Christian Louboutin</a>
-                <a href="https://www.celine.com/en-us/celine-shop-women/bags/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>CELINE Luggage</a>
-            </div>
-          </div>
-          </div>
-        </div>
-      </article>
-      <article class="shop-card">
-        <div class="shop-card-portrait">
-          <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=500&q=80&fit=crop" alt="The Snake" loading="lazy"/>
-          <div class="shop-card-portrait-overlay"></div>
-          <div class="shop-card-id">
-            <div class="shop-card-kicker">The Snake</div>
-            <h3 class="shop-card-title">Predator Calm</h3>
-            <div class="shop-card-subline">Industrial Noir · Covert</div>
-          </div>
-        </div>
-        <div class="shop-card-body">
-          <div class="shop-card-meta">
-            <div class="shop-card-tags"><span class="shop-tag">Industrial</span><span class="shop-tag">Covert Ops</span><span class="shop-tag">Noir</span></div>
-            <div class="shop-card-ref">Scene Ref: WS-04 // Industrial Warehouse</div>
-          </div>
-          <p class="shop-card-copy">Everything looks understated. Nothing is accidental. The most dangerous outfit in the universe looks like it costs nothing.</p>
-          <div class="shop-loadout-label">The Loadout</div>
-          <div class="shop-prod-grid">
-          <div class="shop-cell">
-            <div class="shop-cell-title">The Skin</div>
-            <div class="shop-cell-sub">Predator uniform</div>
-            <div class="shop-cell-links">
-                <a href="https://www.rickowens.eu/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Rick Owens</a>
-                <a href="https://www.bottegaveneta.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Bottega Veneta</a>
-                <a href="https://jacquesmariemage.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Jacques Marie Mage</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">Workbench</div>
-            <div class="shop-cell-sub">Non-electronic</div>
-            <div class="shop-cell-links">
-                <a href="https://www.dahle.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Dahle Precision Cutter</a>
-                <a href="https://www.bhphotovideo.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>B&H Analog Supply</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">The Signal</div>
-            <div class="shop-cell-sub">Communication dark</div>
-            <div class="shop-cell-links">
-                <a href="https://www.vertu.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Vertu Encrypted</a>
-                <a href="https://www.blackberry.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>BlackBerry Classic</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">Exit Gear</div>
-            <div class="shop-cell-sub">Disappear clean</div>
-            <div class="shop-cell-links">
-                <a href="https://www.tumi.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>TUMI Alpha Carry-On</a>
-                <a href="https://www.berluti.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Berluti Boots</a>
-            </div>
-          </div>
-          </div>
-        </div>
-      </article>
-      <article class="shop-card">
-        <div class="shop-card-portrait">
-          <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=500&q=80&fit=crop" alt="Cleo Vargas" loading="lazy"/>
-          <div class="shop-card-portrait-overlay"></div>
-          <div class="shop-card-id">
-            <div class="shop-card-kicker">Cleo Vargas</div>
-            <h3 class="shop-card-title">The Bitch</h3>
-            <div class="shop-card-subline">Information Broker · Honey-Trap</div>
-          </div>
-        </div>
-        <div class="shop-card-body">
-          <div class="shop-card-meta">
-            <div class="shop-card-tags"><span class="shop-tag">Neon</span><span class="shop-tag">Blackmail</span><span class="shop-tag">Extraction</span></div>
-            <div class="shop-card-ref">Scene Ref: WS-07 // The Club</div>
-          </div>
-          <p class="shop-card-copy">Latex, stilettos, and biometric clone material. Everything Cleo uses looks like seduction. Everything is a weapon.</p>
-          <div class="shop-loadout-label">The Loadout</div>
-          <div class="shop-prod-grid">
-          <div class="shop-cell">
-            <div class="shop-cell-title">The Armor</div>
-            <div class="shop-cell-sub">Latex / Stilettos / Intimidation</div>
-            <div class="shop-cell-links">
-                <a href="https://fashion.mugler.com/collections/bodysuits-leggings" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Mugler Black Latex Bodysuit</a>
-                <a href="https://pleasershoes.com/collections/flamingo-808" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Pleaser Flamingo 808 — 8" Stilettos</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">The Extraction</div>
-            <div class="shop-cell-sub">Clones / Biometrics / Blackmail</div>
-            <div class="shop-cell-links">
-                <a href="https://cellebrite.com/en/solutions/lawful-access/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Cellebrite UFED Mobile Extractor</a>
-                <a href="https://www.smooth-on.com/products/dragon-skin-10-fast/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Dragon Skin Silicone (Biometric Mold)</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">The Club</div>
-            <div class="shop-cell-sub">Neon / Bass / The Gutter</div>
-            <div class="shop-cell-links">
-                <a href="https://www.amazon.com/Ribao-BC-40-Bill-Counter/dp/B00A2C6XBG" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Ribao BC-40 Bill Counter</a>
-                <a href="https://www.govee.com/products/neon-rope-light" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Govee Neon Rope Lighting</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">The Edge</div>
-            <div class="shop-cell-sub">Physical / Sharp / Unforgiving</div>
-            <div class="shop-cell-links">
-                <a href="https://www.dovo.com/en/straight-razors/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>DOVO Carbon Steel Straight Razor</a>
-                <a href="https://www.investopedia.com/terms/b/bearer_bond.asp" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Bearer Bonds — Reference</a>
-            </div>
-          </div>
-          </div>
-        </div>
-      </article>
-      <article class="shop-card">
-        <div class="shop-card-portrait">
-          <img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=500&q=80&fit=crop" alt="Nicolás Reyes" loading="lazy"/>
-          <div class="shop-card-portrait-overlay"></div>
-          <div class="shop-card-id">
-            <div class="shop-card-kicker">Nicolás Reyes</div>
-            <h3 class="shop-card-title">Ghost of Obsidian</h3>
-            <div class="shop-card-subline">El Fantasma · Supreme Leader</div>
-          </div>
-        </div>
-        <div class="shop-card-body">
-          <div class="shop-card-meta">
-            <div class="shop-card-tags"><span class="shop-tag">Cartel</span><span class="shop-tag">Obsidian</span><span class="shop-tag">Ghost</span></div>
-            <div class="shop-card-ref">Scene Ref: WS-12 // Obsidian Tower</div>
-          </div>
-          <p class="shop-card-copy">The supreme leader of the Obsidian Cartel. He doesn't appear in photographs. He doesn't appear on balance sheets. He simply appears.</p>
-          <div class="shop-loadout-label">The Loadout</div>
-          <div class="shop-prod-grid">
-          <div class="shop-cell">
-            <div class="shop-cell-title">The Ghost Layer</div>
-            <div class="shop-cell-sub">Untraceable / Dark Luxury</div>
-            <div class="shop-cell-links">
-                <a href="https://www.rickowens.eu/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Rick Owens</a>
-                <a href="https://www.bottegaveneta.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Bottega Veneta</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">The Power Signal</div>
-            <div class="shop-cell-sub">Authority / Silence</div>
-            <div class="shop-cell-links">
-                <a href="https://www.patek.com/en/collection/calatrava" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Patek Philippe Calatrava</a>
-                <a href="https://www.montblanc.com/en-us/discover/meisterstuck" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Montblanc Meisterstück</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">The Cartel Architecture</div>
-            <div class="shop-cell-sub">Shell Companies / Leverage</div>
-            <div class="shop-cell-links">
-                <a href="https://www.bloomberg.com/professional/solution/bloomberg-terminal/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Bloomberg Terminal</a>
-                <a href="https://shop.ledger.com/products/ledger-nano-x" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Ledger Nano X</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">The Exit</div>
-            <div class="shop-cell-sub">Always prepared</div>
-            <div class="shop-cell-links">
-                <a href="https://www.berluti.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Berluti Calfskin Oxford</a>
-                <a href="https://www.tumi.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>TUMI Alpha Briefcase</a>
-            </div>
-          </div>
-          </div>
-        </div>
-      </article>
-      <article class="shop-card">
-        <div class="shop-card-portrait">
-          <img src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=500&q=80&fit=crop" alt="Doom" loading="lazy"/>
-          <div class="shop-card-portrait-overlay"></div>
-          <div class="shop-card-id">
-            <div class="shop-card-kicker">Doom</div>
-            <h3 class="shop-card-title">Containment Manifest</h3>
-            <div class="shop-card-subline">Prison Logic · Ritual</div>
-          </div>
-        </div>
-        <div class="shop-card-body">
-          <div class="shop-card-meta">
-            <div class="shop-card-tags"><span class="shop-tag">Stripped</span><span class="shop-tag">Institutional</span><span class="shop-tag">Ritual</span></div>
-            <div class="shop-card-ref">Scene Ref: WS-06 // Containment / Solitude</div>
-          </div>
-          <p class="shop-card-copy">Prison logic, stripped-down ritual, and state machinery. These are the objects that outlast the sentence.</p>
-          <div class="shop-loadout-label">The Loadout</div>
-          <div class="shop-prod-grid">
-          <div class="shop-cell">
-            <div class="shop-cell-title">Reading Material</div>
-            <div class="shop-cell-sub">Religious / philosophical</div>
-            <div class="shop-cell-links">
-                <a href="https://www.penguinrandomhouse.com/books/322437/the-mahabharata-by-john-d-smith/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>The Mahabharata</a>
-                <a href="https://www.amazon.com/Bhagavad-Gita-Eknath-Easwaran/dp/1586380192" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Bhagavad Gita</a>
-                <a href="https://www.penguinrandomhouse.com/books/331376/meditations-by-marcus-aurelius/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Meditations — Aurelius</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">Standard Issue</div>
-            <div class="shop-cell-sub">Dept. of corrections</div>
-            <div class="shop-cell-links">
-                <a href="https://www.carhartt.com/product/K87" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Carhartt K87</a>
-                <a href="https://www.511tactical.com/taclite-pro-pants.html" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>5.11 Taclite Pro</a>
-                <a href="https://www.511tactical.com/union-6-inch-boot.html" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>5.11 Union Boot</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">Discipline Tools</div>
-            <div class="shop-cell-sub">Non-electronic</div>
-            <div class="shop-cell-links">
-                <a href="https://www.garmin.com/en-US/c/watches-wearables/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Analog Field Watch</a>
-                <a href="https://www.meditationcushions.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Zafu Cushion</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">Heavy Machinery</div>
-            <div class="shop-cell-sub">Brute force</div>
-            <div class="shop-cell-links">
-                <a href="https://www.carhartt.com" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Carhartt Detroit Jacket</a>
-                <a href="https://www.redwingshoes.com/work/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Red Wing Work Boots</a>
-                <a href="https://www.estwing.com" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Estwing Sledgehammer</a>
-            </div>
-          </div>
-          </div>
-        </div>
-      </article>
-        </div>
-      </div>
-      <div class="shop-panel" id="tab-wildcards" style="display:none;">
-        <div class="shop-panel-header">
-          <p class="shop-panel-desc">The universe's outliers. Crypto anarchists, AI visionaries, iron nation riders, and Hollywood laundromats. These characters break every category — and dress like they know it.</p>
-        </div>
-        <div class="shop-cards-grid">
-      <article class="shop-card">
-        <div class="shop-card-portrait">
-          <img src="https://images.unsplash.com/photo-1560472355-536de3962603?w=500&q=80&fit=crop" alt="Krypto" loading="lazy"/>
-          <div class="shop-card-portrait-overlay"></div>
-          <div class="shop-card-id">
-            <div class="shop-card-kicker">Krypto</div>
-            <h3 class="shop-card-title">Algorithm of Noise</h3>
-            <div class="shop-card-subline">4AM · Volatility Arbitrage · The Void</div>
-          </div>
-        </div>
-        <div class="shop-card-body">
-          <div class="shop-card-meta">
-            <div class="shop-card-tags"><span class="shop-tag">Crypto</span><span class="shop-tag">Delirium</span><span class="shop-tag">Leverage</span></div>
-            <div class="shop-card-ref">Scene Ref: WS-17 // The Void / 04:02 AM</div>
-          </div>
-          <p class="shop-card-copy">Post-apocalyptic luxury, top-shelf vices, and tech that runs the world. Bitcoin crash predicted at 4:02 AM. BPM: 180.</p>
-          <div class="shop-loadout-label">The Loadout</div>
-          <div class="shop-prod-grid">
-          <div class="shop-cell">
-            <div class="shop-cell-title">Tech &amp; Vices</div>
-            <div class="shop-cell-sub">High-functioning delirium tools</div>
-            <div class="shop-cell-links">
-                <a href="https://house.suntory.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Suntory Whisky</a>
-                <a href="https://frame.work/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Framework Modular Laptop</a>
-                <a href="https://www.riedel.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Riedel Crystal Glass</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">The Environment</div>
-            <div class="shop-cell-sub">Setup / Lair / Control</div>
-            <div class="shop-cell-links">
-                <a href="https://www.restorationhardware.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>RH — Dark Interiors</a>
-                <a href="https://www.designwithinreach.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Design Within Reach</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">The Arbitrage</div>
-            <div class="shop-cell-sub">Derivatives / Leverage</div>
-            <div class="shop-cell-links">
-                <a href="https://shop.ledger.com/products/ledger-nano-x" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Ledger Nano X</a>
-                <a href="https://www.bloomberg.com/professional/solution/bloomberg-terminal/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Bloomberg Terminal</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">Survival</div>
-            <div class="shop-cell-sub">Energy / Endurance / The Crash</div>
-            <div class="shop-cell-links">
-                <a href="https://guenergy.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>GU Energy</a>
-                <a href="https://www.williams-sonoma.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Williams Sonoma Cold Brew</a>
-            </div>
-          </div>
-          </div>
-        </div>
-      </article>
-      <article class="shop-card">
-        <div class="shop-card-portrait">
-          <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=500&q=80&fit=crop" alt="Cheef" loading="lazy"/>
-          <div class="shop-card-portrait-overlay"></div>
-          <div class="shop-card-id">
-            <div class="shop-card-kicker">Cheef</div>
-            <h3 class="shop-card-title">Gospel of Gasoline</h3>
-            <div class="shop-card-subline">Superstition Mountains · Iron Nation</div>
-          </div>
-        </div>
-        <div class="shop-card-body">
-          <div class="shop-card-meta">
-            <div class="shop-card-tags"><span class="shop-tag">Iron Nation</span><span class="shop-tag">Desert</span><span class="shop-tag">Crusade</span></div>
-            <div class="shop-card-ref">Scene Ref: WS-15 // Devil's Amphitheater, AZ</div>
-          </div>
-          <p class="shop-card-copy">From the Superstition Mountains to New York City. The Iron Nation doesn't negotiate. It arrives.</p>
-          <div class="shop-loadout-label">The Loadout</div>
-          <div class="shop-prod-grid">
-          <div class="shop-cell">
-            <div class="shop-cell-title">Road Kit</div>
-            <div class="shop-cell-sub">Desert steel / Moto culture</div>
-            <div class="shop-cell-links">
-                <a href="https://www.schottnyc.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Schott NYC Leather</a>
-                <a href="https://www.drmartens.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Dr. Martens Warlord Boot</a>
-                <a href="https://www.carhartt.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Carhartt Workwear</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">The Ride</div>
-            <div class="shop-cell-sub">Iron / Loud / Permanent</div>
-            <div class="shop-cell-links">
-                <a href="https://www.harley-davidson.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Harley-Davidson</a>
-                <a href="https://www.indianmotorcycle.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Indian Motorcycle</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">Navigation</div>
-            <div class="shop-cell-sub">Desert to city / No GPS</div>
-            <div class="shop-cell-links">
-                <a href="https://www.garmin.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Garmin Analog Watch</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">The Doctrine</div>
-            <div class="shop-cell-sub">Nation building / No surrender</div>
-            <div class="shop-cell-links">
-                <a href="https://www.amazon.com/Bhagavad-Gita-Eknath-Easwaran/dp/1586380192" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Bhagavad Gita</a>
-                <a href="https://www.penguinrandomhouse.com/books/331376/meditations-by-marcus-aurelius/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Meditations — Aurelius</a>
-            </div>
-          </div>
-          </div>
-        </div>
-      </article>
-      <article class="shop-card">
-        <div class="shop-card-portrait">
-          <img src="https://images.unsplash.com/photo-1590004987778-bece5c9adab6?w=500&q=80&fit=crop" alt="Detective Miller" loading="lazy"/>
-          <div class="shop-card-portrait-overlay"></div>
-          <div class="shop-card-id">
-            <div class="shop-card-kicker">Detective Miller</div>
-            <h3 class="shop-card-title">The Detective</h3>
-            <div class="shop-card-subline">Vintage Wool · Analog Tools · No Shine</div>
-          </div>
-        </div>
-        <div class="shop-card-body">
-          <div class="shop-card-meta">
-            <div class="shop-card-tags"><span class="shop-tag">Noir</span><span class="shop-tag">Mid-Century</span><span class="shop-tag">Cleanup</span></div>
-            <div class="shop-card-ref">Scene Ref: WS-14 // Obsidian Siege</div>
-          </div>
-          <p class="shop-card-copy">A 1964 Lincoln, a rare steak, and a siege at the Obsidian Tower. Miller arrives to clean up the mess. He always does.</p>
-          <div class="shop-loadout-label">The Loadout</div>
-          <div class="shop-prod-grid">
-          <div class="shop-cell">
-            <div class="shop-cell-title">The Janitor's Kit</div>
-            <div class="shop-cell-sub">Mid-century / Heavy fabrics</div>
-            <div class="shop-cell-links">
-                <a href="https://www.burberry.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Burberry Trench</a>
-                <a href="https://www.aquascutum.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Aquascutum Classic</a>
-                <a href="https://www.suitsupply.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Suitsupply Wool</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">Shirting</div>
-            <div class="shop-cell-sub">Old-world cloth / No flash</div>
-            <div class="shop-cell-links">
-                <a href="https://www.turnbullandasser.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Turnbull &amp; Asser</a>
-                <a href="https://www.charvet.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Charvet</a>
-                <a href="https://www.ralphlauren.com/brands-double-rl-men" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>RRL by Ralph Lauren</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">The Transport</div>
-            <div class="shop-cell-sub">Analog / American iron</div>
-            <div class="shop-cell-links">
-                <a href="https://www.hagerty.com/media/buying-and-selling/1964-lincoln-continental-buying-guide/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>1964 Lincoln Continental</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">The Ritual</div>
-            <div class="shop-cell-sub">Steak / Bourbon / Patience</div>
-            <div class="shop-cell-links">
-                <a href="https://www.riedel.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Riedel Bourbon Glass</a>
-                <a href="https://www.wolfgangpuck.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Wolfgang Puck Steakhouse</a>
-            </div>
-          </div>
-          </div>
-        </div>
-      </article>
-      <article class="shop-card">
-        <div class="shop-card-portrait">
-          <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=500&q=80&fit=crop&crop=top" alt="N.V. Diya" loading="lazy"/>
-          <div class="shop-card-portrait-overlay"></div>
-          <div class="shop-card-id">
-            <div class="shop-card-kicker">N.V. Diya</div>
-            <h3 class="shop-card-title">Architecture of Distraction</h3>
-            <div class="shop-card-subline">AI Dynamo · Cyber Couture · Starfield</div>
-          </div>
-        </div>
-        <div class="shop-card-body">
-          <div class="shop-card-meta">
-            <div class="shop-card-tags"><span class="shop-tag">AI Systems</span><span class="shop-tag">Cyber Couture</span><span class="shop-tag">WTF</span></div>
-            <div class="shop-card-ref">Scene Ref: WS-16 // World Trade Factory Lab</div>
-          </div>
-          <p class="shop-card-copy">Lead Architect of Sentient Systems. Stardust drape, chrome augmentation, and skyline-lit leverage. Every detail reads like intent.</p>
-          <div class="shop-loadout-label">The Loadout</div>
-          <div class="shop-prod-grid">
-          <div class="shop-cell">
-            <div class="shop-cell-title">Divya</div>
-            <div class="shop-cell-sub">Cyber couture / Starfield sari</div>
-            <div class="shop-cell-links">
-                <a href="https://www.perniaspopupshop.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Pernia's Pop-Up Shop</a>
-                <a href="https://www.nykaafashion.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Nykaa Fashion</a>
-                <a href="https://www.moodfabrics.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Mood Fabrics</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">The Interface</div>
-            <div class="shop-cell-sub">Chrome / Digital architecture</div>
-            <div class="shop-cell-links">
-                <a href="https://www.zara.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>ZARA Structured Blazer</a>
-                <a href="https://www.mango.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>MANGO Power Suiting</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">The System</div>
-            <div class="shop-cell-sub">Agentic / Market-grade intel</div>
-            <div class="shop-cell-links">
-                <a href="https://www.worldtradefactory.ai" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>World Trade Factory AI</a>
-                <a href="https://frame.work/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Framework Laptop</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">The Vision</div>
-            <div class="shop-cell-sub">Skyline-lit leverage</div>
-            <div class="shop-cell-links">
-                <a href="https://www.etsy.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Etsy — Custom Chandelier Earrings</a>
-                <a href="https://www.amazon.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Statement Jewelry</a>
-            </div>
-          </div>
-          </div>
-        </div>
-      </article>
-      <article class="shop-card">
-        <div class="shop-card-portrait">
-          <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=500&q=80&fit=crop&crop=top" alt="Vega Vane" loading="lazy"/>
-          <div class="shop-card-portrait-overlay"></div>
-          <div class="shop-card-id">
-            <div class="shop-card-kicker">Vega Vane</div>
-            <h3 class="shop-card-title">The Actress</h3>
-            <div class="shop-card-subline">Global Icon · Red Carpet Gold</div>
-          </div>
-        </div>
-        <div class="shop-card-body">
-          <div class="shop-card-meta">
-            <div class="shop-card-tags"><span class="shop-tag">Hollywood</span><span class="shop-tag">Laundromat</span><span class="shop-tag">Platinum</span></div>
-            <div class="shop-card-ref">Scene Ref: WS-22 // Beverly Hills Hotel Bungalow 7</div>
-          </div>
-          <p class="shop-card-copy">She turns The Shark's black money into red carpet gold. The brightest star in a fake sky. The only woman who can lie better than the AI.</p>
-          <div class="shop-loadout-label">The Loadout</div>
-          <div class="shop-prod-grid">
-          <div class="shop-cell">
-            <div class="shop-cell-title">Red Carpet Armor</div>
-            <div class="shop-cell-sub">Platinum / Diamond white / Crimson</div>
-            <div class="shop-cell-links">
-                <a href="https://www.versace.com/us/en/women/ready-to-wear/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Versace Gown</a>
-                <a href="https://www.giuseppezanotti.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Giuseppe Zanotti Heels</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">The Jewelry</div>
-            <div class="shop-cell-sub">Diamonds / Flash photography armor</div>
-            <div class="shop-cell-links">
-                <a href="https://www.cartier.com/en-us/jewelry/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Cartier High Jewelry</a>
-                <a href="https://www.tiffany.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Tiffany &amp; Co.</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">The Suite</div>
-            <div class="shop-cell-sub">Beverly Hills Bungalow 7</div>
-            <div class="shop-cell-links">
-                <a href="https://www.beverlyshillshotel.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>The Beverly Hills Hotel</a>
-                <a href="https://www.loewe.com/us/en/women/bags/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Loewe Puzzle Bag</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">The Cover</div>
-            <div class="shop-cell-sub">Publicity / The lie / The brand</div>
-            <div class="shop-cell-links">
-                <a href="https://www.chanel.com/us/fragrance/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Chanel No.5 — The Scent of Fame</a>
-                <a href="https://www.tomfordfashion.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Tom Ford Sunglasses</a>
-            </div>
-          </div>
-          </div>
-        </div>
-      </article>
-      <article class="shop-card">
-        <div class="shop-card-portrait">
-          <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=500&q=80&fit=crop" alt="Scarlett Blackwell" loading="lazy"/>
-          <div class="shop-card-portrait-overlay"></div>
-          <div class="shop-card-id">
-            <div class="shop-card-kicker">Scarlett Blackwell</div>
-            <h3 class="shop-card-title">After-Dark Architecture</h3>
-            <div class="shop-card-subline">Black · Red · Champagne · Classified</div>
-          </div>
-        </div>
-        <div class="shop-card-body">
-          <div class="shop-card-meta">
-            <div class="shop-card-tags"><span class="shop-tag">Fashion Noir</span><span class="shop-tag">Femme Fatale</span><span class="shop-tag">After Dark</span></div>
-            <div class="shop-card-ref">Scene Ref: WS-21 // After Dark / The City</div>
-          </div>
-          <p class="shop-card-copy">Cutout mini, satin slip, body-skimming noir. Kitchen knives that match the aesthetic. Small. Expensive. Don't-touch energy.</p>
-          <div class="shop-loadout-label">The Loadout</div>
-          <div class="shop-prod-grid">
-          <div class="shop-cell">
-            <div class="shop-cell-title">The Dresses</div>
-            <div class="shop-cell-sub">Cutout / Satin / Body-skimming noir</div>
-            <div class="shop-cell-links">
-                <a href="https://us.christianlouboutin.com/us_en/ladies/shoes/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Christian Louboutin Heels</a>
-                <a href="https://www.celine.com/en-us/celine-shop-women/bags/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>CELINE Structured Bag</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">Beauty Ritual</div>
-            <div class="shop-cell-sub">Red lip / Smoke / Night gaze</div>
-            <div class="shop-cell-links">
-                <a href="https://www.tomfordfashion.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Tom Ford Beauty</a>
-                <a href="https://www.charlottetilbury.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Charlotte Tilbury</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">Fragrance</div>
-            <div class="shop-cell-sub">Warm / Spicy / After-dark signature</div>
-            <div class="shop-cell-links">
-                <a href="https://www.tomfordfashion.com/en-us/beauty/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Tom Ford Black Orchid</a>
-                <a href="https://www.chanel.com/us/fragrance/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Chanel Coco Noir</a>
-            </div>
-          </div>
-          <div class="shop-cell">
-            <div class="shop-cell-title">Kitchen Knives</div>
-            <div class="shop-cell-sub">Chef's knife / Countertop elegance</div>
-            <div class="shop-cell-links">
-                <a href="https://www.zwilling.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Zwilling Professional</a>
-                <a href="https://www.wusthof.com/" class="shop-link" target="_blank" rel="noopener"><span class="ll-arrow">→</span>Wüsthof Classic</a>
-            </div>
-          </div>
-          </div>
-        </div>
-      </article>
-        </div>
-      </div>
-
-<!-- FOOTER -->
-<footer class="shop-footer">
-  <div class="shop-footer-brand">The Shark of Wall Street®</div>
-  <p class="shop-footer-p">
-    World Trade Factory · 23 Characters · Editorial Commerce<br/>
+<footer>
+  <span class="footer-brand">The Shark of Wall Street®</span>
+  <p>
+    World Trade Factory · Editorial Commerce · 8 Style Categories<br/>
     2390 E Camelback Rd, STE 130, Phoenix, AZ 85016<br/>
-    <a href="https://thesharkofwallstreet.com" class="shop-footer-link">Enter TheSharkOfWallStreet.com →</a>
+    <a href="https://thesharkofwallstreet.com">Enter TheSharkOfWallStreet.com →</a>
   </p>
 </footer>
 
-<script>
-  // Tab switching
-  document.querySelectorAll('.shop-tab').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.shop-tab').forEach(b => b.classList.remove('active'));
-      document.querySelectorAll('.shop-panel').forEach(p => p.style.display = 'none');
-      btn.classList.add('active');
-      document.getElementById('tab-' + btn.dataset.tab).style.display = 'block';
-    });
-  });
-</script>
 </body>
 </html>
