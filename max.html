@@ -416,12 +416,25 @@ img{max-width:100%;display:block;}
   .nav-right{gap:6px;flex-shrink:0;}
   .nav-btn{padding:5px 10px;font-size:.58rem;letter-spacing:2px;}
 }
+
+.nav-center{position:absolute;left:50%;transform:translateX(-50%);display:flex;align-items:center;}
+.btn-audio{background:rgba(234,88,12,.07);border:1px solid rgba(234,88,12,.35);color:var(--accent);padding:.35rem 1.2rem;border-radius:999px;font-family:'Share Tech Mono',monospace;font-size:.65rem;font-weight:600;letter-spacing:1.5px;cursor:pointer;white-space:nowrap;transition:all .2s ease;display:flex;align-items:center;gap:.5rem;}
+.btn-audio:hover{background:rgba(234,88,12,.14);border-color:var(--accent);color:#fff;}
+.btn-audio.playing{background:var(--accent);color:#050506;border-color:var(--accent);box-shadow:0 0 15px rgba(234,88,12,.5);}
+.btn-audio-icon{font-size:.6rem;line-height:1;}
+.btn-audio-label{letter-spacing:2px;}
 </style>
 </head>
 <body>
 
 <header class="nav">
   <a href="index.html" class="nav-brand"><span class="nb-pre">THE </span><span class="shark">SHARK</span><span class="nb-post"> OF WALL STREET</span></a>
+  <div class="nav-center">
+    <button class="btn-audio" id="btn-tycoon" onclick="playAudio('tycoon','tycoon.mp3')">
+      <span class="btn-audio-icon">▶</span>
+      <span class="btn-audio-label">The Tycoon</span>
+    </button>
+  </div>
   <div class="nav-right">
     <a href="index.html#intel" class="nav-btn">← Personnel</a>
     <a href="shop.html" class="nav-btn">Shop</a>
@@ -584,5 +597,31 @@ img{max-width:100%;display:block;}
   </div>
 </div>
 
+
+<script>
+  var currentAudio=null,currentButtonId=null;
+  function playAudio(buttonId,source){
+    if(currentButtonId==='btn-'+buttonId&&currentAudio&&!currentAudio.paused){
+      currentAudio.pause();currentAudio.currentTime=0;
+      document.getElementById('btn-'+buttonId).classList.remove('playing');
+      document.getElementById('btn-'+buttonId).querySelector('.btn-audio-icon').textContent='▶';
+      currentAudio=null;currentButtonId=null;return;
+    }
+    if(currentAudio){currentAudio.pause();currentAudio.currentTime=0;
+      if(currentButtonId){document.getElementById(currentButtonId).classList.remove('playing');
+        document.getElementById(currentButtonId).querySelector('.btn-audio-icon').textContent='▶';}}
+    currentAudio=new Audio(source);currentButtonId='btn-'+buttonId;
+    var btn=document.getElementById(currentButtonId);
+    currentAudio.play().then(function(){
+      btn.classList.add('playing');
+      btn.querySelector('.btn-audio-icon').textContent='■';
+    }).catch(function(e){console.error('Audio playback failed:',e);});
+    currentAudio.onended=function(){
+      btn.classList.remove('playing');
+      btn.querySelector('.btn-audio-icon').textContent='▶';
+      currentAudio=null;currentButtonId=null;
+    };
+  }
+</script>
 </body>
 </html>
