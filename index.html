@@ -970,6 +970,87 @@ footer p{
   .drop-panel{border-right:none;border-bottom:1px solid var(--border2);}
   .drop-panel:last-child{border-bottom:none;}
 }
+
+/* ═══ INTELLIGENCE ARCHIVE PANEL ═══ */
+.intel-archive{
+  padding:0;
+  background:var(--bg);
+  border-bottom:1px solid var(--border);
+}
+.intel-archive-inner{
+  display:grid;
+  grid-template-columns:repeat(7,1fr);
+  gap:0;
+  overflow-x:auto;
+}
+.ia-card{
+  position:relative;overflow:hidden;
+  display:flex;flex-direction:column;
+  border-right:1px solid var(--border2);
+  background:var(--panel);
+  text-decoration:none;color:inherit;
+  transition:.3s;
+  min-height:200px;
+}
+.ia-card:last-child{border-right:none;}
+.ia-card:hover{background:rgba(201,168,76,.025);}
+.ia-card::after{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(to right,var(--crimson),var(--gold));
+  transform:scaleX(0);transform-origin:left;transition:transform .35s;
+}
+.ia-card:hover::after{transform:scaleX(1);}
+.ia-thumb{
+  width:100%;height:110px;
+  object-fit:cover;object-position:center;
+  filter:saturate(.7) brightness(.85);
+  transition:filter .5s,transform .6s;
+  flex-shrink:0;
+}
+.ia-card:hover .ia-thumb{filter:saturate(.9) brightness(.95);transform:scale(1.03);}
+.ia-body{
+  padding:16px 20px 18px;
+  display:flex;flex-direction:column;
+  gap:6px;flex:1;
+}
+.ia-pub{
+  font-family:'Share Tech Mono',monospace;
+  font-size:.48rem;letter-spacing:3px;
+  color:var(--red);text-transform:uppercase;
+  display:flex;align-items:center;gap:6px;
+}
+.ia-pub::before{content:'';display:inline-block;width:12px;height:1px;background:var(--red);}
+.ia-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.15rem;letter-spacing:2px;
+  color:var(--white);line-height:1.1;
+  transition:color .2s;
+}
+.ia-card:hover .ia-title{color:var(--gold);}
+.ia-desc{
+  font-family:'Rajdhani',sans-serif;
+  font-size:.88rem;font-weight:500;
+  color:var(--silver);line-height:1.55;
+  flex:1;
+}
+.ia-footer{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-top:10px;
+}
+.ia-tag{
+  font-family:'Share Tech Mono',monospace;
+  font-size:.46rem;letter-spacing:2px;
+  color:var(--muted);text-transform:uppercase;
+}
+.ia-arrow{
+  font-size:.7rem;color:var(--gold);
+  transition:transform .2s;
+}
+.ia-card:hover .ia-arrow{transform:translateX(4px);}
+@media(max-width:900px){
+  .intel-archive{overflow-x:auto;}
+  .intel-archive-inner{grid-template-columns:repeat(7,minmax(220px,1fr));min-width:900px;}
+}
 </style>
 </head>
 <body>
@@ -1021,7 +1102,7 @@ footer p{
           <strong><a href="https://www.linkedin.com/in/sajeeshkakkat" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:underline;text-underline-offset:3px;">Sage Kakkat</a></strong>.
         </p>
         <div class="stats-row" style="margin-top:14px;">
-          <div class="stat-unit"><div class="stat-val">11,000+</div><div class="stat-label">LinkedIn followers</div></div>
+          <div class="stat-unit"><div class="stat-val">11,100+</div><div class="stat-label">LinkedIn followers</div></div>
           <div class="stat-unit"><div class="stat-val">350+</div><div class="stat-label">Cities active</div></div>
           <div class="stat-unit"><div class="stat-val">50+</div><div class="stat-label">Countries</div></div>
           <div class="stat-unit"><div class="stat-val">Growing</div><div class="stat-label">Traction</div></div>
@@ -1035,6 +1116,106 @@ footer p{
 </section>
 
 
+
+
+<!-- ═══ INTELLIGENCE ARCHIVE ═══ -->
+<section class="section full" id="intel-archive" style="padding:0;">
+  <div class="sec-bar">
+    <span class="sec-bar-num">00</span>
+    <span class="sec-bar-name">Intelligence Archive</span>
+    <span class="sec-bar-sub">Published Research · Market Calls · Editorial Intelligence</span>
+    <span class="sec-bar-line"></span>
+    <a href="https://www.worldtradefactory.ai" target="_blank" rel="noopener" class="sec-bar-link">worldtradefactory.ai →</a>
+  </div>
+  <div class="intel-archive">
+    <div class="intel-archive-inner">
+        <a href="https://www.linkedin.com/pulse/wall-street-private-credit-sage-kakkat/" class="ia-card" target="_blank" rel="noopener">
+          <img class="ia-thumb" src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=85&auto=format&fit=crop" alt="Wall Street & Private Credit" loading="lazy"/>
+          <div class="ia-body">
+            <div class="ia-pub">LinkedIn · Sage Kakkat</div>
+            <div class="ia-title">Wall Street & Private Credit</div>
+            <p class="ia-desc">Called the private credit bubble before it became consensus — outlining systemic risk in the shadow lending market and its collision course with institutional capital.</p>
+            <div class="ia-footer">
+              <span class="ia-tag">Private Credit · Risk · 2024</span>
+              <span class="ia-arrow">→</span>
+            </div>
+          </div>
+        </a>
+        <a href="https://www.linkedin.com/pulse/shark-ate-saylor-sage-kakkat-uu77c/" class="ia-card" target="_blank" rel="noopener">
+          <img class="ia-thumb" src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=85&auto=format&fit=crop" alt="The Shark Ate Saylor" loading="lazy"/>
+          <div class="ia-body">
+            <div class="ia-pub">LinkedIn · Sage Kakkat</div>
+            <div class="ia-title">The Shark that ate the Saylor</div>
+            <p class="ia-desc">Predicted the MicroStrategy leverage unwind and the mechanics of a forced Bitcoin liquidation event — before the market priced in the risk.</p>
+            <div class="ia-footer">
+              <span class="ia-tag">Bitcoin · MicroStrategy · Leverage</span>
+              <span class="ia-arrow">→</span>
+            </div>
+          </div>
+        </a>
+        <a href="https://www.linkedin.com/pulse/shark-never-swam-fairwater-sage-kakkat-gprfc/" class="ia-card" target="_blank" rel="noopener">
+          <img class="ia-thumb" src="https://images.unsplash.com/photo-1504701954957-2010ec3bcec1?w=600&q=85&auto=format&fit=crop" alt="The Shark Never Swam Fairwater" loading="lazy"/>
+          <div class="ia-body">
+            <div class="ia-pub">LinkedIn · Sage Kakkat</div>
+            <div class="ia-title">The Shark that never swam Fairwater</div>
+            <p class="ia-desc">An intelligence brief on the Fairwater Capital implosion — mapping the decision architecture that led to a quiet collapse most missed.</p>
+            <div class="ia-footer">
+              <span class="ia-tag">Hedge Fund · Collapse · Intel</span>
+              <span class="ia-arrow">→</span>
+            </div>
+          </div>
+        </a>
+        <a href="https://www.worldtradefactory.ai/what-in-the-world/" class="ia-card" target="_blank" rel="noopener">
+          <img class="ia-thumb" src="https://www.worldtradefactory.ai/content/images/2025/01/WITW-NEW-9.JPG" alt="What In The World!" loading="lazy"/>
+          <div class="ia-body">
+            <div class="ia-pub">World Trade Factory</div>
+            <div class="ia-title">What In The World!</div>
+            <p class="ia-desc">Monthly global macro intelligence — distilling economic data, geopolitical shifts, and market dynamics into actionable insights for investors and traders.</p>
+            <div class="ia-footer">
+              <span class="ia-tag">Macro · Global · Weekly</span>
+              <span class="ia-arrow">→</span>
+            </div>
+          </div>
+        </a>
+        <a href="https://www.worldtradefactory.ai/jack-of-all-trades/" class="ia-card" target="_blank" rel="noopener">
+          <img class="ia-thumb" src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&q=85&auto=format&fit=crop" alt="Jack of All Trades" loading="lazy"/>
+          <div class="ia-body">
+            <div class="ia-pub">World Trade Factory</div>
+            <div class="ia-title">Jack of All Trades</div>
+            <p class="ia-desc">Cross-asset intelligence covering equities, commodities, crypto, and forex — the multi-market briefing built for operators who move across asset classes.</p>
+            <div class="ia-footer">
+              <span class="ia-tag">Cross-Asset · Multi-Market · Alpha</span>
+              <span class="ia-arrow">→</span>
+            </div>
+          </div>
+        </a>
+        <a href="https://www.worldtradefactory.ai/secrets/" class="ia-card" target="_blank" rel="noopener">
+          <img class="ia-thumb" src="https://images.unsplash.com/photo-1565514020179-026b92b84bb6?w=600&q=85&auto=format&fit=crop" alt="Trade Secrets" loading="lazy"/>
+          <div class="ia-body">
+            <div class="ia-pub">World Trade Factory</div>
+            <div class="ia-title">Trade Secrets</div>
+            <p class="ia-desc">The institutional-grade research layer — deep dives into market structure, trade flows, and the economic data that moves capital before it moves prices.</p>
+            <div class="ia-footer">
+              <span class="ia-tag">Institutional · Research · Deep Dive</span>
+              <span class="ia-arrow">→</span>
+            </div>
+          </div>
+        </a>
+        <a href="https://www.worldtradefactory.ai/auto/" class="ia-card" target="_blank" rel="noopener">
+          <img class="ia-thumb" src="https://images.unsplash.com/photo-1509023464722-18d996393ca8?w=600&q=85&auto=format&fit=crop" alt="Flash News" loading="lazy"/>
+          <div class="ia-body">
+            <div class="ia-pub">World Trade Factory</div>
+            <div class="ia-title">Flash News</div>
+            <p class="ia-desc">Real-time financial intelligence — live market-moving headlines curated and filtered for signal over noise, as the world trades.</p>
+            <div class="ia-footer">
+              <span class="ia-tag">Live · News · Real-Time</span>
+              <span class="ia-arrow">→</span>
+            </div>
+          </div>
+        </a>
+    </div>
+  </div>
+</section>
 
 <!-- ═══ NEW DROPS ═══ -->
 <section class="section full" id="new-drops" style="padding:0;">
@@ -1055,8 +1236,8 @@ footer p{
         <a href="max.html" class="drop-item">
           <span class="drop-item-num">01</span>
           <span class="drop-item-body">
-            <div class="drop-item-name">Maxine Callaway</div>
-            <div class="drop-item-sub">The Tycoon · Weaponized Leverage · Orange Accent</div>
+            <div class="drop-item-name">The Tycoon — Maxine Callaway</div>
+            <div class="drop-item-sub">Texas Crude · Weaponized Leverage · Orange Accent</div>
           </span>
           <span class="drop-item-badge new">New</span>
           <span class="drop-item-arrow">→</span>
@@ -1065,7 +1246,7 @@ footer p{
         <a href="prince.html" class="drop-item">
           <span class="drop-item-num">02</span>
           <span class="drop-item-body">
-            <div class="drop-item-name">Khalid Al-Fayed</div>
+            <div class="drop-item-name">The Sovereign — Khalid Al-Fayed</div>
             <div class="drop-item-sub">Crown Prince · Keeper of the Vault</div>
           </span>
           <span class="drop-item-badge new">New</span>
@@ -1075,10 +1256,30 @@ footer p{
         <a href="zane.html" class="drop-item">
           <span class="drop-item-num">03</span>
           <span class="drop-item-body">
-            <div class="drop-item-name">Zane Cross</div>
+            <div class="drop-item-name">The Swarm — Zane Cross</div>
             <div class="drop-item-sub">TikTok Trader · Weaponized Populism</div>
           </span>
           <span class="drop-item-badge new">New</span>
+          <span class="drop-item-arrow">→</span>
+        </a>
+
+        <a href="banker.html" class="drop-item">
+          <span class="drop-item-num">04</span>
+          <span class="drop-item-body">
+            <div class="drop-item-name">The Banker</div>
+            <div class="drop-item-sub">Private Capital · Quiet Infrastructure</div>
+          </span>
+          <span class="drop-item-badge recent">Recent</span>
+          <span class="drop-item-arrow">→</span>
+        </a>
+
+        <a href="sloane.html" class="drop-item">
+          <span class="drop-item-num">05</span>
+          <span class="drop-item-body">
+            <div class="drop-item-name">The Trojan Horse — Sloane Kensington</div>
+            <div class="drop-item-sub">Corporate Infiltration · Long Game</div>
+          </span>
+          <span class="drop-item-badge recent">Recent</span>
           <span class="drop-item-arrow">→</span>
         </a>
 
@@ -1116,6 +1317,26 @@ footer p{
           <span class="drop-item-body">
             <div class="drop-item-name">I'm The Sheriff</div>
             <div class="drop-item-sub">SharK ATaKK · sheriff.mp3</div>
+          </span>
+          <span class="drop-item-badge recent">Recent</span>
+          <span class="drop-item-arrow">→</span>
+        </a>
+
+        <a href="#playlist" class="drop-item" onclick="setNowPlaying(18,true);return false;">
+          <span class="drop-item-num">04</span>
+          <span class="drop-item-body">
+            <div class="drop-item-name">Helicopters In A War</div>
+            <div class="drop-item-sub">SharK ATaKK · war.mp3</div>
+          </span>
+          <span class="drop-item-badge recent">Recent</span>
+          <span class="drop-item-arrow">→</span>
+        </a>
+
+        <a href="#playlist" class="drop-item" onclick="setNowPlaying(17,true);return false;">
+          <span class="drop-item-num">05</span>
+          <span class="drop-item-body">
+            <div class="drop-item-name">Doom</div>
+            <div class="drop-item-sub">SharK ATaKK · doom.mp3</div>
           </span>
           <span class="drop-item-badge recent">Recent</span>
           <span class="drop-item-arrow">→</span>
@@ -1336,7 +1557,6 @@ footer p{
       <a href="whale.html" class="dossier-card"><img src="tariq.png" alt="The Whale"/><div class="dossier-label">The Whale</div></a>
       <a href="stix.html" class="dossier-card"><img src="stix.png" alt="The Swarm"/><div class="dossier-label">Stix Stox</div></a>
       <a href="prince.html" class="dossier-card"><img src="prince.png" alt="The Prince"/><div class="dossier-label">The Prince</div></a>
-            <a href="max.html" class="dossier-card"><img src="max.png" alt="The Tycoon"/><div class="dossier-label">The Tycoon</div></a>
   </div>
 </section>
 
