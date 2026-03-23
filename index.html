@@ -1280,10 +1280,18 @@ footer p{
       <div class="drop-eyebrow">Soundtrack · Recently Released</div>
       <div class="drop-title">New Tracks</div>
       <div class="drop-list">
-
+        <a href="#playlist" class="drop-item" onclick="setNowPlaying(22,true);return false;">
+          <span class="drop-item-num">01</span>
+          <span class="drop-item-body">
+            <div class="drop-item-name">Ghost Runner</div>
+            <div class="drop-item-sub">SharK ATaKK · ghost.mp3</div>
+          </span>
+          <span class="drop-item-badge new">New</span>
+          <span class="drop-item-arrow">→</span>
+        </a>
 
         <a href="#playlist" class="drop-item" onclick="setNowPlaying(21,true);return false;">
-          <span class="drop-item-num">01</span>
+          <span class="drop-item-num">02</span>
           <span class="drop-item-body">
             <div class="drop-item-name">The Tycoon</div>
             <div class="drop-item-sub">SharK ATaKK · tycoon.mp3</div>
@@ -1293,7 +1301,7 @@ footer p{
         </a>
 
         <a href="#playlist" class="drop-item" onclick="setNowPlaying(20,true);return false;">
-          <span class="drop-item-num">02</span>
+          <span class="drop-item-num">03</span>
           <span class="drop-item-body">
             <div class="drop-item-name">The Swarm</div>
             <div class="drop-item-sub">SharK ATaKK · swarm.mp3</div>
@@ -1303,7 +1311,7 @@ footer p{
         </a>
 
         <a href="#playlist" class="drop-item" onclick="setNowPlaying(19,true);return false;">
-          <span class="drop-item-num">03</span>
+          <span class="drop-item-num">04</span>
           <span class="drop-item-body">
             <div class="drop-item-name">I'm The Sheriff</div>
             <div class="drop-item-sub">SharK ATaKK · sheriff.mp3</div>
@@ -1797,6 +1805,7 @@ footer p{
     {title:"I'M_THE_SHERIFF",src:"sheriff.mp3",img:"https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=500&q=90&auto=format&fit=crop",isNew:false,hue:"30deg"},
     {title:"THE_SWARM",src:"swarm.mp3",img:"https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&q=90&auto=format&fit=crop",isNew:true,hue:"120deg"},
     {title:"THE_TYCOON",src:"tycoon.mp3",img:"https://images.unsplash.com/photo-1582125075264-21c67a56e1fd?w=500&q=90&auto=format&fit=crop",isNew:true,hue:"30deg"},
+    {title:"GHOST_RUNNER",src:"ghost.mp3",img:"https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=500&q=90&auto=format&fit=crop",isNew:true,hue:"30deg"},
   ];
 
   const audio=document.getElementById("audioPlayer");
