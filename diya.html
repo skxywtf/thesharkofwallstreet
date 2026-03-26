@@ -37,6 +37,11 @@ a{color:inherit;text-decoration:none;}img{max-width:100%;display:block;}
 .nav-btn:hover{border-color:var(--gold);color:var(--gold);}
 .nav-btn.accent{color:var(--char);border-color:#f59e0b44;}
 .nav-btn.accent:hover{border-color:var(--char);}
+.btn-audio{background:rgba(245,158,11,.07);border:1px solid rgba(245,158,11,.35);color:var(--char);padding:6px 16px;font-family:'Share Tech Mono',monospace;font-size:.68rem;font-weight:600;letter-spacing:2px;cursor:pointer;white-space:nowrap;transition:all .25s;display:flex;align-items:center;gap:8px;text-transform:uppercase;}
+.btn-audio:hover{background:rgba(245,158,11,.14);border-color:var(--char);color:#fff;}
+.btn-audio.playing{border-color:var(--char);color:#fff;background:rgba(245,158,11,.18);box-shadow:0 0 18px rgba(245,158,11,.4);}
+.audio-dot{width:7px;height:7px;border-radius:50%;background:var(--char);box-shadow:0 0 6px var(--char);flex-shrink:0;}
+.btn-audio.playing .audio-dot{animation:blink .7s infinite;}
 .spacer{height:64px;}
 .masthead{position:relative;border-bottom:1px solid #f59e0b22;padding:60px 40px 52px;overflow:hidden;animation:fadeUp .7s ease both;}
 .masthead::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 100% 50%,#f59e0b0f 0%,transparent 60%);pointer-events:none;}
@@ -114,6 +119,10 @@ a{color:inherit;text-decoration:none;}img{max-width:100%;display:block;}
 <header class="nav">
   <a href="index.html" class="nav-brand"><span class="nb-pre">THE </span><span class="shark">SHARK</span><span class="nb-post"> OF WALL STREET</span></a>
   <div class="nav-right">
+    <button class="btn-audio" id="btn-diya" onclick="playAudio('diya','diya.mp3')">
+      <span class="audio-dot"></span>
+      <span class="btn-audio-label">▶ DIYA — SharkAtakk</span>
+    </button>
     <a href="index.html#intel" class="nav-btn">&#8592; Personnel</a>
     <a href="shop.html" class="nav-btn">Shop</a>
     <a href="index.html" class="nav-btn accent">Universe</a>
@@ -235,5 +244,31 @@ a{color:inherit;text-decoration:none;}img{max-width:100%;display:block;}
     <a href="https://thesharkofwallstreet.com" class="cf-link accent">thesharkofwallstreet.com &#8594;</a>
   </div>
 </div>
+<script>
+var currentAudio=null,currentButtonId=null;
+function playAudio(buttonId,source){
+  var btnEl=document.getElementById('btn-'+buttonId);
+  if(currentButtonId==='btn-'+buttonId&&currentAudio&&!currentAudio.paused){
+    currentAudio.pause();currentAudio.currentTime=0;
+    btnEl.classList.remove('playing');
+    btnEl.querySelector('.btn-audio-label').textContent='▶ DIYA — SharkAtakk';
+    currentAudio=null;currentButtonId=null;return;
+  }
+  if(currentAudio){
+    currentAudio.pause();currentAudio.currentTime=0;
+    if(currentButtonId){var p=document.getElementById(currentButtonId);if(p){p.classList.remove('playing');p.querySelector('.btn-audio-label').textContent='▶ DIYA — SharkAtakk';}}
+  }
+  currentAudio=new Audio(source);currentButtonId='btn-'+buttonId;
+  currentAudio.play().then(()=>{
+    btnEl.classList.add('playing');
+    btnEl.querySelector('.btn-audio-label').textContent='■ PLAYING';
+  }).catch(e=>{console.error(e);alert('Audio file not found. Make sure diya.mp3 is in the same folder.');});
+  currentAudio.onended=function(){
+    btnEl.classList.remove('playing');
+    btnEl.querySelector('.btn-audio-label').textContent='▶ DIYA — SharkAtakk';
+    currentAudio=null;currentButtonId=null;
+  };
+}
+</script>
 </body>
 </html>

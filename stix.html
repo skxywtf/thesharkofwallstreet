@@ -418,10 +418,11 @@ img{max-width:100%;display:block;}
 }
 
 .nav-center{position:absolute;left:50%;transform:translateX(-50%);display:flex;align-items:center;}
-.btn-audio{background:rgba(16,185,129,.07);border:1px solid rgba(16,185,129,.35);color:var(--accent);padding:.35rem 1.2rem;border-radius:999px;font-family:'Share Tech Mono',monospace;font-size:.65rem;font-weight:600;letter-spacing:1.5px;cursor:pointer;white-space:nowrap;transition:all .2s ease;display:flex;align-items:center;gap:.5rem;}
+.btn-audio{background:rgba(16,185,129,.07);border:1px solid rgba(16,185,129,.35);color:var(--accent);padding:6px 16px;font-family:'Share Tech Mono',monospace;font-size:.68rem;font-weight:600;letter-spacing:2px;cursor:pointer;white-space:nowrap;transition:all .25s;display:flex;align-items:center;gap:8px;text-transform:uppercase;}
 .btn-audio:hover{background:rgba(16,185,129,.14);border-color:var(--accent);color:#fff;}
-.btn-audio.playing{background:var(--accent);color:#050506;border-color:var(--accent);box-shadow:0 0 15px rgba(16,185,129,.5);}
-.btn-audio-icon{font-size:.6rem;line-height:1;}
+.btn-audio.playing{border-color:var(--accent);color:#fff;background:rgba(16,185,129,.18);box-shadow:0 0 18px rgba(16,185,129,.4);}
+.audio-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 6px var(--accent);flex-shrink:0;}
+.btn-audio.playing .audio-dot{animation:blink .7s infinite;}
 .btn-audio-label{letter-spacing:2px;}
 </style>
 </head>
@@ -431,8 +432,8 @@ img{max-width:100%;display:block;}
   <a href="index.html" class="nav-brand"><span class="nb-pre">THE </span><span class="shark">SHARK</span><span class="nb-post"> OF WALL STREET</span></a>
     <div class="nav-center">
       <button class="btn-audio" id="btn-swarm" onclick="playAudio('swarm','swarm.mp3')">
-        <span class="btn-audio-icon">▶</span>
-        <span class="btn-audio-label">The Swarm</span>
+        <span class="audio-dot"></span>
+        <span class="btn-audio-label">▶ THE SWARM</span>
       </button>
   </div>
   <div class="nav-right">
@@ -740,7 +741,7 @@ img{max-width:100%;display:block;}
     if(currentButtonId==='btn-'+buttonId&&currentAudio&&!currentAudio.paused){
       currentAudio.pause();currentAudio.currentTime=0;
       document.getElementById('btn-'+buttonId).classList.remove('playing');
-      document.getElementById('btn-'+buttonId).querySelector('.btn-audio-icon').textContent='▶';
+      document.getElementById('btn-'+buttonId).querySelector('.btn-audio-label').textContent='▶ THE SWARM';
       currentAudio=null;currentButtonId=null;return;
     }
     if(currentAudio){currentAudio.pause();currentAudio.currentTime=0;

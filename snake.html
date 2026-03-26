@@ -83,9 +83,11 @@ img{max-width:100%;display:block;}
 .nav-brand::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--sn);box-shadow:0 0 6px var(--sn);animation:blink 1.8s infinite;margin-right:4px;}
 .nb-post{transition:none;}
 .nav-center{position:absolute;left:50%;transform:translateX(-50%);display:flex;align-items:center;}
-.btn-audio{background:rgba(132,204,22,.07);border:1px solid rgba(132,204,22,.35);color:var(--sn);padding:.35rem 1.1rem;border-radius:999px;font-family:'Share Tech Mono',monospace;font-size:.65rem;font-weight:600;letter-spacing:1px;cursor:pointer;white-space:nowrap;transition:all .2s ease;display:flex;align-items:center;gap:.4rem;}
+.btn-audio{background:rgba(132,204,22,.07);border:1px solid rgba(132,204,22,.35);color:var(--sn);padding:6px 16px;font-family:'Share Tech Mono',monospace;font-size:.68rem;font-weight:600;letter-spacing:2px;cursor:pointer;white-space:nowrap;transition:all .25s;display:flex;align-items:center;gap:8px;text-transform:uppercase;}
 .btn-audio:hover{background:rgba(132,204,22,.14);border-color:var(--sn);color:#fff;}
-.btn-audio.playing{background:var(--sn);color:#050506;border-color:var(--sn);box-shadow:0 0 15px rgba(132,204,22,.4);}
+.btn-audio.playing{border-color:var(--sn);color:#fff;background:rgba(132,204,22,.18);box-shadow:0 0 18px rgba(132,204,22,.4);}
+.audio-dot{width:7px;height:7px;border-radius:50%;background:var(--sn);box-shadow:0 0 6px var(--sn);flex-shrink:0;}
+.btn-audio.playing .audio-dot{animation:blink .7s infinite;}
 .nav-right{display:flex;align-items:center;gap:10px;}
 .nav-btn{font-family:'Share Tech Mono',monospace;font-size:.68rem;letter-spacing:3px;color:var(--silver);text-transform:uppercase;text-decoration:none;border:1px solid rgba(240,237,232,0.2);padding:6px 16px;transition:.2s;background:transparent;cursor:pointer;}
 .nav-btn:hover{border-color:var(--gold);color:var(--gold);}
@@ -201,7 +203,10 @@ img{max-width:100%;display:block;}
     <span class="nb-pre">THE </span><span class="shark">SHARK</span><span class="nb-post"> OF WALL STREET</span>
   </a>
   <div class="nav-center">
-    <button class="btn-audio" id="btn-snake" onclick="playAudio('snake','snake.mp3')">&#x1F50A; Play: Snake in the Wire</button>
+    <button class="btn-audio" id="btn-snake" onclick="playAudio('snake','snake.mp3')">
+      <span class="audio-dot"></span>
+      <span class="btn-audio-label">▶ SNAKE IN THE WIRE</span>
+    </button>
   </div>
   <div class="nav-right">
     <a href="index.html#intel" class="nav-btn">&#8592; Personnel</a>
@@ -600,7 +605,9 @@ img{max-width:100%;display:block;}
   function playAudio(buttonId,source){
     if(currentButtonId==='btn-'+buttonId&&currentAudio&&!currentAudio.paused){
       currentAudio.pause();currentAudio.currentTime=0;
-      document.getElementById('btn-'+buttonId).classList.remove('playing');
+      var el2=document.getElementById('btn-'+buttonId);
+        el2.classList.remove('playing');
+        el2.querySelector('.btn-audio-label').textContent='▶ SNAKE IN THE WIRE';
       currentAudio=null;currentButtonId=null;return;
     }
     if(currentAudio){currentAudio.pause();currentAudio.currentTime=0;
