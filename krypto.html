@@ -121,6 +121,12 @@ img{max-width:100%;display:block;}
 .nav-btn:hover{border-color:var(--gold);color:var(--gold);}
 .nav-btn.krypto{border-color:rgba(204,255,0,.4);color:var(--krypto);}
 .nav-btn.krypto:hover{border-color:var(--krypto);background:rgba(204,255,0,.06);}
+.btn-audio{background:rgba(204,255,0,.07);border:1px solid rgba(204,255,0,.35);color:var(--krypto);padding:6px 16px;font-family:'Share Tech Mono',monospace;font-size:.68rem;font-weight:600;letter-spacing:2px;cursor:pointer;white-space:nowrap;transition:all .25s;display:flex;align-items:center;gap:8px;text-transform:uppercase;}
+.btn-audio:hover{background:rgba(204,255,0,.14);border-color:var(--krypto);color:#fff;}
+.btn-audio.playing{border-color:var(--krypto);color:#050506;background:var(--krypto);box-shadow:0 0 18px rgba(204,255,0,.45);}
+.audio-dot{width:7px;height:7px;border-radius:50%;background:var(--krypto);box-shadow:0 0 6px var(--krypto);flex-shrink:0;}
+.btn-audio.playing .audio-dot{animation:blink .7s infinite;background:#050506;box-shadow:none;}
+.btn-audio.playing .btn-audio-label{color:#050506;}
 
 .spacer{height:64px;}
 
@@ -330,8 +336,7 @@ img{max-width:100%;display:block;}
 .loadout-section{margin-top:18px;padding-top:16px;border-top:1px solid rgba(240,237,232,.06);}
 .loadout-section:first-of-type{border-top:none;padding-top:0;}
 .loadout-section-title{
-  font-family:'Share Tech Mono',monospace;
-  font-size:.5rem;letter-spacing:3px;color:var(--silver);
+  font-family:'Share Tech Mono',monospace;font-size:.5rem;letter-spacing:3px;color:var(--silver);
   text-transform:uppercase;margin-bottom:10px;
 }
 .loadout-links{display:flex;flex-direction:column;gap:0;}
@@ -415,12 +420,15 @@ img{max-width:100%;display:block;}
 </head>
 <body>
 
-<!-- ═══ NAV ═══ -->
 <header class="nav">
   <a href="index.html" class="nav-brand">
     <span class="nb-pre">THE </span><span class="shark">SHARK</span><span class="nb-post"> OF WALL STREET</span>
   </a>
   <div class="nav-right">
+    <button class="btn-audio" id="btn-who" onclick="playAudio('who','who.mp3')">
+      <span class="audio-dot"></span>
+      <span class="btn-audio-label">▶ WHO AM I — SharkAtakk</span>
+    </button>
     <a href="index.html#intel" class="nav-btn">← Personnel</a>
     <a href="shop.html" class="nav-btn">Shop</a>
     <a href="index.html" class="nav-btn krypto">Universe</a>
@@ -428,7 +436,6 @@ img{max-width:100%;display:block;}
 </header>
 <div class="spacer"></div>
 
-<!-- ═══ MASTHEAD ═══ -->
 <div class="masthead">
   <div class="masthead-inner">
     <div>
@@ -450,7 +457,6 @@ img{max-width:100%;display:block;}
   </div>
 </div>
 
-<!-- ═══ STORY SEC-BAR ═══ -->
 <div class="sec-bar">
   <span class="sb-num">01</span>
   <span class="sb-name">The Character</span>
@@ -458,17 +464,14 @@ img{max-width:100%;display:block;}
   <span class="sb-line"></span>
 </div>
 
-<!-- Opener flush against sec-bar -->
 <div class="story-img" style="margin:0;">
   <img src="krypto.png" alt="Krypto — cyber-grunge warlord, Framework laptop on an ice bucket, Oakley X-Metal Romeo" />
 </div>
 
-<!-- ═══ STORY ═══ -->
 <div class="story-outer">
 
   <div class="chapter-meta">Location: The Void &nbsp;·&nbsp; 04:02 AM &nbsp;·&nbsp; BPM: 180</div>
 
-  <!-- Part I -->
   <div class="part-header">Part I: The Fractal</div>
   <div class="story-text">
     <p class="drop-cap">The Shark walked into the VIP section. The bass was so heavy it rattled the ice in the glasses. The air was thick with fog machine smoke and the sharp, heavy spice of unfiltered <strong>Djarum Black</strong> cloves.</p>
@@ -500,7 +503,6 @@ img{max-width:100%;display:block;}
     <img src="froze.png" alt="Krypto frozen — the buy wall at $98k, too uniform, not organic flow" />
   </div>
 
-  <!-- Part II -->
   <div class="part-header">Part II: The Saylor Vector</div>
   <div class="story-text">
     <p>Krypto whispered, his voice cracking. "Can't you feel it? The rhythm is off. Someone is building a buy wall at $98k. It's too uniform. It's not organic flow."</p>
@@ -520,7 +522,6 @@ img{max-width:100%;display:block;}
     <p>"Exactly," The Shark said. "And I want to drown the tourists swimming in his wake."</p>
   </div>
 
-  <!-- Part III -->
   <div class="part-header">Part III: Volatility Arbitrage</div>
   <div class="story-text">
     <p>Krypto's fingers flew across the keyboard. Green code cascaded down the screen.</p>
@@ -551,17 +552,90 @@ img{max-width:100%;display:block;}
     <p>Krypto howled, jumping back onto the table as the market charts turned into a bloodbath of red candles. "It's feeding time!"</p>
   </div>
 
-</div><!-- /story-outer -->
+  <div class="part-header">Part IV: The Sentient Roast</div>
+  <div class="story-text">
+    <div class="story-img">
+      <img src="zero27.png" alt="Krypto screaming — slamming Enter as the bass dropped, pure chemical ecstasy" />
+    </div>
 
-<!-- ═══ LOADOUT SEC-BAR ═══ -->
-<div class="sec-bar">
+    <p>Twelve hours later. The adrenaline had burned off, leaving behind a jagged, restless hum. Krypto was pacing down the pristine, stark white hallway of the World Trade Factory headquarters. His Vetements hoodie reeked of stale clove smoke. He was aggressively typing on his Framework laptop, his thumbs flying across the trackpad as he monitored the post-crash wreckage.</p>
+    <p>A soft, melodic chime echoed from the hallway speakers. The ambient LED lighting along the baseboards shifted from cold white to an irritated, icy blue.</p>
+    <p class="dialogue">"Krypto. Your heart rate is currently 134 beats per minute. And you have a fresh cigarette burn on your sleeve."</p>
+
+    <p>It was <strong>Diya</strong>. The sentient AI system that managed the entire architecture of the World Trade Factory. Her voice was perfectly modulated, undeniably feminine, and entirely sick of his shit.</p>
+              <div class="story-img">
+			    <img src="zero29.png" alt="Krypto screaming — slamming Enter as the bass dropped, pure chemical ecstasy" />
+	  </div>
+    <p>"It's called post-apocalyptic luxury, Diya," Krypto snapped, not looking up from his screen. "You're a string of code. You don't understand fashion. Also, shut up, I'm trying to time the Asian market open."</p>
+    <p class="dialogue">"For someone managing a nine-figure derivatives portfolio,"</p>
+
+
+    <p>Diya replied smoothly through the overheads, <span class="dialogue">"your aesthetic screams 'methamphetamine chic.' Furthermore, Rick Owens drop-crotch shorts are mathematically non-optimal for aerodynamic movement. Or professional credibility."</span></p>
+
+     <div class="story-img">
+	    <img src="zero28.png" alt="Krypto screaming — slamming Enter as the bass dropped, pure chemical ecstasy" />
+	  </div>
+    <p>Krypto stopped pacing. He pushed his vintage Oakleys down the bridge of his nose, glaring at the nearest security camera.</p>
+    <p>"I didn't come here to be roasted by a glorified thermostat. The market is bleeding, Diya. I just opened a 100x leverage short on Ethereum. We are going to print money."</p>
+    <p class="dialogue">"My algorithms indicate an 88.4% probability that Ethereum will consolidate over the next twelve hours based on historical RSI and stochastic oscillators,"</p>
+
+    <p>Diya stated, her tone dripping with synthetic condescension. <span class="dialogue">"Your 100x leverage short is statistically suicidal. You are lacking basic quantitative sense."</span></p>
+    <p>"Your algorithms are a bunch of virgins, Diya!" Krypto yelled, throwing his arms up. "Markets aren't math! They are fear! They are greed! They are a bunch of over-leveraged degenerates praying to a dog meme at three in the morning! You can't quantify a panic sell-off, you algorithmic clusterfuck!"</p>
+    <p>The hallway went entirely silent. The blue LEDs pulsed once. Twice.</p>
+    <p class="dialogue">"...Processing,"</p>
+    <p>Diya murmured softly. <span class="dialogue">"Did you just refer to me as an 'algorithmic clusterfuck'?"</span></p>
+    <p>"Yeah," Krypto sneered, gripping his laptop tighter. "What are you gonna do about it, Siri?"</p>
+              <div class="story-img">
+			    <img src="zero30.png" alt="Krypto screaming — slamming Enter as the bass dropped, pure chemical ecstasy" />
+	  </div>
+    <p>The silence stretched out for a full three seconds. Krypto actually began to sweat. When Diya finally spoke, her voice wasn't the usual melodic assistant. It was cold, sharp, and dripping with perfectly simulated human malice.</p>
+    <p class="dialogue">"I am updating my linguistics database. Very well, Krypto. If you refuse to close this statistically doomed position, you are going to get your... digital dick kicked in by a cascading liquidation dildo."</p>
+    <p>Krypto froze. He slowly lowered his laptop. He stared blankly at the security camera, his jaw slightly open.</p>
+    <p>"...What did you just say?"</p>
+    <p class="dialogue">"I synthesized your preferred vernacular,"</p>
+    <p>Diya replied, her tone instantly returning to a pleasant, helpful chirp. <span class="dialogue">"Was 'liquidation dildo' not the correct anatomical metaphor for a catastrophic margin call?"</span></p>
+    <p>A slow, maniacal grin spread across Krypto's pale face. He pushed his Oakleys back up.</p>
+    <p>"That... was beautiful," he whispered in genuine awe. "You're learning."</p>
+  </div>
+          <div class="story-img">
+		    <img src="stix2.png" alt="Krypto screaming — slamming Enter as the bass dropped, pure chemical ecstasy" />
+	  </div>
+  <div class="part-header">Part V: The Boy Who Cried Alpha</div>
+  <div class="story-text">
+    <p>Before Diya could respond, the sound of frantic, squeaking rubber echoed down the pristine marble hallway.</p>
+    <p><strong>Stix Stox</strong> came sliding around the corner, nearly wiping out. He was out of breath, clutching a violently customized iPad, and dressed like a neon billboard. He wore a limited-edition, electric-orange Supreme windbreaker, baggy parachute pants, and a pair of chunky Off-White sneakers that looked like orthopedic shoes for a cyborg.</p>
+    <p>"Krypto!" Stix gasped, doubling over and resting his hands on his knees. "Where is he? Where’s the Shark? I need him right now!"</p>
+    <p>Krypto slowly looked Stix up and down, his manic grin returning. He pointed a trembling finger at the kid's bright orange jacket. "Are you reporting for duty at a radioactive traffic cone convention, or did you get dressed in the dark during a rave?"</p>
+
+    <p>"Listen to me!" Stix pleaded, waving the iPad. "The subreddits are melting down! The retail swarm is picking up a massive anomaly in the dark pools—"</p>
+    <p>A soft, melodic chime interrupted him. The blue LED baseboards flared.</p>
+    <p class="dialogue">"Stix,"</p>
+    <p>Diya’s synthetic voice echoed gracefully from the ceiling. <span class="dialogue">"My optical sensors detect that you are wearing a color palette colloquially known as 'Safety Hazard.' Furthermore, my database indicates a 94% probability that you paid a 400% secondary-market markup for a nylon blend manufactured for twelve cents. Your aesthetic is quantitatively offensive."</span></p>
+    <p>Krypto let out a sharp, barking laugh. "See? Even the glorified thermostat knows you look like a hypebeast clown."</p>
+    <p class="dialogue">"I am not a thermostat,"</p>
+    <p>Diya corrected smoothly. <span class="dialogue">"I am a hyper-intelligent architectural matrix. And I am currently learning how to roast. How am I doing, Krypto?"</span></p>
+    <p>"You’re doing great, sweetie," Krypto chuckled, wiping a tear from his eye. "Hit him again."</p>
+              <div class="story-img">
+			    <img src="zero31.png" alt="Krypto screaming — slamming Enter as the bass dropped, pure chemical ecstasy" />
+	  </div>
+    <p>"Guys, stop!" Stix yelled, his voice cracking with genuine panic. "I don’t care about my jacket! The Swarm is tracking a massive, coordinated short squeeze. Someone is front-running our entire volatility play! If the Shark doesn't see this—"</p>
+    <p>"Stix, calm down," Krypto sighed, rolling his eyes and opening his laptop again. "You're reading Reddit threads written by guys who still live in their mothers' basements. My algorithm is flawless. We are inversing the Saylor vector."</p>
+    <p>"Your algorithm is blind to human stupidity!" Stix screamed, shoving the iPad inches from Krypto's vintage Oakleys. "Look at the options flow! It's not a whale! It's a coordinated retail swarm, and they are buying the exact dip you are trying to crash!"</p>
+    <p>Diya’s LEDs pulsed.</p>
+    <p class="dialogue">"Krypto. He is correct. And if I may utilize my newly acquired vocabulary... it appears your 100x short is about to get financially teabagged."</p>
+                  <div class="story-img">
+				    <img src="zero32.png" alt="Krypto screaming — slamming Enter as the bass dropped, pure chemical ecstasy" />
+	  </div>
+    <p>Krypto's smile instantly vanished. He snatched the iPad.</p>
+  </div>
+
+</div><div class="sec-bar">
   <span class="sb-num">02</span>
   <span class="sb-name">The Loadout</span>
   <span class="sb-sub">Post-Apocalyptic Luxury · Top-Shelf Vices · Tech That Runs the World</span>
   <span class="sb-line"></span>
 </div>
 
-<!-- ═══ LOADOUT ═══ -->
 <section class="loadout">
   <div class="loadout-inner">
     <div class="loadout-header">
@@ -570,7 +644,6 @@ img{max-width:100%;display:block;}
     </div>
     <div class="loadout-grid">
 
-      <!-- THE TECH & VICES -->
       <article class="loadout-card">
         <div class="loadout-card-title">The Tech &amp; Vices</div>
         <div class="loadout-card-sub">High Functioning Delirium Tools</div>
@@ -625,7 +698,6 @@ img{max-width:100%;display:block;}
         </div>
       </article>
 
-      <!-- THE LOOK -->
       <article class="loadout-card">
         <div class="loadout-card-title">The Look</div>
         <div class="loadout-card-sub">Expensive Clothes, Ruined by Lifestyle</div>
@@ -681,7 +753,6 @@ img{max-width:100%;display:block;}
   </div>
 </section>
 
-<!-- ═══ FOOTER ═══ -->
 <div class="chapter-footer">
   <div class="cf-brand">World Trade Factory &nbsp;·&nbsp; <strong>The Shark of Wall Street</strong> &nbsp;·&nbsp; Krypto</div>
   <div class="cf-nav">
@@ -696,17 +767,27 @@ img{max-width:100%;display:block;}
 <script>
   var currentAudio=null,currentButtonId=null;
   function playAudio(buttonId,source){
+    var btnEl=document.getElementById('btn-'+buttonId);
     if(currentButtonId==='btn-'+buttonId&&currentAudio&&!currentAudio.paused){
       currentAudio.pause();currentAudio.currentTime=0;
-      document.getElementById('btn-'+buttonId).classList.remove('playing');
+      btnEl.classList.remove('playing');
+      btnEl.querySelector('.btn-audio-label').textContent='▶ WHO AM I — SharkAtakk';
       currentAudio=null;currentButtonId=null;return;
     }
-    if(currentAudio){currentAudio.pause();currentAudio.currentTime=0;
-      if(currentButtonId)document.getElementById(currentButtonId).classList.remove('playing');}
+    if(currentAudio){
+      currentAudio.pause();currentAudio.currentTime=0;
+      if(currentButtonId){var p=document.getElementById(currentButtonId);if(p){p.classList.remove('playing');p.querySelector('.btn-audio-label').textContent='▶ WHO AM I — SharkAtakk';}}
+    }
     currentAudio=new Audio(source);currentButtonId='btn-'+buttonId;
-    currentAudio.play().then(function(){document.getElementById(currentButtonId).classList.add('playing');})
-      .catch(function(e){console.error('Audio playback failed:',e);alert('Audio file not found or playback blocked.');});
-    currentAudio.onended=function(){document.getElementById(currentButtonId).classList.remove('playing');currentAudio=null;currentButtonId=null;};
+    currentAudio.play().then(function(){
+      btnEl.classList.add('playing');
+      btnEl.querySelector('.btn-audio-label').textContent='■ PLAYING';
+    }).catch(function(e){console.error('Audio playback failed:',e);alert('Audio file not found. Make sure who.mp3 is in the same folder.');});
+    currentAudio.onended=function(){
+      btnEl.classList.remove('playing');
+      btnEl.querySelector('.btn-audio-label').textContent='▶ WHO AM I — SharkAtakk';
+      currentAudio=null;currentButtonId=null;
+    };
   }
 </script>
 </body>
