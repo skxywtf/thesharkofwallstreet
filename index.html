@@ -1110,7 +1110,7 @@ footer p{
       </div>
     </div>
     <div class="poster-wrap">
-      <a  href="morgan.html"><img src="sowt.png" alt="The Shark of Wall Street Poster"/></a>
+      <a  href="escape.html"><img src="sowt.png" alt="The Shark of Wall Street Poster"/></a>
     </div>
   </div>
 </section>
@@ -1279,8 +1279,18 @@ footer p{
       <div class="drop-eyebrow">Soundtrack · Recently Released</div>
       <div class="drop-title">New Tracks</div>
       <div class="drop-list">
+              <a href="#playlist" class="drop-item" onclick="setNowPlaying(23,true);return false;">
+	            <span class="drop-item-num">01</span>
+	            <span class="drop-item-body">
+	              <div class="drop-item-name">Rage</div>
+	              <div class="drop-item-sub">SharK ATaKK · rage.mp3</div>
+	            </span>
+	            <span class="drop-item-badge new">New</span>
+	            <span class="drop-item-arrow">→</span>
+	          </a>
+
         <a href="#playlist" class="drop-item" onclick="setNowPlaying(22,true);return false;">
-          <span class="drop-item-num">01</span>
+          <span class="drop-item-num">02</span>
           <span class="drop-item-body">
             <div class="drop-item-name">Ghost Runner</div>
             <div class="drop-item-sub">SharK ATaKK · ghost.mp3</div>
@@ -1290,7 +1300,7 @@ footer p{
         </a>
 
         <a href="#playlist" class="drop-item" onclick="setNowPlaying(21,true);return false;">
-          <span class="drop-item-num">02</span>
+          <span class="drop-item-num">03</span>
           <span class="drop-item-body">
             <div class="drop-item-name">The Tycoon</div>
             <div class="drop-item-sub">SharK ATaKK · tycoon.mp3</div>
@@ -1300,22 +1310,12 @@ footer p{
         </a>
 
         <a href="#playlist" class="drop-item" onclick="setNowPlaying(20,true);return false;">
-          <span class="drop-item-num">03</span>
+          <span class="drop-item-num">04</span>
           <span class="drop-item-body">
             <div class="drop-item-name">The Swarm</div>
             <div class="drop-item-sub">SharK ATaKK · swarm.mp3</div>
           </span>
           <span class="drop-item-badge new">New</span>
-          <span class="drop-item-arrow">→</span>
-        </a>
-
-        <a href="#playlist" class="drop-item" onclick="setNowPlaying(19,true);return false;">
-          <span class="drop-item-num">04</span>
-          <span class="drop-item-body">
-            <div class="drop-item-name">I'm The Sheriff</div>
-            <div class="drop-item-sub">SharK ATaKK · sheriff.mp3</div>
-          </span>
-          <span class="drop-item-badge recent">Recent</span>
           <span class="drop-item-arrow">→</span>
         </a>
 
@@ -1496,6 +1496,7 @@ footer p{
       <a class="chapter-card" href="marcus.html"><img src="mar15.png" alt="The Shipper"/><div class="chapter-meta"><div class="chapter-title">The Shipper</div></div></a>
       <a class="chapter-card" href="whale.html"><img src="w3.png" alt="The Whale"/><div class="chapter-meta"><div class="chapter-title">The Whale</div></div></a>
       <a class="chapter-card" href="stix.html"><img src="st9.png" alt="The Swarm"/><div class="chapter-meta"><div class="chapter-title">The Tik Tok Trader</div></div></a>
+      <a class="chapter-card" href="escape.html"><img src="zero9.png" alt="Escape Velocity"/><div class="chapter-meta"><div class="chapter-title">Escape Velocity</div></div></a>
   </div>
 </section>
 
@@ -1806,6 +1807,7 @@ footer p{
     {title:"THE_SWARM",src:"swarm.mp3",img:"https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&q=90&auto=format&fit=crop",isNew:true,hue:"120deg"},
     {title:"THE_TYCOON",src:"tycoon.mp3",img:"https://images.unsplash.com/photo-1582125075264-21c67a56e1fd?w=500&q=90&auto=format&fit=crop",isNew:true,hue:"30deg"},
     {title:"GHOST_RUNNER",src:"ghost.mp3",img:"https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=500&q=90&auto=format&fit=crop",isNew:true,hue:"30deg"},
+    {title:"RAGE",src:"rage.mp3",img:"https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=500&q=90&auto=format&fit=crop",isNew:true,hue:"30deg"},
   ];
 
   const audio=document.getElementById("audioPlayer");
