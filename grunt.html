@@ -3,135 +3,396 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Grunt — Isaac Kanaan | The Shark of Wall Street</title>
-<meta name="description" content="Isaac 'Doom' Kanaan. Grunt. The human pillar. The muscle of the operation. He wasn't built for precision. He was built for impact."/>
-<meta name="keywords" content="Isaac Kanaan, Grunt, Doom, human pillar, Shark of Wall Street character, neo noir thriller, World Trade Factory"/>
+
+<title>The Brute — Grunt | The Shark of Wall Street</title>
+<meta name="description" content="Grunt. The Brute Force. A former military contractor whose family was destroyed by Wall Street predatory lending, leading to an avoidable path of vengeance and a maximum-security cage."/>
+<meta name="keywords" content="Grunt, The Muscle, The Brute, The Shark of Wall Street character, neo noir financial thriller, Sage Kakkat"/>
 <meta name="author" content="Sage Kakkat / World Trade Factory"/>
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1"/>
 <meta name="theme-color" content="#050506"/>
 <link rel="canonical" href="https://thesharkofwallstreet.com/grunt"/>
+
 <meta property="og:type" content="article"/>
 <meta property="og:site_name" content="The Shark of Wall Street"/>
-<meta property="og:title" content="Grunt — Isaac Kanaan | The Shark of Wall Street"/>
-<meta property="og:description" content="Isaac 'Doom' Kanaan. Grunt. The human pillar. The muscle of the operation. He wasn't built for precision. He was built for impact."/>
-<meta property="og:image" content="https://thesharkofwallstreet.com/grunt3.png"/>
+<meta property="og:title" content="The Brute — Grunt | The Shark of Wall Street"/>
+<meta property="og:description" content="A family farm stolen by Wall Street. A broken promise. A cage made of steel."/>
+<meta property="og:image" content="https://thesharkofwallstreet.com/grunt.jpg"/>
 <meta property="og:url" content="https://thesharkofwallstreet.com/grunt"/>
 <meta property="og:locale" content="en_US"/>
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Grunt — Isaac Kanaan | The Shark of Wall Street"/>
-<meta name="twitter:description" content="Isaac 'Doom' Kanaan. Grunt. The human pillar. The muscle of the operation. He wasn't built for precision. He was built for impact."/>
-<meta name="twitter:image" content="https://thesharkofwallstreet.com/grunt3.png"/>
+<meta name="twitter:site" content="@SharkWallStreet"/>
+<meta name="twitter:title" content="The Brute — Grunt | The Shark of Wall Street"/>
+<meta name="twitter:description" content="A family farm stolen by Wall Street. A broken promise. A cage made of steel."/>
+<meta name="twitter:image" content="https://thesharkofwallstreet.com/grunt.jpg"/>
+
 <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"Article","url":"https://thesharkofwallstreet.com/grunt","headline":"Grunt — Isaac Kanaan | The Shark of Wall Street","description":"Isaac 'Doom' Kanaan. Grunt. The human pillar. The muscle of the operation. He wasn't built for precision. He was built for impact.","image":"https://thesharkofwallstreet.com/grunt3.png","author":{"@type":"Person","name":"Sage Kakkat"},"publisher":{"@type":"Organization","name":"World Trade Factory","url":"https://thesharkofwallstreet.com"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://thesharkofwallstreet.com"},{"@type":"ListItem","position":2,"name":"Characters","item":"https://thesharkofwallstreet.com/#intel"},{"@type":"ListItem","position":3,"name":"Grunt","item":"https://thesharkofwallstreet.com/grunt"}]}]}
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {"@type":"Article","@id":"https://thesharkofwallstreet.com/grunt","url":"https://thesharkofwallstreet.com/grunt","headline":"The Brute — Grunt","description":"Grunt. The Brute Force. A former military contractor whose family was destroyed by Wall Street predatory lending, leading to an avoidable path of vengeance and a maximum-security cage.","image":"https://thesharkofwallstreet.com/grunt.jpg","author":{"@type":"Person","name":"Sage Kakkat"},"publisher":{"@type":"Organization","name":"World Trade Factory","url":"https://thesharkofwallstreet.com"},"isPartOf":{"@type":"WebSite","@id":"https://thesharkofwallstreet.com","name":"The Shark of Wall Street","url":"https://thesharkofwallstreet.com"}},
+    {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://thesharkofwallstreet.com"},{"@type":"ListItem","position":2,"name":"Characters","item":"https://thesharkofwallstreet.com/#intel"},{"@type":"ListItem","position":3,"name":"Grunt","item":"https://thesharkofwallstreet.com/grunt"}]}
+  ]
+}
 </script>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RTH99L39VB"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RTH99L39VB');</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet"/>
+
 <style>
 #vercel-toolbar,vercel-live-feedback,[data-vercel-toolbar]{display:none!important;opacity:0!important;pointer-events:none!important;visibility:hidden!important;}
+
 :root{
-  --bg:#050506;--panel:#0a0a0c;--gold:#c9a84c;--gold-d:#7a6130;
-  --crimson:#8b1a1a;--red:#c0392b;--white:#f0ede8;--silver:#a8a090;--muted:#55504a;
-  --border:rgba(201,168,76,0.12);--border2:rgba(240,237,232,0.07);--shadow:0 24px 80px rgba(0,0,0,0.75);
-  --char:#ca8a04;--char-d:rgba(202,138,4,0.12);
+  --bg:      #050506;
+  --panel:   #0a0a0c;
+  --gold:    #c9a84c;
+  --gold-d:  #7a6130;
+  --white:   #f0ede8;
+  --silver:  #a8a090;
+  --muted:   #55504a;
+  --border:  rgba(201,168,76,0.12);
+  --border2: rgba(240,237,232,0.07);
+  /* Character accent — Rusted Iron / Dried Blood */
+  --accent:  #9a3412;
+  --accent-d:rgba(154,52,18,0.15);
+  --shadow:  0 24px 80px rgba(0,0,0,0.75);
 }
+
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{background:var(--bg);color:var(--white);font-family:'Rajdhani',sans-serif;overflow-x:hidden;}
-body::after{content:"";position:fixed;inset:-30%;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");opacity:.04;pointer-events:none;z-index:2;transform:rotate(10deg);mix-blend-mode:overlay;}
-body::before{content:"";position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 3px,#ca8a0408 3px,#ca8a0408 4px);pointer-events:none;z-index:1;}
+body{
+  background:var(--bg);
+  background-image:linear-gradient(to bottom,#0a0604 0%,#050506 18%,#050506 100%);
+  color:var(--white);
+  font-family:'Rajdhani',sans-serif;
+  overflow-x:hidden;
+}
+
+/* Film grain */
+body::after{
+  content:"";position:fixed;inset:-30%;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
+  opacity:.04;pointer-events:none;z-index:2;transform:rotate(10deg);mix-blend-mode:overlay;
+}
+
+/* Warm scanlines */
+body::before{
+  content:"";position:fixed;inset:0;
+  background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(154,52,18,0.005) 3px,rgba(154,52,18,0.005) 4px);
+  pointer-events:none;z-index:1;
+}
+
 a{color:inherit;text-decoration:none;}
 img{max-width:100%;display:block;}
+
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0.15}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-.nav{position:fixed;top:0;left:0;right:0;height:64px;background:rgba(5,5,6,.95);backdrop-filter:blur(16px);border-bottom:1px solid rgba(201,168,76,0.15);display:flex;align-items:center;justify-content:space-between;padding:0 40px;z-index:500;}
-.nav-brand{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:4px;color:var(--white);display:flex;align-items:center;gap:8px;text-decoration:none;}
-.nav-brand .shark{color:var(--gold);font-size:1.8rem;}
-.nav-brand::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--char);box-shadow:0 0 6px var(--char);animation:blink 1.8s infinite;margin-right:4px;}
+
+/* ═══════════════════════════════
+   NAV
+═══════════════════════════════ */
+.nav{
+  position:fixed;top:0;left:0;right:0;height:64px;
+  background:rgba(5,5,6,.95);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(154,52,18,0.2);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 40px;z-index:500;
+}
+
+.nav-brand{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.5rem;letter-spacing:4px;color:var(--white);
+  display:flex;align-items:center;gap:8px;text-decoration:none;
+}
+.nav-brand .shark{color:var(--gold);font-size:1.8rem;text-shadow:0 0 18px rgba(201,168,76,.4);}
+.nav-brand::before{
+  content:'';display:inline-block;
+  width:6px;height:6px;border-radius:50%;
+  background:var(--accent);box-shadow:0 0 6px var(--accent);
+  animation:blink 1.8s infinite;margin-right:4px;
+}
 .nav-right{display:flex;align-items:center;gap:10px;}
-.nav-btn{font-family:'Share Tech Mono',monospace;font-size:.68rem;letter-spacing:3px;color:var(--silver);text-transform:uppercase;text-decoration:none;border:1px solid rgba(240,237,232,0.2);padding:6px 16px;transition:.2s;background:transparent;cursor:pointer;}
+.nav-btn{
+  font-family:'Share Tech Mono',monospace;
+  font-size:.68rem;letter-spacing:3px;color:var(--silver);
+  text-transform:uppercase;text-decoration:none;
+  border:1px solid rgba(240,237,232,0.2);padding:6px 16px;
+  transition:.2s;background:transparent;cursor:pointer;
+}
 .nav-btn:hover{border-color:var(--gold);color:var(--gold);}
-.nav-btn.accent{border-color:rgba(201,168,76,.3);color:var(--char);border-color:color-mix(in srgb,var(--char) 40%,transparent);}
-.nav-btn.accent:hover{border-color:var(--char);background:var(--char-d);}
-.nb-pre,.nb-post{transition:none;}
+.nav-btn.accent-btn{border-color:rgba(154,52,18,.4);color:var(--accent);}
+.nav-btn.accent-btn:hover{border-color:var(--accent);background:rgba(154,52,18,.06);}
+
 .spacer{height:64px;}
-.masthead{position:relative;border-bottom:1px solid color-mix(in srgb,var(--char) 20%,transparent);padding:60px 40px 52px;overflow:hidden;animation:fadeUp .7s ease both;}
-.masthead::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 100% 50%,#ca8a040f 0%,transparent 60%);pointer-events:none;}
-.masthead-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:end;gap:40px;position:relative;z-index:2;}
-.mast-eyebrow{font-family:'Share Tech Mono',monospace;font-size:.6rem;letter-spacing:5px;color:var(--char);text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:10px;}
-.mast-eyebrow::before{content:'';display:inline-block;width:28px;height:1px;background:var(--char);}
-.mast-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(64px,10vw,140px);line-height:0.88;letter-spacing:3px;color:var(--white);position:relative;display:inline-block;}
-.mast-title::after{content:'';position:absolute;left:0;right:0;bottom:-8px;height:2px;background:linear-gradient(90deg,var(--char),#ca8a0444,transparent);}
-.mast-subtitle{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-style:italic;font-weight:300;color:var(--silver);letter-spacing:1px;margin-top:16px;}
-.mast-meta{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap;}
-.mast-tag{font-family:'Share Tech Mono',monospace;font-size:.58rem;letter-spacing:3px;color:var(--char);text-transform:uppercase;border:1px solid #ca8a0444;padding:4px 12px;}
+
+/* ═══════════════════════════════
+   CHARACTER MASTHEAD
+═══════════════════════════════ */
+.masthead{
+  position:relative;
+  border-bottom:1px solid rgba(154,52,18,0.2);
+  padding:60px 40px 52px;
+  overflow:hidden;
+  animation:fadeUp .7s ease both;
+}
+
+/* Background gradient */
+.masthead::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 60% 80% at 100% 50%, rgba(154,52,18,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 60% at 0% 50%, rgba(60,20,10,0.1) 0%, transparent 50%);
+  pointer-events:none;
+}
+
+.masthead-inner{
+  max-width:1280px;margin:0 auto;
+  display:grid;grid-template-columns:1fr auto;
+  align-items:end;gap:40px;
+  position:relative;z-index:2;
+}
+
+.mast-eyebrow{
+  font-family:'Share Tech Mono',monospace;
+  font-size:.6rem;letter-spacing:5px;color:var(--accent);
+  text-transform:uppercase;margin-bottom:14px;
+  display:flex;align-items:center;gap:10px;
+}
+.mast-eyebrow::before{content:'';display:inline-block;width:28px;height:1px;background:var(--accent);}
+
+.mast-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(64px,10vw,140px);
+  line-height:0.88;letter-spacing:3px;color:var(--white);
+  position:relative;display:inline-block;
+}
+.mast-title::after{
+  content:'';position:absolute;left:0;right:0;bottom:-8px;height:2px;
+  background:linear-gradient(90deg,var(--accent),rgba(154,52,18,0.3),transparent);
+}
+
+.mast-subtitle{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.4rem;font-style:italic;font-weight:300;
+  color:var(--silver);letter-spacing:1px;margin-top:16px;
+}
+
+.mast-meta{
+  display:flex;gap:24px;margin-top:20px;flex-wrap:wrap;
+}
+.mast-tag{
+  font-family:'Share Tech Mono',monospace;
+  font-size:.58rem;letter-spacing:3px;color:var(--accent);
+  text-transform:uppercase;border:1px solid rgba(154,52,18,.3);
+  padding:4px 12px;
+}
+
 .mast-right{text-align:right;}
-.dossier-num{font-family:'Bebas Neue',sans-serif;font-size:clamp(80px,12vw,160px);line-height:1;color:#ca8a040d;letter-spacing:4px;pointer-events:none;}
-.dossier-label{font-family:'Share Tech Mono',monospace;font-size:.55rem;letter-spacing:4px;color:var(--muted);text-transform:uppercase;text-align:right;}
-.sec-bar{display:flex;align-items:center;gap:14px;padding:12px 40px;border-top:1px solid var(--border2);border-bottom:1px solid var(--border);background:#ca8a0405;}
-.sb-num{font-family:'Share Tech Mono',monospace;font-size:.6rem;letter-spacing:4px;color:var(--char);}
+.dossier-num{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(80px,12vw,160px);line-height:1;
+  color:rgba(154,52,18,0.06);letter-spacing:4px;
+  pointer-events:none;
+}
+.dossier-label{
+  font-family:'Share Tech Mono',monospace;
+  font-size:.55rem;letter-spacing:4px;color:var(--muted);
+  text-transform:uppercase;text-align:right;
+}
+
+/* ═══════════════════════════════
+   SECTION BAR
+═══════════════════════════════ */
+.sec-bar{
+  display:flex;align-items:center;gap:14px;
+  padding:12px 40px;
+  border-top:1px solid var(--border2);
+  border-bottom:1px solid var(--border);
+  background:rgba(154,52,18,.015);
+}
+.sb-num{font-family:'Share Tech Mono',monospace;font-size:.6rem;letter-spacing:4px;color:var(--accent);}
 .sb-name{font-family:'Bebas Neue',sans-serif;font-size:1.05rem;letter-spacing:4px;color:var(--gold);}
 .sb-sub{font-family:'Share Tech Mono',monospace;font-size:.54rem;letter-spacing:2px;color:var(--silver);text-transform:uppercase;}
-.sb-line{flex:1;height:1px;background:linear-gradient(to right,#ca8a0433,transparent);margin-left:12px;}
-.story-outer{max-width:900px;margin:0 auto;padding:56px 40px;}
-.part-header{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:4px;color:var(--white);margin:52px 0 24px;display:flex;align-items:center;gap:14px;}
-.part-header::before{content:'';display:inline-block;width:28px;height:2px;background:var(--char);flex-shrink:0;}
-.part-header::after{content:'';flex:1;height:1px;background:linear-gradient(to right,#ca8a0440,transparent);margin-left:8px;}
+.sb-line{flex:1;height:1px;background:linear-gradient(to right,rgba(154,52,18,.2),transparent);margin-left:12px;}
+
+/* ═══════════════════════════════
+   STORY LAYOUT
+═══════════════════════════════ */
+.story-outer{
+  max-width:900px;margin:0 auto;
+  padding:56px 40px;
+}
+
+.part-header{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.6rem;letter-spacing:4px;color:var(--white);
+  margin:52px 0 24px;
+  display:flex;align-items:center;gap:14px;
+}
+.part-header::before{
+  content:'';display:inline-block;
+  width:28px;height:2px;background:var(--accent);flex-shrink:0;
+}
+.part-header::after{
+  content:'';flex:1;height:1px;
+  background:linear-gradient(to right,rgba(154,52,18,.25),transparent);
+  margin-left:8px;
+}
 .part-header:first-child{margin-top:0;}
-.story-text{font-family:'Cormorant Garamond',serif;font-size:1.25rem;line-height:1.9;color:#c8c0b8;}
+
+.story-text{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.25rem;line-height:1.9;
+  color:#c8c0b8;
+}
 .story-text p{margin-bottom:1.8rem;}
 .story-text p:last-child{margin-bottom:0;}
 .story-text strong{color:var(--white);font-weight:600;}
 .story-text em{color:var(--silver);font-style:italic;}
-.story-text a{color:var(--char);text-decoration:underline;text-underline-offset:3px;}
-.drop-cap::first-letter{float:left;font-size:5rem;line-height:0.8;padding-right:14px;padding-top:4px;color:var(--char);font-family:'Cormorant Garamond',serif;font-weight:400;}
-.story-img{margin:36px -40px;position:relative;overflow:hidden;border-top:1px solid #ca8a0420;border-bottom:1px solid #ca8a0420;}
-.story-img img{width:100%;height:auto;display:block;filter:contrast(1) saturate(0.88);transition:filter .5s;}
-.story-img:hover img{filter:contrast(1.05) saturate(1);}
-/* Dialogue voices */
-.harper-voice,.valentina-voice,.shark-voice,.doom-voice,.julian-voice,.evelyn-voice{
-  font-family:'Share Tech Mono',monospace;font-size:.88rem;
-  border-left:2px solid var(--char);padding-left:16px;margin:0 0 1.5rem 0;
-  color:var(--white);display:block;letter-spacing:.5px;line-height:1.7;
+
+.drop-cap::first-letter{
+  float:left;
+  font-size:5rem;line-height:0.8;
+  padding-right:14px;padding-top:4px;
+  color:var(--accent);
+  font-family:'Cormorant Garamond',serif;
+  font-weight:400;
 }
-.loadout{background:radial-gradient(circle at top right,#ca8a040f 0%,transparent 35%),linear-gradient(180deg,rgba(10,5,5,.95) 0%,rgba(5,5,6,1) 100%);border-top:1px solid #ca8a0433;}
-.loadout-inner{max-width:1280px;margin:0 auto;padding:52px 40px;}
+
+.story-img{
+  margin:36px -40px;
+  position:relative;overflow:hidden;
+  border-top:1px solid rgba(154,52,18,.15);
+  border-bottom:1px solid rgba(154,52,18,.15);
+}
+.story-img img{
+  width:100%;height:auto;display:block;
+  filter:contrast(1.1) saturate(0.95);
+  transition:filter .5s;
+}
+.story-img:hover img{filter:contrast(1.15) saturate(1.1);}
+
+/* ═══════════════════════════════
+   LOADOUT SECTION
+═══════════════════════════════ */
+.loadout{
+  background:
+    radial-gradient(circle at top left, rgba(154,52,18,0.07) 0%, transparent 35%),
+    linear-gradient(180deg, rgba(10,8,8,0.95) 0%, rgba(5,5,6,1) 100%);
+  border-top:1px solid rgba(154,52,18,.2);
+}
+
+.loadout-inner{
+  max-width:1280px;margin:0 auto;
+  padding:52px 40px;
+}
+
 .loadout-header{margin-bottom:32px;}
-.loadout-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,3.5rem);letter-spacing:3px;color:var(--white);margin-bottom:6px;}
-.loadout-sub{font-family:'Share Tech Mono',monospace;font-size:.6rem;letter-spacing:4px;color:var(--char);text-transform:uppercase;}
-.loadout-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#ca8a0414;border:1px solid #ca8a041a;}
-.loadout-card{background:var(--bg);padding:28px 24px;transition:background .25s;position:relative;}
-.loadout-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,var(--char),transparent);transform:scaleX(0);transform-origin:left;transition:transform .35s;}
-.loadout-card:hover{background:#ca8a0407;}
+.loadout-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(2rem,4vw,3.5rem);letter-spacing:3px;
+  color:var(--white);margin-bottom:6px;
+}
+.loadout-sub{
+  font-family:'Share Tech Mono',monospace;
+  font-size:.6rem;letter-spacing:4px;color:var(--accent);
+  text-transform:uppercase;
+}
+
+.loadout-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:1px;background:rgba(154,52,18,.08);
+  border:1px solid rgba(154,52,18,.1);
+}
+
+.loadout-card{
+  background:var(--bg);
+  padding:28px 24px;
+  transition:background .25s;
+  position:relative;
+}
+.loadout-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(to right,var(--accent),transparent);
+  transform:scaleX(0);transform-origin:left;transition:transform .35s;
+}
+.loadout-card:hover{background:rgba(154,52,18,.04);}
 .loadout-card:hover::before{transform:scaleX(1);}
-.loadout-card-title{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:2px;color:var(--white);margin-bottom:6px;}
-.loadout-card-sub{font-family:'Share Tech Mono',monospace;font-size:.52rem;letter-spacing:2px;color:var(--char);text-transform:uppercase;margin-bottom:20px;}
-.loadout-links{display:flex;flex-direction:column;}
-.loadout-link{display:flex;align-items:flex-start;gap:8px;padding:8px 0;text-decoration:none;border-bottom:1px solid rgba(240,237,232,.06);transition:all .2s;}
+
+.loadout-card-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.4rem;letter-spacing:2px;color:var(--white);
+  margin-bottom:6px;
+}
+.loadout-card-sub{
+  font-family:'Share Tech Mono',monospace;
+  font-size:.52rem;letter-spacing:2px;color:var(--accent);
+  text-transform:uppercase;margin-bottom:20px;
+}
+.loadout-links{display:flex;flex-direction:column;gap:0;}
+.loadout-link{
+  display:flex;align-items:flex-start;gap:8px;
+  padding:8px 0;text-decoration:none;
+  border-bottom:1px solid rgba(240,237,232,.06);
+  transition:all .2s;
+}
 .loadout-link:last-child{border-bottom:none;padding-bottom:0;}
-.loadout-link:hover .ll-arrow{color:var(--char);transform:translateX(3px);}
+.loadout-link:hover .ll-arrow{color:var(--accent);transform:translateX(3px);}
 .loadout-link:hover .ll-name{color:var(--white);}
-.ll-arrow{font-family:'Share Tech Mono',monospace;font-size:.6rem;color:#ca8a0488;flex-shrink:0;line-height:1.7;transition:color .2s,transform .2s;}
-.ll-name{font-family:'Rajdhani',sans-serif;font-size:.85rem;font-weight:600;letter-spacing:1px;color:var(--silver);text-transform:uppercase;line-height:1.4;transition:color .2s;}
-.chapter-footer{padding:40px;border-top:1px solid var(--border2);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;background:#000;}
-.cf-brand{font-family:'Share Tech Mono',monospace;font-size:.56rem;letter-spacing:3px;color:var(--muted);text-transform:uppercase;}
+.ll-arrow{
+  font-family:'Share Tech Mono',monospace;font-size:.6rem;
+  color:rgba(154,52,18,.6);flex-shrink:0;line-height:1.7;
+  transition:color .2s,transform .2s;
+}
+.ll-name{
+  font-family:'Rajdhani',sans-serif;font-size:.85rem;font-weight:600;
+  letter-spacing:1px;color:var(--silver);text-transform:uppercase;
+  line-height:1.4;transition:color .2s;
+}
+
+/* ═══════════════════════════════
+   FOOTER
+═══════════════════════════════ */
+.chapter-footer{
+  padding:40px 40px;
+  border-top:1px solid var(--border2);
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:16px;
+  background:#000;
+}
+.cf-brand{
+  font-family:'Share Tech Mono',monospace;
+  font-size:.56rem;letter-spacing:3px;color:var(--muted);text-transform:uppercase;
+}
 .cf-brand strong{color:var(--gold);font-weight:400;}
 .cf-nav{display:flex;gap:10px;flex-wrap:wrap;}
-.cf-link{font-family:'Share Tech Mono',monospace;font-size:.52rem;letter-spacing:2px;color:var(--silver);text-transform:uppercase;text-decoration:none;border:1px solid var(--border2);padding:5px 12px;transition:.2s;}
+.cf-link{
+  font-family:'Share Tech Mono',monospace;font-size:.52rem;
+  letter-spacing:2px;color:var(--silver);text-transform:uppercase;
+  text-decoration:none;border:1px solid var(--border2);padding:5px 12px;
+  transition:.2s;
+}
 .cf-link:hover{border-color:var(--gold);color:var(--gold);}
-.cf-link.accent{border-color:#ca8a0444;color:var(--char);}
-.cf-link.accent:hover{border-color:var(--char);}
-@media(max-width:980px){.loadout-grid{grid-template-columns:repeat(2,1fr);} .masthead-inner{grid-template-columns:1fr;} .mast-right{display:none;}}
+.cf-link.accent-btn{border-color:rgba(154,52,18,.3);color:var(--accent);}
+.cf-link.accent-btn:hover{border-color:var(--accent);}
+
+/* ═══════════════════════════════
+   RESPONSIVE
+═══════════════════════════════ */
+@media(max-width:980px){
+  .loadout-grid{grid-template-columns:repeat(2,1fr);}
+  .masthead-inner{grid-template-columns:1fr;}
+  .mast-right{display:none;}
+}
 @media(max-width:640px){
-  .nav{height:52px;padding:0 14px;}
+  .nav{padding:0 16px;height:52px;}
   .spacer{height:52px;}
-  .nav-brand{font-size:1.05rem;letter-spacing:1.5px;gap:4px;white-space:nowrap;flex-shrink:1;min-width:0;overflow:hidden;}
-  .nav-brand .shark{font-size:1.25rem;}
-  .nb-post{display:none;}
-  .nav-right{gap:6px;flex-shrink:0;}
-  .nav-btn{padding:5px 10px;font-size:.58rem;letter-spacing:2px;}
+  .nav-brand{font-size:1.1rem;}
+  .nav-brand .shark{font-size:1.3rem;}
   .masthead{padding:40px 20px 36px;}
   .story-outer{padding:40px 20px;}
   .story-img{margin:28px -20px;}
@@ -142,25 +403,27 @@ img{max-width:100%;display:block;}
   .chapter-footer{padding:28px 20px;}
 }
 
-/* Ensure all paragraphs in story-outer get story-text styling */
-.story-outer p{
-  font-family:'Cormorant Garamond',serif;
-  font-size:1.25rem;line-height:1.9;color:#c8c0b8;
-  margin-bottom:1.8rem;
+/* Mobile nav */
+.nb-pre,.nb-post{transition:none;}
+@media(max-width:640px){
+  .nav{height:52px;padding:0 14px;}
+  .spacer{height:52px;}
+  .nav-brand{font-size:1.05rem;letter-spacing:1.5px;gap:4px;white-space:nowrap;flex-shrink:1;min-width:0;overflow:hidden;}
+  .nav-brand .shark{font-size:1.25rem;}
+  .nb-post{display:none;}
+  .nav-right{gap:6px;flex-shrink:0;}
+  .nav-btn{padding:5px 10px;font-size:.58rem;letter-spacing:2px;}
 }
-.story-outer p:last-child{margin-bottom:0;}
-.story-outer p strong{color:var(--white);font-weight:600;}
-.story-outer p em{color:var(--silver);font-style:italic;}
-.story-outer p a{color:var(--char);text-decoration:underline;text-underline-offset:3px;}
 </style>
 </head>
 <body>
+
 <header class="nav">
   <a href="index.html" class="nav-brand"><span class="nb-pre">THE </span><span class="shark">SHARK</span><span class="nb-post"> OF WALL STREET</span></a>
   <div class="nav-right">
     <a href="index.html#intel" class="nav-btn">← Personnel</a>
     <a href="shop.html" class="nav-btn">Shop</a>
-    <a href="index.html" class="nav-btn accent">Universe</a>
+    <a href="index.html" class="nav-btn accent-btn">Universe</a>
   </div>
 </header>
 <div class="spacer"></div>
@@ -169,71 +432,196 @@ img{max-width:100%;display:block;}
   <div class="masthead-inner">
     <div>
       <p class="mast-eyebrow">The Shark of Wall Street &nbsp;·&nbsp; Dossier</p>
-      <h1 class="mast-title">Grunt</h1>
-      <p class="mast-subtitle">Isaac 'Doom' Kanaan — The Human Pillar</p>
-      <div class="mast-meta"><span class="mast-tag">Isaac Kanaan</span><span class="mast-tag">Grunt</span><span class="mast-tag">The Human Pillar</span><span class="mast-tag">Doom</span></div>
+      <h1 class="mast-title">The Brute</h1>
+      <p class="mast-subtitle">Grunt — The Muscle &amp; The Mistake</p>
+      <div class="mast-meta">
+        <span class="mast-tag">Grunt</span>
+        <span class="mast-tag">Former PMC</span>
+        <span class="mast-tag">Maximum Security</span>
+        <span class="mast-tag">Aggravated Assault</span>
+      </div>
     </div>
     <div class="mast-right">
-      <div class="dossier-num">IK</div>
+      <div class="dossier-num">GR</div>
       <div class="dossier-label">Dossier · Classified</div>
     </div>
   </div>
 </div>
 
-
-<div class="sec-bar"><span class="sb-num">01</span><span class="sb-name">The Character</span><span class="sb-sub">Origin · Story · Dossier</span><span class="sb-line"></span></div>
+<div class="sec-bar"><span class="sb-num">01</span><span class="sb-name">The Foreclosure</span><span class="sb-sub">The Anchor · The Violation · The Vengeance</span><span class="sb-line"></span></div>
 
 <div class="story-img" style="margin:0;">
-  <img src="grunt3.png" alt="Grunt — Grunt"/>
+  <img src="grunt10.png" alt="Grunt standing on his family's cattle ranch with his elderly parents, his immense physical presence contrasting with their quiet, rural life."/>
 </div>
 
 <div class="story-outer">
-<div class="story-img">
-  <img src="grunt1.png" alt="A collapsing steel structure, dust, rubble, and falling concrete"/>
+
+  <div class="part-header">Part I: The Soil and the Suit</div>
+  <div class="story-text">
+    <p class="drop-cap">Before the tattoos covered his neck, before the dog tags became a permanent fixture on his chest, Grunt was just a man who loved the dirt. He grew up on a sprawling, multi-generational cattle ranch. He loved the quiet of the early morning, the smell of damp earth, and the immense, grounding presence of the livestock. His parents had worked the land for forty years, weathered but proud.</p>
+    <div class="story-img" style="margin:0;">
+	  <img src="grunt5.png" alt="Grunt standing on his family's cattle ranch with his elderly parents, his immense physical presence contrasting with their quiet, rural life."/>
+</div>
+    <p>But soil and sweat don't pay the banks when the drought hits.</p>
+    <p>While Grunt was overseas, serving on brutal, grueling rotations as a Private Military Contractor, a Wall Street private equity firm sank its teeth into the rural heartland. A smug, aggressively ambitious Regional Director had engineered a new financial product: mezzanine debt disguised as agricultural relief. The loans were designed to fail. They featured ballooning, variable interest rates hidden behind impenetrable legal jargon.</p>
+    <div class="story-img" style="margin:0;">
+	  <img src="grunt6.png" alt="Grunt standing on his family's cattle ranch with his elderly parents, his immense physical presence contrasting with their quiet, rural life."/>
+</div>
+    <p>By the time Grunt's parents realized the interest payments had tripled, the firm had already initiated foreclosure proceedings. Wall Street didn't want the interest; they wanted the land to flip to a corporate agriculture conglomerate.</p>
+  </div>
+
+  <div class="part-header">Part II: The Anchor</div>
+  <div class="story-text">
+    <p>Despite the chaos of his deployments, Grunt had an anchor. Her name was Clara.</p>
+    <div class="story-img" style="margin:0;">
+	  <img src="grunt10.png" alt="Grunt standing on his family's cattle ranch with his elderly parents, his immense physical presence contrasting with their quiet, rural life."/>
+</div>
+    <p>They had met as teenagers in the dust of the county fair. She was the local mechanic's daughter—sharp, quiet, and fiercely loyal. When Grunt shipped out, she stayed behind, writing him letters that smelled of motor oil and prairie rain. When his parents started struggling with the farm, Clara stepped in. She spent her weekends fixing their tractors, mending fences, and cooking dinners, keeping the ranch alive while Grunt was half a world away.</p>
+    <div class="story-img" style="margin:0;">
+	  <img src="grunt9.png" alt="Grunt standing on his family's cattle ranch with his elderly parents, his immense physical presence contrasting with their quiet, rural life."/>
+</div>
+    <p>On his last leave, under the vast canopy of a star-filled sky, they made a promise. He told her this was his final rotation. She promised she would be waiting. <em>"I am yours,"</em> she had whispered, leaning her head against his chest. <em>"Whole and soul."</em></p>
+  </div>
+
+  <div class="part-header">Part III: The Violation</div>
+  <div class="story-text">
+  <div class="story-img" style="margin:0;">
+    <img src="grunt11.png" alt="Grunt standing on his family's cattle ranch with his elderly parents, his immense physical presence contrasting with their quiet, rural life."/>
+</div>
+    <p>The tragedy began a week before Grunt's final return. The private equity firm sent a team to appraise the foreclosed ranch. Among them was a junior executive—a man with an inherited Rolex, a cocaine habit, and absolute contempt for the rural families his firm was displacing.</p>
+    <p>Clara was in the barn, packing away Grunt's childhood belongings for his parents, when the executive cornered her. The details of what happened in the dust of that barn were buried by expensive corporate lawyers, but the aftermath was undeniable. The executive attempted to assault her, leveraging his firm's total control over her surrogate family's livelihood to ensure her silence.</p>
+    <div class="story-img" style="margin:0;">
+	  <img src="grunt12.png" alt="Grunt standing on his family's cattle ranch with his elderly parents, his immense physical presence contrasting with their quiet, rural life."/>
+</div>
+    <p>Clara fought him off, but the psychological damage was catastrophic. The profound shame, the violation of the space she loved, and the suffocating realization that these men could destroy everything they cared about broke her. Feeling tainted, she believed she could no longer keep her sacred promise to Grunt.</p>
+    <p>She couldn't bear the shame. Two days later, she took her own life.</p>
+    <p>She left a single, tear-stained note on Grunt's bed. <em>"I promised I would be yours. Whole and soul. He tried to take that. I can't give you what's left. Forgive me."</em></p>
+  </div>
+
+
+  <div class="part-header">Part IV: The Unavoidable Vengeance</div>
+  <div class="story-text">
+  <div class="story-img" style="margin:0;">
+    <img src="grunt7.png" alt="Grunt standing on his family's cattle ranch with his elderly parents, his immense physical presence contrasting with their quiet, rural life."/>
+</div>
+    <p>Grunt came home from his deployment to find moving boxes stacked in the farmhouse kitchen and a fresh grave in the county cemetery. His father wouldn't meet his eyes. His mother handed him Clara's note with trembling hands.</p>
+    <p>It was a tragedy that could have been handled in a courtroom. A class-action lawsuit was already brewing against the private equity firm. The SEC was secretly preparing indictments for predatory lending practices. The executive would have eventually faced justice. His parents begged him to let the law handle it.</p>
+        <div class="story-img" style="margin:0;">
+		  <img src="grunt17.png" alt="Grunt standing on his family's cattle ranch with his elderly parents, his immense physical presence contrasting with their quiet, rural life."/>
+</div>
+    <p>But Grunt didn't have the patience for the law. Not when Clara was in the ground.</p>
+    <p>He had three massive, highly trained guard dogs and muscles forged in combat zones. And he knew exactly where the Regional Director's office was.</p>
+  </div>
+
+  <div class="story-img" style="margin:0;">
+    <img src="grunt13.png" alt="Grunt standing on his family's cattle ranch with his elderly parents, his immense physical presence contrasting with their quiet, rural life."/>
+</div>
+  <div class="story-text">
+
+    <p>Grunt walked into the pristine, glass-walled Wall Street regional office wearing his combat boots and camo pants, his monstrous dogs leashed by heavy iron chains. He tied the dogs to the mahogany reception desk and walked straight into the executive suite.</p>
+    <p>He didn't use a weapon. He didn't have to. He was a weapon.</p>
+    <div class="story-img" style="margin:0;">
+	  <img src="grunt14.png" alt="Grunt standing on his family's cattle ranch with his elderly parents, his immense physical presence contrasting with their quiet, rural life."/>
+</div>
+    <p>He tore through the firm's security like tissue paper. When he found the junior executive who had cornered Clara, he ripped the heavy oak doors off their hinges. He grabbed the screaming suit by his custom-tailored lapels and physically threw him through a reinforced glass conference table, methodically dismantling the man until the police arrived.</p>
+    <div class="story-img" style="margin:0;">
+	  <img src="grunt15.png" alt="Grunt standing on his family's cattle ranch with his elderly parents, his immense physical presence contrasting with their quiet, rural life."/>
+</div>
+    <p>It wasn't a fight; it was an execution. The satisfaction lasted exactly five minutes. The consequences lasted a decade.</p>
+  </div>
+
+
+
+  <div class="part-header">Part V: The Cage</div>
+  <div class="story-text">
+    <p>Because Grunt had committed a violent felony, his family was immediately disqualified from the class-action settlement. His parents lost everything permanently. Grunt caught a ten-year sentence for aggravated assault and attempted murder. He had traded his family's future for ten minutes of blood-soaked vengeance.</p>
+    <div class="story-img" style="margin:0;">
+	  <img src="grunt16.png" alt="Grunt standing on his family's cattle ranch with his elderly parents, his immense physical presence contrasting with their quiet, rural life."/>
+</div>
+    <p>In maximum security, Grunt became an animal. The guilt of failing his parents and the lingering, burning grief over Clara consumed him, twisting into a dark, primal rage. He spent his days in the yard, ignoring the gangs and the politics, focusing entirely on turning his body into an unbreakable machine. He bent the iron bars of his cell just to see if he could. He was a beast locked in a cage of his own making.</p>
+  </div>
+
 </div>
 
+<div class="sec-bar"><span class="sb-num">02</span><span class="sb-name">The Loadout</span><span class="sb-sub">The Muscle Arsenal — Raw Iron &amp; Combat Gear</span><span class="sb-line"></span></div>
 
-
-      <div class="story-img">
-  <img src="grunt2.png" alt="A dark concrete solitary confinement cell in ADX Florence Supermax"/>
-</div>
-</div>
-
-<div class="sec-bar"><span class="sb-num">02</span><span class="sb-name">The Loadout</span><span class="sb-sub">Heavy Machinery & Brute Force</span><span class="sb-line"></span></div>
 <section class="loadout">
   <div class="loadout-inner">
     <div class="loadout-header">
       <h2 class="loadout-title">The Loadout</h2>
-      <p class="loadout-sub">Heavy Machinery & Brute Force</p>
+      <p class="loadout-sub">The Brute Toolkit</p>
     </div>
+
     <div class="loadout-grid">
+
+      <!-- GEAR -->
       <article class="loadout-card">
-        <div class="loadout-card-title">The Uniform</div>
-        <div class="loadout-card-sub">Industrial Grade. Built for Impact.</div>
+        <div class="loadout-card-title">The Gear</div>
+        <div class="loadout-card-sub">Military Surplus / Tactical / Raw</div>
         <div class="loadout-links">
-          <a href="https://www.carhartt.com" class="loadout-link" target="_blank" rel="noopener noreferrer"><span class="ll-arrow">→</span><span class="ll-name">Carhartt Detroit Jacket (Heavy Duck Canvas)</span></a>
-          <a href="https://www.redwingshoes.com/work/" class="loadout-link" target="_blank" rel="noopener noreferrer"><span class="ll-arrow">→</span><span class="ll-name">Red Wing Heritage Steel-Toe Work Boots</span></a>
-          <a href="https://www.511tactical.com" class="loadout-link" target="_blank" rel="noopener noreferrer"><span class="ll-arrow">→</span><span class="ll-name">5.11 Tactical Work Pants</span></a>
+          <a href="https://www.rothco.com/product/rothco-vintage-paratrooper-fatigue-pants" target="_blank" class="loadout-link">
+            <span class="ll-arrow">→</span><span class="ll-name">Rothco Vintage Paratrooper Camo Pants</span>
+          </a>
+          <a href="https://www.511tactical.com/atac-2-0-8-boot.html" target="_blank" class="loadout-link">
+            <span class="ll-arrow">→</span><span class="ll-name">5.11 A.T.A.C. 2.0 Combat Boots</span>
+          </a>
+          <a href="https://www.gruntstyle.com/products/classic-dog-tags" target="_blank" class="loadout-link">
+            <span class="ll-arrow">→</span><span class="ll-name">Military-Style Dog Tags (Grunt Style)</span>
+          </a>
         </div>
       </article>
+
+      <!-- PACK -->
       <article class="loadout-card">
-        <div class="loadout-card-title">The Weapon</div>
-        <div class="loadout-card-sub">No Precision. Just Force.</div>
+        <div class="loadout-card-title">The Pack</div>
+        <div class="loadout-card-sub">Protection / Loyalty / Instinct</div>
         <div class="loadout-links">
-          <a href="https://www.estwing.com" class="loadout-link" target="_blank" rel="noopener noreferrer"><span class="ll-arrow">→</span><span class="ll-name">Estwing 16 lb Sledgehammer (Shock Reduction Grip)</span></a>
-          <a href="https://www.harborfreight.com" class="loadout-link" target="_blank" rel="noopener noreferrer"><span class="ll-arrow">→</span><span class="ll-name">Industrial Forged Crowbar</span></a>
-          <a href="#" class="loadout-link" target="_blank" rel="noopener noreferrer"><span class="ll-arrow">→</span><span class="ll-name">Bare Hands (No Substitute)</span></a>
+          <a href="https://www.rayallen.com/steel-chain-leash/" target="_blank" class="loadout-link">
+            <span class="ll-arrow">→</span><span class="ll-name">Ray Allen Heavy Steel Chain Leash</span>
+          </a>
+          <a href="https://www.akc.org/dog-breeds/rottweiler/" target="_blank" class="loadout-link">
+            <span class="ll-arrow">→</span><span class="ll-name">Rottweiler — Working Guardian</span>
+          </a>
+          <a href="https://www.akc.org/dog-breeds/caucasian-shepherd-dog/" target="_blank" class="loadout-link">
+            <span class="ll-arrow">→</span><span class="ll-name">Caucasian Shepherd — Territorial Apex</span>
+          </a>
         </div>
       </article>
+
+      <!-- PUNISHMENT -->
       <article class="loadout-card">
-        <div class="loadout-card-title">The Hardware</div>
-        <div class="loadout-card-sub">Steel. Weight. Leverage.</div>
+        <div class="loadout-card-title">The Punishment</div>
+        <div class="loadout-card-sub">Iron / Wood / Endurance</div>
         <div class="loadout-links">
-          <a href="https://www.tractorsupply.com" class="loadout-link" target="_blank" rel="noopener noreferrer"><span class="ll-arrow">→</span><span class="ll-name">Grade 70 Transport Chain</span></a>
-          <a href="https://www.dewalt.com" class="loadout-link" target="_blank" rel="noopener noreferrer"><span class="ll-arrow">→</span><span class="ll-name">DeWalt Industrial Work Gloves</span></a>
-          <a href="https://www.petzl.com" class="loadout-link" target="_blank" rel="noopener noreferrer"><span class="ll-arrow">→</span><span class="ll-name">Tactical Utility Carabiners</span></a>
+          <a href="https://www.roguefitness.com/strongman-sandbags" target="_blank" class="loadout-link">
+            <span class="ll-arrow">→</span><span class="ll-name">Rogue Strongman Sandbags</span>
+          </a>
+          <a href="https://www.roguefitness.com/rogue-log-bar" target="_blank" class="loadout-link">
+            <span class="ll-arrow">→</span><span class="ll-name">Rogue Log Bar (Strongman Press)</span>
+          </a>
+          <a href="https://www.homedepot.com/p/Everbilt-3-8-in-x-20-ft-Grade-70-Transport-Chain-803042/204765061" target="_blank" class="loadout-link">
+            <span class="ll-arrow">→</span><span class="ll-name">Grade 70 Industrial Chain</span>
+          </a>
         </div>
       </article>
+
+      <!-- CATALYST -->
+      <article class="loadout-card">
+        <div class="loadout-card-title">The Catalyst</div>
+        <div class="loadout-card-sub">Debt / Control / Collapse</div>
+        <div class="loadout-links">
+          <a href="https://www.investopedia.com/terms/m/mezzaninefinancing.asp" target="_blank" class="loadout-link">
+            <span class="ll-arrow">→</span><span class="ll-name">Mezzanine Debt Structures</span>
+          </a>
+          <a href="https://www.investopedia.com/terms/p/predatory_lending.asp" target="_blank" class="loadout-link">
+            <span class="ll-arrow">→</span><span class="ll-name">Predatory Lending Mechanics</span>
+          </a>
+          <a href="https://www.usda.gov/topics/farming/foreclosure" target="_blank" class="loadout-link">
+            <span class="ll-arrow">→</span><span class="ll-name">Farm Foreclosure Reality (USDA)</span>
+          </a>
+        </div>
+      </article>
+
     </div>
   </div>
 </section>
@@ -245,8 +633,9 @@ img{max-width:100%;display:block;}
     <a href="index.html#chapters" class="cf-link">Chapters</a>
     <a href="index.html#intel" class="cf-link">Personnel</a>
     <a href="shop.html" class="cf-link">Shop</a>
-    <a href="https://thesharkofwallstreet.com" class="cf-link accent">thesharkofwallstreet.com →</a>
+    <a href="https://thesharkofwallstreet.com" class="cf-link accent-btn">thesharkofwallstreet.com →</a>
   </div>
 </div>
+
 </body>
 </html>
